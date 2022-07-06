@@ -3,7 +3,7 @@
 set /P GC=Create GameCube folders? [Y/N]
 set /P PSP=Create PSP folders? [Y/N]
 set /P Redesign=Create folders for redesign skin packs? [Y/N]
-set /P CustomC=Create folders for custom skin packs? [Y/N]
+set /P Custom=Create folders for custom skin packs? [Y/N]
 
 md "1. Base Assets"
 if %GC%==Y md "2. Default Assets - GameCube"
