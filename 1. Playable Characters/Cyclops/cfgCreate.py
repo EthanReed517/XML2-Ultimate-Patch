@@ -72,7 +72,7 @@ def xboxNC(name):
         if "icons1" in newContentList[i]:
             newContentList[i] = newContentList[i].replace("icons1", "icons2")
         i +=1
-    nameOut = name + ".xbox"
+    nameOut = name[:-4] + ".xbox"
     with open(nameOut, mode='w') as file:
         for line in newContentList:
             file.write(line)

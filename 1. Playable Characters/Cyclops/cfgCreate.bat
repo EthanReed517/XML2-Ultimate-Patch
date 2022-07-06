@@ -1,18 +1,11 @@
 @ECHO OFF
 
-copy >nul "1. Base Assets\cyclops_0101.fb.cfg" "1. Base Assets\cyclops_0102.fb.cfg"
-copy >nul "1. Base Assets\cyclops_0101.fb.cfg" "1. Base Assets\cyclops_0103.fb.cfg"
-copy >nul "1. Base Assets\cyclops_0101.fb.cfg" "1. Base Assets\cyclops_0104.fb.cfg"
-copy >nul "1. Base Assets\cyclops_0101.fb.cfg" "1. Base Assets\cyclops_0105.fb.cfg"
-copy >nul "1. Base Assets\cyclops_0101.fb.cfg" "1. Base Assets\cyclops_0106.fb.cfg"
-copy >nul "1. Base Assets\cyclops_0101.fb.cfg" "1. Base Assets\cyclops_0107.fb.cfg"
-copy >nul "1. Base Assets\cyclops_0101.fb.cfg" "1. Base Assets\cyclops_0108.fb.cfg"
-copy >nul "1. Base Assets\cyclops_0101.fb.cfg" "1. Base Assets\cyclops_0109.fb.cfg"
-copy >nul "1. Base Assets\cyclops_0101_nc.fb.cfg" "1. Base Assets\cyclops_0102_nc.fb.cfg"
-copy >nul "1. Base Assets\cyclops_0101_nc.fb.cfg" "1. Base Assets\cyclops_0103_nc.fb.cfg"
-copy >nul "1. Base Assets\cyclops_0101_nc.fb.cfg" "1. Base Assets\cyclops_0104_nc.fb.cfg"
-copy >nul "1. Base Assets\cyclops_0101_nc.fb.cfg" "1. Base Assets\cyclops_0105_nc.fb.cfg"
-copy >nul "1. Base Assets\cyclops_0101_nc.fb.cfg" "1. Base Assets\cyclops_0106_nc.fb.cfg"
-copy >nul "1. Base Assets\cyclops_0101_nc.fb.cfg" "1. Base Assets\cyclops_0107_nc.fb.cfg"
-copy >nul "1. Base Assets\cyclops_0101_nc.fb.cfg" "1. Base Assets\cyclops_0108_nc.fb.cfg"
-copy >nul "1. Base Assets\cyclops_0101_nc.fb.cfg" "1. Base Assets\cyclops_0109_nc.fb.cfg"
+move >nul "1. Base Assets\cyclops_0101.fb.cfg" .
+move >nul "1. Base Assets\cyclops_0101_nc.fb.cfg" .
+
+python cfgCreate.py
+
+move >nul *.cfg "1. Base Assets"
+pause
+ren *xbox *.cfg
+move >nul *.cfg "2. Default Assets - Xbox"
