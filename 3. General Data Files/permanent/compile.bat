@@ -67,8 +67,8 @@ call fbbuilder.bat
 del >nul *.cfg
 del >nul enter.vbs
 del >nul fbbuilder.bat
-md "packages\generated\characters"
-for /r %%x in (*.fb) do move >nul "%%x" "packages\generated\characters"
+md "packages\generated\maps\package"
+for /r %%x in (*.fb) do move >nul "%%x" "packages\generated\maps\package"
 cd ..
 
 REM need to remove any files that are in the packages

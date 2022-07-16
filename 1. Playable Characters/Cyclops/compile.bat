@@ -133,6 +133,7 @@ REM * Section 3 - Compile Assets *
 REM ******************************
 
 :end
+pause
 REM can remove "3. No Cel Shade Assets" folder from "0. Staging" folder because it's not needed.
 rmdir /s /q "0. Staging\3. No Cel Shade Assets"
 copy >nul "..\..\0. Compilers" "0. Staging"
