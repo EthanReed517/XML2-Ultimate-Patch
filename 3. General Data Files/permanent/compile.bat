@@ -65,14 +65,20 @@ REM change directory to 0. Staging folder, run fbbuilder, then change back to ma
 cd "%~dp0\0. Staging"
 call fbbuilder.bat
 del >nul *.cfg
+del >nul enter.vbs
+del >nul fbbuilder.bat
+md "packages\generated\characters"
+for /r %%x in (*.fb) do move >nul "%%x" "packages\generated\characters"
 cd ..
-REM Only FB packages are needed at this point; loose files are compiled from other places
-REM so anything that's not a .fb file can be deleted
-md "0. Staging2"
-for /r "0. Staging" %%x in (*.fb) do move >nul "%%x" "0. Staging2"
-rmdir /s /q "0. Staging"
-ren "0. Staging2" "0. Staging"
+
+REM need to remove any files that are in the packages
+rmdir /s /q "0. Staging/actors"
+rmdir /s /q "0. Staging/hud"
+rmdir /s /q "0. Staging/models"
+rmdir /s /q "0. Staging/sounds"
+rmdir /s /q "0. Staging/textures"
+rmdir /s /q "0. Staging/ui"
 
 REM move files and clean up
-robocopy >nul /e /v "0. Staging" "..\..\0. Ready Files\packages\generated\maps\package"
+robocopy >nul /e /v "0. Staging" "..\..\0. Ready Files"
 rmdir /s /q "0. Staging"
