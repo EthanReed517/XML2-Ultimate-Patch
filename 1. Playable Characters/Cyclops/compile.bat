@@ -148,6 +148,7 @@ cd ..
 
 REM need to remove any files that are in the packages
 rmdir /s /q "0. Staging/actors"
+rmdir /s /q "0. Staging/data/entities"
 rmdir /s /q "0. Staging/data/talents"
 rmdir /s /q "0. Staging/hud"
 rmdir /s /q "0. Staging/models"
@@ -156,5 +157,5 @@ rmdir /s /q "0. Staging/textures"
 rmdir /s /q "0. Staging/ui"
 
 REM move files and clean up
-robocopy >nul /e /v "0. Staging" "..\..\0. Ready Files"
+robocopy >nul /e /v "0. Staging" "..\..\0. Ready Files\assetsfb Files"
 rmdir /s /q "0. Staging"
