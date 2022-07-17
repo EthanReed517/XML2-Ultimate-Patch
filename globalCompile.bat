@@ -30,6 +30,10 @@ echo Cyclops
 cd "%~dp0\1. Playable Characters\Cyclops"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
 cd ..\..
+echo Wolverine
+cd "%~dp0\1. Playable Characters\Wolverine"
+call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+cd ..\..
 
 REM 3. General Data Files
 echo Compiling general data files...
@@ -43,6 +47,10 @@ cd ..\..
 
 REM 4. Menus
 echo Compiling menus...
+echo Menus
+cd "%~dp0\4. Menus\Character Select Screen"
+call compile.bat %consoleChoice% %skinPackChoice%
+cd ..\..
 echo Comic Covers
 cd "%~dp0\4. Menus\Comic Covers"
 call compile.bat %consoleChoice%
