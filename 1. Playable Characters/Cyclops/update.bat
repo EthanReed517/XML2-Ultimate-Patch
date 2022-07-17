@@ -4,7 +4,10 @@ echo Copying NPC assets to map folders...
 echo (This feature has not been implemented yet. Text is a placeholder)
 
 echo Copying Character Select Portraits to the character select menu...
-echo (This feature has not been implemented yet. Text is a placeholder)
+robocopy >nul /e /v "2. Default Assets - GameCube\ui\models\characters" "..\..\4. Menus\Character Select Screen\2. Default Assets - GameCube\ui\models\characters"
+robocopy >nul /e /v "2. Default Assets - PS2\ui\models\characters" "..\..\4. Menus\Character Select Screen\2. Default Assets - PS2\ui\models\characters"
+robocopy >nul /e /v "2. Default Assets - PSP\ui\models\characters" "..\..\4. Menus\Character Select Screen\2. Default Assets - PSP\ui\models\characters"
+robocopy >nul /e /v "2. Default Assets - Xbox\ui\models\characters" "..\..\4. Menus\Character Select Screen\2. Default Assets - Xbox\ui\models\characters"
 
 echo Copying loading screens to the loading folder...
 robocopy >nul /e /v "2. Default Assets - GameCube\textures\loading" "..\..\4. Menus\Loading Screens\2. Default Assets - GameCube\textures\loading"
