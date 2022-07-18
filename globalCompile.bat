@@ -41,7 +41,12 @@ echo herostat
 cd "%~dp0\3. General Data Files\herostat"
 call compile.bat %consoleChoice%
 cd ..\..
+echo permanent
 cd "%~dp0\3. General Data Files\permanent"
+call compile.bat %consoleChoice%
+cd ..\..
+echo permanent fightstyles
+cd "%~dp0\3. General Data Files\permanent fightstyles"
 call compile.bat %consoleChoice%
 cd ..\..
 
