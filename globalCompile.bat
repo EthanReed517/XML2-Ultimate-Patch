@@ -60,7 +60,7 @@ cd ..\..
 
 REM 4. Menus
 echo Compiling menus...
-echo Menus
+echo Character select screen
 cd "%~dp0\4. Menus\Character Select Screen"
 call compile.bat %consoleChoice% %skinPackChoice%
 cd ..\..
@@ -68,6 +68,11 @@ echo Comic Covers
 cd "%~dp0\4. Menus\Comic Covers"
 call compile.bat %consoleChoice%
 cd ..\..
+echo Loading Screens
 cd "%~dp0\4. Menus\Loading Screens"
+call compile.bat %consoleChoice%
+cd ..\..
+echo Main Menu
+cd "%~dp0\4. Menus\Main Menu"
 call compile.bat %consoleChoice%
 cd ..\..
