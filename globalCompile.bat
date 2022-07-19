@@ -26,6 +26,10 @@ REM ******************************
 echo.
 REM 1. Playable Characters
 echo Compiling playable characters...
+echo defaultman
+cd "%~dp0\1. Playable Characters\defaultman"
+call compile.bat %consoleChoice%
+cd ..\..
 echo Cyclops
 cd "%~dp0\1. Playable Characters\Cyclops"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
