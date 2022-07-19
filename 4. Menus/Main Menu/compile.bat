@@ -37,18 +37,22 @@ if %consoleChoice%==4 goto :compileXbox
 
 REM GameCube options
 :compileGameCube
+robocopy >nul /e /v "2. Default Assets - GameCube" "0. Staging"
 goto :end
 
 REM PS2 options
 :compilePS2
+robocopy >nul /e /v "2. Default Assets - PS2" "0. Staging"
 goto :end
 
 REM PSP options
 :compilePSP
+robocopy >nul /e /v "2. Default Assets - PSP" "0. Staging"
 goto :end
 
 REM xbox options
 :compileXbox
+robocopy >nul /e /v "2. Default Assets - Xbox" "0. Staging"
 goto :end
 
 REM ******************************
