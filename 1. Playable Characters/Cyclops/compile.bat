@@ -13,16 +13,23 @@ REM console not selected, main compiler prompt not used, pick console
 :consoleChoicePrompt
 echo.
 echo Console not selected.
-echo [1] GameCube
-echo [2] PlayStation 2
-echo [3] PlayStation Portable (PSP)
-echo [4] Xbox
-set /p "consoleChoice=Which console are you using? [1,2,3,4] "
+echo [1] PC
+echo [2] GameCube
+echo [3] PlayStation 2
+echo [4] PlayStation Portable (PSP)
+echo [5] Xbox
+CHOICE /C 12345 /M "Which console are you using? "
+IF ERRORLEVEL 5 SET consoleChoice=XB & goto :skinPackSection
+IF ERRORLEVEL 4 SET consoleChoice=PSP & goto :skinPackSection
+IF ERRORLEVEL 3 SET consoleChoice=PS2 & goto :skinPackSection
+IF ERRORLEVEL 2 SET consoleChoice=GC & goto :skinPackSection
+IF ERRORLEVEL 1	SET consoleChoice=PC & goto :skinPackSection
 REM Checks if console was selected from main compiler script/if main compiler script was used
 :consoleChoiceCheck
 if "%consoleChoice%"=="" goto :consoleChoicePrompt
 
 REM get skin pack choice from main compiler script
+:skinPackSection
 set "skinPackChoice=%~2"
 goto :skinPackChoiceCheck
 REM skin pack not selected, main compiler prompt not used, pick skin pack
@@ -32,17 +39,27 @@ echo Skin pack not selected.
 echo [1] Default skin pack
 echo [2] Redesign skin pack
 echo [3] Custom skin pack
-set /p "skinPackChoice=Which skin pack will you be using? [1,2,3] "
+CHOICE /C 123 /M "Which skin pack are you using? "
+IF ERRORLEVEL 3 SET "skinPackChoice=custom" & goto :celChoiceSection
+IF ERRORLEVEL 2 SET "skinPackChoice=redesign" & goto :celChoiceSection
+IF ERRORLEVEL 1 SET "skinPackChoice=default" & goto :celChoiceSection
 REM Checks if skin pack was selected from main compiler script/if main compiler script was used
 :skinPackChoiceCheck
 if "%skinPackChoice%"=="" goto :skinPackChoicePrompt
 
-REM get cel shading choice from main compiler script 
+REM get cel shading choice from main compiler script (ignored for PC and PSP)
+:celChoiceSection
 set "celChoice=%~3"
 goto :celChoiceCheck
 REM cel shading option not selected, main compiler prompt not used, pick cel shading option
 :celChoicePrompt
-set /p "celChoice=Will you be using skins with cel shading? (Option will be ignored for PSP) [Y/N] "
+if not %consoleChoice%==PC (
+	if not %consoleChoice%==PSP (
+		CHOICE /C YN /M "Are you using skins with cel shading? "
+		IF ERRORLEVEL 2 SET "celChoice=no" & goto :section2
+		IF ERRORLEVEL 1 SET "celChoice=yes" & goto :section2
+	) else set "celChoice=no" & goto :section2
+) else set "celChoice=no" & goto :section2
 REM Checks if cel shading choice was selected from main compiler script/if main compiler script was used
 :celChoiceCheck
 if "%celChoice%"=="" goto :celChoicePrompt
@@ -51,67 +68,84 @@ REM ***************************
 REM * Section 2 - Move Assets *
 REM ***************************
 
+:section2
 REM Begin compiling assets
 echo Compiling assets...
 md "0. Staging"
 robocopy >nul /e /v "1. Base Assets" "0. Staging"
 REM proceed based on console selection
-if %consoleChoice%==1 goto :compileGameCube
-if %consoleChoice%==2 goto :compilePS2
-if %consoleChoice%==3 goto :compilePSP
-if %consoleChoice%==4 goto :compileXbox
+if %consoleChoice%==PC goto :movePC
+if %consoleChoice%==GC goto :moveGameCube
+if %consoleChoice%==PS2 goto :movePS2
+if %consoleChoice%==PSP goto :movePSP
+if %consoleChoice%==XB goto :moveXbox
+
+REM PC options
+:movePC
+REM default assets are included regardless of skin pack choice
+REM assets without cel shading are stored in a separate folder for the PC
+REM they're easy to move, so they'll be left in
+robocopy >nul /e /v "2. Default Assets - PC" "0. Staging"
+if %skinPackChoice%==redesign (
+	robocopy >nul /e /v "3. Redesign Assets - PC" "0. Staging"
+)
+if %skinPackChoice%==custom (
+	robocopy >nul /e /v "4. Custom Assets - PC" "0. Staging"
+)
+goto :compilePC
+
 
 REM GameCube options
-:compileGameCube
+:moveGameCube
 REM default assets are included regardless of skin pack choice
 robocopy >nul /e /v "2. Default Assets - GameCube" "0. Staging"
-if %celChoice%==N (
+if %celChoice%==no (
 	robocopy >nul /e /v "2. Default Assets - GameCube\3. No Cel Shade Assets" "0. Staging"
 )
-if %skinPackChoice%==2 (
+if %skinPackChoice%==redesign (
 	robocopy >nul /e /v "3. Redesign Assets - GameCube" "0. Staging"
 )
-if %skinPackChoice%==3 (
+if %skinPackChoice%==custom (
 	robocopy >nul /e /v "4. Custom Assets - GameCube" "0. Staging"
-	if %celChoice%==N (
+	if %celChoice%==no (
 		robocopy >nul /e /v "4. Custom Assets - GameCube\3. No Cel Shade Assets" "0. Staging"
 	)
 )
-goto :end
+goto :compileConsole
 
 REM PS2 options
-:compilePS2
+:movePS2
 REM default assets are included regardless of skin pack choice
 robocopy >nul /e /v "2. Default Assets - PS2" "0. Staging"
-if %celChoice%==N (
+if %celChoice%==no (
 	robocopy >nul /e /v "2. Default Assets - PS2\3. No Cel Shade Assets" "0. Staging"
 )
-if %skinPackChoice%==2 (
+if %skinPackChoice%==redesign (
 	robocopy >nul /e /v "3. Redesign Assets - PS2" "0. Staging"
 )
-if %skinPackChoice%==3 (
+if %skinPackChoice%==custom (
 	robocopy >nul /e /v "4. Custom Assets - PS2" "0. Staging"
-	if %celChoice%==N (
+	if %celChoice%==no (
 		robocopy >nul /e /v "4. Custom Assets - PS2\3. No Cel Shade Assets" "0. Staging"
 	)
 )
-goto :end
+goto :compileConsole
 
 REM PSP options
-:compilePSP
+:movePSP
 REM default assets are included regardless of skin pack choice
 REM PSP does not use cel shading, so the cel shading option is ignored
 robocopy >nul /e /v "2. Default Assets - PSP" "0. Staging"
-if %skinPackChoice%==2 (
+if %skinPackChoice%==redesign (
 	robocopy >nul /e /v "3. Redesign Assets - PSP" "0. Staging"
 )
-if %skinPackChoice%==3 (
+if %skinPackChoice%==custom (
 	robocopy >nul /e /v "4. Custom Assets - PSP" "0. Staging"
 )
-goto :end
+goto :compileConsole
 
 REM xbox options
-:compileXbox
+:moveXbox
 REM default assets are included regardless of skin pack choice
 robocopy >nul /e /v "2. Default Assets - Xbox" "0. Staging"
 if %celChoice%==N (
@@ -126,24 +160,32 @@ if %skinPackChoice%==3 (
 		robocopy >nul /e /v "4. Custom Assets - Xbox\3. No Cel Shade Assets" "0. Staging"
 	)
 )
-goto :end
+goto :compileConsole
 
 REM ******************************
 REM * Section 3 - Compile Assets *
 REM ******************************
 
-:end
+:compileConsole
+echo DEBUG: files relocated. Ready to begin compiling
+pause
 REM can remove "3. No Cel Shade Assets" folder from "0. Staging" folder because it's not needed.
 rmdir /s /q "0. Staging\3. No Cel Shade Assets"
 copy >nul "..\..\0. Compilers" "0. Staging"
-REM change directory to 0. Staging folder, run fbbuilder, then change back to main directory
+REM change directory to 0. Staging folder
 cd "%~dp0\0. Staging"
+call ravenFormatsCompile.bat
+del /r >nul *.json
+REM run fbbuilder
 call fbbuilder.bat
+REM clean up extra stuff
 del >nul *.cfg
 del >nul enter.vbs
 del >nul fbbuilder.bat
+REM move packages to proper place
 md "packages\generated\characters"
 for /r %%x in (*.fb) do move >nul "%%x" "packages\generated\characters"
+REM move back to the main folder
 cd ..
 
 REM need to remove any files that are in the packages
