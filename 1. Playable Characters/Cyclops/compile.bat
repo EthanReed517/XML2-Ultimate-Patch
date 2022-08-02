@@ -167,21 +167,20 @@ REM * Section 3 - Compile Assets *
 REM ******************************
 
 :compileConsole
-echo DEBUG: files relocated. Ready to begin compiling
-pause
 REM can remove "3. No Cel Shade Assets" folder from "0. Staging" folder because it's not needed.
 rmdir /s /q "0. Staging\3. No Cel Shade Assets"
 copy >nul "..\..\0. Compilers" "0. Staging"
 REM change directory to 0. Staging folder
 cd "%~dp0\0. Staging"
-call ravenFormatsCompile.bat
-del /r >nul *.json
+cmd /c ravenFormatsCompile.bat
+del /s >nul *.json
 REM run fbbuilder
 call fbbuilder.bat
 REM clean up extra stuff
 del >nul *.cfg
 del >nul enter.vbs
 del >nul fbbuilder.bat
+del >nul ravenFormatsCompile.bat
 REM move packages to proper place
 md "packages\generated\characters"
 for /r %%x in (*.fb) do move >nul "%%x" "packages\generated\characters"
