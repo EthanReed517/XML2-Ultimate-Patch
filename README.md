@@ -5,3 +5,8 @@ All characters, maps, menus, etc are separated out into their own individual fol
 
 To compile, you must have `fbbuilder.exe` installed in `C:\Windows`. You must also have Python 3.8 or later and Raven-Formats installed.
 Compilation is done by running `globalCompile.bat` in the root folder. It will give options for consoles and cel shading. Choose what is appropriate. 
+
+Credits:
+- ak2yny: Original batch files (including raven-formats compiler, fbextractor, and fbbuilder), batch file knowledge
+- nikita488: Raven-Formats
+- NorrinRadd: fbExtractor, fbBuilder original programs
