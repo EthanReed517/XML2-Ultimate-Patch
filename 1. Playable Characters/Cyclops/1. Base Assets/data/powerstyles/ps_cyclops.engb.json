@@ -21,14 +21,6 @@
                 "time": 0.45
             },
             "trigger": {
-                "finisher": true,
-                "life": 0.25,
-                "name": "xtreme_start",
-                "tag": 15,
-                "time": -1,
-                "worldspeed": 0.5
-            },
-            "trigger": {
                 "attack_bone_angles": "180 180 180",
                 "attack_bone_pos": "9 -12 29",
                 "attacktype": "beam",
@@ -89,7 +81,7 @@
                 "name": "sound",
                 "sound": "char/cyclop_m/p1_charge",
                 "tag": 1,
-                "time": 0.5
+                "time": 0.45
             },
             "trigger": {
                 "arc": 0,
@@ -167,6 +159,8 @@
                 "damagelevel": 1,
                 "damagescale": "none",
                 "damagetype": "dmg_energy",
+                "fxlevel": 1,
+                "hiteffect": "char/cyclop/p1_impact",
                 "inherit": "beam",
                 "knockback": "%cyc_slam_kb",
                 "maxrange": 600,
@@ -185,7 +179,7 @@
             "trigger": {
                 "name": "sound",
                 "sound": "char/cyclop_m/p3_charge",
-                "time": 0.4
+                "time": 0.35
             },
             "trigger": {
                 "effect": "char/cyclop/p3_power",
@@ -294,13 +288,18 @@
             },
             "trigger": {
                 "effect": "char/cyclop/p6_power",
-                "name": "effect_sound",
-                "sound": "char/cyclop_m/p6_charge",
+                "name": "effect",
                 "time": 0.5
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cyclop_m/p6_charge",
+                "time": 0.45
             },
             "trigger": {
                 "damage": "%cyc_flash_dmg",
                 "damagetype": "dmg_energy",
+                "fxlevel": 1,
                 "maxrange": "%cyc_flash_rng",
                 "name": "radial",
                 "powerusage": "%cyc_flash_pwr",
@@ -431,12 +430,21 @@
             "trigger": {
                 "name": "sound",
                 "sound": "char/cyclop_m/p9_charge",
-                "time": 0
+                "time": 0.25
             },
             "trigger": {
                 "name": "skinsegment",
                 "show": false,
-                "skinsegment": "0101_visor",
+                "skinsegment": "visor_face",
+                "time": 0.25
+            },
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 L Hand",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/cyclops_visor",
+                "name": "bolton",
+                "replacecurrent": true,
                 "time": 0.25
             },
             "trigger": {
@@ -450,6 +458,8 @@
                 "damage": "%cyc_xtreme_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_energy",
+                "fxlevel": 1,
+                "hiteffect": "char/cyclop/p9_impact",
                 "knockback": 620,
                 "maxrange": 600,
                 "name": "cycxtreme",
@@ -463,8 +473,15 @@
             "trigger": {
                 "name": "skinsegment",
                 "show": true,
-                "skinsegment": "0101_visor",
+                "skinsegment": "visor_face",
                 "time": 0.85
+            },
+            "trigger": {
+                "boltslot": "ebolton_weapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.85,
+                "type": "ce_bolton"
             },
             "chain": {
                 "action": "Idle",
