@@ -1,0 +1,563 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/cyclops_icons1.png",
+        "FightMove": {
+            "aitype": "beam",
+            "animenum": "ea_attack_popup",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "popupattack",
+            "startchaintime": 0.6,
+            "trigger": {
+                "name": "slide",
+                "targetdistance": 75,
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cyclop_m/p1_charge",
+                "time": 0.45
+            },
+            "trigger": {
+                "finisher": true,
+                "life": 0.25,
+                "name": "xtreme_start",
+                "tag": 15,
+                "time": -1,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "attack_bone_angles": "180 180 180",
+                "attack_bone_pos": "9 -12 29",
+                "attacktype": "beam",
+                "damage": "3 5",
+                "damagelevel": 1,
+                "fxlevel": 3,
+                "hiteffect": "char/cyclop/p1_impact",
+                "maxrange": 75,
+                "name": "beam",
+                "pitch": -35,
+                "radius": 8,
+                "spawneffect": "char/cyclop/p1_charge",
+                "time": 0.45,
+                "victimeventtag": 15,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beam",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Beam",
+            "combotextstarter": "Optic",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "playspeed": "%cyc_beam_speed",
+            "powerup_tag": "cyclops_optic",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "cyclops_beam",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cyclop_m/p1_charge",
+                "tag": 1,
+                "time": 0.5
+            },
+            "trigger": {
+                "arc": 0,
+                "attack_bone_angles": "-83 -76 -13",
+                "attack_bone_pos": "-11 -5 56",
+                "attacktype": "beam",
+                "beambolt": "Bip01 Head",
+                "beameffect": "char/cyclop/p1_power",
+                "damage": "%cyc_beam_dmg",
+                "damagelevel": 2,
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "fxlevel": 1,
+                "hiteffect": "char/cyclop/p1_impact",
+                "inherit": "beam",
+                "maxrange": 800,
+                "name": "optic_blast",
+                "powerusage": "%cyc_beam_pwr",
+                "spawneffect": "char/cyclop/p1_charge",
+                "tag": 2,
+                "time": 0.5,
+                "damageMod": {
+                    "name": "dmgmod_weld"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "combotextfinisher": "Ray",
+            "combotextstarter": "Acute",
+            "icon": 1,
+            "inherit": "power1",
+            "name": "power2",
+            "playspeed": 1,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "cyclops_pierce",
+                "level": 1,
+                "reset": true
+            },
+            "trigger": {
+                "beameffect": "char/cyclop/p2_power",
+                "damage": "%cyc_pierce_dmg",
+                "hiteffect": "char/cyclop/p2_impact",
+                "pierce": true,
+                "powerusage": "%cyc_pierce_pwr",
+                "tag": 2
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "beam",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Shockwave",
+            "combotextstarter": "Ultimate",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "powerup_tag": "cyclops_optic",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "cyclops_slam",
+                "level": 1
+            },
+            "event": {
+                "attack_bone_angles": "-119 -87 30",
+                "attack_bone_pos": "9 -3 50",
+                "attacktype": "beam",
+                "damage": "%cyc_slam_dmg",
+                "damagelevel": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "inherit": "beam",
+                "knockback": "%cyc_slam_kb",
+                "maxrange": 600,
+                "name": "optic_slam",
+                "powerusage": 0,
+                "radius": 8,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%cyc_slam_pwr",
+                "time": 0.4
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cyclop_m/p3_charge",
+                "time": 0.4
+            },
+            "trigger": {
+                "effect": "char/cyclop/p3_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "angle": 0,
+                "name": "optic_slam",
+                "radius": 16,
+                "time": 0.4
+            },
+            "trigger": {
+                "angle": -10,
+                "name": "optic_slam",
+                "time": 0.4
+            },
+            "trigger": {
+                "angle": 10,
+                "name": "optic_slam",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "combotextfinisher": "Radiation",
+            "combotextstarter": "Radiating",
+            "icon": 3,
+            "inherit": "power1",
+            "name": "power4",
+            "playspeed": 1,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "cyclops_radiation",
+                "level": 1,
+                "reset": true
+            },
+            "trigger": {
+                "damage": "%cyc_radbeam_radmg",
+                "life": "%cyc_radbeam_life",
+                "name": "powerup",
+                "shared_tag": "shared_radiated",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "fxlevel": 2,
+                "sound": "char/cyclop_m/p4_charge",
+                "tag": 1
+            },
+            "trigger": {
+                "damage": 0,
+                "fxlevel": 2,
+                "powerusage": "%cyc_radbeam_pwr",
+                "tag": 2,
+                "victimeventtag": 100
+            }
+        },
+        "FightMove": {
+            "combotextfinisher": "Polarization",
+            "combotextstarter": "Refraction",
+            "icon": 4,
+            "inherit": "power2",
+            "name": "power5",
+            "require": {
+                "cat": "skill",
+                "item": "cyclops_polarized",
+                "level": 1,
+                "reset": true
+            },
+            "trigger": {
+                "damage": "%cyc_polbeam_dmg",
+                "pierce": true,
+                "powerusage": "%cyc_polbeam_pwr",
+                "split_count": 2,
+                "tag": 2
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "aoe",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Flash",
+            "combotextstarter": "Flashing",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "powerup_tag": "cyclops_optic",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "cyclops_flash",
+                "level": 1
+            },
+            "trigger": {
+                "life": "%cyc_flash_life",
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "effect": "char/cyclop/p6_power",
+                "name": "effect_sound",
+                "sound": "char/cyclop_m/p6_charge",
+                "time": 0.5
+            },
+            "trigger": {
+                "damage": "%cyc_flash_dmg",
+                "damagetype": "dmg_energy",
+                "maxrange": "%cyc_flash_rng",
+                "name": "radial",
+                "powerusage": "%cyc_flash_pwr",
+                "time": 0.5,
+                "victimeventtag": 100
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power7",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "cyclops_tactics",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/cyclop/p7_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/cyclop_m/p7_charge",
+                "time": 0.15
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%cyc_tactics_life",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%cyc_tactics_pwr",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/cyclop/p7_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%cyc_tactics_dr"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power7",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "cyclops_command",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/cyclop/p7_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/cyclop_m/p7_charge",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%cyc_command_life",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%cyc_command_pwr",
+                "time": 0.95,
+                "special_fx": {
+                    "effect": "char/cyclop/p7_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "all_talents",
+                    "level": "%cyc_command_skills",
+                    "scope_talent": "cyclops_command"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "blendtime": 0,
+            "combotextfinisher": "Destruction",
+            "description": "OPTIC RAGE",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power9",
+            "playspeed": 10,
+            "powerup_tag": "cyclops_optic",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "cyclops_xtreme",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cyclop_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "skinsegment",
+                "show": false,
+                "skinsegment": "0101_visor",
+                "time": 0.25
+            },
+            "trigger": {
+                "effect": "char/cyclop/p9_power",
+                "name": "effect",
+                "time": 0.36
+            },
+            "trigger": {
+                "arc": 30,
+                "attacktype": "beam",
+                "damage": "%cyc_xtreme_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "knockback": 620,
+                "maxrange": 600,
+                "name": "cycxtreme",
+                "tiles": true,
+                "time": 0.36,
+                "type": "ce_atk",
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "name": "skinsegment",
+                "show": true,
+                "skinsegment": "0101_visor",
+                "time": 0.85
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "aoe",
+            "animenum": "ea_power10",
+            "combotextfinisher": "Barrage",
+            "combotextstarter": "Automated",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "cyclops_pylon",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cyclop_m/p10_charge",
+                "time": 0.5
+            },
+            "trigger": {
+                "damage": "%cyc_pylon_dmg",
+                "damagetype": "dmg_electricity",
+                "entity": "cyc_pylon",
+                "filename": "ents_cyclops",
+                "health": "%cyc_pylon_health",
+                "life": "%cyc_pylon_life",
+                "maxinstances": 1,
+                "name": "projectile",
+                "offset": "35 0 0",
+                "powerusage": "%cyc_pylon_pwr",
+                "speed": 0,
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power7",
+            "description": "FLAWLESS TACTICS",
+            "icon": 12,
+            "lockangles": true,
+            "name": "power11",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "cyclops_xtreme2",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/cyclop/p7_charge",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/cyclop_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%cyc_xtreme2_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "time": 0.7,
+                "special_fx": {
+                    "effect": "char/cyclop/p7_aura",
+                    "fxlevel": 3,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "xp",
+                    "level": 2
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}

@@ -1,0 +1,784 @@
+{
+    "talents": {
+        "talent": {
+            "descname": "Optic Beam",
+            "description": "A beam of energy filtered though Cyclops' visor.",
+            "descshort": "Beam",
+            "icon": 0,
+            "icon_texture": "textures/ui/cyclops_icons1.png",
+            "name": "cyclops_beam",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_beam_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "cyc_beam_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_beam_dmg",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "cyc_beam_dmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_beam_pwr",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "cyc_beam_pwr",
+                    "value": 126
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_beam_speed",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "cyc_beam_speed",
+                    "value": 2
+                }
+            },
+            "level": {
+                "count": 1,
+                "description": "%cyc_beam_dmg $DMG_ENERGY\\n%cyc_beam_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%cyc_beam_req"
+                }
+            },
+            "level": {
+                "count": 19,
+                "description": "%cyc_beam_dmg $DMG_ENERGY\\n%cyc_beam_speed:s attack speed\\n%cyc_beam_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%cyc_beam_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Focused Beam",
+            "description": "An intensely focused beam that can pierce through enemies.",
+            "descshort": "Beam",
+            "icon": 1,
+            "icon_texture": "textures/ui/cyclops_icons1.png",
+            "name": "cyclops_pierce",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_pierce_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "cyc_pierce_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_pierce_dmg",
+                    "value": "69 79"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "cyc_pierce_dmg",
+                    "value": "140 157"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_pierce_pwr",
+                    "value": 78
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "cyc_pierce_pwr",
+                    "value": 166
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%cyc_pierce_dmg:d $DMG_ENERGY\\n%cyc_pierce_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%cyc_pierce_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "cyclops_radiation",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Optic Slam",
+            "description": "A wide beam that can knock enemies back",
+            "descshort": "Beam",
+            "icon": 2,
+            "icon_texture": "textures/ui/cyclops_icons1.png",
+            "name": "cyclops_slam",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_slam_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "cyc_slam_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_slam_dmg",
+                    "value": "6 9"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "cyc_slam_dmg",
+                    "value": "117 132"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_slam_kb",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "cyc_slam_kb",
+                    "value": 620
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_slam_pwr",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "cyc_slam_pwr",
+                    "value": 140
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%cyc_slam_dmg $DMG_ENERGY\\n%cyc_slam_kb $KB\\n%cyc_slam_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%cyc_slam_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Fusion Beam",
+            "description": "A beam laced with atomic energy causing extra $DMG_RADIATION.",
+            "descshort": "Beam",
+            "icon": 3,
+            "icon_texture": "textures/ui/cyclops_icons1.png",
+            "name": "cyclops_radiation",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_radbeam_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "cyc_radbeam_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_radbeam_radmg",
+                    "value": "101 114"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "cyc_radbeam_radmg",
+                    "value": "272 302"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_radbeam_life",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "cyc_radbeam_life",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_radbeam_pwr",
+                    "value": 46
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "cyc_radbeam_pwr",
+                    "value": 132
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%cyc_radbeam_radmg $DMG_RADIATION over %cyc_radbeam_life seconds\\n%cyc_radbeam_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%cyc_radbeam_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "cyclops_beam",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Polarized Beam",
+            "description": "A beam that splits into 3 at point of contact with enemies.",
+            "descshort": "Beam",
+            "icon": 4,
+            "icon_texture": "textures/ui/cyclops_icons1.png",
+            "name": "cyclops_polarized",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_polbeam_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "cyc_polbeam_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_polbeam_dmg",
+                    "value": "66 75"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "cyc_polbeam_dmg",
+                    "value": "130 146"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_polbeam_dmgsp",
+                    "value": "53 61"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "cyc_polbeam_dmgsp",
+                    "value": "105 118"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_polbeam_pwr",
+                    "value": 72
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "cyc_polbeam_pwr",
+                    "value": 152
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%cyc_polbeam_dmg main $DMG_ENERGY\\n%cyc_polbeam_dmgsp split $DMG_ENERGY\\n%cyc_polbeam_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%cyc_polbeam_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "cyclops_pylon",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Optic Flash",
+            "description": "Produces a low powered discharge of energy stunning and damaging enemies.",
+            "descshort": "Debuff",
+            "icon": 5,
+            "icon_texture": "textures/ui/cyclops_icons1.png",
+            "name": "cyclops_flash",
+            "power": "power6",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_flash_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "cyc_flash_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_flash_dmg",
+                    "value": "6 9"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "cyc_flash_dmg",
+                    "value": "56 65"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_flash_life",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "cyc_flash_life",
+                    "value": 4.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_flash_rng",
+                    "value": 144
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "cyc_flash_rng",
+                    "value": 144
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_flash_pwr",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "cyc_flash_pwr",
+                    "value": 164
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%cyc_flash_dmg $DMG_ENERGY\\n%cyc_flash_life second stun\\n%cyc_flash_rng:r foot range\\n%cyc_flash_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%cyc_flash_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "cyclops_slam",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Tactics",
+            "description": "Uses combat knowledge to organize and prepare his allies increasing defense",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/cyclops_icons1.png",
+            "name": "cyclops_tactics",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_tactics_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "cyc_tactics_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_tactics_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "cyc_tactics_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_tactics_dr",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "cyc_tactics_dr",
+                    "value": 1.9
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_tactics_pwr",
+                    "value": 88
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "cyc_tactics_pwr",
+                    "value": 504
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%cyc_tactics_dr:s $DR\\n%cyc_tactics_life seconds\\n%cyc_tactics_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%cyc_tactics_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Command",
+            "description": "Uses his natural leadership abilities to boost the effectiveness of entire team.",
+            "descshort": "Boost",
+            "icon": 7,
+            "icon_texture": "textures/ui/cyclops_icons1.png",
+            "name": "cyclops_command",
+            "power": "power8",
+            "type": "boost",
+            "value_priority": 1,
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_command_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "cyc_command_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_command_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "cyc_command_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_command_skills",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "cyc_command_skills",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_command_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "cyc_command_pwr",
+                    "value": 516
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "+%cyc_command_skills all learned skills\\n%cyc_command_life seconds\\n%cyc_command_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%cyc_command_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "cyclops_tactics",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "OPTIC RAGE",
+            "description": "An xtreme arc spray attack",
+            "descshort": "Beam",
+            "icon": 8,
+            "icon_texture": "textures/ui/cyclops_icons1.png",
+            "name": "cyclops_xtreme",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_xtreme_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "cyc_xtreme_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_xtreme_dmg",
+                    "value": "101 114"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "cyc_xtreme_dmg",
+                    "value": "308 339"
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%cyc_xtreme_dmg $DMG_ENERGY",
+                "require": {
+                    "cat": "level",
+                    "level": "%cyc_xtreme_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "FLAWLESS TACTICS",
+            "description": "Increase experience earned for entire party for a time",
+            "descshort": "Boost",
+            "icon": 12,
+            "icon_texture": "textures/ui/cyclops_icons1.png",
+            "name": "cyclops_xtreme2",
+            "power": "power11",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_xtreme2_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "cyc_xtreme2_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_xtreme2_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "cyc_xtreme2_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "^200% experience earned\\n%cyc_xtreme2_lif Seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%cyc_xtreme2_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Auto Artillery",
+            "description": "Sets a small trap that sends out a wave of electricity when activated by enemies",
+            "descshort": "Trap",
+            "icon": 9,
+            "icon_texture": "textures/ui/cyclops_icons1.png",
+            "name": "cyclops_pylon",
+            "power": "power10",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_pylon_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "cyc_pylon_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_pylon_dmg",
+                    "value": "21 26"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "cyc_pylon_dmg",
+                    "value": "79 89"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_pylon_pwr",
+                    "value": 44
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "cyc_pylon_pwr",
+                    "value": 168
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_pylon_health",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "cyc_pylon_health",
+                    "value": 82
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_pylon_life",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "cyc_pylon_life",
+                    "value": 26
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%cyc_pylon_dmg $DMG_ELECTRICITY/sec\\n%cyc_pylon_life seconds\\n%cyc_pylon_health trap $HP\\n%cyc_pylon_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%cyc_pylon_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "cyclops_flash",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Visor Upgrade",
+            "description": "Increase damage of all visor beam attacks and adds to the chance for critical hits with them",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/cyclops_icons1.png",
+            "name": "cyclops_visor",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_visor_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "cyc_visor_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_visor_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "cyc_visor_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_visor_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "cyc_visor_crit",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%cyc_visor_dmg:s damage\\n+%cyc_visor_crit:p chance for critical",
+                "require": {
+                    "cat": "level",
+                    "level": "%cyc_visor_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%cyc_visor_dmg",
+                        "scope_damage": "dmg_energy"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%cyc_visor_crit",
+                        "scope_damage": "dmg_energy"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Defense Grid",
+            "description": "Adds a chance to dodge projectile attacks",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/cyclops_icons1.png",
+            "name": "cyclops_grid",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_grid_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "cyc_grid_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cyc_grid_chance",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "cyc_grid_chance",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%cyc_grid_chance:p chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%cyc_grid_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "leadership",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%cyc_grid_chance",
+                        "scope_attack": "projectile"
+                    }
+                }
+            }
+        }
+    }
+}
