@@ -10,7 +10,9 @@ copy >nul "1. Base Assets\0. Data Entries\Herostat_Cyclops.txt" "..\..\3. Genera
 copy >nul "1. Base Assets\0. Data Entries\Items_Cyclops.json" "..\..\3. General Data Files\items\1. Base Assets\0. Items Entries\Cyclops.json"
 copy >nul "1. Base Assets\0. Data Entries\NPCstat_CyclopsSimple.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\CyclopsSimple.json"
 copy >nul "1. Base Assets\0. Data Entries\NPCstat_Sin_Cyc.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\Sin_Cyc.json"
-pause
+
+echo Copying screenshots to screenshot folder...
+robocopy >nul /e /v "1. Base Assets\1. Screenshots" "..\..\8. Screenshots\1. Base Assets"
 
 echo Copying Character Select Portraits to the character select menu...
 robocopy >nul /e /v "1. Base Assets\ui\models\characters" "..\..\4. Menus\Character Select Screen\1. Base Assets\ui\models\characters"
@@ -18,14 +20,20 @@ robocopy >nul /e /v "2. Default Assets - PSP\ui\models\characters" "..\..\4. Men
 
 echo Copying loading screens to the loading folder...
 robocopy >nul /e /v "1. Base Assets\textures\loading" "..\..\4. Menus\Loading Screens\1. Base Assets\textures\loading"
+robocopy >nul /e /v "1. Base Assets\2. Bonus Loading Screens" "..\..\4. Menus\Loading Screens\1. Base Assets\2. Bonus Loading Screens"
 robocopy >nul /e /v "2. Default Assets - GameCube\textures\loading" "..\..\4. Menus\Loading Screens\2. Default Assets - GameCube\textures\loading"
+robocopy >nul /e /v "2. Default Assets - GameCube\2. Bonus Loading Screens" "..\..\4. Menus\Loading Screens\2. Default Assets - GameCube\2. Bonus Loading Screens"
 robocopy >nul /e /v "2. Default Assets - PS2\textures\loading" "..\..\4. Menus\Loading Screens\2. Default Assets - PS2\textures\loading"
+robocopy >nul /e /v "2. Default Assets - PS2\2. Bonus Loading Screens" "..\..\4. Menus\Loading Screens\2. Default Assets - PS2\2. Bonus Loading Screens"
 robocopy >nul /e /v "2. Default Assets - PSP\textures\loading" "..\..\4. Menus\Loading Screens\2. Default Assets - PSP\textures\loading"
 
 echo Copying comic book cover to the comic covers folder...
 robocopy >nul /e /v "1. Base Assets\textures\comic" "..\..\4. Menus\Comic Covers\1. Base Assets\textures\comic"
+robocopy >nul /e /v "1. Base Assets\2. Bonus Comic Covers" "..\..\4. Menus\Comic Covers\1. Base Assets\2. Bonus Comic Covers"
 robocopy >nul /e /v "2. Default Assets - GameCube\textures\comic" "..\..\4. Menus\Comic Covers\2. Default Assets - GameCube\textures\comic"
+robocopy >nul /e /v "2. Default Assets - GameCube\2. Bonus Comic Covers" "..\..\4. Menus\Comic Covers\2. Default Assets - GameCube\2. Bonus Comic Covers"
 robocopy >nul /e /v "2. Default Assets - PS2\textures\comic" "..\..\4. Menus\Comic Covers\2. Default Assets - PS2\textures\comic"
+robocopy >nul /e /v "2. Default Assets - PS2\2. Bonus Comic Covers" "..\..\4. Menus\Comic Covers\2. Default Assets - PS2\2. Bonus Comic Covers"
 robocopy >nul /e /v "2. Default Assets - PSP\textures\comic" "..\..\4. Menus\Comic Covers\2. Default Assets - PSP\textures\comic"
 
 echo Copying sounds to the sounds folder...

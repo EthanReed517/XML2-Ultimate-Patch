@@ -169,6 +169,9 @@ REM ******************************
 :compileConsole
 REM can remove unneeded folders
 rmdir /s /q "0. Staging\0. Data Entries"
+rmdir /s /q "0. Staging\1. Screenshots"
+rmdir /s /q "0. Staging\2. Bonus Comic Covers"
+rmdir /s /q "0. Staging\2. Bonus Loading Screens"
 rmdir /s /q "0. Staging\3. No Cel Shade Assets"
 copy >nul "..\..\0. Compilers" "0. Staging"
 REM change directory to 0. Staging folder
@@ -207,6 +210,9 @@ goto :end
 :compilePC
 REM can remove unneeded folders
 rmdir /s /q "0. Staging\0. Data Entries"
+rmdir /s /q "0. Staging\1. Screenshots"
+rmdir /s /q "0. Staging\2. Bonus Comic Covers"
+rmdir /s /q "0. Staging\2. Bonus Loading Screens"
 REM copy compilers
 copy >nul "..\..\0. Compilers" "0. Staging"
 REM change directory to 0. Staging folder
