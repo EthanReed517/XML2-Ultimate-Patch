@@ -12,9 +12,6 @@ copy >nul "1. Base Assets\0. Data Entries\NPCstat_CyclopsSimple.json" "..\..\3. 
 copy >nul "1. Base Assets\0. Data Entries\NPCstat_Sin_Cyc.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\Sin_Cyc.json"
 pause
 
-echo Copying codex entry to codex...
-robocopy >nul /e /v "1. Base Assets\0. Codex Entries" "..\..\3. General Data Files\codex\1. Base Assets\0. Codex Entries"
-
 echo Copying Character Select Portraits to the character select menu...
 robocopy >nul /e /v "1. Base Assets\ui\models\characters" "..\..\4. Menus\Character Select Screen\1. Base Assets\ui\models\characters"
 robocopy >nul /e /v "2. Default Assets - PSP\ui\models\characters" "..\..\4. Menus\Character Select Screen\2. Default Assets - PSP\ui\models\characters"

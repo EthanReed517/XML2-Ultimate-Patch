@@ -167,7 +167,8 @@ REM * Section 3 - Compile Assets *
 REM ******************************
 
 :compileConsole
-REM can remove "3. No Cel Shade Assets" folder from "0. Staging" folder because it's not needed.
+REM can remove unneeded folders
+rmdir /s /q "0. Staging\0. Data Entries"
 rmdir /s /q "0. Staging\3. No Cel Shade Assets"
 copy >nul "..\..\0. Compilers" "0. Staging"
 REM change directory to 0. Staging folder
@@ -200,3 +201,37 @@ rmdir /s /q "0. Staging/ui"
 REM move files and clean up
 robocopy >nul /e /v "0. Staging" "..\..\0. Ready Files\assetsfb Files"
 rmdir /s /q "0. Staging"
+
+goto :end
+
+:compilePC
+REM can remove unneeded folders
+rmdir /s /q "0. Staging\0. Data Entries"
+REM copy compilers
+copy >nul "..\..\0. Compilers" "0. Staging"
+REM change directory to 0. Staging folder
+cd "%~dp0\0. Staging"
+REM compile data files
+cmd /c ravenFormatsCompile.bat
+del /s >nul *.json
+REM clean up extra stuff
+del >nul *.cfg
+del >nul enter.vbs
+del >nul fbbuilder.bat
+del >nul ravenFormatsCompile.bat
+REM move back to the main folder
+cd ..
+REM remove any files that are stored elsewhere
+rmdir /s /q "0. Staging/sounds"
+rmdir /s /q "0. Staging/textures/comic"
+rmdir /s /q "0. Staging/textures/loading"
+rmdir /s /q "0. Staging/ui/models"
+
+REM move files and clean up
+robocopy >nul /e /v "0. Staging" "..\..\0. Ready Files"
+rmdir /s /q "0. Staging"
+
+goto :end
+
+:end
+echo Transfer Complete
