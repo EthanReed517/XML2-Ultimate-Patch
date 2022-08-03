@@ -55,14 +55,6 @@
                     "name": "dmgmod_stun"
                 }
             },
-            "trigger": {
-                "finisher": true,
-                "life": 0.4,
-                "name": "xtreme_start",
-                "tag": 15,
-                "time": -1,
-                "worldspeed": 0.5
-            },
             "chain": {
                 "action": "idle",
                 "result": "idle"
@@ -90,8 +82,13 @@
             },
             "trigger": {
                 "name": "sound",
-                "sound": "char/storm_m/p1_charge",
+                "sound": "char/storm_m/p2_charge",
                 "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/storm_m/p1_charge",
+                "time": 0.25
             },
             "trigger": {
                 "bolt": "Bip01 R Hand",
@@ -100,6 +97,11 @@
                 "name": "effect",
                 "tag": 2,
                 "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/storm_m/p2_charge",
+                "time": 0.4
             },
             "trigger": {
                 "name": "sound",
@@ -159,6 +161,23 @@
                 "time": 0.25
             },
             "trigger": {
+                "name": "sound",
+                "sound": "char/storm_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/storm/p2_charge",
+                "name": "effect",
+                "time": 0.75
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/storm/p2_charge",
+                "name": "effect",
+                "time": 0.75
+            },
+            "trigger": {
                 "name": "powerusage",
                 "powerusage": "%storm_chain_pwr",
                 "time": 0
@@ -214,6 +233,18 @@
                 "effect": "char/storm/p2_charge",
                 "name": "effect",
                 "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/storm/p2_charge",
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/storm/p2_charge",
+                "name": "effect",
+                "time": 0.5
             },
             "trigger": {
                 "damage": 0,
@@ -393,6 +424,7 @@
                 "tag": 1,
                 "targetable": false,
                 "time": 0.1,
+                "tracecheck": false,
                 "victimeventtag": 100,
                 "damageMod": {
                     "name": "dmgmod_extinguish"
@@ -450,6 +482,7 @@
                 "tag": 1,
                 "targetable": false,
                 "time": 0.2,
+                "tracecheck": false,
                 "damageMod": {
                     "name": "dmgmod_extinguish"
                 }
@@ -565,24 +598,29 @@
                 "time": 0
             },
             "trigger": {
-                "apply_ally": "all",
-                "life": "%storm_shield_life",
+                "callonhurt": true,
+                "class": "hurt_attacker",
+                "damage": "%storm_armor_dmg",
+                "life": "%storm_armor_life",
                 "name": "powerup",
-                "no_shadow": true,
-                "powerusage": "%storm_shield_pwr",
-                "time": 0.7,
+                "onlyhurtmelee": true,
+                "powerusage": "%storm_armor_pwr",
+                "tag": 2,
+                "time": 0.5,
                 "special_fx": {
-                    "effect": "char/storm/p7_aura",
+                    "effect": "char/iceman/p8_aura",
                     "fxlevel": 1,
                     "how_used": "primary"
-                },
+                }
+            },
+            "trigger": {
+                "life": "%storm_armor_life",
+                "name": "powerup",
+                "time": 0.5,
                 "affecter": {
-                    "attribute": "resist_elemental",
-                    "level": "%storm_shield_res"
-                },
-                "affecter": {
-                    "attribute": "resist_energy",
-                    "level": "%storm_shield_res"
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": "%storm_armor_hlth"
                 }
             },
             "chain": {
@@ -593,12 +631,13 @@
         "FightMove": {
             "aireusetime": 20,
             "aitype": "buffself",
-            "animenum": "ea_power7",
+            "animenum": "ea_power4",
             "combotextfinisher": "Whirl",
             "combotextstarter": "Whirling",
             "icon": 7,
             "lockangles": true,
             "name": "power8",
+            "playspeed": 1,
             "powerup_tag": "storm_wind",
             "priority": 5,
             "require": {
@@ -725,12 +764,13 @@
         "FightMove": {
             "aireusetime": 6,
             "aitype": "rangednolos",
-            "animenum": "ea_power10",
+            "animenum": "ea_power7",
             "combotextfinisher": "Blizzard",
             "combotextstarter": "Snowy",
             "icon": 9,
             "lockangles": true,
             "name": "power10",
+            "playspeed": 0.6,
             "powerup_tag": "storm_power10",
             "priority": 5,
             "require": {
@@ -757,8 +797,7 @@
                 "time": -1,
                 "special_fx": {
                     "effect": "char/storm/p10_aura",
-                    "how_used": "primary",
-                    "share_filter": "owner"
+                    "how_used": "primary"
                 },
                 "affecter": {
                     "attribute": "powerup_scope",
