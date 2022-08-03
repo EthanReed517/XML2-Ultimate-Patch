@@ -31,8 +31,8 @@ def userInput():
 
 # This function gets the necessary information from the package
 def packageInfo(name):
-    nameFile = name + ".fb.cfg"
-    nameNCFile = name + "_nc.fb.cfg"
+    nameFile = name + ".pkgb.json"
+    nameNCFile = name + "_nc.pkgb.json"
     skinNo = name[name.index("_")+1:len(name)]
     return [nameFile,nameNCFile,skinNo]
 
