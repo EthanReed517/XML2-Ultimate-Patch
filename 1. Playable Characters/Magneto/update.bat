@@ -9,7 +9,6 @@ copy >nul "1. Base Assets\1. Data Entries\Dangerroom_Magneto.json" "..\..\3. Gen
 copy >nul "1. Base Assets\1. Data Entries\Herostat_Magneto.txt" "..\..\3. General Data Files\herostat\1. Base Assets\0. Herostat Entries\Magneto.txt"
 copy >nul "1. Base Assets\1. Data Entries\Items_Magneto.json" "..\..\3. General Data Files\items\1. Base Assets\0. Items Entries\Magneto.json"
 copy >nul "1. Base Assets\1. Data Entries\NPCstat_MagnetoSimple.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\MagnetoSimple.json"
-copy >nul "1. Base Assets\1. Data Entries\NPCstat_Sin_Wolv.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\Sin_Wolv.json"
 
 echo Copying Character Select Portraits to the character select menu...
 robocopy >nul /e /v "1. Base Assets\ui\models\characters" "..\..\4. Menus\Character Select Screen\1. Base Assets\ui\models\characters"
