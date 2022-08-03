@@ -10,10 +10,10 @@ import configparser
 # FUNCTIONS #
 # ######### #
 
-# This function checks the settings in cfgSetup.ini
+# This function checks the settings in compile.ini
 def parseConfig():
     config = configparser.ConfigParser()
-    config.read('cfgSetup.ini')
+    config.read('compile.ini')
     name = config['DEFAULT']['firstPackageName']
     numbers = config['DEFAULT']['additionalSkins']
     numbersList = numbers.split(",")
@@ -83,7 +83,7 @@ def xboxNC(name):
 # ############## #
 
 # check if there is an ini file for this character
-iniExists = exists('cfgSetup.ini')
+iniExists = exists('compile.ini')
 if iniExists == True:
     # get the contents of the ini file
     [packageName,newNumbersList,xboxIcons2] = parseConfig()

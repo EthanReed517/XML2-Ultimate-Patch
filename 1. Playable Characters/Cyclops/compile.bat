@@ -111,7 +111,7 @@ if %skinPackChoice%==custom (
 		robocopy >nul /e /v "4. Custom Assets - GameCube\3. No Cel Shade Assets" "0. Staging"
 	)
 )
-goto :compileConsole
+goto :icons1
 
 REM PS2 options
 :movePS2
@@ -129,7 +129,7 @@ if %skinPackChoice%==custom (
 		robocopy >nul /e /v "4. Custom Assets - PS2\3. No Cel Shade Assets" "0. Staging"
 	)
 )
-goto :compileConsole
+goto :icons1
 
 REM PSP options
 :movePSP
@@ -142,7 +142,7 @@ if %skinPackChoice%==redesign (
 if %skinPackChoice%==custom (
 	robocopy >nul /e /v "4. Custom Assets - PSP" "0. Staging"
 )
-goto :compileConsole
+goto :icons1
 
 REM xbox options
 :moveXbox
@@ -160,6 +160,22 @@ if %skinPackChoice%==3 (
 		robocopy >nul /e /v "4. Custom Assets - Xbox\3. No Cel Shade Assets" "0. Staging"
 	)
 )
+goto :compileConsole
+
+REM for GameCube, PS2, and PSP, the talents file needs to use icons1 instead of icons2
+:icons1
+move >nul "0. Staging\data\talents\cyclops.engb.json" "0. Staging"
+copy >nul "..\..\0. Utilities\icons1console.py" "0. Staging"
+copy >nul compile.ini "0. Staging"
+REM change directory to 0. Staging folder
+cd "%~dp0\0. Staging"
+python icons1console.py
+cd ..
+pause
+del >nul "0. Staging\icons1console.py"
+del >nul "0. Staging\compile.ini"
+move >nul "0. Staging\cyclops.engb.json" "0. Staging\data\talents"
+pause
 goto :compileConsole
 
 REM ******************************
