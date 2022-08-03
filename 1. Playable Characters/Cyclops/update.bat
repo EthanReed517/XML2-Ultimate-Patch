@@ -3,11 +3,14 @@
 echo Copying NPC assets to map folders...
 echo (This feature has not been implemented yet. Text is a placeholder)
 
-echo Copying herostat entry to herostat...
-robocopy >nul /e /v "1. Base Assets\0. Herostat Entries" "..\..\3. General Data Files\herostat\1. Base Assets\0. Herostat Entries"
-
-echo Copying npcstat entry to npcstats...
-robocopy >nul /e /v "1. Base Assets\0. NPCstat Entries" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries"
+echo Copying data entries to data files...
+copy >nul "1. Base Assets\0. Data Entries\Codex_Cyclops.json" "..\..\3. General Data Files\codex\1. Base Assets\0. Codex Entries\Cyclops.json"
+copy >nul "1. Base Assets\0. Data Entries\Dangerroom_Cyclops.json" "..\..\3. General Data Files\dangerroom\1. Base Assets\0. Danger Room Entries\Cyclops.json"
+copy >nul "1. Base Assets\0. Data Entries\Herostat_Cyclops.txt" "..\..\3. General Data Files\herostat\1. Base Assets\0. Herostat Entries\Cyclops.txt"
+copy >nul "1. Base Assets\0. Data Entries\Items_Cyclops.json" "..\..\3. General Data Files\items\1. Base Assets\0. Items Entries\Cyclops.json"
+copy >nul "1. Base Assets\0. Data Entries\NPCstat_CyclopsSimple.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\CyclopsSimple.json"
+copy >nul "1. Base Assets\0. Data Entries\NPCstat_Sin_Cyc.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\Sin_Cyc.json"
+pause
 
 echo Copying codex entry to codex...
 robocopy >nul /e /v "1. Base Assets\0. Codex Entries" "..\..\3. General Data Files\codex\1. Base Assets\0. Codex Entries"
