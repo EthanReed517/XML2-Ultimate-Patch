@@ -171,11 +171,9 @@ REM change directory to 0. Staging folder
 cd "%~dp0\0. Staging"
 python icons1console.py
 cd ..
-pause
 del >nul "0. Staging\icons1console.py"
 del >nul "0. Staging\compile.ini"
 move >nul "0. Staging\cyclops.engb.json" "0. Staging\data\talents"
-pause
 goto :compileConsole
 
 REM ******************************
