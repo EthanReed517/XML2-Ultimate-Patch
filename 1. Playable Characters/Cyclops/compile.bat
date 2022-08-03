@@ -241,7 +241,6 @@ copy >nul "..\..\0. Compilers" "0. Staging"
 REM move packages
 move >nul "0. Staging\packages\generated\characters\cyclops_0101.pkgb.json" "0. Staging"
 move >nul "0. Staging\packages\generated\characters\cyclops_0101_nc.pkgb.json" "0. Staging"
-pause
 REM change directory to 0. Staging folder and execute scripts
 cd "%~dp0\0. Staging"
 REM create packages and compile data files
