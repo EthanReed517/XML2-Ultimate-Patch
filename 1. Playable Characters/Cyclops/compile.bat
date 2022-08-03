@@ -187,9 +187,15 @@ rmdir /s /q "0. Staging\1. Screenshots"
 rmdir /s /q "0. Staging\2. Bonus Comic Covers"
 rmdir /s /q "0. Staging\2. Bonus Loading Screens"
 rmdir /s /q "0. Staging\3. No Cel Shade Assets"
+REM copy python script for creating additional cfg files
+copy >nul "..\..\0. Utilities\cfgCreate.py" "0. Staging"
+copy >nul compile.ini "0. Staging"
+REM copy compilers
 copy >nul "..\..\0. Compilers" "0. Staging"
-REM change directory to 0. Staging folder
+REM change directory to 0. Staging folder and execute scripts
 cd "%~dp0\0. Staging"
+REM create cfgs and compile data files
+python cfgCreate.py
 cmd /c ravenFormatsCompile.bat
 del /s >nul *.json
 REM run fbbuilder
@@ -199,6 +205,8 @@ del >nul *.cfg
 del >nul enter.vbs
 del >nul fbbuilder.bat
 del >nul ravenFormatsCompile.bat
+del >nul cfgCreate.py
+del >nul compile.ini
 REM move packages to proper place
 md "packages\generated\characters"
 for /r %%x in (*.fb) do move >nul "%%x" "packages\generated\characters"
@@ -227,11 +235,19 @@ rmdir /s /q "0. Staging\0. Data Entries"
 rmdir /s /q "0. Staging\1. Screenshots"
 rmdir /s /q "0. Staging\2. Bonus Comic Covers"
 rmdir /s /q "0. Staging\2. Bonus Loading Screens"
+REM copy python script for creating additional pkgb files
+copy >nul "..\..\0. Utilities\packageCreate.py" "0. Staging"
+copy >nul compile.ini "0. Staging"
 REM copy compilers
 copy >nul "..\..\0. Compilers" "0. Staging"
-REM change directory to 0. Staging folder
+REM move packages
+move >nul "0. Staging\packages\generated\characters\cyclops_0101.pkgb.json" "0. Staging"
+move >nul "0. Staging\packages\generated\characters\cyclops_0101_nc.pkgb.json" "0. Staging"
+pause
+REM change directory to 0. Staging folder and execute scripts
 cd "%~dp0\0. Staging"
-REM compile data files
+REM create packages and compile data files
+python packageCreate.py
 cmd /c ravenFormatsCompile.bat
 del /s >nul *.json
 REM clean up extra stuff
@@ -239,6 +255,10 @@ del >nul *.cfg
 del >nul enter.vbs
 del >nul fbbuilder.bat
 del >nul ravenFormatsCompile.bat
+del >nul packageCreate.py
+del >nul compile.ini
+REM move packages back to the correct place
+move >nul *.pkgb packages\generated\characters
 REM move back to the main folder
 cd ..
 REM remove any files that are stored elsewhere
