@@ -183,7 +183,6 @@ REM ******************************
 :compileConsole
 REM can remove unneeded folders
 rmdir /s /q "0. Staging\0. Data Entries"
-rmdir /s /q "0. Staging\1. Screenshots"
 rmdir /s /q "0. Staging\2. Bonus Comic Covers"
 rmdir /s /q "0. Staging\2. Bonus Loading Screens"
 rmdir /s /q "0. Staging\3. No Cel Shade Assets"
@@ -232,7 +231,6 @@ goto :end
 :compilePC
 REM can remove unneeded folders
 rmdir /s /q "0. Staging\0. Data Entries"
-rmdir /s /q "0. Staging\1. Screenshots"
 rmdir /s /q "0. Staging\2. Bonus Comic Covers"
 rmdir /s /q "0. Staging\2. Bonus Loading Screens"
 REM copy python script for creating additional pkgb files

@@ -11,9 +11,6 @@ copy >nul "1. Base Assets\0. Data Entries\Items_Cyclops.json" "..\..\3. General 
 copy >nul "1. Base Assets\0. Data Entries\NPCstat_CyclopsSimple.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\CyclopsSimple.json"
 copy >nul "1. Base Assets\0. Data Entries\NPCstat_Sin_Cyc.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\Sin_Cyc.json"
 
-echo Copying screenshots to screenshot folder...
-robocopy >nul /e /v "1. Base Assets\1. Screenshots" "..\..\8. Screenshots\1. Base Assets"
-
 echo Copying Character Select Portraits to the character select menu...
 robocopy >nul /e /v "1. Base Assets\ui\models\characters" "..\..\4. Menus\Character Select Screen\1. Base Assets\ui\models\characters"
 robocopy >nul /e /v "2. Default Assets - PSP\ui\models\characters" "..\..\4. Menus\Character Select Screen\2. Default Assets - PSP\ui\models\characters"
