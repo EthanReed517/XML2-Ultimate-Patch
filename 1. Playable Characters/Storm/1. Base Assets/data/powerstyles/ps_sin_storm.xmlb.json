@@ -1,0 +1,65 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "event": {
+            "chains": 0,
+            "entity": "storm_p1_lightning",
+            "filename": "ents_storm",
+            "inherit": "relative_spawn",
+            "name": "spawn_lightning",
+            "relative": "target",
+            "type": "ce_atk_spawn_relative"
+        },
+        "FightMove": {
+            "aireusetime": 3.5,
+            "aitype": "beamanyrange",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_attack",
+            "powerup_tag": "storm_ln",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/storms_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/storm/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "tag": 2,
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/storms_m/p1_power",
+                "time": 0.6
+            },
+            "trigger": {
+                "attackerheight": false,
+                "attacktype": "direct",
+                "damage": "%mdmg_high",
+                "damagelevel": 1,
+                "damagescale": "difficulty",
+                "damagetype": "dmg_electricity",
+                "fxlevel": 1,
+                "maxrange": 190,
+                "name": "spawn_lightning",
+                "powerusage": 1,
+                "tag": 1,
+                "time": 0.6,
+                "damageMod": {
+                    "name": "dmgmod_weld"
+                },
+                "damageMod": {
+                    "name": "dmgmod_force_fx"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}

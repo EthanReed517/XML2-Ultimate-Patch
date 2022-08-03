@@ -1,0 +1,902 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "storm_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_elemental",
+                        "level": 0.1
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Lightning Strike",
+            "description": "Casts lightning bolt down on enemy.",
+            "descshort": "Blast",
+            "icon": 0,
+            "icon_texture": "textures/ui/storm_icons1.png",
+            "name": "storm_strike",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_strike_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "storm_strike_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_strike_dmg",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "storm_strike_dmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_strike_pwr",
+                    "value": 16
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "storm_strike_pwr",
+                    "value": 128
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%storm_strike_dmg $DMG_ENERGY\\n%storm_strike_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%storm_strike_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Chain Lightning",
+            "description": "Lightning shoots from her hands chaining from enemy to enemy.\\n(~41Press And Hold~~)",
+            "descshort": "Blast",
+            "icon": 1,
+            "icon_texture": "textures/ui/storm_icons1.png",
+            "name": "storm_chain",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_chain_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "storm_chain_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_chain_dmg",
+                    "value": "66 75"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "storm_chain_dmg",
+                    "value": "127 143"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_chain_dmgc",
+                    "value": "46 54"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "storm_chain_dmgc",
+                    "value": "101 114"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_chain_pwr",
+                    "value": 94
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "storm_chain_pwr",
+                    "value": 155
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_chain_count",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "storm_chain_count",
+                    "value": 9
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%storm_chain_dmg $DMG_ELECTRICITY/s\\n%storm_chain_dmgc $DMG_ELECTRICITY/s per chain\\n%storm_chain_count chains\\n%storm_chain_pwr $EP/s",
+                "require": {
+                    "cat": "level",
+                    "level": "%storm_chain_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "storm_strike",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Electric Shock",
+            "description": "An electric pulse radiates outward damaging enemies within range.",
+            "descshort": "Radial",
+            "icon": 2,
+            "icon_texture": "textures/ui/storm_icons1.png",
+            "name": "storm_shock",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_shock_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "storm_shock_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_shock_dmg",
+                    "value": "21 26"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "storm_shock_dmg",
+                    "value": "79 89"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_shock_rng",
+                    "value": 120
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "storm_shock_rng",
+                    "value": 120
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_shock_pwr",
+                    "value": 46
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "storm_shock_pwr",
+                    "value": 169
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%storm_shock_dmg $DMG_ELECTRICITY\\n%storm_shock_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%storm_shock_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "storm_strike",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Funnels",
+            "description": "Two small wind funnels that move outward stunning enemies as they hit.",
+            "descshort": "Trap",
+            "icon": 3,
+            "icon_texture": "textures/ui/storm_icons1.png",
+            "name": "storm_funnel",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_funnel_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "storm_funnel_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_funnel_dmg",
+                    "value": "6 9"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "storm_funnel_dmg",
+                    "value": "117 132"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_funnel_pwr",
+                    "value": 16
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "storm_funnel_pwr",
+                    "value": 142
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_funnel_life",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "storm_funnel_life",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_funnel_slife",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "storm_funnel_slife",
+                    "value": 0.9
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%storm_funnel_dmg $DMG_WIND per funnel\\n%storm_funnel_life seconds\\n%storm_funnel_slife:f second stun\\n%storm_funnel_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%storm_funnel_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Blizzard",
+            "description": "Attaches a blizzard to an enemy damaging other enemies nearby for a time.",
+            "descshort": "Debuff",
+            "icon": 9,
+            "icon_texture": "textures/ui/storm_icons1.png",
+            "name": "storm_blizzard",
+            "power": "power10",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_blizz_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "storm_blizz_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_blizz_dmg",
+                    "value": "17 22"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "storm_blizz_dmg",
+                    "value": "117 132"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_blizz_rdmg",
+                    "value": "9 12"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "storm_blizz_rdmg",
+                    "value": "75 86"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_blizz_pwr",
+                    "value": 26
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "storm_blizz_pwr",
+                    "value": 142
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_blizz_life",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "storm_blizz_life",
+                    "value": 11
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%storm_blizz_dmg $DMG_WIND\\n%storm_blizz_rdmg $DMG_WIND/s for %storm_blizz_life seconds\\n%storm_blizz_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%storm_blizz_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "storm_funnel",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Whirlwind",
+            "description": "Creates a powerful wind vortex lifting and throwing objects and enemies about.",
+            "descshort": "Trap",
+            "icon": 4,
+            "icon_texture": "textures/ui/storm_icons1.png",
+            "name": "storm_whirlwind",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_whirl_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "storm_whirl_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_whirl_dmg",
+                    "value": "27 33"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "storm_whirl_dmg",
+                    "value": "79 89"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_whirl_pwr",
+                    "value": 62
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "storm_whirl_pwr",
+                    "value": 174
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_whirl_life",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "storm_whirl_life",
+                    "value": 11
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%storm_whirl_dmg $DMG_WIND/s for %storm_whirl_life seconds\\n%storm_whirl_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%storm_whirl_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "storm_blizzard",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Static Charge",
+            "description": "Charges enemies within range increasing all damage taken for a time.",
+            "descshort": "Debuff",
+            "icon": 5,
+            "icon_texture": "textures/ui/storm_icons1.png",
+            "name": "storm_charge",
+            "power": "power6",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_charge_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "storm_charge_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_charge_dmg",
+                    "value": 1.75
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "storm_charge_dmg",
+                    "value": 2.31
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_charge_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "storm_charge_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_charge_rng",
+                    "value": 120
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "storm_charge_rng",
+                    "value": 120
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_charge_pwr",
+                    "value": 80
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "storm_charge_pwr",
+                    "value": 166
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%storm_charge_dmg:s Damage\\n%storm_charge_life seconds\\n%storm_charge_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%storm_charge_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "storm_whirlwind",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Whirlwind Armor",
+            "description": "A whirlwind protector that absorbs $DMG_ELEMENTAL, $DMG_ENERGY, and $DMG_RADIATION for Storm and damages those that touch her.",
+            "descshort": "Boost",
+            "icon": 7,
+            "icon_texture": "textures/ui/storm_icons1.png",
+            "name": "storm_armor",
+            "power": "power8",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_armor_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "storm_armor_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_armor_hlth",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "storm_armor_hlth",
+                    "value": 91
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_armor_dmg",
+                    "value": "2 3"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "storm_armor_dmg",
+                    "value": "17 22"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_armor_pwr",
+                    "value": 96
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "storm_armor_pwr",
+                    "value": 512
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_armor_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "storm_armor_life",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%storm_armor_hlth damage absorbed\\n%storm_armor_dmg $DMG_WIND\\n%storm_armor_life seconds\\n%storm_armor_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%storm_armor_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Storm Shield",
+            "description": "Increases resistances for self and allies.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/storm_icons1.png",
+            "name": "storm_shield",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_shield_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "storm_shield_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_shield_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "storm_shield_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_shield_res",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "storm_shield_res",
+                    "value": 0.47
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_shield_pwr",
+                    "value": 144
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "storm_shield_pwr",
+                    "value": 520
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "+%storm_shield_res:p $RES_ELEMENTAL\\n+%storm_shield_res:p $RES_ENERGY\\n%storm_shield_life seconds\\n%storm_shield_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%storm_shield_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "storm_armor",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "RAGING TEMPEST",
+            "description": "Radial lightning and wind attack",
+            "descshort": "Radial",
+            "icon": 8,
+            "icon_texture": "textures/ui/storm_icons1.png",
+            "name": "storm_xtreme",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_xtreme_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "storm_xtreme_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_xtreme_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "storm_xtreme_dmg",
+                    "value": "279 309"
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%storm_xtreme_dmg $DMG_ELECTRICITY",
+                "require": {
+                    "cat": "level",
+                    "level": "%storm_xtreme_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "WILL OF THE GODDESS",
+            "description": "Makes all party members invulnerable for a time, and increases max $EP",
+            "descshort": "Boost",
+            "icon": 15,
+            "icon_texture": "textures/ui/storm_icons1.png",
+            "name": "storm_xtreme2",
+            "power": "power11",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_xtreme2_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "storm_xtreme2_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_xtreme2_mep",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "storm_xtreme2_mep",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_xtreme2_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "storm_xtreme2_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%storm_xtreme2_mep:s max $EP\\n%storm_xtreme2_lif Seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%storm_xtreme2_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Wind Mastery",
+            "description": "Increases damage and chance for criticals with $DMG_WIND",
+            "descshort": "Passive",
+            "icon": 12,
+            "icon_texture": "textures/ui/storm_icons1.png",
+            "name": "storm_windm",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_windm_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "storm_windm_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_windm_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "storm_windm_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_windm_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "storm_windm_crit",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%storm_windm_dmg:s Damage\\n+%storm_windm_crit:p critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%storm_windm_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%storm_windm_dmg",
+                        "scope_damage": "dmg_wind"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%storm_windm_crit",
+                        "scope_damage": "dmg_wind"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Lightning Mastery",
+            "description": "Increases damage and chance for criticals with $DMG_ELECTRICITY",
+            "descshort": "Passive",
+            "icon": 13,
+            "icon_texture": "textures/ui/storm_icons1.png",
+            "name": "storm_lnm",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_lnm_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "storm_lnm_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_lnm_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "storm_lnm_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_lnm_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "storm_lnm_crit",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%storm_lnm_dmg:s Damage\\n+%storm_lnm_crit:p critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%storm_lnm_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%storm_lnm_dmg",
+                        "scope_damage": "dmg_electricity"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%storm_lnm_crit",
+                        "scope_damage": "dmg_electricity"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Elemental Combat",
+            "description": "Adds additional $DMG_ELECTRICITY to melee attacks.",
+            "descshort": "Passive",
+            "icon": 14,
+            "icon_texture": "textures/ui/storm_icons1.png",
+            "name": "storm_combat",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_combat_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "storm_combat_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "storm_combat_dmg",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "storm_combat_dmg",
+                    "value": 2.6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%storm_combat_dmg:p as $DMG_ELECTRICITY",
+                "require": {
+                    "cat": "level",
+                    "level": "%storm_combat_req"
+                },
+                "powerup": {
+                    "class": "add_attack",
+                    "damagepercent": "%storm_combat_dmg",
+                    "damagetype": "dmg_electricity",
+                    "life": -1,
+                    "special_fx": {
+                        "effect": "char/storm/special_trail",
+                        "how_used": "custom"
+                    },
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
