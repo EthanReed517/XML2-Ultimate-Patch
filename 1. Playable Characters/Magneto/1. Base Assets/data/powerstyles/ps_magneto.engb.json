@@ -168,7 +168,7 @@
             "trigger": {
                 "name": "sound",
                 "sound": "char/magnet_m/p1_charge",
-                "time": 0.58
+                "time": 0.56
             },
             "trigger": {
                 "attack_bone_angles": "0 0 0",
@@ -215,18 +215,24 @@
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
-                "effect": "char/magnet/p1_charge",
-                "fxlevel": 2,
-                "name": "effect_sound",
-                "sound": "char/magnet_m/p3_charge",
-                "time": 0
+                "center": true,
+                "effect": "char/magnet/p6_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.33
             },
             "trigger": {
                 "bolt": "Bip01 R Hand",
-                "effect": "char/magnet/p1_charge",
-                "fxlevel": 2,
+                "center": true,
+                "effect": "char/magnet/p6_charge",
+                "fxlevel": 1,
                 "name": "effect",
-                "time": 0
+                "time": 0.33
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/magnet_m/p4_charge",
+                "time": 0.25
             },
             "trigger": {
                 "actorbolt": "Bip01 L Hand",
@@ -246,6 +252,7 @@
                 "piercechance": "%10",
                 "powerusage": "%mag_metal_spike_pwr",
                 "speed": 600,
+                "spread": 15,
                 "targetable": true,
                 "time": 0.45,
                 "victimeventtag": 10
@@ -318,6 +325,11 @@
                 "spread": 30,
                 "time": 0.55,
                 "victimeventtag": 100
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/magnet_m/p5_throw",
+                "time": 0.55
             },
             "trigger": {
                 "damage": "%mag_shrap_sent_dam",
@@ -500,7 +512,7 @@
             "trigger": {
                 "name": "sound",
                 "sound": "char/magnet_m/p6_charge",
-                "time": 0.58
+                "time": 0.56
             },
             "trigger": {
                 "attack_bone_angles": "0 0 0",
@@ -561,6 +573,17 @@
             },
             "trigger": {
                 "effect": "char/magnet/p7_power",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/magnet/p7_power",
+                "name": "effect",
+                "time": 0.1
+            },
+            "trigger": {
+                "effect": "char/magnet/p8_power",
+                "fxlevel": 2,
                 "name": "effect",
                 "time": 0
             },
@@ -701,7 +724,8 @@
                 "name": "mag_grasp_punch",
                 "tag": 100,
                 "time": 0,
-                "victimeventtag": 101
+                "victimeventtag": 101,
+                "victimeventtag2": 102
             },
             "trigger": {
                 "failtag": 104,
@@ -715,6 +739,7 @@
             "trigger": {
                 "class": "harming",
                 "damage": "%mag_mag_grasp_dam",
+                "damagetype": "dmg_physical",
                 "life": 1,
                 "name": "powerup",
                 "tag": 103,
@@ -765,6 +790,11 @@
                 "name": "effect_sound",
                 "sound": "char/magnet_m/p8_power",
                 "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/magnet_m/p7_power",
+                "time": 0.2
             },
             "trigger": {
                 "arc": 180,
@@ -823,6 +853,7 @@
                 "attacktype": "blast",
                 "damage": "%mag_atom_sphere_dam",
                 "damagescale": "none",
+                "damagetype": "dmg_magnetic",
                 "inherit": "punch",
                 "name": "radial_punch"
             },
