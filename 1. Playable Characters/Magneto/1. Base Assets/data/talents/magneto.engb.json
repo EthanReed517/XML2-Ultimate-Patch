@@ -1,0 +1,832 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "mag_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_mental",
+                        "level": 0.1
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Polarized Shield",
+            "description": "Chance to block all incoming attacks",
+            "descshort": "Boost",
+            "icon": 0,
+            "icon_texture": "textures/ui/magneto_icons1.png",
+            "name": "mag_pol_shield",
+            "power": "power1",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_pol_shield_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "mag_pol_shield_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_pol_shield_pwr",
+                    "value": 48
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "mag_pol_shield_pwr",
+                    "value": 504
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_pol_shield_pct",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "mag_pol_shield_pct",
+                    "value": 0.67
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_pol_shield_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "mag_pol_shield_lif",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%mag_pol_shield_pct:p chance\\n%mag_pol_shield_lif Second life\\n%mag_pol_shield_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%mag_pol_shield_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Magnetic Shell",
+            "description": "Forms a metal shell around victims, inflicting damage and holding them in place",
+            "descshort": "Beam",
+            "icon": 1,
+            "icon_texture": "textures/ui/magneto_icons1.png",
+            "name": "mag_cage_beam",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_cage_beam_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "mag_cage_beam_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_cage_beam_pwr",
+                    "value": 22
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "mag_cage_beam_pwr",
+                    "value": 126
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_cage_beam_dam",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "mag_cage_beam_dam",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_cage_beam_lif",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "mag_cage_beam_lif",
+                    "value": 7
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%mag_cage_beam_dam $DMG_ENERGY\\n%mag_cage_beam_lif:f seconds\\n%mag_cage_beam_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%mag_cage_beam_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Metal Spikes",
+            "description": "Forms metal spikes and hurls them at enemies",
+            "descshort": "Projectile",
+            "icon": 2,
+            "icon_texture": "textures/ui/magneto_icons1.png",
+            "name": "mag_metal_spikes",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_metal_spike_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "mag_metal_spike_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_metal_spike_pwr",
+                    "value": 36
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "mag_metal_spike_pwr",
+                    "value": 142
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_metal_spike_dam",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "mag_metal_spike_dam",
+                    "value": "121 135"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_metal_spike_num",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "mag_metal_spike_num",
+                    "value": 5
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%mag_metal_spike_dam $DMG_PHYSICAL\\n%mag_metal_spike_num spikes\\n%mag_metal_spike_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%mag_metal_spike_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mag_telekinesis",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Shrapnel Sentry",
+            "description": "Metal shards placed on the ground damage enemies who come near",
+            "descshort": "Trap",
+            "icon": 3,
+            "icon_texture": "textures/ui/magneto_icons1.png",
+            "name": "mag_shrap_sent",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_shrap_sent_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "mag_shrap_sent_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_shrap_sent_pwr",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "mag_shrap_sent_pwr",
+                    "value": 156
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_shrap_sent_dam",
+                    "value": "34 40"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "mag_shrap_sent_dam",
+                    "value": "130 146"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_shrap_sent_num",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "mag_shrap_sent_num",
+                    "value": 6
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%mag_shrap_sent_num Shrapnel piles\\n%mag_shrap_sent_dam $DMG_PHYSICAL\\n%mag_shrap_sent_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%mag_shrap_sent_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mag_cage_beam",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Levitation",
+            "description": "Lift and throw objects and enemies. Can build bridges\\n(~41Press And Hold~~)",
+            "descshort": "Special",
+            "icon": 4,
+            "icon_texture": "textures/ui/magneto_icons1.png",
+            "name": "mag_telekinesis",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_telekinesis_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "mag_telekinesis_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_telekinesis_pps",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "mag_telekinesis_pps",
+                    "value": 126
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_telekinesis_dm1",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "mag_telekinesis_dm1",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_telekinesis_dm2",
+                    "value": "9 12"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "mag_telekinesis_dm2",
+                    "value": "79 89"
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 1,
+                    "name": "mag_telekinesis_hvy",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 8,
+                    "name": "mag_telekinesis_hvy",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 20,
+                    "name": "mag_telekinesis_hvy",
+                    "value": 2
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "^Heavy objects and enemies\\n%mag_telekinesis_dm1 $DMG_MENTAL at lift\\n%mag_telekinesis_dm2 $DMG_PHYSICAL at impact\\n%mag_telekinesis_pps $EP/s",
+                "require": {
+                    "cat": "level",
+                    "level": "%mag_telekinesis_req"
+                }
+            },
+            "level": {
+                "count": 13,
+                "description": "^Massive objects and enemies\\n%mag_telekinesis_dm1 $DMG_MENTAL at lift\\n%mag_telekinesis_dm2 $DMG_PHYSICAL at impact\\n%mag_telekinesis_pps $EP/s",
+                "require": {
+                    "cat": "level",
+                    "level": "%mag_telekinesis_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Death Trap",
+            "description": "Enemies are surrounded by a cloud of flying metal, reflecting a percentage of damage back upon themselves",
+            "descshort": "Debuff",
+            "icon": 5,
+            "icon_texture": "textures/ui/magneto_icons1.png",
+            "name": "mag_death_trap",
+            "power": "power6",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_death_trap_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "mag_death_trap_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_death_trap_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "mag_death_trap_pwr",
+                    "value": 180
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_death_trap_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "mag_death_trap_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_death_trap_mir",
+                    "value": 0.15
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "mag_death_trap_mir",
+                    "value": 1.5
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%mag_death_trap_mir:p $DMG mirrored as $DMG_PHYSICAL\\n%mag_death_trap_lif seconds\\n%mag_death_trap_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%mag_death_trap_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mag_mag_grasp",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Magnetic Blast",
+            "description": "Uses iron in the blood to slow down the blood flow of enemies, which inflicts damage and confuses them.",
+            "descshort": "Blast",
+            "icon": 6,
+            "icon_texture": "textures/ui/magneto_icons1.png",
+            "name": "mag_mag_blast",
+            "power": "power7",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_mag_blast_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "mag_mag_blast_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_mag_blast_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "mag_mag_blast_pwr",
+                    "value": 180
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_mag_blast_dam",
+                    "value": "43 50"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "mag_mag_blast_dam",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_mag_blast_pct",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "mag_mag_blast_pct",
+                    "value": 0.53
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_mag_blast_lif",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "mag_mag_blast_lif",
+                    "value": 12
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%mag_mag_blast_dam $DMG_ENERGY\\n%mag_mag_blast_pct:p chance to confuse\\n%mag_mag_blast_lif seconds\\n%mag_mag_blast_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%mag_mag_blast_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mag_shrap_sent",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Magnetic Grasp",
+            "description": "Pulls in surrounding enemies and objects, damaging them on contact\\n(~41Press And Hold~~)",
+            "descshort": "Radial",
+            "icon": 7,
+            "icon_texture": "textures/ui/magneto_icons1.png",
+            "name": "mag_mag_grasp",
+            "power": "power8",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_mag_grasp_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "mag_mag_grasp_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_mag_grasp_pps",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "mag_mag_grasp_pps",
+                    "value": 170
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_mag_grasp_dam",
+                    "value": "34 40"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "mag_mag_grasp_dam",
+                    "value": "82 93"
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%mag_mag_grasp_dam $DMG_PHYSICAL\\n%mag_mag_grasp_pps $EP/s",
+                "require": {
+                    "cat": "level",
+                    "level": "%mag_mag_grasp_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mag_metal_spikes",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "METALLIC MAYHEM",
+            "description": "Xtreme radial attack.Blasts surrounding enemies with metallic shrapnel",
+            "descshort": "Radial",
+            "icon": 8,
+            "icon_texture": "textures/ui/magneto_icons1.png",
+            "name": "mag_atom_sphere",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_atom_sphere_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "mag_atom_sphere_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_atom_sphere_dam",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "mag_atom_sphere_dam",
+                    "value": "279 309"
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%mag_atom_sphere_dam $DMG_ENERGY",
+                "require": {
+                    "cat": "level",
+                    "level": "%mag_atom_sphere_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "METAL MINION",
+            "description": "Spawn a metallic minion entity to fight alongside team for a time",
+            "descshort": "Special",
+            "icon": 12,
+            "icon_texture": "textures/ui/magneto_icons1.png",
+            "name": "magnet_minion",
+            "power": "power11",
+            "skirmish_locked": true,
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magnet_minion_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "magnet_minion_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magnet_minion_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "magnet_minion_lif",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magnet_minion_hlt",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "magnet_minion_hlt",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magnet_minion_dmg",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "magnet_minion_dmg",
+                    "value": 1.25
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%magnet_minion_lif Seconds\\n%magnet_minion_hlt:p of Magneto's max $HP\\n%magnet_minion_dmg:p of Magneto's melee $DMG",
+                "require": {
+                    "cat": "level",
+                    "level": "%magnet_minion_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Supremacy",
+            "description": "Magneto's dominating presence and experience makes the entire party better in combat, increasing the level of all assigned skills temporarily",
+            "descshort": "Boost",
+            "icon": 10,
+            "icon_texture": "textures/ui/magneto_icons1.png",
+            "name": "mag_supremacy",
+            "power": "power10",
+            "type": "boost",
+            "value_priority": 1,
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_supremacy_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "mag_supremacy_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_supremacy_pwr",
+                    "value": 88
+                },
+                "talentvalue": {
+                    "level": 8,
+                    "name": "mag_supremacy_pwr",
+                    "value": 504
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_supremacy_all",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "mag_supremacy_all",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_supremacy_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "mag_supremacy_lif",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "+%mag_supremacy_all all skills\\n%mag_supremacy_lif seconds\\n%mag_supremacy_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%mag_supremacy_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mag_pol_shield",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Magnetic Deflection",
+            "description": "Magneto uses a magnetic field to deflect a percentage of Missile attacks",
+            "descshort": "Passive",
+            "icon": 9,
+            "icon_texture": "textures/ui/magneto_icons1.png",
+            "name": "mag_mag_def",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_mag_def_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "mag_mag_def_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_mag_def_pct",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "mag_mag_def_pct",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%mag_mag_def_pct:p chance to block",
+                "require": {
+                    "cat": "level",
+                    "level": "%mag_mag_def_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%mag_mag_def_pct",
+                        "scope_attack": "projectile"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Intimidation",
+            "description": "Increases $DR, lowers Melee damage taken.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/magneto_icons1.png",
+            "name": "mag_intim",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_intim_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "mag_intim_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_intim_def",
+                    "value": 1.15
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "mag_intim_def",
+                    "value": 2.27
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_intim_dmg",
+                    "value": 0.97
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "mag_intim_dmg",
+                    "value": 0.69
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%mag_intim_def:s $DR\\n%mag_intim_dmg:s $DMG_PHYSICAL taken",
+                "require": {
+                    "cat": "level",
+                    "level": "%mag_intim_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "leadership",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "defense_rating",
+                        "level": "%mag_intim_def"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "def_damage_scope",
+                        "level": "%mag_intim_dmg",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
