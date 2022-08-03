@@ -1,0 +1,917 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/wolverine_icons1.png",
+        "FightMove": {
+            "animenum": "ea_power6",
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "resurrect_v",
+            "trigger": {
+                "life": 3,
+                "name": "invulnerable",
+                "time": 0
+            },
+            "trigger": {
+                "name": "onground",
+                "onground": false,
+                "time": 0.99
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_stun3",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackstun3",
+            "startchaintime": 0.66,
+            "trigger": {
+                "name": "slide",
+                "targetdistance": 70,
+                "targetfoundeventtag": 15,
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.3
+            },
+            "trigger": {
+                "effect": "char/wolv/special_finisher",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "maxrange": 60,
+                "name": "punch_heavy",
+                "time": 0.37,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "finisher": true,
+                "life": 0.5,
+                "name": "xtreme_start",
+                "tag": 15,
+                "time": -1,
+                "worldspeed": 0.5
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_lunge",
+            "handler": "ch_fastball",
+            "lockangles": true,
+            "name": "fastball",
+            "playspeed": 2,
+            "sequenced": true,
+            "trigger": {
+                "arc": 180,
+                "damage": "3 5",
+                "knockback": 190,
+                "name": "punch",
+                "tag": 1,
+                "time": -1,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "special2",
+                "result": "fastballhit"
+            },
+            "chain": {
+                "action": "touch",
+                "result": "fastballhit"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "fastballland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_smash_land",
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "fastballhit",
+            "startchaintime": 0.8,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_lunge_land",
+            "lockangles": true,
+            "name": "fastballland",
+            "startchaintime": 0.7,
+            "takeimpactdamage": false,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            }
+        },
+        "event": {
+            "arc": 20,
+            "attacktype": "punch",
+            "damage": "3 5",
+            "damagetype": "dmg_blade",
+            "inherit": "punch",
+            "name": "claw"
+        },
+        "event": {
+            "damage": "3 5",
+            "inherit": "claw",
+            "name": "clawslash"
+        },
+        "FightMove": {
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Slash",
+            "combotextstarter": "Adamantium",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "powerup_tag": "wolv_power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "wolv_slice",
+                "level": 1
+            },
+            "trigger": {
+                "life": 0.1,
+                "movement": 20,
+                "name": "slide",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/wolv/p1_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/wolv_m/p1_charge",
+                "tag": 1,
+                "time": 0.25
+            },
+            "trigger": {
+                "knockback": "%wolv_slice_kb",
+                "name": "clawslash",
+                "powerusage": "%wolv_slice_pwr",
+                "tag": 5,
+                "time": 0.32
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aitype": "projectilenear",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Assault",
+            "combotextstarter": "Bestial",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "powerup_tag": "wolv_power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "wolv_slash",
+                "level": 1,
+                "reset": true
+            },
+            "trigger": {
+                "effect": "char/wolv/p2_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "sound": "char/wolv_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/wolv/p2_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/wolv_m/p2_powerA",
+                "time": 0
+            },
+            "trigger": {
+                "life": "%wolv_slash_life",
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 10,
+                "time": -1
+            },
+            "trigger": {
+                "arc": 65,
+                "name": "clawslash",
+                "powerusage": "%wolv_slash_pwr",
+                "tiles": true,
+                "time": 0.32,
+                "victimeventtag": 10
+            },
+            "trigger": {
+                "arc": 65,
+                "name": "clawslash",
+                "tiles": true,
+                "time": 0.47,
+                "victimeventtag": 10
+            },
+            "trigger": {
+                "arc": 65,
+                "name": "clawslash",
+                "tiles": true,
+                "time": 0.62,
+                "victimeventtag": 10
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aitype": "melee",
+            "animenum": "ea_power3",
+            "cansteal": false,
+            "combotextfinisher": "Incision",
+            "combotextstarter": "Stabbing",
+            "handler": "ch_wolv_frenzy",
+            "icon": 2,
+            "name": "power3",
+            "powerup_tag": "wolv_power3",
+            "priority": 5,
+            "priority_override": 5,
+            "startchaintime": 0.85,
+            "storepowerbuttons": true,
+            "turnrate": 0.2,
+            "require": {
+                "cat": "skill",
+                "item": "wolv_frenzy",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%wolv_frenzy_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/wolv_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "force_stack": true,
+                "life": "%wolv_frenzy_life",
+                "name": "powerup",
+                "tag": 100,
+                "time": -1,
+                "affecter": {
+                    "attribute": "move_attack",
+                    "level": "%wolv_frenzy_inc"
+                }
+            },
+            "trigger": {
+                "life": "%wolv_frenzy_life",
+                "name": "powerup",
+                "tag": 101,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/wolv/p3_power",
+                    "fxlevel": 3,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/wolv/p3_power",
+                    "fxlevel": 3,
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "effect": "char/wolv/p3_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/wolv_m/p3_power",
+                "time": 0.17
+            },
+            "trigger": {
+                "angle": -45,
+                "height": 0,
+                "index": 1,
+                "name": "claw",
+                "selfeventtag1": 100,
+                "selfeventtag2": 101,
+                "time": 0.25
+            },
+            "trigger": {
+                "angle": 45,
+                "height": -10,
+                "index": 1,
+                "name": "claw",
+                "selfeventtag1": 100,
+                "selfeventtag2": 101,
+                "time": 0.33
+            },
+            "trigger": {
+                "effect": "char/wolv/p3_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/wolv_m/p3_power",
+                "time": 0.67
+            },
+            "trigger": {
+                "angle": 45,
+                "height": 0,
+                "index": 2,
+                "name": "claw",
+                "selfeventtag1": 100,
+                "selfeventtag2": 101,
+                "time": 0.73
+            },
+            "trigger": {
+                "angle": -45,
+                "height": -10,
+                "index": 2,
+                "name": "claw",
+                "selfeventtag1": 100,
+                "selfeventtag2": 101,
+                "time": 0.82
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "special",
+                "result": "power3"
+            }
+        },
+        "FightMove": {
+            "aitype": "melee",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Gash",
+            "combotextstarter": "Ruthless",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "powerup_tag": "wolv_power4",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "wolv_clawb",
+                "level": 1,
+                "reset": true
+            },
+            "event": {
+                "arc": 60,
+                "damage": "3 5",
+                "inherit": "claw",
+                "name": "clawslash",
+                "selfeventtag": 100
+            },
+            "trigger": {
+                "life": "%wolv_clawb_life",
+                "name": "powerup",
+                "tag": 100,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": "%wolv_clawb_pct"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_weakened",
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "effect": "char/wolv/p4_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/wolv_m/p4_powerA",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 180,
+                "index": 1,
+                "maxrange": 30,
+                "name": "clawslash",
+                "powerusage": "%wolv_clawb_pwr",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/wolv/p4_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/wolv_m/p4_charge",
+                "time": 0.3
+            },
+            "trigger": {
+                "index": 2,
+                "name": "clawslash",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "combotextfinisher": "Claw",
+            "combotextstarter": "Brutal",
+            "icon": 4,
+            "inherit": "power1",
+            "name": "power5",
+            "powerup_tag": "wolv_power5",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "wolv_clawr",
+                "level": 1,
+                "reset": true
+            },
+            "trigger": {
+                "fxlevel": 2,
+                "tag": 1
+            },
+            "trigger": {
+                "knockback": 0,
+                "name": "clawslash",
+                "powerusage": "%wolv_clawr_pwr",
+                "tag": 5,
+                "damageMod": {
+                    "reset": true
+                }
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power6",
+            "icon": 5,
+            "name": "power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "wolv_berserk",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/wolv/p6_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/wolv_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%wolv_rage_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "class": "feral_rage",
+                "life": "%wolv_rage_life",
+                "name": "powerup",
+                "sound_attempt_hit": "char/wolv_m/p3_charge",
+                "sound_damage": "char/wolv_m/p6_impact",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/wolv/p6_power",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%wolv_rage_dr"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move_attack",
+                    "level": "%wolv_rage_move"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "aoe",
+            "animenum": "ea_power7",
+            "combotextfinisher": "Scream",
+            "combotextstarter": "Screaming",
+            "icon": 6,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "wolv_scream",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/wolv/p6_power",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/wolv_m/p7_charge",
+                "time": 0
+            },
+            "trigger": {
+                "apply_enemy": "near",
+                "apply_self": false,
+                "life": "%wolv_scream_life",
+                "name": "powerup",
+                "powerusage": "%wolv_scream_pwr",
+                "time": 0.9,
+                "affecter": {
+                    "attribute": "fear",
+                    "level": 1
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%wolv_scream_dr"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_fear"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 10,
+            "aitype": "melee",
+            "animenum": "ea_power8_start",
+            "combotextfinisher": "Lunge",
+            "combotextstarter": "Lunging",
+            "handler": "ch_wolv_lunge",
+            "icon": 7,
+            "lockangles": true,
+            "lockchaining": false,
+            "name": "power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "wolv_lunge",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%wolv_lunge_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/wolv/p8_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/wolv_m/p8_charge",
+                "time": 0.4
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/wolv/p8_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/wolv/p8_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power8_end"
+            },
+            "chain": {
+                "action": "special",
+                "result": "power8_attack"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power8_end",
+            "combotextfinisher": "Lunge",
+            "combotextstarter": "Lunging",
+            "handler": "ch_wolv_lunge_attack",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8_attack",
+            "powerup_tag": "wolv_power8",
+            "priority": 5,
+            "trigger": {
+                "damage": 0,
+                "knockback": 0,
+                "name": "kick",
+                "time": 0,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "life": 0.5,
+                "name": "slide",
+                "targetradius": 20,
+                "targetvictim": true,
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/wolv/p8_end",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/wolv_m/p8_power",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": 0,
+                "damagescale": "none",
+                "knockback": "%wolv_lunge_kb",
+                "maxrange": 72,
+                "name": "kick",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/wolv/p8_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/wolv_m/p3_power",
+                "time": 0.16
+            },
+            "trigger": {
+                "effect": "char/wolv/p8_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/wolv_m/p3_power",
+                "time": 0.32
+            },
+            "trigger": {
+                "effect": "char/wolv/p8_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/wolv_m/p3_power",
+                "time": 0.4
+            },
+            "trigger": {
+                "effect": "char/wolv/p8_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/wolv_m/p3_power",
+                "time": 0.48
+            },
+            "trigger": {
+                "effect": "char/wolv/p8_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/wolv_m/p3_power",
+                "time": 0.68
+            },
+            "trigger": {
+                "effect": "char/wolv/p8_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.68
+            },
+            "trigger": {
+                "index": 2,
+                "name": "claw",
+                "time": 0.75,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power8",
+            "combotextfinisher": "Lunge",
+            "combotextstarter": "Lunging",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8_end",
+            "powerup_tag": "wolv_power8",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/wolv_m/p3_power",
+                "time": 0
+            },
+            "trigger": {
+                "name": "claw",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/wolv/p8_end",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/wolv_m/p8_power",
+                "time": 0.32
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": 0,
+                "damagescale": "none",
+                "knockback": "%wolv_lunge_kb",
+                "maxrange": 72,
+                "name": "kick",
+                "time": 0.32
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "blendtime": 0,
+            "combotextfinisher": "Rampage",
+            "description": "BERSERKER FURY",
+            "handler": "ch_restore_visible_on_interrupt",
+            "icon": 8,
+            "name": "power9",
+            "playspeed": 10,
+            "powerup_tag": "wolv_power9",
+            "priority": "uninterruptable",
+            "require": {
+                "cat": "skill",
+                "item": "wolv_xtreme",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "event": {
+                "name": "set_visible",
+                "teleportation_caused": false,
+                "type": "ce_force_visibility"
+            },
+            "trigger": {
+                "life": 5,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/wolv/p9_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/wolv_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.58,
+                "visible": false
+            },
+            "trigger": {
+                "effect": "char/wolv/p9_power",
+                "name": "effect",
+                "time": 0.58
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/wolv_m/p9_impact",
+                "time": 0.6
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "punch",
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_blade",
+                "knockback": 245,
+                "maxrange": 500,
+                "name": "blast",
+                "numblasts": "%wolv_xtreme_cnt",
+                "targetable": true,
+                "time": 0.6,
+                "damageMod": {
+                    "reset": true
+                },
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "effect": "char/wolv/p9_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.7
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.8,
+                "visible": true
+            },
+            "trigger": {
+                "end": true,
+                "name": "xtreme_start",
+                "time": 1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power6",
+            "description": "RUDE AWAKENING",
+            "icon": 13,
+            "lockangles": true,
+            "name": "power11",
+            "powerup_tag": "wolverine_claw",
+            "priority": 5,
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "require": {
+                "cat": "skill",
+                "item": "wolv_xtreme2",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "effect": "char/wolv/p6_power",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/wolv_m/p7_charge",
+                "time": 0.5
+            },
+            "trigger": {
+                "class": "callevents",
+                "life": "%wolv_xtreme2_life",
+                "name": "powerup",
+                "time": 0.5,
+                "FunctionEvent": {
+                    "function": "death",
+                    "triggertag": 10
+                },
+                "special_fx": {
+                    "effect": "char/wolv/p11_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "delay": 3,
+                "maxhealthpercent": "%wolv_xtreme2_pct",
+                "name": "resurrect",
+                "self": true,
+                "tag": 10,
+                "time": -1,
+                "type": "ce_resurrect"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}

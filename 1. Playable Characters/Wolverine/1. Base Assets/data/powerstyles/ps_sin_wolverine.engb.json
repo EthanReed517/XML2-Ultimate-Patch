@@ -1,0 +1,59 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "event": {
+            "arc": 20,
+            "attacktype": "punch",
+            "damage": "%mdmg_high",
+            "damagescale": "difficulty",
+            "damagetype": "dmg_blade",
+            "inherit": "punch",
+            "name": "claw"
+        },
+        "event": {
+            "damage": "%mdmg_high",
+            "inherit": "claw",
+            "name": "clawslash"
+        },
+        "FightMove": {
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Slash",
+            "combotextstarter": "Adamantium",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power_attack",
+            "powerup_tag": "wolv_power1",
+            "trigger": {
+                "life": 0.1,
+                "movement": 20,
+                "name": "slide",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/wolv/p1_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/wolv_s_m/p1_charge",
+                "tag": 1,
+                "time": 0.25
+            },
+            "trigger": {
+                "arc": 20,
+                "attacktype": "punch",
+                "damage": "%mdmg_high",
+                "damagetype": "dmg_blade",
+                "knockback": 245,
+                "powerusage": 1,
+                "time": 0.32,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}

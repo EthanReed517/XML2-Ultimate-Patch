@@ -1,0 +1,1093 @@
+{
+    "talents": {
+        "talent": {
+            "descname": "Feral Slash",
+            "description": "Increased melee attack with $KB.",
+            "descshort": "Melee",
+            "icon": 0,
+            "icon_texture": "textures/ui/wolverine_icons1.png",
+            "name": "wolv_slice",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_slice_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "wolv_slice_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_slice_dmg",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "wolv_slice_dmg",
+                    "value": 10.9
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_slice_pwr",
+                    "value": 10
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "wolv_slice_pwr",
+                    "value": 92
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_slice_ar",
+                    "value": 1.15
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "wolv_slice_ar",
+                    "value": 1.85
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_slice_kb",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "wolv_slice_kb",
+                    "value": 245
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%wolv_slice_dmg:s $DMG_PHYSICAL (%wolv_slice_dmg:x)\\n%wolv_slice_kb $KB\\n%wolv_slice_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%wolv_slice_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%wolv_slice_dmg",
+                        "scope_node": "wolv_power1"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%wolv_slice_ar",
+                        "scope_node": "wolv_power1"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Claw Flurry",
+            "description": "Increased melee attack that stuns victims.",
+            "descshort": "Melee",
+            "icon": 1,
+            "icon_texture": "textures/ui/wolverine_icons1.png",
+            "name": "wolv_slash",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_slash_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "wolv_slash_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_slash_dmg",
+                    "value": 3.1
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "wolv_slash_dmg",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_slash_pwr",
+                    "value": 16
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "wolv_slash_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_slash_ar",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "wolv_slash_ar",
+                    "value": 1.95
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_slash_life",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "wolv_slash_life",
+                    "value": 3.7
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%wolv_slash_dmg:s $DMG_PHYSICAL (%wolv_slash_dmg:x)\\n%wolv_slash_life second stun\\n%wolv_slash_pwr $EP",
+                "require": {
+                    "cat": "skill",
+                    "item": "wolv_slice",
+                    "level": 1
+                },
+                "require": {
+                    "cat": "level",
+                    "level": "%wolv_slash_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%wolv_slash_dmg",
+                        "scope_node": "wolv_power2"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%wolv_slash_ar",
+                        "scope_node": "wolv_power2"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Eviscerate",
+            "description": "Increased melee attack causing extra damage taken for a short time after.",
+            "descshort": "Melee",
+            "icon": 3,
+            "icon_texture": "textures/ui/wolverine_icons1.png",
+            "name": "wolv_clawb",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_clawb_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "wolv_clawb_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_clawb_dmg",
+                    "value": 7.75
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "wolv_clawb_dmg",
+                    "value": 13.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_clawb_pwr",
+                    "value": 42
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "wolv_clawb_pwr",
+                    "value": 120
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_clawb_ar",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "wolv_clawb_ar",
+                    "value": 2.76
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_clawb_pct",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "wolv_clawb_pct",
+                    "value": 1.78
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_clawb_life",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_clawb_life",
+                    "value": 4
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%wolv_clawb_dmg:s $DMG_PHYSICAL (%wolv_clawb_dmg:x)\\n%wolv_clawb_pct:s damage taken for %wolv_clawb_life seconds\\n%wolv_clawb_pwr $EP",
+                "require": {
+                    "cat": "skill",
+                    "item": "wolv_slash",
+                    "level": 1
+                },
+                "require": {
+                    "cat": "level",
+                    "level": "%wolv_clawb_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%wolv_clawb_dmg",
+                        "scope_node": "wolv_power4"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%wolv_clawb_ar",
+                        "scope_node": "wolv_power4"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Claw Frenzy",
+            "description": "Multiple slashing attacks with each hit increasing attack speed for a time",
+            "descshort": "Melee",
+            "icon": 2,
+            "icon_texture": "textures/ui/wolverine_icons1.png",
+            "name": "wolv_frenzy",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_frenzy_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "wolv_frenzy_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_frenzy_dmg",
+                    "value": 4.4
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "wolv_frenzy_dmg",
+                    "value": 6.4
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_frenzy_pwr",
+                    "value": 44
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "wolv_frenzy_pwr",
+                    "value": 92
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_frenzy_ar",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "wolv_frenzy_ar",
+                    "value": 2.76
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_frenzy_inc",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "wolv_frenzy_inc",
+                    "value": 0.17
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_frenzy_life",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "wolv_frenzy_life",
+                    "value": 7
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%wolv_frenzy_dmg:s $DMG_PHYSICAL (%wolv_frenzy_dmg:x)\\n+%wolv_frenzy_inc:p speed per hit for %wolv_frenzy_life seconds\\n%wolv_frenzy_pwr $EP",
+                "require": {
+                    "cat": "skill",
+                    "item": "wolv_clawb",
+                    "level": 1
+                },
+                "require": {
+                    "cat": "level",
+                    "level": "%wolv_frenzy_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%wolv_frenzy_dmg",
+                        "scope_node": "wolv_power3"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%wolv_frenzy_ar",
+                        "scope_node": "wolv_power3"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Bloodlust",
+            "description": "Increased melee attack as $DMG_BLEED.",
+            "descshort": "Melee",
+            "icon": 4,
+            "icon_texture": "textures/ui/wolverine_icons1.png",
+            "name": "wolv_clawr",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_clawr_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "wolv_clawr_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_clawr_pwr",
+                    "value": 44
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "wolv_clawr_pwr",
+                    "value": 92
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_clawr_radmg",
+                    "value": 4.4
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "wolv_clawr_radmg",
+                    "value": 6.4
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_clawr_life",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "wolv_clawr_life",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_clawr_ar",
+                    "value": 1.35
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "wolv_clawr_ar",
+                    "value": 2.19
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "+%wolv_clawr_radmg:p $DMG_BLEED over %wolv_clawr_life seconds\\n%wolv_clawr_pwr $EP",
+                "require": {
+                    "cat": "skill",
+                    "item": "wolv_slice",
+                    "level": 1
+                },
+                "require": {
+                    "cat": "level",
+                    "level": "%wolv_clawr_req"
+                },
+                "powerup": {
+                    "class": "add_harming",
+                    "damagepercent": "%wolv_clawr_radmg",
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%wolv_clawr_ar",
+                        "scope_node": "wolv_power5"
+                    },
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope_node": "wolv_power5"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Berserker Rage",
+            "description": "Boosts defense and movement for a time.",
+            "descshort": "Boost",
+            "icon": 5,
+            "icon_texture": "textures/ui/wolverine_icons1.png",
+            "name": "wolv_berserk",
+            "power": "power6",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_rage_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "wolv_rage_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_rage_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "wolv_rage_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_rage_inv_life",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "wolv_rage_inv_life",
+                    "value": 8
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_rage_dr",
+                    "value": 1.4
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "wolv_rage_dr",
+                    "value": 2.8
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_rage_move",
+                    "value": 1.1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "wolv_rage_move",
+                    "value": 1.85
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_rage_pwr",
+                    "value": 32
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "wolv_rage_pwr",
+                    "value": 304
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%wolv_rage_dr:s $DR\\n%wolv_rage_move:s attack speed\\n%wolv_rage_life seconds\\n%wolv_rage_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%wolv_rage_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Scream",
+            "description": "Causes enemies to run in fear and decreases their defenses.",
+            "descshort": "Debuff",
+            "icon": 6,
+            "icon_texture": "textures/ui/wolverine_icons1.png",
+            "name": "wolv_scream",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_scream_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "wolv_scream_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_scream_life",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "wolv_scream_life",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_scream_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "wolv_scream_pwr",
+                    "value": 308
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_scream_dr",
+                    "value": 0.8
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "wolv_scream_dr",
+                    "value": 0.38
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%wolv_scream_dr:s $DR\\n%wolv_scream_life seconds\\n%wolv_scream_pwr $EP",
+                "require": {
+                    "cat": "skill",
+                    "item": "wolv_berserk",
+                    "level": 1
+                },
+                "require": {
+                    "cat": "level",
+                    "level": "%wolv_scream_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Lethal Lunge",
+            "description": "Launches forward knocking back enemies where he lands and brutally slashing his target.",
+            "descshort": "Charge",
+            "icon": 7,
+            "icon_texture": "textures/ui/wolverine_icons1.png",
+            "name": "wolv_lunge",
+            "power": "power8",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_lunge_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "wolv_lunge_req",
+                    "value": 42
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_lunge_dmg",
+                    "value": 6.75
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "wolv_lunge_dmg",
+                    "value": 10
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_lunge_kb",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "wolv_lunge_kb",
+                    "value": 620
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_lunge_chance",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "wolv_lunge_chance",
+                    "value": 0.8
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_lunge_pwr",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "wolv_lunge_pwr",
+                    "value": 84
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%wolv_lunge_dmg:s $DMG_PHYSICAL (%wolv_lunge_dmg:x)\\n%wolv_lunge_chance:p chance for instant knockout\\n%wolv_lunge_kb $KB\\n%wolv_lunge_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%wolv_lunge_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "wolv_clawr",
+                    "level": 1
+                },
+                "powerup": {
+                    "chance": "%wolv_lunge_chance",
+                    "class": "atk_instant_pct",
+                    "life": -1,
+                    "percent": 1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%wolv_lunge_dmg",
+                        "scope_node": "wolv_power8"
+                    },
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope": {
+                            "scope_node": "wolv_power8"
+                        },
+                        "scope": {
+                            "scope_attack": "punch"
+                        }
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "BERSERKER FURY",
+            "description": "Slashes multiple targets in a blinding flurry of rage",
+            "descshort": "Radial",
+            "icon": 8,
+            "icon_texture": "textures/ui/wolverine_icons1.png",
+            "name": "wolv_xtreme",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_xtreme_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "wolv_xtreme_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_xtreme_dmg",
+                    "value": 7.5
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "wolv_xtreme_dmg",
+                    "value": 15.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_xtreme_cnt",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "wolv_xtreme_cnt",
+                    "value": 10
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%wolv_xtreme_dmg:s $DMG_PHYSICAL (%wolv_xtreme_dmg:x)\\n%wolv_xtreme_cnt targets",
+                "require": {
+                    "cat": "level",
+                    "level": "%wolv_xtreme_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%wolv_xtreme_dmg",
+                        "scope_node": "wolv_power9"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "RUDE AWAKENING",
+            "description": "Gives Wolverine ability to resurrect himself from the dead if he dies within boost lifetime",
+            "descshort": "Boost",
+            "icon": 13,
+            "icon_texture": "textures/ui/wolverine_icons1.png",
+            "name": "wolv_xtreme2",
+            "power": "power11",
+            "skirmish_locked": true,
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_xtreme2_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "wolv_xtreme2_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_xtreme2_pct",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "wolv_xtreme2_pct",
+                    "value": 0.75
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_xtreme2_life",
+                    "value": 180
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "wolv_xtreme2_life",
+                    "value": 300
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%wolv_xtreme2_pct:p of max health restored\\n%wolv_xtreme2_life seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%wolv_xtreme2_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Claw Master",
+            "description": "Increases effectiveness of claw power attacks.",
+            "descshort": "Passive",
+            "icon": 9,
+            "icon_texture": "textures/ui/wolverine_icons1.png",
+            "name": "wolv_cmaster",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_cmaster_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "wolv_cmaster_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_cmaster_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "wolv_cmaster_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_cmaster_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "wolv_cmaster_crit",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%wolv_cmaster_dmg:s Damage\\n+%wolv_cmaster_crit:p critical chance",
+                "require": {
+                    "category": "level",
+                    "level": "%wolv_cmaster_req"
+                },
+                "require": {
+                    "category": "skill",
+                    "item": "wolv_senses",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%wolv_cmaster_dmg",
+                        "scope_damage": "dmg_blade"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%wolv_cmaster_crit",
+                        "scope_damage": "dmg_blade"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Enhanced Senses",
+            "description": "Animal instincts allow a natural increase in $AR and $DR",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/wolverine_icons1.png",
+            "name": "wolv_senses",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_senses_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "wolv_senses_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_senses_ar",
+                    "value": 1.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "wolv_senses_ar",
+                    "value": 1.8
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_senses_dr",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "wolv_senses_dr",
+                    "value": 1.75
+                }
+            },
+            "level": {
+                "count": 10,
+                "description": "%wolv_senses_ar:s $AR\\n%wolv_senses_dr:s $DR",
+                "require": {
+                    "category": "level",
+                    "level": "%wolv_senses_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "attack_rating",
+                        "level": "%wolv_senses_ar"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "defense_rating",
+                        "level": "%wolv_senses_dr"
+                    }
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%wolv_senses_ar:s $AR\\n%wolv_senses_dr:s $DR\\nReveals hidden enemies",
+                "require": {
+                    "category": "level",
+                    "level": "%wolv_senses_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "attack_rating",
+                        "level": "%wolv_senses_ar"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "defense_rating",
+                        "level": "%wolv_senses_dr"
+                    },
+                    "affecter": {
+                        "attribute": "reveal_hidden"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Strong Willed",
+            "description": "Increases all resistances.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/wolverine_icons1.png",
+            "name": "wolv_will",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_will_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "wolv_will_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_will_resist",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "wolv_will_resist",
+                    "value": 0.47
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%wolv_will_resist:p $RES_ENERGY\\n+%wolv_will_resist:p $RES_MENTAL\\n+%wolv_will_resist:p $RES_RADIATION\\n+%wolv_will_resist:p $RES_ELEMENTAL",
+                "require": {
+                    "category": "level",
+                    "level": "%wolv_will_req"
+                },
+                "require": {
+                    "category": "skill",
+                    "item": "wolv_regen",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_elemental",
+                        "level": "%wolv_will_resist"
+                    },
+                    "affecter": {
+                        "attribute": "resist_mental",
+                        "level": "%wolv_will_resist"
+                    },
+                    "affecter": {
+                        "attribute": "resist_energy",
+                        "level": "%wolv_will_resist"
+                    },
+                    "affecter": {
+                        "attribute": "resist_radiation",
+                        "level": "%wolv_will_resist"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Regeneration",
+            "description": "Heals over time.",
+            "descshort": "Passive",
+            "icon": 12,
+            "icon_texture": "textures/ui/wolverine_icons1.png",
+            "name": "wolv_regen",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_regen_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "wolv_regen_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_regen_health",
+                    "value": 0.0017
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "wolv_regen_health",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_regen_health_p",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "wolv_regen_health_p",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "wolv_regen_health_t",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "wolv_regen_health_t",
+                    "value": 6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%wolv_regen_health_p:f% of Max $HP every %wolv_regen_health_t seconds",
+                "require": {
+                    "category": "level",
+                    "level": "%wolv_regen_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "health_regen_pct",
+                        "level": "%wolv_regen_health"
+                    }
+                }
+            }
+        }
+    }
+}
