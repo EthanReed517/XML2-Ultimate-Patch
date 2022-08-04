@@ -55,27 +55,24 @@ REM ***************************
 REM Begin compiling assets
 echo Compiling assets...
 md "0. Staging"
-robocopy >nul /e /v "1. Base Assets" "0. Staging"
 REM proceed based on console selection
 if %consoleChoice%==PSP goto :movePSP
 if %consoleChoice%==PC goto :movePC
 goto :moveConsole
 
 :moveConsole
-ren "0. Staging\rosterMain.cfg" "roster.cfg"
+copy >nul "1. Base Assets\herostat.engb.json" "0. Staging"
 goto :compile
 
 :movePC
-robocopy >nul /e /v "2. Default Assets - PC" "0. Staging"
-if %modPackChoice%==X2UP ren "0. Staging\rosterMain.cfg" "roster.cfg"
-if %modPackChoice%==AXE ren "0. Staging\rosterAXE.cfg" "roster.cfg"
-if %modPackChoice%==BHE ren "0. Staging\rosterBHE.cfg" "roster.cfg"
-if %modPackChoice%==MUE ren "0. Staging\rosterMUE.cfg" "roster.cfg"
+if %modPackChoice%==X2UP copy >nul "2. Default Assets - PC\herostat.engb.json" "0. Staging"
+if %modPackChoice%==AXE copy >nul "2. Default Assets - PC\heroreal.engb.json" "0. Staging"
+if %modPackChoice%==BHE copy >nul "2. Default Assets - PC\herosbro.engb.json" "0. Staging"
+if %modPackChoice%==MUE copy >nul "2. Default Assets - PC\heromarv.engb.json" "0. Staging"
 goto :compile
 
 :movePSP
-robocopy >nul /e /v "2. Default Assets - PSP" "0. Staging"
-ren "0. Staging\rosterMain.cfg" "roster.cfg"
+copy >nul "2. Default Assets - PSP\herostat.engb.json" "0. Staging"
 goto :compile
 
 REM ******************************
@@ -83,29 +80,16 @@ REM * Section 3 - Compile Assets *
 REM ******************************
 
 :compile
-copy >nul "..\..\0. Utilities\rosterBuild.py" "0. Staging"
-copy >nul "..\..\0. Utilities\converter.py" "0. Staging"
 copy >nul "..\..\0. Compilers\ravenFormatsCompile.bat" "0. Staging"
-copy >nul compile.ini "0. Staging"
 cd "%~dp0\0. Staging"
-python rosterBuild.py
-rmdir /s /q "0. Herostat Entries"
 cmd /c ravenFormatsCompile.bat
-del >nul *.cfg
-del >nul *.txt
-del >nul compile.ini
-del >nul *.py
+del >nul *.json
 del >nul *.bat
 cd ..
 if %consoleChoice%==PC (
-	if %modPackChoice%==X2UP ren "0. Staging\out.engb" herostat.engb
-	if %modPackChoice%==AXE ren "0. Staging\out.engb" heroreal.engb
-	if %modPackChoice%==BHE ren "0. Staging\out.engb" herosbro.engb
-	if %modPackChoice%==MUE ren "0. Staging\out.engb" heromarv.engb
 	robocopy >nul /e /v "0. Staging" "..\..\0. Ready Files\data"
 	goto :end
 )
-ren "0. Staging\out.engb" herostat.engb
 robocopy >nul /e /v "0. Staging" "..\..\0. Ready Files\assetsfb Files\data"
 goto :end
 
