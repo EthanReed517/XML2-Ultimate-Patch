@@ -1,5 +1,5 @@
 @echo off
-echo Compiling Cyclops's character assets 
+echo Compiling Magneto's character assets 
 REM ***FILL IN CHARACTER NAME HERE***
 
 REM ***********************************
