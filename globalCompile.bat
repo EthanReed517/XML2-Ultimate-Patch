@@ -1,9 +1,18 @@
 @echo off
 echo Compiling X-Men Legends II
+echo.
+CHOICE /C YN /M "Call globalUpdate first? "
+IF ERRORLEVEL 2 SET goto :globalUpdate
+IF ERRORLEVEL 1 SET goto :section1
+
+:globalUpdate
+call globalUpdate.bat
+goto :section1
 
 REM ***********************************
 REM * Section 1 - Establish Variables *
 REM ***********************************
+:section1
 echo [1] PC
 echo [2] GameCube
 echo [3] PlayStation 2
