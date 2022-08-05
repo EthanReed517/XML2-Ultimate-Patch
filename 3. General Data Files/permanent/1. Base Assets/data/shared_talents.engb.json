@@ -72,21 +72,21 @@
         },
         "talent": {
             "descname": "Mutant Master",
-            "description": "Increases $EP regeneration rate",
+            "description": "Increases $EP regeneration rate.",
             "descshort": "Passive",
             "icon": 0,
-            "icon_texture": "textures/ui/talent_icons.png",
+            "icon_texture": "textures/ui/talent_icons2.png",
             "name": "mutantmaster",
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
                     "name": "mmaster_req",
-                    "value": 7
+                    "value": 6
                 },
                 "talentvalue": {
-                    "level": 15,
+                    "level": 10,
                     "name": "mmaster_req",
-                    "value": 21
+                    "value": 15
                 },
                 "talentvalue": {
                     "level": 1,
@@ -94,13 +94,13 @@
                     "value": 1.3
                 },
                 "talentvalue": {
-                    "level": 15,
+                    "level": 10,
                     "name": "mmaster_pwr",
                     "value": 2.98
                 }
             },
             "level": {
-                "count": 15,
+                "count": 10,
                 "description": "%mmaster_pwr:s $EP regeneration",
                 "require": {
                     "cat": "level",
@@ -117,11 +117,57 @@
             }
         },
         "talent": {
+            "descname": "Super Master",
+            "description": "Increases $EP regeneration rate.",
+            "descshort": "Passive",
+            "icon": 0,
+            "icon_texture": "textures/ui/talent_icons2.png",
+            "name": "supermaster",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "smaster_req",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 10,
+                    "name": "smaster_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "smaster_pwr",
+                    "value": 1.3
+                },
+                "talentvalue": {
+                    "level": 10,
+                    "name": "smaster_pwr",
+                    "value": 2.98
+                }
+            },
+            "level": {
+                "count": 10,
+                "description": "%smaster_pwr:s $EP regeneration",
+                "require": {
+                    "cat": "level",
+                    "level": "%smaster_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "energy_regen",
+                        "level": "%smaster_pwr"
+                    }
+                }
+            }
+        },
+        "talent": {
             "descname": "Leadership",
-            "description": "Increases combo $XP bonus to any combo done while on team, and increases chance for critical strike for whole team.",
+            "description": "Increases combo $XP bonus to any combo done while on team, and increases chance for Critical Strike for whole team.",
             "descshort": "Passive",
             "icon": 1,
-            "icon_texture": "textures/ui/talent_icons.png",
+            "icon_texture": "textures/ui/talent_icons2.png",
             "name": "leadership",
             "talentvalues": {
                 "talentvalue": {
@@ -130,9 +176,9 @@
                     "value": 1
                 },
                 "talentvalue": {
-                    "level": 15,
+                    "level": 10,
                     "name": "leadership_req",
-                    "value": 15
+                    "value": 10
                 },
                 "talentvalue": {
                     "level": 1,
@@ -140,7 +186,7 @@
                     "value": 0.02
                 },
                 "talentvalue": {
-                    "level": 15,
+                    "level": 10,
                     "name": "leadership_critical",
                     "value": 0.09
                 },
@@ -150,13 +196,13 @@
                     "value": 1.08
                 },
                 "talentvalue": {
-                    "level": 15,
+                    "level": 10,
                     "name": "leadership_xp",
                     "value": 1.92
                 }
             },
             "level": {
-                "count": 15,
+                "count": 10,
                 "description": "+%leadership_critical:p critical chance\\n%leadership_xp:s combo $XP",
                 "require": {
                     "cat": "level",
@@ -166,10 +212,10 @@
         },
         "talent": {
             "descname": "Block",
-            "description": "Allows heroes to protect themselves from all attacks by blocking damage at the cost of $EP",
+            "description": "Allows heroes to protect themselves from all attacks by blocking damage at the cost of $EP.",
             "descshort": "Ability",
             "icon": 2,
-            "icon_texture": "textures/ui/talent_icons.png",
+            "icon_texture": "textures/ui/talent_icons2.png",
             "name": "block",
             "power": "blocking",
             "type": "boost",
@@ -180,23 +226,13 @@
                     "value": 7
                 },
                 "talentvalue": {
-                    "level": 5,
-                    "name": "block_req",
-                    "value": 21
-                },
-                "talentvalue": {
                     "level": 1,
                     "name": "block_dmgasenrg",
                     "value": 1
-                },
-                "talentvalue": {
-                    "level": 5,
-                    "name": "block_dmgasenrg",
-                    "value": 0.5
                 }
             },
             "level": {
-                "count": 5,
+                "count": 1,
                 "description": "%block_dmgasenrg:p $EP/ $DMG blocked\\n",
                 "require": {
                     "cat": "level",
@@ -210,7 +246,7 @@
             "descshort": "Ability",
             "hidden": true,
             "icon": 3,
-            "icon_texture": "textures/ui/talent_icons.png",
+            "icon_texture": "textures/ui/talent_icons2.png",
             "name": "grab",
             "talentvalues": {
                 "talentvalue": {
@@ -230,10 +266,10 @@
         },
         "talent": {
             "descname": "Critical Strike",
-            "description": "Increase chance of criticals for melee attacks",
+            "description": "Increase chance of Criticals for Melee attacks.",
             "descshort": "Passive",
             "icon": 4,
-            "icon_texture": "textures/ui/talent_icons.png",
+            "icon_texture": "textures/ui/talent_icons2.png",
             "name": "critical",
             "talentvalues": {
                 "talentvalue": {
@@ -242,9 +278,9 @@
                     "value": 1
                 },
                 "talentvalue": {
-                    "level": 15,
+                    "level": 10,
                     "name": "critical_req",
-                    "value": 15
+                    "value": 10
                 },
                 "talentvalue": {
                     "level": 1,
@@ -252,13 +288,13 @@
                     "value": 0.05
                 },
                 "talentvalue": {
-                    "level": 15,
+                    "level": 10,
                     "name": "critical_add",
                     "value": 0.33
                 }
             },
             "level": {
-                "count": 15,
+                "count": 10,
                 "description": "+%critical_add:p chance",
                 "require": {
                     "cat": "level",
@@ -275,10 +311,10 @@
         },
         "talent": {
             "descname": "Might",
-            "description": "Increases lifting strength and destruction level of melee attacks",
+            "description": "Increases lifting strength and destruction level of Melee attacks.",
             "descshort": "Ability",
             "icon": 6,
-            "icon_texture": "textures/ui/talent_icons.png",
+            "icon_texture": "textures/ui/talent_icons2.png",
             "name": "might",
             "talentvalues": {
                 "talentvalue": {
@@ -351,10 +387,10 @@
         },
         "talent": {
             "descname": "Flight",
-            "description": "Allows flying and improves mastery over it",
+            "description": "Allows flying and improves mastery over it.",
             "descshort": "Ability",
             "icon": 7,
-            "icon_texture": "textures/ui/talent_icons.png",
+            "icon_texture": "textures/ui/talent_icons2.png",
             "name": "flight",
             "talentvalues": {
                 "talentvalue": {
@@ -389,7 +425,7 @@
         },
         "talent": {
             "descname": "Psionic Fury",
-            "description": "Adds psionic power to all melee attacks.",
+            "description": "Adds Psionic power to all Melee attacks.",
             "name": "psionic_fury",
             "level": {
                 "description": "Psionic Fury 1"
