@@ -25,7 +25,10 @@ IF ERRORLEVEL 2 SET consoleChoice=GC & goto section2
 IF ERRORLEVEL 1	SET consoleChoice=PC & goto modPackSection
 REM Checks if console was selected from main compiler script/if main compiler script was used
 :consoleChoiceCheck
+REM since modPackSection is only used for PC, if consoleChoice is already assigned, need to make the correct decisions
 if "%consoleChoice%"=="" goto consoleChoicePrompt
+if %consoleChoice%==PC goto modPackSection
+goto section2
 
 :modPackSection
 REM get mod pack choice from main compiler script
