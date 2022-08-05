@@ -12,11 +12,17 @@ REM console not selected, main compiler prompt not used, pick console
 :consoleChoicePrompt
 echo.
 echo Console not selected.
-echo [1] GameCube
-echo [2] PlayStation 2
-echo [3] PlayStation Portable (PSP)
-echo [4] Xbox
-set /p "consoleChoice=Which console are you using? [1,2,3,4] "
+echo [1] PC
+echo [2] GameCube
+echo [3] PlayStation 2
+echo [4] PlayStation Portable (PSP)
+echo [5] Xbox
+CHOICE /C 12345 /M "Which console are you using? "
+IF ERRORLEVEL 5 SET consoleChoice=XB & goto :skinPackSection
+IF ERRORLEVEL 4 SET consoleChoice=PSP & goto :skinPackSection
+IF ERRORLEVEL 3 SET consoleChoice=PS2 & goto :skinPackSection
+IF ERRORLEVEL 2 SET consoleChoice=GC & goto :skinPackSection
+IF ERRORLEVEL 1	SET consoleChoice=PC & goto :skinPackSection
 REM Checks if console was selected from main compiler script/if main compiler script was used
 :consoleChoiceCheck
 if "%consoleChoice%"=="" goto :consoleChoicePrompt
@@ -30,36 +36,42 @@ echo Compiling assets...
 md "0. Staging"
 robocopy >nul /e /v "1. Base Assets" "0. Staging"
 REM proceed based on console selection
-if %consoleChoice%==1 goto :compileGameCube
-if %consoleChoice%==2 goto :compilePS2
-if %consoleChoice%==3 goto :compilePSP
-if %consoleChoice%==4 goto :compileXbox
+if %consoleChoice%==PC goto :movePC
+if %consoleChoice%==GC goto :moveGameCube
+if %consoleChoice%==PS2 goto :movePS2
+if %consoleChoice%==PSP goto :movePSP
+if %consoleChoice%==XB goto :moveXbox
+
+REM PC options
+:movePC
+robocopy >nul /e /v "2. Default Assets - PC" "0. Staging"
+goto :compileConsole
 
 REM GameCube options
-:compileGameCube
+:moveGameCube
 robocopy >nul /e /v "2. Default Assets - GameCube" "0. Staging"
-goto :end
+goto :compileConsole
 
 REM PS2 options
-:compilePS2
+:movePS2
 robocopy >nul /e /v "2. Default Assets - PS2" "0. Staging"
-goto :end
+goto :compileConsole
 
 REM PSP options
-:compilePSP
+:movePSP
 robocopy >nul /e /v "2. Default Assets - PSP" "0. Staging"
-goto :end
+goto :compileConsole
 
 REM xbox options
-:compileXbox
+:moveXbox
 robocopy >nul /e /v "2. Default Assets - Xbox" "0. Staging"
-goto :end
+goto :compileConsole
 
 REM ******************************
 REM * Section 3 - Compile Assets *
 REM ******************************
 
-:end
+:compileConsole
 copy >nul "..\..\0. Compilers" "0. Staging"
 REM change directory to 0. Staging folder, run fbbuilder, then change back to main directory
 cd "%~dp0\0. Staging"
