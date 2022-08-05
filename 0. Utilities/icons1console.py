@@ -34,7 +34,10 @@ def iconSwitch(name):
     i = 0
     while i < len(contentList):
         if "icons2" in contentList[i]:
-            contentList[i] = contentList[i].replace("icons2", "icons1")
+            if name == "shared_talents.engb.json":
+                contentList[i] = contentList[i].replace("icons2", "icons")
+            else:
+                contentList[i] = contentList[i].replace("icons2", "icons1")
         i +=1
     with open(name, mode='w') as file:
         for line in contentList:
@@ -77,4 +80,5 @@ packageFileNameNC = packageFileNameOG + "_nc.fb.cfg"
 # Open the talents file and replace its contents
 iconSwitch(talentFileName)
 icons2Remove(packageFileName)
-icons2Remove(packageFileNameNC)
+if packageFileName!="permanent.fb.cfg":
+    icons2Remove(packageFileNameNC)
