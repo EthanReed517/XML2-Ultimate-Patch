@@ -89,11 +89,7 @@ REM 3. General Data Files
 echo Compiling general data files...
 echo herostat
 cd "%~dp0\3. General Data Files\herostat"
-if %consoleChoice%==PC (
-	call compile.bat %consoleChoice% %modPackChoice%
-) else (
-	call compile.bat %consoleChoice%
-)
+call compile.bat %consoleChoice% %modPackChoice%
 cd ..\..
 echo permanent
 cd "%~dp0\3. General Data Files\permanent"
