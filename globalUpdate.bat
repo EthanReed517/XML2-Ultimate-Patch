@@ -38,7 +38,7 @@ echo shared_talents
 cd "%~dp0\3. General Data Files\shared_talents"
 call update.bat 
 cd ..\..
-echo zone_info
-cd "%~dp0\3. General Data Files\zone_info"
+echo zoneinfo
+cd "%~dp0\3. General Data Files\zoneinfo"
 call update.bat 
 cd ..\..
