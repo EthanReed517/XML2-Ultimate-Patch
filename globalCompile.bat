@@ -2,12 +2,12 @@
 echo Compiling X-Men Legends II
 echo.
 CHOICE /C YN /M "Call globalUpdate first? "
-IF ERRORLEVEL 2 SET goto :globalUpdate
-IF ERRORLEVEL 1 SET goto :section1
+IF ERRORLEVEL 2 goto section1
+IF ERRORLEVEL 1 goto globalUpdate
 
 :globalUpdate
 call globalUpdate.bat
-goto :section1
+goto section1
 
 REM ***********************************
 REM * Section 1 - Establish Variables *
@@ -19,11 +19,11 @@ echo [3] PlayStation 2
 echo [4] PlayStation Portable (PSP)
 echo [5] Xbox
 CHOICE /C 12345 /M "Which console are you using? "
-IF ERRORLEVEL 5 SET consoleChoice=XB & goto :skinPackSection
-IF ERRORLEVEL 4 SET consoleChoice=PSP & goto :skinPackSection
-IF ERRORLEVEL 3 SET consoleChoice=PS2 & goto :skinPackSection
-IF ERRORLEVEL 2 SET consoleChoice=GC & goto :skinPackSection
-IF ERRORLEVEL 1	SET consoleChoice=PC & goto :modPackSection
+IF ERRORLEVEL 5 SET consoleChoice=XB & goto skinPackSection
+IF ERRORLEVEL 4 SET consoleChoice=PSP & goto skinPackSection
+IF ERRORLEVEL 3 SET consoleChoice=PS2 & goto skinPackSection
+IF ERRORLEVEL 2 SET consoleChoice=GC & goto skinPackSection
+IF ERRORLEVEL 1	SET consoleChoice=PC & goto modPackSection
 
 :modPackSection
 echo [1] XML2 Ultimate Patch     (X2UP)
@@ -31,10 +31,10 @@ echo [2] All X-Men Edition       (AXE)
 echo [3] Brotherhood Edition     (BHE)
 echo [4] Marvel Universe Edition (MUE)
 CHOICE /C 1234 /M "Which Mod Pack are you using? "
-IF ERRORLEVEL 4 SET modPackChoice=MUE & goto :skinPackSection
-IF ERRORLEVEL 3 SET modPackChoice=BHE & goto :skinPackSection
-IF ERRORLEVEL 2 SET modPackChoice=AXE & goto :skinPackSection
-IF ERRORLEVEL 1	SET modPackChoice=X2UP & goto :skinPackSection
+IF ERRORLEVEL 4 SET modPackChoice=MUE & goto skinPackSection
+IF ERRORLEVEL 3 SET modPackChoice=BHE & goto skinPackSection
+IF ERRORLEVEL 2 SET modPackChoice=AXE & goto skinPackSection
+IF ERRORLEVEL 1	SET modPackChoice=X2UP & goto skinPackSection
 
 :skinPackSection
 REM currently, the default skin pack will be the only option. BaconWizard17 will implement redesign and custom skin packs later
@@ -89,7 +89,11 @@ REM 3. General Data Files
 echo Compiling general data files...
 echo herostat
 cd "%~dp0\3. General Data Files\herostat"
-call compile.bat %consoleChoice% %modPackChoice%
+if %consoleChoice%==PC (
+	call compile.bat %consoleChoice% %modPackChoice%
+) else (
+	call compile.bat %consoleChoice%
+)
 cd ..\..
 echo permanent
 cd "%~dp0\3. General Data Files\permanent"

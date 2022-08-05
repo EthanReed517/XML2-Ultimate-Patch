@@ -7,7 +7,7 @@ REM ***********************************
 
 REM get console choice from main compiler script
 set "consoleChoice=%~1"
-goto :consoleChoiceCheck
+goto consoleChoiceCheck
 REM console not selected, main compiler prompt not used, pick console
 :consoleChoicePrompt
 echo.
@@ -18,19 +18,19 @@ echo [3] PlayStation 2
 echo [4] PlayStation Portable (PSP)
 echo [5] Xbox
 CHOICE /C 12345 /M "Which console are you using? "
-IF ERRORLEVEL 5 SET consoleChoice=XB & goto :section2
-IF ERRORLEVEL 4 SET consoleChoice=PSP & goto :section2
-IF ERRORLEVEL 3 SET consoleChoice=PS2 & goto :section2
-IF ERRORLEVEL 2 SET consoleChoice=GC & goto :section2
-IF ERRORLEVEL 1	SET consoleChoice=PC & goto :modPackSection
+IF ERRORLEVEL 5 SET consoleChoice=XB & goto section2
+IF ERRORLEVEL 4 SET consoleChoice=PSP & goto section2
+IF ERRORLEVEL 3 SET consoleChoice=PS2 & goto section2
+IF ERRORLEVEL 2 SET consoleChoice=GC & goto section2
+IF ERRORLEVEL 1	SET consoleChoice=PC & goto modPackSection
 REM Checks if console was selected from main compiler script/if main compiler script was used
 :consoleChoiceCheck
-if "%consoleChoice%"=="" goto :consoleChoicePrompt
+if "%consoleChoice%"=="" goto consoleChoicePrompt
 
 :modPackSection
 REM get mod pack choice from main compiler script
 set "modPackChoice=%~2"
-goto :modPackChoiceCheck
+goto modPackChoiceCheck
 REM mod pack not selected, main compiler prompt not used, pick mod pack
 :modPackChoicePrompt
 echo.
@@ -40,13 +40,13 @@ echo [2] All X-Men Edition       (AXE)
 echo [3] Brotherhood Edition     (BHE)
 echo [4] Marvel Universe Edition (MUE)
 CHOICE /C 1234 /M "Which Mod Pack are you using? "
-IF ERRORLEVEL 4 SET modPackChoice=MUE & goto :section2
-IF ERRORLEVEL 3 SET modPackChoice=BHE & goto :section2
-IF ERRORLEVEL 2 SET modPackChoice=AXE & goto :section2
-IF ERRORLEVEL 1	SET modPackChoice=X2UP & goto :section2
+IF ERRORLEVEL 4 SET modPackChoice=MUE & goto section2
+IF ERRORLEVEL 3 SET modPackChoice=BHE & goto section2
+IF ERRORLEVEL 2 SET modPackChoice=AXE & goto section2
+IF ERRORLEVEL 1	SET modPackChoice=X2UP & goto section2
 REM Checks if mod pack was selected from main compiler script/if main compiler script was used
 :modPackChoiceCheck
-if "%modPackChoice%"=="" goto :modPackChoicePrompt
+if "%modPackChoice%"=="" goto modPackChoicePrompt
 
 REM ***************************
 REM * Section 2 - Move Assets *
