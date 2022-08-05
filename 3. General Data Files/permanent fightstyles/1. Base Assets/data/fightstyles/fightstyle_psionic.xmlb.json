@@ -1,0 +1,742 @@
+{
+    "FightingStyle": {
+        "animations": "fightstyle_psionic",
+        "FightMove": {
+            "animenum": "ea_attack_jumpslam",
+            "handler": "ch_jump_lift_attack",
+            "lockangles": true,
+            "name": "jumpsmash",
+            "playspeed": 1.5,
+            "startchaintime": 0.5,
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.34
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.2,
+                "name": "trail",
+                "offsetend": 8,
+                "time": 0.37,
+                "width": 8
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.2,
+                "name": "trail",
+                "offsetend": 8,
+                "time": 0.37,
+                "width": 8
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.53,
+                "damageMod": {
+                    "name": "dmgmod_bounce"
+                }
+            },
+            "trigger": {
+                "height": -36,
+                "name": "punch",
+                "time": 0.53,
+                "damageMod": {
+                    "ame": "dmgmod_bounce"
+                }
+            },
+            "trigger": {
+                "height": -72,
+                "name": "punch",
+                "time": 0.57,
+                "damageMod": {
+                    "ame": "dmgmod_bounce"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop_nc"
+            },
+            "chain": {
+                "action": "special",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "blendtime": 0.05,
+            "endchaintime": 1,
+            "lockangles": true,
+            "name": "attacklight1",
+            "startchaintime": 0.42,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "nopushback": true,
+                "targetdistance": 100,
+                "targetdot": 0.5,
+                "targetradius": 90,
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.15,
+                "name": "trail",
+                "offsetend": 200,
+                "time": 0.17
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 12,
+                "index": 1,
+                "knockback": 0,
+                "maxrange": 96,
+                "name": "punch",
+                "time": 0.39
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight2"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attacktrip1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_grab_fallback",
+            "lockangles": true,
+            "name": "grabfallback",
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.17,
+                "name": "trail",
+                "offsetend": 12,
+                "time": 0.25
+            },
+            "trigger": {
+                "height": -10,
+                "knockback": 120,
+                "name": "punch",
+                "time": 0.4,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light2",
+            "blendtime": 0.1,
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight2",
+            "startchaintime": 0.5,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "nopushback": true,
+                "targetdistance": 100,
+                "targetdot": 0.5,
+                "targetradius": 90,
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.3,
+                "name": "trail",
+                "offsetend": 150,
+                "time": 0.2
+            },
+            "trigger": {
+                "height": -12,
+                "index": 1,
+                "knockback": 0,
+                "maxrange": 96,
+                "name": "punch",
+                "time": 0.39
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight3"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "popupattack"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light3",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight3",
+            "startchaintime": 0.76,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "nopushback": true,
+                "targetdistance": 100,
+                "targetdot": 0.5,
+                "targetradius": 90,
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.1,
+                "name": "trail",
+                "offsetend": 200,
+                "time": 0.3
+            },
+            "trigger": {
+                "knockback": 40,
+                "maxrange": 96,
+                "name": "kick_heavy",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_trip1",
+            "blendtime": 0.1,
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacktrip1",
+            "startchaintime": 0.44,
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.15,
+                "name": "trail",
+                "offsetend": 200,
+                "time": 0.28
+            },
+            "trigger": {
+                "knockback": 0,
+                "maxrange": 96,
+                "name": "punch",
+                "time": 0.46
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacktrip2"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackknockback1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_trip2",
+            "blendtime": 0.1,
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacktrip2",
+            "startchaintime": 0.63,
+            "event": {
+                "inherit": "kick",
+                "knockback": 0,
+                "maxrange": 96,
+                "name": "tripstrike",
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.15,
+                "name": "trail",
+                "offsetend": 0,
+                "offsetstart": 50,
+                "time": 0.27
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.15,
+                "name": "trail",
+                "offsetend": 0,
+                "offsetstart": 50,
+                "time": 0.27
+            },
+            "trigger": {
+                "name": "tripstrike",
+                "time": 0.32
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_heavy1",
+            "blendtime": 0.1,
+            "endchaintime": 1,
+            "lockangles": true,
+            "name": "attackheavy1",
+            "startchaintime": 0.5,
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "nopushback": true,
+                "targetdistance": 100,
+                "targetdot": 0.5,
+                "targetradius": 90,
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.15,
+                "name": "trail",
+                "offsetend": 200,
+                "time": 0.23
+            },
+            "trigger": {
+                "index": 1,
+                "knockback": 0,
+                "maxrange": 96,
+                "name": "kick_heavy",
+                "time": 0.41
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attackstun1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy2"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_heavy2",
+            "blendtime": 0.07,
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackheavy2",
+            "startchaintime": 0.6,
+            "event": {
+                "inherit": "kick_heavy",
+                "knockback": 40,
+                "maxrange": 100,
+                "name": "knockdownstrike"
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.15,
+                "name": "trail",
+                "offsetend": 200,
+                "time": 0.18
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.15,
+                "name": "trail",
+                "offsetend": 200,
+                "time": 0.18
+            },
+            "trigger": {
+                "name": "knockdownstrike",
+                "tag": 10,
+                "time": 0.39
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "inherit": "attackheavy1",
+            "name": "attackknockback1",
+            "chain": {
+                "action": "attack",
+                "result": "attacklight2"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackknockback2"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_knockback",
+            "inherit": "attackheavy2",
+            "name": "attackknockback2",
+            "trigger": {
+                "knockback": 190,
+                "tag": 10,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_stun1",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attackstun1",
+            "startchaintime": 0.44,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.2,
+                "name": "trail",
+                "offsetend": 100,
+                "time": 0.15
+            },
+            "trigger": {
+                "knockback": 0,
+                "maxrange": 96,
+                "name": "punch",
+                "time": 0.31
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackstun2"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_stun2",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackstun2",
+            "startchaintime": 0.5,
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.16,
+                "name": "trail",
+                "offsetend": 150,
+                "time": 0.08
+            },
+            "trigger": {
+                "knockback": 0,
+                "maxrange": 96,
+                "name": "punch",
+                "time": 0.33
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackstun3"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_stun3",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackstun3",
+            "startchaintime": 0.58,
+            "event": {
+                "height": 15,
+                "inherit": "kick",
+                "name": "doublestrike",
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.2,
+                "name": "trail",
+                "offsetend": 200,
+                "time": 0.11
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.2,
+                "name": "trail",
+                "offsetend": 200,
+                "time": 0.11
+            },
+            "trigger": {
+                "knockback": 0,
+                "maxrange": 96,
+                "name": "doublestrike",
+                "time": 0.42
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_popup",
+            "blendtime": 0.07,
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "handler": "ch_popup_attack",
+            "icon": 10,
+            "lockangles": true,
+            "name": "popupattack",
+            "startchaintime": 0.75,
+            "event": {
+                "inherit": "kick",
+                "knockback": 0,
+                "name": "popuppsi",
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.3,
+                "name": "trail",
+                "offsetend": 90,
+                "offsetstart": 90,
+                "time": 0.15
+            },
+            "trigger": {
+                "angle": 0,
+                "maxrange": 96,
+                "name": "popuppsi",
+                "time": 0.27
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_ground",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "groundattack",
+            "noautoaim": true,
+            "event": {
+                "inherit": "punch_heavy",
+                "maxrange": 50,
+                "name": "ground_attack",
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                },
+                "damageMod": {
+                    "name": "dmgmod_no_atk_roll"
+                }
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.16
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.13,
+                "name": "trail",
+                "time": 0.4
+            },
+            "trigger": {
+                "name": "ground_attack",
+                "time": 0.53
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}
