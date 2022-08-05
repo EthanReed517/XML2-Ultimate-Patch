@@ -30,7 +30,7 @@ if "%consoleChoice%"=="" goto :consoleChoicePrompt
 
 REM get skin pack choice from main compiler script
 :skinPackSection
-set "skinPackChoice=%~3"
+set "skinPackChoice=%~2"
 goto :skinPackChoiceCheck
 REM skin pack not selected, main compiler prompt not used, pick skin pack
 :skinPackChoicePrompt
@@ -49,7 +49,7 @@ if "%skinPackChoice%"=="" goto :skinPackChoicePrompt
 
 REM get cel shading choice from main compiler script (ignored for PC and PSP)
 :celChoiceSection
-set "celChoice=%~4"
+set "celChoice=%~3"
 goto :celChoiceCheck
 REM cel shading option not selected, main compiler prompt not used, pick cel shading option
 :celChoicePrompt
