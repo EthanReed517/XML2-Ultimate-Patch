@@ -301,7 +301,7 @@ del >nul *.cfg
 del >nul enter.vbs
 del >nul fbbuilder.bat
 del >nul ravenFormatsCompile.bat
-del >nul packageCreate.py
+del >nul *.py
 del >nul compile.ini
 if %consoleChoice%==PC goto finalizePC
 goto finalizeConsole
