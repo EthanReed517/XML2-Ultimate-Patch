@@ -1,8 +1,12 @@
-with open("permanent.fb.cfg", mode='r') as file:
+name = input("What is the name of the cfg file without the file extension? ")
+nameCfg = name[0:-4] + ".fb.cfg"
+nameJson = name[0:-4] + ".pkgb.json"
+
+with open(nameCfg, mode='r') as file:
     fileContent = file.read()
     contentList = fileContent.split("\n")
     
-with open("permanent.pkgb.json", mode='w') as file:
+with open(nameJson, mode='w') as file:
     file.write('{\n')
     file.write('    "packagedef": {\n')
     i = 0
