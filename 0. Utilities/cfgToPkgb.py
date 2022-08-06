@@ -16,6 +16,8 @@ with open(nameJson, mode='w') as file:
         fileNameFull = fileNameFull.split(".")
         fileName = fileNameFull[0]
         fileType = line[2]
+        if (fileType=="actoranimdb") or (fileType=="actorskin"):
+            fileName = fileName[7:]
         file.write('        "' + fileType + '": {\n')
         file.write('            "filename": "' + fileName + '"\n')
         if i == len(contentList) - 1:
