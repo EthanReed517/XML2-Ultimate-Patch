@@ -1,0 +1,961 @@
+{
+    "talents": {
+        "talent": {
+            "descname": "Divine Blades",
+            "description": "Multiple sword melee attacks in quick succession",
+            "descshort": "Melee",
+            "icon": 0,
+            "icon_texture": "textures/ui/nightcrawler_icons1.png",
+            "name": "ngt_swd_parry",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_parry_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "ngt_parry_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_parry_dam",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "ngt_parry_dam",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_parry_atk_bonus",
+                    "value": 1.15
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "ngt_parry_atk_bonus",
+                    "value": 1.85
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_parry_pwr",
+                    "value": 10
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "ngt_parry_pwr",
+                    "value": 94
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%ngt_parry_dam $DMG_PHYSICAL per attack\\n%ngt_parry_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ngt_parry_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%ngt_parry_atk_bonus",
+                        "scope_node": "ngt_power1"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Sword Whirlwind",
+            "description": "Spins around, attacking with swords. Move with analog stick as normal\\n(~41Press And Hold~~)",
+            "descshort": "Melee",
+            "icon": 1,
+            "icon_texture": "textures/ui/nightcrawler_icons1.png",
+            "name": "ngt_swd_whirl",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_whirl_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "ngt_whirl_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_whirl_dam",
+                    "value": "43 50"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "ngt_whirl_dam",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_whirl_atk_bonus",
+                    "value": 1.1
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "ngt_whirl_atk_bonus",
+                    "value": 1.8
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_whirl_pwr",
+                    "value": 64
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "ngt_whirl_pwr",
+                    "value": 134
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_whirl_pwr_sec",
+                    "value": 64
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "ngt_whirl_pwr_sec",
+                    "value": 134
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%ngt_whirl_dam $DMG_PHYSICAL per attack\\n%ngt_whirl_pwr_sec $EP/s",
+                "require": {
+                    "cat": "level",
+                    "level": "%ngt_whirl_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "ngt_swd_rad",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%ngt_whirl_atk_bonus",
+                        "scope_node": "ngt_power2"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Piercing Strike",
+            "description": "Sword attack that causes $DMG_BLEED",
+            "descshort": "Melee",
+            "icon": 2,
+            "icon_texture": "textures/ui/nightcrawler_icons1.png",
+            "name": "ngt_swd_rad",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_rad_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ngt_rad_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_rad_dam",
+                    "value": "101 114"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ngt_rad_dam",
+                    "value": "272 302"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_rad_atk_bonus",
+                    "value": 1.4
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ngt_rad_atk_bonus",
+                    "value": 2.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_rad_life",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ngt_rad_life",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_rad_pwr",
+                    "value": 34
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ngt_rad_pwr",
+                    "value": 98
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%ngt_rad_dam $DMG_BLEED over %ngt_rad_life seconds\\n%ngt_rad_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ngt_rad_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "block",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%ngt_rad_atk_bonus",
+                        "scope_node": "ngt_power3"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Teleport",
+            "description": "Teleport to hard to reach locations or escape from combat.  Increases to allow carrying allies.",
+            "descshort": "Special",
+            "icon": 3,
+            "icon_texture": "textures/ui/nightcrawler_icons1.png",
+            "name": "ngt_teleport",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_tele_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "ngt_tele_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_tele_range",
+                    "value": 240
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "ngt_tele_range",
+                    "value": 720
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_tele_pwr",
+                    "value": 8
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "ngt_tele_pwr",
+                    "value": 50
+                }
+            },
+            "level": {
+                "count": 2,
+                "description": "%ngt_tele_range:r ft teleport range\\n%ngt_tele_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ngt_tele_req"
+                }
+            },
+            "level": {
+                "count": 3,
+                "description": "%ngt_tele_range:r ft teleport range\\nCarry allies\\n%ngt_tele_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ngt_tele_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Teleport Attack",
+            "description": "Teleport and perform a boosted melee attack",
+            "descshort": "Melee",
+            "icon": 4,
+            "icon_texture": "textures/ui/nightcrawler_icons1.png",
+            "name": "ngt_tele_atk",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_atk_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "ngt_atk_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_atk_dam_boost",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "ngt_atk_dam_boost",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_atk_atk_bonus",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "ngt_atk_atk_bonus",
+                    "value": 1.95
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_atk_pwr",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "ngt_atk_pwr",
+                    "value": 115
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%ngt_atk_dam_boost:s $DMG_MELEE (%ngt_atk_dam_boost:x)\\n%ngt_atk_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ngt_atk_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "ngt_teleport",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%ngt_atk_atk_bonus",
+                        "scope_node": "ngt_power5"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "level": "%ngt_atk_dam_boost",
+                        "scope_node": "ngt_power5"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Worship",
+            "description": "Nightcrawler prays, giving himself and all allies reduced power consumption.",
+            "descshort": "Boost",
+            "icon": 5,
+            "icon_texture": "textures/ui/nightcrawler_icons1.png",
+            "name": "ngt_worship",
+            "power": "power6",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_wor_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ngt_wor_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_wor_pwr_scale",
+                    "value": 0.9
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ngt_wor_pwr_scale",
+                    "value": 0.62
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_wor_time",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ngt_wor_time",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_wor_pwr",
+                    "value": 100
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ngt_wor_pwr",
+                    "value": 384
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%ngt_wor_pwr_scale:s $EP cost for powers\\n%ngt_wor_time seconds\\n%ngt_wor_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ngt_wor_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Teleport Frenzy",
+            "description": "Rapidly teleports to attack multiple targets, stunning them",
+            "descshort": "Melee",
+            "icon": 6,
+            "icon_texture": "textures/ui/nightcrawler_icons1.png",
+            "name": "ngt_tele_fnzy",
+            "power": "power7",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_fnzy_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "ngt_fnzy_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_fnzy_dam_boost",
+                    "value": 3.3
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "ngt_fnzy_dam_boost",
+                    "value": 4.75
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_fnzy_atk_bonus",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "ngt_fnzy_atk_bonus",
+                    "value": 2.76
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_fnzy_num_att",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "ngt_fnzy_num_att",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_fnzy_stun_life",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "ngt_fnzy_stun_life",
+                    "value": 5.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_fnzy_pwr",
+                    "value": 62
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "ngt_fnzy_pwr",
+                    "value": 140
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%ngt_fnzy_dam_boost:s $DMG_MELEE (%ngt_fnzy_dam_boost:x)\\n%ngt_fnzy_stun_life:f second stun\\n%ngt_fnzy_num_att attacks\\n%ngt_fnzy_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ngt_fnzy_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "ngt_teleport",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%ngt_fnzy_atk_bonus",
+                        "scope_node": "ngt_power7"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "level": "%ngt_fnzy_dam_boost",
+                        "scope_node": "ngt_power7"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Shadow Master",
+            "description": "Cloaks in the shadows, becoming hard for enemies to attack and defend against",
+            "descshort": "Boost",
+            "icon": 7,
+            "icon_texture": "textures/ui/nightcrawler_icons1.png",
+            "name": "ngt_shadow",
+            "power": "power8",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_shdw_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ngt_shdw_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_shdw_atk_bonus",
+                    "value": 1.1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ngt_shdw_atk_bonus",
+                    "value": 1.8
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_shdw_def_bonus",
+                    "value": 1.4
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ngt_shdw_def_bonus",
+                    "value": 2.8
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_shdw_time",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ngt_shdw_time",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_shdw_pwr",
+                    "value": 100
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ngt_shdw_pwr",
+                    "value": 384
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%ngt_shdw_def_bonus:s $DR\\n%ngt_shdw_atk_bonus:s $AR\\n%ngt_shdw_time seconds\\n%ngt_shdw_pwr  $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ngt_shdw_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "MASTER OF CHAOS",
+            "description": "Teleports around, attacking each enemy up to a set number of times",
+            "descshort": "Charge",
+            "icon": 8,
+            "icon_texture": "textures/ui/nightcrawler_icons1.png",
+            "name": "ngt_chaos",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_chaos_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "ngt_chaos_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_chaos_dam_bst",
+                    "value": 6.5
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "ngt_chaos_dam_bst",
+                    "value": 15.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_chaos_atk_bns",
+                    "value": 1.75
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "ngt_chaos_atk_bns",
+                    "value": 3.15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_chaos_hits",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "ngt_chaos_hits",
+                    "value": 10
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%ngt_chaos_dam_bst:s melee damage (%ngt_chaos_dam_bst:x)\\n%ngt_chaos_hits attacks",
+                "require": {
+                    "cat": "level",
+                    "level": "%ngt_chaos_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%ngt_chaos_atk_bns",
+                        "scope_node": "ngt_power9"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "level": "%ngt_chaos_dam_bst",
+                        "scope_node": "ngt_power9"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "DISAPPEARING ACT",
+            "description": "Makes all allies invisible, and gives them a $DR and an $XP bonus.",
+            "descshort": "Boost",
+            "icon": 13,
+            "icon_texture": "textures/ui/nightcrawler_icons1.png",
+            "name": "ngt_assassin",
+            "power": "power11",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_assn_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "ngt_assn_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_assn_dr_bst",
+                    "value": 1.15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "ngt_assn_dr_bst",
+                    "value": 1.15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_assn_xp_bst",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "ngt_assn_xp_bst",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_assn_life",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "ngt_assn_life",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "All allies become invisible\\n%ngt_assn_dr_bst:s $DR\\n%ngt_assn_xp_bst:s $XP\\n%ngt_assn_life seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%ngt_assn_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Leap of Faith",
+            "description": "Chance that Nightcrawler will rescue friends from death as they die within range (once per minute). Does not occur while player controls Nightcrawler.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/nightcrawler_icons1.png",
+            "name": "night_faith",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "night_leap_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 3,
+                    "name": "night_leap_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "night_leap_rng",
+                    "value": 180
+                },
+                "talentvalue": {
+                    "level": 3,
+                    "name": "night_leap_rng",
+                    "value": 720
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "night_leap_chance",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 3,
+                    "name": "night_leap_chance",
+                    "value": 1
+                }
+            },
+            "level": {
+                "count": 3,
+                "description": "%night_leap_chance:p chance within %night_leap_rng:r feet.",
+                "require": {
+                    "cat": "level",
+                    "level": "%night_leap_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Sword Mastery",
+            "description": "Boosts damage and chance for criticals with all sword attacks",
+            "descshort": "Passive",
+            "icon": 9,
+            "icon_texture": "textures/ui/nightcrawler_icons1.png",
+            "name": "ngt_swd_mastery",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_swd_m_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ngt_swd_m_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_swd_m_dam_bst",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ngt_swd_m_dam_bst",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_swd_m_crt_bst",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ngt_swd_m_crt_bst",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%ngt_swd_m_dam_bst:s Sword Damage\\n+%ngt_swd_m_crt_bst:p critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%ngt_swd_m_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "damagetype": "dmg_blade",
+                        "level": "%ngt_swd_m_dam_bst"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "damagetype": "dmg_blade",
+                        "level": "%ngt_swd_m_crt_bst"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Teleport Mastery",
+            "description": "Extra damage and increased chance for criticals to all teleport attacks",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/nightcrawler_icons1.png",
+            "name": "ngt_tele_mastery",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_tele_m_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ngt_tele_m_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_tele_m_dam_bst",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ngt_tele_m_dam_bst",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ngt_tele_m_crt_bst",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ngt_tele_m_crt_bst",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%ngt_tele_m_dam_bst:s damage\\n+%ngt_tele_m_crt_bst:p critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%ngt_tele_m_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "damagetype": "dmg_teleport",
+                        "level": "%ngt_tele_m_dam_bst"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "damagetype": "dmg_teleport",
+                        "level": "%ngt_tele_m_crt_bst"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Uncanny Reflexes",
+            "description": "Increases chance to dodge melee attacks",
+            "descshort": "Passive",
+            "icon": 13,
+            "icon_texture": "textures/ui/nightcrawler_icons1.png",
+            "name": "night_dodge",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dodge_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dodge_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dodge_chance",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dodge_chance",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%dodge_chance:p chance to dodge melee attacks.",
+                "require": {
+                    "cat": "level",
+                    "level": "%dodge_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%dodge_chance",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,1788 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/nightcrawler_icons1.png",
+        "event": {
+            "damagescale": "none",
+            "name": "teleport_data_store",
+            "type": "ce_atk_teleport_mark_start"
+        },
+        "event": {
+            "name": "set_visible",
+            "teleportation_caused": true,
+            "type": "ce_force_visibility"
+        },
+        "event": {
+            "arc": 60,
+            "damagelevel": 2,
+            "damagetype": "dmg_blade",
+            "inherit": "punch_heavy",
+            "maxrange": 72,
+            "name": "sword_strike"
+        },
+        "event": {
+            "damagescale": "none",
+            "inherit": "sword_strike",
+            "knockback": 120,
+            "name": "power_sword",
+            "tiles": true
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "hide_swords",
+            "show": false,
+            "show2": true,
+            "skinsegment": "swords_bolton",
+            "skinsegment2": "swords"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "show_swords",
+            "show": true,
+            "show2": false,
+            "skinsegment": "swords_bolton",
+            "skinsegment2": "swords"
+        },
+        "FightMove": {
+            "animenum": "ea_jog1",
+            "handler": "ch_move",
+            "lockchaining": false,
+            "name": "jog",
+            "noncombat": true,
+            "trigger": {
+                "animbased": true,
+                "name": "footstep",
+                "time": 0.9,
+                "volume": 0.25
+            },
+            "trigger": {
+                "animbased": true,
+                "name": "footstep",
+                "time": 0.15,
+                "volume": 0.5
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "strafeleft"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "straferight"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "advance"
+            },
+            "chain": {
+                "action": "retreat",
+                "result": "retreat"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "groundattack",
+                "result": "groundattack"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_run1",
+            "handler": "ch_move",
+            "lockchaining": false,
+            "name": "run",
+            "noncombat": true,
+            "trigger": {
+                "animbased": true,
+                "name": "footstep",
+                "time": 0.9,
+                "volume": 0.5
+            },
+            "trigger": {
+                "animbased": true,
+                "name": "footstep",
+                "time": 0.15,
+                "volume": 1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "strafeleft"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "straferight"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "advance"
+            },
+            "chain": {
+                "action": "retreat",
+                "result": "retreat"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "groundattack",
+                "result": "groundattack"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_start",
+            "handler": "ch_move_jump",
+            "icon": 2,
+            "lockangles": true,
+            "lockchaining": false,
+            "name": "jump",
+            "chain": {
+                "action": "move",
+                "result": "power4_jump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            },
+            "require": {
+                "cat": "skill",
+                "item": "ngt_teleport",
+                "level": 1
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "icon": 2,
+            "lockangles": true,
+            "lockchaining": false,
+            "name": "jumploop",
+            "chain": {
+                "action": "move",
+                "result": "power4_jump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            },
+            "require": {
+                "cat": "skill",
+                "item": "ngt_teleport",
+                "level": 1
+            }
+        },
+        "FightMove": {
+            "aitype": "melee",
+            "animenum": "ea_attack_trip2",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacktrip2",
+            "startchaintime": 0.63,
+            "trigger": {
+                "effect": "char/night/special_finisher",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.2
+            },
+            "trigger": {
+                "life": 0.17,
+                "movement": 0,
+                "name": "slide_kick",
+                "time": 0.3
+            },
+            "trigger": {
+                "height": -10,
+                "knockback": 0,
+                "name": "kick",
+                "time": 0.4,
+                "victimeventtag": 15,
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "finisher": true,
+                "life": 0.25,
+                "name": "xtreme_start",
+                "tag": 15,
+                "time": -1,
+                "worldspeed": 0.5
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectilenear",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Slice",
+            "combotextstarter": "Sword",
+            "handler": "ch_nightcrawlerboltons",
+            "icon": 0,
+            "lockchaining": false,
+            "name": "power1",
+            "powerup_tag": "ngt_power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ngt_swd_parry",
+                "level": 1
+            },
+            "trigger": {
+                "name": "show_swords",
+                "time": 0.12
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/night/p1_charge",
+                "name": "effect",
+                "time": 0.12
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/night/p1_charge",
+                "name": "effect",
+                "time": 0.12
+            },
+            "trigger": {
+                "effect": "char/night/p1_power",
+                "name": "effect",
+                "time": 0.12
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/night_m/p1_charge",
+                "time": 0.3
+            },
+            "trigger": {
+                "arc": 135,
+                "damage": "%ngt_parry_dam",
+                "index": 0,
+                "name": "power_sword",
+                "powerusage": "%ngt_parry_pwr",
+                "time": 0.3
+            },
+            "trigger": {
+                "damage": "%ngt_parry_dam",
+                "index": 0,
+                "name": "power_sword",
+                "time": 0.35
+            },
+            "trigger": {
+                "arc": 135,
+                "damage": "%ngt_parry_dam",
+                "index": 1,
+                "maxrange": 60,
+                "name": "power_sword",
+                "time": 0.47
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/night_m/p1_charge",
+                "time": 0.5
+            },
+            "trigger": {
+                "index": 2,
+                "name": "sound",
+                "sound": "char/night_m/p1_charge",
+                "time": 0.65
+            },
+            "trigger": {
+                "damage": "%ngt_parry_dam",
+                "name": "power_sword",
+                "time": 0.65
+            },
+            "trigger": {
+                "name": "hide_swords",
+                "tag": 100,
+                "time": 0.87
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "melee",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Whirlwind",
+            "combotextstarter": "Whirling",
+            "handler": "ch_nightcrawlerboltons",
+            "icon": 1,
+            "name": "power2",
+            "powerup_tag": "ngt_power2",
+            "priority": 5,
+            "startchaintime": 0.95,
+            "require": {
+                "cat": "skill",
+                "item": "ngt_swd_whirl",
+                "level": 1
+            },
+            "trigger": {
+                "name": "show_swords",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/night_m/p2_charge",
+                "time": 0.5
+            },
+            "trigger": {
+                "name": "hide_swords",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%ngt_parry_pwr",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power2_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2_loop",
+            "combotextfinisher": "Whirlwind",
+            "combotextstarter": "Whirling",
+            "energypersecond": "%ngt_whirl_pwr_sec",
+            "fallback": "power2_end",
+            "handler": "ch_ngtmovingboltons",
+            "lockangles": false,
+            "name": "power2_loop",
+            "playspeed": 2,
+            "powerup_tag": "ngt_power2",
+            "priority": 5,
+            "startchaintime": 0.99,
+            "turnrate": 0.4,
+            "trigger": {
+                "name": "hide_swords",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%ngt_whirl_dam",
+                "damagetype": "dmg_blade",
+                "life": 1,
+                "name": "powerup",
+                "tag": 10,
+                "time": -1,
+                "use_tint": false
+            },
+            "trigger": {
+                "effect": "char/night/p2_power",
+                "loop_timeout": 2,
+                "loop_type": "start",
+                "name": "effect_sound",
+                "sound": "char/night_m/p2_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/night/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/night/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": 0,
+                "maxrange": 60,
+                "name": "power_sword",
+                "time": 0.15,
+                "victimeventtag": 10,
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": "%ngt_whirl_dam",
+                "index": 1,
+                "maxrange": 60,
+                "name": "power_sword",
+                "time": 0.15,
+                "damageMod": {
+                    "name": "dmgmod_no_actors"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power2_end"
+            },
+            "chain": {
+                "action": "special",
+                "result": "power2_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2_end",
+            "handler": "ch_nightcrawlerboltons",
+            "lockchaining": false,
+            "name": "power2_end",
+            "priority": 5,
+            "trigger": {
+                "loop_type": "stop",
+                "name": "sound",
+                "sound": "char/night_m/p2_power",
+                "time": 0
+            },
+            "trigger": {
+                "name": "hide_swords",
+                "tag": 100,
+                "time": 0.7
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Incision",
+            "combotextstarter": "Glowing",
+            "handler": "ch_nightcrawlerboltons",
+            "icon": 2,
+            "lockchaining": false,
+            "name": "power3",
+            "powerup_tag": "ngt_power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ngt_swd_rad",
+                "level": 1
+            },
+            "trigger": {
+                "name": "show_swords",
+                "time": 0.15
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/night/p1_charge",
+                "name": "effect",
+                "time": 0.15
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/night/p1_charge",
+                "name": "effect",
+                "time": 0.15
+            },
+            "trigger": {
+                "effect": "char/night/p3_power",
+                "name": "effect_sound",
+                "sound": "char/night_m/p1_charge",
+                "time": 0.3
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%ngt_rad_dam",
+                "damagetype": "dmg_blade",
+                "life": "%ngt_rad_life",
+                "name": "powerup",
+                "tag": 1,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Spine2",
+                    "effect": "effects/base/hit/hit_bleed"
+                }
+            },
+            "trigger": {
+                "arc": 90,
+                "name": "sword_strike",
+                "powerusage": "%ngt_rad_pwr",
+                "time": 0.4,
+                "victimeventtag": 1
+            },
+            "trigger": {
+                "name": "hide_swords",
+                "tag": 100,
+                "time": 0.9
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4",
+            "blendtime": 10.5,
+            "handler": "ch_nightcrawlerdecide",
+            "icon": 3,
+            "lockchaining": false,
+            "name": "power4",
+            "noautoaim": true,
+            "playspeed": 0,
+            "priority": 5,
+            "turnrate": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "ngt_teleport",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%ngt_tele_pwr",
+                "time": -1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "special",
+                "result": "teleportally"
+            },
+            "chain": {
+                "action": "special2",
+                "result": "teleport"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4",
+            "blendtime": 0.5,
+            "endchaintime": 0.98,
+            "handler": "ch_tele_jump",
+            "name": "teleport",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.93,
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/night_m/p4_charge",
+                "time": 0.8
+            },
+            "trigger": {
+                "maxrange": "%ngt_tele_range",
+                "name": "teleport_data_store",
+                "powerusage": "%ngt_tele_pwr",
+                "set_visible": false,
+                "tag": 2,
+                "time": 0.8
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "teleport_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_start",
+            "blendtime": 10.5,
+            "handler": "ch_nightcrawlerdecide",
+            "icon": 3,
+            "lockchaining": false,
+            "name": "power4_jump",
+            "noautoaim": true,
+            "playspeed": 0,
+            "priority": 5,
+            "turnrate": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "ngt_teleport",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%ngt_tele_pwr",
+                "time": -1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "special",
+                "result": "teleportally"
+            },
+            "chain": {
+                "action": "special2",
+                "result": "teleport_jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4",
+            "blendtime": 0.5,
+            "endchaintime": 0.95,
+            "handler": "ch_tele_jump",
+            "name": "teleport_jump",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.6,
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/night_m/p4_charge",
+                "time": 0.1
+            },
+            "trigger": {
+                "maxrange": "%ngt_tele_range",
+                "name": "teleport_data_store",
+                "powerusage": "%ngt_tele_pwr",
+                "set_visible": false,
+                "tag": 2,
+                "time": 0.1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "teleport_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4_end",
+            "blendtime": 0,
+            "endchaintime": 0.95,
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "teleport_end",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.55,
+            "trigger": {
+                "maxrange": "%ngt_tele_range",
+                "name": "teleport",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/night_m/p4_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "cleardata": true,
+                "name": "teleport_data_store",
+                "set_visible": true,
+                "time": 0.1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Teleportation",
+            "combotextstarter": "Teleporting",
+            "endchaintime": 0.95,
+            "handler": "ch_tele_jump",
+            "icon": 4,
+            "name": "power5",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.9,
+            "turnrate": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "ngt_tele_atk",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/night_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_teleport",
+                "maxrange": "%ngt_tele_range",
+                "name": "teleport_data_store",
+                "powerusage": "%ngt_atk_pwr",
+                "set_visible": false,
+                "time": 0.85
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power5_atk"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power5",
+            "blendtime": 0,
+            "combotextfinisher": "Teleportation",
+            "combotextstarter": "Teleporting",
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "power5_atk",
+            "noautoaim": true,
+            "powerup_tag": "ngt_power5",
+            "priority": 5,
+            "trigger": {
+                "attacktype": "direct",
+                "maxrange": "%ngt_tele_range",
+                "name": "teleport_scaled_atk",
+                "powerusage": 0,
+                "tag": 1,
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/night_m/p4_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.45,
+                "visible": true
+            },
+            "trigger": {
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_teleport",
+                "height": 18,
+                "name": "teleport_punch",
+                "tag": 2,
+                "time": 0.5
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power10",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ngt_worship",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/night_m/p6_chargeA",
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/night_v/p6_chargeB",
+                "time": 0.2
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%ngt_wor_time",
+                "name": "powerup",
+                "powerusage": "%ngt_wor_pwr",
+                "time": 0.8,
+                "special_fx": {
+                    "effect": "char/night/p6_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "power_cost",
+                    "level": "%ngt_wor_pwr_scale"
+                }
+            },
+            "trigger": {
+                "effect": "char/night/p6_power",
+                "name": "effect_sound",
+                "sound": "char/night_m/p6_power",
+                "time": 0.8
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power4",
+            "cansteal": false,
+            "combotextfinisher": "Frenzy",
+            "combotextstarter": "Acrobatic",
+            "endchaintime": 0.95,
+            "handler": "ch_tele_jump",
+            "icon": 6,
+            "name": "power7",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.9,
+            "turnrate": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "ngt_tele_fnzy",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/night_m/p4_charge",
+                "time": 0.3
+            },
+            "trigger": {
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_teleport",
+                "maxrange": "%ngt_tele_range",
+                "name": "teleport_data_store",
+                "powerusage": "%ngt_atk_pwr",
+                "time": 0.85
+            },
+            "trigger": {
+                "count": "set",
+                "name": "count",
+                "time": 0,
+                "value": "%ngt_fnzy_num_att"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power7_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power5",
+            "blendtime": 0,
+            "combotextfinisher": "Frenzy",
+            "combotextstarter": "Acrobatic",
+            "endchaintime": 0.95,
+            "fallback": "power7_end",
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "power7_loop",
+            "noautoaim": true,
+            "playspeed": 0.3,
+            "powerup_tag": "ngt_power7",
+            "priority": 5,
+            "startchaintime": 0.9,
+            "require": {
+                "cat": "counter",
+                "level": 1
+            },
+            "trigger": {
+                "life": "%ngt_fnzy_stun_life",
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 101,
+                "time": -1
+            },
+            "trigger": {
+                "count": "add",
+                "name": "count",
+                "time": 0,
+                "value": -1
+            },
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/night_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "attacktype": "direct",
+                "maxrange": "%ngt_tele_range",
+                "name": "teleport_scaled_atk",
+                "powerusage": 0,
+                "time": 0
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.45,
+                "visible": true
+            },
+            "trigger": {
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_teleport",
+                "height": 18,
+                "name": "teleport_punch",
+                "powerusage": "%ngt_atk_pwr",
+                "time": 0.33,
+                "victimeventtag": 101
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power7_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4_end",
+            "blendtime": 0,
+            "combotextfinisher": "Frenzy",
+            "combotextstarter": "Acrobatic",
+            "endchaintime": 0.95,
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "power7_end",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.9,
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/night_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "attacktype": "direct",
+                "maxrange": 360,
+                "name": "teleport_return",
+                "powerusage": 0,
+                "time": 0.05
+            },
+            "trigger": {
+                "cleardata": true,
+                "name": "teleport_data_store",
+                "set_visible": true,
+                "time": 0.5
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power8",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ngt_shadow",
+                "level": 1
+            },
+            "trigger": {
+                "add": "cloaked",
+                "name": "disapear",
+                "tag": 10,
+                "time": -1,
+                "type": "ce_renderfx"
+            },
+            "trigger": {
+                "name": "appear",
+                "remove": "cloaked",
+                "tag": 11,
+                "time": -1,
+                "type": "ce_renderfx"
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/night_m/p8_charge",
+                "time": 0.4
+            },
+            "trigger": {
+                "class": "callevents",
+                "life": "%ngt_shdw_time",
+                "name": "powerup",
+                "powerusage": "%ngt_shdw_pwr",
+                "time": 0.5,
+                "Functionevent": {
+                    "function": "activate",
+                    "triggertag": 10
+                },
+                "Functionevent": {
+                    "function": "deactivate",
+                    "triggertag": 11
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Pelvis",
+                    "effect": "char/night/p6_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%ngt_shdw_atk_bonus"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%ngt_shdw_def_bonus"
+                },
+                "affecter": {
+                    "attribute": "invisible"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4",
+            "combotextfinisher": "Chaos",
+            "description": "MASTER OF CHAOS",
+            "endchaintime": 0.95,
+            "handler": "ch_tele_jump",
+            "icon": 8,
+            "name": "power9",
+            "noautoaim": true,
+            "playspeed": 5,
+            "powerup_tag": "ngt_power9",
+            "priority": 5,
+            "startchaintime": 0.9,
+            "turnrate": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "ngt_chaos",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": 4,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "count": "set",
+                "name": "count",
+                "time": 0,
+                "value": "%ngt_chaos_hits"
+            },
+            "trigger": {
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_teleport",
+                "forceretargeting": true,
+                "isxtreme": true,
+                "maxrange": "%ngt_tele_range",
+                "name": "teleport_data_store",
+                "nofailifnotarget": true,
+                "nostomp": true,
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/night_m/p4_charge",
+                "teleport_visible": false,
+                "time": 0.9
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power9_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power5",
+            "blendtime": 0,
+            "combotextfinisher": "Chaos",
+            "endchaintime": 0.95,
+            "fallback": "power9_end",
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "power9_loop",
+            "noautoaim": true,
+            "playspeed": 7.5,
+            "powerup_tag": "ngt_power9",
+            "priority": 5,
+            "startchaintime": 0.9,
+            "require": {
+                "cat": "counter",
+                "level": 1
+            },
+            "trigger": {
+                "count": "add",
+                "name": "count",
+                "time": 0,
+                "value": -1
+            },
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/night_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "attacktype": "direct",
+                "name": "teleport_scaled_atk",
+                "powerusage": 0,
+                "random_fallback_loc": true,
+                "time": 0
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.45,
+                "visible": true
+            },
+            "trigger": {
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_teleport",
+                "height": 18,
+                "name": "teleport_punch",
+                "time": 0.33
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power9_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4_end",
+            "blendtime": 0,
+            "combotextfinisher": "Chaos",
+            "endchaintime": 0.95,
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "power9_end",
+            "noautoaim": true,
+            "playspeed": 10,
+            "priority": 5,
+            "startchaintime": 0.9,
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/night_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "attacktype": "direct",
+                "maxrange": "%ngt_tele_range",
+                "name": "teleport_return",
+                "powerusage": 0,
+                "time": 0
+            },
+            "trigger": {
+                "cleardata": true,
+                "name": "teleport_data_store",
+                "set_visible": true,
+                "time": 0.45
+            },
+            "trigger": {
+                "end": true,
+                "name": "xtreme_start",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power8",
+            "blendtime": 0,
+            "description": "DISAPPEARING ACT",
+            "icon": 13,
+            "lockangles": true,
+            "name": "power11",
+            "playspeed": 2,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ngt_assassin",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/night/p11_charge",
+                "name": "effect_sound",
+                "sound": "char/night_m/p11_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/night/p11_charge",
+                "name": "effect",
+                "sound": "char/night_m/p11_power",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/night/p11_power",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "class": "callevents",
+                "life": "%ngt_assn_life",
+                "name": "powerup",
+                "time": 0.35,
+                "Functionevent": {
+                    "function": "activate",
+                    "triggertag": 10
+                },
+                "Functionevent": {
+                    "function": "deactivate",
+                    "triggertag": 11
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Pelvis",
+                    "effect": "char/night/p6_aura",
+                    "fxlevel": 3,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%ngt_assn_dr_bst"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "xp",
+                    "level": "%ngt_assn_xp_bst"
+                },
+                "affecter": {
+                    "attribute": "invisible"
+                }
+            },
+            "trigger": {
+                "add": "cloaked",
+                "name": "disapear",
+                "tag": 10,
+                "time": -1,
+                "type": "ce_renderfx"
+            },
+            "trigger": {
+                "name": "appear",
+                "remove": "cloaked",
+                "tag": 11,
+                "time": -1,
+                "type": "ce_renderfx"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4",
+            "endchaintime": 0.99,
+            "handler": "ch_tele_jump",
+            "name": "teleportfailedstrike",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.9,
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/night_m/p4_power",
+                "teleport_visible": false,
+                "time": 0.9
+            },
+            "trigger": {
+                "attacktype": "direct",
+                "maxrange": 360,
+                "name": "teleport_return",
+                "powerusage": 0,
+                "time": 0.92
+            },
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.95
+            },
+            "trigger": {
+                "cleardata": true,
+                "name": "teleport_data_store",
+                "set_visible": true,
+                "time": 0.95
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "blendtime": 0,
+            "combotextfinisher": "Frenzy",
+            "combotextstarter": "Acrobatic",
+            "endchaintime": 0.95,
+            "handler": "ch_teleport_stomp",
+            "lockangles": true,
+            "name": "teleportstomp",
+            "noautoaim": true,
+            "playspeed": 0.3,
+            "powerup_tag": "ngt_power5",
+            "priority": 6,
+            "startchaintime": 0.9,
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/night_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_teleport",
+                "height": -72,
+                "maxrange": 3,
+                "name": "teleport_punch",
+                "time": 0.33
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.45,
+                "visible": true
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power5_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4_end",
+            "blendtime": 0,
+            "endchaintime": 0.95,
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "postteleport",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.9,
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/night_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "cleardata": true,
+                "name": "teleport_data_store",
+                "set_visible": true,
+                "time": 0.45
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_tele_buddy_grab",
+            "handler": "ch_tele_jump",
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "leapOfFaith",
+            "noautoaim": true,
+            "priority": "uninterruptable",
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/night_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "maxrange": 1000,
+                "name": "teleport_data_store",
+                "nofailifnotarget": true,
+                "set_visible": false,
+                "teleporttovictim": true,
+                "time": 0
+            },
+            "trigger": {
+                "maxrange": 1000,
+                "name": "teleport",
+                "nofailifnotarget": true,
+                "powerusage": 0,
+                "teleportwithvictim": true,
+                "time": 0.1
+            },
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.15
+            },
+            "trigger": {
+                "allynodename": "teleportvictim",
+                "attackerface": true,
+                "name": "victim",
+                "nodename": "teleportvictim",
+                "targetdistance": 1,
+                "time": 0.2,
+                "usesponsornode": true,
+                "victimface": true
+            },
+            "trigger": {
+                "maxrange": 360,
+                "name": "teleport_data_store",
+                "nofailifnotarget": true,
+                "set_visible": true,
+                "teleportwithvictim": true,
+                "time": 0.3
+            },
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 2,
+                "name": "effect",
+                "teleport_visible": false,
+                "time": 0.9
+            },
+            "chain": {
+                "action": "idle",
+                "result": "teleportallytransport"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_tele_buddy_grab",
+            "handler": "ch_tele_jump",
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "teleportally",
+            "noautoaim": true,
+            "priority": "uninterruptable",
+            "require": {
+                "cat": "skill",
+                "item": "ngt_teleport",
+                "level": 3
+            },
+            "trigger": {
+                "allynodename": "teleportvictim",
+                "attackerface": true,
+                "name": "victim",
+                "nodename": "teleportvictim",
+                "targetdistance": 1,
+                "time": 0,
+                "usesponsornode": true,
+                "victimface": true
+            },
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/night_m/p4_charge",
+                "time": 0.85
+            },
+            "trigger": {
+                "maxrange": "%ngt_tele_range",
+                "name": "teleport_data_store",
+                "nofailifnotarget": true,
+                "powerusage": "%ngt_tele_pwr",
+                "set_visible": false,
+                "tag": 2,
+                "teleportwithvictim": true,
+                "time": 0.85
+            },
+            "chain": {
+                "action": "idle",
+                "result": "teleportallytransport"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_grab_start_v",
+            "handler": "ch_grab_victim",
+            "lockangles": true,
+            "lockspeed": true,
+            "name": "teleportvictim",
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.85,
+                "visible": false
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_tele_buddy_land",
+            "blendtime": 0,
+            "endchaintime": 0.95,
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "teleportallytransport",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.9,
+            "trigger": {
+                "maxrange": "%ngt_tele_range",
+                "name": "teleport",
+                "nofailifnotarget": true,
+                "powerusage": "%ngt_tele_pwr",
+                "teleportwithvictim": true,
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/night_m/p4_power",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.3,
+                "visible": true
+            },
+            "trigger": {
+                "life": 0.3,
+                "movement": -40,
+                "name": "slide",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "victim_release",
+                "ownertime": 0.5,
+                "time": 0.6
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}
