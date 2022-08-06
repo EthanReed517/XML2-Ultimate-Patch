@@ -44,164 +44,6 @@
             "skinsegment2": "swords"
         },
         "FightMove": {
-            "animenum": "ea_jog1",
-            "handler": "ch_move",
-            "lockchaining": false,
-            "name": "jog",
-            "noncombat": true,
-            "trigger": {
-                "animbased": true,
-                "name": "footstep",
-                "time": 0.9,
-                "volume": 0.25
-            },
-            "trigger": {
-                "animbased": true,
-                "name": "footstep",
-                "time": 0.15,
-                "volume": 0.5
-            },
-            "chain": {
-                "action": "idle",
-                "result": "idle"
-            },
-            "chain": {
-                "action": "walk",
-                "result": "walk"
-            },
-            "chain": {
-                "action": "jog",
-                "result": "jog"
-            },
-            "chain": {
-                "action": "run",
-                "result": "run"
-            },
-            "chain": {
-                "action": "sprint",
-                "result": "sprint"
-            },
-            "chain": {
-                "action": "strafeleft",
-                "result": "strafeleft"
-            },
-            "chain": {
-                "action": "straferight",
-                "result": "straferight"
-            },
-            "chain": {
-                "action": "advance",
-                "result": "advance"
-            },
-            "chain": {
-                "action": "retreat",
-                "result": "retreat"
-            },
-            "chain": {
-                "action": "guard",
-                "result": "guarddecide"
-            },
-            "chain": {
-                "action": "attack",
-                "result": "attacklight1"
-            },
-            "chain": {
-                "action": "smash",
-                "result": "attackheavy1"
-            },
-            "chain": {
-                "action": "groundattack",
-                "result": "groundattack"
-            },
-            "chain": {
-                "action": "powers",
-                "result": "powers"
-            },
-            "chain": {
-                "action": "move",
-                "result": "jump"
-            }
-        },
-        "FightMove": {
-            "animenum": "ea_run1",
-            "handler": "ch_move",
-            "lockchaining": false,
-            "name": "run",
-            "noncombat": true,
-            "trigger": {
-                "animbased": true,
-                "name": "footstep",
-                "time": 0.9,
-                "volume": 0.5
-            },
-            "trigger": {
-                "animbased": true,
-                "name": "footstep",
-                "time": 0.15,
-                "volume": 1
-            },
-            "chain": {
-                "action": "idle",
-                "result": "idle"
-            },
-            "chain": {
-                "action": "walk",
-                "result": "walk"
-            },
-            "chain": {
-                "action": "jog",
-                "result": "jog"
-            },
-            "chain": {
-                "action": "run",
-                "result": "run"
-            },
-            "chain": {
-                "action": "sprint",
-                "result": "sprint"
-            },
-            "chain": {
-                "action": "strafeleft",
-                "result": "strafeleft"
-            },
-            "chain": {
-                "action": "straferight",
-                "result": "straferight"
-            },
-            "chain": {
-                "action": "advance",
-                "result": "advance"
-            },
-            "chain": {
-                "action": "retreat",
-                "result": "retreat"
-            },
-            "chain": {
-                "action": "guard",
-                "result": "guarddecide"
-            },
-            "chain": {
-                "action": "attack",
-                "result": "attacklight1"
-            },
-            "chain": {
-                "action": "smash",
-                "result": "attackheavy1"
-            },
-            "chain": {
-                "action": "groundattack",
-                "result": "groundattack"
-            },
-            "chain": {
-                "action": "powers",
-                "result": "powers"
-            },
-            "chain": {
-                "action": "move",
-                "result": "jump"
-            }
-        },
-        "FightMove": {
             "animenum": "ea_jump_start",
             "handler": "ch_move_jump",
             "icon": 2,
@@ -369,7 +211,7 @@
             "trigger": {
                 "name": "sound",
                 "sound": "char/night_m/p1_charge",
-                "time": 0.3
+                "time": 0.2
             },
             "trigger": {
                 "arc": 135,
@@ -396,13 +238,13 @@
             "trigger": {
                 "name": "sound",
                 "sound": "char/night_m/p1_charge",
-                "time": 0.5
+                "time": 0.45
             },
             "trigger": {
                 "index": 2,
                 "name": "sound",
                 "sound": "char/night_m/p1_charge",
-                "time": 0.65
+                "time": 0.6
             },
             "trigger": {
                 "damage": "%ngt_parry_dam",
@@ -469,7 +311,7 @@
             "handler": "ch_ngtmovingboltons",
             "lockangles": false,
             "name": "power2_loop",
-            "playspeed": 2,
+            "playspeed": 1.5,
             "powerup_tag": "ngt_power2",
             "priority": 5,
             "startchaintime": 0.99,
@@ -511,14 +353,12 @@
             },
             "trigger": {
                 "arc": 180,
-                "damage": 0,
+                "damage": 1,
+                "damagescale": "none",
                 "maxrange": 60,
                 "name": "power_sword",
                 "time": 0.15,
-                "victimeventtag": 10,
-                "damageMod": {
-                    "name": "dmgmod_no_damage"
-                }
+                "victimeventtag": 10
             },
             "trigger": {
                 "arc": 180,
@@ -567,7 +407,7 @@
             "aitype": "aoe",
             "animenum": "ea_power3",
             "combotextfinisher": "Incision",
-            "combotextstarter": "Glowing",
+            "combotextstarter": "Bleeding",
             "handler": "ch_nightcrawlerboltons",
             "icon": 2,
             "lockchaining": false,
@@ -596,14 +436,19 @@
                 "time": 0.15
             },
             "trigger": {
-                "effect": "char/night/p3_power",
-                "name": "effect_sound",
+                "name": "sound",
                 "sound": "char/night_m/p1_charge",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/night/p3_power",
+                "name": "effect",
                 "time": 0.3
             },
             "trigger": {
                 "class": "harming",
                 "damage": "%ngt_rad_dam",
+                "damagescale": "none",
                 "damagetype": "dmg_blade",
                 "life": "%ngt_rad_life",
                 "name": "powerup",
@@ -616,6 +461,8 @@
             },
             "trigger": {
                 "arc": 90,
+                "damage": 1,
+                "damagescale": "none",
                 "name": "sword_strike",
                 "powerusage": "%ngt_rad_pwr",
                 "time": 0.4,
@@ -1000,7 +847,7 @@
                 "damagetype": "dmg_teleport",
                 "maxrange": "%ngt_tele_range",
                 "name": "teleport_data_store",
-                "powerusage": "%ngt_atk_pwr",
+                "powerusage": "%ngt_fnzy_pwr",
                 "time": 0.85
             },
             "trigger": {
@@ -1057,7 +904,6 @@
                 "attacktype": "direct",
                 "maxrange": "%ngt_tele_range",
                 "name": "teleport_scaled_atk",
-                "powerusage": 0,
                 "time": 0
             },
             "trigger": {
@@ -1071,13 +917,77 @@
                 "damagetype": "dmg_teleport",
                 "height": 18,
                 "name": "teleport_punch",
-                "powerusage": "%ngt_atk_pwr",
                 "time": 0.33,
                 "victimeventtag": 101
             },
             "chain": {
                 "action": "Idle",
-                "result": "power7_loop"
+                "result": "power7_loop1"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power5",
+            "blendtime": 0,
+            "combotextfinisher": "Frenzy",
+            "combotextstarter": "Acrobatic",
+            "endchaintime": 0.95,
+            "fallback": "power7_end",
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "power7_loop1",
+            "noautoaim": true,
+            "playspeed": 0.3,
+            "powerup_tag": "ngt_power7",
+            "priority": 5,
+            "startchaintime": 0.9,
+            "require": {
+                "cat": "counter",
+                "level": 1
+            },
+            "trigger": {
+                "life": "%ngt_fnzy_stun_life",
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 101,
+                "time": -1
+            },
+            "trigger": {
+                "count": "add",
+                "name": "count",
+                "time": 0,
+                "value": -1
+            },
+            "trigger": {
+                "effect": "char/night/special_bamf",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/night_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "attacktype": "direct",
+                "maxrange": "%ngt_tele_range",
+                "name": "teleport_scaled_atk",
+                "powerusage": "%ngt_fnzy_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.45,
+                "visible": true
+            },
+            "trigger": {
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_teleport",
+                "height": 18,
+                "name": "teleport_punch",
+                "time": 0.33,
+                "victimeventtag": 101
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power7_loop1"
             }
         },
         "FightMove": {
