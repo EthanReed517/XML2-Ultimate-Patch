@@ -76,6 +76,10 @@ echo Magneto
 cd "%~dp0\1. Playable Characters\Magneto"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
 cd ..\..
+echo Nightcrawler
+cd "%~dp0\1. Playable Characters\Nightcrawler"
+call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+cd ..\..
 echo Storm
 cd "%~dp0\1. Playable Characters\Storm"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
