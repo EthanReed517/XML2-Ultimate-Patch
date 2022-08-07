@@ -11,6 +11,7 @@ copy >nul "1. Base Assets\1. Data Entries\Items_Storm.json" "..\..\3. General Da
 copy >nul "1. Base Assets\1. Data Entries\NPCstat_StormSimple.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\StormSimple.json"
 copy >nul "1. Base Assets\1. Data Entries\NPCstat_Storm_MC.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\Storm_MC.json"
 copy >nul "1. Base Assets\1. Data Entries\NPCstat_Sin_Storm.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\Sin_Storm.json"
+copy >nul "1. Base Assets\1. Data Entries\Reviewpaths_Storm.json" "..\..\3. General Data Files\review_paths\1. Base Assets\0. Review_Paths Entries\Storm.json"
 
 echo Copying Character Select Portraits to the character select menu...
 robocopy >nul /e /v "1. Base Assets\ui\models\characters" "..\..\4. Menus\Character Select Screen\1. Base Assets\ui\models\characters"
