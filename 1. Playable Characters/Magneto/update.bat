@@ -8,6 +8,7 @@ copy >nul "1. Base Assets\1. Data Entries\Codex_Magneto.json" "..\..\3. General 
 copy >nul "1. Base Assets\1. Data Entries\Dangerroom_Magneto.json" "..\..\3. General Data Files\dangerroom\1. Base Assets\0. Danger Room Entries\Magneto.json"
 copy >nul "1. Base Assets\1. Data Entries\Herostat_Magneto.txt" "..\..\3. General Data Files\herostat\1. Base Assets\0. Herostat Entries\Magneto.txt"
 copy >nul "1. Base Assets\1. Data Entries\Items_Magneto.json" "..\..\3. General Data Files\items\1. Base Assets\0. Items Entries\Magneto.json"
+copy >nul "1. Base Assets\1. Data Entries\NPCstat_Magneto_MC.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\Magneto_MC.json"
 copy >nul "1. Base Assets\1. Data Entries\NPCstat_MagnetoSimple.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\MagnetoSimple.json"
 
 echo Copying Character Select Portraits to the character select menu...

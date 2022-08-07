@@ -8,6 +8,7 @@ copy >nul "1. Base Assets\1. Data Entries\Codex_Cyclops.json" "..\..\3. General 
 copy >nul "1. Base Assets\1. Data Entries\Dangerroom_Cyclops.json" "..\..\3. General Data Files\dangerroom\1. Base Assets\0. Danger Room Entries\Cyclops.json"
 copy >nul "1. Base Assets\1. Data Entries\Herostat_Cyclops.txt" "..\..\3. General Data Files\herostat\1. Base Assets\0. Herostat Entries\Cyclops.txt"
 copy >nul "1. Base Assets\1. Data Entries\Items_Cyclops.json" "..\..\3. General Data Files\items\1. Base Assets\0. Items Entries\Cyclops.json"
+copy >nul "1. Base Assets\1. Data Entries\NPCstat_Cyclops_MC.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\Cyclops_MC.json"
 copy >nul "1. Base Assets\1. Data Entries\NPCstat_CyclopsSimple.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\CyclopsSimple.json"
 copy >nul "1. Base Assets\1. Data Entries\NPCstat_Sin_Cyc.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\Sin_Cyc.json"
 

@@ -8,6 +8,7 @@ copy >nul "1. Base Assets\1. Data Entries\Codex_Wolverine.json" "..\..\3. Genera
 copy >nul "1. Base Assets\1. Data Entries\Dangerroom_Wolverine.json" "..\..\3. General Data Files\dangerroom\1. Base Assets\0. Danger Room Entries\Wolverine.json"
 copy >nul "1. Base Assets\1. Data Entries\Herostat_Wolverine.txt" "..\..\3. General Data Files\herostat\1. Base Assets\0. Herostat Entries\Wolverine.txt"
 copy >nul "1. Base Assets\1. Data Entries\Items_Wolverine.json" "..\..\3. General Data Files\items\1. Base Assets\0. Items Entries\Wolverine.json"
+copy >nul "1. Base Assets\1. Data Entries\NPCstat_Wolverine_MC.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\Wolverine_MC.json"
 copy >nul "1. Base Assets\1. Data Entries\NPCstat_WolverineSimple.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\WolverineSimple.json"
 copy >nul "1. Base Assets\1. Data Entries\NPCstat_Sin_Wolv.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\Sin_Wolv.json"
 
