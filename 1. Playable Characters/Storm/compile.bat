@@ -18,6 +18,7 @@ rmdir /s /q "0. Staging\2. Bonus Comic Covers"
 rmdir /s /q "0. Staging\2. Bonus Loading Screens"
 REM files on the PC that aren't modified by the X2UP can be removed here
 if  %consoleChoice%==PC (
+	del >nul "0. Staging\3. No Cel Shade Assets\actors\0409.igb"
 	del >nul "0. Staging\actors\04_storm.igb"
 	del >nul "0. Staging\actors\128_civilian_male.igb"
 	del >nul "0. Staging\actors\200_storm.igb"
