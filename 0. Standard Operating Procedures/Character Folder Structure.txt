@@ -1,0 +1,86 @@
+0. Skins Source Files
+	(Folder named after the character)
+		Contains the .max and .png files used to make the character's skins and 3D heads
+1. Playable Characters
+	(Folder named after character)
+		1. Base Assets
+			1. Data Entries
+				All of the character's entries for various data files, including herostat, npcstat, codex, review_paths, danger room, and items. These are all text files in json format, except the herostat which uses XMLBCUI's format. 
+			2. Bonus Comic Covers
+				Contains folders for the character's bonus comic covers if they have them
+			2. Bonus Loading Screens
+				Contains folders for the character's bonus loading screens if they have them. 
+			3. No Cel Shade Assets
+				Includes assets without cel shading for the character. These are the ones made to work with the PC, PS2, and Xbox versions. The GameCube will have its own "3. No Cel Shade Assets" folder. This folder will at least have skins, but it may also include boltons. 
+			actors
+				Contains the character's skins (including the PC/Xbox briefing model if applicable and any NPC skins) and their animations. If any skin slots are empty, the first skin is duplicated to fill them. 
+			data
+				Contains the character's powerstyle, talents (using icons2), entities (if applicable), and moveset (if applicable). All are decompiled to json format. 
+			effects
+				Contains the character's effects files (including those of their NPCs) all decompiled to json format
+			hud
+				The character's conversation portraits that will be used for PC, GameCube, PS2, and Xbox. If any skin slots are empty, the first portrait is duplicated to fill them.
+			models
+				Any models the character may have, including boltons, power models, and any character-specific map models (if applicable)
+			textures
+				Contains the character's power icons (both icons1 and icons2), as well as their loading screens and comic covers for the PC and Xbox versions.
+			ui
+				Contains the character's 3D heads (if any skin slots are empty, the first 3D head is duplicated to fill them) and their character select portrait
+			The "1. Base Assets" folder also contains the cfg files for console fb packages. There are cfg files for their first skin, their "name_xml" package, and any NPCs of the character
+		2. Default Assets - GameCube
+			2. Bonus Comic Covers
+				Contains folders for bonus comic covers that are at a lower resolution to work for the GameCube (if applicable). Identical files will be added to the PS2 folder. 
+			2. Bonus Loading Screens
+				Contains folders for bonus loading screens that are at a lower resolution to work for the GameCube (if applicable). Identical files will be added to the PS2 folder. 
+			3. No Cel Shade Assets
+				Contains folders for assets without cel shading that use lower resolutions for the GameCube. At the very least, this will be the character's skins, but boltons or power models may be here as well
+			actors
+				This folder contains the reduced-resolution character skins for the GameCube version as well as a reduced-resolution mission briefing model (if applicable). If any skin slots are empty, the first skin is duplicated to fill them. 
+			models
+				Contains reduced-resolution power models, boltons, and map models (if applicable)
+			sounds
+				Contains the character's sounds for the GameCube
+			textures
+				Contains reduced-resolution comic covers and loading screens
+			ui
+				Contains reduced-resolution 3D heads for the GameCube version. If any skin slots are empty, the first 3D head is duplicated to fill them
+		2. Default Assets - PC
+			packages\generated\characters
+				Contains the PC packages decompiled to json. This includes packages for the character's first skin, their "name_xml" package, and any NPC packages. For simplicity, these can be created using the console cfg files using the "cfgToPkgb" utility (but with powerstyles and entity deathsounds added back in), or they can be manually created
+			sounds
+				contains the character's sounds for the PC
+		2. Default Assets - PS2
+			2. Bonus Comic Covers
+				Contains folders for bonus comic covers that are at a lower resolution to work for the PS2 (if applicable). Identical files will be added to the GameCube folder. 
+			2. Bonus Loading Screens
+				Contains folders for bonus loading screens that are at a lower resolution to work for the PS2 (if applicable). Identical files will be added to the GameCube folder. 
+			actors
+				Contains a reduced-resolution mission briefing model for the PS2, if applicable. All other skins for the PS2 will be the same
+			models
+				Contains any reduced-resolution models the PS2 may have. 
+			sounds
+				Contains the PS2-specific sounds
+			textures
+				Contains reduced-resolution comic covers and loading screens
+		2. Default Assets - PSP
+			actors
+				Contains default PSP skins and animations for the character and their NPC versions. Since the X2UP has more skins than the base game, additional skins can be gotten from MUA1 PSP, or existing skins can be duplicated.
+			hud
+				Contains the character's default conversation portrait from the PSP duplicated to cover all of their skins. 
+			models
+				Contains any models the character may have, taken from the PSP versions of XML2 or MUA1 (as applicable)
+			sounds
+				Contains the PSP-specific sounds
+			textures
+				Contains the default loading screens and comic covers from the PSP. If the X2UP version of the character has more loading screens than the default, the default loading screen can be duplicated to fill that
+			ui
+				Contains default PSP 3D heads (duplicated to fill additional skin numbers as needed), as well as the default PSP character select portrait
+		2. Default Assets - Xbox
+			sounds
+				Contains the Xbox-specific sounds
+		The main folder also contains compile.bat (the character's compiler script), compile.ini (configuration settings to compile the character), and update.bat (which is used to send the character's assets to the maps or other areas they need to be. 
+2. Bonus Skins
+	Contains a folder for each bonus skin that the character has
+8. Screenshots
+	1. Base Assets
+		Contains a folder for screenshots of the character
