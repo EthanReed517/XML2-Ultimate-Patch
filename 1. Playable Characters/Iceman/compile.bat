@@ -1,13 +1,13 @@
 @echo off
-echo Compiling NAME's character assets 
+echo Compiling iceman's character assets 
 
 REM **************************
 REM * Section 0 - User Input *
 REM **************************
 
 REM fill in the name of the character's PC packages here
-set pcPkgb=name_XX01.pkgb.json
-set pcPkgbNc=name_XX01_nc.pkgb.json
+set pcPkgb=iceman_0801.pkgb.json
+set pcPkgbNc=iceman_0801_nc.pkgb.json
 
 goto consoleChoiceSection
 
@@ -15,13 +15,11 @@ goto consoleChoiceSection
 REM can remove unneeded folders. Customize as needed
 rmdir /s /q "0. Staging\1. Data Entries"
 rmdir /s /q "0. Staging\2. Bonus Comic Covers"
-rmdir /s /q "0. Staging\2. Bonus Loading Screens"
 REM files on the PC that aren't modified by the X2UP can be removed here
 if  %consoleChoice%==PC (
-	del >nul "0. Staging\actors\XX_name.igb"
+	del >nul "0. Staging\actors\08_iceman.igb"
 	del >nul "0. Staging\actors\128_civilian_male.igb"
-	del >nul "0. Staging\actors\200_name.igb"
-	rmdir /s /q "0. Staging\models"
+	del >nul "0. Staging\actors\200_iceman.igb"
 )
 REM PSP does not have no cel shade assets folder 
 REM because it doesn't use cel shading to begin with.
