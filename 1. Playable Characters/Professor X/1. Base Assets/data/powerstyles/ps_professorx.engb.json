@@ -108,9 +108,13 @@
             "trigger": {
                 "effect": "char/profx/p1_power",
                 "fxlevel": 2,
-                "name": "effect_sound",
-                "sound": "char/profx_m/p1_charge",
+                "name": "effect",
                 "time": 0.3
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/profx_m/p1_charge",
+                "time": 0.2
             },
             "trigger": {
                 "angle": 45,
@@ -476,12 +480,14 @@
             }
         },
         "FightMove": {
-            "animenum": "ea_power9",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Shock",
             "description": "PSYCHIC SHOCK",
             "icon": 8,
             "lockangles": true,
             "name": "power9",
-            "playspeed": 10,
+            "noautotarget": true,
+            "playspeed": 2,
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -503,12 +509,6 @@
                 "time": 0
             },
             "trigger": {
-                "effect": "char/profx/p9_charge",
-                "fxlevel": 2,
-                "name": "effect",
-                "time": 0
-            },
-            "trigger": {
                 "bolt": "Bip01 R Hand",
                 "effect": "char/profx/p9_charge",
                 "fxlevel": 3,
@@ -516,98 +516,114 @@
                 "time": 0
             },
             "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/profx/p9_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/profx/p5_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
                 "name": "sound",
                 "sound": "char/profx_m/p4_power",
                 "time": 0.3
             },
             "trigger": {
-                "foundallytag": 20,
-                "maxrange": 144,
-                "name": "do_resurrect",
-                "numtoresurrect": -1,
-                "resurect_really_dead": "ally",
-                "team_filter": "both",
-                "time": 0.3,
-                "type": "ce_setup_ally_resurrect"
+                "arc": 180,
+                "damage": 0,
+                "damagelevel": 1,
+                "index": 1,
+                "maxrange": 350,
+                "name": "convert",
+                "time": 0.43,
+                "type": "ce_atk",
+                "victimeventtag": 98
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "psionic",
+                "damage": "%prof_resurrect_dmg",
+                "damagelevel": 1,
+                "damagetype": "dmg_telekinesis",
+                "knockback": 190,
+                "name": "psyshock",
+                "time": -1,
+                "type": "ce_atk",
+                "victimeventtag": 100,
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                }
+            },
+            "trigger": {
+                "maxrange": 150,
+                "name": "psyshock",
+                "time": 0.45
+            },
+            "trigger": {
+                "maxrange": 250,
+                "name": "psyshock",
+                "time": 0.5
+            },
+            "trigger": {
+                "maxrange": 350,
+                "name": "psyshock",
+                "time": 0.55
             },
             "trigger": {
                 "maxdangerrating": 10,
-                "name": "filterevent",
+                "name": "no_bosses",
                 "noboss": true,
-                "passtag": 21,
-                "tag": 20,
+                "passtag": 99,
+                "tag": 98,
                 "time": -1,
                 "type": "ce_filter_event"
             },
             "trigger": {
-                "name": "otherevents",
-                "othertag": 22,
-                "othertag2": 23,
-                "tag": 21,
+                "chance": "%prof_resurrect_pct",
+                "name": "do_chance",
+                "othertag": 200,
+                "tag": 99,
                 "time": -1,
                 "type": "ce_otherevent"
             },
             "trigger": {
-                "combatnode": "prof_resurrect_v",
-                "maxhealthpercent": "%prof_resurrect_hlt",
-                "name": "resurrect_self",
-                "nonhumanoidnode": "prof_resurrect_v_nh",
-                "self": true,
-                "tag": 22,
-                "time": -1,
-                "type": "ce_resurrect"
-            },
-            "trigger": {
-                "name": "filterevent",
-                "passtag": 30,
-                "tag": 23,
-                "team_filter": "enemy",
-                "time": -1,
-                "type": "ce_filter_event"
-            },
-            "trigger": {
-                "attach_to_dead": true,
                 "class": "callevents",
-                "life": "%prof_resurrect_lif",
+                "life": 30,
                 "name": "powerup",
-                "tag": 30,
+                "tag": 200,
                 "time": -1,
-                "special_fx": {
-                    "bolt": "Bip01 Head",
-                    "effect": "base/powerup/pu_converted"
+                "FunctionEvent": {
+                    "function": "deactivate",
+                    "triggertag": 201
                 },
                 "affecter": {
                     "attribute": "team_switch",
                     "level": 1
                 },
-                "FunctionEvent": {
-                    "function": "deactivate",
-                    "triggertag": 35
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_converted"
+                },
+                "special_fx": {
+                    "effect": "base/material/explode/exp_generic_med",
+                    "how_used": "deactivation"
                 }
             },
             "trigger": {
-                "name": "otherevent",
-                "othertag": 36,
-                "othertag2": 37,
-                "tag": 35,
-                "time": -1
-            },
-            "trigger": {
-                "effect": "char/profx/p9_charge",
-                "fxlevel": 4,
-                "name": "effect",
-                "tag": 36,
-                "time": -1
-            },
-            "trigger": {
                 "instantkillonly": true,
-                "name": "remove",
-                "nosponsor": true,
-                "tag": 37,
-                "time": -1
+                "name": "remove_me",
+                "nosponsor": false,
+                "tag": 201,
+                "time": -1,
+                "type": "ce_remove"
             },
             "chain": {
-                "action": "Idle",
+                "action": "idle",
                 "result": "idle"
             }
         },

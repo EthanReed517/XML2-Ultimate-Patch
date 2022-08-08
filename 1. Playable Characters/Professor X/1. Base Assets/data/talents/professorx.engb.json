@@ -1,11 +1,25 @@
 {
     "talents": {
         "talent": {
+            "hidden": true,
+            "name": "prof_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_mental",
+                        "level": 1
+                    }
+                }
+            }
+        },
+        "talent": {
             "descname": "Cleave",
-            "description": "Swing a massive sword causing $DMG, and a chance for a Deadly Strike (1/3 instant $HP loss)",
+            "description": "Swing a massive sword in an arc with a chance for a Deadly Strike. (1/3 instant $HP loss)",
             "descshort": "Melee",
             "icon": 0,
-            "icon_texture": "textures/ui/profx_icons1.png",
+            "icon_texture": "textures/ui/profx_icons2.png",
             "name": "prof_cleave",
             "power": "power1",
             "talentvalues": {
@@ -62,7 +76,7 @@
             },
             "level": {
                 "count": 20,
-                "description": "%prof_cleave_dmg:x $DMG_PHYSICAL\\n%prof_cleave_pct:p chance\\n%prof_cleave_pwr $EP",
+                "description": "%prof_cleave_dmg:s $DMG_PHYSICAL (%prof_cleave_dmg:x)\\n%prof_cleave_pct:p chance\\n%prof_cleave_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%prof_cleave_req"
@@ -71,10 +85,10 @@
         },
         "talent": {
             "descname": "Crushing Ego",
-            "description": "Radial burst of mental energy that temporarily holds enemies",
+            "description": "Radial burst of Mental energy that paralyzes enemies, doing damage for a time.",
             "descshort": "Blast",
             "icon": 1,
-            "icon_texture": "textures/ui/profx_icons1.png",
+            "icon_texture": "textures/ui/profx_icons2.png",
             "name": "prof_hold",
             "power": "power2",
             "talentvalues": {
@@ -131,7 +145,7 @@
             },
             "level": {
                 "count": 18,
-                "description": "%prof_hold_dmg $DMG_MENTAL\\n%prof_hold_dm2 Bleed $DMG over ^4 Seconds\\n%prof_hold_lif Second hold\\n%prof_hold_pwr $EP",
+                "description": "%prof_hold_dmg $DMG_MENTAL\\n%prof_hold_dm2 Bleed $DMG over ^4 seconds\\n%prof_hold_lif second hold\\n%prof_hold_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%prof_hold_req"
@@ -140,10 +154,10 @@
         },
         "talent": {
             "descname": "Telepathic Link",
-            "description": "Links to the minds of all teammates, increasing $AR and $DMG",
+            "description": "Links the minds of all teammates, increasing $AR and $DMG.",
             "descshort": "Boost",
             "icon": 2,
-            "icon_texture": "textures/ui/profx_icons1.png",
+            "icon_texture": "textures/ui/profx_icons2.png",
             "name": "prof_tele_link",
             "power": "power3",
             "type": "boost",
@@ -210,10 +224,10 @@
         },
         "talent": {
             "descname": "Psychic Storm",
-            "description": "Press and Hold power. lightning chains from Professor X's body to nearby enemies",
+            "description": "Lightning chains from Professor X's body to nearby enemies.\\n(~41Press And Hold~~)",
             "descshort": "Special",
             "icon": 3,
-            "icon_texture": "textures/ui/profx_icons1.png",
+            "icon_texture": "textures/ui/profx_icons2.png",
             "name": "prof_storm",
             "power": "power4",
             "talentvalues": {
@@ -269,10 +283,10 @@
         },
         "talent": {
             "descname": "PSYCHIC SHOCK",
-            "description": "Resurrects nearby fallen allies and enemies. Resurrected enemies become allies for a time, then expire",
+            "description": "Releases an Xtreme Psychic blast, doing Mental damage with a chance to convert enemies for a time. Enemies explode when conversion ends.",
             "descshort": "Special",
             "icon": 8,
-            "icon_texture": "textures/ui/profx_icons1.png",
+            "icon_texture": "textures/ui/profx_icons2.png",
             "name": "prof_resurrect",
             "power": "power9",
             "skirmish_locked": true,
@@ -290,28 +304,38 @@
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "prof_resurrect_hlt",
-                    "value": 0.15
+                    "name": "prof_resurrect_dmg",
+                    "value": "85 96"
                 },
                 "talentvalue": {
                     "level": 7,
-                    "name": "prof_resurrect_hlt",
-                    "value": 0.75
+                    "name": "prof_resurrect_dmg",
+                    "value": "279 309"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "prof_resurrect_pct",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "prof_resurrect_pct",
+                    "value": 0.5
                 },
                 "talentvalue": {
                     "level": 1,
                     "name": "prof_resurrect_lif",
-                    "value": 13
+                    "value": 20
                 },
                 "talentvalue": {
                     "level": 7,
                     "name": "prof_resurrect_lif",
-                    "value": 33
+                    "value": 34
                 }
             },
             "level": {
                 "count": 7,
-                "description": "%prof_resurrect_hlt:p of $HP restored\\n%prof_resurrect_lif Seconds resurrected enemies",
+                "description": "%prof_resurrect_dmg $DMG_MENTAL\\n%prof_resurrect_pct:p chance to convert\\n%prof_resurrect_lif second conversion duration",
                 "require": {
                     "cat": "level",
                     "level": "%prof_resurrect_req"
@@ -320,10 +344,10 @@
         },
         "talent": {
             "descname": "Reveal Intent",
-            "description": "Increases ProfessorX's mental insight, increasing his $DR",
+            "description": "Improves Professor X's Mental insight, increasing his $DR",
             "descshort": "Passive",
             "icon": 4,
-            "icon_texture": "textures/ui/profx_icons1.png",
+            "icon_texture": "textures/ui/profx_icons2.png",
             "name": "prof_reval",
             "talentvalues": {
                 "talentvalue": {
@@ -366,10 +390,10 @@
         },
         "talent": {
             "descname": "Clairvoyance",
-            "description": "Increase movement speed and reduce $DMG taken",
+            "description": "Increases Movement Speed and reduces $DMG taken.",
             "descshort": "Passive",
             "icon": 5,
-            "icon_texture": "textures/ui/profx_icons1.png",
+            "icon_texture": "textures/ui/profx_icons2.png",
             "name": "prof_clairvoy",
             "talentvalues": {
                 "talentvalue": {
@@ -405,7 +429,7 @@
             },
             "level": {
                 "count": 15,
-                "description": "%prof_clairvoy_spd:s movement speed\\n%prof_clairvoy_dmg:s $DMG taken",
+                "description": "%prof_clairvoy_spd:s Movement Speed\\n%prof_clairvoy_dmg:s $DMG taken",
                 "require": {
                     "cat": "level",
                     "level": "%prof_clairvoy_req"
