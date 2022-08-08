@@ -10,6 +10,7 @@ copy >nul "1. Base Assets\1. Data Entries\Dangerroom_NAME.json" "..\..\3. Genera
 copy >nul "1. Base Assets\1. Data Entries\Herostat_NAME.txt" "..\..\3. General Data Files\herostat\1. Base Assets\0. Herostat Entries\NAME.txt"
 copy >nul "1. Base Assets\1. Data Entries\Items_NAME.json" "..\..\3. General Data Files\items\1. Base Assets\0. Items Entries\NAME.json"
 copy >nul "1. Base Assets\1. Data Entries\NPCstat_NAMESimple.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\NAMESimple.json"
+copy >nul "1. Base Assets\1. Data Entries\ReviewPaths_NAME.json" "..\..\3. General Data Files\review_paths\1. Base Assets\0. Review_Paths Entries\NAME.json"
 
 REM Character Select Portraits
 echo Copying Character Select Portraits to the character select menu...
