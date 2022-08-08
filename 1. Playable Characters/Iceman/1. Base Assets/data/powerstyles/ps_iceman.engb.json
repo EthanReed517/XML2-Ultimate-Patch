@@ -1,0 +1,1148 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/iceman_icons1.png",
+        "FightMove": {
+            "aitype": "melee",
+            "animenum": "ea_attack_trip2",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacktrip2",
+            "playspeed": 1,
+            "startchaintime": 0.63,
+            "trigger": {
+                "name": "slide",
+                "targetdistance": 70,
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/iceman/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/iceman/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/iceman_m/p1_charge",
+                "time": 0.48
+            },
+            "trigger": {
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "4 -10 29",
+                "beambolt": "Bip01 R Hand",
+                "beameffect": "char/iceman/p1_power",
+                "damage": "2 3",
+                "damagetype": "dmg_cold",
+                "fxlevel": 1,
+                "hiteffect": "char/iceman/p1_impact",
+                "inherit": "beam",
+                "knockback": 40,
+                "maxrange": 100,
+                "name": "freeze_fx",
+                "pitch": 15,
+                "radius": 20,
+                "spawneffect": "char/iceman/p1_shot",
+                "tag": 3,
+                "time": 0.48,
+                "victimeventtag": 15,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                },
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                },
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "finisher": true,
+                "life": 0.25,
+                "name": "xtreme_start",
+                "tag": 15,
+                "time": -1,
+                "worldspeed": 0.5
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "beam",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Freeze",
+            "combotextstarter": "Slow",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "powerup_tag": "ice_power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "iceman_slow_beam",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "class": "chill",
+                "effect": "char/iceman/p1_aura",
+                "life": "%ice_slow_tim",
+                "name": "powerup",
+                "tag": 10,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%ice_slow_spd"
+                }
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/iceman/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/iceman/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/iceman_m/p1_charge",
+                "time": 0.5
+            },
+            "trigger": {
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "22 -4 39",
+                "beambolt": "Bip01 R Hand",
+                "beameffect": "char/iceman/p1_power",
+                "damage": "%ice_slow_dmg",
+                "damagetype": "dmg_cold",
+                "fxlevel": 1,
+                "hiteffect": "char/iceman/p1_impact",
+                "inherit": "beam",
+                "maxrange": 500,
+                "name": "freeze_fx",
+                "piercechance": "%ice_pierce_chance",
+                "powerusage": "%ice_slow_pwr",
+                "radius": 0,
+                "spawneffect": "char/iceman/p1_shot",
+                "tag": 3,
+                "time": 0.5,
+                "victimeventtag": 10,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                },
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "beam",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Frost",
+            "combotextstarter": "Chilly",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "powerup_tag": "ice_power2",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/iceman_m/p2_impact",
+                "time": -1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/iceman_m/p2_explode",
+                "time": -1
+            },
+            "require": {
+                "cat": "skill",
+                "item": "iceman_freeze_beam",
+                "level": 1
+            },
+            "trigger": {
+                "class": "freeze",
+                "life": "%ice_frz_beam_tim",
+                "name": "powerup",
+                "renderfx": "chilled",
+                "skin": "0001",
+                "sound1": "char/iceman_m/p2_impact",
+                "sound2": "char/iceman_m/p2_explode",
+                "tag": 20,
+                "time": -1,
+                "user1": 2,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/iceman/p1_aura",
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/iceman/p2_shatter",
+                    "how_used": "custom",
+                    "tag": 1
+                },
+                "affecter": {
+                    "attribute": "frozen",
+                    "level": 1
+                },
+                "powerup": {
+                    "bolt": "Bip01 Head",
+                    "class": "chill",
+                    "effect": "char/iceman/p1_aura",
+                    "life": 2,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "move",
+                        "level": 0.3
+                    }
+                }
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/iceman/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/iceman/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/iceman_m/p1_charge",
+                "time": 0.5
+            },
+            "trigger": {
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "22 -4 39",
+                "beambolt": "Bip01 R Hand",
+                "beameffect": "char/iceman/p1_power",
+                "damage": "%ice_frz_beam_dmg",
+                "damagetype": "dmg_cold",
+                "fxlevel": 1,
+                "hiteffect": "char/iceman/p1_impact",
+                "inherit": "beam",
+                "maxrange": 500,
+                "name": "freeze_fx",
+                "piercechance": "%ice_pierce_chance",
+                "powerusage": "%ice_frz_beam_pwr",
+                "radius": 0,
+                "spawneffect": "char/iceman/p1_shot",
+                "tag": 3,
+                "time": 0.5,
+                "victimeventtag": 20,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                },
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "projectile",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Shards",
+            "combotextstarter": "Icy",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "powerup_tag": "ice_power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "iceman_ice_shards",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/iceman/p1_charge",
+                "name": "effect_sound",
+                "sound": "char/iceman_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "projectile",
+                "center": true,
+                "count": "%ice_shards_num",
+                "damage": "%ice_shards_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_cold",
+                "entity": "iceman_p3_proj",
+                "filename": "ents_iceman",
+                "maxrange": 800,
+                "name": "projectile",
+                "piercechance": "%ice_pierce_chance",
+                "powerusage": "%ice_shards_pwr",
+                "speed": 600,
+                "tag": 1,
+                "targetable": true,
+                "time": 0.3,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                },
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "projectile",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Shatter",
+            "combotextstarter": "Icicle",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "powerup_tag": "ice_power4",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "iceman_ice_crystal",
+                "level": 1
+            },
+            "trigger": {
+                "class": "freeze",
+                "life": "%ice_crystal_frz",
+                "name": "powerup",
+                "renderfx": "chilled",
+                "skin": "0001",
+                "sound1": "char/iceman_m/p2_impact",
+                "sound2": "char/iceman_m/p2_explode",
+                "tag": 20,
+                "time": -1,
+                "user1": 2,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/iceman/p1_aura",
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/iceman/p2_shatter",
+                    "how_used": "custom",
+                    "tag": 1
+                },
+                "affecter": {
+                    "attribute": "frozen",
+                    "level": 1
+                },
+                "powerup": {
+                    "class": "chill",
+                    "life": "%ice_crystal_slw",
+                    "special_fx": {
+                        "bolt": "Bip01 Head",
+                        "effect": "char/iceman/p1_aura",
+                        "how_used": "primary"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "move",
+                        "level": 0.3
+                    }
+                }
+            },
+            "trigger": {
+                "class": "chill",
+                "life": "%ice_crystal_slw",
+                "name": "powerup",
+                "tag": 30,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/iceman/p1_aura",
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%ice_crystal_spd"
+                }
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/iceman/p1_charge",
+                "fxlevel": 4,
+                "name": "effect_sound",
+                "sound": "char/iceman_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "projectile",
+                "center": true,
+                "damage": "%ice_crystal_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_cold",
+                "entity": "iceman_p4_proj",
+                "explodedamage": "%ice_crystal_dm2",
+                "explodedamagetype": "dmg_cold",
+                "explodevictimeventtag": 30,
+                "filename": "ents_iceman",
+                "fulltargeting": true,
+                "maxrange": 800,
+                "name": "projectile",
+                "powerusage": "%ice_crystal_pwr",
+                "speed": 600,
+                "targetable": true,
+                "time": 0.3,
+                "victimeventtag2": 20,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                },
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_start",
+            "handler": "ch_move_jump",
+            "lockangles": true,
+            "name": "jump",
+            "startchaintime": 0.1,
+            "chain": {
+                "action": "move",
+                "result": "power5"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "jumploop",
+            "noncombat": true,
+            "chain": {
+                "action": "move",
+                "result": "power5"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power5",
+            "blendtime": 0,
+            "cansteal": false,
+            "combotextfinisher": "Slide",
+            "combotextstarter": "Sliding",
+            "energypersecond": "%ice_slide_pwr",
+            "fallback": "jumploop",
+            "handler": "ch_skating",
+            "icon": 4,
+            "lockangles": false,
+            "locktransitionangles": true,
+            "name": "power5",
+            "noautoaim": true,
+            "playspeed": 8,
+            "priority": 5,
+            "startchaintime": 0.95,
+            "turnrate": 0.2,
+            "require": {
+                "cat": "skill",
+                "item": "iceman_ice_slide",
+                "level": 1
+            },
+            "trigger": {
+                "center_bolt": true,
+                "life": -1,
+                "name": "powerup",
+                "remove_on_node_end": true,
+                "time": 0,
+                "special_fx": {
+                    "effect": "char/iceman/p5_power",
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%ice_slide_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_cold",
+                "hiteffect": "char/iceman/p5_impact",
+                "knockback": "%ice_slide_kb",
+                "name": "punch",
+                "tag": 1,
+                "time": -1,
+                "victimeventtag": 100
+            },
+            "trigger": {
+                "class": "chill",
+                "life": "%ice_slide_lif",
+                "name": "powerup",
+                "tag": 100,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/iceman/p1_aura",
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%ice_crystal_spd"
+                }
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/iceman/p5_charge_bolt",
+                "name": "effect_sound",
+                "sound": "char/iceman_m/p5_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/iceman_m/p5_charge",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "idle",
+                "result": "skateend"
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power5"
+            },
+            "chain": {
+                "action": "touch",
+                "result": "fastballhit"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "skateend",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "skateend"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Chill",
+            "combotextstarter": "Frosty",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "powerup_tag": "ice_power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "iceman_cold_blast",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "class": "chill",
+                "effect": "char/iceman/p1_aura",
+                "life": "%ice_blast_tim",
+                "name": "powerup",
+                "tag": 10,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%ice_blast_spd"
+                }
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damagescale": "none",
+                "damagetype": "dmg_cold",
+                "inherit": "punch",
+                "name": "radial_punch",
+                "victimeventtag": 10,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                },
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%ice_blast_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/iceman/p6_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/iceman_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/iceman/p6_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/iceman/p6_power",
+                "name": "effect_sound",
+                "sound": "char/iceman_m/p6_power",
+                "time": 0.4
+            },
+            "trigger": {
+                "damage": "%ice_blast_dmg",
+                "maxrange": 80,
+                "name": "radial_punch",
+                "time": 0.4
+            },
+            "trigger": {
+                "damage": "%ice_blast_dmg",
+                "maxrange": 100,
+                "name": "radial_punch",
+                "time": 0.45
+            },
+            "trigger": {
+                "damage": "%ice_blast_dmg",
+                "maxrange": 120,
+                "name": "radial_punch",
+                "time": 0.48
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power6",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power7",
+            "powerup_tag": "iceman_power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "iceman_ice_gloves",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/iceman/p6_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/iceman_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/iceman/p6_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/iceman/p7_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/iceman_m/p2_impact",
+                "time": 0.5
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_enemy": "none",
+                "apply_self": true,
+                "class": "add_attack",
+                "damagepercent": "%ice_gloves_pct",
+                "damagetype": "dmg_cold",
+                "life": "%ice_gloves_tim",
+                "name": "powerup",
+                "tag": 3,
+                "time": 0.5,
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    }
+                },
+                "affecter": {
+                    "attribute": "attack_rating",
+                    "level": "%ice_gloves_ar"
+                },
+                "bolton": {
+                    "bolt": "Bip01 R Hand",
+                    "model": "models/effects/ice_glove"
+                },
+                "bolton": {
+                    "bolt": "Bip01 L Hand",
+                    "model": "models/effects/ice_glove"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power6",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8",
+            "powerup_tag": "iceman_power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "iceman_ice_armor",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/iceman/p6_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/iceman_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/iceman/p6_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/iceman/p7_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/iceman_m/p8_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "callonhurt": true,
+                "class": "hurt_attacker",
+                "damage": "%ice_ice_armor_dmg",
+                "life": -1,
+                "name": "powerup",
+                "onlyhurtmelee": true,
+                "powerusage": "%ice_ice_armor_pwr",
+                "tag": 2,
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/iceman/p8_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    }
+                },
+                "affecter": {
+                    "attribute": "spend_damage",
+                    "level": "%ice_ice_armor_hth"
+                },
+                "powerup": {
+                    "bolt": "Bip01 Head",
+                    "class": "chill",
+                    "effect": "char/iceman/p1_aura",
+                    "life": "%ice_ice_armor_tim",
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "move",
+                        "level": "%ice_ice_armor_spd"
+                    }
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "blendtime": 0,
+            "combotextfinisher": "Blizzard",
+            "description": "COLD SNAP",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power9",
+            "playspeed": 10,
+            "powerup_tag": "iceman_power9",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/iceman_m/p2_impact",
+                "time": -1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/iceman_m/p2_explode",
+                "time": -1
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "class": "freeze",
+                "effect": "char/iceman/p1_aura",
+                "effect_cust1": "char/iceman/p2_shatter",
+                "life": "%iceman_frz_frm_frz",
+                "name": "powerup",
+                "renderfx": "chilled",
+                "skin": "0001",
+                "sound1": "char/iceman_m/p2_impact",
+                "sound2": "char/iceman_m/p2_explode",
+                "tag": 20,
+                "time": -1,
+                "user1": 2,
+                "affecter": {
+                    "attribute": "frozen",
+                    "level": 1
+                },
+                "powerup": {
+                    "class": "chill",
+                    "life": 2,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "move",
+                        "level": "%iceman_frz_frm_spd"
+                    }
+                }
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "class": "chill",
+                "effect": "char/iceman/p1_aura",
+                "life": "%iceman_frz_frm_slw",
+                "name": "powerup",
+                "tag": 10,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%iceman_frz_frm_spd"
+                }
+            },
+            "require": {
+                "cat": "skill",
+                "item": "iceman_freeze_frame",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/iceman/p9_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/iceman_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/iceman/p9_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/iceman/p9_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/iceman/p9_impact",
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": 1,
+                "damagetype": "dmg_cold",
+                "maxrange": 150,
+                "name": "icextreme_freeze",
+                "time": 0.59,
+                "type": "ce_atk",
+                "victimeventtag": 20,
+                "victimeventtag2": 21
+            },
+            "trigger": {
+                "attacks_per_second": 1,
+                "class": "harming",
+                "damage": "%iceman_frz_frm_dmg",
+                "damagetype": "dmg_cold",
+                "life": 4,
+                "name": "powerup",
+                "tag": 21,
+                "time": -1
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%iceman_frz_frm_dmg",
+                "damagetype": "dmg_cold",
+                "maxrange": 400,
+                "name": "icextreme_slow",
+                "time": 0.61,
+                "type": "ce_atk",
+                "victimeventtag": 10,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                },
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power10",
+            "combotextfinisher": "Shatter",
+            "combotextstarter": "Shattering",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power10",
+            "powerup_tag": "iceman_power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "iceman_ice_pill",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/iceman/p6_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/iceman/p6_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/iceman/p10_power",
+                "name": "effect_sound",
+                "sound": "char/iceman_m/p6_charge",
+                "time": 0.5
+            },
+            "trigger": {
+                "damage": "%iceman_ice_pill_dmg",
+                "damagetype": "dmg_cold",
+                "hiteffect": "char/iceman/p10_impact",
+                "maxrange": 250,
+                "name": "blast",
+                "numblasts": "%iceman_ice_pill_num",
+                "powerusage": "%iceman_ice_pill_pwr",
+                "radius": 72,
+                "targetable": true,
+                "time": 0.5,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                },
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power6",
+            "blendtime": 0,
+            "combotextfinisher": "Blizzard",
+            "description": "ICE SIDEKICK",
+            "icon": 13,
+            "lockangles": true,
+            "name": "power11",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "iceman_minion",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/iceman_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "healthpct": "%iceman_minion_hlt",
+                "minioneventtag": 10,
+                "name": "spawnminion",
+                "skin": "0001",
+                "time": 0.5,
+                "type": "ce_spawn_minion"
+            },
+            "trigger": {
+                "class": "callevents",
+                "life": "%iceman_minion_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "remove_on_death": true,
+                "tag": 10,
+                "time": -1,
+                "FunctionEvent": {
+                    "function": "deactivate",
+                    "triggertag": 20
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": "%iceman_minion_dmg"
+                },
+                "special_fx": {
+                    "effect": "char/iceman/p11_charge",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/iceman/p1_aura",
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/iceman/p2_shatter",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "name": "remove",
+                "tag": 20,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
