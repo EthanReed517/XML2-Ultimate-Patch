@@ -10,7 +10,7 @@ copy >nul "1. Base Assets\1. Data Entries\Herostat_ProfessorX.txt" "..\..\3. Gen
 copy >nul "1. Base Assets\1. Data Entries\NPCstat_ProfX.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\ProfX.json"
 copy >nul "1. Base Assets\1. Data Entries\NPCstat_ProfX_MC.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\ProfX_MC.json"
 copy >nul "1. Base Assets\1. Data Entries\NPCstat_ProfXCaptive.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\ProfXCaptive.json"
-copy >nul "1. Base Assets\1. Data Entries\ReviewPaths_ProfessorX.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\ProfessorX.json"
+copy >nul "1. Base Assets\1. Data Entries\ReviewPaths_ProfessorX.json" "..\..\3. General Data Files\review_paths\1. Base Assets\0. Review_Paths Entries\ProfessorX.json"
 
 REM Character Select Portraits
 echo Copying Character Select Portraits to the character select menu...
