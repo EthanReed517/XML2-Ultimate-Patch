@@ -1,0 +1,80 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "beam",
+            "animenum": "ea_power1",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power_attack",
+            "powerup_tag": "ice_power2",
+            "priority": 5,
+            "trigger": {
+                "class": "freeze",
+                "do_pain": true,
+                "effect": "char/iceman/p1_aura",
+                "effect_cust1": "char/iceman/p2_shatter",
+                "life": 4,
+                "name": "powerup",
+                "skin": "0001",
+                "sound1": "char/ice_s_m/p2_charge",
+                "sound2": "char/ice_s_m/p2_explode",
+                "tag": 20,
+                "time": -1,
+                "user1": 2,
+                "affecter": {
+                    "attribute": "frozen",
+                    "level": 1
+                },
+                "powerup": {
+                    "class": "chill",
+                    "effect": "char/iceman/p1_aura",
+                    "life": 1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "move",
+                        "level": 0.3
+                    }
+                }
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/iceman/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/iceman/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ice_s_m/p1_charge",
+                "time": 0.5
+            },
+            "trigger": {
+                "beambolt": "Bip01 R Hand",
+                "beameffect": "char/iceman/p1_power",
+                "damage": "%mdmg_high",
+                "damagetype": "dmg_cold",
+                "fxlevel": 2,
+                "hiteffect": "char/iceman/p1_impact",
+                "inherit": "beam",
+                "maxrange": 800,
+                "name": "freeze_fx",
+                "piercechance": 0.5,
+                "radius": 18,
+                "tag": 3,
+                "time": 0.5,
+                "victimeventtag": 20
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
