@@ -1,0 +1,663 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/profx_icons1.png",
+        "FightMove": {
+            "aitype": "beam",
+            "animenum": "ea_attack_knockback",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackknockback2",
+            "startchaintime": 0.6,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/profx_m/p2_charge",
+                "time": 0.3
+            },
+            "trigger": {
+                "life": 0.14,
+                "name": "slide",
+                "targetdistance": 70,
+                "targetradius": 57,
+                "time": 0.25
+            },
+            "trigger": {
+                "effect": "char/profx/special_finisher",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "attack_type": "psionic",
+                "damage": "3 5",
+                "damage_type": "dmg_physical",
+                "knockback": 245,
+                "maxrange": 80,
+                "name": "punch",
+                "time": 0.5,
+                "victimeventtag": 15,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "finisher": true,
+                "life": 0.25,
+                "name": "xtreme_start",
+                "tag": 15,
+                "time": -1,
+                "worldspeed": 0.5
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Fury",
+            "combotextstarter": "Masterful",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "prof_cleave",
+                "level": 1
+            },
+            "event": {
+                "arc": 65,
+                "inherit": "punch",
+                "maxrange": 90,
+                "name": "sword_slash",
+                "tiles": true
+            },
+            "trigger": {
+                "chance": "%prof_cleave_pct",
+                "class": "atk_instant_pct",
+                "life": -1,
+                "name": "powerup",
+                "percent": 0.33,
+                "remove_on_node_end": true,
+                "time": 0,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": "%prof_cleave_dmg"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_attack_rating",
+                    "level": "%prof_cleave_ar"
+                }
+            },
+            "trigger": {
+                "name": "slide",
+                "targetdistance": 85,
+                "targetradius": 50,
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/profx/p1_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/profx_m/p1_charge",
+                "time": 0.3
+            },
+            "trigger": {
+                "angle": 45,
+                "name": "sword_slash",
+                "powerusage": "%prof_cleave_pwr",
+                "time": 0.38
+            },
+            "trigger": {
+                "angle": 0,
+                "name": "sword_slash",
+                "time": 0.42
+            },
+            "trigger": {
+                "angle": -45,
+                "name": "sword_slash",
+                "time": 0.46
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 7,
+            "aitype": "aoe",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Stasis",
+            "combotextstarter": "Neural",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "prof_hold",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/profx/p2_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/profx/p2_power",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/profx/p2_power",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/profx/p2_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/profx_m/p2_charge",
+                "time": 0.36
+            },
+            "trigger": {
+                "damage": 0,
+                "index": 1,
+                "knockback": 40,
+                "maxrange": 120,
+                "name": "radial",
+                "powerusage": "%prof_hold_pwr",
+                "time": 0.36,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "damage": 1,
+                "damagetype": "dmg_telekinesis",
+                "index": 2,
+                "maxrange": 156,
+                "name": "radial",
+                "time": 0.65,
+                "victimeventtag": 10,
+                "victimeventtag2": 15
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/profx_m/p2_power",
+                "time": 0.7
+            },
+            "trigger": {
+                "class": "suspend",
+                "combatnode": "suspended_victim",
+                "endvictimtag": 20,
+                "life": "%prof_hold_lif",
+                "minsuspendtime": 2,
+                "name": "powerup",
+                "tag": 10,
+                "time": -1
+            },
+            "trigger": {
+                "attacks_per_second": 3,
+                "class": "harming",
+                "damage": "%prof_hold_dm2",
+                "damagetype": "dmg_telekinesis",
+                "life": 4,
+                "name": "powerup",
+                "tag": 15,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Pelvis",
+                    "effect": "char/profx/p2_power",
+                    "fxlevel": 3
+                }
+            },
+            "trigger": {
+                "damage": "%prof_hold_dmg",
+                "damagetype": "dmg_telekinesis",
+                "name": "attackself",
+                "tag": 20,
+                "time": -1,
+                "type": "ce_atk_self"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_psy_loop",
+            "lockangles": true,
+            "name": "suspended_victim",
+            "playspeed": 0.5,
+            "priority": "uninterruptable",
+            "priority_override": "uninterruptable",
+            "chain": {
+                "action": "idle",
+                "result": "suspended_victim"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "buff",
+            "animenum": "ea_power3",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "prof_tele_link",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/profx/p3_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/profx/p3_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/profx_m/p3_charge",
+                "time": 0.5
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%prof_tele_link_lif",
+                "name": "powerup",
+                "powerusage": "%prof_tele_link_pwr",
+                "time": 0.5,
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/profx/p3_power",
+                    "fxlevel": 2
+                },
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/profx/p3_power",
+                    "fxlevel": 2
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": "%prof_tele_link_dmg"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_attack_rating",
+                    "level": "%prof_tele_link_ar"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "aoe",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Tempest",
+            "combotextstarter": "Mental",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "prof_storm",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%prof_storm_pps",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/profx_m/p2_charge",
+                "time": 0.25
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power4_loop"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "aoe",
+            "animenum": "ea_power4_loop",
+            "combotextfinisher": "Tempest",
+            "energypersecond": "%prof_storm_pps",
+            "handler": "ch_storm_chain_lightning",
+            "icon": 3,
+            "locktransitionangles": true,
+            "name": "power4_loop",
+            "priority": 5,
+            "turnrate": 0.2,
+            "require": {
+                "cat": "skill",
+                "item": "prof_storm",
+                "level": 1
+            },
+            "trigger": {
+                "name": "lightning_data",
+                "numtargets": 2,
+                "tag": 1,
+                "time": -1,
+                "type": "ce_lightning_data",
+                "usebothhands": true
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/profx/p4_charge",
+                "name": "effect",
+                "time": 0.25
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/profx/p4_charge",
+                "loop_timeout": 1,
+                "loop_type": "start",
+                "name": "effect_sound",
+                "sound": "char/profx_m/p2_power",
+                "time": 0.25
+            },
+            "trigger": {
+                "damage": 0,
+                "name": "attackme",
+                "tag": 100,
+                "time": -1,
+                "type": "ce_atk_self",
+                "victimeventtag": 103,
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "attacks_per_second": 3,
+                "class": "harming",
+                "damage": "%prof_storm_dmg",
+                "damagetype": "dmg_electricity",
+                "life": 1,
+                "name": "powerup",
+                "tag": 103,
+                "time": -1,
+                "damageMod": {
+                    "name": "dmgmod_weld",
+                    "remove": "dmgmod_no_pain"
+                },
+                "damageMod": {
+                    "name": "dmgmod_force_fx"
+                },
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "attacks_per_second": 3,
+                "class": "harming",
+                "damage": "%prof_storm_dm2",
+                "damagetype": "dmg_electricity",
+                "life": 1,
+                "name": "powerup",
+                "tag": 101,
+                "time": -1,
+                "damageMod": {
+                    "name": "dmgmod_weld",
+                    "remove": "dmgmod_no_pain"
+                },
+                "damageMod": {
+                    "name": "dmgmod_force_fx"
+                },
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                }
+            },
+            "trigger": {
+                "effect": "char/profx/p4_chain",
+                "name": "effect",
+                "tag": 102,
+                "time": -1
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power4_loop"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power4_end"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "aoe",
+            "animenum": "ea_power4_end",
+            "combotextfinisher": "Tempest",
+            "icon": 3,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power4_end",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "prof_storm",
+                "level": 1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "description": "PSYCHIC SHOCK",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power9",
+            "playspeed": 10,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "prof_resurrect",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/profx_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/profx/p9_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/profx/p9_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/profx_m/p4_power",
+                "time": 0.3
+            },
+            "trigger": {
+                "foundallytag": 20,
+                "maxrange": 144,
+                "name": "do_resurrect",
+                "numtoresurrect": -1,
+                "resurect_really_dead": "ally",
+                "team_filter": "both",
+                "time": 0.3,
+                "type": "ce_setup_ally_resurrect"
+            },
+            "trigger": {
+                "maxdangerrating": 10,
+                "name": "filterevent",
+                "noboss": true,
+                "passtag": 21,
+                "tag": 20,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "name": "otherevents",
+                "othertag": 22,
+                "othertag2": 23,
+                "tag": 21,
+                "time": -1,
+                "type": "ce_otherevent"
+            },
+            "trigger": {
+                "combatnode": "prof_resurrect_v",
+                "maxhealthpercent": "%prof_resurrect_hlt",
+                "name": "resurrect_self",
+                "nonhumanoidnode": "prof_resurrect_v_nh",
+                "self": true,
+                "tag": 22,
+                "time": -1,
+                "type": "ce_resurrect"
+            },
+            "trigger": {
+                "name": "filterevent",
+                "passtag": 30,
+                "tag": 23,
+                "team_filter": "enemy",
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "attach_to_dead": true,
+                "class": "callevents",
+                "life": "%prof_resurrect_lif",
+                "name": "powerup",
+                "tag": 30,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_converted"
+                },
+                "affecter": {
+                    "attribute": "team_switch",
+                    "level": 1
+                },
+                "FunctionEvent": {
+                    "function": "deactivate",
+                    "triggertag": 35
+                }
+            },
+            "trigger": {
+                "name": "otherevent",
+                "othertag": 36,
+                "othertag2": 37,
+                "tag": 35,
+                "time": -1
+            },
+            "trigger": {
+                "effect": "char/profx/p9_charge",
+                "fxlevel": 4,
+                "name": "effect",
+                "tag": 36,
+                "time": -1
+            },
+            "trigger": {
+                "instantkillonly": true,
+                "name": "remove",
+                "nosponsor": true,
+                "tag": 37,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_resurrect_v",
+            "handler": "ch_thrown_getup",
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "prof_resurrect_v",
+            "ongroundfront": true,
+            "playspeed": 1,
+            "trigger": {
+                "effect": "char/profx/p9_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "onground",
+                "onground": false,
+                "time": 0.5
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_thrown_getup",
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "prof_resurrect_v_nh",
+            "ongroundfront": true,
+            "playspeed": 1,
+            "trigger": {
+                "effect": "char/profx/p9_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "onground",
+                "onground": false,
+                "time": 0.5
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}
