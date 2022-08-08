@@ -341,6 +341,11 @@
                 "level": 1
             },
             "trigger": {
+                "name": "sound",
+                "sound": "char/iceman_m/p2_impact",
+                "time": -1
+            },
+            "trigger": {
                 "class": "freeze",
                 "life": "%ice_crystal_frz",
                 "name": "powerup",
@@ -746,6 +751,7 @@
                 "damagetype": "dmg_cold",
                 "life": "%ice_gloves_tim",
                 "name": "powerup",
+                "powerusage": "%ice_gloves_pwr",
                 "tag": 3,
                 "time": 0.5,
                 "affecter": {
@@ -815,7 +821,7 @@
                 "callonhurt": true,
                 "class": "hurt_attacker",
                 "damage": "%ice_ice_armor_dmg",
-                "life": -1,
+                "life": "%ice_ice_armor_lif",
                 "name": "powerup",
                 "onlyhurtmelee": true,
                 "powerusage": "%ice_ice_armor_pwr",
@@ -827,17 +833,15 @@
                     "how_used": "primary"
                 },
                 "affecter": {
-                    "attribute": "powerup_scope",
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": "%ice_ice_armor_hth",
                     "scope": {
                         "scope_attack": "punch"
                     },
                     "scope": {
                         "scope_attack": "kick"
                     }
-                },
-                "affecter": {
-                    "attribute": "spend_damage",
-                    "level": "%ice_ice_armor_hth"
                 },
                 "powerup": {
                     "bolt": "Bip01 Head",
@@ -1037,9 +1041,14 @@
                 "time": 0
             },
             "trigger": {
+                "name": "sound",
+                "sound": "char/iceman_m/p6_charge",
+                "time": 0.2
+            },
+            "trigger": {
                 "effect": "char/iceman/p10_power",
                 "name": "effect_sound",
-                "sound": "char/iceman_m/p6_charge",
+                "sound": "char/iceman_m/p8_power",
                 "time": 0.5
             },
             "trigger": {

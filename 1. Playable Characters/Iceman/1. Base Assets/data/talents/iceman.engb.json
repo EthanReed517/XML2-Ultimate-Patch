@@ -16,10 +16,10 @@
         },
         "talent": {
             "descname": "Slow Beam",
-            "description": "Sends out a beam, slowing enemies. Can build bridges",
+            "description": "Sends out a beam, slowing enemies for a time. Can build bridges. Puts out fires.",
             "descshort": "Beam",
             "icon": 0,
-            "icon_texture": "textures/ui/iceman_icons1.png",
+            "icon_texture": "textures/ui/iceman_icons2.png",
             "name": "iceman_slow_beam",
             "power": "power1",
             "talentvalues": {
@@ -85,10 +85,10 @@
         },
         "talent": {
             "descname": "Freeze Beam",
-            "description": "Sends out a beam, freezing enemies for a time. Can build bridges",
+            "description": "Sends out a beam, freezing enemies for a time. Can build bridges. Puts out fires.",
             "descshort": "Beam",
             "icon": 1,
-            "icon_texture": "textures/ui/iceman_icons1.png",
+            "icon_texture": "textures/ui/iceman_icons2.png",
             "name": "iceman_freeze_beam",
             "power": "power2",
             "talentvalues": {
@@ -149,10 +149,10 @@
         },
         "talent": {
             "descname": "Ice Shards",
-            "description": "Throws shards of ice at enemies, inflicting $DMG_COLD",
+            "description": "Throws shards of ice in a spread, inflicting $DMG_COLD. Puts out fires.",
             "descshort": "Projectile",
             "icon": 2,
-            "icon_texture": "textures/ui/iceman_icons1.png",
+            "icon_texture": "textures/ui/iceman_icons2.png",
             "name": "iceman_ice_shards",
             "power": "power3",
             "talentvalues": {
@@ -222,10 +222,10 @@
         },
         "talent": {
             "descname": "Cold Crush",
-            "description": "Ice projectile. Freezes target, slows in radius. Can build bridges",
+            "description": "Throws an ice shard that freezes the target and explodes, slowing surrounding enemies. Can build bridges. Puts out fires.",
             "descshort": "Projectile",
             "icon": 3,
-            "icon_texture": "textures/ui/iceman_icons1.png",
+            "icon_texture": "textures/ui/iceman_icons2.png",
             "name": "iceman_ice_crystal",
             "power": "power4",
             "talentvalues": {
@@ -316,10 +316,10 @@
         },
         "talent": {
             "descname": "Ice Slide",
-            "description": "Slides on an ice sled, damaging and slowing hit enemies\\n(~41Press And Hold~~)",
+            "description": "Slides on an ice sled, damaging and slowing enemies on contact.\\n(~41Press And Hold~~)",
             "descshort": "Charge",
             "icon": 4,
-            "icon_texture": "textures/ui/iceman_icons1.png",
+            "icon_texture": "textures/ui/iceman_icons2.png",
             "name": "iceman_ice_slide",
             "power": "power5",
             "talentvalues": {
@@ -376,7 +376,7 @@
             },
             "level": {
                 "count": 16,
-                "description": "%ice_slide_dmg $DMG_COLD\\n%ice_slide_kb $KB\\n^50% slow for ^4 Seconds\\n%ice_slide_pwr $EP/s",
+                "description": "%ice_slide_dmg $DMG_COLD\\n%ice_slide_kb $KB\\n50% slow for 4 seconds\\n%ice_slide_pwr $EP per second",
                 "require": {
                     "cat": "level",
                     "level": "%ice_slide_req"
@@ -385,10 +385,10 @@
         },
         "talent": {
             "descname": "Arctic Burst",
-            "description": "Radial blast of cold which damages and slows enemies",
+            "description": "Radial blast of Cold that damages and slows enemies. Puts out fires.",
             "descshort": "Radial",
             "icon": 5,
-            "icon_texture": "textures/ui/iceman_icons1.png",
+            "icon_texture": "textures/ui/iceman_icons2.png",
             "name": "iceman_cold_blast",
             "power": "power6",
             "talentvalues": {
@@ -459,10 +459,10 @@
         },
         "talent": {
             "descname": "Ice Gloves",
-            "description": "Gives self and allies ice gloves for a time adding $DMG_COLD to melee attacks and increasing $AR",
+            "description": "Gives entire party ice gloves for a time adding $DMG_COLD to Melee attacks and increasing $AR.",
             "descshort": "Boost",
             "icon": 6,
-            "icon_texture": "textures/ui/iceman_icons1.png",
+            "icon_texture": "textures/ui/iceman_icons2.png",
             "name": "iceman_ice_gloves",
             "power": "power7",
             "type": "boost",
@@ -500,12 +500,12 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "ice_gloves_pct",
-                    "value": 0.05
+                    "value": 0.15
                 },
                 "talentvalue": {
                     "level": 16,
                     "name": "ice_gloves_pct",
-                    "value": 0.47
+                    "value": 1
                 },
                 "talentvalue": {
                     "level": 1,
@@ -534,10 +534,10 @@
         },
         "talent": {
             "descname": "Ice Armor",
-            "description": "Armor takes damage instead of Iceman. Also damages and slows melee attackers",
+            "description": "Generates ice armor around his body, reducing incoming Melee damage.",
             "descshort": "Boost",
             "icon": 7,
-            "icon_texture": "textures/ui/iceman_icons1.png",
+            "icon_texture": "textures/ui/iceman_icons2.png",
             "name": "iceman_ice_armor",
             "power": "power8",
             "type": "boost",
@@ -595,17 +595,27 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "ice_ice_armor_hth",
-                    "value": 35
+                    "value": 0.85
                 },
                 "talentvalue": {
                     "level": 18,
                     "name": "ice_ice_armor_hth",
-                    "value": 91
+                    "value": 0.55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ice_ice_armor_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "ice_ice_armor_lif",
+                    "value": 55
                 }
             },
             "level": {
                 "count": 18,
-                "description": "%ice_ice_armor_hth Damage absorbed\\n%ice_ice_armor_dmg $DMG_COLD inflicted on attackers\\n%ice_ice_armor_spd:p slow for %ice_ice_armor_tim:f seconds\\n%ice_ice_armor_pwr $EP",
+                "description": "%ice_ice_armor_hth:s $DMG_MELEE taken\\n%ice_ice_armor_dmg $DMG_COLD inflicted on attackers\\n%ice_ice_armor_spd:p slow for %ice_ice_armor_tim:f seconds\\n%ice_ice_armor_lif seconds\\n%ice_ice_armor_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%ice_ice_armor_req"
@@ -614,10 +624,10 @@
         },
         "talent": {
             "descname": "COLD SNAP",
-            "description": "Xtreme cold attack damaging everything in sight. Nearby enemies are frozen, more distant enemies are slowed",
+            "description": "Xtreme Cold attack damaging everything in sight. Nearby enemies are frozen, and more distant enemies are slowed.",
             "descshort": "Radial",
             "icon": 8,
-            "icon_texture": "textures/ui/iceman_icons1.png",
+            "icon_texture": "textures/ui/iceman_icons2.png",
             "name": "iceman_freeze_frame",
             "power": "power9",
             "type": "xtreme",
@@ -684,10 +694,10 @@
         },
         "talent": {
             "descname": "ICE SIDEKICK",
-            "description": "Spawn a minion to fight alongside party for a time",
+            "description": "Spawn an ice minion to fight along side Iceman.",
             "descshort": "Special",
             "icon": 13,
-            "icon_texture": "textures/ui/iceman_icons1.png",
+            "icon_texture": "textures/ui/iceman_icons2.png",
             "name": "iceman_minion",
             "power": "power11",
             "skirmish_locked": true,
@@ -736,7 +746,7 @@
             },
             "level": {
                 "count": 5,
-                "description": "%iceman_minion_lif Seconds\\n%iceman_minion_hlt:p of Iceman's max $HP\\n%iceman_minion_dmg:p $DMG",
+                "description": "%iceman_minion_lif seconds\\n%iceman_minion_hlt:p of Iceman's max $HP\\n%iceman_minion_dmg:p $DMG",
                 "require": {
                     "cat": "level",
                     "level": "%iceman_minion_req"
@@ -745,10 +755,10 @@
         },
         "talent": {
             "descname": "Ice Pillar",
-            "description": "Blast ice pillars from the ground, damaging enemies and popping them up",
+            "description": "Ice pillars from the ground damage and launch enemies into the air. Puts out fires.",
             "descshort": "Blast",
             "icon": 9,
-            "icon_texture": "textures/ui/iceman_icons1.png",
+            "icon_texture": "textures/ui/iceman_icons2.png",
             "name": "iceman_ice_pill",
             "power": "power10",
             "talentvalues": {
@@ -809,10 +819,10 @@
         },
         "talent": {
             "descname": "Cold Mastery",
-            "description": "Adds additional damage to all $DMG_COLD, and adds resistance to $DMG_COLD",
+            "description": "Adds damage and Critical chance to all $DMG_COLD and adds resistance to $DMG_COLD.",
             "descshort": "Passive",
             "icon": 10,
-            "icon_texture": "textures/ui/iceman_icons1.png",
+            "icon_texture": "textures/ui/iceman_icons2.png",
             "name": "iceman_cold_mastery",
             "talentvalues": {
                 "talentvalue": {
@@ -858,7 +868,7 @@
             },
             "level": {
                 "count": 15,
-                "description": "%ice_cold_mast_dmg:s $DMG_COLD\\n%ice_cold_mast_cri:s critical chance\\n+%ice_cold_mast_col:p Resitance to $DMG_COLD",
+                "description": "%ice_cold_mast_dmg:s $DMG_COLD\\n%ice_cold_mast_cri:s Critical chance\\n+%ice_cold_mast_col:p resitance to $DMG_COLD",
                 "require": {
                     "cat": "level",
                     "level": "%ice_cold_mast_req"
@@ -877,7 +887,6 @@
                         "scope_damage": "dmg_cold"
                     },
                     "affecter": {
-                        "affect_type": "scale",
                         "attribute": "atk_critical",
                         "level": "%ice_cold_mast_cri",
                         "scope_damage": "dmg_cold"
@@ -891,10 +900,10 @@
         },
         "talent": {
             "descname": "Ice Combat",
-            "description": "Adds additional $DMG_COLD to melee attacks",
+            "description": "Adds additional $DMG_COLD to Melee attacks.",
             "descshort": "Passive",
             "icon": 11,
-            "icon_texture": "textures/ui/iceman_icons1.png",
+            "icon_texture": "textures/ui/iceman_icons2.png",
             "name": "iceman_ice_combat",
             "talentvalues": {
                 "talentvalue": {
@@ -910,17 +919,17 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "ice_ice_combat_dmg",
-                    "value": 0.5
+                    "value": 0.1
                 },
                 "talentvalue": {
                     "level": 15,
                     "name": "ice_ice_combat_dmg",
-                    "value": 2.6
+                    "value": 1
                 }
             },
             "level": {
                 "count": 15,
-                "description": "+%ice_ice_combat_dmg:p melee $DMG as $DMG_COLD",
+                "description": "+%ice_ice_combat_dmg:p Melee $DMG as $DMG_COLD",
                 "require": {
                     "cat": "level",
                     "level": "%ice_ice_combat_req"
@@ -941,6 +950,9 @@
                         },
                         "scope": {
                             "scope_attack": "kick"
+                        },
+                        "scope": {
+                            "scope_non_powers": true
                         }
                     }
                 }
@@ -948,10 +960,10 @@
         },
         "talent": {
             "descname": "Piercing Cold",
-            "description": "Increases the chance of a piercing hit while using beams and Ice Shards attacks",
+            "description": "Increases the chance of a piercing hit with projectile Ice attacks.",
             "descshort": "Passive",
             "icon": 12,
-            "icon_texture": "textures/ui/iceman_icons1.png",
+            "icon_texture": "textures/ui/iceman_icons2.png",
             "name": "iceman_piercing_cold",
             "talentvalues": {
                 "talentvalue": {
