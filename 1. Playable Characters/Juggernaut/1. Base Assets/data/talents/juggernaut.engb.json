@@ -1,0 +1,925 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "jugger_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_mental",
+                        "level": 0.1
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Thunder Punch",
+            "description": "Increased melee attack with stun",
+            "descshort": "Melee",
+            "icon": 0,
+            "icon_texture": "textures/ui/juggernaut_icons1.png",
+            "name": "jug_smash",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_smash_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "jug_smash_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_smash_pwr",
+                    "value": 8
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "jug_smash_pwr",
+                    "value": 76
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_smash_dmg",
+                    "value": 3.5
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "jug_smash_dmg",
+                    "value": 9.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_smash_ar",
+                    "value": 1.15
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "jug_smash_ar",
+                    "value": 1.85
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_smash_life",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "jug_smash_life",
+                    "value": 3.2
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%jug_smash_dmg:s $DMG_PHYSICAL (%jug_smash_dmg:x)\\n%jug_smash_life second stun\\n%jug_smash_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%jug_smash_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "level": "%jug_smash_dmg",
+                        "scope_node": "jug_power1"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%jug_smash_ar",
+                        "scope_node": "jug_power1"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Arcane Fist",
+            "description": "A crystal-powered ground slam that sends out a radial blast of damage",
+            "descshort": "Radial",
+            "icon": 1,
+            "icon_texture": "textures/ui/juggernaut_icons1.png",
+            "name": "jug_slam",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_slam_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "jug_slam_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_slam_dmg",
+                    "value": "21 26"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "jug_slam_dmg",
+                    "value": "79 89"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_slam_pwr",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "jug_slam_pwr",
+                    "value": 100
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_slam_rad",
+                    "value": 120
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "jug_slam_rad",
+                    "value": 144
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%jug_slam_dmg $DMG_ENERGY\\n%jug_slam_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%jug_slam_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "jug_spin_atk",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Bullrush",
+            "description": "Charge against enemies, and objects, knocking them back\\n(~41Press And Hold~~)",
+            "descshort": "Charge",
+            "icon": 2,
+            "icon_texture": "textures/ui/juggernaut_icons1.png",
+            "name": "jug_charge",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_charge_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "jug_charge_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_charge_dmg",
+                    "value": 5.5
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "jug_charge_dmg",
+                    "value": 9.75
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_charge_kb",
+                    "value": 245
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "jug_charge_kb",
+                    "value": 620
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_charge_pwr",
+                    "value": 34
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "jug_charge_pwr",
+                    "value": 96
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%jug_charge_dmg:s $DMG_PHYSICAL (%jug_charge_dmg:x)\\n%jug_charge_kb $KB\\n%jug_charge_pwr $EP/s",
+                "require": {
+                    "cat": "level",
+                    "level": "%jug_charge_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "block",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "level": "%jug_charge_dmg",
+                        "scope_node": "jug_power3"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Widowmaker",
+            "description": "Massive melee attack, weakens Juggernaut for a time",
+            "descshort": "Melee",
+            "icon": 3,
+            "icon_texture": "textures/ui/juggernaut_icons1.png",
+            "name": "jug_super_smash",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_super_smash_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "jug_super_smash_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_super_smash_pwr",
+                    "value": 48
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "jug_super_smash_pwr",
+                    "value": 100
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_super_smash_dmg",
+                    "value": 8
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "jug_super_smash_dmg",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_super_smash_ar",
+                    "value": 1.75
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "jug_super_smash_ar",
+                    "value": 3.15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_super_smash_mir",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "jug_super_smash_mir",
+                    "value": 1.78
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_super_smash_lif",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "jug_super_smash_lif",
+                    "value": 4
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%jug_super_smash_dmg:s $DMG_PHYSICAL (%jug_super_smash_dmg:x)\\n%jug_super_smash_mir:s $DMG to self\\n%jug_super_smash_lif second weaken\\n%jug_super_smash_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%jug_super_smash_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "jug_smash",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "level": "%jug_super_smash_dmg",
+                        "scope_node": "jug_power4"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%jug_super_smash_ar",
+                        "scope_node": "jug_power4"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Brutal Blitz",
+            "description": "Spins around and hits surrounding enemies",
+            "descshort": "Melee",
+            "icon": 4,
+            "icon_texture": "textures/ui/juggernaut_icons1.png",
+            "name": "jug_spin_atk",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_spin_atk_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "jug_spin_atk_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_spin_atk_dmg",
+                    "value": 2.3
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "jug_spin_atk_dmg",
+                    "value": 4.4
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_spin_atk_ar",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "jug_spin_atk_ar",
+                    "value": 1.95
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_spin_atk_pwr",
+                    "value": 18
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "jug_spin_atk_pwr",
+                    "value": 98
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%jug_spin_atk_dmg:s $DMG_PHYSICAL (%jug_spin_atk_dmg:x)\\n%jug_spin_atk_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%jug_spin_atk_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "level": "%jug_spin_atk_dmg",
+                        "scope_node": "jug_power5"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%jug_spin_atk_ar",
+                        "scope_node": "jug_power5"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Cyttorak Shield",
+            "description": "All party members gain an energy shield, reflecting some melee $DMG back at attackers",
+            "descshort": "Boost",
+            "icon": 5,
+            "icon_texture": "textures/ui/juggernaut_icons1.png",
+            "name": "jug_cyttorak_shield",
+            "power": "power6",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_shield_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "jug_shield_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_shield_pwr",
+                    "value": 32
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "jug_shield_pwr",
+                    "value": 304
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_shield_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "jug_shield_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_shield_dmg_ref",
+                    "value": 0.15
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "jug_shield_dmg_ref",
+                    "value": 0.57
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%jug_shield_dmg_ref:p $DMG_MELEE\\n%jug_shield_life seconds\\n%jug_shield_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%jug_shield_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Cyttorak Transfer",
+            "description": "All party members convert inflicted $RES_ENERGY and $RES_ELEMENTAL into $HP for Juggernaut. Other party members also recieve $DR and Strike bonus.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/juggernaut_icons1.png",
+            "name": "jug_cyttorak_trans",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_trans_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "jug_trans_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_trans_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "jug_trans_pwr",
+                    "value": 308
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_trans_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "jug_trans_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_trans_dmg_pct",
+                    "value": 0.07
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "jug_trans_dmg_pct",
+                    "value": 0.49
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_trans_def",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "jug_trans_def",
+                    "value": 1.19
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_trans_str",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "jug_trans_str",
+                    "value": 20
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%jug_trans_dmg_pct:p $DMG transfered\\n%jug_trans_def:s $DR, +%jug_trans_str Strike\\n%jug_trans_life seconds\\n%jug_trans_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%jug_trans_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "jug_cyttorak_shield",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Crimson Rage",
+            "description": "Multiple punch attack, building up $DMG with each hit",
+            "descshort": "Melee",
+            "icon": 7,
+            "icon_texture": "textures/ui/juggernaut_icons1.png",
+            "name": "jug_rage",
+            "power": "power8",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_rage_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "jug_rage_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_rage_pwr",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "jug_rage_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_rage_lif",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "jug_rage_lif",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_rage_dmg",
+                    "value": 6.75
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "jug_rage_dmg",
+                    "value": 10.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_rage_dm2",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "jug_rage_dm2",
+                    "value": 1.09
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_rage_ar",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "jug_rage_ar",
+                    "value": 2.76
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_rage_ar2",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "jug_rage_ar2",
+                    "value": 1.09
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%jug_rage_dmg:s $DMG_PHYSICAL (%jug_rage_dmg:x)\\n%jug_rage_dm2:s $DMG_PHYSICAL  (%jug_rage_dm2:x)\\n%jug_rage_lif seconds\\n%jug_rage_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%jug_rage_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "jug_cyttorak_shield",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "level": "%jug_rage_dmg",
+                        "scope_node": "jug_power8"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%jug_rage_ar",
+                        "scope_node": "jug_power8"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "CRIMSON DEVASTATION",
+            "description": "Juggernaut rips open a portal to the Crimson Cosmos, flooding enemies with $DMG_ENERGY and stunning them",
+            "descshort": "Radial",
+            "icon": 8,
+            "icon_texture": "textures/ui/juggernaut_icons1.png",
+            "name": "jug_cosmos",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_cosmos_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "jug_cosmos_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_cosmos_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "jug_cosmos_dmg",
+                    "value": "279 309"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_cosmos_lif",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "jug_cosmos_lif",
+                    "value": 6
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%jug_cosmos_dmg $DMG_ENERGY\\n%jug_cosmos_lif second stun",
+                "require": {
+                    "cat": "level",
+                    "level": "%jug_cosmos_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "PATH OF DESTRUCTION",
+            "description": "Allows Juggernaut to break through objects effortlessly, and kill most enemies with one hit",
+            "descshort": "Boost",
+            "icon": 12,
+            "icon_texture": "textures/ui/juggernaut_icons1.png",
+            "name": "jug_avatar",
+            "power": "power11",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_avatar_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "jug_avatar_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_avatar_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "jug_avatar_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%jug_avatar_lif Seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%jug_avatar_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Cyttorak's Folly",
+            "description": "All physical attacks have a chance to convert 15% of inflicted damage as $EP gain",
+            "descshort": "Passive",
+            "icon": 9,
+            "icon_texture": "textures/ui/juggernaut_icons1.png",
+            "name": "jug_cyttoraks_folly",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_cyt_folly_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "jug_cyt_folly_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_cyt_folly_pct",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "jug_cyt_folly_pct",
+                    "value": 0.66
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%jug_cyt_folly_pct:p chance to steal",
+                "require": {
+                    "cat": "level",
+                    "level": "%jug_cyt_folly_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "critical",
+                    "level": 1
+                },
+                "powerup": {
+                    "chance": "%jug_cyt_folly_pct",
+                    "class": "absorb",
+                    "damagepercent": 0.15,
+                    "energy": true,
+                    "inflicted": true,
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope": {
+                            "scope_damage": "dmg_physical"
+                        }
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Balanced Form",
+            "description": "Juggernaut learns to carry himself better in combat, gaining bonuses to both $DR and Attack Speed",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/juggernaut_icons1.png",
+            "name": "jug_balanced_form",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_balanced_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "jug_balanced_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_balanced_def",
+                    "value": 1.15
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "jug_balanced_def",
+                    "value": 2.27
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_balanced_speed",
+                    "value": 1.08
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "jug_balanced_speed",
+                    "value": 1.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%jug_balanced_def:s $DR\\n%jug_balanced_speed:s attack speed",
+                "require": {
+                    "cat": "level",
+                    "level": "%jug_balanced_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "jug_precision",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "defense_rating",
+                        "level": "%jug_balanced_def"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "move_attack",
+                        "level": "%jug_balanced_speed"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Precision",
+            "description": "$AR Increased",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/talent_icons.png",
+            "name": "jug_precision",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_precision_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "jug_precision_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jug_precision_atk",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "jug_precision_atk",
+                    "value": 2.6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%jug_precision_atk:s $AR",
+                "require": {
+                    "cat": "level",
+                    "level": "%jug_precision_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%jug_precision_atk"
+                    }
+                }
+            }
+        }
+    }
+}
