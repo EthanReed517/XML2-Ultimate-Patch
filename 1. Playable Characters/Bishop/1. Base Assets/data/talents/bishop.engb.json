@@ -1,0 +1,895 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "bishop_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_energy",
+                        "level": 0.1
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Bio Beam",
+            "description": "Channels energy through his hands to blast foes with a beam of focused power.",
+            "descshort": "Beam",
+            "icon": 0,
+            "icon_texture": "textures/ui/bishop_icons1.png",
+            "name": "bishop_beam",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_beam_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "bish_beam_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_beam_dmg",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "bish_beam_dmg",
+                    "value": "217 242"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_beam_pwr",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "bish_beam_pwr",
+                    "value": 140
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%bish_beam_dmg $DMG_ENERGY\\n%bish_beam_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%bish_beam_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Absorption",
+            "description": "Absorbs a percentage of $DMG_ENERGY as $HP gain and boosts Physical Resistance.",
+            "descshort": "Boost",
+            "icon": 1,
+            "icon_texture": "textures/ui/bishop_icons1.png",
+            "name": "bishop_shield",
+            "power": "power2",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_shield_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "bish_shield_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_shield_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "bish_shield_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_shield_pct",
+                    "value": 0.45
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "bish_shield_pct",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_shield_dr",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "bish_shield_dr",
+                    "value": 2.6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_shield_dam",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "bish_shield_dam",
+                    "value": 0.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_shield_pwr",
+                    "value": 88
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "bish_shield_pwr",
+                    "value": 480
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%bish_shield_pct:p $DMG_ENERGY as $HP gain\\n%bish_shield_dr:s $DR, %bish_shield_dam:p $RES_PHYSICAL\\n%bish_shield_life seconds\\n%bish_shield_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%bish_shield_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Bio Blast",
+            "description": "Radial energy attack that damages enemies and has a chance of doing a 'Deadly Strike' (33% instant $HP loss)",
+            "descshort": "Radial",
+            "icon": 2,
+            "icon_texture": "textures/ui/bishop_icons1.png",
+            "name": "bishop_pulse",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_pulse_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "bish_pulse_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_pulse_dmg",
+                    "value": "46 54"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "bish_pulse_dmg",
+                    "value": "95 107"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_pulse_chance",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "bish_pulse_chance",
+                    "value": 0.19
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_pulse_rng",
+                    "value": 120
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "bish_pulse_rng",
+                    "value": 144
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_pulse_pwr",
+                    "value": 92
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "bish_pulse_pwr",
+                    "value": 198
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%bish_pulse_dmg $DMG_ENERGY \\n%bish_pulse_chance:p chance for Deadly Strike\\n%bish_pulse_pwr $EP",
+                "require": {
+                    "cat": "skill",
+                    "item": "bishop_drain",
+                    "level": 1
+                },
+                "require": {
+                    "cat": "level",
+                    "level": "%bish_pulse_req"
+                },
+                "powerup": {
+                    "chance": "%bish_pulse_chance",
+                    "class": "atk_instant_pct",
+                    "life": -1,
+                    "percent": 0.33,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope_node": "bish_power3"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Sapping Strike",
+            "description": "Melee attack that reduces damage victims do by 50% for a time.  Drains batteries",
+            "descshort": "Melee",
+            "icon": 3,
+            "icon_texture": "textures/ui/bishop_icons1.png",
+            "name": "bishop_drain",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_drain_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "bish_drain_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_drain_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "bish_drain_dmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_drain_life",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "bish_drain_life",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_drain_pwr",
+                    "value": 22
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "bish_drain_pwr",
+                    "value": 126
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%bish_drain_dmg $DMG_ENERGY\\n%bish_drain_life seconds\\n%bish_drain_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%bish_drain_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Plasma Blaster",
+            "description": "Uses guns to fire projectiles that stun enemies.\\n(~41Press And Hold~~)",
+            "descshort": "Projectile",
+            "icon": 4,
+            "icon_texture": "textures/ui/bishop_icons1.png",
+            "name": "bishop_stun",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_stun_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "bish_stun_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_stun_dmg",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "bish_stun_dmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_stun_life",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "bish_stun_life",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_stun_pwr",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "bish_stun_pwr",
+                    "value": 126
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%bish_stun_dmg $DMG_ENERGY/sec\\n%bish_stun_life second stun\\n%bish_stun_pwr $EP/s",
+                "require": {
+                    "cat": "level",
+                    "level": "%bish_stun_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Full Auto",
+            "description": "Fires both guns in a spray of bullets causing $DMG_RADIATION. \\n(~41Press And Hold~~)",
+            "descshort": "Projectile",
+            "icon": 5,
+            "icon_texture": "textures/ui/bishop_icons1.png",
+            "name": "bishop_double",
+            "power": "power6",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_double_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "bish_double_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_double_radmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "bish_double_radmg",
+                    "value": "117 132"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_double_life",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "bish_double_life",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_double_pwr",
+                    "value": 36
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "bish_double_pwr",
+                    "value": 142
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%bish_double_radmg $DMG_RADIATION over %bish_double_life seconds\\n%bish_double_pwr $EP/s",
+                "require": {
+                    "cat": "skill",
+                    "item": "bishop_stun",
+                    "level": 1
+                },
+                "require": {
+                    "cat": "level",
+                    "level": "%bish_double_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Rapid Fire",
+            "description": "Fires both guns in broad sweeps with atomic radiation rounds",
+            "descshort": "Projectile",
+            "icon": 6,
+            "icon_texture": "textures/ui/bishop_icons1.png",
+            "name": "bishop_shootout",
+            "power": "power7",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_shootout_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "bish_shootout_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_shootout_radmg",
+                    "value": "43 50"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "bish_shootout_radmg",
+                    "value": "121 135"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_shootout_life",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "bish_shootout_life",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_shootout_pwr",
+                    "value": 52
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "bish_shootout_pwr",
+                    "value": 144
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%bish_shootout_radmg $DMG_RADIATION over %bish_shootout_life seconds\\n%bish_shootout_pwr $EP",
+                "require": {
+                    "cat": "skill",
+                    "item": "bishop_double",
+                    "level": 1
+                },
+                "require": {
+                    "cat": "level",
+                    "level": "%bish_shootout_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Energy Fury",
+            "description": "Gives bonus $DMG_ENERGY to melee attacks for self and allies for a time",
+            "descshort": "Boost",
+            "icon": 7,
+            "icon_texture": "textures/ui/bishop_icons1.png",
+            "name": "bishop_fury",
+            "power": "power8",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_fury_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "bish_fury_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_fury_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "bish_fury_dmg",
+                    "value": 1.47
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_fury_ar",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "bish_fury_ar",
+                    "value": 2.6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_fury_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "bish_fury_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_fury_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "bish_fury_pwr",
+                    "value": 516
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%bish_fury_dmg:s $DMG_ENERGY\\n%bish_fury_ar:s $AR\\n%bish_fury_life seconds\\n%bish_fury_pwr $EP",
+                "require": {
+                    "cat": "skill",
+                    "item": "bishop_shield",
+                    "level": 1
+                },
+                "require": {
+                    "cat": "level",
+                    "level": "%bish_fury_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Bombardment",
+            "description": "Fires several high-powered rounds into the air.  They then crash down, smashing into enemies and surrounding objects",
+            "descshort": "Radial",
+            "icon": 12,
+            "icon_texture": "textures/ui/bishop_icons1.png",
+            "name": "bishop_peacemaker",
+            "power": "power10",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_pm_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "bish_pm_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_pm_dmg",
+                    "value": "43 50"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "bish_pm_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_pm_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "bish_pm_pwr",
+                    "value": 180
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%bish_pm_dmg $DMG_ENERGY\\n%bish_pm_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%bish_pm_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "BIG BANG",
+            "description": "Sucks in surrounding energy releasing it in a violent explosion of power nullifying enemy powers",
+            "descshort": "Radial",
+            "icon": 8,
+            "icon_texture": "textures/ui/bishop_icons1.png",
+            "name": "bishop_xtreme",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_xtreme_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "bish_xtreme_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_xtreme_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "bish_xtreme_dmg",
+                    "value": "279 309"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_xtreme_life",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "bish_xtreme_life",
+                    "value": 6
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%bish_xtreme_dmg $DMG_ENERGY\\n%bish_xtreme_life second nullify",
+                "require": {
+                    "cat": "level",
+                    "level": "%bish_xtreme_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Energy Combat",
+            "description": "Adds $DMG_ENERGY to melee attacks",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/bishop_icons1.png",
+            "name": "bishop_combat",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_combat_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "bish_combat_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_combat_dmg",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "bish_combat_dmg",
+                    "value": 2.6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%bish_combat_dmg:p as $DMG_ENERGY",
+                "require": {
+                    "cat": "level",
+                    "level": "%bish_combat_req"
+                },
+                "powerup": {
+                    "class": "add_attack",
+                    "damagepercent": "%bish_combat_dmg",
+                    "damagetype": "dmg_energy",
+                    "life": -1,
+                    "special_fx": {
+                        "effect": "char/bishop/special_trail",
+                        "how_used": "custom"
+                    },
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        }
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Gun Mastery",
+            "description": "Adds to gun damage and increases chance for criticals with gun attacks",
+            "descshort": "Passive",
+            "icon": 9,
+            "icon_texture": "textures/ui/bishop_icons1.png",
+            "name": "bishop_gun",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_gun_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "bish_gun_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_gun_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "bish_gun_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_gun_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "bish_gun_crit",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%bish_gun_dmg:s gun damage\\n+%bish_gun_crit:p gun critical chance",
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "require": {
+                    "cat": "level",
+                    "level": "%bish_gun_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%bish_gun_dmg",
+                        "scope_node": "bish_gun"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%bish_gun_crit",
+                        "scope_node": "bish_gun"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Power Trip",
+            "description": "Adds to $DR and movement speed and $RES_ENERGY",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/bishop_icons1.png",
+            "name": "bishop_particle",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_particle_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "bish_particle_req",
+                    "value": 25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_particle_move",
+                    "value": 1.03
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "bish_particle_move",
+                    "value": 1.31
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_particle_dr",
+                    "value": 1.15
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "bish_particle_dr",
+                    "value": 2.13
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bish_particle_er",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "bish_particle_er",
+                    "value": 0.52
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%bish_particle_dr:p $DR\\n%bish_particle_move:s movement speed\\n%bish_particle_er:p $RES_ENERGY",
+                "require": {
+                    "cat": "skill",
+                    "item": "bishop_drain",
+                    "level": 1
+                },
+                "require": {
+                    "cat": "level",
+                    "level": "%bish_particle_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "defense_rating",
+                        "level": "%bish_particle_dr"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "move",
+                        "level": "%bish_particle_move"
+                    },
+                    "affecter": {
+                        "attribute": "resist_energy",
+                        "level": "%bish_particle_er"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "SUPERCONDUCTOR",
+            "description": "Entire party spends no $EP and takes no $DMG_ENERGY for a time",
+            "descshort": "Boost",
+            "icon": 13,
+            "icon_texture": "textures/ui/bishop_icons1.png",
+            "name": "bishop_xtreme2",
+            "power": "power11",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bishop_xtreme2_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "bishop_xtreme2_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bishop_xtreme2_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "bishop_xtreme2_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%bishop_xtreme2_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%bishop_xtreme2_req"
+                }
+            }
+        }
+    }
+}

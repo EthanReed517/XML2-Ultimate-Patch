@@ -1,0 +1,1329 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/bishop_icons1.png",
+        "event": {
+            "inherit": "skinsegment",
+            "name": "gun_left_hide",
+            "show": false,
+            "skinsegment": "gun_left"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "gun_right_hide",
+            "show": false,
+            "skinsegment": "gun_right"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "gun_left_show",
+            "show": true,
+            "skinsegment": "gun_left"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "gun_right_show",
+            "show": true,
+            "skinsegment": "gun_right"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "gun_left_hide_holster",
+            "show": false,
+            "skinsegment": "holster_gun_left"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "gun_right_hide_holster",
+            "show": false,
+            "skinsegment": "holster_gun_right"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "gun_left_show_holster",
+            "show": true,
+            "skinsegment": "holster_gun_left"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "gun_right_show_holster",
+            "show": true,
+            "skinsegment": "holster_gun_right"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "gun_both_hide",
+            "show": false,
+            "skinsegment": "gun_left",
+            "skinsegment2": "gun_right"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "gun_both_show",
+            "show": true,
+            "skinsegment": "gun_left",
+            "skinsegment2": "gun_right"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "gun_both_hide_holster",
+            "show": false,
+            "skinsegment": "holster_gun_left",
+            "skinsegment2": "holster_gun_right"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "gun_both_show_holster",
+            "show": true,
+            "skinsegment": "holster_gun_left",
+            "skinsegment2": "holster_gun_right"
+        },
+        "event": {
+            "inherit": "sound",
+            "name": "gun_draw_sound",
+            "sound": "char/bishop_m/special_draw"
+        },
+        "event": {
+            "inherit": "sound",
+            "name": "gun_holster_sound",
+            "sound": "char/bishop_m/special_holster"
+        },
+        "event": {
+            "center": true,
+            "entity": "bish_shot_stun",
+            "filename": "ents_bishop",
+            "fulltargetting": true,
+            "inherit": "projectile",
+            "name": "gun_fire",
+            "speed": 1000,
+            "targetable": true
+        },
+        "event": {
+            "animbased": true,
+            "effect": "char/bishop/p5_power",
+            "fxlevel": 3,
+            "inherit": "effect_sound",
+            "name": "gun_fire_rad_exp_fx",
+            "sound": "char/bishop_m/p5_charge"
+        },
+        "event": {
+            "animbased": true,
+            "effect": "char/bishop/p10_power",
+            "inherit": "effect_sound",
+            "name": "gun_fire_peacemaker_fx",
+            "sound": "char/bishop_m/p5_charge"
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle",
+            "noncombat": true,
+            "trigger": {
+                "name": "gun_left_hide",
+                "time": 0
+            },
+            "trigger": {
+                "name": "gun_right_hide",
+                "time": 0
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "strafeleft"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "straferight"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "advance"
+            },
+            "chain": {
+                "action": "retreat",
+                "result": "retreat"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "groundattack",
+                "result": "groundattack"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            },
+            "chain": {
+                "action": "special",
+                "result": "boredloop"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_popup",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "handler": "ch_popup_attack",
+            "icon": 10,
+            "lockangles": true,
+            "name": "popupattack",
+            "playspeed": 1,
+            "powerup_tag": "bish_gun",
+            "startchaintime": 0.9,
+            "event": {
+                "inherit": "punch_heavy",
+                "knockback": 0,
+                "maxrange": 96,
+                "name": "uppercut",
+                "victimeventtag": 15,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "trigger": {
+                "name": "gun_right_show",
+                "time": 0.1
+            },
+            "trigger": {
+                "name": "gun_left_hide_holster",
+                "time": 0.1
+            },
+            "trigger": {
+                "name": "gun_draw_sound",
+                "time": 0.1
+            },
+            "trigger": {
+                "finisher": true,
+                "life": 0.2,
+                "name": "xtreme_start",
+                "tag": 15,
+                "time": -1,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "height": 24,
+                "name": "uppercut",
+                "time": 0.4
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/bishop/p5_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/bishop_m/p5_charge",
+                "time": 0.4
+            },
+            "trigger": {
+                "name": "gun_right_hide",
+                "time": 0.85
+            },
+            "trigger": {
+                "name": "gun_left_show_holster",
+                "time": 0.85
+            },
+            "trigger": {
+                "name": "gun_holster_sound",
+                "time": 0.85
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beam",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Beam",
+            "combotextstarter": "Energy",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "powerup_tag": "bish_power1",
+            "priority": 5,
+            "event": {
+                "arc": 0,
+                "attacktype": "beam",
+                "beameffect": "char/bishop/p1_power",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "fxlevel": 1,
+                "inherit": "beam",
+                "maxrange": 800,
+                "name": "bishop_beam_fx"
+            },
+            "require": {
+                "cat": "skill",
+                "item": "bishop_beam",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/bishop/p1_charge",
+                "name": "effect_sound",
+                "sound": "char/bishop_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/bishop/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/bishop_m/p1_power",
+                "time": 0.45
+            },
+            "trigger": {
+                "attack_bone_angles": "-85 2 17",
+                "attack_bone_pos": "51 -6 37",
+                "beambolt": "Bip01 R Hand",
+                "damage": "%bish_beam_dmg",
+                "damagelevel": 10,
+                "hiteffect": "char/bishop/p1_impact",
+                "name": "bishop_beam_fx",
+                "powerusage": "%bish_beam_pwr",
+                "time": 0.45,
+                "damageMod": {
+                    "name": "dmgmod_weld"
+                },
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                }
+            },
+            "trigger": {
+                "attack_bone_angles": "-92 5 -2",
+                "attack_bone_pos": "51 5 37",
+                "beambolt": "Bip01 L Hand",
+                "name": "bishop_beam_fx",
+                "time": 0.45
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power2",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "powerup_tag": "bish_power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "bishop_shield",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/bishop/p2_charge",
+                "name": "effect_sound",
+                "sound": "char/bishop_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/bishop/p2_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "life": "%bish_shield_life",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%bish_shield_pwr",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/bishop/p2_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%bish_shield_dr"
+                },
+                "affecter": {
+                    "attribute": "def_absorb_damage",
+                    "level": "%bish_shield_pct",
+                    "scope_damage": "dmg_energy"
+                },
+                "affecter": {
+                    "attribute": "resist_physical",
+                    "level": "%bish_shield_dam"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 10,
+            "aitype": "aoe",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Pulse",
+            "combotextstarter": "Pulsating",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "powerup_tag": "bish_power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "bishop_pulse",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/bishop/p2_charge",
+                "name": "effect_sound",
+                "sound": "char/bishop_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/bishop/p2_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/bishop/p3_power",
+                "name": "effect_sound",
+                "sound": "char/bishop_m/p3_power",
+                "time": 0.35
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": "%bish_pulse_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "maxrange": "%bish_pulse_rng",
+                "name": "fry",
+                "powerusage": "%bish_pulse_pwr",
+                "time": 0.5,
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "melee",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Sap",
+            "combotextstarter": "Draining",
+            "handler": "ch_bishop_drain",
+            "icon": 3,
+            "name": "power4",
+            "powerup_tag": "bish_power4",
+            "priority": 5,
+            "startchaintime": 0.45,
+            "require": {
+                "cat": "skill",
+                "item": "bishop_drain",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/bishop/p4_charge",
+                "name": "effect_sound",
+                "sound": "char/bishop_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "life": "%bish_drain_life",
+                "name": "powerup",
+                "tag": 100,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_handicap"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": 0.5
+                }
+            },
+            "trigger": {
+                "damage": "%bish_drain_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "name": "punch",
+                "powerusage": "%bish_drain_pwr",
+                "time": 0.38,
+                "victimeventtag": 100,
+                "damageMod": {
+                    "name": "dmgmod_drain_battery"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "special",
+                "result": "power4_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4_end",
+            "name": "power4_end",
+            "playspeed": 1.5,
+            "powerup_tag": "bish_power4",
+            "priority": 5,
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/bishop/p4_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power10",
+            "combotextfinisher": "Blast",
+            "combotextstarter": "Stunning",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power5",
+            "powerup_tag": "bish_gun",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "bishop_stun",
+                "level": 1
+            },
+            "trigger": {
+                "name": "gun_left_show",
+                "time": 0.5
+            },
+            "trigger": {
+                "name": "gun_right_hide_holster",
+                "time": 0.5
+            },
+            "trigger": {
+                "name": "gun_draw_sound",
+                "powerusage": "%bish_stun_pwr",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power5_loop"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "always_target": true,
+            "animenum": "ea_power5",
+            "blendtime": 0,
+            "combotextfinisher": "Blast",
+            "combotextstarter": "Stunning",
+            "energypersecond": "%bish_stun_pwr",
+            "icon": 4,
+            "locktransitionangles": true,
+            "name": "power5_loop",
+            "noautoaim": true,
+            "powerup_tag": "bish_gun",
+            "priority": 5,
+            "storepowerbuttons": true,
+            "target_only_actors": true,
+            "turnrate": 0.3,
+            "require": {
+                "cat": "skill",
+                "item": "bishop_stun",
+                "level": 1
+            },
+            "trigger": {
+                "life": "%bish_stun_life",
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%bish_stun_dmg",
+                "damagetype": "dmg_energy",
+                "life": 1,
+                "name": "powerup",
+                "tag": 101,
+                "time": -1
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "attack_bone_angles": "179 -2 0",
+                "attack_bone_pos": "58 -4 55",
+                "damage": 1,
+                "damagescale": "none",
+                "entity": "bish_shot_stun",
+                "fulltargeting": true,
+                "name": "gun_fire",
+                "targetable": true,
+                "time": 0,
+                "victimeventtag": 100,
+                "victimeventtag2": 101,
+                "damageMod": {
+                    "name": "dmgmod_no_pain"
+                },
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/bishop_m/p5_charge",
+                "time": 0
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power5_end"
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power5_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power11",
+            "lockangles": true,
+            "name": "power5_end",
+            "priority": 5,
+            "trigger": {
+                "name": "gun_left_hide",
+                "time": 0.55
+            },
+            "trigger": {
+                "name": "gun_right_show_holster",
+                "time": 0.55
+            },
+            "trigger": {
+                "name": "gun_holster_sound",
+                "time": 0.55
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "always_target": true,
+            "animenum": "ea_power12",
+            "combotextfinisher": "Shots",
+            "combotextstarter": "Blasting",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "powerup_tag": "bish_gun",
+            "priority": 5,
+            "target_only_actors": true,
+            "require": {
+                "cat": "skill",
+                "item": "bishop_double",
+                "level": 1
+            },
+            "trigger": {
+                "name": "gun_both_show",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "gun_both_hide_holster",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "gun_draw_sound",
+                "powerusage": "%bish_double_pwr",
+                "time": 0.3
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power6_loop"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Shots",
+            "combotextstarter": "Blasting",
+            "energypersecond": "%bish_double_pwr",
+            "icon": 5,
+            "locktransitionangles": true,
+            "name": "power6_loop",
+            "noautoaim": true,
+            "powerup_tag": "bish_gun",
+            "priority": 5,
+            "turnrate": 0.3,
+            "require": {
+                "cat": "skill",
+                "item": "bishop_double",
+                "level": 1
+            },
+            "event": {
+                "damage": 1,
+                "damagescale": "none",
+                "entity": "bish_shot_rad",
+                "fulltargeting": true,
+                "inherit": "gun_fire",
+                "name": "gun_fire_rad",
+                "victimeventtag": 100,
+                "victimeventtag2": 201,
+                "damageMod": {
+                    "name": "dmgmod_no_pain"
+                },
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%bish_double_radmg",
+                "damagetype": "dmg_radiation",
+                "life": 1,
+                "name": "powerup",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "attach_to_dead": true,
+                "class": "harming",
+                "damage": "%bish_double_radmg",
+                "damagetype": "dmg_radiation",
+                "life": 1,
+                "name": "powerup",
+                "tag": 200,
+                "time": -1
+            },
+            "trigger": {
+                "chance": 0.1,
+                "name": "otherevent",
+                "othertag": 202,
+                "tag": 201,
+                "time": -1
+            },
+            "trigger": {
+                "damage": 1,
+                "damagescale": "none",
+                "index": 3,
+                "knockback": 120,
+                "name": "hitme",
+                "tag": 202,
+                "time": -1,
+                "type": "ce_atk_self",
+                "Damagemod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "attack_bone_angles": "-123 -1 -1",
+                "attack_bone_pos": "56 -6 47",
+                "index": 0,
+                "name": "gun_fire_rad",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/bishop_m/p5_charge",
+                "time": 0
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "-49 -2 0",
+                "attack_bone_pos": "30 -13 48",
+                "index": 1,
+                "name": "gun_fire_rad",
+                "time": 0.45,
+                "victimeventtag": 200
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/bishop_m/p5_charge",
+                "time": 0.45
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power6_end"
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power6_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power13",
+            "lockangles": true,
+            "name": "power6_end",
+            "priority": 5,
+            "trigger": {
+                "name": "gun_both_hide",
+                "time": 0.55
+            },
+            "trigger": {
+                "name": "gun_both_show_holster",
+                "time": 0.55
+            },
+            "trigger": {
+                "name": "gun_holster_sound",
+                "time": 0.55
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power7",
+            "blendtime": 0,
+            "combotextfinisher": "Barrage",
+            "combotextstarter": "Shooting",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power7",
+            "powerup_tag": "bish_gun",
+            "priority": 5,
+            "startchaintime": 0.95,
+            "storepowerbuttons": true,
+            "require": {
+                "cat": "skill",
+                "item": "bishop_shootout",
+                "level": 1
+            },
+            "event": {
+                "animbased": true,
+                "damage": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "entity": "bish_shot_rad_explode",
+                "explodedamage": 1,
+                "explodevictimeventtag": 100,
+                "inherit": "gun_fire",
+                "name": "gun_fire_rad_exp",
+                "useboltangles": true
+            },
+            "event": {
+                "arc": 31,
+                "attacktype": "projectile",
+                "damage": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "inherit": "beam",
+                "maxrange": 600,
+                "name": "fire_arc",
+                "victimeventtag": 100
+            },
+            "trigger": {
+                "damage": "%bish_shootout_radmg",
+                "life": "%bish_shootout_life",
+                "name": "powerup",
+                "shared_tag": "shared_radiated",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/bishop_m/p5_charge",
+                "tag": 101,
+                "time": -1
+            },
+            "trigger": {
+                "name": "gun_both_show",
+                "time": 0.15
+            },
+            "trigger": {
+                "name": "gun_both_hide_holster",
+                "time": 0.15
+            },
+            "trigger": {
+                "name": "gun_draw_sound",
+                "powerusage": "%bish_shootout_pwr",
+                "time": 0.15
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "-1 -1 0",
+                "attack_bone_pos": "50 -7 55",
+                "fire_event": 101,
+                "name": "gun_fire_rad_exp",
+                "time": 0.28
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "attack_bone_angles": "-179 -1 1",
+                "attack_bone_pos": "50 6 55",
+                "fire_event": 101,
+                "name": "gun_fire_rad_exp",
+                "time": 0.33
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "-4 -19 -29",
+                "attack_bone_pos": "40 -20 56",
+                "fire_event": 101,
+                "name": "gun_fire_rad_exp",
+                "time": 0.42
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "attack_bone_angles": "-180 -12 25",
+                "attack_bone_pos": "40 20 56",
+                "fire_event": 101,
+                "name": "gun_fire_rad_exp",
+                "time": 0.45
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "-1 -5 -57",
+                "attack_bone_pos": "9 -25 55",
+                "fire_event": 101,
+                "name": "gun_fire_rad_exp",
+                "time": 0.52
+            },
+            "trigger": {
+                "angle": -30,
+                "beambolt": "none",
+                "name": "fire_arc",
+                "time": 0.52
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "attack_bone_angles": "179 -11 53",
+                "attack_bone_pos": "8 18 57",
+                "fire_event": 101,
+                "name": "gun_fire_rad_exp",
+                "time": 0.56
+            },
+            "trigger": {
+                "angle": 30,
+                "beambolt": "none",
+                "name": "fire_arc",
+                "time": 0.56
+            },
+            "trigger": {
+                "name": "gun_both_hide",
+                "time": 0.88
+            },
+            "trigger": {
+                "name": "gun_both_show_holster",
+                "time": 0.88
+            },
+            "trigger": {
+                "name": "gun_holster_sound",
+                "time": 0.88
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 30,
+            "aitype": "buffself",
+            "animenum": "ea_power2",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8",
+            "powerup_tag": "bish_power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "bishop_fury",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/bishop/p2_charge",
+                "name": "effect_sound",
+                "sound": "char/bishop_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/bishop/p2_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/bishop/p8_power",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "class": "add_attack",
+                "damagepercent": "%bish_fury_dmg",
+                "damagetype": "dmg_energy",
+                "life": "%bish_fury_life",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%bish_fury_pwr",
+                "time": 0.5,
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/bishop/p8_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/bishop/p8_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%bish_fury_ar"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "blendtime": 0,
+            "combotextfinisher": "Blackout",
+            "description": "BIG BANG",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power9",
+            "playspeed": 5,
+            "powerup_tag": "bish_power9",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "bishop_xtreme",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": "%bish_xtreme_life",
+                "name": "powerup",
+                "tag": 100,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_nullified"
+                },
+                "affecter": {
+                    "attribute": "nullify",
+                    "level": 1
+                }
+            },
+            "trigger": {
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/bishop/p9_charge",
+                "name": "effect_sound",
+                "sound": "char/bishop_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/bishop/p9_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/bishop/p9_power",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/bishop/p9_impact",
+                "name": "effect",
+                "time": 0.6
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%bish_xtreme_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "maxrange": 600,
+                "name": "punch",
+                "time": 0.6,
+                "victimeventtag": 100,
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "event": {
+            "damage": "%bish_pm_dmg",
+            "damagelevel": 2,
+            "damagescale": "none",
+            "damagetype": "dmg_energy",
+            "enemynumber": 0,
+            "hiteffect": "char/bishop/p10_impact",
+            "inherit": "blast",
+            "maxrange": 225,
+            "name": "bullet_impact",
+            "radius": 60,
+            "random": true
+        },
+        "FightMove": {
+            "animenum": "ea_power17",
+            "blendtime": 0,
+            "combotextfinisher": "Devastation",
+            "combotextstarter": "Devastating",
+            "icon": 12,
+            "lockangles": true,
+            "name": "power10",
+            "powerup_tag": "bish_gun",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "bishop_peacemaker",
+                "level": 1
+            },
+            "trigger": {
+                "name": "gun_both_show",
+                "time": 0.09
+            },
+            "trigger": {
+                "name": "gun_both_hide_holster",
+                "time": 0.09
+            },
+            "trigger": {
+                "name": "gun_draw_sound",
+                "powerusage": "%bish_pm_pwr",
+                "time": 0.09
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "name": "gun_fire_peacemaker_fx",
+                "time": 0.34
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "name": "gun_fire_peacemaker_fx",
+                "time": 0.39
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "name": "gun_fire_peacemaker_fx",
+                "time": 0.44
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "name": "gun_fire_peacemaker_fx",
+                "time": 0.49
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "name": "gun_fire_peacemaker_fx",
+                "time": 0.54
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "name": "gun_fire_peacemaker_fx",
+                "time": 0.59
+            },
+            "trigger": {
+                "enemynumber": 0,
+                "name": "bullet_impact",
+                "time": 0.55
+            },
+            "trigger": {
+                "enemynumber": 1,
+                "name": "bullet_impact",
+                "time": 0.6
+            },
+            "trigger": {
+                "enemynumber": 2,
+                "name": "bullet_impact",
+                "time": 0.65
+            },
+            "trigger": {
+                "enemynumber": 3,
+                "name": "bullet_impact",
+                "time": 0.7
+            },
+            "trigger": {
+                "enemynumber": 4,
+                "name": "bullet_impact",
+                "time": 0.75
+            },
+            "trigger": {
+                "enemynumber": 5,
+                "name": "bullet_impact",
+                "time": 0.8
+            },
+            "trigger": {
+                "enemynumber": 6,
+                "name": "bullet_impact",
+                "time": 0.85
+            },
+            "trigger": {
+                "name": "gun_both_hide",
+                "time": 0.9
+            },
+            "trigger": {
+                "name": "gun_both_show_holster",
+                "time": 0.9
+            },
+            "trigger": {
+                "name": "gun_holster_sound",
+                "time": 0.9
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "animenum": "ea_power2",
+            "description": "SUPERCONDUCTOR",
+            "icon": 13,
+            "lockangles": true,
+            "name": "power11",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "bishop_xtreme2",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/bishop_m/p9_charge",
+                "time": 0.7
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/bishop_m/p10_power",
+                "time": 0.7
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%bishop_xtreme2_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "time": 0.7,
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/bishop/p8_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/bishop/p8_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage_scope",
+                    "level": 0,
+                    "scope_damage": "dmg_energy"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "power_cost",
+                    "level": 0
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}
