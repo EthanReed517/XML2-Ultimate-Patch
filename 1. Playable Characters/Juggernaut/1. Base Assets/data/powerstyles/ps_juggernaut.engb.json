@@ -1,0 +1,1069 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/juggernaut_icons1.png",
+        "FightMove": {
+            "animenum": "ea_grab_start",
+            "handler": "ch_grab_hold",
+            "lockangles": true,
+            "lockspeed": true,
+            "name": "grabstart",
+            "noautoaim": true,
+            "playspeed": 1,
+            "startchaintime": 0.9,
+            "require": {
+                "cat": "skill",
+                "item": "grab",
+                "level": 1
+            },
+            "trigger": {
+                "name": "grab",
+                "time": 0
+            },
+            "trigger": {
+                "attackerface": true,
+                "name": "victim",
+                "nodename": "grabstartvictim",
+                "targetdistance": 45,
+                "time": 0,
+                "victimface": true
+            },
+            "chain": {
+                "action": "throwfwd",
+                "result": "grabthrowfwd"
+            },
+            "chain": {
+                "action": "throwback",
+                "result": "grabthrowback"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "grabthrowleft"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "grabthrowright"
+            },
+            "chain": {
+                "action": "special",
+                "result": "grabbreak"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_stun3",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "icon": 11,
+            "lockangles": true,
+            "name": "attackstun3",
+            "playspeed": 1,
+            "startchaintime": 0.66,
+            "trigger": {
+                "effect": "char/jugger/p3_charge",
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "slide",
+                "targetdistance": 75,
+                "targetfoundeventtag": 15,
+                "time": 0.25
+            },
+            "trigger": {
+                "finisher": true,
+                "life": 0.45,
+                "name": "xtreme_start",
+                "tag": 15,
+                "time": -1,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/njugg_m/juggernaut_yell",
+                "time": 0.35
+            },
+            "trigger": {
+                "hiteffect": "char/jugger/p1_impact",
+                "name": "punch_heavy",
+                "time": 0.4,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Thump",
+            "combotextstarter": "Crushing",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "powerup_tag": "jug_power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "jug_smash",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/jugger/p1_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/njugg_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.25
+            },
+            "trigger": {
+                "life": 0.3,
+                "movement": 0,
+                "name": "slide",
+                "targetdistance": 90,
+                "targetradius": 40,
+                "time": 0.2
+            },
+            "trigger": {
+                "life": "%jug_smash_life",
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 100,
+                "time": -1
+            },
+            "event": {
+                "attacktype": "punch",
+                "damage": "3 5",
+                "hiteffect": "char/jugger/p1_impact",
+                "inherit": "punch",
+                "name": "jug_smash_punch",
+                "tiles": true,
+                "victimeventtag": 100
+            },
+            "trigger": {
+                "angle": 40,
+                "height": 20,
+                "name": "jug_smash_punch",
+                "powerusage": "%jug_smash_pwr",
+                "time": 0.35
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 0,
+                "name": "jug_smash_punch",
+                "time": 0.4
+            },
+            "trigger": {
+                "angle": -40,
+                "height": -20,
+                "name": "jug_smash_punch",
+                "time": 0.45
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Crash",
+            "combotextstarter": "Crystal",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "powerup_tag": "jug_power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "jug_slam",
+                "level": 1
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%jug_slam_dmg",
+                "damagescale": "none",
+                "damagetype": "energy",
+                "inherit": "punch",
+                "name": "radial_punch",
+                "tiles": false
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%jug_slam_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/jugger/p2_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/njugg_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/jugger/p2_impact",
+                "name": "effect_sound",
+                "sound": "char/njugg_m/p2_impact",
+                "time": 0.5
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.4
+            },
+            "trigger": {
+                "maxrange": 80,
+                "name": "radial_punch",
+                "time": 0.5
+            },
+            "trigger": {
+                "arc": 45,
+                "maxrange": 120,
+                "name": "radial_punch",
+                "tiles": true,
+                "time": 0.52
+            },
+            "trigger": {
+                "maxrange": 100,
+                "name": "radial_punch",
+                "time": 0.55
+            },
+            "trigger": {
+                "maxrange": "%jug_slam_rad",
+                "name": "radial_punch",
+                "tag": 4,
+                "time": 0.58
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aitype": "melee",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Crash",
+            "combotextstarter": "Raging",
+            "energypersecond": "%jug_charge_pwr",
+            "fallback": "jumploop",
+            "handler": "ch_charge_move",
+            "icon": 2,
+            "locktransitionangles": true,
+            "name": "power3",
+            "noautoaim": true,
+            "powerup_tag": "jug_power3",
+            "priority": 5,
+            "startchaintime": 0.95,
+            "turnrate": 0.2,
+            "require": {
+                "cat": "skill",
+                "item": "jug_charge",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "only_non_looped": true,
+                "powerusage": "%jug_charge_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": "3 5",
+                "damagetype": "physical",
+                "knockback": "%jug_charge_kb",
+                "name": "punch",
+                "tag": 1,
+                "tiles": true,
+                "time": -1,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                },
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "effect": "char/jugger/p3_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "loop_timeout": 0.7,
+                "loop_type": "start",
+                "name": "sound",
+                "sound": "char/njugg_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "footstep",
+                "time": 0.25,
+                "volume": 1
+            },
+            "trigger": {
+                "name": "footstep",
+                "time": 0.75,
+                "volume": 1
+            },
+            "chain": {
+                "action": "special",
+                "result": "power3"
+            },
+            "chain": {
+                "action": "touch",
+                "result": "power3_break"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "fastballland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_grab_break",
+            "lockangles": true,
+            "lockspeed": true,
+            "locktransitionangles": true,
+            "name": "power3_break",
+            "noautoaim": true,
+            "playspeed": 1,
+            "priority": 5,
+            "trigger": {
+                "loop_type": "stop",
+                "name": "sound",
+                "sound": "char/njugg_m/p3_charge",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Squash",
+            "combotextstarter": "Smashing",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "powerup_tag": "jug_power4",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "jug_super_smash",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/jugger/p1_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/njugg_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "life": 0.3,
+                "movement": 0,
+                "name": "slide",
+                "targetdistance": 90,
+                "targetradius": 40,
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.25
+            },
+            "trigger": {
+                "life": "%jug_super_smash_mir",
+                "name": "powerup",
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": "%jug_super_smash_mir"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "effects/base/powerup/pu_weakened",
+                    "how_used": "primary"
+                }
+            },
+            "event": {
+                "attacktype": "punch",
+                "damage": "3 5",
+                "hiteffect": "char/jugger/p1_impact",
+                "inherit": "punch",
+                "name": "jug_super_smash_punch",
+                "powerusage": "%jug_super_smash_pwr",
+                "selfeventtag": 100,
+                "tiles": true
+            },
+            "trigger": {
+                "angle": 40,
+                "height": 20,
+                "name": "jug_super_smash_punch",
+                "powerusage": "%jug_super_smash_pwr",
+                "time": 0.35
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 0,
+                "name": "jug_super_smash_punch",
+                "time": 0.4
+            },
+            "trigger": {
+                "angle": -40,
+                "height": -20,
+                "name": "jug_super_smash_punch",
+                "time": 0.45
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "melee",
+            "animenum": "ea_power5",
+            "blendtime": 0.3,
+            "combotextfinisher": "Spin",
+            "combotextstarter": "Spinning",
+            "endchaintime": 1,
+            "icon": 4,
+            "lockangles": false,
+            "name": "power5",
+            "powerup_tag": "jug_power5",
+            "priority": 5,
+            "startchaintime": 0.8,
+            "require": {
+                "cat": "skill",
+                "item": "jug_spin_atk",
+                "level": 1
+            },
+            "event": {
+                "arc": 61,
+                "damage": "3 5",
+                "damagetype": "dmg_physical",
+                "hiteffect": "char/jugger/p5_impact",
+                "inherit": "punch",
+                "maxrange": 65,
+                "name": "jug_spin_punch",
+                "tiles": true
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/jugger/p5_charge",
+                "name": "effect_sound",
+                "sound": "char/njugg_m/p5_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "slide",
+                "targetdistance": 70,
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.4
+            },
+            "trigger": {
+                "angle": 0,
+                "name": "jug_spin_punch",
+                "powerusage": "%jug_spin_atk_pwr",
+                "time": 0.35
+            },
+            "trigger": {
+                "angle": -90,
+                "name": "jug_spin_punch",
+                "time": 0.4
+            },
+            "trigger": {
+                "angle": 180,
+                "name": "jug_spin_punch",
+                "time": 0.44
+            },
+            "trigger": {
+                "angle": 90,
+                "name": "jug_spin_punch",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "samepowerclick",
+                "result": "power5"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "buffself",
+            "animenum": "ea_power6",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "powerup_tag": "jug_power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "jug_cyttorak_shield",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/jugger/p6_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/njugg_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/jugger/p6_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/jugger/p6_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/njugg_m/p6_power",
+                "time": 0.7
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%jug_shield_life",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%jug_shield_pwr",
+                "time": 0.7,
+                "special_fx": {
+                    "effect": "char/jugger/p6_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_damage": "dmg_physical"
+                    }
+                },
+                "affecter": {
+                    "attribute": "reflect_damage",
+                    "level": "%jug_shield_dmg_ref"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "buffself",
+            "animenum": "ea_power6",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power7",
+            "powerup_tag": "jug_power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "jug_cyttorak_trans",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/jugger/p6_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/njugg_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/jugger/p6_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/jugger/p6_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/njugg_m/p6_power",
+                "time": 0.7
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "class": "absorb",
+                "damagepercent": "%jug_trans_dmg_pct",
+                "inflicted": true,
+                "life": "%jug_trans_life",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%jug_trans_pwr",
+                "sponsor": true,
+                "time": 0.7,
+                "special_fx": {
+                    "effect": "char/jugger/p6_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/jugger/p7_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/jugger/p7_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "defense_rating",
+                    "level": "%jug_trans_def_inc"
+                },
+                "affecter": {
+                    "attribute": "strength",
+                    "level": "%jug_trans_str"
+                },
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_damage": "dmg_energy"
+                    },
+                    "scope": {
+                        "scope_damage": "dmg_elemental"
+                    }
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "event": {
+            "class": "scale_actor",
+            "force_stack": true,
+            "inherit": "powerup",
+            "life": "%jug_rage_lif",
+            "name": "p8_powerup",
+            "scaledownrate": -2,
+            "scaleuprate": 2,
+            "affecter": {
+                "affect_type": "scale",
+                "attribute": "atk_damage",
+                "level": "%jug_rage_dm2"
+            },
+            "affecter": {
+                "affect_type": "scale",
+                "attribute": "atk_attack_rating",
+                "level": "%jug_rage_ar2"
+            },
+            "affecter": {
+                "attribute": "scale_factor",
+                "level": 0.05
+            }
+        },
+        "event": {
+            "inherit": "powerup",
+            "life": "%jug_rage_lif",
+            "name": "p8_powerup2",
+            "special_fx": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/jugger/p8_aura",
+                "how_used": "primary"
+            },
+            "special_fx": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/jugger/p8_aura",
+                "how_used": "primary"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "melee",
+            "animenum": "ea_attack_light1",
+            "cansteal": false,
+            "combotextfinisher": "Rage",
+            "combotextstarter": "Crimson",
+            "endchaintime": 0.95,
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8",
+            "powerup_tag": "jug_power8",
+            "priority": 5,
+            "startchaintime": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "jug_rage",
+                "level": 1
+            },
+            "trigger": {
+                "name": "p8_powerup",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "name": "p8_powerup2",
+                "tag": 101,
+                "time": -1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%jug_rage_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "targetdistance": 90,
+                "targetradius": 40,
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/jugger/p8_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "angle": -30,
+                "height": 15,
+                "name": "punch_heavy",
+                "selfeventtag": 100,
+                "selfeventtag2": 101,
+                "time": 0.36
+            },
+            "trigger": {
+                "angle": 15,
+                "height": 10,
+                "name": "punch_heavy",
+                "selfeventtag": 100,
+                "time": 0.42
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "samepowerclick",
+                "result": "power8_2"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "melee",
+            "animenum": "ea_attack_light2",
+            "cansteal": false,
+            "endchaintime": 0.95,
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8_2",
+            "powerup_tag": "jug_power8",
+            "priority": 5,
+            "startchaintime": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "jug_rage",
+                "level": 1
+            },
+            "trigger": {
+                "name": "p8_powerup",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "name": "p8_powerup2",
+                "tag": 101,
+                "time": -1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%jug_rage_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "targetdistance": 90,
+                "targetradius": 40,
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/jugger/p8_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 10,
+                "name": "punch_heavy",
+                "selfeventtag": 100,
+                "selfeventtag2": 101,
+                "time": 0.32
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "samepowerclick",
+                "result": "power8"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "blendtime": 0,
+            "combotextfinisher": "Cosmos",
+            "description": "CRIMSON DEVASTATION",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power9",
+            "playspeed": 10,
+            "powerup_tag": "jug_power9",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "jug_cosmos",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": "%jug_cosmos_lif",
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 100,
+                "time": -1
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%jug_cosmos_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "inherit": "punch",
+                "name": "radial_punch",
+                "tiles": true,
+                "victimeventtag": 100
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/jugger/p9_charge",
+                "name": "effect_sound",
+                "sound": "char/njugg_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/jugger/p9_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/jugger/p9_power",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "class": "scale_actor",
+                "life": 0.12,
+                "name": "powerup",
+                "scaledownrate": -4,
+                "scaleuprate": 3.5,
+                "time": 0,
+                "affecter": {
+                    "attribute": "scale_factor",
+                    "level": 1.3
+                }
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.4
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/njugg_m/p9_charge",
+                "time": 0.45
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/njugg_m/p2_impact",
+                "time": 0.45
+            },
+            "trigger": {
+                "name": "body_sound",
+                "time": 0.45
+            },
+            "trigger": {
+                "effect": "char/jugger/p9_impact",
+                "name": "effect",
+                "time": 0.47
+            },
+            "trigger": {
+                "maxrange": 100,
+                "name": "radial_punch",
+                "time": 0.47
+            },
+            "trigger": {
+                "maxrange": 200,
+                "name": "radial_punch",
+                "time": 0.5
+            },
+            "trigger": {
+                "maxrange": 300,
+                "name": "radial_punch",
+                "tag": 4,
+                "time": 0.55
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power11",
+            "blendtime": 0,
+            "description": "PATH OF DESTRUCTION",
+            "icon": 12,
+            "lockangles": true,
+            "name": "power11",
+            "powerup_tag": "jug_power11",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "jug_avatar",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "effect": "char/jugger/p11_charge",
+                "name": "effect_sound",
+                "sound": "char/njugg_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "class": "callevents",
+                "life": "%jug_avatar_lif",
+                "name": "powerup",
+                "time": 0.5,
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/jugger/p7_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/jugger/p7_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/jugger/p6_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "affector": {
+                    "affect_type": "scale",
+                    "attribute": "damage",
+                    "level": 2
+                },
+                "FunctionEvent": {
+                    "function": "touch",
+                    "thirdparty": true,
+                    "triggertag": 10
+                },
+                "FunctionEvent": {
+                    "function": "attempt_hit",
+                    "thirdparty": true,
+                    "triggertag": 11
+                }
+            },
+            "trigger": {
+                "name": "filter",
+                "noactor": true,
+                "passtag": 12,
+                "tag": 10,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "maxdangerrating": 10,
+                "name": "filter",
+                "noboss": true,
+                "passtag": 12,
+                "tag": 11,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "damage": 32000,
+                "name": "attackself",
+                "tag": 12,
+                "time": -1,
+                "type": "ce_atk_self"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
