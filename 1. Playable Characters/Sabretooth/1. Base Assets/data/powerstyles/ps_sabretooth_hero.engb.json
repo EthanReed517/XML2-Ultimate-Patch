@@ -1,7 +1,7 @@
 {
     "PowerStyle": {
         "cansteal": true,
-        "iconfile": "textures/ui/wolverine_icons1.png",
+        "iconfile": "textures/ui/sabretooth_icons1.png",
         "FightMove": {
             "animenum": "ea_power6",
             "lockangles": true,
@@ -52,14 +52,6 @@
                 "damageMod": {
                     "name": "dmgmod_stun"
                 }
-            },
-            "trigger": {
-                "finisher": true,
-                "life": 0.5,
-                "name": "xtreme_start",
-                "tag": 15,
-                "time": -1,
-                "worldspeed": 0.5
             },
             "chain": {
                 "action": "idle",
@@ -126,6 +118,10 @@
                 "movement": 20,
                 "name": "slide",
                 "time": 0.2
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.34
             },
             "trigger": {
                 "effect": "char/pcsab/p1_power",
@@ -243,6 +239,14 @@
                 "time": 0
             },
             "trigger": {
+                "name": "whoosh_light",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.75
+            },
+            "trigger": {
                 "force_stack": true,
                 "life": "%sab_frenzy_life",
                 "name": "powerup",
@@ -346,6 +350,10 @@
                 "level": 1,
                 "reset": true
             },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.2
+            },
             "event": {
                 "arc": 60,
                 "damage": "3 5",
@@ -420,6 +428,16 @@
                 "tag": 1
             },
             "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.34
+            },
+            "trigger": {
+                "effect": "char/pcsab/p5_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.25
+            },
+            "trigger": {
                 "knockback": 0,
                 "name": "clawslash",
                 "powerusage": "%sab_clawr_pwr",
@@ -434,6 +452,7 @@
             "aitype": "buffself",
             "animenum": "ea_power6",
             "icon": 5,
+            "lockangles": true,
             "name": "power6",
             "priority": 5,
             "require": {
@@ -457,7 +476,7 @@
                 "class": "feral_rage",
                 "life": "%sab_rage_life",
                 "name": "powerup",
-                "sound_attempt_hit": "char/pcsab_m/p3_charge",
+                "sound_attempt_hit": "char/pcsab_m/p6_charge",
                 "sound_damage": "char/pcsab_m/p6_impact",
                 "time": 0.5,
                 "special_fx": {
@@ -488,6 +507,7 @@
             "combotextfinisher": "Scream",
             "combotextstarter": "Screaming",
             "icon": 6,
+            "lockangles": true,
             "name": "power7",
             "priority": 5,
             "require": {
@@ -722,6 +742,7 @@
             "description": "SLASH AND BASH",
             "handler": "ch_restore_visible_on_interrupt",
             "icon": 8,
+            "lockangles": true,
             "name": "power9",
             "playspeed": 10,
             "powerup_tag": "sab_power9",
@@ -832,7 +853,7 @@
                 "worldspeed": 0.5
             },
             "trigger": {
-                "effect": "char/pcsab/p6_power",
+                "effect": "char/pcsab/p11_power",
                 "fxlevel": 4,
                 "name": "effect",
                 "time": 0
