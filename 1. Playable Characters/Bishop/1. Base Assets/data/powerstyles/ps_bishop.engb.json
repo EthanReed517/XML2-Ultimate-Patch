@@ -222,21 +222,13 @@
                 "time": 0.1
             },
             "trigger": {
-                "finisher": true,
-                "life": 0.2,
-                "name": "xtreme_start",
-                "tag": 15,
-                "time": -1,
-                "worldspeed": 0.5
-            },
-            "trigger": {
                 "height": 24,
                 "name": "uppercut",
                 "time": 0.4
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
-                "effect": "char/bishop/p5_power",
+                "effect": "char/bishop/special_finisher",
                 "fxlevel": 1,
                 "name": "effect_sound",
                 "sound": "char/bishop_m/p5_charge",
@@ -447,6 +439,10 @@
                 "time": 0.35
             },
             "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.4
+            },
+            "trigger": {
                 "arc": 180,
                 "damage": "%bish_pulse_dmg",
                 "damagescale": "none",
@@ -472,6 +468,7 @@
             "combotextstarter": "Draining",
             "handler": "ch_bishop_drain",
             "icon": 3,
+            "lockangles": true,
             "name": "power4",
             "powerup_tag": "bish_power4",
             "priority": 5,
@@ -480,6 +477,10 @@
                 "cat": "skill",
                 "item": "bishop_drain",
                 "level": 1
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.2
             },
             "trigger": {
                 "bolt": "Bip01 R Hand",
@@ -527,6 +528,8 @@
         "FightMove": {
             "animenum": "ea_power4_end",
             "name": "power4_end",
+            "lockangles": true,
+            "locktransitionangles": true,
             "playspeed": 1.5,
             "powerup_tag": "bish_power4",
             "priority": 5,
@@ -631,9 +634,6 @@
                 "victimeventtag2": 101,
                 "damageMod": {
                     "name": "dmgmod_no_pain"
-                },
-                "damageMod": {
-                    "name": "dmgmod_no_damage"
                 }
             },
             "trigger": {
@@ -652,9 +652,11 @@
         },
         "FightMove": {
             "animenum": "ea_power11",
-            "lockangles": true,
+            "locktransitionangles": true,
             "name": "power5_end",
+            "noautoaim": true,
             "priority": 5,
+            "turnrate": 0.2,
             "trigger": {
                 "name": "gun_left_hide",
                 "time": 0.55
@@ -738,9 +740,6 @@
                 "victimeventtag2": 201,
                 "damageMod": {
                     "name": "dmgmod_no_pain"
-                },
-                "damageMod": {
-                    "name": "dmgmod_no_damage"
                 }
             },
             "trigger": {
@@ -822,9 +821,11 @@
         },
         "FightMove": {
             "animenum": "ea_power13",
-            "lockangles": true,
+            "locktransitionangles": true,
             "name": "power6_end",
+            "noautoaim": true,
             "priority": 5,
+            "turnrate": 0.2,
             "trigger": {
                 "name": "gun_both_hide",
                 "time": 0.55
@@ -871,7 +872,8 @@
                 "explodevictimeventtag": 100,
                 "inherit": "gun_fire",
                 "name": "gun_fire_rad_exp",
-                "useboltangles": true
+                "useboltangles": true,
+                "victimeventtag": 100
             },
             "event": {
                 "arc": 31,
@@ -946,7 +948,7 @@
             "trigger": {
                 "actorbolt": "Bip01 R Hand",
                 "attack_bone_angles": "-1 -5 -57",
-                "attack_bone_pos": "9 -25 55",
+                "attack_bone_pos": "15 -40 55",
                 "fire_event": 101,
                 "name": "gun_fire_rad_exp",
                 "time": 0.52
@@ -960,7 +962,7 @@
             "trigger": {
                 "actorbolt": "Bip01 L Hand",
                 "attack_bone_angles": "179 -11 53",
-                "attack_bone_pos": "8 18 57",
+                "attack_bone_pos": "15 40 57",
                 "fire_event": 101,
                 "name": "gun_fire_rad_exp",
                 "time": 0.56
@@ -1043,7 +1045,18 @@
                     "how_used": "primary"
                 },
                 "affecter": {
-                    "affect_type": "scale",
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    },
+                    "scope": {
+                        "scope_non_powers": true
+                    }
+                },
+                "affecter": {
                     "attribute": "attack_rating",
                     "level": "%bish_fury_ar"
                 }
@@ -1281,14 +1294,26 @@
                 "worldspeed": 0.5
             },
             "trigger": {
-                "name": "sound",
-                "sound": "char/bishop_m/p9_charge",
-                "time": 0.7
+                "bolt": "Bip01 L Hand",
+                "effect": "char/bishop/p2_charge",
+                "name": "effect",
+                "time": 0
             },
             "trigger": {
                 "name": "sound",
-                "sound": "char/bishop_m/p10_power",
-                "time": 0.7
+                "sound": "char/bishop_m/p2_charge",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/bishop/p2_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/bishop/p8_power",
+                "name": "effect",
+                "time": 0
             },
             "trigger": {
                 "apply_ally": "all",
