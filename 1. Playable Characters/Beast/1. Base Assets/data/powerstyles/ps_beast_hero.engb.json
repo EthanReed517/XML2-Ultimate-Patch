@@ -1,0 +1,1521 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/beast_icons1.png",
+        "event": {
+            "damagescale": "none",
+            "name": "teleport_data_store",
+            "type": "ce_atk_teleport_mark_start"
+        },
+        "FightMove": {
+            "animenum": "ea_jump_start",
+            "handler": "ch_move_jump",
+            "lockangles": true,
+            "name": "jump",
+            "startchaintime": 0.3,
+            "chain": {
+                "action": "move",
+                "result": "airjump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "jumploop",
+            "noncombat": true,
+            "chain": {
+                "action": "move",
+                "result": "airjump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_double_jump_start",
+            "blendtime": 0.1,
+            "handler": "ch_move_jump",
+            "name": "airjump",
+            "startchaintime": 0.5,
+            "turnrate": 0.2,
+            "chain": {
+                "action": "special",
+                "result": "doublejumpland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_land",
+            "blendtime": 0.1,
+            "endchaintime": 0.7,
+            "handler": "ch_move_jump_land",
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "doublejumpland",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_heavy1",
+            "endchaintime": 0.85,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attackheavy1",
+            "playspeed": 1,
+            "powerup_tag": "beast_power",
+            "startchaintime": 0.55,
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.15
+            },
+            "trigger": {
+                "life": 0.1,
+                "movement": 0,
+                "name": "slide",
+                "time": 0.15
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "life": 0.2,
+                "name": "trail",
+                "offsetend": 50,
+                "time": 0.27
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 5,
+                "inherit": "punch_veryheavy",
+                "name": "punch",
+                "time": 0.35
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attackstun1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy2"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_heavy2",
+            "endchaintime": 0.85,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attackknockback2",
+            "playspeed": 1,
+            "powerup_tag": "beast_power",
+            "startchaintime": 0.55,
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.15
+            },
+            "trigger": {
+                "life": 0.1,
+                "movement": 0,
+                "name": "slide",
+                "time": 0.15
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "life": 0.2,
+                "name": "trail",
+                "offsetend": 50,
+                "time": 0.27
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 5,
+                "inherit": "punch_veryheavy",
+                "knockback": 250,
+                "name": "punch",
+                "time": 0.35,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "event": {
+            "attacktype": "punch",
+            "damage": "3 5",
+            "damagetype": "dmg_blade",
+            "inherit": "punch",
+            "name": "claw2"
+        },
+        "event": {
+            "damage": "3 5",
+            "inherit": "claw2",
+            "name": "clawswipe"
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_attack_knockback",
+            "combotextfinisher": "Smash",
+            "combotextstarter": "Sharp",
+            "icon": 0,
+            "lockangles": false,
+            "name": "power1",
+            "playspeed": 0.8,
+            "powerup_tag": "power1",
+            "priority": 5,
+            "turnrate": 0.5,
+            "startchaintime": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "beast_kick",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%beast_kick_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p1_charge",
+                "time": 0.2
+            },
+            "trigger": {
+                "life": 0.4,
+                "movement": 40,
+                "name": "slide",
+                "time": 0.1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/beast_hero/p1_charge",
+                "name": "effect",
+                "time": 0.25
+            },
+            "trigger": {
+                "arc": 20,
+                "angle": "40\r\r\r\n      damagescale = normal",
+                "height": 5,
+                "index": 1,
+                "name": "clawswipe",
+                "time": 0.35
+            },
+            "trigger": {
+                "arc": 20,
+                "damagescale": "normal",
+                "height": 5,
+                "index": 1,
+                "name": "clawswipe",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power1b"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_attack_light3",
+            "blendtime": 0.1,
+            "lockangles": true,
+            "name": "power1b",
+            "playspeed": 1,
+            "powerup_tag": "power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "beast_kick",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p1_power",
+                "time": 0.2
+            },
+            "trigger": {
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_physical",
+                "fxlevel": 1,
+                "hiteffect": "char/beast_hero/p1_impact",
+                "index": 1,
+                "knockback": "%beast_kick_kb",
+                "name": "punch",
+                "time": 0.35,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Strike",
+            "combotextstarter": "Rolling",
+            "energypersecond": "%beast_pinball_pwr",
+            "fallback": "jumploop",
+            "handler": "ch_charge_move",
+            "icon": 1,
+            "locktransitionangles": true,
+            "name": "power2",
+            "noautoaim": true,
+            "playspeed": 1.1,
+            "powerup_tag": "beast_power2",
+            "priority": 5,
+            "startchaintime": 0.52,
+            "turnrate": 0.3,
+            "require": {
+                "cat": "skill",
+                "item": "beast_pinball",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "only_non_looped": true,
+                "powerusage": "%beast_pinball_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 100,
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_physical",
+                "hiteffect": "char/beast/p1_impact",
+                "knockback": 80,
+                "name": "punch",
+                "tag": 1,
+                "tiles": true,
+                "time": -1,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "effect": "char/beast_hero/p2_power",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p2_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "effect": "char/beast_hero/p2_charge",
+                "name": "effect",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "special",
+                "result": "power2"
+            },
+            "chain": {
+                "action": "touch",
+                "result": "bowl_end"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "bowl_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1_end",
+            "blendtime": 0.1,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "bowl_end",
+            "playspeed": 1,
+            "priority": 5,
+            "trigger": {
+                "effect": "char/beast_hero/p2_impact",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p2_impact",
+                "time": 0
+            },
+            "trigger": {
+                "life": 1,
+                "movement": 30,
+                "name": "slide",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aitype": "projectile",
+            "animenum": "ea_grab_throw_ally",
+            "blendtime": 0,
+            "combotextfinisher": "Corrosion",
+            "combotextstarter": "Corrosive",
+            "icon": 2,
+            "name": "power3",
+            "playspeed": 1.6,
+            "powerup_tag": "beast_power3",
+            "priority": 5,
+            "turnrate": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "beast_corr",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/beast_hero/p3_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.05
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p3_charge",
+                "time": 0.4
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p3_power",
+                "time": 0.7
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "angoffset": "0 -7 0",
+                "attack_bone_pos": "20 -4 40",
+                "center": true,
+                "count": 3,
+                "damage": 0,
+                "damagescale": "none",
+                "entity": "chemical_jar",
+                "explodedamage": "%beast_corr_dmg",
+                "explodedamagetype": "dmg_radiation",
+                "explodevictimeventtag": 50,
+                "explodevictimeventtag2": 51,
+                "filename": "ents_beast_hero",
+                "inherit": "projectile",
+                "name": "throw_grenade",
+                "powerusage": "%beast_corr_pwr",
+                "randomvelocity": 125,
+                "speed": 575,
+                "spread": 30,
+                "tiles": true,
+                "victimeventtag": 50,
+                "victimeventtag2": 51,
+                "time": 0.52
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%beast_corr_dmg2",
+                "damagetype": "dmg_radiation",
+                "life": 4,
+                "name": "powerup",
+                "radiation": true,
+                "tag": 51,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "aoe",
+            "animenum": "ea_power2",
+            "blendtime": 0.05,
+            "combotextfinisher": "Kick",
+            "combotextstarter": "Sweeping",
+            "icon": 3,
+            "knockback": 80,
+            "lockangles": true,
+            "name": "power4",
+            "playspeed": 1.25,
+            "powerup_tag": "beast_power4",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "beast_propeller",
+                "level": 1
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p4_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "effect": "char/beast_hero/p4_power",
+                "name": "effect",
+                "time": 0.15
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_physical",
+                "maxrange": 80,
+                "name": "punch",
+                "powerusage": "%beast_propeller_pwr",
+                "tiles": true,
+                "time": 0.3,
+                "verticalrange": 30,
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_jump_atk_land",
+            "combotextfinisher": "Zap",
+            "combotextstarter": "Trapping",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power5",
+            "playspeed": 1,
+            "powerup_tag": "beas_power5",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "beast_zap",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/beast_hero/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.15
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p5_charge",
+                "time": 0.3
+            },
+            "trigger": {
+                "damage": "%beast_zap_dmg",
+                "damagetype": "dmg_electricity",
+                "entity": "beast_pylon",
+                "filename": "ents_beast_hero",
+                "health": "%beast_zap_health",
+                "life": "%beast_zap_life",
+                "maxinstances": 1,
+                "name": "projectile",
+                "offset": "20 -9 0",
+                "powerusage": "%beast_zap_pwr",
+                "speed": 0,
+                "time": 0.97
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "projectilenear",
+            "animenum": "ea_jump_smash_land",
+            "combotextfinisher": "Pound",
+            "combotextstarter": "Leaping",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "playspeed": 1.2,
+            "powerup_tag": "beas_power6",
+            "priority": 5,
+            "startchaintime": 0.3,
+            "require": {
+                "cat": "skill",
+                "item": "beast_slash",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%beast_slash_pwr",
+                "time": 0
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power6b"
+            }
+        },
+        "FightMove": {
+            "aitype": "projectilenear",
+            "animenum": "ea_attack_heavy2",
+            "handler": "ch_toad_leap",
+            "lockchaining": true,
+            "name": "power6b",
+            "playspeed": 0.5,
+            "powerup_tag": "beas_power6",
+            "priority": 5,
+            "startchaintime": 0.25,
+            "turnrate": 0.3,
+            "require": {
+                "cat": "skill",
+                "item": "beast_slash",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "life": 0.15,
+                "movement": 30,
+                "name": "slide",
+                "time": 0.1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Toe",
+                "effect": "char/beast_hero/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe",
+                "effect": "char/beast_hero/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power6_pound"
+            },
+            "chain": {
+                "action": "touch",
+                "result": "leapend"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_jump_smash_land",
+            "lockangles": true,
+            "name": "power6_pound",
+            "playspeed": 1,
+            "powerup_tag": "beas_power6",
+            "priority": 5,
+            "trigger": {
+                "effect": "char/beast_hero/p6_impact",
+                "name": "effect",
+                "time": 0.25
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p6_impact",
+                "time": 0.25
+            },
+            "trigger": {
+                "life": 0.2,
+                "movement": 30,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": "3 5",
+                "damagescale": "normal",
+                "knockback": "%beast_slash_kb",
+                "maxrange": 80,
+                "name": "punch",
+                "tiles": true,
+                "time": 0.25,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 10,
+            "aitype": "projectilenear",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Swipes",
+            "combotextstarter": "Surging",
+            "icon": 6,
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "power7",
+            "playspeed": 1.6,
+            "priority": 5,
+            "startchaintime": 0.66,
+            "require": {
+                "cat": "skill",
+                "item": "beast_ravage",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%beast_ravage_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p7_charge",
+                "time": 0.3
+            },
+            "trigger": {
+                "life": 2,
+                "name": "powerup",
+                "time": 0,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_knockback",
+                    "level": 0
+                }
+            },
+            "trigger": {
+                "arc": 50,
+                "attacktype": "punch",
+                "damage": "3 5",
+                "height": 20,
+                "knockback": 160,
+                "name": "punch",
+                "time": 0.3
+            },
+            "trigger": {
+                "effect": "char/beast_hero/p7_charge",
+                "name": "effect",
+                "time": 0.6
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power7a"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 10,
+            "aitype": "projectilenear",
+            "animenum": "ea_sprint1",
+            "handler": "ch_charge_move",
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "power7a",
+            "playspeed": 1.1,
+            "priority": 5,
+            "startchaintime": 0.8,
+            "require": {
+                "cat": "skill",
+                "item": "beast_ravage",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p7_power",
+                "time": 0
+            },
+            "trigger": {
+                "life": 0.25,
+                "movement": 6,
+                "name": "slide",
+                "time": 0.05
+            },
+            "trigger": {
+                "life": 0.25,
+                "movement": 16,
+                "name": "slide",
+                "time": 0.3
+            },
+            "trigger": {
+                "life": 0.25,
+                "movement": 24,
+                "name": "slide",
+                "time": 0.55
+            },
+            "trigger": {
+                "bolt": "Bip01 Spine",
+                "effect": "char/beast_hero/p1_charge",
+                "name": "effect",
+                "time": 0.1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power7b"
+            },
+            "chain": {
+                "action": "touch",
+                "result": "power7b"
+            },
+            "chain": {
+                "action": "special",
+                "result": "power7b"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_attack_light1",
+            "blendtime": 0.1,
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "power7b",
+            "playspeed": 2.3,
+            "powerup_tag": "power7",
+            "priority": 5,
+            "startchaintime": 0.4,
+            "require": {
+                "cat": "skill",
+                "item": "beast_ravage",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p7_impact",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/beast_hero/p1_charge",
+                "name": "effect",
+                "time": 0.1
+            },
+            "trigger": {
+                "maxrange": 60,
+                "name": "victim_set",
+                "time": 0
+            },
+            "trigger": {
+                "attackerface": true,
+                "name": "victim",
+                "nodename": "grabstartvictim",
+                "targetdistance": 52.3,
+                "time": 0,
+                "victimface": true
+            },
+            "trigger": {
+                "attackerface": true,
+                "name": "victim",
+                "nodename": "grabstartvictim",
+                "targetdistance": 52.3,
+                "time": 0.3,
+                "victimface": true
+            },
+            "trigger": {
+                "attackerface": true,
+                "name": "victim",
+                "nodename": "idle",
+                "targetdistance": 52.3,
+                "time": 0.5,
+                "victimface": true
+            },
+            "trigger": {
+                "name": "victim_release",
+                "time": 0.4
+            },
+            "trigger": {
+                "angle": "-50\r\n      arc = 80",
+                "height": 5,
+                "index": 1,
+                "name": "clawswipe",
+                "time": 0.38
+            },
+            "trigger": {
+                "angle": "0\r\n      arc = 80",
+                "height": 5,
+                "index": 1,
+                "name": "clawswipe",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power7c"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_attack_stun1",
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "power7c",
+            "playspeed": 2,
+            "powerup_tag": "power7",
+            "priority": 5,
+            "turnrate": 0.5,
+            "startchaintime": 0.4,
+            "require": {
+                "cat": "skill",
+                "item": "beast_ravage",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p7_impact",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/beast_hero/p1_charge",
+                "name": "effect",
+                "time": 0.1
+            },
+            "trigger": {
+                "angle": "-50\r\n      arc = 80",
+                "height": 5,
+                "index": 1,
+                "name": "clawswipe",
+                "time": 0.38
+            },
+            "trigger": {
+                "angle": "0\r\n      arc = 80",
+                "height": 5,
+                "index": 1,
+                "name": "clawswipe",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power7d"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_attack_light1",
+            "blendtime": 0.1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "power7d",
+            "playspeed": 1.7,
+            "powerup_tag": "power7",
+            "priority": 5,
+            "startchaintime": 0.4,
+            "require": {
+                "cat": "skill",
+                "item": "beast_ravage",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p7_impact",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/beast_hero/p1_charge",
+                "name": "effect",
+                "time": 0.1
+            },
+            "trigger": {
+                "angle": "-50\r\n      arc = 80",
+                "height": 5,
+                "index": 1,
+                "name": "clawswipe",
+                "time": 0.38
+            },
+            "trigger": {
+                "angle": "0\r\n      arc = 80",
+                "height": 5,
+                "index": 1,
+                "name": "clawswipe",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power7e"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_attack_stun1",
+            "icon": 6,
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "power7e",
+            "playspeed": 1.4,
+            "powerup_tag": "power7",
+            "priority": 5,
+            "turnrate": 0.5,
+            "startchaintime": 0.4,
+            "require": {
+                "cat": "skill",
+                "item": "beast_ravage",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p7_impact",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/beast_hero/p1_charge",
+                "name": "effect",
+                "time": 0.1
+            },
+            "trigger": {
+                "angle": "-50\r\n      arc = 80",
+                "height": 5,
+                "index": 1,
+                "name": "clawswipe",
+                "time": 0.38
+            },
+            "trigger": {
+                "angle": "0\r\n      arc = 80",
+                "height": 5,
+                "index": 1,
+                "name": "clawswipe",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1_end",
+            "combotextfinisher": "Pinball",
+            "description": "PINBALL",
+            "endchaintime": 0.95,
+            "handler": "ch_tele_jump",
+            "icon": 7,
+            "name": "power8",
+            "noautoaim": true,
+            "playspeed": 10,
+            "powerup_tag": "beast_power8",
+            "priority": 5,
+            "startchaintime": 0.9,
+            "turnrate": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "beast_xtreme",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": 4,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p8_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/beast_hero/p8_trail",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_physical",
+                "isxtreme": true,
+                "maxrange": 250,
+                "name": "teleport_data_store",
+                "powerusage": 0,
+                "time": 0
+            },
+            "trigger": {
+                "count": "set",
+                "name": "count",
+                "time": 0,
+                "value": "%beast_xtreme_hits"
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p8_power",
+                "time": 0.9
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power8_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1",
+            "blendtime": 0,
+            "endchaintime": 0.95,
+            "fallback": "power8_end",
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "power8_loop",
+            "noautoaim": true,
+            "playspeed": 10,
+            "powerup_tag": "beast_power8",
+            "priority": 5,
+            "startchaintime": 0.9,
+            "require": {
+                "cat": "counter",
+                "level": 1
+            },
+            "trigger": {
+                "count": "add",
+                "name": "count",
+                "time": 0,
+                "value": -1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p8_power",
+                "time": 0
+            },
+            "trigger": {
+                "attacktype": "direct",
+                "maxrange": 240,
+                "name": "teleport_scaled_atk",
+                "powerusage": 0,
+                "time": 0
+            },
+            "trigger": {
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_teleport",
+                "name": "teleport_punch",
+                "powerusage": 0,
+                "time": 0.33
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power8_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1_end",
+            "blendtime": 0.1,
+            "endchaintime": 0.95,
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "power8_end",
+            "noautoaim": true,
+            "playspeed": 5,
+            "priority": 5,
+            "startchaintime": 0.9,
+            "trigger": {
+                "attacktype": "direct",
+                "maxrange": 250,
+                "name": "teleport_return",
+                "powerusage": 0,
+                "time": 0
+            },
+            "trigger": {
+                "cleardata": true,
+                "name": "teleport_data_store",
+                "time": 0.45
+            },
+            "trigger": {
+                "end": true,
+                "name": "xtreme_start",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "event": {
+            "damage": "%beast_xtreme2_dmg",
+            "damagelevel": 5,
+            "damagetype": "dmg_energy",
+            "hiteffect": "char/beast_hero/p9_impact",
+            "inherit": "blast",
+            "maxrange": 225,
+            "name": "orbital_impact",
+            "numblasts": 2,
+            "radius": 60,
+            "random": true
+        },
+        "FightMove": {
+            "animenum": "ea_power4",
+            "blendtime": 0,
+            "combotextfinisher": "Bombardment",
+            "combotextstarter": "Orbital",
+            "description": "ORBITAL BOMBARDMENT",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power9",
+            "playspeed": 10,
+            "powerup_tag": "beast_power9",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "beast_xtreme2",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": 6,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/beast_hero/p9_power",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/beast_hero/p9_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p9_power",
+                "time": 0
+            },
+            "trigger": {
+                "name": "orbital_impact",
+                "tag": 3,
+                "time": 0.94
+            },
+            "trigger": {
+                "name": "orbital_impact",
+                "tag": 4,
+                "time": 0.95
+            },
+            "trigger": {
+                "name": "orbital_impact",
+                "tag": 5,
+                "time": 0.96
+            },
+            "trigger": {
+                "name": "orbital_impact",
+                "tag": 6,
+                "time": 0.97
+            },
+            "trigger": {
+                "name": "orbital_impact",
+                "tag": 7,
+                "time": 0.98
+            },
+            "trigger": {
+                "name": "orbital_impact",
+                "tag": 8,
+                "time": 0.99
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "class": "callevents",
+                "life": "%beast_xtreme2_lif",
+                "name": "powerup",
+                "time": 0,
+                "special_fx": {
+                    "effect": "char/beast_hero/p9_aura",
+                    "fxlevel": 2
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "xp",
+                    "level": "%beast_xtreme2_xp"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_grab_break_v",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power10",
+            "powerup_tag": "beast_power10",
+            "priority": 5,
+            "playspeed": 0.8,
+            "require": {
+                "cat": "skill",
+                "item": "beast_soul",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/beast_hero/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/beast_hero/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p10_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "attacks_per_second": 2,
+                "class": "add_harming",
+                "damage": "%beast_soul_dmg",
+                "damagescale": "normal",
+                "damagetype": "dmg_bleed",
+                "life": "%beast_soul_life",
+                "name": "powerup",
+                "radiation": false,
+                "time": 2,
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    }
+                }
+            },
+            "trigger": {
+                "class": "feral_rage",
+                "life": "%beast_soul_life",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%beast_soul_pwr",
+                "tag": 1,
+                "time": 0.5,
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/beast_hero/p10_charge",
+                    "fxlevel": 3
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/beast_hero/p10_charge",
+                    "fxlevel": 3
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%beast_soul_ar"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_levelup",
+            "icon": 10,
+            "lockangles": true,
+            "name": "power11",
+            "playspeed": 1.5,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "beast_command",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/beast_hero/p11_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/beas_m/p11_power",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beas_m/p11_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%bea_command_life",
+                "name": "powerup",
+                "powerusage": "%bea_command_pwr",
+                "time": 0.9,
+                "special_fx": {
+                    "effect": "char/beast_hero/p11_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "all_talents",
+                    "level": "%bea_command_skills",
+                    "scope_talent": "beast_command"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "power_cost",
+                    "level": "%bea_command_scale"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_levelup",
+            "icon": 11,
+            "name": "power12",
+            "playspeed": 1.5,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "bst_focus",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/beast_hero/p12_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/beas_m/p12_power",
+                "time": 0
+            },
+            "trigger": {
+                "life": "%bst_focus_lif",
+                "name": "powerup",
+                "powerusage": "%bst_focus_pwr",
+                "time": 0.7,
+                "affecter": {
+                    "attribute": "attack_rating",
+                    "level": "%bst_focus_atk"
+                },
+                "affecter": {
+                    "attribute": "defense_rating",
+                    "level": "%bst_focus_def"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%bst_focus_speed"
+                },
+                "special_fx": {
+                    "effect": "char/beast_hero/p12_aura",
+                    "fxlevel": 2
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}

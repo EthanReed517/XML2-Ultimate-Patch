@@ -1,0 +1,1071 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "beast_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_elemental",
+                        "level": 0.1
+                    },
+                    "affecter": {
+                        "attribute": "resist_radiation",
+                        "level": 0.1
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Sharp Check",
+            "description": "Beast swipes the target then delivers a powerful shoulder check that causes knockback.",
+            "descshort": "Melee",
+            "icon": 0,
+            "icon_texture": "textures/ui/beast_icons2.png",
+            "name": "beast_kick",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_kick_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "beast_kick_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_kick_kb",
+                    "value": 50
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "beast_kick_kb",
+                    "value": 600
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_kick_dmg",
+                    "value": 2.8
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "beast_kick_dmg",
+                    "value": 6.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_kick_pwr",
+                    "value": 10
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "beast_kick_pwr",
+                    "value": 80
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%beast_kick_dmg:s $DMG_PHYSICAL (%beast_kick_dmg:x)\\n%beast_kick_kb $KB\\n%beast_kick_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%beast_kick_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%beast_kick_dmg",
+                        "scope_node": "power1"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Furball",
+            "description": "Beast curls into a ball and rolls forward, battering enemies on impact.\\n(~41Press And Hold~~).",
+            "descshort": "Charge",
+            "icon": 1,
+            "icon_texture": "textures/ui/beast_icons2.png",
+            "name": "beast_pinball",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_pinball_req",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "beast_pinball_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_pinball_dmg",
+                    "value": 4.2
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "beast_pinball_dmg",
+                    "value": 9.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_pinball_ar",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "beast_pinball_ar",
+                    "value": 1.95
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_pinball_pwr",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "beast_pinball_pwr",
+                    "value": 94
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%beast_pinball_dmg:s $DMG_PHYSICAL (%beast_pinball_dmg:x)\\n%beast_pinball_pwr $EP per second",
+                "require": {
+                    "cat": "level",
+                    "level": "%beast_pinball_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%beast_pinball_dmg",
+                        "scope_node": "beast_power2"
+                    },
+                    "affecter": {
+                        "attribute": "atk_attack_rating",
+                        "level": "%beast_pinball_ar",
+                        "scope_node": "beast_power2"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Corrosive Concoction",
+            "description": "Beast throws exploding vials of a toxic mixture that does $DMG_RADIATION over time.",
+            "descshort": "Projectile",
+            "icon": 2,
+            "icon_texture": "textures/ui/beast_icons2.png",
+            "name": "beast_corr",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_corr_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "beast_corr_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_corr_num",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_corr_dmg",
+                    "value": "13 17"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "beast_corr_dmg",
+                    "value": "92 105"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_corr_dmg2",
+                    "value": "29 35"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "beast_corr_dmg2",
+                    "value": "180 196"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_corr_pwr",
+                    "value": 25
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "beast_corr_pwr",
+                    "value": 130
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%beast_corr_dmg $DMG_RADIATION\\n%beast_corr_dmg2 $DMG_RADIATION over 4 seconds\\n%beast_corr_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%beast_corr_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Propeller Kick",
+            "description": "A spinning hand stand that knocks nearby enemies off their feet.",
+            "descshort": "Radial",
+            "icon": 3,
+            "icon_texture": "textures/ui/beast_icons2.png",
+            "name": "beast_propeller",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_propeller_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "beast_propeller_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_propeller_dmg",
+                    "value": 3.7
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "beast_propeller_dmg",
+                    "value": 6.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_propeller_pwr",
+                    "value": 30
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "beast_propeller_pwr",
+                    "value": 105
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%beast_propeller_dmg:s $DMG_PHYSICAL (%beast_propeller_dmg:x)\\n%beast_propeller_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%beast_propeller_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%beast_propeller_dmg",
+                        "scope_node": "beast_power4"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Zap Trap",
+            "description": "Beast sets a small trap that sends out a radial wave of Electricity when enemies are near.",
+            "descshort": "Trap",
+            "icon": 4,
+            "icon_texture": "textures/ui/beast_icons2.png",
+            "name": "beast_zap",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_zap_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "beast_zap_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_zap_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "beast_zap_dmg",
+                    "value": "80 90"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_zap_health",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "beast_zap_health",
+                    "value": 100
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_zap_pwr",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "beast_zap_pwr",
+                    "value": 150
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_zap_life",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "beast_zap_life",
+                    "value": 26
+                }
+            },
+            "level": {
+                "count": 12,
+                "description": "%beast_zap_dmg $DMG_ELECTRICITY per second\\n%beast_zap_life second life\\n%beast_zap_health trap $HP\\n%beast_zap_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%beast_zap_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Pouncing Pound",
+            "description": "Beast leaps forward, causing a radial ground smash upon landing that knocks back surrounding enemies.",
+            "descshort": "Radial",
+            "icon": 5,
+            "icon_texture": "textures/ui/beast_icons2.png",
+            "name": "beast_slash",
+            "power": "power6",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_slash_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 10,
+                    "name": "beast_slash_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_slash_dmg",
+                    "value": 3.75
+                },
+                "talentvalue": {
+                    "level": 10,
+                    "name": "beast_slash_dmg",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_slash_kb",
+                    "value": 245
+                },
+                "talentvalue": {
+                    "level": 10,
+                    "name": "beast_slash_kb",
+                    "value": 620
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_slash_pwr",
+                    "value": 54
+                },
+                "talentvalue": {
+                    "level": 10,
+                    "name": "beast_slash_pwr",
+                    "value": 110
+                }
+            },
+            "level": {
+                "count": 10,
+                "description": "%beast_slash_dmg:s $DMG_PHYSICAL (%beast_slash_dmg:x)\\n%beast_slash_kb $KB\\n%beast_slash_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%beast_slash_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%beast_slash_dmg",
+                        "scope_node": "beas_power6"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Forward Momentum",
+            "description": "Beast rushes towards the target and delivers a flurry of clawed swipes with an increased chance of causing Criticals.",
+            "descshort": "Melee",
+            "icon": 6,
+            "icon_texture": "textures/ui/beast_icons2.png",
+            "name": "beast_ravage",
+            "power": "power7",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_ravage_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "beast_ravage_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_ravage_kb",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "beast_ravage_kb",
+                    "value": 500
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_ravage_dmg",
+                    "value": 2.6
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "beast_ravage_dmg",
+                    "value": 3.7
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_ravage_crit",
+                    "value": 0.12
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "beast_ravage_crit",
+                    "value": 0.45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_ravage_pwr",
+                    "value": 52
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "beast_ravage_pwr",
+                    "value": 123
+                }
+            },
+            "level": {
+                "count": 12,
+                "description": "%beast_ravage_dmg:s $DMG_PHYSICAL (%beast_ravage_dmg:x)\\n+%beast_ravage_crit:p Critical chance\\n%beast_ravage_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%beast_ravage_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%beast_ravage_dmg",
+                        "scope_node": "power7"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%beast_ravage_crit",
+                        "scope_node": "power7"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "PINBALL",
+            "description": "Beast curls into a ball and slams into multiple targets.",
+            "descshort": "Special",
+            "icon": 7,
+            "icon_texture": "textures/ui/beast_icons2.png",
+            "name": "beast_xtreme",
+            "power": "power8",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_xtreme_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "beast_xtreme_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_xtreme_bst",
+                    "value": 6.5
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "beast_xtreme_bst",
+                    "value": 15.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_xtreme_bns",
+                    "value": 1.75
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "beast_xtreme_bns",
+                    "value": 3.15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_xtreme_hits",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "beast_xtreme_hits",
+                    "value": 11
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%beast_xtreme_bst:s $DMG_PHYSICAL (%beast_xtreme_bst:x)\\n%beast_xtreme_hits attacks",
+                "require": {
+                    "cat": "level",
+                    "level": "%beast_xtreme_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%beast_xtreme_bns",
+                        "scope_node": "beast_power9"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "level": "%beast_xtreme_bst",
+                        "scope_node": "beast_power9"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "ORBITAL BOMBARDMENT",
+            "description": "Beast uses the X-Men's satellite to both call in a powerful orbital laser strike that deals $DMG_ENERGY and to give the whole party a $XP boost for a time.",
+            "descshort": "Blast/Boost",
+            "icon": 8,
+            "icon_texture": "textures/ui/beast_icons2.png",
+            "name": "beast_xtreme2",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_xtreme2_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "beast_xtreme2_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_xtreme2_dmg",
+                    "value": "65 76"
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "beast_xtreme2_dmg",
+                    "value": "259 289"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_xtreme2_xp",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "beast_xtreme2_xp",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_xtreme2_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "beast_xtreme2_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%beast_xtreme2_dmg $DMG_ENERGY\\n%beast_xtreme2_xp:s $XP for n%beast_xtreme2_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%beast_xtreme2_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Uncaged",
+            "description": "Beast unleashes the animal within, adding Bleed damage to all Physical attacks for a time.",
+            "descshort": "Boost",
+            "icon": 9,
+            "icon_texture": "textures/ui/beast_icons2.png",
+            "name": "beast_soul",
+            "power": "power10",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_soul_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "beast_soul_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_soul_life",
+                    "value": 18
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "beast_soul_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_soul_ar",
+                    "value": 1.1
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "beast_soul_ar",
+                    "value": 1.8
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_soul_dmg",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "beast_soul_dmg",
+                    "value": 120
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_soul_pwr",
+                    "value": 50
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "beast_soul_pwr",
+                    "value": 350
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%beast_soul_ar:s $AR\\n%beast_soul_dmg $DMG_BLEED over 2 seconds\\n%beast_soul_life seconds\\n%beast_soul_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%beast_soul_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Formulate",
+            "description": "Beast coordinates the team, reducing $EP cost, and increasing the levels of all skills.",
+            "descshort": "Boost",
+            "icon": 10,
+            "icon_texture": "textures/ui/beast_icons2.png",
+            "name": "beast_command",
+            "power": "power11",
+            "type": "boost",
+            "value_priority": 1,
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bea_command_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "bea_command_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bea_command_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "bea_command_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bea_command_skills",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 21,
+                    "name": "bea_command_skills",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 1,
+                    "name": "bea_command_skill",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 5,
+                    "name": "bea_command_skill",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 15,
+                    "name": "bea_command_skill",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bea_command_scale",
+                    "value": 0.95
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "bea_command_scale",
+                    "value": 0.75
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bea_command_pwr",
+                    "value": 110
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "bea_command_pwr",
+                    "value": 420
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "+%bea_command_skill all learned skills\\n%bea_command_scale:s $EP cost\\n%bea_command_life seconds\\n%bea_command_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%bea_command_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Terminal Velocity",
+            "description": "Beast calculates his terminal velocity, increasing his Defense and Movement Speed.",
+            "descshort": "Boost",
+            "icon": 11,
+            "icon_texture": "textures/ui/beast_icons2.png",
+            "name": "bst_focus",
+            "power": "power12",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bst_focus_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "bst_focus_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bst_focus_def",
+                    "value": 1.3
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "bst_focus_def",
+                    "value": 2.09
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bst_focus_speed",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "bst_focus_speed",
+                    "value": 2.09
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bst_focus_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "bst_focus_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "bst_focus_pwr",
+                    "value": 48
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "bst_focus_pwr",
+                    "value": 484
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%bst_focus_def:s $DR\\n%bst_focus_speed:s Movement Speed\\n%bst_focus_lif seconds\\n%bst_focus_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%bst_focus_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Regeneration",
+            "description": "Heals over time.",
+            "descshort": "Passive",
+            "icon": 12,
+            "icon_texture": "textures/ui/beast_icons2.png",
+            "name": "beas_regen",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beas_regen_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "beas_regen_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beas_regen_health",
+                    "value": 0.0017
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "beas_regen_health",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beas_regen_health_p",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "beas_regen_health_p",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beas_regen_health_t",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "beas_regen_health_t",
+                    "value": 6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%beas_regen_health_p:f% of max $HP every %beas_regen_health_t seconds",
+                "require": {
+                    "category": "level",
+                    "level": "%beas_regen_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "health_regen_pct",
+                        "level": "%beas_regen_health"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Beastial Instincts",
+            "description": "Beast focuses his instincts and cunning to increase his $AR and Critical chance. Levels up to reveal cloaked enemies.",
+            "descshort": "Passive",
+            "icon": 13,
+            "icon_texture": "textures/ui/beast_icons2.png",
+            "name": "beas_senses",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beas_senses_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "beas_senses_req",
+                    "value": 26
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beas_senses_ar",
+                    "value": 1.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "beas_senses_ar",
+                    "value": 2.6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beas_senses_cri",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "beas_senses_cri",
+                    "value": 0.13
+                }
+            },
+            "level": {
+                "count": 10,
+                "description": "%beas_senses_ar:s $AR\\n%beas_senses_cri:p Critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%beas_senses_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "attack_rating",
+                        "level": "%beas_senses_ar"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%beas_senses_cri"
+                    }
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%beas_senses_ar:s $AR\\n%beas_senses_cri:p Critical chance\\nReveals hidden enemies",
+                "require": {
+                    "category": "level",
+                    "level": "%beas_senses_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "attack_rating",
+                        "level": "%beas_senses_ar"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%beas_senses_cri"
+                    },
+                    "affecter": {
+                        "attribute": "reveal_hidden"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Astonishing Reflexes",
+            "description": "Increases Beast's chance to dodge Melee attacks and projectiles.",
+            "descshort": "Passive",
+            "icon": 14,
+            "icon_texture": "textures/ui/beast_icons2.png",
+            "name": "beast_dodge",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 4,
+                    "name": "beast_dodge_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "beast_dodge_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beast_dodge_chance",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "beast_dodge_chance",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%beast_dodge_chance:p chance to dodge",
+                "require": {
+                    "cat": "level",
+                    "level": "%beast_dodge_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%beast_dodge_chance",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        },
+                        "scope": {
+                            "scope_attack": "projectile"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
