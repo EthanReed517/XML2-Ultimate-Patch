@@ -1,0 +1,298 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "endchaintime": 0.85,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attackheavy1",
+            "playspeed": 1,
+            "powerup_tag": "beast_power",
+            "startchaintime": 0.55,
+            "event": {
+                "inherit": "punch_veryheavy",
+                "knockback": 120,
+                "name": "bigpunch"
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.15
+            },
+            "trigger": {
+                "life": 0.1,
+                "movement": 0,
+                "name": "slide",
+                "time": 0.15
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/beast/attack",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.27
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 5,
+                "name": "bigpunch",
+                "time": 0.35
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy2"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attackheavy2"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_heavy1",
+            "endchaintime": 0.85,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight1",
+            "playspeed": 1,
+            "powerup_tag": "beast_power",
+            "startchaintime": 0.55,
+            "event": {
+                "inherit": "punch_veryheavy",
+                "knockback": 120,
+                "name": "bigpunch"
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.15
+            },
+            "trigger": {
+                "life": 0.1,
+                "movement": 0,
+                "name": "slide",
+                "time": 0.15
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "effect": "char/beast/attack",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.27
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 5,
+                "name": "bigpunch",
+                "time": 0.35
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy2"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attackheavy2"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_heavy2",
+            "endchaintime": 0.95,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackheavy2",
+            "playspeed": 1,
+            "powerup_tag": "beast_power",
+            "startchaintime": 0.5,
+            "event": {
+                "inherit": "punch_veryheavy",
+                "knockback": 245,
+                "name": "haymaker",
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "life": 0.1,
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Toe0",
+                "effect": "char/beast/attack",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.15
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "effect": "char/beast/attack",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.15
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 10,
+                "name": "haymaker",
+                "time": 0.3
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "aoe",
+            "animenum": "ea_power1",
+            "blendtime": 0.05,
+            "lockangles": true,
+            "name": "power_attack",
+            "priority": 5,
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "inherit": "punch",
+                "name": "p_radius"
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/beast_m/p1_charge",
+                "time": 0.15
+            },
+            "trigger": {
+                "effect": "char/beast/p1_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.15
+            },
+            "trigger": {
+                "damage": "%mdmg_high",
+                "index": 1,
+                "knockback": 120,
+                "maxrange": 70,
+                "name": "p_radius",
+                "time": 0.3
+            },
+            "trigger": {
+                "damage": "%mdmg_high",
+                "index": 2,
+                "knockback": 190,
+                "maxrange": 80,
+                "name": "p_radius",
+                "time": 0.42
+            },
+            "trigger": {
+                "damage": "%mdmg_high",
+                "index": 3,
+                "knockback": 430,
+                "maxrange": 90,
+                "name": "p_radius",
+                "time": 0.55,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power_smash",
+            "playspeed": 1,
+            "event": {
+                "inherit": "punch_veryheavy",
+                "knockback": 120,
+                "name": "bigpunch"
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.15
+            },
+            "trigger": {
+                "life": 0.1,
+                "movement": 0,
+                "name": "slide",
+                "time": 0.15
+            },
+            "trigger": {
+                "bolt": "Bip01 L Toe0",
+                "effect": "char/beast/p1_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "effect": "char/beast/p1_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 5,
+                "name": "bigpunch",
+                "time": 0.35,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_resurrect_v",
+            "lockangles": true,
+            "name": "resurrect_v",
+            "nodamage": "%mdmg_high",
+            "playspeed": 1,
+            "trigger": {
+                "effect": "char/beast/special_resurrect",
+                "name": "effect",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}
