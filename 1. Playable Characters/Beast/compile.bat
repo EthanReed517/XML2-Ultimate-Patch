@@ -18,6 +18,7 @@ rmdir /s /q "0. Staging\2. Comics for XML1 and PSP characters"
 REM files on the PC that aren't modified by the X2UP can be removed here
 if  %consoleChoice%==PC (
 	del >nul "0. Staging\actors\05_beast.igb"
+	rmdir /s /q "0. Staging\models"
 )
 REM PSP does not have no cel shade assets folder 
 REM because it doesn't use cel shading to begin with.
@@ -35,6 +36,7 @@ goto compileConsoleCont
 REM On consoles, can remove any files that will be in the packages or are stored elsewhere.
 REM Folders that not everyone has (remove from list as needed):
 rmdir /s /q "0. Staging/data/entities"
+rmdir /s /q "0. Staging/models"
 REM Folders that everyone has (do not remove from this list):
 rmdir /s /q "0. Staging/actors"
 rmdir /s /q "0. Staging/data/talents"
