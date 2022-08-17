@@ -38,14 +38,6 @@
                 "time": 0.2
             },
             "trigger": {
-                "finisher": true,
-                "life": 0.45,
-                "name": "xtreme_start",
-                "tag": 15,
-                "time": -1,
-                "worldspeed": 0.5
-            },
-            "trigger": {
                 "angle": 0,
                 "height": 10,
                 "index": 1,
@@ -92,7 +84,7 @@
             "trigger": {
                 "name": "sound",
                 "sound": "char/coloss_m/p1_charge",
-                "time": 0
+                "time": 0.1
             },
             "trigger": {
                 "life": 0.3,
@@ -105,10 +97,9 @@
             "trigger": {
                 "bolt": "Bip01 R Hand",
                 "effect": "char/coloss/p1_charge",
-                "fxlevel": 1,
+                "fxlevel": 3,
                 "name": "effect",
-                "tag": 2,
-                "time": 0.2
+                "time": 0.18
             },
             "trigger": {
                 "name": "smash",
@@ -150,6 +141,10 @@
                 "tiles": false
             },
             "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.57
+            },
+            "trigger": {
                 "name": "stop",
                 "time": 0
             },
@@ -170,23 +165,33 @@
             },
             "trigger": {
                 "effect": "char/coloss/p2_impact",
-                "name": "effect_sound",
-                "sound": "char/coloss_m/p2_impact",
+                "name": "effect",
                 "time": 0.65
             },
             "trigger": {
-                "arc": 45,
+                "name": "sound",
+                "sound": "char/coloss_m/p2_impact",
+                "time": 0.6
+            },
+            "trigger": {
+                "arc": 70,
                 "maxrange": "%col_clap_ft",
                 "name": "radial_punch",
                 "powerusage": "%col_clap_pwr",
-                "time": 0.7
+                "time": 0.7,
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
             },
             "trigger": {
-                "arc": 45,
+                "arc": 70,
                 "maxrange": "%col_clap_ft",
                 "name": "radial_punch",
                 "tiles": true,
-                "time": 0.7
+                "time": 0.7,
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
             },
             "chain": {
                 "action": "Idle",
@@ -218,6 +223,10 @@
                 "time": 0
             },
             "trigger": {
+                "name": "whoosh_light",
+                "time": 0.25
+            },
+            "trigger": {
                 "name": "slide",
                 "targetdistance": 70,
                 "time": 0.1
@@ -225,7 +234,7 @@
             "trigger": {
                 "name": "sound",
                 "sound": "char/coloss_m/p3_power",
-                "time": 0.35
+                "time": 0.3
             },
             "trigger": {
                 "attacktype": "punch",
@@ -268,18 +277,23 @@
                 "time": 0.35
             },
             "trigger": {
-                "life": -1,
+                "life": "%col_shield_lif",
                 "name": "powerup",
                 "no_shadow": true,
                 "powerusage": "%col_shield_pwr",
                 "time": 0.45,
                 "special_fx": {
                     "effect": "char/coloss/p4_aura",
-                    "fxlevel": 1
+                    "fxlevel": 1,
+                    "how_used": "primary"
                 },
                 "affecter": {
-                    "attribute": "spend_damage",
-                    "level": "%col_shield_dmg"
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": "%col_shield_dmg",
+                    "scope": {
+                        "scope_damage": "dmg_physical"
+                    }
                 }
             },
             "chain": {
@@ -305,9 +319,13 @@
             },
             "trigger": {
                 "effect": "char/coloss/p5_power",
-                "name": "effect_sound",
-                "sound": "char/coloss_m/p1_charge",
+                "name": "effect",
                 "time": 0.3
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/coloss_m/p1_charge",
+                "time": 0.1
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
@@ -327,7 +345,7 @@
             "trigger": {
                 "attacktype": "punch",
                 "damage": "3 5",
-                "fxlevel": 5,
+                "fxlevel": 3,
                 "hiteffect": "char/coloss/p1_impact",
                 "knockback": 0,
                 "name": "punch",
@@ -563,6 +581,10 @@
                 "name": "effect_sound",
                 "sound": "char/coloss_m/p8_impact",
                 "time": 0.4
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.25
             },
             "trigger": {
                 "damage": "3 5",
