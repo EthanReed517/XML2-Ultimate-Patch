@@ -8,6 +8,14 @@ echo defaultman
 cd "%~dp0\1. Playable Characters\defaultman"
 call update.bat 
 cd ..\..
+echo Beast
+cd "%~dp0\1. Playable Characters\Beast"
+call update.bat 
+cd ..\..
+echo Bishop
+cd "%~dp0\1. Playable Characters\Bishop"
+call update.bat 
+cd ..\..
 echo Cyclops
 cd "%~dp0\1. Playable Characters\Cyclops"
 call update.bat 
@@ -26,6 +34,14 @@ call update.bat
 cd ..\..
 echo Nightcrawler
 cd "%~dp0\1. Playable Characters\Nightcrawler"
+call update.bat 
+cd ..\..
+echo Professor X
+cd "%~dp0\1. Playable Characters\Professor X"
+call update.bat 
+cd ..\..
+echo Sabretooth
+cd "%~dp0\1. Playable Characters\Sabretooth"
 call update.bat 
 cd ..\..
 echo Storm
