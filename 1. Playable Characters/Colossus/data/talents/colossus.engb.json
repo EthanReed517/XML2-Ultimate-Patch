@@ -1,0 +1,807 @@
+{
+    "talents": {
+        "talent": {
+            "descname": "Iron Fist",
+            "description": "Increased melee attack with $KB",
+            "descshort": "Melee",
+            "icon": 0,
+            "icon_texture": "textures/ui/colossus_icons1.png",
+            "name": "col_smash",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_smash_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "col_smash_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_smash_dmg",
+                    "value": 3.5
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "col_smash_dmg",
+                    "value": 9.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_smash_kb",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "col_smash_kb",
+                    "value": 305
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_smash_ar",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "col_smash_ar",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_smash_pwr",
+                    "value": 8
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "col_smash_pwr",
+                    "value": 76
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%col_smash_dmg:s $DMG_PHYSICAL (%col_smash_dmg:x)\\n%col_smash_kb $KB\\n%col_smash_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%col_smash_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%col_smash_dmg",
+                        "scope_node": "col_power1"
+                    },
+                    "affecter": {
+                        "attribute": "atk_attack_rating",
+                        "level": "%col_smash_ar",
+                        "scope_node": "col_power1"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Thunder Clap",
+            "description": "A thunderous clap that sends out a 140 degree blast of damage",
+            "descshort": "Radial",
+            "icon": 1,
+            "icon_texture": "textures/ui/colossus_icons1.png",
+            "name": "col_clap",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_clap_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "col_clap_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_clap_dmg",
+                    "value": 3.3
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "col_clap_dmg",
+                    "value": 6.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_clap_pwr",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "col_clap_pwr",
+                    "value": 86
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_clap_ft",
+                    "value": 120
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "col_clap_ft",
+                    "value": 144
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%col_clap_dmg:s $DMG_PHYSICAL (%col_clap_dmg:x)\\n%col_clap_ft radius\\n%col_clap_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%col_clap_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%col_clap_dmg",
+                        "scope_node": "col_power2"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Uppercut",
+            "description": "An increased melee attack that pops enemies into the air",
+            "descshort": "Melee",
+            "icon": 2,
+            "icon_texture": "textures/ui/colossus_icons1.png",
+            "name": "col_uppercut",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_uppercut_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "col_uppercut_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_uppercut_pwr",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "col_uppercut_pwr",
+                    "value": 76
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_uppercut_dmg",
+                    "value": 4.1
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "col_uppercut_dmg",
+                    "value": 9.2
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%col_uppercut_dmg:s $DMG_PHYSICAL (%col_uppercut_dmg:x)\\n%col_uppercut_pwr $EP",
+                "require": {
+                    "cat": "skill",
+                    "item": "col_smash",
+                    "level": 1
+                },
+                "require": {
+                    "cat": "level",
+                    "level": "%col_uppercut_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%col_uppercut_dmg",
+                        "scope_node": "col_power3"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Steel Skin",
+            "description": "Generates steel armor around his body which absorbs an amount of damage instead of colossus taking it",
+            "descshort": "Boost",
+            "icon": 3,
+            "icon_texture": "textures/ui/colossus_icons1.png",
+            "name": "col_shield",
+            "power": "power4",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_shield_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "col_shield_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_shield_dmg",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "col_shield_dmg",
+                    "value": 71
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_shield_pwr",
+                    "value": 32
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "col_shield_pwr",
+                    "value": 304
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%col_shield_dmg $DMG_PHYSICAL absorbed\\n%col_shield_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%col_shield_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Massive Strike",
+            "description": "An increased melee attack with a chance for 33% instant $HP loss on target",
+            "descshort": "Melee",
+            "icon": 4,
+            "icon_texture": "textures/ui/colossus_icons1.png",
+            "name": "col_strike",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_strike_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "col_strike_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_strike_dmg",
+                    "value": 6.4
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "col_strike_dmg",
+                    "value": 9.75
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_strike_chance",
+                    "value": 0.16
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "col_strike_chance",
+                    "value": 0.3
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_strike_pwr",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "col_strike_pwr",
+                    "value": 80
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%col_strike_dmg:s $DMG_PHYSICAL (%col_strike_dmg:x)\\n%col_strike_chance:p chance\\n%col_strike_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%col_strike_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "col_uppercut",
+                    "level": 1
+                },
+                "powerup": {
+                    "chance": "%col_strike_chance",
+                    "class": "atk_instant_pct",
+                    "life": -1,
+                    "percent": 0.33,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%col_strike_dmg",
+                        "scope_node": "col_power5"
+                    },
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope_node": "col_power5"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Roar",
+            "description": "A battle cry giving all party members a bonus to all character traits",
+            "descshort": "Boost",
+            "icon": 5,
+            "icon_texture": "textures/ui/colossus_icons1.png",
+            "name": "col_roar",
+            "power": "power6",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_roar_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "col_roar_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_roar_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "col_roar_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_roar_trait",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "col_roar_trait",
+                    "value": 16
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_roar_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "col_roar_pwr",
+                    "value": 308
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%col_roar_life seconds\\n+%col_roar_trait Strength, Speed, Body, Focus\\n%col_roar_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%col_roar_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "col_shield",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Siberian Express",
+            "description": "Charge against enemies, and objects, knocking them back\\n(~41Press And Hold~~)",
+            "descshort": "Charge",
+            "icon": 6,
+            "icon_texture": "textures/ui/colossus_icons1.png",
+            "name": "col_charge",
+            "power": "power7",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_charge_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "col_charge_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_charge_dmg",
+                    "value": 6.75
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "col_charge_dmg",
+                    "value": 10.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_charge_kb",
+                    "value": 245
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "col_charge_kb",
+                    "value": 620
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_charge_pwr",
+                    "value": 48
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "col_charge_pwr",
+                    "value": 100
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%col_charge_dmg:s $DMG_PHYSICAL (%col_charge_dmg:x)\\n%col_charge_kb $KB\\n%col_charge_pwr $EP/s",
+                "require": {
+                    "cat": "level",
+                    "level": "%col_charge_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "col_strike",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%col_charge_dmg",
+                        "scope_node": "col_power7"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Bounding Smash",
+            "description": "A colossal leap and landing that sends out a radial shock wave of damage",
+            "descshort": "Radial",
+            "icon": 7,
+            "icon_texture": "textures/ui/colossus_icons1.png",
+            "name": "col_leap",
+            "power": "power8",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_leap_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "col_leap_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_leap_dmg",
+                    "value": 3.75
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "col_leap_dmg",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_leap_kb",
+                    "value": 245
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "col_leap_kb",
+                    "value": 620
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_leap_pwr",
+                    "value": 51
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "col_leap_pwr",
+                    "value": 109
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%col_leap_dmg:s $DMG_PHYSICAL (%col_leap_dmg:x)\\n%col_leap_kb $KB\\n%col_leap_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%col_leap_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "col_clap",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%col_leap_dmg",
+                        "scope_node": "col_power8"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "DEMOLITION",
+            "description": "An xtreme concussion attack",
+            "descshort": "Radial",
+            "icon": 8,
+            "icon_texture": "textures/ui/colossus_icons1.png",
+            "name": "col_xtreme",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_xtreme_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "col_xtreme_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_xtreme_dmg",
+                    "value": 6.5
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "col_xtreme_dmg",
+                    "value": 15.5
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%col_xtreme_dmg:s $DMG_PHYSICAL (%col_xtreme_dmg:x)",
+                "require": {
+                    "cat": "level",
+                    "level": "%col_xtreme_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%col_xtreme_dmg",
+                        "scope_node": "col_power9"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "UNBREAKABLE",
+            "description": "Makes Colossus invicincible, and increases his $DMG for a time",
+            "descshort": "Boost",
+            "icon": 12,
+            "icon_texture": "textures/ui/colossus_icons1.png",
+            "name": "col_xtreme2",
+            "power": "power11",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_xtreme2_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "col_xtreme2_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_xtreme2_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "col_xtreme2_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "+^100% $DMG\\n%col_xtreme2_lif Seconds\\n",
+                "require": {
+                    "cat": "level",
+                    "level": "%col_xtreme2_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Metallurgy",
+            "description": "Increases natural resistance to $RES_ELEMENTAL and $RES_ENERGY and $RES_MENTAL",
+            "descshort": "Passive",
+            "icon": 9,
+            "icon_texture": "textures/ui/colossus_icons1.png",
+            "name": "col_metallurgy",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_metallurgy_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "col_metallurgy_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_metallurgy_pct",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "col_metallurgy_pct",
+                    "value": 0.47
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%col_metallurgy_pct:p $RES_ELEMENTAL\\n+%col_metallurgy_pct:p $RES_MENTAL\\n+%col_metallurgy_pct:p $RES_ENERGY",
+                "require": {
+                    "category": "level",
+                    "level": "%col_metallurgy_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "col_hardened",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_elemental",
+                        "level": "%col_metallurgy_pct"
+                    },
+                    "affecter": {
+                        "attribute": "resist_mental",
+                        "level": "%col_metallurgy_pct"
+                    },
+                    "affecter": {
+                        "attribute": "resist_energy",
+                        "level": "%col_metallurgy_pct"
+                    },
+                    "affecter": {
+                        "attribute": "resist_radiation",
+                        "level": "%col_metallurgy_pct"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Galvanize",
+            "description": "Gives a natural $DR increase",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/colossus_icons1.png",
+            "name": "col_hardened",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_hardened_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "col_hardened_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_hardened_def",
+                    "value": 1.15
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "col_hardened_def",
+                    "value": 2.27
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%col_hardened_def:s $DR",
+                "require": {
+                    "category": "level",
+                    "level": "%col_hardened_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "col_brawler",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "defense_rating",
+                        "level": "%col_hardened_def"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Brawler",
+            "description": "Gives a natural $AR increase",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/colossus_icons1.png",
+            "name": "col_brawler",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_brawler_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "col_brawler_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "col_brawler_ar",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "col_brawler_ar",
+                    "value": 2.6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%col_brawler_ar:s $AR",
+                "require": {
+                    "category": "level",
+                    "level": "%col_brawler_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "attack_rating",
+                        "level": "%col_brawler_ar"
+                    }
+                }
+            }
+        }
+    }
+}

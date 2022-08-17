@@ -1,0 +1,715 @@
+{
+    "PowerStyle": {
+        "cansteal": false,
+        "iconfile": "textures/ui/colossus_icons1.png",
+        "FightMove": {
+            "animenum": "ea_attack_stun3",
+            "endchaintime": 0.95,
+            "fallback": "attackheavy1",
+            "icon": 11,
+            "lockangles": true,
+            "name": "attackstun3",
+            "playspeed": 1,
+            "startchaintime": 0.5,
+            "event": {
+                "fxlevel": 5,
+                "hiteffect": "char/coloss/p1_impact",
+                "inherit": "punch_heavy",
+                "knockback": 40,
+                "name": "skullcrack",
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/coloss/p1_charge",
+                "fxlevel": 6,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "slide",
+                "targetfoundeventtag": 15,
+                "time": 0.2
+            },
+            "trigger": {
+                "finisher": true,
+                "life": 0.45,
+                "name": "xtreme_start",
+                "tag": 15,
+                "time": -1,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 10,
+                "index": 1,
+                "name": "skullcrack",
+                "time": 0.48
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Smash",
+            "combotextstarter": "Pounding",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "powerup_tag": "col_power1",
+            "priority": 5,
+            "event": {
+                "attacktype": "punch",
+                "damage": "3 5",
+                "fxlevel": 1,
+                "hiteffect": "char/coloss/p1_impact",
+                "inherit": "punch",
+                "knockback": "%col_smash_kb",
+                "name": "smash",
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "require": {
+                "cat": "skill",
+                "item": "col_smash",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/coloss_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "life": 0.3,
+                "movement": 0,
+                "name": "slide",
+                "targetdistance": 60,
+                "targetradius": 40,
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/coloss/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "tag": 2,
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "smash",
+                "powerusage": "%col_smash_pwr",
+                "time": 0.4
+            },
+            "trigger": {
+                "name": "smash",
+                "powerusage": "%col_smash_pwr",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Clap",
+            "combotextstarter": "Booming",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "powerup_tag": "col_power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "col_clap",
+                "level": 1
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "3 5",
+                "inherit": "punch",
+                "name": "radial_punch",
+                "tiles": false
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/coloss/p1_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/coloss_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/coloss/p1_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/coloss/p2_impact",
+                "name": "effect_sound",
+                "sound": "char/coloss_m/p2_impact",
+                "time": 0.65
+            },
+            "trigger": {
+                "arc": 45,
+                "maxrange": "%col_clap_ft",
+                "name": "radial_punch",
+                "powerusage": "%col_clap_pwr",
+                "time": 0.7
+            },
+            "trigger": {
+                "arc": 45,
+                "maxrange": "%col_clap_ft",
+                "name": "radial_punch",
+                "tiles": true,
+                "time": 0.7
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "melee",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Punch",
+            "combotextstarter": "Lifting",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "powerup_tag": "col_power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "col_uppercut",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/coloss/p1_charge",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/coloss_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "slide",
+                "targetdistance": 70,
+                "time": 0.1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/coloss_m/p3_power",
+                "time": 0.35
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "3 5",
+                "fxlevel": 3,
+                "hiteffect": "char/coloss/p1_impact",
+                "name": "punch",
+                "powerusage": "%col_uppercut_pwr",
+                "time": 0.35,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power4",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "col_shield",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/coloss_m/p4_charge",
+                "time": 0.35
+            },
+            "trigger": {
+                "effect": "char/coloss/p4_charge",
+                "name": "effect",
+                "time": 0.35
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%col_shield_pwr",
+                "time": 0.45,
+                "special_fx": {
+                    "effect": "char/coloss/p4_aura",
+                    "fxlevel": 1
+                },
+                "affecter": {
+                    "attribute": "spend_damage",
+                    "level": "%col_shield_dmg"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "melee",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Strike",
+            "combotextstarter": "Massive",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power5",
+            "powerup_tag": "col_power5",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "col_strike",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/coloss/p5_power",
+                "name": "effect_sound",
+                "sound": "char/coloss_m/p1_charge",
+                "time": 0.3
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/coloss/p1_charge",
+                "fxlevel": 5,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "life": 0.3,
+                "movement": 0,
+                "name": "slide",
+                "targetdistance": 60,
+                "targetradius": 40,
+                "time": 0.4
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "3 5",
+                "fxlevel": 5,
+                "hiteffect": "char/coloss/p1_impact",
+                "knockback": 0,
+                "name": "punch",
+                "powerusage": "%col_strike_pwr",
+                "time": 0.49
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Roar",
+            "combotextstarter": "Roaring",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "col_roar",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/coloss_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/coloss/p6_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%col_roar_life",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%col_roar_pwr",
+                "time": 0.3,
+                "special_fx": {
+                    "effect": "char/coloss/p4_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "traits",
+                    "level": "%col_roar_traits"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aitype": "melee",
+            "animenum": "ea_power7",
+            "combotextfinisher": "Rush",
+            "combotextstarter": "Thundering",
+            "energypersecond": "%col_charge_pwr",
+            "fallback": "jumploop",
+            "handler": "ch_charge_move",
+            "icon": 6,
+            "locktransitionangles": true,
+            "name": "power7",
+            "noautoaim": true,
+            "powerup_tag": "col_power7",
+            "priority": 5,
+            "startchaintime": 0.95,
+            "turnrate": 0.2,
+            "require": {
+                "cat": "skill",
+                "item": "col_charge",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "only_non_looped": true,
+                "powerusage": "%col_charge_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": "3 5",
+                "knockback": "%col_charge_kb",
+                "name": "punch",
+                "tag": 1,
+                "tiles": true,
+                "time": -1,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                },
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "loop_timeout": 0.75,
+                "loop_type": "start",
+                "name": "sound",
+                "sound": "char/coloss_m/p7_power",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/coloss/p7_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "footstep",
+                "time": 0.25,
+                "volume": 1
+            },
+            "trigger": {
+                "effect": "char/coloss/p7_charge",
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "name": "footstep",
+                "time": 0.75,
+                "volume": 1
+            },
+            "chain": {
+                "action": "special",
+                "result": "power7"
+            },
+            "chain": {
+                "action": "touch",
+                "result": "power7_break"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "fastballland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_grab_break",
+            "lockangles": true,
+            "lockspeed": true,
+            "locktransitionangles": true,
+            "name": "power7_break",
+            "noautoaim": true,
+            "playspeed": 1,
+            "priority": 5,
+            "trigger": {
+                "loop_type": "stop",
+                "name": "sound",
+                "sound": "char/coloss_m/p7_power",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "projectilenear",
+            "animenum": "ea_power8",
+            "combotextfinisher": "Pound",
+            "combotextstarter": "Leaping",
+            "handler": "ch_toad_leap",
+            "icon": 7,
+            "lockchaining": true,
+            "name": "power8",
+            "priority": 5,
+            "startchaintime": 0.5,
+            "turnrate": 0.3,
+            "require": {
+                "cat": "skill",
+                "item": "col_leap",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%col_leap_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/coloss/p8_power",
+                "name": "effect_sound",
+                "sound": "char/coloss_m/p8_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/coloss/p8_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/coloss/p8_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power8_pound"
+            },
+            "chain": {
+                "action": "touch",
+                "result": "leapend"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_power10",
+            "combotextfinisher": "Pound",
+            "combotextstarter": "Leaping",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8_pound",
+            "powerup_tag": "col_power8",
+            "priority": 5,
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "3 5",
+                "inherit": "punch",
+                "name": "radial_punch",
+                "tiles": false
+            },
+            "trigger": {
+                "effect": "char/coloss/p8_impact",
+                "name": "effect_sound",
+                "sound": "char/coloss_m/p8_impact",
+                "time": 0.4
+            },
+            "trigger": {
+                "damage": "3 5",
+                "damagescale": "normal",
+                "knockback": "%col_leap_kb",
+                "maxrange": 72,
+                "name": "radial",
+                "tiles": true,
+                "time": 0.4,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "blendtime": 0,
+            "combotextfinisher": "Shaker",
+            "description": "DEMOLITION",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power9",
+            "playspeed": 10,
+            "powerup_tag": "col_power9",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "col_xtreme",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/coloss/p9_charge",
+                "name": "effect_sound",
+                "sound": "char/coloss_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/coloss/p9_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/coloss/p9_power",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/coloss/p9_impact",
+                "name": "effect",
+                "time": 0.6
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "3 5",
+                "knockback": 620,
+                "maxrange": 300,
+                "name": "punch",
+                "tag": 1,
+                "time": 0.6
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "animenum": "ea_power11",
+            "blendtime": 0,
+            "description": "UNBREAKABLE",
+            "icon": 12,
+            "lockangles": true,
+            "name": "power11",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "col_xtreme2",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/coloss/p11_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/coloss_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "life": "%col_xtreme2_lif",
+                "name": "powerup",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/coloss/p4_aura",
+                    "fxlevel": 3
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": 2
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
