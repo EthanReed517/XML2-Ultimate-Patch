@@ -16,6 +16,10 @@ echo Bishop
 cd "%~dp0\1. Playable Characters\Bishop"
 call update.bat 
 cd ..\..
+echo Colossus
+cd "%~dp0\1. Playable Characters\Colossus"
+call update.bat 
+cd ..\..
 echo Cyclops
 cd "%~dp0\1. Playable Characters\Cyclops"
 call update.bat 
