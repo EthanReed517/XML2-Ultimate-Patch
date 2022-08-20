@@ -1,4 +1,18 @@
 @ECHO OFF
+echo Updating PSP entries...
+REM move the python script into the entries folder and go there
+copy >nul pspEntries.py "1. Base Assets\0. Herostat Entries"
+cd "%~dp0\1. Base Assets\0. Herostat Entries"
+REM call the script for every entry
+for %%A in (*.txt) do (
+	echo %%~nxA| python pspEntries.py
+)
+REM move the entries and rename them
+for %%A in (*.psp) do (
+	move >nul %%~nxA "..\..\2. Default Assets - PSP\0. Herostat Entries\%%~nA.txt"
+)
+del pspEntries.py
+cd ..\..
 
 echo Building herostat files...
 REM copy stuff to 1. Base Assets folder
@@ -84,6 +98,7 @@ REM ***************
 REM ***** PSP *****
 REM ***************
 REM move files from 1. Base Assets
+robocopy >nul "2. Default Assets - PSP\0. Herostat Entries" "0. Temp\0. Herostat Entries"
 copy >nul "2. Default Assets - PSP\*.cfg" "0. Temp"
 REM move into the 0. Temp folder
 cd "%~dp0\0. Temp"
