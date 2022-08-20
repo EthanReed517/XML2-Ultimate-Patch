@@ -1,0 +1,1484 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/deadpool_icons1.png",
+        "event": {
+            "damagescale": "none",
+            "name": "teleport_data_store",
+            "type": "ce_atk_teleport_mark_start"
+        },
+        "event": {
+            "name": "set_visible",
+            "teleportation_caused": true,
+            "type": "ce_force_visibility"
+        },
+        "event": {
+            "arc": 60,
+            "damagelevel": 2,
+            "damagetype": "dmg_blade",
+            "inherit": "punch_heavy",
+            "maxrange": 72,
+            "name": "sword_strike"
+        },
+        "event": {
+            "damage": "3 5",
+            "inherit": "sword_strike",
+            "knockback": 120,
+            "name": "power_sword",
+            "tiles": true,
+            "victimeventtag": 20
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "hide_swords",
+            "show": false,
+            "show2": false,
+            "skinsegment": "sword_r_hand",
+            "skinsegment2": "sword_l_hand"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "show_swords",
+            "show": true,
+            "show2": true,
+            "skinsegment": "sword_r_hand",
+            "skinsegment2": "sword_l_hand"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "hide_l_sword",
+            "show": false,
+            "skinsegment": "sword_l_hand"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "show_l_sword",
+            "show": true,
+            "skinsegment": "sword_l_hand"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "hide_r_sword",
+            "show": false,
+            "skinsegment": "sword_r_hand"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "show_r_sword",
+            "show": true,
+            "skinsegment": "sword_r_hand"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "hide_back_swords",
+            "show": false,
+            "show2": false,
+            "skinsegment": "sword_r_back",
+            "skinsegment2": "sword_l_back"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "show_back_swords",
+            "show": true,
+            "show2": true,
+            "skinsegment": "sword_r_back",
+            "skinsegment2": "sword_l_back"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "hide_l_back_sword",
+            "show": false,
+            "skinsegment": "sword_l_back"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "show_l_back_sword",
+            "show": true,
+            "skinsegment": "sword_l_back"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "hide_r_back_sword",
+            "show": false,
+            "skinsegment": "sword_r_back"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "show_r_back_sword",
+            "show": true,
+            "skinsegment": "sword_r_back"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "gun_both_hide",
+            "show": false,
+            "skinsegment": "guns"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "gun_both_show",
+            "show": true,
+            "skinsegment": "guns"
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle",
+            "noncombat": true,
+            "trigger": {
+                "name": "hide_swords",
+                "time": 0
+            },
+            "trigger": {
+                "name": "show_back_swords",
+                "time": 0
+            },
+            "trigger": {
+                "name": "gun_both_hide",
+                "time": 0
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "strafeleft"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "straferight"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "advance"
+            },
+            "chain": {
+                "action": "retreat",
+                "result": "retreat"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "groundattack",
+                "result": "groundattack"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            },
+            "chain": {
+                "action": "special",
+                "result": "boredloop"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_start",
+            "handler": "ch_move_jump",
+            "icon": 4,
+            "lockangles": true,
+            "lockchaining": false,
+            "name": "jump",
+            "chain": {
+                "action": "move",
+                "result": "power5_jump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            },
+            "require": {
+                "cat": "skill",
+                "item": "dead_tele",
+                "level": 1
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "icon": 4,
+            "lockangles": true,
+            "lockchaining": false,
+            "name": "jumploop",
+            "chain": {
+                "action": "move",
+                "result": "power5_jump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            },
+            "require": {
+                "cat": "skill",
+                "item": "dead_tele",
+                "level": 1
+            }
+        },
+        "FightMove": {
+            "aitype": "melee",
+            "animenum": "ea_attack_trip2",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacktrip2",
+            "startchaintime": 0.63,
+            "trigger": {
+                "effect": "char/dphero/special_finisher",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "show_r_sword",
+                "time": 0.23
+            },
+            "trigger": {
+                "name": "hide_r_back_sword",
+                "time": 0.23
+            },
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.3
+            },
+            "trigger": {
+                "life": 0.17,
+                "movement": 0,
+                "name": "slide_kick",
+                "time": 0.48
+            },
+            "trigger": {
+                "height": -10,
+                "knockback": 0,
+                "name": "kick",
+                "time": 0.5,
+                "victimeventtag": 15,
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "name": "hide_r_sword",
+                "time": 0.84
+            },
+            "trigger": {
+                "name": "show_r_back_sword",
+                "time": 0.84
+            },
+            "trigger": {
+                "finisher": true,
+                "life": 0.25,
+                "name": "xtreme_start",
+                "tag": 15,
+                "time": -1,
+                "worldspeed": 0.5
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectilenear",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Slice",
+            "combotextstarter": "Wicked",
+            "handler": "ch_nightcrawlerboltons",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "powerup_tag": "dead_power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "dead_jab",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/dphero_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "show_swords",
+                "time": 0.12
+            },
+            "trigger": {
+                "name": "hide_back_swords",
+                "time": 0.12
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/dphero/p1_trail",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.12
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/dphero/p1_trail",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.12
+            },
+            "trigger": {
+                "effect": "char/dphero/p1_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "arc": 135,
+                "name": "power_sword",
+                "powerusage": "%dead_jab_pwr",
+                "time": 0.36
+            },
+            "trigger": {
+                "arc": 135,
+                "maxrange": 60,
+                "name": "power_sword",
+                "powerusage": 0,
+                "time": 0.6
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%dead_jab_bdmg",
+                "damagetype": "dmg_bleed",
+                "life": 4,
+                "name": "powerup",
+                "tag": 20,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/dphero/p1_impact",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "damageMod": {
+                    "remove": "dmgmod_no_pain"
+                }
+            },
+            "trigger": {
+                "name": "hide_l_sword",
+                "time": 0.87
+            },
+            "trigger": {
+                "name": "show_l_back_sword",
+                "time": 0.87
+            },
+            "trigger": {
+                "name": "hide_r_sword",
+                "time": 0.92
+            },
+            "trigger": {
+                "name": "show_r_back_sword",
+                "time": 0.92
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power2",
+            "cansteal": false,
+            "combotextfinisher": "Fire",
+            "combotextstarter": "Rapid",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "powerup_tag": "dead_gun",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "dead_pistols",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%dead_pistols_pwrs",
+                "time": 0
+            },
+            "trigger": {
+                "name": "gun_both_show",
+                "time": 0.46
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/dphero_m/special_draw",
+                "time": 0.46
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power2_loop"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "always_target": true,
+            "animenum": "ea_power2_loop",
+            "combotextfinisher": "Shots",
+            "combotextstarter": "Blasting",
+            "energypersecond": "%dead_pistols_pwrs",
+            "icon": 1,
+            "lockangles": false,
+            "locktransitionangles": true,
+            "name": "power2_loop",
+            "noautoaim": true,
+            "powerup_tag": "dead_gun",
+            "priority": 5,
+            "target_only_actors": true,
+            "turnrate": 0.3,
+            "require": {
+                "cat": "skill",
+                "item": "dead_pistols",
+                "level": 1
+            },
+            "event": {
+                "damage": 1,
+                "entity": "dead_bullet",
+                "filename": "ents_dphero",
+                "fulltargeting": true,
+                "index": 1,
+                "inherit": "projectile",
+                "name": "gun_fire",
+                "speed": 1000,
+                "targetable": true,
+                "victimeventtag": 12,
+                "victimeventtag2": 13,
+                "damageMod": {
+                    "name": "dmgmod_no_pain"
+                },
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%dead_pistols_dmg",
+                "damagetype": "dmg_physical",
+                "life": 1,
+                "name": "powerup",
+                "tag": 12,
+                "time": -1
+            },
+            "trigger": {
+                "chance": "%dead_pistols_tc",
+                "name": "otherevent",
+                "othernode": "power2_loop",
+                "othertag": 14,
+                "tag": 13,
+                "time": -1,
+                "type": "ce_otherevent"
+            },
+            "trigger": {
+                "damage": 1,
+                "index": 2,
+                "name": "self_attack",
+                "tag": 14,
+                "time": -1,
+                "type": "ce_atk_self",
+                "damagemod": {
+                    "name": "dmgmod_trip"
+                }
+            },
+            "trigger": {
+                "name": "gun_fire",
+                "offset": "60 -7 40",
+                "time": 0.26
+            },
+            "trigger": {
+                "effect": "char/dphero/p2_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/dphero_m/p2_power",
+                "time": 0.26
+            },
+            "trigger": {
+                "name": "gun_fire",
+                "offset": "55 -1 40",
+                "time": 0.6
+            },
+            "trigger": {
+                "effect": "char/dphero/p2_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/dphero_m/p2_power",
+                "time": 0.6
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power2_end"
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power2_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2_end",
+            "lockangles": true,
+            "name": "power2_end",
+            "priority": 5,
+            "trigger": {
+                "name": "gun_both_hide",
+                "time": 0.69
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/dphero_m/special_holster",
+                "time": 0.69
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 15,
+            "aitype": "melee",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Insult",
+            "combotextstarter": "Humiliating",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "powerup_tag": "dead_power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "dead_taunt",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/dphero/p1_trail",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/dphero/p1_trail",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/dphero/p3_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/dphero_m/p3_charge",
+                "time": 0.2
+            },
+            "trigger": {
+                "life": "%dead_taunt_life",
+                "name": "powerup",
+                "tag": 100,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/dphero/p3_aura",
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%dead_taunt_ar"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%dead_taunt_dr"
+                }
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": 0,
+                "damagetype": "dmg_direct",
+                "maxrange": 144,
+                "name": "taunt",
+                "powerusage": "%dead_taunt_pwr",
+                "time": 0.4,
+                "victimeventtag": 100
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "melee",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Cyclone",
+            "combotextstarter": "Blade",
+            "fallback": "attacklight1",
+            "handler": "ch_nightcrawlerboltons",
+            "icon": 3,
+            "name": "power4",
+            "powerup_tag": "dead_power4",
+            "priority": 5,
+            "startchaintime": 0.95,
+            "require": {
+                "cat": "skill",
+                "item": "dead_blade",
+                "level": 1
+            },
+            "trigger": {
+                "name": "show_l_sword",
+                "time": 0.17
+            },
+            "trigger": {
+                "name": "hide_l_back_sword",
+                "time": 0.17
+            },
+            "trigger": {
+                "name": "show_r_sword",
+                "time": 0.31
+            },
+            "trigger": {
+                "name": "hide_r_back_sword",
+                "time": 0.31
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/dphero_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "remove_on_node_end": true,
+                "time": 0,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "damagetype": "dmg_blade",
+                    "level": "%dead_blade_drs"
+                }
+            },
+            "trigger": {
+                "name": "hide_swords",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%dead_blade_pwr",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power4_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4_loop",
+            "combotextfinisher": "Cyclone",
+            "combotextstarter": "Sword",
+            "energypersecond": "%dead_blade_pwrs",
+            "fallback": "attacklight1",
+            "handler": "ch_ngtmovingboltons",
+            "lockangles": false,
+            "name": "power4_loop",
+            "playspeed": 1.5,
+            "powerup_tag": "dead_power4",
+            "priority": 5,
+            "startchaintime": 0.99,
+            "turnrate": 0.4,
+            "trigger": {
+                "class": "harming",
+                "damage": "3 5",
+                "damagetype": "dmg_blade",
+                "life": 1,
+                "name": "powerup",
+                "tag": 10,
+                "time": -1,
+                "use_tint": false,
+                "use_trait_scale": true
+            },
+            "trigger": {
+                "name": "hide_swords",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "effect": "char/dphero/p4_power",
+                "name": "effect_sound",
+                "sound": "char/dphero_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": 0,
+                "maxrange": 60,
+                "name": "power_sword",
+                "time": 0.15,
+                "victimeventtag": 10,
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "trigger": {
+                "arc": 180,
+                "index": 1,
+                "maxrange": 60,
+                "name": "power_sword",
+                "time": 0.15,
+                "damageMod": {
+                    "name": "dmgmod_no_actors"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power4_end"
+            },
+            "chain": {
+                "action": "special",
+                "result": "power4_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4_end",
+            "fallback": "attacklight1",
+            "handler": "ch_nightcrawlerboltons",
+            "lockchaining": false,
+            "name": "power4_end",
+            "priority": 5,
+            "trigger": {
+                "loop_type": "stop",
+                "name": "sound",
+                "sound": "char/dphero_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "name": "hide_l_sword",
+                "time": 0.8
+            },
+            "trigger": {
+                "name": "show_l_back_sword",
+                "time": 0.8
+            },
+            "trigger": {
+                "name": "hide_r_sword",
+                "time": 0.75
+            },
+            "trigger": {
+                "name": "show_r_back_sword",
+                "time": 0.75
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power5",
+            "blendtime": 10.5,
+            "fallback": "attacklight1",
+            "handler": "ch_nightcrawlerdecide",
+            "icon": 4,
+            "lockchaining": false,
+            "name": "power5_jump",
+            "noautoaim": true,
+            "playspeed": 0,
+            "priority": 5,
+            "turnrate": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "dead_tele",
+                "level": 1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "special",
+                "result": "teleportally"
+            },
+            "chain": {
+                "action": "special2",
+                "result": "teleport_jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power5",
+            "blendtime": 0.5,
+            "endchaintime": 0.95,
+            "handler": "ch_tele_jump",
+            "name": "teleport_jump",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.2,
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/dphero/p5_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/dphero_m/p5_charge",
+                "time": 0
+            },
+            "trigger": {
+                "maxrange": "%dead_tele_rng",
+                "name": "teleport_data_store",
+                "set_visible": false,
+                "tag": 2,
+                "time": 0.15
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "teleport_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power5",
+            "blendtime": 10.5,
+            "fallback": "attacklight1",
+            "handler": "ch_nightcrawlerdecide",
+            "icon": 4,
+            "lockchaining": false,
+            "name": "power5",
+            "noautoaim": true,
+            "playspeed": 0,
+            "priority": 5,
+            "turnrate": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "dead_tele",
+                "level": 1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "special",
+                "result": "teleportally"
+            },
+            "chain": {
+                "action": "special2",
+                "result": "teleport"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power5",
+            "blendtime": 0.5,
+            "endchaintime": 0.98,
+            "handler": "ch_tele_jump",
+            "name": "teleport",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.93,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/dphero_m/p5_charge",
+                "time": 0.15
+            },
+            "trigger": {
+                "effect": "char/dphero/p5_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/dphero/p5_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.8
+            },
+            "trigger": {
+                "maxrange": "%dead_tele_rng",
+                "name": "teleport_data_store",
+                "set_visible": false,
+                "tag": 2,
+                "time": 0.8
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "teleport_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power5_end",
+            "blendtime": 0,
+            "combotextfinisher": "Leap",
+            "combotextstarter": "Quantum",
+            "endchaintime": 0.95,
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "teleport_end",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.55,
+            "trigger": {
+                "maxrange": "%dead_tele_rng",
+                "name": "teleport",
+                "powerusage": "%dead_tele_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/dphero_m/p5_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "cleardata": true,
+                "name": "teleport_data_store",
+                "set_visible": true,
+                "time": 0.1
+            },
+            "trigger": {
+                "effect": "char/dphero/p5_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_tele_buddy_grab",
+            "handler": "ch_tele_jump",
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "teleportally",
+            "noautoaim": true,
+            "priority": "uninterruptable",
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/dphero/p5_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/dphero_m/p5_charge",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%dead_tele_pwr",
+                "tag": 1,
+                "time": 0
+            },
+            "trigger": {
+                "allynodename": "teleportvictim",
+                "attackerface": true,
+                "name": "victim",
+                "nodename": "teleportvictim",
+                "targetdistance": 1,
+                "time": 0,
+                "usesponsornode": true,
+                "victimface": true
+            },
+            "trigger": {
+                "maxrange": "%dead_tele_rng",
+                "name": "teleport_data_store",
+                "nofailifnotarget": true,
+                "set_visible": false,
+                "tag": 2,
+                "teleportwithvictim": true,
+                "time": 0.85
+            },
+            "chain": {
+                "action": "idle",
+                "result": "teleportallytransport"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_grab_start_v",
+            "handler": "ch_grab_victim",
+            "lockangles": true,
+            "lockspeed": true,
+            "name": "teleportvictim",
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.85,
+                "visible": false
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_tele_buddy_land",
+            "blendtime": 0,
+            "endchaintime": 0.95,
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "teleportallytransport",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.9,
+            "trigger": {
+                "maxrange": "%dead_tele_rng",
+                "name": "teleport",
+                "nofailifnotarget": true,
+                "powerusage": "%dead_tele_pwr",
+                "teleportwithvictim": true,
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/dphero_m/p5_power",
+                "time": 0
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.3,
+                "visible": true
+            },
+            "trigger": {
+                "life": 0.3,
+                "movement": -40,
+                "name": "slide",
+                "time": 0.3
+            },
+            "trigger": {
+                "effect": "char/dphero/p5_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "victim_release",
+                "ownertime": 0.5,
+                "time": 0.6
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectilenear",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Kick",
+            "combotextstarter": "Leaping",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "powerup_tag": "dead_power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "dead_kick",
+                "level": 1
+            },
+            "trigger": {
+                "name": "show_r_sword",
+                "time": 0.06
+            },
+            "trigger": {
+                "name": "hide_r_back_sword",
+                "time": 0.06
+            },
+            "trigger": {
+                "name": "show_l_sword",
+                "time": 0.11
+            },
+            "trigger": {
+                "name": "hide_l_back_sword",
+                "time": 0.11
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/dphero_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "effect": "char/dphero/p1_trail",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.12
+            },
+            "trigger": {
+                "bolt": "Bip01 L Toe0",
+                "effect": "char/dphero/p1_trail",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.12
+            },
+            "trigger": {
+                "effect": "char/dphero/p4_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.25
+            },
+            "trigger": {
+                "effect": "char/dphero/p5_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.38
+            },
+            "trigger": {
+                "arc": 135,
+                "damagetype": "dmg_physical",
+                "inherit": "power_sword",
+                "name": "back_kick",
+                "powerusage": "%dead_kick_pwr",
+                "time": 0.38
+            },
+            "trigger": {
+                "arc": 135,
+                "maxrange": 60,
+                "name": "power_sword",
+                "time": 0.54
+            },
+            "trigger": {
+                "arc": 135,
+                "maxrange": 60,
+                "name": "power_sword",
+                "time": 0.59,
+                "damagemod": {
+                    "name": "dmgmod_trip"
+                }
+            },
+            "trigger": {
+                "effect": "char/dphero/p5_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.68
+            },
+            "trigger": {
+                "name": "hide_r_sword",
+                "time": 0.84
+            },
+            "trigger": {
+                "name": "show_r_back_sword",
+                "time": 0.84
+            },
+            "trigger": {
+                "name": "hide_l_sword",
+                "time": 0.89
+            },
+            "trigger": {
+                "name": "show_l_back_sword",
+                "time": 0.89
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "combotextfinisher": "Freeze",
+            "description": "NITROGEN BLAST",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power9",
+            "playspeed": 1,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "dead_nitro",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.2
+            },
+            "trigger": {
+                "effect": "char/dphero/p9_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/dphero_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/dphero/p9_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "event": {
+                "damage": 1,
+                "damagetype": "dmg_cold",
+                "entity": "dp_freeze_grenade",
+                "explodedamage": 1,
+                "explodedamagetype": "dmg_cold",
+                "explodevictimeventtag": 50,
+                "explodevictimeventtag2": 51,
+                "filename": "ents_dphero",
+                "fulltargeting": true,
+                "inherit": "projectile",
+                "name": "throw_grenade",
+                "speed": 600,
+                "targetable": true,
+                "victimeventtag": 50,
+                "victimeventtag2": 51
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/dphero_m/p9_power",
+                "time": 0.2
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "angoffset": "0 0 180",
+                "attack_bone_pos": "-33 -8 104",
+                "count": 2,
+                "name": "throw_grenade",
+                "spread": 50,
+                "time": 0.28
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "angoffset": "0 0 -90",
+                "attack_bone_pos": "-21 3 130",
+                "count": 2,
+                "name": "throw_grenade",
+                "spread": 50,
+                "time": 0.39
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "angoffset": "0 0 90",
+                "attack_bone_pos": "-21 6 124",
+                "count": 2,
+                "name": "throw_grenade",
+                "spread": 50,
+                "time": 0.43
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "angoffset": "0 20 15",
+                "attack_bone_pos": "21 -6 119",
+                "count": 1,
+                "name": "throw_grenade",
+                "time": 0.56
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "angoffset": "0 20 -15",
+                "attack_bone_pos": "15 -22 107",
+                "count": 1,
+                "name": "throw_grenade",
+                "time": 0.6
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%dead_nitro_dmg",
+                "damagetype": "dmg_cold",
+                "life": 4,
+                "name": "powerup",
+                "tag": 51,
+                "time": -1
+            },
+            "trigger": {
+                "class": "freeze",
+                "life": "%dead_nitro_frz",
+                "name": "powerup",
+                "renderfx": "metalfreeze",
+                "sound1": "char/dphero_m/p9_impact",
+                "sound2": "char/dphero_m/p9_explode",
+                "tag": 50,
+                "time": -1,
+                "user1": 2,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/dphero/p9_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "frozen",
+                    "level": 1
+                },
+                "powerup": {
+                    "class": "chill",
+                    "life": 1,
+                    "user1": 2,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "move",
+                        "level": 0.3
+                    }
+                }
+            },
+            "trigger": {
+                "class": "chill",
+                "life": "%dead_nitro_slw",
+                "name": "powerup",
+                "tag": 60,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/dphero/p9_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%dead_nitro_spd"
+                }
+            },
+            "event": {
+                "arc": 90,
+                "attacktype": "blast",
+                "damage": "%dead_nitro_dmg",
+                "damagetype": "dmg_cold",
+                "inherit": "radial",
+                "maxrange": 300,
+                "name": "radial_slow_atk",
+                "victimeventtag": 60
+            },
+            "trigger": {
+                "angle": 180,
+                "name": "radial_slow_atk",
+                "time": 0.45
+            },
+            "trigger": {
+                "angle": 90,
+                "name": "radial_slow_atk",
+                "time": 0.65
+            },
+            "trigger": {
+                "angle": -90,
+                "name": "radial_slow_atk",
+                "time": 0.65
+            },
+            "trigger": {
+                "angle": 0,
+                "name": "radial_slow_atk",
+                "time": 0.73
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}

@@ -1,0 +1,669 @@
+{
+    "talents": {
+        "talent": {
+            "descname": "Rupturing Jab",
+            "description": "Quick sword attack",
+            "descshort": "Melee",
+            "icon": 0,
+            "icon_texture": "textures/ui/deadpool_icons1.png",
+            "name": "dead_jab",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_jab_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "dead_jab_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_jab_mdmg",
+                    "value": 3.4
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "dead_jab_mdmg",
+                    "value": 12.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_jab_bdmg",
+                    "value": "3 5"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "dead_jab_bdmg",
+                    "value": "53 61"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_jab_pwr",
+                    "value": 10
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "dead_jab_pwr",
+                    "value": 94
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_jab_ar",
+                    "value": 1.35
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "dead_jab_ar",
+                    "value": 2.15
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%dead_jab_mdmg:s $DMG_PHYSICAL (%dead_jab_mdmg:x)\\n%dead_jab_bdmg:d $DMG_BLEED over 4 seconds\\n%dead_jab_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%dead_jab_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "level": "%dead_jab_mdmg",
+                        "scope_node": "dead_power1"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%dead_jab_ar",
+                        "scope_node": "dead_power1"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Dual Shot",
+            "description": "Pull out two pistols and shoot.",
+            "descshort": "Projectile",
+            "icon": 1,
+            "icon_texture": "textures/ui/deadpool_icons1.png",
+            "name": "dead_pistols",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_pistols_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dead_pistols_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_pistols_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dead_pistols_dmg",
+                    "value": "134 150"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_pistols_pwrs",
+                    "value": 18
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dead_pistols_pwrs",
+                    "value": 104
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_pistols_tc",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dead_pistols_tc",
+                    "value": 0.06
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%dead_pistols_dmg per bullet\\n%dead_pistols_tc:p trip chance\\n%dead_pistols_pwrs $EP/s",
+                "require": {
+                    "cat": "level",
+                    "level": "%dead_pistols_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Wisecrack",
+            "description": "Taunts others to get them to fight.",
+            "descshort": "Boost",
+            "icon": 2,
+            "icon_texture": "textures/ui/deadpool_icons1.png",
+            "name": "dead_taunt",
+            "power": "power3",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_taunt_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "dead_taunt_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_taunt_ar",
+                    "value": 0.9
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "dead_taunt_ar",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_taunt_dr",
+                    "value": 0.9
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "dead_taunt_dr",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_taunt_pwr",
+                    "value": 100
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "dead_taunt_pwr",
+                    "value": 384
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_taunt_life",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "dead_taunt_life",
+                    "value": 21
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%dead_taunt_ar:s $AR\\n%dead_taunt_dr:s $DR\\n%dead_taunt_life seconds\\n%dead_taunt_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%dead_taunt_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Blade Cyclone",
+            "description": "Radial spin sword spin attack.\\n(~41Press And Hold~~)\\n",
+            "descshort": "Charge",
+            "icon": 3,
+            "icon_texture": "textures/ui/deadpool_icons1.png",
+            "name": "dead_blade",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_blade_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "dead_blade_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_blade_drs",
+                    "value": 4.5
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "dead_blade_drs",
+                    "value": 8.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_blade_pwr",
+                    "value": 44
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "dead_blade_pwr",
+                    "value": 128
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_blade_pwrs",
+                    "value": 44
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "dead_blade_pwrs",
+                    "value": 128
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_blade_ar",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "dead_blade_ar",
+                    "value": 0.8
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%dead_blade_drs:s $DMG_PHYSICAL/s (%dead_blade_drs:x)\\n%dead_blade_pwrs $EP/s",
+                "require": {
+                    "cat": "level",
+                    "level": "%dead_blade_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%dead_blade_ar",
+                        "scope_node": "dead_power4"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Teleport",
+            "description": "Teleport to hard to reach locations or escape from combat.  Increases to allow carrying allies.",
+            "descshort": "Special",
+            "icon": 4,
+            "icon_texture": "textures/ui/deadpool_icons1.png",
+            "name": "dead_tele",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_tele_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "dead_tele_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_tele_rng",
+                    "value": 240
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "dead_tele_rng",
+                    "value": 720
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_tele_pwr",
+                    "value": 8
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "dead_tele_pwr",
+                    "value": 50
+                }
+            },
+            "level": {
+                "count": 3,
+                "description": "%dead_tele_rng:r ft teleport range\\n%dead_tele_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%dead_tele_req"
+                }
+            },
+            "level": {
+                "count": 17,
+                "description": "%dead_tele_rng:r ft teleport range\\nCarry allies\\n%dead_tele_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%dead_tele_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Butterfly Kick",
+            "description": "Pulls out swords and does back kick followed by thrusts from each sword.",
+            "descshort": "Melee",
+            "icon": 5,
+            "icon_texture": "textures/ui/deadpool_icons1.png",
+            "name": "dead_kick",
+            "power": "power6",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_kick_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dead_kick_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_kick_mdmg",
+                    "value": 4.5
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dead_kick_mdmg",
+                    "value": 10.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_kick_pwr",
+                    "value": 18
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dead_kick_pwr",
+                    "value": 94
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%dead_kick_mdmg:s $DMG_PHYSICAL (%dead_kick_mdmg:x)\\n%dead_kick_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%dead_kick_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "level": "%dead_kick_mdmg",
+                        "scope_node": "dead_power6"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "NITROGEN BLAST",
+            "description": "Throws explosive nitroglycerin grenades that cause freezing and slowing of enemies.",
+            "descshort": "Blast",
+            "icon": 9,
+            "icon_texture": "textures/ui/deadpool_icons1.png",
+            "name": "dead_nitro",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_nitro_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "dead_nitro_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_nitro_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "dead_nitro_dmg",
+                    "value": "279 309"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_nitro_frz",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "dead_nitro_frz",
+                    "value": 8
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_nitro_slw",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "dead_nitro_slw",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_nitro_spd",
+                    "value": 0.7
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "dead_nitro_spd",
+                    "value": 0.25
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%dead_nitro_dmg $DMG_COLD\\n%dead_nitro_frz:f second freeze\\n%dead_nitro_slw:f second slow\\n%dead_nitro_spd:p slow",
+                "require": {
+                    "cat": "level",
+                    "level": "%dead_nitro_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Weapons Mastery",
+            "description": "Boosts damage and chance for criticals with all sword and gun attacks.",
+            "descshort": "Passive",
+            "icon": 8,
+            "icon_texture": "textures/ui/deadpool_icons1.png",
+            "name": "dead_mastery",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_mstry_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dead_mstry_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_mstry_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dead_mstry_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_mstry_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dead_mstry_crit",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%dead_mstry_dmg:s Sword/Gun Damage\\n+%dead_mstry_crit:p critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%dead_mstry_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "damagetype": "dmg_blade",
+                        "level": "%dead_mstry_dmg"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "damagetype": "dmg_blade",
+                        "level": "%dead_mstry_crit"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Stealth",
+            "description": "Boosts damage and chance for criticals with all melee attacks.",
+            "descshort": "Passive",
+            "icon": 7,
+            "icon_texture": "textures/ui/deadpool_icons1.png",
+            "name": "dead_stealth",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_stealth_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dead_stealth_req",
+                    "value": 33
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_stealth_dmg",
+                    "value": 1.18
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dead_stealth_dmg",
+                    "value": 2.3
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_stealth_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dead_stealth_crit",
+                    "value": 0.15
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%dead_stealth_dmg:s $DMG_MELEE\\n+%dead_stealth_crit:p critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%dead_stealth_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "damagetype": "dmg_blade",
+                        "level": "%dead_stealth_dmg"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "damagetype": "dmg_blade",
+                        "level": "%dead_stealth_crit"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Regeneration",
+            "description": "Adds $HP regeneration over time",
+            "descshort": "Passive",
+            "icon": 6,
+            "icon_texture": "textures/ui/deadpool_icons1.png",
+            "name": "dead_regen",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_regen_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dead_regen_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_regen_health",
+                    "value": 0.0017
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dead_regen_health",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_regen_health_p",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dead_regen_health_p",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dead_regen_health_t",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dead_regen_health_t",
+                    "value": 6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%dead_regen_health_p:f% of Max $HP every %dead_regen_health_t seconds",
+                "require": {
+                    "category": "level",
+                    "level": "%dead_regen_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "health_regen_pct",
+                        "level": "%dead_regen_health"
+                    }
+                }
+            }
+        }
+    }
+}

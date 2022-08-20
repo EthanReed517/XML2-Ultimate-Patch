@@ -1,0 +1,250 @@
+{
+    "PowerStyle": {
+        "cansteal": false,
+        "event": {
+            "damagescale": "difficulty",
+            "name": "teleport_data_store",
+            "type": "ce_atk_teleport_mark_start"
+        },
+        "event": {
+            "name": "set_visible",
+            "teleportation_caused": true,
+            "type": "ce_force_visibility"
+        },
+        "FightMove": {
+            "animenum": "ea_power1_start",
+            "endchaintime": 0.95,
+            "handler": "ch_tele_jump",
+            "icon": 0,
+            "name": "power_boost",
+            "priority": 5,
+            "startchaintime": 0.9,
+            "trigger": {
+                "ainoattack": true,
+                "checksolo": true,
+                "name": "teleport_data_store",
+                "tag": 2,
+                "time": 0
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.9,
+                "visible": false
+            },
+            "trigger": {
+                "effect": "char/deadpl/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.25
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/deadpl_m/p1_charge",
+                "time": 0
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "teleport_in"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1_end",
+            "blendtime": 0,
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "teleport_in",
+            "powerup_tag": "nightcrawler_attack",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/deadpl_m/p1_power",
+                "time": 0
+            },
+            "trigger": {
+                "attacktype": "direct",
+                "maxrange": 180,
+                "name": "teleport_attack",
+                "powerusage": 0,
+                "tag": 1,
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/deadpl/p1_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.05
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.45,
+                "visible": true
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1_start",
+            "endchaintime": 0.95,
+            "handler": "ch_tele_jump",
+            "name": "teleportfailedstrike",
+            "priority": 5,
+            "startchaintime": 0.9,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/deadpl_m/p1_power",
+                "time": 0.9
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.9,
+                "visible": false
+            },
+            "trigger": {
+                "effect": "char/deadpl/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "teleport_in"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 0.5,
+            "aitype": "projectile",
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power_attack",
+            "trigger": {
+                "name": "sound",
+                "sound": "char/deadpl_m/p2_charge",
+                "time": 0
+            },
+            "event": {
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "damagetype": "dmg_physical",
+                "entity": "deadpool_fire",
+                "filename": "ents_deadpool",
+                "inherit": "projectile",
+                "name": "deadpool_proj",
+                "powerusage": 1,
+                "speed": 900,
+                "targetable": true
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/deadpl_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/deadpl_m/p3_power",
+                "time": 0.36
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/deadpl_m/p3_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/deadpl_m/p3_power",
+                "time": 0.62
+            },
+            "trigger": {
+                "effect": "char/deadpl/p2_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.33
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "attack_bone_angles": "-178 -9 7",
+                "attack_bone_pos": "45 5 65",
+                "index": 1,
+                "knockback": 245,
+                "name": "deadpool_proj",
+                "time": 0.33
+            },
+            "trigger": {
+                "effect": "char/deadpl/p2_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.48
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "attack_bone_angles": "-177 -3 4",
+                "attack_bone_pos": "45 5 65",
+                "index": 2,
+                "knockback": 245,
+                "name": "deadpool_proj",
+                "time": 0.48
+            },
+            "trigger": {
+                "effect": "char/deadpl/p2_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.6
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "attack_bone_angles": "-178 0 5",
+                "attack_bone_pos": "45 5 65",
+                "index": 3,
+                "knockback": 245,
+                "name": "deadpool_proj",
+                "time": 0.6
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 1.2,
+            "aitype": "melee",
+            "animenum": "ea_power3",
+            "name": "power_smash",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/deadpl_m/p2_charge",
+                "time": 0.36
+            },
+            "trigger": {
+                "effect": "char/deadpl/p3_power",
+                "name": "effect_sound",
+                "sound": "char/deadpl_m/p2_power",
+                "time": 0.55
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "knockback": 245,
+                "name": "punch",
+                "powerusage": 2,
+                "radius": 90,
+                "time": 0.55,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
