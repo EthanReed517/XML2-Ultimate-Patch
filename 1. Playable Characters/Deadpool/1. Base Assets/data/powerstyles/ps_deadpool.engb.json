@@ -362,8 +362,13 @@
             },
             "trigger": {
                 "name": "sound",
+                "sound": "char/dphero_m/special_unsheathe",
+                "time": 0.11
+            },
+            "trigger": {
+                "name": "sound",
                 "sound": "char/dphero_m/p1_charge",
-                "time": 0
+                "time": 0.15
             },
             "trigger": {
                 "name": "show_swords",
@@ -396,6 +401,7 @@
             "trigger": {
                 "arc": 135,
                 "name": "power_sword",
+                "powerup_tag": "dead_power1",
                 "powerusage": "%dead_jab_pwr",
                 "time": 0.36
             },
@@ -403,12 +409,14 @@
                 "arc": 135,
                 "maxrange": 60,
                 "name": "power_sword",
+                "powerup_tag": "dead_power1",
                 "powerusage": 0,
                 "time": 0.6
             },
             "trigger": {
                 "class": "harming",
                 "damage": "%dead_jab_bdmg",
+                "damagescale": "none",
                 "damagetype": "dmg_bleed",
                 "life": 4,
                 "name": "powerup",
@@ -438,6 +446,11 @@
             },
             "trigger": {
                 "name": "show_r_back_sword",
+                "time": 0.92
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/dphero_m/special_sheathe",
                 "time": 0.92
             },
             "chain": {
@@ -505,6 +518,7 @@
             },
             "event": {
                 "damage": 1,
+                "damagecsale": "none",
                 "entity": "dead_bullet",
                 "filename": "ents_dphero",
                 "fulltargeting": true,
@@ -517,9 +531,6 @@
                 "victimeventtag2": 13,
                 "damageMod": {
                     "name": "dmgmod_no_pain"
-                },
-                "damageMod": {
-                    "name": "dmgmod_no_damage"
                 }
             },
             "trigger": {
@@ -588,6 +599,7 @@
         "FightMove": {
             "animenum": "ea_power2_end",
             "lockangles": true,
+            "locktransitionangles": true,
             "name": "power2_end",
             "priority": 5,
             "trigger": {
@@ -669,7 +681,7 @@
                 "maxrange": 144,
                 "name": "taunt",
                 "powerusage": "%dead_taunt_pwr",
-                "time": 0.4,
+                "time": 0.7,
                 "victimeventtag": 100
             },
             "chain": {
@@ -686,6 +698,7 @@
             "fallback": "attacklight1",
             "handler": "ch_nightcrawlerboltons",
             "icon": 3,
+            "lockangles": true,
             "name": "power4",
             "powerup_tag": "dead_power4",
             "priority": 5,
@@ -694,6 +707,11 @@
                 "cat": "skill",
                 "item": "dead_blade",
                 "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/dphero_m/special_unsheathe",
+                "time": 0.11
             },
             "trigger": {
                 "name": "show_l_sword",
@@ -714,7 +732,7 @@
             "trigger": {
                 "name": "sound",
                 "sound": "char/dphero_m/p4_charge",
-                "time": 0
+                "time": 0.12
             },
             "trigger": {
                 "life": -1,
@@ -781,13 +799,14 @@
             },
             "trigger": {
                 "arc": 180,
-                "damage": 0,
+                "damage": 1,
+                "damagescale": "none",
                 "maxrange": 60,
                 "name": "power_sword",
                 "time": 0.15,
                 "victimeventtag": 10,
                 "damageMod": {
-                    "name": "dmgmod_no_damage"
+                    "name": "dmgmod_no_pain"
                 }
             },
             "trigger": {
@@ -813,6 +832,7 @@
             "animenum": "ea_power4_end",
             "fallback": "attacklight1",
             "handler": "ch_nightcrawlerboltons",
+            "lockangles": true,
             "lockchaining": false,
             "name": "power4_end",
             "priority": 5,
@@ -821,6 +841,11 @@
                 "name": "sound",
                 "sound": "char/dphero_m/p4_power",
                 "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/dphero_m/p4_power",
+                "time": 0.1
             },
             "trigger": {
                 "name": "hide_l_sword",
@@ -836,6 +861,11 @@
             },
             "trigger": {
                 "name": "show_r_back_sword",
+                "time": 0.75
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/dphero_m/special_sheathe",
                 "time": 0.75
             },
             "chain": {
@@ -1188,6 +1218,11 @@
                 "level": 1
             },
             "trigger": {
+                "name": "sound",
+                "sound": "char/dphero_m/special_unsheathe",
+                "time": 0.06
+            },
+            "trigger": {
                 "name": "show_r_sword",
                 "time": 0.06
             },
@@ -1279,6 +1314,11 @@
                 "name": "show_l_back_sword",
                 "time": 0.89
             },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/dphero_m/special_sheathe",
+                "time": 0.89
+            },
             "chain": {
                 "action": "Idle",
                 "result": "idle"
@@ -1292,6 +1332,7 @@
             "lockangles": true,
             "name": "power9",
             "playspeed": 1,
+            "powerup_tag": "dead_power9",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -1311,9 +1352,13 @@
             "trigger": {
                 "effect": "char/dphero/p9_charge",
                 "fxlevel": 2,
-                "name": "effect_sound",
-                "sound": "char/dphero_m/p9_charge",
+                "name": "effect",
                 "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/dphero_m/p9_charge",
+                "time": 0.15
             },
             "trigger": {
                 "bolt": "Bip01 Pelvis",
@@ -1342,7 +1387,7 @@
             "trigger": {
                 "name": "sound",
                 "sound": "char/dphero_m/p9_power",
-                "time": 0.2
+                "time": 0.25
             },
             "trigger": {
                 "actorbolt": "Bip01 L Hand",
@@ -1401,6 +1446,7 @@
                 "life": "%dead_nitro_frz",
                 "name": "powerup",
                 "renderfx": "metalfreeze",
+                "skin": "0001",
                 "sound1": "char/dphero_m/p9_impact",
                 "sound2": "char/dphero_m/p9_explode",
                 "tag": 50,
