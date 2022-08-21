@@ -80,6 +80,10 @@ echo Deadpool
 cd "%~dp0\1. Playable Characters\Deadpool"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
 cd ..\..
+echo Gambit
+cd "%~dp0\1. Playable Characters\Gambit"
+call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+cd ..\..
 echo Iceman
 cd "%~dp0\1. Playable Characters\Iceman"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
