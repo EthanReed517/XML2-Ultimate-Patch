@@ -1,0 +1,849 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "gam_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_energy",
+                        "level": 0.1
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Card Shuffle",
+            "description": "Multiple card projectile attack.",
+            "descshort": "Projectile",
+            "icon": 0,
+            "icon_texture": "textures/ui/gambit_icons1.png",
+            "name": "gam_card_shuffle",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_shuffle_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "gam_shuffle_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_shuffle_dmg",
+                    "value": "6 9"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "gam_shuffle_dmg",
+                    "value": "117 132"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_shuffle_num",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "gam_shuffle_num",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_shuffle_pwr",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "gam_shuffle_pwr",
+                    "value": 140
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%gam_shuffle_dmg $DMG_ENERGY\\n%gam_shuffle_num card(s)\\n%gam_shuffle_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%gam_shuffle_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Staff Slam",
+            "description": "Radial energy attack",
+            "descshort": "Radial",
+            "icon": 1,
+            "icon_texture": "textures/ui/gambit_icons1.png",
+            "name": "gam_staff_slam",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_slam_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "gam_slam_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_slam_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "gam_slam_dmg",
+                    "value": "82 93"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_slam_range",
+                    "value": 120
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "gam_slam_range",
+                    "value": 144
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_slam_pwr",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "gam_slam_pwr",
+                    "value": 170
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%gam_slam_dmg $DMG_ENERGY\\n%gam_slam_range:r feet\\n%gam_slam_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%gam_slam_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "gam_staff_parry",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Staff Assault",
+            "description": "Multiple staff melee attacks in quick succession",
+            "descshort": "Melee",
+            "icon": 2,
+            "icon_texture": "textures/ui/gambit_icons1.png",
+            "name": "gam_staff_parry",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_parry_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "gam_parry_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_parry_dmg",
+                    "value": "17 22"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "gam_parry_dmg",
+                    "value": "117 132"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_parry_atk_bonus",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "gam_parry_atk_bonus",
+                    "value": 1.95
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_parry_pwr",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "gam_parry_pwr",
+                    "value": 140
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%gam_parry_dmg $DMG_ENERGY per attack\\n%gam_parry_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%gam_parry_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%gam_parry_atk_bonus",
+                        "scope_node": "gam_power3"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Ace of Spades",
+            "description": "Gambit throws down cards in front of him that will blow up when enemies approach them, causing $DMG_RADIATION",
+            "descshort": "Trap",
+            "icon": 3,
+            "icon_texture": "textures/ui/gambit_icons1.png",
+            "name": "gam_ace_spades",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_spades_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "gam_spades_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_spades_dmg",
+                    "value": "43 50"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "gam_spades_dmg",
+                    "value": "169 189"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_spades_rad_time",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "gam_spades_rad_time",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_spades_num",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "gam_spades_num",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_spades_pwr",
+                    "value": 36
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "gam_spades_pwr",
+                    "value": 142
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%gam_spades_dmg $DMG_RADIATION over %gam_spades_rad_time seconds\\n%gam_spades_num card(s)\\n%gam_spades_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%gam_spades_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "gam_card_shuffle",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Full House",
+            "description": "Gambit throws down cards in front of him that will blow up when enemies approach them, causing popup damage",
+            "descshort": "Trap",
+            "icon": 4,
+            "icon_texture": "textures/ui/gambit_icons1.png",
+            "name": "gam_full_house",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_house_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "gam_house_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_house_dmg",
+                    "value": "66 75"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "gam_house_dmg",
+                    "value": "130 146"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_house_num",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "gam_house_num",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_house_pwr",
+                    "value": 72
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "gam_house_pwr",
+                    "value": 152
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%gam_house_dmg $DMG_ENERGY\\n%gam_house_num card(s)\\n%gam_house_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%gam_house_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "gam_ace_spades",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Detonation",
+            "description": "Charge object/enemy.  If enemy, will cause massive $KB on explosion",
+            "descshort": "Special",
+            "icon": 5,
+            "icon_texture": "textures/ui/gambit_icons1.png",
+            "name": "gam_detonation",
+            "power": "power6",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_deton_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "gam_deton_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_deton_dmg",
+                    "value": "108 121"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "gam_deton_dmg",
+                    "value": "214 238"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_deton_kb",
+                    "value": 190
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "gam_deton_kb",
+                    "value": 430
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_deton_pwr",
+                    "value": 66
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "gam_deton_pwr",
+                    "value": 140
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%gam_deton_dmg $DMG_ENERGY\\n%gam_deton_kb $KB\\n%gam_deton_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%gam_deton_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "gam_staff_slam",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Energy Form",
+            "description": "Turns parts of Gambit's body into energy, improving defense and movement speed",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/gambit_icons1.png",
+            "name": "gam_energy_form",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_form_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "gam_form_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_form_atk_boost",
+                    "value": 1.1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "gam_form_atk_boost",
+                    "value": 2.08
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_form_def_boost",
+                    "value": 1.3
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "gam_form_def_boost",
+                    "value": 2.09
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_form_move_scale",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "gam_form_move_scale",
+                    "value": 2.09
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_form_time",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "gam_form_time",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_form_pwr",
+                    "value": 48
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "gam_form_pwr",
+                    "value": 504
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%gam_form_atk_boost:s $AR, %gam_form_def_boost:s $DR\\n%gam_form_move_scale:s movement\\n%gam_form_time seconds\\n%gam_form_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%gam_form_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Energy Fury",
+            "description": "Gives nearby allies and self $DMG_ENERGY on all melee attacks",
+            "descshort": "Boost",
+            "icon": 7,
+            "icon_texture": "textures/ui/gambit_icons1.png",
+            "name": "gam_energy_fury",
+            "power": "power8",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_fury_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "gam_fury_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_fury_dam_boost",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "gam_fury_dam_boost",
+                    "value": 1.47
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_fury_atk_boost",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "gam_fury_atk_boost",
+                    "value": 2.6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_fury_time",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "gam_fury_time",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_fury_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "gam_fury_pwr",
+                    "value": 516
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%gam_fury_dam_boost:s $DMG_ENERGY\\n%gam_fury_atk_boost:s $AR\\n%gam_fury_time seconds\\n%gam_fury_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%gam_fury_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "gam_energy_form",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "52 PICKUP",
+            "description": "Throws cards into the air which rain down $DMG_ENERGY.",
+            "descshort": "Radial",
+            "icon": 8,
+            "icon_texture": "textures/ui/gambit_icons1.png",
+            "name": "gam_52_pickup",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_pickup_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "gam_pickup_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_pickup_damage",
+                    "value": "88 100"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "gam_pickup_damage",
+                    "value": "282 313"
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%gam_pickup_damage $DMG_ENERGY",
+                "require": {
+                    "cat": "level",
+                    "level": "%gam_pickup_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "PRINCE OF THIEVES",
+            "description": "Affects Techbit, Health Pack and Energy Pack drops.",
+            "descshort": "Boost",
+            "icon": 11,
+            "icon_texture": "textures/ui/gambit_icons1.png",
+            "name": "gam_pickpocket",
+            "power": "power11",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_pocket_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "gam_pocket_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_pocket_packs",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "gam_pocket_packs",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_pocket_tech",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "gam_pocket_tech",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_pocket_life",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "gam_pocket_life",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%gam_pocket_packs:p Health Packs and Energy Packs\\n%gam_pocket_tech:p Techbits\\n%gam_pocket_life seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%gam_pocket_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Card Mastery",
+            "description": "Adds damage to all projectile card attacks",
+            "descshort": "Passive",
+            "icon": 9,
+            "icon_texture": "textures/ui/gambit_icons1.png",
+            "name": "gam_card_mastery",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_mstry_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "gam_mstry_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_mstry_dscale",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "gam_mstry_dscale",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_mstry_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "gam_mstry_crit",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%gam_mstry_dscale:s card damage\\n%gam_mstry_crit:p chance of Critical Hits",
+                "require": {
+                    "cat": "level",
+                    "level": "%gam_mstry_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "level": "%gam_mstry_dscale",
+                        "scope_node": "gambit_card"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%gam_mstry_crit",
+                        "scope_node": "gambit_card"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Energy Combat",
+            "description": "Adds additional $DMG_ENERGY to melee attacks",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/gambit_icons1.png",
+            "name": "gam_energy_combat",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_combat_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "gam_combat_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_combat_dscale",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "gam_combat_dscale",
+                    "value": 3.6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%gam_combat_dscale:s $DMG_ENERGY to all non-power melee attacks.",
+                "require": {
+                    "cat": "level",
+                    "level": "%gam_combat_req"
+                },
+                "powerup": {
+                    "class": "add_attack",
+                    "damagepercent": "%gam_combat_dscale",
+                    "damagetype": "dmg_energy",
+                    "life": -1,
+                    "special_fx": {
+                        "effect": "char/gambit/special_trail",
+                        "how_used": "custom"
+                    },
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        },
+                        "scope": {
+                            "scope_non_powers": true
+                        }
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Evade",
+            "description": "Increases chance to evade melee attacks",
+            "descshort": "Passive",
+            "icon": 12,
+            "icon_texture": "textures/ui/gambit_icons1.png",
+            "name": "gam_evade",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_evade_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "gam_evade_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "gam_evade_chance",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "gam_evade_chance",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%gam_evade_chance:p chance to dodge melee attacks.",
+                "require": {
+                    "cat": "level",
+                    "level": "%gam_evade_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "gam_energy_combat",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%gam_evade_chance",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

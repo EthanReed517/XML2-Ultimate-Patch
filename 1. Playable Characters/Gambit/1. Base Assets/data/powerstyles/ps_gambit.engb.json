@@ -1,0 +1,1529 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/gambit_icons1.png",
+        "event": {
+            "arc": 180,
+            "attacktype": "blast",
+            "damage": "3 5",
+            "damagelevel": 2,
+            "damagescale": "none",
+            "damagetype": "dmg_energy",
+            "hiteffect": "char/gambit/p1_impact",
+            "maxrange": 60,
+            "name": "radius_slam",
+            "type": "ce_atk"
+        },
+        "event": {
+            "arc": 60,
+            "damagelevel": 2,
+            "damagetype": "dmg_energy",
+            "hiteffect": "char/gambit/p1_impact",
+            "inherit": "punch_heavy",
+            "knockback": 120,
+            "maxrange": 48,
+            "name": "staff_strike"
+        },
+        "event": {
+            "arc": 90,
+            "damage": "3 5",
+            "damagescale": "none",
+            "damagetype": "dmg_energy",
+            "fxlevel": 2,
+            "inherit": "staff_strike",
+            "name": "power_strike"
+        },
+        "event": {
+            "arc": 0,
+            "attacktype": "projectile",
+            "center": true,
+            "count": 15,
+            "damage": "3 5",
+            "damagelevel": 1,
+            "damagescale": "none",
+            "damagetype": "dmg_energy",
+            "entity": "charged_card",
+            "filename": "ents_gambit",
+            "inherit": "projectile",
+            "maxrange": 1200,
+            "name": "52_card",
+            "pierce": true,
+            "speed": 3000,
+            "spread": 45,
+            "targetable": true
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle",
+            "noncombat": true,
+            "trigger": {
+                "boltslot": "ebolton_clawleft",
+                "name": "bolton",
+                "removebolton": true,
+                "time": 0
+            },
+            "trigger": {
+                "boltslot": "ebolton_clawright",
+                "name": "bolton",
+                "removebolton": true,
+                "time": 0
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "strafeleft"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "straferight"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "advance"
+            },
+            "chain": {
+                "action": "retreat",
+                "result": "retreat"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "groundattack",
+                "result": "groundattack"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            },
+            "chain": {
+                "action": "special",
+                "result": "boredloop"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light3",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "handler": "ch_gambitboltons",
+            "lockangles": true,
+            "name": "attacklight3",
+            "powerup_tag": "gambit_staff",
+            "startchaintime": 0.85,
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 L Hand",
+                "boltslot": "ebolton_clawleft",
+                "model": "models/bolton/gambit_staff",
+                "name": "bolton",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide_kick",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.24,
+                "name": "trail",
+                "offsetend": 200,
+                "time": 0.2
+            },
+            "trigger": {
+                "angle": 90,
+                "height": 20,
+                "index": 1,
+                "maxrange": 36,
+                "name": "staff_strike",
+                "time": 0.35
+            },
+            "trigger": {
+                "angle": 45,
+                "height": 36,
+                "index": 1,
+                "maxrange": 48,
+                "name": "staff_strike",
+                "time": 0.3
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 48,
+                "index": 1,
+                "maxrange": 60,
+                "name": "staff_strike",
+                "time": 0.35
+            },
+            "trigger": {
+                "boltslot": "ebolton_clawleft",
+                "name": "bolton",
+                "removebolton": true,
+                "tag": 100,
+                "time": 0.8
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_trip2",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "handler": "ch_gambitboltons",
+            "lockangles": true,
+            "name": "attacktrip2",
+            "powerup_tag": "gambit_staff",
+            "startchaintime": 0.5,
+            "event": {
+                "inherit": "kick_heavy",
+                "knockback": 0,
+                "name": "trip",
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                }
+            },
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 L Hand",
+                "boltslot": "ebolton_clawleft",
+                "model": "models/bolton/gambit_staff",
+                "name": "bolton",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/gambit/special_finisher",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.3,
+                "name": "trail",
+                "offsetend": 250,
+                "offsetstart": 50,
+                "time": 0.2
+            },
+            "trigger": {
+                "angle": -60,
+                "height": -25,
+                "index": 1,
+                "name": "trip",
+                "time": 0.28,
+                "victimeventtag": 15
+            },
+            "trigger": {
+                "finisher": true,
+                "life": 0.25,
+                "name": "xtreme_start",
+                "tag": 15,
+                "time": -1,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "angle": 0,
+                "height": -25,
+                "index": 1,
+                "name": "trip",
+                "time": 0.34
+            },
+            "trigger": {
+                "angle": 45,
+                "height": -25,
+                "index": 1,
+                "name": "trip",
+                "time": 0.4
+            },
+            "trigger": {
+                "boltslot": "ebolton_clawleft",
+                "name": "bolton",
+                "removebolton": true,
+                "tag": 100,
+                "time": 0.8
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_stun1",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "handler": "ch_gambitboltons",
+            "lockangles": true,
+            "name": "attackstun1",
+            "powerup_tag": "gambit_staff",
+            "startchaintime": 0.8,
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 L Hand",
+                "boltslot": "ebolton_clawleft",
+                "model": "models/bolton/gambit_staff",
+                "name": "bolton",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 20,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.25
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.15,
+                "name": "trail",
+                "offsetend": 200,
+                "offsetstart": 0,
+                "time": 0.25
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 36,
+                "maxrange": 72,
+                "name": "staff_strike",
+                "time": 0.33
+            },
+            "trigger": {
+                "boltslot": "ebolton_clawleft",
+                "name": "bolton",
+                "removebolton": true,
+                "tag": 100,
+                "time": 0.75
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackstun2"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_stun2",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "handler": "ch_gambitboltons",
+            "lockangles": true,
+            "name": "attackstun2",
+            "powerup_tag": "gambit_staff",
+            "startchaintime": 0.5,
+            "trigger": {
+                "movement": 20,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 L Hand",
+                "boltslot": "ebolton_clawleft",
+                "model": "models/bolton/gambit_staff",
+                "name": "bolton",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.15
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.2,
+                "name": "trail",
+                "offsetend": 250,
+                "offsetstart": 50,
+                "time": 0.15
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 48,
+                "maxrange": 48,
+                "name": "staff_strike",
+                "time": 0.25
+            },
+            "trigger": {
+                "boltslot": "ebolton_clawleft",
+                "name": "bolton",
+                "removebolton": true,
+                "tag": 100,
+                "time": 0.45
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackstun3"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_stun3",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "handler": "ch_gambitboltons",
+            "lockangles": true,
+            "name": "attackstun3",
+            "powerup_tag": "gambit_staff",
+            "startchaintime": 0.85,
+            "trigger": {
+                "movement": 0,
+                "name": "slide_kick",
+                "time": 0
+            },
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 L Hand",
+                "boltslot": "ebolton_clawleft",
+                "model": "models/bolton/gambit_staff",
+                "name": "bolton",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.3,
+                "name": "trail",
+                "offsetend": 250,
+                "offsetstart": 50,
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 48,
+                "maxrange": 48,
+                "name": "staff_strike",
+                "time": 0.25
+            },
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.25
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 48,
+                "maxrange": 48,
+                "name": "staff_strike",
+                "time": 0.45,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.45
+            },
+            "trigger": {
+                "boltslot": "ebolton_clawleft",
+                "name": "bolton",
+                "removebolton": true,
+                "time": 0.8
+            },
+            "trigger": {
+                "boltslot": "ebolton_clawleft",
+                "name": "bolton",
+                "removebolton": true,
+                "tag": 100,
+                "time": 0.8
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_pickup_object_idle",
+            "handler": "ch_pickup_idle",
+            "lockchaining": false,
+            "name": "pickupobjectidle",
+            "noncombat": true,
+            "chain": {
+                "action": "walk",
+                "result": "pickupobjectwalk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "pickupobjectwalk"
+            },
+            "chain": {
+                "action": "run",
+                "result": "pickupobjectwalk"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "pickupobjectthrow"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "pickupobjectthrow"
+            },
+            "chain": {
+                "action": "power_attack",
+                "result": "gambit_decide"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_pickup_object_walk",
+            "handler": "ch_pickup_walk",
+            "lockchaining": false,
+            "name": "pickupobjectwalk",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "pickupobjectidle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "pickupobjectwalk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "pickupobjectwalk"
+            },
+            "chain": {
+                "action": "run",
+                "result": "pickupobjectwalk"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "pickupobjectthrow"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "pickupobjectthrow"
+            },
+            "chain": {
+                "action": "power_attack",
+                "result": "gambit_decide"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_idle1",
+            "handler": "ch_gambitdecide",
+            "icon": 0,
+            "lockchaining": false,
+            "name": "gambit_decide",
+            "noautoaim": true,
+            "priority": 5,
+            "turnrate": 0.5,
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "power1"
+            },
+            "chain": {
+                "action": "Special",
+                "result": "charged_throw"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_pickup_object_throw",
+            "icon": 0,
+            "lockangles": true,
+            "name": "charged_throw",
+            "startchaintime": 0.95,
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%gam_deton_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "allow_actors": false,
+                "allow_non_actors": true,
+                "apply_held": true,
+                "apply_self": false,
+                "class": "charged",
+                "explosion_damage": "%gam_deton_dmg",
+                "explosion_knockback": "%gam_deton_kb",
+                "explosion_radius": 180,
+                "life": 99,
+                "name": "powerup",
+                "tag": 1,
+                "time": 0,
+                "special_fx": {
+                    "effect": "char/gambit/p1_impact",
+                    "fxlevel": 4,
+                    "how_used": "deactivation",
+                    "sound": "char/igam_m/p1_impact"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/igam_m/p1_charge",
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "pickup_throw",
+                "time": 0.2
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aitype": "projectile",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Cards",
+            "combotextstarter": "Atomic",
+            "endchaintime": 0.9,
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "powerup_tag": "gambit_card",
+            "priority": 5,
+            "startchaintime": 0.1,
+            "turnrate": 0.15,
+            "require": {
+                "cat": "talent",
+                "item": "gam_card_shuffle",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/igam_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/gambit/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/gambit/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/gambit/p1_power",
+                "name": "effect",
+                "time": 0.45
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "projectile",
+                "center": true,
+                "count": "%gam_shuffle_num",
+                "damage": "%gam_shuffle_dmg",
+                "damagelevel": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "entity": "charged_card",
+                "filename": "ents_gambit",
+                "knockback": 0,
+                "maxrange": 800,
+                "name": "projectile",
+                "powerusage": "%gam_shuffle_pwr",
+                "speed": 600,
+                "tag": 1,
+                "time": 0.45
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 7,
+            "aitype": "aoe",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Slam",
+            "combotextstarter": "Charged",
+            "handler": "ch_gambitboltons",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "powerup_tag": "gambit_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "gam_staff_slam",
+                "level": 1
+            },
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_clawright",
+                "model": "models/bolton/gambit_staff",
+                "name": "bolton",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/gambit/p2_power",
+                "name": "effect_sound",
+                "sound": "char/igam_m/p2_charge",
+                "tag": 2,
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/igam_m/p2_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "damage": "%gam_slam_dmg",
+                "damagelevel": 10,
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "knockback": 245,
+                "maxrange": "%gam_slam_range",
+                "name": "radius_slam",
+                "powerusage": "%gam_slam_pwr",
+                "tag": 1,
+                "time": 0.5,
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                }
+            },
+            "trigger": {
+                "boltslot": "ebolton_clawright",
+                "name": "bolton",
+                "removebolton": true,
+                "tag": 100,
+                "time": 0.999
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 7,
+            "aitype": "aoe",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Bash",
+            "combotextstarter": "Destructive",
+            "handler": "ch_gambitboltons",
+            "icon": 2,
+            "name": "power3",
+            "powerup_tag": "gam_power3",
+            "priority": 5,
+            "startchaintime": 0.75,
+            "storepowerbuttons": true,
+            "require": {
+                "cat": "skill",
+                "item": "gam_staff_parry",
+                "level": 1
+            },
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 L Hand",
+                "boltslot": "ebolton_clawleft",
+                "model": "models/bolton/gambit_staff",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/gambit/p3_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/gambit/p3_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/gambit/p3_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/igam_m/p3_charge",
+                "time": 0.14
+            },
+            "trigger": {
+                "angle": 0,
+                "damage": "%gam_parry_dmg",
+                "height": 48,
+                "index": 0,
+                "maxrange": 72,
+                "name": "power_strike",
+                "powerusage": "%gam_parry_pwr",
+                "time": 0.16
+            },
+            "trigger": {
+                "movement": 18,
+                "name": "slide",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/gambit/p3_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/igam_m/p3_charge",
+                "time": 0.41
+            },
+            "trigger": {
+                "angle": 0,
+                "damage": "%gam_parry_dmg",
+                "height": 36,
+                "index": 1,
+                "maxrange": 72,
+                "name": "power_strike",
+                "time": 0.43
+            },
+            "trigger": {
+                "movement": 12,
+                "name": "slide",
+                "time": 0.61
+            },
+            "trigger": {
+                "effect": "char/gambit/p3_power",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/igam_m/p3_charge",
+                "time": 0.66
+            },
+            "trigger": {
+                "angle": 0,
+                "damage": "%gam_parry_dmg",
+                "height": 36,
+                "index": 2,
+                "maxrange": 72,
+                "name": "power_strike",
+                "time": 0.68
+            },
+            "trigger": {
+                "movement": -12,
+                "name": "slide",
+                "time": 0.75
+            },
+            "trigger": {
+                "boltslot": "ebolton_clawleft",
+                "name": "bolton",
+                "removebolton": true,
+                "tag": 100,
+                "time": 0.99
+            },
+            "chain": {
+                "action": "samepowerclick",
+                "result": "power3"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 7,
+            "aitype": "aoe",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Spades",
+            "combotextstarter": "Ace",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "powerup_tag": "gambit_card",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "gam_ace_spades",
+                "level": 1
+            },
+            "trigger": {
+                "damage": "%gam_spades_dmg",
+                "life": "%gam_spades_rad_time",
+                "name": "powerup",
+                "shared_tag": "shared_radiated",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/gambit/p1_charge",
+                "fxlevel": 4,
+                "name": "effect_sound",
+                "sound": "char/igam_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/gambit/p1_charge",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "actorbolt": "Bip01 Pelvis",
+                "angoffset": "0 -25 0",
+                "attack_bone_angles": "89 -82 -178",
+                "attack_bone_pos": "4 0 40",
+                "center": true,
+                "count": "%gam_spades_num",
+                "damage": 1,
+                "damagetype": "dmg_radiation",
+                "entity": "cardtrap_proj",
+                "filename": "ents_gambit",
+                "name": "projectile",
+                "offset": "10 0 25",
+                "powerusage": "%gam_spades_pwr",
+                "randomvelocity": 70,
+                "speed": 200,
+                "spread": 45,
+                "time": 0.65,
+                "victimeventtag": 100
+            },
+            "trigger": {
+                "damage": 1,
+                "damagetype": "dmg_radiation",
+                "entity": "cardtrap",
+                "filename": "ents_gambit",
+                "maxinstances": "%gam_spades_num",
+                "name": "relative_spawn",
+                "tag": 50,
+                "time": -1,
+                "victimeventtag": 100
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 7,
+            "aitype": "aoe",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Grenade",
+            "combotextstarter": "Explosive",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power5",
+            "powerup_tag": "gambit_card",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "gam_full_house",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/gambit/p1_charge",
+                "fxlevel": 5,
+                "name": "effect_sound",
+                "sound": "char/igam_m/p1_charge",
+                "time": 0.6
+            },
+            "trigger": {
+                "actorbolt": "Bip01 Pelvis",
+                "angoffset": "0 -25 0",
+                "attack_bone_angles": "89 -82 -178",
+                "attack_bone_pos": "4 0 40",
+                "center": true,
+                "count": "%gam_house_num",
+                "damage": "%gam_house_dmg",
+                "damagetype": "dmg_energy",
+                "entity": "cardtrap_proj",
+                "filename": "ents_gambit",
+                "name": "projectile",
+                "offset": "10 0 25",
+                "powerusage": "%gam_house_pwr",
+                "speed": 200,
+                "spread": 45,
+                "time": 0.65,
+                "victimeventtag": 100,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "trigger": {
+                "damage": "%gam_house_dmg",
+                "damagetype": "dmg_energy",
+                "entity": "cardtrap",
+                "filename": "ents_gambit",
+                "maxinstances": "%gam_house_num",
+                "name": "relative_spawn",
+                "tag": 50,
+                "time": -1,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "cansteal": false,
+            "handler": "ch_gambitdecide2",
+            "icon": 5,
+            "lockchaining": false,
+            "name": "power6",
+            "noautoaim": true,
+            "priority": 5,
+            "turnrate": 0.5,
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "Special",
+                "result": "power6_atk"
+            },
+            "chain": {
+                "action": "special2",
+                "result": "attacklight1"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power6",
+            "combotextfinisher": "Detonation",
+            "combotextstarter": "Detonating",
+            "icon": 5,
+            "name": "power6_atk",
+            "powerup_tag": "gambit_card",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "gam_detonation",
+                "level": 1
+            },
+            "trigger": {
+                "allow_actors": true,
+                "allow_non_actors": true,
+                "center_bolt": true,
+                "class": "time_bomb",
+                "explosion_damage": "%gam_deton_dmg",
+                "explosion_knockback": "%gam_deton_kb",
+                "explosion_radius": 144,
+                "life": 3,
+                "name": "powerup",
+                "tag": 101,
+                "time": -1,
+                "special_fx": {
+                    "center_bolt": true,
+                    "effect": "char/gambit/special_chargedobj",
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/gambit/special_chargedexp",
+                    "how_used": "custom",
+                    "tag": 1
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/igam_m/p1_impact",
+                "tag": 102,
+                "time": -1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/gambit/p1_charge",
+                "fxlevel": 6,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/gambit/p1_charge",
+                "fxlevel": 6,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "damage": 0,
+                "damagelevel": 10,
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "fxlevel": 6,
+                "hiteffect": "char/gambit/p1_impact",
+                "knockback": 0,
+                "name": "punch",
+                "powerusage": "%gam_deton_pwr",
+                "time": 0.65,
+                "victimeventtag": 101,
+                "victimeventtag2": 102,
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                },
+                "damageMod": {
+                    "name": "dmgmod_no_atk_roll"
+                },
+                "damageMod": {
+                    "name": "dmgmod_unblockable"
+                },
+                "damageMod": {
+                    "name": "dmgmod_weld"
+                },
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                },
+                "damageMod": {
+                    "name": "dmgmod_drain_battery"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power7",
+            "combotextfinisher": "Slam",
+            "combotextstarter": "Charged",
+            "icon": 6,
+            "name": "power7",
+            "powerup_tag": "gambit_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "gam_energy_form",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/gambit/p1_charge",
+                "fxlevel": 6,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/gambit/p1_charge",
+                "fxlevel": 6,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/gambit/p7_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "center_bolt": true,
+                "life": "%gam_form_time",
+                "name": "powerup",
+                "powerusage": "%gam_form_pwr",
+                "time": 0.5,
+                "affecter": {
+                    "attribute": "attack_rating",
+                    "level": "%gam_form_atk_boost"
+                },
+                "affecter": {
+                    "attribute": "defense_rating",
+                    "level": "%gam_form_def_boost"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%gam_form_move_scale"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/gambit/p7_aura",
+                    "fxlevel": 1
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/gambit/p7_aura",
+                    "fxlevel": 1
+                },
+                "special_fx": {
+                    "effect": "char/gambit/p7_aura",
+                    "fxlevel": 2
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/igam_m/p7_charge",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power7",
+            "combotextfinisher": "Fury",
+            "combotextstarter": "Kinetic",
+            "icon": 7,
+            "name": "power8",
+            "powerup_tag": "gambit_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "gam_energy_fury",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/gambit/p1_charge",
+                "fxlevel": 6,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/gambit/p1_charge",
+                "fxlevel": 6,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/gambit/p7_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "near",
+                "center_bolt": true,
+                "class": "add_attack",
+                "damagepercent": "%gam_fury_dam_boost",
+                "damagetype": "dmg_energy",
+                "life": "%gam_fury_time",
+                "name": "powerup",
+                "powerusage": "%gam_fury_pwr",
+                "time": 0.5,
+                "affecter": {
+                    "attribute": "attack_rating",
+                    "level": "%gam_fury_atk_boost"
+                },
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    }
+                },
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/gambit/p7_aura",
+                    "fxlevel": 1
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/gambit/p7_aura",
+                    "fxlevel": 1
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/igam_m/p7_charge",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "event": {
+            "damage": "%gam_pickup_damage",
+            "damagelevel": 2,
+            "damagetype": "dmg_energy",
+            "enemynumber": 0,
+            "hiteffect": "char/gambit/p9_impact",
+            "inherit": "blast",
+            "maxrange": 225,
+            "name": "card_impact",
+            "radius": 60,
+            "random": true
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "blendtime": 0,
+            "combotextfinisher": "Mayhem",
+            "description": "52 PICK UP",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power9",
+            "playspeed": 10,
+            "powerup_tag": "gambit_card",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "gam_52_pickup",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": 4,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/igam_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/gambit/p4_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/gambit/p4_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "enemynumber": 0,
+                "name": "card_impact",
+                "time": 0.7
+            },
+            "trigger": {
+                "enemynumber": 1,
+                "name": "card_impact",
+                "time": 0.715
+            },
+            "trigger": {
+                "enemynumber": 2,
+                "name": "card_impact",
+                "time": 0.73
+            },
+            "trigger": {
+                "enemynumber": 3,
+                "name": "card_impact",
+                "time": 0.745
+            },
+            "trigger": {
+                "enemynumber": 4,
+                "name": "card_impact",
+                "time": 0.76
+            },
+            "trigger": {
+                "enemynumber": 5,
+                "name": "card_impact",
+                "time": 0.775
+            },
+            "trigger": {
+                "enemynumber": 6,
+                "name": "card_impact",
+                "time": 0.79
+            },
+            "trigger": {
+                "enemynumber": 7,
+                "name": "card_impact",
+                "time": 0.805
+            },
+            "trigger": {
+                "enemynumber": 8,
+                "name": "card_impact",
+                "time": 0.82
+            },
+            "trigger": {
+                "enemynumber": 9,
+                "name": "card_impact",
+                "time": 0.835
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power11",
+            "blendtime": 0,
+            "description": "PRINCE OF THIEVES",
+            "icon": 11,
+            "lockangles": true,
+            "name": "power11",
+            "playspeed": 2,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "gam_pickpocket",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": 2,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/gambit/p1_charge",
+                "fxlevel": 7,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/gambit/p11_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "center_bolt": true,
+                "life": "%gam_pocket_life",
+                "name": "powerup",
+                "time": 0.5,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "extra_potions",
+                    "level": "%gam_pocket_packs"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "extra_money",
+                    "level": "%gam_pocket_tech"
+                },
+                "special_fx": {
+                    "effect": "char/gambit/p11_aura",
+                    "fxlevel": 2
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/igam_m/p7_charge",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
