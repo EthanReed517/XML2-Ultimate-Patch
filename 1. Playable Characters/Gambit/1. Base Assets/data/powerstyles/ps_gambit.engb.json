@@ -766,9 +766,18 @@
                 "time": 0
             },
             "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.05
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/igam_m/p3_charge",
+                "time": 0.29
+            },
+            "trigger": {
                 "name": "sound",
                 "sound": "char/igam_m/p2_power",
-                "time": 0.5
+                "time": 0.48
             },
             "trigger": {
                 "damage": "%gam_slam_dmg",
@@ -837,11 +846,15 @@
                 "time": 0
             },
             "trigger": {
+                "name": "whoosh_light",
+                "time": 0.1
+            },
+            "trigger": {
                 "effect": "char/gambit/p3_power",
                 "fxlevel": 1,
                 "name": "effect_sound",
                 "sound": "char/igam_m/p3_charge",
-                "time": 0.14
+                "time": 0.12
             },
             "trigger": {
                 "angle": 0,
@@ -859,11 +872,15 @@
                 "time": 0.2
             },
             "trigger": {
+                "name": "whoosh_light",
+                "time": 0.37
+            },
+            "trigger": {
                 "effect": "char/gambit/p3_power",
                 "fxlevel": 2,
                 "name": "effect_sound",
                 "sound": "char/igam_m/p3_charge",
-                "time": 0.41
+                "time": 0.39
             },
             "trigger": {
                 "angle": 0,
@@ -880,11 +897,15 @@
                 "time": 0.61
             },
             "trigger": {
+                "name": "whoosh_light",
+                "time": 0.62
+            },
+            "trigger": {
                 "effect": "char/gambit/p3_power",
                 "fxlevel": 3,
                 "name": "effect_sound",
                 "sound": "char/igam_m/p3_charge",
-                "time": 0.66
+                "time": 0.64
             },
             "trigger": {
                 "angle": 0,
@@ -944,9 +965,13 @@
                 "bolt": "Bip01 R Hand",
                 "effect": "char/gambit/p1_charge",
                 "fxlevel": 4,
-                "name": "effect_sound",
-                "sound": "char/igam_m/p1_charge",
+                "name": "effect",
                 "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/igam_m/p1_charge",
+                "time": 0.2
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
@@ -1010,10 +1035,21 @@
             "trigger": {
                 "bolt": "Bip01 R Hand",
                 "effect": "char/gambit/p1_charge",
-                "fxlevel": 5,
-                "name": "effect_sound",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
                 "sound": "char/igam_m/p1_charge",
-                "time": 0.6
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/gambit/p1_charge",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0
             },
             "trigger": {
                 "actorbolt": "Bip01 Pelvis",
@@ -1190,6 +1226,7 @@
             "combotextfinisher": "Slam",
             "combotextstarter": "Charged",
             "icon": 6,
+            "lockangles": true,
             "name": "power7",
             "powerup_tag": "gambit_power",
             "priority": 5,
@@ -1269,6 +1306,7 @@
             "combotextfinisher": "Fury",
             "combotextstarter": "Kinetic",
             "icon": 7,
+            "lockangles": true,
             "name": "power8",
             "powerup_tag": "gambit_power",
             "priority": 5,
@@ -1298,7 +1336,7 @@
                 "time": 0
             },
             "trigger": {
-                "apply_ally": "near",
+                "apply_ally": "all",
                 "center_bolt": true,
                 "class": "add_attack",
                 "damagepercent": "%gam_fury_dam_boost",
@@ -1318,6 +1356,9 @@
                     },
                     "scope": {
                         "scope_attack": "kick"
+                    },
+                    "scope": {
+                        "scope_non_powers": true
                     }
                 },
                 "special_fx": {
