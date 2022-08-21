@@ -6,6 +6,7 @@ bishop = ["astonishing","60s","weaponx","future","winter"]
 colossus = ["70s"]
 cyclops = ["weaponx","civilian"]
 deadpool = ["astonishing","70s","civilian"]
+gambit = ["astonishing","60s","70s","weaponx"]
 iceman = ["70s","weaponx","future","winter"]
 juggernaut = ["astonishing","70s","weaponx","future","winter"]
 magneto = ["astonishing","60s","70s","weaponx","future","winter","civilian"]
@@ -48,6 +49,8 @@ if name == "Colossus.txt":
     pspEntry(name,colossus)
 if name == "Cyclops.txt":
     pspEntry(name,cyclops)
+if name == "Gambit.txt":
+    pspEntry(name,gambit)
 if name == "Deadpool.txt":
     pspEntry(name,deadpool)
 if name == "Iceman.txt":
