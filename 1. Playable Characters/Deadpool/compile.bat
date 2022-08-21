@@ -21,6 +21,9 @@ if  %consoleChoice%==PC (
 	del >nul "0. Staging\actors\44_deadpool_boss.igb"
 	del >nul "0. Staging\actors\44_deadpool_hero.igb"
 	del >nul "0. Staging\actors\128_civilian_male.igb"
+	del >nul "0. Staging\actors\4409.igb"
+	del >nul "0. Staging\hud\hud_head_4409.igb"
+	del >nul "0. Staging\ui\hud\characters\4409.igb"
 )
 REM PSP does not have no cel shade assets folder 
 REM because it doesn't use cel shading to begin with.
