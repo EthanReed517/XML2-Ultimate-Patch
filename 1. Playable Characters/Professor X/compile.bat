@@ -19,6 +19,7 @@ REM files on the PC that aren't modified by the X2UP can be removed here
 if  %consoleChoice%==PC (
 	del >nul "0. Staging\actors\11_professorx.igb"
 	del >nul "0. Staging\actors\11_professorx_hero.igb"
+	del >nul "0. Staging\3. No Cel Shade Assets\actors\1104.igb"
 	del >nul "0. Staging\actors\1104.igb"
 	del >nul "0. Staging\hud\hud_head_1104.igb"
 	del >nul "0. Staging\ui\hud\characters\1104.igb"

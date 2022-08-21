@@ -22,6 +22,7 @@ if  %consoleChoice%==PC (
 	del >nul "0. Staging\actors\04_storm.igb"
 	del >nul "0. Staging\actors\128_civilian_male.igb"
 	del >nul "0. Staging\actors\200_storm.igb"
+	del >nul "0. Staging\3. No Cel Shade Assets\actors\0409.igb"
 	del >nul "0. Staging\actors\0409.igb"
 	del >nul "0. Staging\hud\hud_head_0409.igb"
 	del >nul "0. Staging\ui\hud\characters\0409.igb"
