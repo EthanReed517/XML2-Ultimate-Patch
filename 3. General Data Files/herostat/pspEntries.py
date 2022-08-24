@@ -8,6 +8,7 @@ cyclops = ["weaponx","civilian"]
 deadpool = ["astonishing","70s","civilian"]
 gambit = ["astonishing","60s","70s","weaponx"]
 iceman = ["70s","weaponx","future","winter"]
+ironman = ["aoa","60s","civilian"]
 juggernaut = ["astonishing","70s","weaponx","future","winter"]
 magneto = ["astonishing","60s","70s","weaponx","future","winter","civilian"]
 nightcrawler = ["70s","weaponx","winter"]
@@ -55,6 +56,8 @@ if name == "Deadpool.txt":
     pspEntry(name,deadpool)
 if name == "Iceman.txt":
     pspEntry(name,iceman)
+if name == "IronMan.txt":
+    pspEntry(name,ironman)
 if name == "Juggernaut.txt":
     pspEntry(name,juggernaut)
 if name == "Magneto.txt":
