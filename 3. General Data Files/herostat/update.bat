@@ -26,6 +26,7 @@ del >nul "1. Base Assets\herostat.engb.json"
 del >nul "2. Default Assets - PC\herostat.engb.json"
 del >nul "2. Default Assets - PC\heroreal.engb.json"
 del >nul "2. Default Assets - PC\herosbro.engb.json"
+del >nul "2. Default Assets - PC\heromarv.engb.json"
 del >nul "2. Default Assets - PSP\herostat.engb.json"
 
 REM *******************
@@ -87,12 +88,23 @@ ren "out.engb.json" "herosbro.engb.json"
 REM delete unecessary files
 del >nul out.engb.txt
 del >nul roster.cfg
+REM *****MUE*****
+REM rename the roster.cfg file and build it
+ren rosterMUE.cfg roster.cfg
+python rosterBuild.py
+REM convert to JSON
+echo out.engb.txt | python converter.py
+ren "out.engb.json" "heromarv.engb.json"
+REM delete unecessary files
+del >nul out.engb.txt
+del >nul roster.cfg
 REM back out to main folder
 cd ..
 REM move the herostat to the appropriate place
 move >nul "0. Temp\herostat.engb.json" "2. Default Assets - PC"
 move >nul "0. Temp\heroreal.engb.json" "2. Default Assets - PC"
 move >nul "0. Temp\herosbro.engb.json" "2. Default Assets - PC"
+move >nul "0. Temp\heromarv.engb.json" "2. Default Assets - PC"
 
 REM ***************
 REM ***** PSP *****
