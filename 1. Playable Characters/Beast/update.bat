@@ -31,7 +31,7 @@ robocopy >nul /e /v "2. Default Assets - GameCube\textures\comic" "..\..\4. Menu
 robocopy >nul /e /v "2. Default Assets - GameCube\2. Comics for XML1 and PSP characters" "..\..\4. Menus\Comic Covers\2. Default Assets - GameCube\2. Comics for XML1 and PSP characters"
 robocopy >nul /e /v "2. Default Assets - PS2\textures\comic" "..\..\4. Menus\Comic Covers\2. Default Assets - PS2\textures\comic"
 robocopy >nul /e /v "2. Default Assets - PS2\2. Comics for XML1 and PSP characters" "..\..\4. Menus\Comic Covers\2. Default Assets - PS2\2. Comics for XML1 and PSP characters"
-robocopy >nul /e /v "2. Default Assets - PSP\textures\comic" "..\..\4. Menus\Comic Covers\2. Default Assets - PSP\textures\comic"
+robocopy >nul /e /v "2. Default Assets - PSp\2. Comics for XML1 and PSP characters" "..\..\4. Menus\Comic Covers\2. Default Assets - PSP\2. Comics for XML1 and PSP characters"
 
 REM sounds
 echo Copying sounds to the sounds folder...
