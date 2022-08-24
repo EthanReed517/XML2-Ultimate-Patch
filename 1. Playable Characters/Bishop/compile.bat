@@ -1,5 +1,5 @@
 @echo off
-echo Compiling NAME's character assets 
+echo Compiling Bishop's character assets 
 
 REM **************************
 REM * Section 0 - User Input *

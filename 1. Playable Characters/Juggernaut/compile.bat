@@ -1,5 +1,5 @@
 @echo off
-echo Compiling juggernaut's character assets 
+echo Compiling Juggernaut's character assets 
 
 REM **************************
 REM * Section 0 - User Input *

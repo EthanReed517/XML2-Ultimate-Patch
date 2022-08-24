@@ -1,9 +1,34 @@
 @echo off
 echo Compiling permanent.fb
 
+REM **************************
+REM * Section 0 - User Input *
+REM **************************
+
+goto consoleChoiceSection
+
+:unneeded
+REM can remove unneeded folders. Customize as needed
+rmdir /s /q "0. Staging\1. Data Entries"
+REM files on the PC that aren't modified by the X2UP can be removed here
+if  %consoleChoice%==PC (
+	rmdir /s /q "0. Staging\data\fightstyles"
+	del >nul "0. Staging\data\boltonactoranims.xmlb.json"
+	del >nul "0. Staging\data\shared_anims.xmlb.json"
+	del >nul "0. Staging\data\shared_combat_events.xmlb.json"
+	del >nul "0. Staging\data\shared_sounds.xmlb.json"
+	del >nul "0. Staging\data\values.xmlb.json"
+	rmdir /s /q "0. Staging\effects"
+)
+REM go back to the process
+if %consoleChoice%==PC goto compilePCcont
+goto compileConsoleCont
+
 REM ***********************************
 REM * Section 1 - Establish Variables *
 REM ***********************************
+
+:consoleChoiceSection
 
 REM get console choice from main compiler script
 set "consoleChoice=%~1"
@@ -116,6 +141,9 @@ rmdir /s /q "0. Staging"
 goto :end
 
 :compilePC
+REM can remove unneeded folders
+goto unneeded
+:compilePCCont
 REM copy compilers
 copy >nul "..\..\0. Compilers" "0. Staging"
 REM change directory to 0. Staging folder and execute scripts

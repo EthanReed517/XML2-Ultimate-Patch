@@ -1,5 +1,5 @@
 @echo off
-echo Compiling iceman's character assets 
+echo Compiling Iceman's character assets 
 
 REM **************************
 REM * Section 0 - User Input *

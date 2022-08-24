@@ -1,5 +1,5 @@
 @echo off
-echo Compiling NAME's character assets 
+echo Compiling Gambit's character assets 
 
 REM **************************
 REM * Section 0 - User Input *
@@ -17,7 +17,7 @@ rmdir /s /q "0. Staging\1. Data Entries"
 rmdir /s /q "0. Staging\2. Bonus Comic Covers"
 REM files on the PC that aren't modified by the X2UP can be removed here
 if  %consoleChoice%==PC (
-	del >nul "0. Staging\actors\13_name.igb"
+	del >nul "0. Staging\actors\13_gambit.igb"
 	del >nul "0. Staging\actors\128_civilian_male.igb"
 	del >nul "0. Staging\actors\200_gambit.igb"
 	del >nul "0. Staging\actors\1309.igb"
@@ -244,12 +244,15 @@ REM change directory to 0. Staging folder and execute scripts
 cd "%~dp0\0. Staging"
 REM create cfgs and compile data files
 python cfgCreate.py
+pause
 cmd /c ravenFormatsCompile.bat
 REM run fbbuilder
 call fbbuilder.bat
 REM move packages to proper place
 md "packages\generated\characters"
+pause
 for /r %%x in (*.fb) do move >nul "%%x" "packages\generated\characters"
+pause
 goto cleanUp
 
 :finalizeConsole
