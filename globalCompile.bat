@@ -88,6 +88,10 @@ echo Iceman
 cd "%~dp0\1. Playable Characters\Iceman"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
 cd ..\..
+echo Iron Man
+cd "%~dp0\1. Playable Characters\Iron Man"
+call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+cd ..\..
 echo Juggernaut
 cd "%~dp0\1. Playable Characters\Juggernaut"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%

@@ -36,6 +36,10 @@ echo Iceman
 cd "%~dp0\1. Playable Characters\Iceman"
 call update.bat 
 cd ..\..
+echo Iron Man
+cd "%~dp0\1. Playable Characters\Iron Man"
+call update.bat 
+cd ..\..
 echo Juggernaut
 cd "%~dp0\1. Playable Characters\Juggernaut"
 call update.bat 
