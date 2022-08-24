@@ -26,6 +26,7 @@ robocopy >nul /e /v "2. Default Assets - GameCube\2. Bonus Loading Screens" "..\
 robocopy >nul /e /v "2. Default Assets - PS2\textures\loading" "..\..\4. Menus\Loading Screens\2. Default Assets - PS2\textures\loading"
 robocopy >nul /e /v "2. Default Assets - PS2\2. Bonus Loading Screens" "..\..\4. Menus\Loading Screens\2. Default Assets - PS2\2. Bonus Loading Screens"
 robocopy >nul /e /v "2. Default Assets - PSP\textures\loading" "..\..\4. Menus\Loading Screens\2. Default Assets - PSP\textures\loading"
+robocopy >nul /e /v "2. Default Assets - PSP\2. Bonus Loading Screens" "..\..\4. Menus\Loading Screens\2. Default Assets - PSP\2. Bonus Loading Screens"
 
 REM comic covers
 echo Copying comic book cover to the comic covers folder...
@@ -36,6 +37,7 @@ robocopy >nul /e /v "2. Default Assets - GameCube\2. Bonus Comic Covers" "..\..\
 robocopy >nul /e /v "2. Default Assets - PS2\textures\comic" "..\..\4. Menus\Comic Covers\2. Default Assets - PS2\textures\comic"
 robocopy >nul /e /v "2. Default Assets - PS2\2. Bonus Comic Covers" "..\..\4. Menus\Comic Covers\2. Default Assets - PS2\2. Bonus Comic Covers"
 robocopy >nul /e /v "2. Default Assets - PSP\textures\comic" "..\..\4. Menus\Comic Covers\2. Default Assets - PSP\textures\comic"
+robocopy >nul /e /v "2. Default Assets - PSP\2. Bonus Comic Covers" "..\..\4. Menus\Comic Covers\2. Default Assets - PSP\2. Bonus Comic Covers"
 
 REM sounds
 echo Copying sounds to the sounds folder...
