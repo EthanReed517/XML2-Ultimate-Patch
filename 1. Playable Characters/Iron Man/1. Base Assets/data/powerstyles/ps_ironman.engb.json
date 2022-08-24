@@ -1,0 +1,873 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/ironman_icons1.png",
+        "FightMove": {
+            "animenum": "ea_attack_trip2",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "icon": 8,
+            "lockangles": true,
+            "name": "attacktrip2",
+            "playspeed": 1,
+            "startchaintime": 0.63,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "event": {
+                "arc": 0,
+                "attacktype": "beam",
+                "beameffect": "char/iron/p1_power",
+                "damage": "2 3",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "fxlevel": 1,
+                "hiteffect": "char/iron/p1_impact",
+                "inherit": "beam",
+                "maxrange": 100,
+                "name": "optic_blast",
+                "pitch": 40,
+                "victimeventtag": 15,
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/iron_m/p1_charge",
+                "time": 0.5
+            },
+            "trigger": {
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "28 2 32",
+                "beambolt": "Bip01 L Hand",
+                "name": "optic_blast",
+                "time": 0.5
+            },
+            "trigger": {
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "25 -7 34",
+                "beambolt": "Bip01 R Hand",
+                "name": "optic_blast",
+                "time": 0.5
+            },
+            "trigger": {
+                "finisher": true,
+                "life": 0.25,
+                "name": "xtreme_start",
+                "tag": 15,
+                "time": -1,
+                "worldspeed": 0.5
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "beam",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Fry",
+            "combotextstarter": "Sizzling",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "powerup_tag": "iro_power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "iro_unibeam",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/iron_m/p1_charge",
+                "time": 0.38
+            },
+            "trigger": {
+                "arc": 0,
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "36 1 49",
+                "attacktype": "beam",
+                "beambolt": "Bip01 L Hand",
+                "beameffect": "char/iron/p1_power",
+                "damage": "%iro_unibeam_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "fxlevel": 1,
+                "hiteffect": "char/iron/p1_impact",
+                "inherit": "beam",
+                "maxrange": 800,
+                "name": "optic_blast",
+                "powerusage": "%iro_unibeam_pwr",
+                "tag": 2,
+                "time": 0.38,
+                "damageMod": {
+                    "name": "dmgmod_weld"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "projectile",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Plasma",
+            "combotextstarter": "Blasting",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "powerup_tag": "iro_power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "iro_pla_charge",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/iron/p2_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/iron_m/p2_charge",
+                "time": 0.35
+            },
+            "trigger": {
+                "attacktype": "projectile",
+                "count": "%iro_pla_charge_num",
+                "damage": "%iro_pla_charge_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "entity": "iron_p2_proj",
+                "filename": "ents_ironman",
+                "fulltargeting": true,
+                "name": "projectile",
+                "offset": "35 0 38",
+                "powerusage": "%iro_pla_charge_pwr",
+                "speed": 500,
+                "targetable": true,
+                "time": 0.35
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "aoe",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Disruption",
+            "combotextstarter": "Stunning",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "powerup_tag": "iro_power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "iro_disrupt_sho",
+                "level": 1
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_radiation",
+                "inherit": "punch",
+                "name": "radial_punch",
+                "victimeventtag": 100
+            },
+            "trigger": {
+                "effect": "char/iron/p3_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/iron_m/p3_charge",
+                "time": 0.45
+            },
+            "trigger": {
+                "effect": "char/iron/p3_impact",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%iro_disrupt_sho_dmg",
+                "damagetype": "dmg_radiation",
+                "life": 4,
+                "name": "powerup",
+                "tag": 100,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Spine2",
+                    "effect": "effects/base/hit/hit_radiation"
+                }
+            },
+            "trigger": {
+                "maxrange": 80,
+                "name": "radial_punch",
+                "powerusage": "%iro_disrupt_sho_pwr",
+                "time": 0.5
+            },
+            "trigger": {
+                "maxrange": 110,
+                "name": "radial_punch",
+                "time": 0.59
+            },
+            "trigger": {
+                "maxrange": 144,
+                "name": "radial_punch",
+                "time": 0.6
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "buffself",
+            "animenum": "ea_power4",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "powerup_tag": "iro_power4",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "iro_energy_shie",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/iron/p4_aura",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/iron_m/p4_charge",
+                "time": 0.45
+            },
+            "trigger": {
+                "life": "%iro_energy_shie_lif",
+                "name": "powerup",
+                "powerusage": "%iro_energy_shie_pwr",
+                "time": 0.45,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%iro_energy_shie_def"
+                },
+                "affecter": {
+                    "attribute": "def_absorb_damage",
+                    "level": "%iro_energy_shie_dmg",
+                    "scope_damage": "dmg_energy"
+                },
+                "affecter": {
+                    "attribute": "atk_damage",
+                    "level": "%iro_energy_shie_dma",
+                    "scope_damage": "dmg_physical"
+                },
+                "special_fx": {
+                    "effect": "char/iron/p4_aura",
+                    "fxlevel": 1
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "aoe",
+            "animenum": "ea_power5",
+            "cansteal": false,
+            "combotextfinisher": "Blast",
+            "combotextstarter": "Automated",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power5",
+            "powerup_tag": "iro_power5",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "iro_auto_turret",
+                "level": 1
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "angoffset": "0 -55 0",
+                "attack_bone_angles": "51 -8 23",
+                "attack_bone_pos": "30 0 49",
+                "count": 1,
+                "damage": 0,
+                "entity": "iron_p5_launch",
+                "filename": "ents_ironman",
+                "life": 0.29,
+                "name": "projectile",
+                "powerusage": "%iro_auto_turret_pwr",
+                "speed": 275,
+                "time": 0.6
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/iron_m/p5_charge",
+                "time": 0.99
+            },
+            "trigger": {
+                "entity": "iron_p5_start",
+                "filename": "ents_ironman",
+                "health": 100,
+                "name": "turret_deploy",
+                "speed": 0,
+                "tag": 100,
+                "time": -1,
+                "type": "ce_atk_spawn"
+            },
+            "trigger": {
+                "damage": "%iro_auto_turret_dmg",
+                "damagetype": "dmg_elemental",
+                "entity": "iron_p5_turret",
+                "filename": "ents_ironman",
+                "firingrate": 1,
+                "health": "%iro_auto_turret_hth",
+                "life": "%iro_auto_turret_lif",
+                "maxinstances": 1,
+                "name": "auto_turret",
+                "projectileent": "iron_p5_proj",
+                "speed": 500,
+                "tag": 101,
+                "time": -1,
+                "type": "ce_atk_spawn_sentry"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "buffself",
+            "animenum": "ea_power6",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "powerup_tag": "iro_power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "iro_motion_amp",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/iron/p6_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/iron_m/p4_charge",
+                "time": 0.45
+            },
+            "trigger": {
+                "life": "%iro_motion_amp_lif",
+                "name": "powerup",
+                "powerusage": "%iro_motion_amp_pwr",
+                "time": 0.5,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move_attack",
+                    "level": "%iro_motion_amp_spe"
+                },
+                "affecter": {
+                    "affect_type": "max",
+                    "attribute": "move_attack",
+                    "level": 2.5
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_attack_rating",
+                    "level": "%iro_motion_amp_ar"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "damage",
+                    "level": "%iro_motion_amp_dmg"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/iron/p6_charge",
+                    "fxlevel": 1
+                },
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/iron/p6_charge",
+                    "fxlevel": 1
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Spine2",
+                    "effect": "char/iron/p6_charge",
+                    "fxlevel": 2
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "Fightmove": {
+            "aireusetime": 4,
+            "aitype": "projectile",
+            "animenum": "ea_power7",
+            "cansteal": false,
+            "combotextfinisher": "Radiation",
+            "combotextstarter": "Rapid",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power7",
+            "powerup_tag": "iro_power7",
+            "priority": 5,
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power7_loop"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "projectile",
+            "animenum": "ea_power11",
+            "blendtime": 0,
+            "combotextfinisher": "Radiation",
+            "combotextstarter": "Rapid",
+            "icon": 6,
+            "lockangles": false,
+            "locktransitionangles": true,
+            "name": "power7_loop",
+            "noautoaim": true,
+            "powerup_tag": "iro_power7",
+            "priority": 5,
+            "turnrate": 0.2,
+            "require": {
+                "cat": "skill",
+                "item": "iro_repuls_rays",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/iron/p7_shot",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/iron_m/p7_charge",
+                "time": 0.35
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "35 -14 48",
+                "count": 1,
+                "damage": "%iro_repuls_rays_dmg",
+                "entity": "iron_p7_proj",
+                "filename": "ents_ironman",
+                "fulltargeting": true,
+                "life": 0.75,
+                "name": "projectile",
+                "powerusage": "%iro_repuls_rays_pwr",
+                "speed": 800,
+                "targetable": true,
+                "time": 0.35
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/iron/p7_shot",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/iron_m/p7_charge",
+                "time": 0.85
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "35 2 48",
+                "count": 1,
+                "damage": "%iro_repuls_rays_dmg",
+                "entity": "iron_p7_proj",
+                "filename": "ents_ironman",
+                "fulltargeting": true,
+                "life": 0.75,
+                "name": "projectile",
+                "speed": 800,
+                "targetable": true,
+                "time": 0.85
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power7_loop"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "beam",
+            "animenum": "ea_power8",
+            "combotextfinisher": "Gravity",
+            "combotextstarter": "Pulling",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8",
+            "powerup_tag": "iro_power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "iro_trac_beam",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/iron/p8_charge",
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/iron_m/p8_charge",
+                "time": 0.5
+            },
+            "trigger": {
+                "attack_bone_angles": "-66 -79 -23",
+                "attack_bone_pos": "17 -1 56",
+                "damage": 1,
+                "maxrange": 250,
+                "name": "beam",
+                "powerusage": "%iro_trac_beam_pwr",
+                "time": 0.5,
+                "victimeventtag1": 10,
+                "victimeventtag2": 11
+            },
+            "trigger": {
+                "life": 3,
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 10,
+                "time": -1
+            },
+            "trigger": {
+                "name": "otherevent",
+                "othertag": 12,
+                "othertag2": 13,
+                "tag": 11,
+                "time": -1
+            },
+            "trigger": {
+                "class": "vacuum",
+                "life": 3,
+                "name": "powerup",
+                "tag": 12,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Spine2",
+                    "effect": "char/iron/p8_power"
+                }
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%iro_trac_beam_dm1",
+                "damagetype": "dmg_physical",
+                "life": 3,
+                "name": "powerup",
+                "tag": 13,
+                "time": -1
+            },
+            "trigger": {
+                "damage": "%iro_trac_beam_dm2",
+                "name": "self_attack",
+                "tag": 100,
+                "time": -1,
+                "type": "ce_atk_self"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "event": {
+            "damage": "%iro_sys_ovrload_dm1",
+            "inherit": "radial",
+            "maxrange": 300,
+            "name": "iron_xtreme_atk"
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "blendtime": 0,
+            "combotextfinisher": "Shockwave",
+            "description": "CONCUSSIVE OVERLOAD",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power9",
+            "playspeed": 10,
+            "powerup_tag": "iro_power9",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "iro_sys_ovrload",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": 5,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/iron/p9_impact",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/iron_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "angoffset": "0 0 90",
+                "attack_bone_pos": "-13 20 66",
+                "count": 2,
+                "damage": "%iro_sys_ovrload_dm1",
+                "entity": "iron_p9_proj",
+                "filename": "ents_ironman",
+                "life": 5,
+                "name": "projectile",
+                "speed": 300,
+                "spread": 90,
+                "time": 0.35
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "angoffset": "0 0 -90",
+                "attack_bone_pos": "-16 -22 64",
+                "count": 2,
+                "damage": "%iro_sys_ovrload_dm1",
+                "entity": "iron_p9_proj",
+                "filename": "ents_ironman",
+                "life": 5,
+                "name": "projectile",
+                "speed": 300,
+                "spread": 90,
+                "time": 0.35
+            },
+            "trigger": {
+                "damagetype": "dmg_energy",
+                "index": 1,
+                "name": "iron_xtreme_atk",
+                "time": 0.3
+            },
+            "trigger": {
+                "damagetype": "dmg_elemental",
+                "index": 2,
+                "name": "iron_xtreme_atk",
+                "time": 0.4
+            },
+            "trigger": {
+                "damage": 1,
+                "index": 3,
+                "name": "iron_xtreme_atk",
+                "time": 0.5,
+                "victimeventtag": 100
+            },
+            "trigger": {
+                "damage": "%iro_sys_ovrload_dm1",
+                "life": 4,
+                "name": "powerup",
+                "shared_tag": "shared_radiated",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "damage": 1,
+                "index": 4,
+                "name": "iron_xtreme_atk",
+                "time": 0.6,
+                "victimeventtag": 101
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%iro_sys_ovrload_dm2",
+                "damagetype": "dmg_radiation",
+                "life": 1,
+                "name": "powerup",
+                "tag": 101,
+                "time": -1,
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_race": "robot"
+                    }
+                }
+            },
+            "trigger": {
+                "end": true,
+                "name": "xtreme_start",
+                "time": 0.99
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "projectile",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Richochet",
+            "combotextstarter": "Rebounding",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power10",
+            "powerup_tag": "iro_power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "iro_gamma_bolts",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/iron/p2_charge",
+                "fxlevel": 4,
+                "name": "effect_sound",
+                "sound": "char/iron_m/p2_charge",
+                "time": 0.35
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "30 47 -52",
+                "attack_bone_pos": "-1 -13 41",
+                "count": 3,
+                "damage": "%iro_gamma_bolts_dmg",
+                "entity": "iron_p10_proj",
+                "filename": "ents_ironman",
+                "fulltargeting": true,
+                "life": "%iro_gamma_bolts_lif",
+                "name": "projectile",
+                "numbounces": "%iro_gamma_bolts_bou",
+                "pierce": true,
+                "powerusage": "%iro_gamma_bolts_pwr",
+                "speed": 700,
+                "targetable": true,
+                "time": 0.35
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4",
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "resurrect_v",
+            "trigger": {
+                "life": 3,
+                "name": "invulnerable",
+                "time": 0
+            },
+            "trigger": {
+                "name": "onground",
+                "onground": false,
+                "time": 0.99
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4",
+            "blendtime": 0,
+            "description": "SYSTEM OVERRIDE",
+            "icon": 13,
+            "lockangles": true,
+            "name": "power11",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "iro_reroute",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/iron/p4_aura",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/iron_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "class": "callevents",
+                "life": "%iro_reroute_life",
+                "name": "powerup",
+                "time": 0.5,
+                "FunctionEvent": {
+                    "function": "death",
+                    "triggertag": 10
+                },
+                "special_fx": {
+                    "effect": "char/iron/p4_aura",
+                    "fxlevel": 4
+                }
+            },
+            "trigger": {
+                "delay": 3,
+                "maxhealthpercent": "%iro_reroute_pct",
+                "name": "resurrect",
+                "self": true,
+                "tag": 10,
+                "time": -1,
+                "type": "ce_resurrect"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
