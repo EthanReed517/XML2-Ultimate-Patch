@@ -1,0 +1,902 @@
+{
+    "talents": {
+        "talent": {
+            "descname": "Psychic Spike",
+            "description": "Fires a mental homing projectile",
+            "descshort": "Projectile",
+            "icon": 0,
+            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "name": "pho_ment_burst",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_ment_burst_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pho_ment_burst_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_ment_burst_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pho_ment_burst_dmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_ment_burst_pwr",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pho_ment_burst_pwr",
+                    "value": 128
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%pho_ment_burst_dmg $DMG_MENTAL\\n%pho_ment_burst_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pho_ment_burst_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Telekinesis",
+            "description": "Gives Jean the ability to lift and throw objects and enemies. Can build bridges.\\n(~41Press And Hold~~)",
+            "descshort": "Special",
+            "icon": 1,
+            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "name": "pho_telek",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_telek_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "pho_telek_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_telek_pwr",
+                    "value": 16
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "pho_telek_pwr",
+                    "value": 128
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_telek_dm1",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "pho_telek_dm1",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_telek_dm2",
+                    "value": "8 11"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "pho_telek_dm2",
+                    "value": "79 89"
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 1,
+                    "name": "pho_telek_hvy",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 8,
+                    "name": "pho_telek_hvy",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 20,
+                    "name": "pho_telek_hvy",
+                    "value": 2
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "^Heavy objects\\n%pho_telek_dm1 $DMG_MENTAL at lift\\n%pho_telek_dm2 $DMG_PHYSICAL at impact\\n%pho_telek_pwr $EP/sec",
+                "require": {
+                    "cat": "level",
+                    "level": "%pho_telek_req"
+                }
+            },
+            "level": {
+                "count": 13,
+                "description": "^Massive objects\\n%pho_telek_dm1 $DMG_MENTAL at lift\\n%pho_telek_dm2 $DMG_PHYSICAL at impact\\n%pho_telek_pwr $EP/s",
+                "require": {
+                    "cat": "level",
+                    "level": "%pho_telek_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Psionic Boom",
+            "description": "A radial mental attack inflicting pain on enemies and reducing their damage for a time",
+            "descshort": "Radial",
+            "icon": 2,
+            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "name": "pho_mind_blast",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_mind_blast_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pho_mind_blast_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_mind_blast_dmg",
+                    "value": "21 26"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pho_mind_blast_dmg",
+                    "value": "79 89"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_mind_blast_pwr",
+                    "value": 46
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pho_mind_blast_pwr",
+                    "value": 170
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_mind_blast_atk",
+                    "value": 0.75
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pho_mind_blast_atk",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_mind_blast_lif",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pho_mind_blast_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_mind_blast_rad",
+                    "value": 120
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pho_mind_blast_rad",
+                    "value": 144
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%pho_mind_blast_dmg $DMG_MENTAL\\n%pho_mind_blast_atk:s $DMG reduction\\n%pho_mind_blast_lif Seconds\\n%pho_mind_blast_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pho_mind_blast_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "pho_telek"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Psychic Fury",
+            "description": "Gives Jean and allies mental damage bonus on all Melee attacks for a time.",
+            "descshort": "Boost",
+            "icon": 3,
+            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "name": "pho_psych_fury",
+            "power": "power4",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_psych_fury_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pho_psych_fury_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_psych_fury_pwr",
+                    "value": 144
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pho_psych_fury_pwr",
+                    "value": 520
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_psych_fury_dmg",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pho_psych_fury_dmg",
+                    "value": 0.47
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_psych_fury_atk",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pho_psych_fury_atk",
+                    "value": 2.6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_psych_fury_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pho_psych_fury_lif",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%pho_psych_fury_dmg:p $DMG as $DMG_MENTAL\\n%pho_psych_fury_atk:s $AR\\n%pho_psych_fury_lif seconds\\n%pho_psych_fury_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pho_psych_fury_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "pho_calm_pres"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Calming Presence",
+            "description": "Increase $EP regeneration rate of entire party for a time",
+            "descshort": "Boost",
+            "icon": 4,
+            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "name": "pho_calm_pres",
+            "power": "power5",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_calm_pres_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pho_calm_pres_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_calm_pres_pwr",
+                    "value": 96
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pho_calm_pres_pwr",
+                    "value": 512
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_calm_pres_reg",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pho_calm_pres_reg",
+                    "value": 4.38
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_calm_pres_lif",
+                    "value": 10
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pho_calm_pres_lif",
+                    "value": 10
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%pho_calm_pres_reg:s $EP regeneration rate\\n%pho_calm_pres_lif seconds\\n%pho_calm_pres_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pho_calm_pres_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "pho_ment_vort"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Mental Vortex",
+            "description": "All allies turn 20% of $DMG inflicted into $EP.",
+            "descshort": "Boost",
+            "icon": 5,
+            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "name": "pho_ment_vort",
+            "power": "power6",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_ment_vort_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "pho_ment_vort_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_ment_vort_pwr",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "pho_ment_vort_pwr",
+                    "value": 512
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_ment_vort_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "pho_ment_vort_lif",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%pho_ment_vort_lif seconds\\n%pho_ment_vort_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pho_ment_vort_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Mental Guardian",
+            "description": "Summons a mental guardian entity that attacks enemies",
+            "descshort": "Trap",
+            "icon": 6,
+            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "name": "pho_ment_guard",
+            "power": "power7",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_ment_guard_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pho_ment_guard_req",
+                    "value": 42
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_ment_guard_pwr",
+                    "value": 68
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pho_ment_guard_pwr",
+                    "value": 142
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_ment_guard_dmg",
+                    "value": "108 121"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pho_ment_guard_dmg",
+                    "value": "214 238"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_ment_guard_hth",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pho_ment_guard_hth",
+                    "value": 82
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_ment_guard_lif",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pho_ment_guard_lif",
+                    "value": 26
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%pho_ment_guard_dmg $DMG_MENTAL\\n%pho_ment_guard_lif seconds\\n%pho_ment_guard_hth guardian $HP\\n%pho_ment_guard_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pho_ment_guard_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "pho_ment_burst"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Memory Wipe",
+            "description": "A radial blast of mental energy that confuses enemies and makes them flee",
+            "descshort": "Radial",
+            "icon": 7,
+            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "name": "pho_mind_fry",
+            "power": "power8",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_mind_fry_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "pho_mind_fry_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_mind_fry_pwr",
+                    "value": 62
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "pho_mind_fry_pwr",
+                    "value": 173
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_mind_fry_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "pho_mind_fry_dmg",
+                    "value": "82 93"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_mind_fry_pct",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "pho_mind_fry_pct",
+                    "value": 0.75
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%pho_mind_fry_dmg $DMG_MENTAL\\n%pho_mind_fry_pct:p chance to confuse\\n%pho_mind_fry_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pho_mind_fry_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "pho_mind_blast"
+                }
+            }
+        },
+        "talent": {
+            "descname": "PHOENIX FORCE",
+            "description": "Xtreme radial attack dealing mental damage with a chance to convert enemies.",
+            "descshort": "Radial",
+            "icon": 8,
+            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "name": "pho_pho_force",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_pho_force_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "pho_pho_force_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_pho_force_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "pho_pho_force_dmg",
+                    "value": "279 309"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_pho_force_pct",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "pho_pho_force_pct",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_pho_force_lif",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "pho_pho_force_lif",
+                    "value": 34
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%pho_pho_force_dmg $DMG_MENTAL\\n%pho_pho_force_pct:p chance to convert\\n%pho_pho_force_lif second conversion duration",
+                "require": {
+                    "cat": "level",
+                    "level": "%pho_pho_force_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "FROM THE ASHES",
+            "description": "Resurrect 1 ally",
+            "descshort": "Boost",
+            "icon": 13,
+            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "name": "pho_well",
+            "power": "power11",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_well_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "pho_well_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_well_pct",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "pho_well_pct",
+                    "value": 1
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%pho_well_pct:p of max $HP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pho_well_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Dark Phoenix",
+            "description": "Inflicts a mental blast in a radius, and causes a $DMG_PHYSICAL explosion around fallen enemies.",
+            "descshort": "Blast",
+            "icon": 9,
+            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "name": "pho_dark_phoenx",
+            "power": "power10",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_dark_phoenx_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pho_dark_phoenx_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_dark_phoenx_pwr",
+                    "value": 74
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pho_dark_phoenx_pwr",
+                    "value": 156
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_dark_phoenx_dm1",
+                    "value": "43 50"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pho_dark_phoenx_dm1",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_dark_phoenx_dm2",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pho_dark_phoenx_dm2",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_dark_phoenx_num",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pho_dark_phoenx_num",
+                    "value": 6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%pho_dark_phoenx_dm1 $DMG_MENTAL\\n%pho_dark_phoenx_dm2:p of foe's max $HP as $DMG_PHYSICAL\\n%pho_dark_phoenx_num blasts\\n%pho_dark_phoenx_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pho_dark_phoenx_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Psionic Combat",
+            "description": "Adds $DMG_MENTAL to melee attacks",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "name": "pho_ment_combat",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_ment_combat_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pho_ment_combat_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_ment_combat_dmg",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pho_ment_combat_dmg",
+                    "value": 3.6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%pho_ment_combat_dmg:p $DMG_MENTAL",
+                "require": {
+                    "cat": "level",
+                    "level": "%pho_ment_combat_req"
+                },
+                "powerup": {
+                    "class": "add_attack",
+                    "damagepercent": "%pho_ment_combat_dmg",
+                    "damagetype": "dmg_mental",
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        }
+                    }
+                }
+            }
+        },
+        "talent": {
+            "hidden": true,
+            "name": "pho_psionic",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "class": "trail_replace",
+                    "life": -1,
+                    "special_fx": {
+                        "effect": "char/phoenx/special_trail",
+                        "how_used": "custom"
+                    },
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        }
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Telekinetic Net",
+            "description": "Gives Jean a chance to dodge projectile attacks",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "name": "pho_defl_mis",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_defl_mis_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pho_defl_mis_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_defl_mis_pct",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pho_defl_mis_pct",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%pho_defl_mis_pct:p chance to dodge",
+                "require": {
+                    "cat": "level",
+                    "level": "%pho_defl_mis_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "pho_ment_combat"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%pho_defl_mis_pct",
+                        "scope_attack": "projectile"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Mental Mastery",
+            "description": "Increases damage of all Mental attacks.",
+            "descshort": "Passive",
+            "icon": 12,
+            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "name": "pho_ment_mast",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_ment_mast_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pho_ment_mast_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_ment_mast_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pho_ment_mast_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pho_ment_mast_cri",
+                    "value": 1.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pho_ment_mast_cri",
+                    "value": 1.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%pho_ment_mast_dmg:s $DMG_MENTAL",
+                "require": {
+                    "cat": "level",
+                    "level": "%pho_ment_mast_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%pho_ment_mast_dmg",
+                        "scope_damage": "dmg_mental"
+                    }
+                }
+            }
+        }
+    }
+}

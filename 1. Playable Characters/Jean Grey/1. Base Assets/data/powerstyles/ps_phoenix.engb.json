@@ -1,0 +1,1040 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/phoenix_icons1.png",
+        "FightMove": {
+            "aitype": "beam",
+            "animenum": "ea_attack_knockback",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackknockback2",
+            "startchaintime": 0.6,
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/phoenx/p2_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/phoenx_m/p2_throw",
+                "time": 0.3
+            },
+            "trigger": {
+                "life": 0.14,
+                "name": "slide",
+                "targetdistance": 70,
+                "targetradius": 57,
+                "time": 0.25
+            },
+            "trigger": {
+                "attack_type": "psionic",
+                "damage": "3 5",
+                "damage_type": "dmg_physical",
+                "fxlevel": 1,
+                "hiteffect": "char/phoenx/p1_impact",
+                "knockback": 245,
+                "maxrange": 80,
+                "name": "punch",
+                "time": 0.5,
+                "victimeventtag": 15,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "finisher": true,
+                "life": 0.25,
+                "name": "xtreme_start",
+                "tag": 15,
+                "time": -1,
+                "worldspeed": 0.5
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 10,
+            "aitype": "projectile",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Dart",
+            "combotextstarter": "Mental",
+            "icon": 0,
+            "lockangles": true,
+            "lockchaining": false,
+            "name": "power1",
+            "powerup_tag": "pho_power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "pho_ment_burst",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/phoenx/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/phoenx/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/phoenx_m/p1_charge",
+                "time": 0.3
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "projectile",
+                "center": true,
+                "count": 1,
+                "damage": "%pho_ment_burst_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_telekinesis",
+                "entity": "p1_projectile",
+                "filename": "ents_phoenix",
+                "maxrange": 800,
+                "name": "projectile",
+                "offset": "25 0 0",
+                "powerusage": "%pho_ment_burst_pwr",
+                "speed": 450,
+                "tag": 1,
+                "targetable": true,
+                "time": 0.48,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectilenear",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Control",
+            "combotextstarter": "Telekinetic",
+            "handler": "ch_telekinesis",
+            "icon": 1,
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "power2",
+            "powerup_tag": "pho_power2",
+            "priority": 5,
+            "startchaintime": 0.1,
+            "require": {
+                "cat": "skill",
+                "item": "pho_telek",
+                "level": 1
+            },
+            "trigger": {
+                "attacktype": "psionic",
+                "damage": 0,
+                "damagelevel": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_telekinesis",
+                "maxrange": 300,
+                "name": "telekinesis_dmg",
+                "tag": 2,
+                "time": -1,
+                "type": "ce_atk_self",
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                },
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%pho_telek_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/phoenx/p2_power",
+                "name": "effect",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "effect": "char/phoenx/p2_charge",
+                "name": "effect",
+                "tag": 101,
+                "time": -1
+            },
+            "trigger": {
+                "damage": "%pho_telek_dm1",
+                "damagetype": "dmg_telekinesis",
+                "heaviness": "%pho_telek_hvy",
+                "impactdamage": "%pho_telek_dm2",
+                "name": "suspend",
+                "tag": 1,
+                "time": -1,
+                "tklevel": 11
+            },
+            "chain": {
+                "action": "special",
+                "result": "power2_hold"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power2_release"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2",
+            "energypersecond": "%pho_telek_pwr",
+            "handler": "ch_telekinesis",
+            "icon": 1,
+            "lockangles": true,
+            "lockchaining": true,
+            "locktransitionangles": true,
+            "name": "power2_hold",
+            "priority": 5,
+            "startchaintime": 1,
+            "trigger": {
+                "effect": "char/phoenx/p2_power",
+                "name": "effect",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "effect": "char/phoenx/p2_charge",
+                "name": "effect",
+                "tag": 101,
+                "time": -1
+            },
+            "trigger": {
+                "loop_timeout": 5,
+                "loop_type": "start",
+                "name": "sound",
+                "sound": "char/phoenx_m/p2_charge",
+                "time": 0
+            },
+            "chain": {
+                "action": "special",
+                "result": "power2_hold"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power2_release"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2_end",
+            "lockangles": true,
+            "name": "power2_release",
+            "priority": "uninterruptable",
+            "trigger": {
+                "name": "sound",
+                "sound": "char/phoenx_m/p2_throw",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/phoenx/p2_charge",
+                "fxlevel": 2,
+                "loop_type": "stop",
+                "name": "effect_sound",
+                "sound": "char/phoenx_m/p2_charge",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "aoe",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Slam",
+            "combotextstarter": "Dizzying",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "powerup_tag": "pho_power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "pho_mind_blast",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%pho_mind_blast_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/phoenx/p3_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/phoenx/p3_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/phoenx_m/p3_charge",
+                "time": 0
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damagescale": "none",
+                "damagetype": "dmg_telekinesis",
+                "fxlevel": 1,
+                "hiteffect": "char/phoenx/p1_impact",
+                "inherit": "punch",
+                "name": "radial_punch",
+                "victimeventtag": 100,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "life": "%pho_mind_blast_lif",
+                "name": "powerup",
+                "tag": 100,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_weakened",
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": "%pho_mind_blast_atk"
+                }
+            },
+            "trigger": {
+                "effect": "char/phoenx/p3_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "damage": "%pho_mind_blast_dmg",
+                "maxrange": 80,
+                "name": "radial_punch",
+                "time": 0.5
+            },
+            "trigger": {
+                "damage": "%pho_mind_blast_dmg",
+                "maxrange": 110,
+                "name": "radial_punch",
+                "time": 0.59
+            },
+            "trigger": {
+                "damage": "%pho_mind_blast_dmg",
+                "maxrange": 144,
+                "name": "radial_punch",
+                "tag": 4,
+                "time": 0.6
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power4",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "powerup_tag": "pho_power4",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "pho_psych_fury",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%pho_psych_fury_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/phoenx/p4_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/phoenx_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_enemy": "none",
+                "apply_self": true,
+                "class": "add_attack",
+                "damagepercent": "%pho_psych_fury_dmg",
+                "damagetype": "dmg_mental",
+                "life": "%pho_psych_fury_lif",
+                "name": "powerup",
+                "replace": false,
+                "tag": 3,
+                "time": 0.5,
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/phoenx/p4_power",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/phoenx/p4_power",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    }
+                },
+                "affecter": {
+                    "attribute": "attack_rating",
+                    "level": "%pho_psych_fury_atk"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power5",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power5",
+            "powerup_tag": "pho_power5",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "pho_calm_pres",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%pho_calm_pres_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/phoenx/p5_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/phoenx_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/phoenx/p5_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/phoenx/p5_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_enemy": "none",
+                "apply_self": true,
+                "life": "%pho_calm_pres_lif",
+                "name": "powerup",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/phoenx/p5_power",
+                    "fxlevel": 3,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "energy_regen",
+                    "level": "%pho_calm_pres_reg"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Vortex",
+            "combotextstarter": "Confusion",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "powerup_tag": "pho_power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "pho_ment_vort",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%pho_ment_vort_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/phoenx/p6_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/phoenx_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/phoenx/p6_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/phoenx/p6_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_enemy": "none",
+                "apply_self": true,
+                "class": "absorb",
+                "damagepercent": 0.2,
+                "energy": true,
+                "inflicted": true,
+                "life": "%pho_ment_vort_lif",
+                "name": "powerup",
+                "time": 0.5,
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/phoenx/p6_power",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/phoenx/p6_power",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 10,
+            "aitype": "aoe",
+            "animenum": "ea_power7",
+            "cansteal": false,
+            "combotextfinisher": "Ward",
+            "combotextstarter": "Phoenix",
+            "icon": 6,
+            "lockangles": true,
+            "lockchaining": false,
+            "name": "power7",
+            "powerup_tag": "pho_power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "pho_ment_guard",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/phoenx/p7_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/phoenx_m/p7_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/phoenx/p7_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/phoenx/p7_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "-71 -12 -177",
+                "attack_bone_pos": "6 -6 77",
+                "count": 1,
+                "damage": "%pho_ment_guard_dmg",
+                "damagetype": "dmg_telekinesis",
+                "entity": "p7_guardian",
+                "filename": "ents_phoenix",
+                "firingrate": 1,
+                "health": "%pho_ment_guard_hth",
+                "life": "%pho_ment_guard_lif",
+                "maxinstances": 1,
+                "name": "guardian",
+                "powerusage": "%pho_ment_guard_pwr",
+                "projectileent": "p7_projectile",
+                "speed": 300,
+                "time": 0.3,
+                "type": "ce_atk_spawn_sentry"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "aoe",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Disorder",
+            "combotextstarter": "Mind",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8",
+            "powerup_tag": "pho_power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "pho_mind_fry",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%pho_mind_fry_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/phoenx/p3_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/phoenx/p3_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/phoenx_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "apply_chance": "%pho_mind_fry_pct",
+                "life": 10,
+                "name": "powerup",
+                "tag": 101,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_dazed"
+                },
+                "affecter": {
+                    "attribute": "fear",
+                    "level": 1
+                }
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%pho_mind_fry_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_telekinesis",
+                "fxlevel": 1,
+                "hiteffect": "char/phoenx/p1_impact",
+                "inherit": "punch",
+                "name": "radial_punch",
+                "victimeventtag": 100,
+                "victimeventtag2": 101,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "effect": "char/phoenx/p3_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "maxrange": 80,
+                "name": "radial_punch",
+                "time": 0.5
+            },
+            "trigger": {
+                "maxrange": 100,
+                "name": "radial_punch",
+                "time": 0.59
+            },
+            "trigger": {
+                "maxrange": 120,
+                "name": "radial_punch",
+                "tag": 4,
+                "time": 0.6
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "blendtime": 0,
+            "combotextfinisher": "Disruption",
+            "description": "PHOENIX FORCE",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power9",
+            "playspeed": 10,
+            "powerup_tag": "pho_power9",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "pho_pho_force",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/phoenx/p9_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/phoenx_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/phoenx/p9_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/phoenx/p9_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": 0,
+                "damagelevel": 1,
+                "index": 1,
+                "maxrange": 350,
+                "name": "convert",
+                "time": 0.43,
+                "type": "ce_atk",
+                "victimeventtag": 98
+            },
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "base/material/explode/exp_generic_sml",
+                "name": "effect",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "psionic",
+                "damage": "%pho_pho_force_dmg",
+                "damagelevel": 1,
+                "damagetype": "dmg_telekinesis",
+                "index": 2,
+                "knockback": 190,
+                "maxrange": 350,
+                "name": "phoenixforce",
+                "time": 0.45,
+                "type": "ce_atk",
+                "victimeventtag": 100,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "maxdangerrating": 10,
+                "name": "no_bosses",
+                "noboss": true,
+                "passtag": 99,
+                "tag": 98,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "chance": "%pho_pho_force_pct",
+                "name": "do_chance",
+                "othertag": 200,
+                "tag": 99,
+                "time": -1,
+                "type": "ce_otherevent"
+            },
+            "trigger": {
+                "class": "callevents",
+                "life": 30,
+                "name": "powerup",
+                "tag": 200,
+                "time": -1,
+                "FunctionEvent": {
+                    "function": "deactivate",
+                    "triggertag": 201
+                },
+                "affecter": {
+                    "attribute": "team_switch",
+                    "level": 1
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_converted"
+                },
+                "special_fx": {
+                    "effect": "base/material/explode/exp_generic_med",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "instantkillonly": true,
+                "name": "remove_me",
+                "nosponsor": false,
+                "tag": 201,
+                "time": -1,
+                "type": "ce_remove"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power10",
+            "combotextfinisher": "Darkness",
+            "combotextstarter": "Darkening",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power10",
+            "powerup_tag": "pho_power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "pho_dark_phoenx",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/phoenx/p10_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/phoenx/p10_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/phoenx/p10_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/phoenx/p10_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/phoenx_m/p10_charge",
+                "time": 0.3
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%pho_dark_phoenx_dm1",
+                "damagescale": "none",
+                "damagetype": "dmg_telekinesis",
+                "index": 1,
+                "inherit": "punch",
+                "knockback": 0,
+                "maxrange": 144,
+                "name": "radial_punch",
+                "time": 0.7
+            },
+            "trigger": {
+                "effect": "char/phoenx/p10_power",
+                "fxlevel": 4,
+                "name": "effect_sound",
+                "sound": "char/phoenx_m/p10_power",
+                "time": 0.7
+            },
+            "trigger": {
+                "corpsesonly": true,
+                "damagetype": "dmg_physical",
+                "fxlevel": 2,
+                "hiteffect": "base/material/explode/exp_generic_med",
+                "index": 2,
+                "knockback": 120,
+                "maxrange": 250,
+                "name": "blast",
+                "numblasts": "%pho_dark_phoenx_num",
+                "powerusage": "%pho_dark_phoenx_pwr",
+                "radius": 84,
+                "targetable": false,
+                "targethealthpct": "%pho_dark_phoenx_dm2",
+                "time": 0.75
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4",
+            "blendtime": 0,
+            "description": "FROM THE ASHES",
+            "icon": 13,
+            "lockangles": true,
+            "name": "power11",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "pho_well",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/phoenx/p11_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/phoenx/p11_aura",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "foundallytag": 20,
+                "name": "find_ally",
+                "time": 0.5,
+                "type": "ce_setup_ally_resurrect"
+            },
+            "trigger": {
+                "combatnode": "resurrected_ally",
+                "maxhealthpercent": "%pho_well_pct",
+                "name": "resurrect",
+                "self": true,
+                "tag": 20,
+                "time": -1,
+                "type": "ce_resurrect"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_getup_on_front1",
+            "blendtime": 0,
+            "lockangles": true,
+            "name": "resurrected_ally",
+            "priority": 5,
+            "trigger": {
+                "life": 3,
+                "name": "invulnerable",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/phoenx/p11_aura",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "onground",
+                "onground": false,
+                "time": 0.8
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}
