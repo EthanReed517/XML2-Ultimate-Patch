@@ -1,11 +1,25 @@
 {
     "talents": {
         "talent": {
+            "hidden": true,
+            "name": "pho_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_mental",
+                        "level": 1
+                    }
+                }
+            }
+        },
+        "talent": {
             "descname": "Psychic Spike",
-            "description": "Fires a mental homing projectile",
+            "description": "Fires a homing Mental projectile.",
             "descshort": "Projectile",
             "icon": 0,
-            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "icon_texture": "textures/ui/phoenix_icons2.png",
             "name": "pho_ment_burst",
             "power": "power1",
             "talentvalues": {
@@ -42,7 +56,7 @@
             },
             "level": {
                 "count": 18,
-                "description": "%pho_ment_burst_dmg $DMG_MENTAL\\n%pho_ment_burst_pwr $EP",
+                "description": "%pho_ment_burst_dmg Telekinetic Dmg\\n%pho_ment_burst_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%pho_ment_burst_req"
@@ -54,7 +68,7 @@
             "description": "Gives Jean the ability to lift and throw objects and enemies. Can build bridges.\\n(~41Press And Hold~~)",
             "descshort": "Special",
             "icon": 1,
-            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "icon_texture": "textures/ui/phoenix_icons2.png",
             "name": "pho_telek",
             "power": "power2",
             "talentvalues": {
@@ -119,7 +133,7 @@
             },
             "level": {
                 "count": 7,
-                "description": "^Heavy objects\\n%pho_telek_dm1 $DMG_MENTAL at lift\\n%pho_telek_dm2 $DMG_PHYSICAL at impact\\n%pho_telek_pwr $EP/sec",
+                "description": "Heavy objects\\n%pho_telek_dm1 Telekinetic Dmg at lift\\n%pho_telek_dm2 $DMG_PHYSICAL at impact\\n%pho_telek_pwr $EP per second",
                 "require": {
                     "cat": "level",
                     "level": "%pho_telek_req"
@@ -127,7 +141,7 @@
             },
             "level": {
                 "count": 13,
-                "description": "^Massive objects\\n%pho_telek_dm1 $DMG_MENTAL at lift\\n%pho_telek_dm2 $DMG_PHYSICAL at impact\\n%pho_telek_pwr $EP/s",
+                "description": "Massive objects\\n%pho_telek_dm1 Telekinetic Dmg at lift\\n%pho_telek_dm2 $DMG_PHYSICAL at impact\\n%pho_telek_pwr per second",
                 "require": {
                     "cat": "level",
                     "level": "%pho_telek_req"
@@ -136,10 +150,10 @@
         },
         "talent": {
             "descname": "Psionic Boom",
-            "description": "A radial mental attack inflicting pain on enemies and reducing their damage for a time",
+            "description": "A radial Mental attack that inflicts pain and reduces enemy damage for a time.",
             "descshort": "Radial",
             "icon": 2,
-            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "icon_texture": "textures/ui/phoenix_icons2.png",
             "name": "pho_mind_blast",
             "power": "power3",
             "talentvalues": {
@@ -206,7 +220,7 @@
             },
             "level": {
                 "count": 16,
-                "description": "%pho_mind_blast_dmg $DMG_MENTAL\\n%pho_mind_blast_atk:s $DMG reduction\\n%pho_mind_blast_lif Seconds\\n%pho_mind_blast_pwr $EP",
+                "description": "%pho_mind_blast_dmg Telekinetic Dmg\\n%pho_mind_blast_atk:s Dmg reduction\\n%pho_mind_blast_lif seconds\\n%pho_mind_blast_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%pho_mind_blast_req"
@@ -219,10 +233,10 @@
         },
         "talent": {
             "descname": "Psychic Fury",
-            "description": "Gives Jean and allies mental damage bonus on all Melee attacks for a time.",
+            "description": "Gives entire party a Mental damage bonus to Melee attacks for a time.",
             "descshort": "Boost",
             "icon": 3,
-            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "icon_texture": "textures/ui/phoenix_icons2.png",
             "name": "pho_psych_fury",
             "power": "power4",
             "type": "boost",
@@ -280,7 +294,7 @@
             },
             "level": {
                 "count": 16,
-                "description": "%pho_psych_fury_dmg:p $DMG as $DMG_MENTAL\\n%pho_psych_fury_atk:s $AR\\n%pho_psych_fury_lif seconds\\n%pho_psych_fury_pwr $EP",
+                "description": "%pho_psych_fury_dmg:p Dmg as $DMG_MENTAL\\n%pho_psych_fury_atk:s $AR\\n%pho_psych_fury_lif seconds\\n%pho_psych_fury_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%pho_psych_fury_req"
@@ -293,10 +307,10 @@
         },
         "talent": {
             "descname": "Calming Presence",
-            "description": "Increase $EP regeneration rate of entire party for a time",
+            "description": "Increase $EP regeneration rate of entire party for a time.",
             "descshort": "Boost",
             "icon": 4,
-            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "icon_texture": "textures/ui/phoenix_icons2.png",
             "name": "pho_calm_pres",
             "power": "power5",
             "type": "boost",
@@ -357,10 +371,10 @@
         },
         "talent": {
             "descname": "Mental Vortex",
-            "description": "All allies turn 20% of $DMG inflicted into $EP.",
+            "description": "Entire party turns 20% of Dmg inflicted into $EP gain.",
             "descshort": "Boost",
             "icon": 5,
-            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "icon_texture": "textures/ui/phoenix_icons2.png",
             "name": "pho_ment_vort",
             "power": "power6",
             "type": "boost",
@@ -407,10 +421,10 @@
         },
         "talent": {
             "descname": "Mental Guardian",
-            "description": "Summons a mental guardian entity that attacks enemies",
+            "description": "Summons a Mental guardian that fires homing Mental bolts at enemies.",
             "descshort": "Trap",
             "icon": 6,
-            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "icon_texture": "textures/ui/phoenix_icons2.png",
             "name": "pho_ment_guard",
             "power": "power7",
             "talentvalues": {
@@ -467,7 +481,7 @@
             },
             "level": {
                 "count": 11,
-                "description": "%pho_ment_guard_dmg $DMG_MENTAL\\n%pho_ment_guard_lif seconds\\n%pho_ment_guard_hth guardian $HP\\n%pho_ment_guard_pwr $EP",
+                "description": "%pho_ment_guard_dmg Telekinetic Dmg\\n%pho_ment_guard_lif seconds\\n%pho_ment_guard_hth guardian $HP\\n%pho_ment_guard_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%pho_ment_guard_req"
@@ -480,10 +494,10 @@
         },
         "talent": {
             "descname": "Memory Wipe",
-            "description": "A radial blast of mental energy that confuses enemies and makes them flee",
+            "description": "A radial blast of Mental energy that confuses enemies and makes them flee.",
             "descshort": "Radial",
             "icon": 7,
-            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "icon_texture": "textures/ui/phoenix_icons2.png",
             "name": "pho_mind_fry",
             "power": "power8",
             "talentvalues": {
@@ -530,7 +544,7 @@
             },
             "level": {
                 "count": 14,
-                "description": "%pho_mind_fry_dmg $DMG_MENTAL\\n%pho_mind_fry_pct:p chance to confuse\\n%pho_mind_fry_pwr $EP",
+                "description": "%pho_mind_fry_dmg Telekinetic Dmg\\n%pho_mind_fry_pct:p chance to confuse\\n%pho_mind_fry_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%pho_mind_fry_req"
@@ -543,10 +557,10 @@
         },
         "talent": {
             "descname": "PHOENIX FORCE",
-            "description": "Xtreme radial attack dealing mental damage with a chance to convert enemies.",
+            "description": "Xtreme radial attack that deals Mental damage with a chance to convert enemies for a time. Enemies explode at the end of conversion.",
             "descshort": "Radial",
             "icon": 8,
-            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "icon_texture": "textures/ui/phoenix_icons2.png",
             "name": "pho_pho_force",
             "power": "power9",
             "type": "xtreme",
@@ -594,7 +608,7 @@
             },
             "level": {
                 "count": 7,
-                "description": "%pho_pho_force_dmg $DMG_MENTAL\\n%pho_pho_force_pct:p chance to convert\\n%pho_pho_force_lif second conversion duration",
+                "description": "%pho_pho_force_dmg Telekinetic Dmg\\n%pho_pho_force_pct:p chance to convert\\n%pho_pho_force_lif second conversion duration",
                 "require": {
                     "cat": "level",
                     "level": "%pho_pho_force_req"
@@ -603,10 +617,10 @@
         },
         "talent": {
             "descname": "FROM THE ASHES",
-            "description": "Resurrect 1 ally",
+            "description": "Resurrect 1 ally.",
             "descshort": "Boost",
             "icon": 13,
-            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "icon_texture": "textures/ui/phoenix_icons2.png",
             "name": "pho_well",
             "power": "power11",
             "type": "xtreme",
@@ -643,10 +657,10 @@
         },
         "talent": {
             "descname": "Dark Phoenix",
-            "description": "Inflicts a mental blast in a radius, and causes a $DMG_PHYSICAL explosion around fallen enemies.",
-            "descshort": "Blast",
+            "description": "A radial Mental attack that causes an explosion of $DMG_FIRE around fallen enemies.",
+            "descshort": "Radial",
             "icon": 9,
-            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "icon_texture": "textures/ui/phoenix_icons2.png",
             "name": "pho_dark_phoenx",
             "power": "power10",
             "talentvalues": {
@@ -702,8 +716,8 @@
                 }
             },
             "level": {
-                "count": 15,
-                "description": "%pho_dark_phoenx_dm1 $DMG_MENTAL\\n%pho_dark_phoenx_dm2:p of foe's max $HP as $DMG_PHYSICAL\\n%pho_dark_phoenx_num blasts\\n%pho_dark_phoenx_pwr $EP",
+                "count": 11,
+                "description": "%pho_dark_phoenx_dm1 Telekinetic Dmg\\n%pho_dark_phoenx_dm2:p of foe's max $HP as $DMG_FIRE\\n%pho_dark_phoenx_num blasts\\n%pho_dark_phoenx_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%pho_dark_phoenx_req"
@@ -712,10 +726,10 @@
         },
         "talent": {
             "descname": "Psionic Combat",
-            "description": "Adds $DMG_MENTAL to melee attacks",
+            "description": "Adds $DMG_MENTAL to Melee attacks.",
             "descshort": "Passive",
             "icon": 10,
-            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "icon_texture": "textures/ui/phoenix_icons2.png",
             "name": "pho_ment_combat",
             "talentvalues": {
                 "talentvalue": {
@@ -789,10 +803,10 @@
         },
         "talent": {
             "descname": "Telekinetic Net",
-            "description": "Gives Jean a chance to dodge projectile attacks",
+            "description": "Gives Jean a chance to dodge incoming projectiles.",
             "descshort": "Passive",
             "icon": 11,
-            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "icon_texture": "textures/ui/phoenix_icons2.png",
             "name": "pho_defl_mis",
             "talentvalues": {
                 "talentvalue": {
@@ -839,10 +853,10 @@
         },
         "talent": {
             "descname": "Mental Mastery",
-            "description": "Increases damage of all Mental attacks.",
+            "description": "Increases damage and Critical chance of all Mental attacks.",
             "descshort": "Passive",
             "icon": 12,
-            "icon_texture": "textures/ui/phoenix_icons1.png",
+            "icon_texture": "textures/ui/phoenix_icons2.png",
             "name": "pho_ment_mast",
             "talentvalues": {
                 "talentvalue": {
@@ -878,7 +892,7 @@
             },
             "level": {
                 "count": 15,
-                "description": "%pho_ment_mast_dmg:s $DMG_MENTAL",
+                "description": "%pho_ment_mast_dmg:s $DMG_MENTAL and Telekinetic Dmg\\n%pho_ment_mast_cri:s Critical chance",
                 "require": {
                     "cat": "level",
                     "level": "%pho_ment_mast_req"
@@ -894,6 +908,22 @@
                         "attribute": "damage",
                         "level": "%pho_ment_mast_dmg",
                         "scope_damage": "dmg_mental"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%pho_ment_mast_dmg",
+                        "scope_damage": "dmg_telekinesis"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%pho_ment_mast_cri",
+                        "scope_damage": "dmg_mental"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%pho_ment_mast_cri",
+                        "scope_damage": "dmg_telekinesis"
                     }
                 }
             }
