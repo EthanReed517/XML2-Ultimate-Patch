@@ -2,10 +2,10 @@
     "talents": {
         "talent": {
             "descname": "Uni-Beam",
-            "description": "Basic beam attack, causes $DMG_ENERGY",
+            "description": "Blasts target with an Energy beam.",
             "descshort": "Beam",
             "icon": 0,
-            "icon_texture": "textures/ui/ironman_icons1.png",
+            "icon_texture": "textures/ui/ironman_icons2.png",
             "name": "iro_unibeam",
             "power": "power1",
             "talentvalues": {
@@ -51,10 +51,10 @@
         },
         "talent": {
             "descname": "Plasma Charges",
-            "description": "Shoot multiple charges of energy from hands",
+            "description": "Fires multiple Energy charges at targets.",
             "descshort": "Projectile",
             "icon": 1,
-            "icon_texture": "textures/ui/ironman_icons1.png",
+            "icon_texture": "textures/ui/ironman_icons2.png",
             "name": "iro_pla_charge",
             "power": "power2",
             "talentvalues": {
@@ -110,10 +110,10 @@
         },
         "talent": {
             "descname": "Disruptor Shock",
-            "description": "Burst of radiation that damages and stuns enemies",
+            "description": "Radial burst of Radiation that damages and stuns enemies.",
             "descshort": "Blast",
             "icon": 2,
-            "icon_texture": "textures/ui/ironman_icons1.png",
+            "icon_texture": "textures/ui/ironman_icons2.png",
             "name": "iro_disrupt_sho",
             "power": "power3",
             "talentvalues": {
@@ -174,10 +174,10 @@
         },
         "talent": {
             "descname": "Energy Shield",
-            "description": "Suit forms energy shield that turns $DMG_ENERGY taken into $HP and increases $DMG_PHYSICAL",
+            "description": "Suit forms an Energy shield that turns $DMG_ENERGY taken into $HP and increases $DMG_PHYSICAL.",
             "descshort": "Boost",
             "icon": 3,
-            "icon_texture": "textures/ui/ironman_icons1.png",
+            "icon_texture": "textures/ui/ironman_icons2.png",
             "name": "iro_energy_shie",
             "power": "power4",
             "type": "boost",
@@ -254,10 +254,10 @@
         },
         "talent": {
             "descname": "Auto Turret",
-            "description": "Places an Auto Turret that fires on nearby enemies",
+            "description": "Places an auto turret that fires on nearby enemies.",
             "descshort": "Trap",
             "icon": 4,
-            "icon_texture": "textures/ui/ironman_icons1.png",
+            "icon_texture": "textures/ui/ironman_icons2.png",
             "name": "iro_auto_turret",
             "power": "power5",
             "talentvalues": {
@@ -314,7 +314,7 @@
             },
             "level": {
                 "count": 16,
-                "description": "%iro_auto_turret_dmg $RES_ELEMENTAL\\n%iro_auto_turret_hth Turret Health\\n%iro_auto_turret_lif seconds\\n%iro_auto_turret_pwr $EP",
+                "description": "%iro_auto_turret_dmg $DMG_ENERGY\\n%iro_auto_turret_hth turret $HP\\n%iro_auto_turret_lif seconds\\n%iro_auto_turret_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%iro_auto_turret_req"
@@ -328,10 +328,10 @@
         },
         "talent": {
             "descname": "Motion Amplifier",
-            "description": "Increases attack speed and melee $DMG",
+            "description": "Increases Attack Speed and Melee $DMG.",
             "descshort": "Boost",
             "icon": 5,
-            "icon_texture": "textures/ui/ironman_icons1.png",
+            "icon_texture": "textures/ui/ironman_icons2.png",
             "name": "iro_motion_amp",
             "power": "power6",
             "type": "boost",
@@ -349,22 +349,22 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "iro_motion_amp_pwr",
-                    "value": 22
+                    "value": 132
                 },
                 "talentvalue": {
                     "level": 16,
                     "name": "iro_motion_amp_pwr",
-                    "value": 32
+                    "value": 516
                 },
                 "talentvalue": {
                     "level": 1,
                     "name": "iro_motion_amp_dmg",
-                    "value": 4.75
+                    "value": "1.20"
                 },
                 "talentvalue": {
                     "level": 16,
                     "name": "iro_motion_amp_dmg",
-                    "value": 8
+                    "value": 2.25
                 },
                 "talentvalue": {
                     "level": 1,
@@ -379,12 +379,12 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "iro_motion_amp_spe",
-                    "value": 1.75
+                    "value": 1.1
                 },
                 "talentvalue": {
                     "level": 16,
                     "name": "iro_motion_amp_spe",
-                    "value": 2.5
+                    "value": 2
                 },
                 "talentvalue": {
                     "level": 1,
@@ -399,7 +399,7 @@
             },
             "level": {
                 "count": 16,
-                "description": "%iro_motion_amp_spe:s attack speed, %iro_motion_amp_ar:s $AR\\n%iro_motion_amp_dmg:s melee $DMG  (%iro_motion_amp_dmg:x)\\n%iro_motion_amp_lif seconds\\n%iro_motion_amp_pwr $EP",
+                "description": "%iro_motion_amp_spe:s Attack Speed, %iro_motion_amp_ar:s $AR\\n%iro_motion_amp_dmg:s Melee $DMG  (%iro_motion_amp_dmg:x)\\n%iro_motion_amp_lif seconds\\n%iro_motion_amp_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%iro_motion_amp_req"
@@ -413,10 +413,10 @@
         },
         "talent": {
             "descname": "Repulsor Rays",
-            "description": "Rapidly fires lasers as long as button is held",
+            "description": "Rapidly fires lasers as long as the button is held.",
             "descshort": "Projectile",
             "icon": 6,
-            "icon_texture": "textures/ui/ironman_icons1.png",
+            "icon_texture": "textures/ui/ironman_icons2.png",
             "name": "iro_repuls_rays",
             "power": "power7",
             "talentvalues": {
@@ -467,10 +467,10 @@
         },
         "talent": {
             "descname": "Tractor Beam",
-            "description": "Attaches a gravity well to target, causing $DMG and stun. and sucks in nearby enemies.",
+            "description": "A gravity well that stuns and damages the target while sucking in nearby enemies.",
             "descshort": "Blast",
             "icon": 7,
-            "icon_texture": "textures/ui/ironman_icons1.png",
+            "icon_texture": "textures/ui/ironman_icons2.png",
             "name": "iro_trac_beam",
             "power": "power8",
             "talentvalues": {
@@ -541,10 +541,10 @@
         },
         "talent": {
             "descname": "CONCUSSIVE OVERLOAD",
-            "description": "Suit overloads, sending 4 shockwaves of different energy types",
+            "description": "Suit overloads, sending out 4 Xtreme shockwaves of different $DMG types.",
             "descshort": "Radial",
             "icon": 8,
-            "icon_texture": "textures/ui/ironman_icons1.png",
+            "icon_texture": "textures/ui/ironman_icons2.png",
             "name": "iro_sys_ovrload",
             "power": "power9",
             "type": "xtreme",
@@ -582,7 +582,7 @@
             },
             "level": {
                 "count": 7,
-                "description": "%iro_sys_ovrload_dm1 $DMG_ENERGY\\n%iro_sys_ovrload_dm1 $RES_ELEMENTAL\\n%iro_sys_ovrload_dm1 $DMG_RADIATION\\n%iro_sys_ovrload_dm2 EMP $DMG (robots only)",
+                "description": "%iro_sys_ovrload_dm1 $DMG_ENERGY\\n%iro_sys_ovrload_dm1 $DMG_ELEMENTAL\\n%iro_sys_ovrload_dm1 $DMG_RADIATION\\n%iro_sys_ovrload_dm2 EMP Dmg (robots only)",
                 "require": {
                     "cat": "level",
                     "level": "%iro_sys_ovrload_req"
@@ -591,10 +591,10 @@
         },
         "talent": {
             "descname": "Gamma Bolts",
-            "description": "Fires 3 Gamma Bolts that pierce enemies and bounce off walls.",
+            "description": "Fires 3 Gamma bolts that pierce enemies and bounce off walls.",
             "descshort": "Projectile",
             "icon": 9,
-            "icon_texture": "textures/ui/ironman_icons1.png",
+            "icon_texture": "textures/ui/ironman_icons2.png",
             "name": "iro_gamma_bolts",
             "power": "power10",
             "talentvalues": {
@@ -664,196 +664,11 @@
             }
         },
         "talent": {
-            "descname": "Auto Medic",
-            "description": "provides health regeneration over a short time period",
-            "descshort": "Passive",
-            "icon": 10,
-            "icon_texture": "textures/ui/ironman_icons1.png",
-            "name": "iro_regen",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "iro_regen_req",
-                    "value": 1
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "iro_regen_req",
-                    "value": 15
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "iro_regen_pct",
-                    "value": 1
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "iro_regen_pct",
-                    "value": 6
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "iro_regen_rpct",
-                    "value": 0.001428
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "iro_regen_rpct",
-                    "value": 0.008571
-                }
-            },
-            "level": {
-                "count": 15,
-                "description": "%iro_regen_pct:f% of total health per 7 seconds",
-                "require": {
-                    "cat": "level",
-                    "level": "%iro_regen_req"
-                },
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "attribute": "health_regen_pct",
-                        "level": "%iro_regen_rpct"
-                    }
-                }
-            }
-        },
-        "talent": {
-            "descname": "Mark VIII Upgrade",
-            "description": "Increases $DMG done and chance of criticals, when using $DMG_ENERGY attacks",
-            "descshort": "Passive",
-            "icon": 11,
-            "icon_texture": "textures/ui/ironman_icons1.png",
-            "name": "iro_markVIII",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "iro_markVIII_req",
-                    "value": 14
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "iro_markVIII_req",
-                    "value": 28
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "iro_markVIII_dmg",
-                    "value": 1.05
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "iro_markVIII_dmg",
-                    "value": 1.5
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "iro_markVIII_cri",
-                    "value": 1.01
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "iro_markVIII_cri",
-                    "value": 1.08
-                }
-            },
-            "level": {
-                "count": 15,
-                "description": "%iro_markVIII_dmg:s $DMG_ENERGY\\n%iro_markVIII_cri:s critical chance",
-                "require": {
-                    "cat": "level",
-                    "level": "%iro_markVIII_req"
-                },
-                "require": {
-                    "cat": "skill",
-                    "item": "mutantmaster",
-                    "level": 1
-                },
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "affect_type": "scale",
-                        "attribute": "damage",
-                        "level": "%iro_markVIII_dmg",
-                        "scope_damage": "dmg_energy"
-                    },
-                    "affecter": {
-                        "affect_type": "scale",
-                        "attribute": "atk_critical",
-                        "level": "%iro_markVIII_cri",
-                        "scope_damage": "dmg_energy"
-                    }
-                }
-            }
-        },
-        "talent": {
-            "descname": "Environmental Suit",
-            "description": "Resistance to $RES_ELEMENTAL, $RES_MENTAL, $RES_ENERGY, and $RES_RADIATION $DMG.",
-            "descshort": "Passive",
-            "icon": 12,
-            "icon_texture": "textures/ui/ironman_icons1.png",
-            "name": "iro_envir_suit",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "iro_envir_suit_req",
-                    "value": 21
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "iro_envir_suit_req",
-                    "value": 35
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "iro_envir_suit_pct",
-                    "value": 0.05
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "iro_envir_suit_pct",
-                    "value": 0.47
-                }
-            },
-            "level": {
-                "count": 15,
-                "description": "%iro_envir_suit_pct:p Resistance",
-                "require": {
-                    "cat": "level",
-                    "level": "%iro_envir_suit_req"
-                },
-                "require": {
-                    "cat": "skill",
-                    "item": "iro_regen",
-                    "level": 1
-                },
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "attribute": "resist_elemental",
-                        "level": "%iro_envir_suit_pct"
-                    },
-                    "affecter": {
-                        "attribute": "resist_mental",
-                        "level": "%iro_envir_suit_pct"
-                    },
-                    "affecter": {
-                        "attribute": "resist_energy",
-                        "level": "%iro_envir_suit_pct"
-                    },
-                    "affecter": {
-                        "attribute": "resist_radiation",
-                        "level": "%iro_envir_suit_pct"
-                    }
-                }
-            }
-        },
-        "talent": {
             "descname": "SYSTEM OVERRIDE",
-            "description": "Allows Ironman to revive himself",
+            "description": "Iron Man is revived if he dies while boost is active.",
             "descshort": "Boost",
             "icon": 13,
-            "icon_texture": "textures/ui/ironman_icons1.png",
+            "icon_texture": "textures/ui/ironman_icons2.png",
             "name": "iro_reroute",
             "power": "power11",
             "skirmish_locked": true,
@@ -892,10 +707,194 @@
             },
             "level": {
                 "count": 5,
-                "description": "%iro_reroute_pct:p of Maximum $HP\\n%iro_reroute_life Seconds",
+                "description": "%iro_reroute_pct:p of max $HP\\n%iro_reroute_life Seconds",
                 "require": {
                     "cat": "level",
                     "level": "%iro_reroute_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Auto Medic",
+            "description": "Automated suit repairs regenerate $HP over time.",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/ironman_icons2.png",
+            "name": "iro_regen",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "iro_regen_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "iro_regen_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "iro_regen_pct",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "iro_regen_pct",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "iro_regen_rpct",
+                    "value": 0.001428
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "iro_regen_rpct",
+                    "value": 0.008571
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%iro_regen_pct:f% of total $HP per 7 seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%iro_regen_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "health_regen_pct",
+                        "level": "%iro_regen_rpct"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Mark VIII Upgrade",
+            "description": "Increases $DMG and chance of Criticals when using $DMG_ENERGY attacks.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/ironman_icons2.png",
+            "name": "iro_markVIII",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "iro_markVIII_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "iro_markVIII_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "iro_markVIII_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "iro_markVIII_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "iro_markVIII_cri",
+                    "value": 1.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "iro_markVIII_cri",
+                    "value": 1.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%iro_markVIII_dmg:s $DMG_ENERGY\\n%iro_markVIII_cri:s Critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%iro_markVIII_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "supermaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%iro_markVIII_dmg",
+                        "scope_damage": "dmg_energy"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%iro_markVIII_cri",
+                        "scope_damage": "dmg_energy"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Environmental Suit",
+            "description": "Adds resistance to $RES_ELEMENTAL, $RES_MENTAL, $RES_ENERGY, and $RES_RADIATION $DMG.",
+            "descshort": "Passive",
+            "icon": 12,
+            "icon_texture": "textures/ui/ironman_icons2.png",
+            "name": "iro_envir_suit",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "iro_envir_suit_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "iro_envir_suit_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "iro_envir_suit_pct",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "iro_envir_suit_pct",
+                    "value": 0.47
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%iro_envir_suit_pct:p resistance",
+                "require": {
+                    "cat": "level",
+                    "level": "%iro_envir_suit_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "iro_regen",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_elemental",
+                        "level": "%iro_envir_suit_pct"
+                    },
+                    "affecter": {
+                        "attribute": "resist_mental",
+                        "level": "%iro_envir_suit_pct"
+                    },
+                    "affecter": {
+                        "attribute": "resist_energy",
+                        "level": "%iro_envir_suit_pct"
+                    },
+                    "affecter": {
+                        "attribute": "resist_radiation",
+                        "level": "%iro_envir_suit_pct"
+                    }
                 }
             }
         }

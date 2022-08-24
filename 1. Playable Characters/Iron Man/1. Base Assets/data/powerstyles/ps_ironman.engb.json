@@ -188,14 +188,31 @@
                 "damagetype": "dmg_radiation",
                 "inherit": "punch",
                 "name": "radial_punch",
-                "victimeventtag": 100
+                "victimeventtag2": 100,
+                "victimeventtag1": 200
+            },
+            "trigger": {
+                "life": "%iro_disrupt_sho_lif",
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 200,
+                "time": -1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/iron_m/p1_charge",
+                "time": 0.38
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/iron_m/p3_charge",
+                "time": 0.3
             },
             "trigger": {
                 "effect": "char/iron/p3_power",
                 "fxlevel": 1,
-                "name": "effect_sound",
-                "sound": "char/iron_m/p3_charge",
-                "time": 0.45
+                "name": "effect",
+                "time": 0.38
             },
             "trigger": {
                 "effect": "char/iron/p3_impact",
@@ -325,6 +342,10 @@
                 "time": 0.6
             },
             "trigger": {
+                "name": "whoosh_light",
+                "time": 0.35
+            },
+            "trigger": {
                 "name": "sound",
                 "sound": "char/iron_m/p5_charge",
                 "time": 0.99
@@ -386,30 +407,14 @@
                 "time": 0.45
             },
             "trigger": {
+                "class": "add_attack",
+                "damagepercent": "%iro_motion_amp_dmg",
+                "damagetype": "dmg_physical",
                 "life": "%iro_motion_amp_lif",
                 "name": "powerup",
+                "no_shadow": true,
                 "powerusage": "%iro_motion_amp_pwr",
                 "time": 0.5,
-                "affecter": {
-                    "affect_type": "scale",
-                    "attribute": "move_attack",
-                    "level": "%iro_motion_amp_spe"
-                },
-                "affecter": {
-                    "affect_type": "max",
-                    "attribute": "move_attack",
-                    "level": 2.5
-                },
-                "affecter": {
-                    "affect_type": "scale",
-                    "attribute": "atk_attack_rating",
-                    "level": "%iro_motion_amp_ar"
-                },
-                "affecter": {
-                    "affect_type": "scale",
-                    "attribute": "damage",
-                    "level": "%iro_motion_amp_dmg"
-                },
                 "special_fx": {
                     "bolt": "Bip01 R Hand",
                     "effect": "char/iron/p6_charge",
@@ -424,6 +429,33 @@
                     "bolt": "Bip01 Spine2",
                     "effect": "char/iron/p6_charge",
                     "fxlevel": 2
+                },
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    },
+                    "scope": {
+                        "scope_non_powers": true
+                    }
+                },
+                "affecter": {
+                    "attribute": "attack_rating",
+                    "level": "%iro_motion_amp_ar"
+                }
+            },
+            "trigger": {
+                "class": "feral_rage",
+                "life": "%iro_motion_amp_lif",
+                "name": "powerup",
+                "time": 0.51,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move_attack",
+                    "level": "%iro_motion_amp_spe"
                 }
             },
             "chain": {
@@ -457,7 +489,7 @@
             "aitype": "projectile",
             "animenum": "ea_power11",
             "blendtime": 0,
-            "combotextfinisher": "Radiation",
+            "combotextfinisher": "Ray",
             "combotextstarter": "Rapid",
             "icon": 6,
             "lockangles": false,
@@ -486,6 +518,7 @@
                 "attack_bone_pos": "35 -14 48",
                 "count": 1,
                 "damage": "%iro_repuls_rays_dmg",
+                "damagetype": "dmg_energy",
                 "entity": "iron_p7_proj",
                 "filename": "ents_ironman",
                 "fulltargeting": true,
@@ -769,6 +802,7 @@
                 "attack_bone_pos": "-1 -13 41",
                 "count": 3,
                 "damage": "%iro_gamma_bolts_dmg",
+                "damagetype": "dmg_radiation",
                 "entity": "iron_p10_proj",
                 "filename": "ents_ironman",
                 "fulltargeting": true,
