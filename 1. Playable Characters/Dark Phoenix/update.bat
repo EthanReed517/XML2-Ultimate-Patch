@@ -5,7 +5,9 @@ echo (This feature has not been implemented yet. Text is a placeholder)
 
 REM data entries
 echo Copying data entries to data files...
+copy >nul "1. Base Assets\1. Data Entries\Codex_DarkPhoenix.json" "..\..\3. General Data Files\codex\1. Base Assets\0. Codex Entries\DarkPhoenix.json"
 copy >nul "1. Base Assets\1. Data Entries\Herostat_DarkPhoenix.txt" "..\..\3. General Data Files\herostat\1. Base Assets\0. Herostat Entries\DarkPhoenix.txt"
+copy >nul "1. Base Assets\1. Data Entries\ReviewPaths_DarkPhoenix.json" "..\..\3. General Data Files\review_paths\1. Base Assets\0. Review_Paths Entries\DarkPhoenix.json"
 
 REM Character Select Portraits
 echo Copying Character Select Portraits to the character select menu...
