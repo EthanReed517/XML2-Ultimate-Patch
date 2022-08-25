@@ -5,6 +5,7 @@ beast = ["astonishing","aoa","60s","70s","weaponx","future","winter","civilian"]
 bishop = ["astonishing","60s","weaponx","future","winter"]
 colossus = ["70s"]
 cyclops = ["weaponx","civilian"]
+darkphoenix = ["astonishing","aoa","60s","70s","weaponx","future","winter","civilian"]
 deadpool = ["astonishing","70s","civilian"]
 gambit = ["astonishing","60s","70s","weaponx"]
 iceman = ["70s","weaponx","future","winter"]
@@ -51,10 +52,12 @@ if name == "Colossus.txt":
     pspEntry(name,colossus)
 if name == "Cyclops.txt":
     pspEntry(name,cyclops)
-if name == "Gambit.txt":
-    pspEntry(name,gambit)
+if name == "DarkPhoenix.txt":
+    pspEntry(name,darkphoenix)
 if name == "Deadpool.txt":
     pspEntry(name,deadpool)
+if name == "Gambit.txt":
+    pspEntry(name,gambit)
 if name == "Iceman.txt":
     pspEntry(name,iceman)
 if name == "IronMan.txt":
