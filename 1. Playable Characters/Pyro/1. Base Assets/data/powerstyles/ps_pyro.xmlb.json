@@ -1,0 +1,158 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "event": {
+            "beambolt": "Bip01 R UpperArm",
+            "beameffect": "char/pyro/p1_power",
+            "damage": "15 18",
+            "damagelevel": 1,
+            "damagetype": "dmg_fire",
+            "hiteffect": "char/pyro/p1_impact",
+            "inherit": "beam",
+            "maxrange": 240,
+            "name": "flame_dmg",
+            "noaimfx": true,
+            "pierce": true,
+            "useboltinfo": true
+        },
+        "event": {
+            "bolt": "Bip01 R UpperArm",
+            "effect": "char/pyro/p1_power",
+            "inherit": "effect",
+            "name": "flame_fx"
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "projectilenear",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_attack",
+            "trigger": {
+                "name": "sound",
+                "sound": "char/pyro_m/p1_charge",
+                "time": 0.18
+            },
+            "trigger": {
+                "name": "flame_fx",
+                "tag": 1,
+                "time": 0.18
+            },
+            "trigger": {
+                "attack_bone_angles": "-172 2 6",
+                "attack_bone_pos": "3 -9 57",
+                "name": "flame_dmg",
+                "tag": 2,
+                "time": 0.22
+            },
+            "trigger": {
+                "name": "flame_fx",
+                "tag": 3,
+                "time": 0.26
+            },
+            "trigger": {
+                "attack_bone_angles": "-173 0 29",
+                "attack_bone_pos": "5 -4 57",
+                "name": "flame_dmg",
+                "tag": 4,
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "flame_fx",
+                "tag": 5,
+                "time": 0.34
+            },
+            "trigger": {
+                "attack_bone_angles": "-176 -1 43",
+                "attack_bone_pos": "4 -3 57",
+                "name": "flame_dmg",
+                "tag": 6,
+                "time": 0.38
+            },
+            "trigger": {
+                "name": "flame_fx",
+                "tag": 7,
+                "time": 0.42
+            },
+            "trigger": {
+                "attack_bone_angles": "-175 -2 35",
+                "attack_bone_pos": "4 -5 57",
+                "name": "flame_dmg",
+                "tag": 8,
+                "time": 0.46
+            },
+            "trigger": {
+                "name": "flame_fx",
+                "tag": 9,
+                "time": 0.5
+            },
+            "trigger": {
+                "attack_bone_angles": "-175 1 2",
+                "attack_bone_pos": "2 -9 57",
+                "name": "flame_dmg",
+                "tag": 10,
+                "time": 0.54
+            },
+            "trigger": {
+                "name": "flame_fx",
+                "tag": 11,
+                "time": 0.58
+            },
+            "trigger": {
+                "attack_bone_angles": "-176 3 -31",
+                "attack_bone_pos": "-1 -11 57",
+                "name": "flame_dmg",
+                "tag": 12,
+                "time": 0.62
+            },
+            "trigger": {
+                "name": "flame_fx",
+                "tag": 13,
+                "time": 0.66
+            },
+            "trigger": {
+                "attack_bone_angles": "-179 2 -39",
+                "attack_bone_pos": "-2 -11 57",
+                "name": "flame_dmg",
+                "tag": 14,
+                "time": 0.7
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "rangednolos",
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power_boost",
+            "trigger": {
+                "name": "sound",
+                "sound": "char/pyro_m/p4_charge",
+                "time": 0.56
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "-44 11 14",
+                "attack_bone_pos": "23 -17 47",
+                "attacktype": "projectile",
+                "count": 3,
+                "damage": "9 11",
+                "damagetype": "dmg_fire",
+                "entity": "fire_bat",
+                "filename": "ents_pyro",
+                "maxrange": 800,
+                "name": "projectile",
+                "speed": 100,
+                "spread": 125,
+                "tag": 1,
+                "time": 0.56
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}

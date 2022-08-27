@@ -1,0 +1,899 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "pyr_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_elemental",
+                        "level": 0.1
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Burn",
+            "description": "Bursts nearby enemies into flames",
+            "descshort": "Blast",
+            "icon": 0,
+            "icon_texture": "textures/ui/sunfire_icons1.png",
+            "name": "pyr_ignite",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_ignite_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "pyr_ignite_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_ignite_dmg",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "pyr_ignite_dmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_ignite_pwr",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "pyr_ignite_pwr",
+                    "value": 126
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%pyr_ignite_dmg $DMG_FIRE\\n%pyr_ignite_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pyr_ignite_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Breath Of Fire",
+            "description": "Shoots flames from hands in a wide arc.\\n(~41Press And Hold~~)",
+            "descshort": "Special",
+            "icon": 1,
+            "icon_texture": "textures/ui/sunfire_icons1.png",
+            "name": "pyr_flmthrow",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_flmthrow_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "pyr_flmthrow_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_flmthrow_sdmg",
+                    "value": "6 9"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "pyr_flmthrow_sdmg",
+                    "value": "117 132"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_flmthrow_dmg2",
+                    "value": "14 19"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "pyr_flmthrow_dmg2",
+                    "value": "182 203"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_flmthrow_spwr",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "pyr_flmthrow_spwr",
+                    "value": 140
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_flmthrow_ft",
+                    "value": 120
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "pyr_flmthrow_ft",
+                    "value": 144
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%pyr_flmthrow_sdmg $DMG_FIRE/sec\\n%pyr_flmthrow_ft:r foot range\\n%pyr_flmthrow_spwr $EP/s",
+                "require": {
+                    "cat": "level",
+                    "level": "%pyr_flmthrow_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Fiery Charge",
+            "description": "A radiated homing projectile",
+            "descshort": "Projectile",
+            "icon": 2,
+            "icon_texture": "textures/ui/sunfire_icons1.png",
+            "name": "pyr_atomcharge",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_atomcharge_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pyr_atomcharge_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_atomcharge_dmg",
+                    "value": "43 50"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pyr_atomcharge_dmg",
+                    "value": "263 291"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_atomcharge_pwr",
+                    "value": 22
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pyr_atomcharge_pwr",
+                    "value": 26
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%pyr_atomcharge_dmg $DMG_RADIATION over 6 seconds\\n%pyr_atomcharge_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pyr_atomcharge_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "pyr_ignite",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Fire Bats",
+            "description": "Launch fire bats at targets.",
+            "descshort": "Projectile",
+            "icon": 3,
+            "icon_texture": "textures/ui/sunfire_icons1.png",
+            "name": "pyr_fireballs",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_fireballs_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pyr_fireballs_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_fireballs_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pyr_fireballs_dmg",
+                    "value": "114 128"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_fireballs_pwr",
+                    "value": 36
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pyr_fireballs_pwr",
+                    "value": 142
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_fireballs_num",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pyr_fireballs_num",
+                    "value": 7
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%pyr_fireballs_dmg $DMG_FIRE\\n%pyr_fireballs_num fire bat(s)\\n%pyr_fireballs_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pyr_fireballs_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "pyr_atomcharge",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Fire Blast",
+            "description": "Launch a fireball that explodes on contact and harms nearby enemies for a time.",
+            "descshort": "Projectile",
+            "icon": 4,
+            "icon_texture": "textures/ui/sunfire_icons1.png",
+            "name": "pyr_fireblast",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_fireblast_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pyr_fireblast_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_fireblast_dmg",
+                    "value": "59 68"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pyr_fireblast_dmg",
+                    "value": "130 146"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_fireblast_sdmg",
+                    "value": "3 5"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pyr_fireblast_sdmg",
+                    "value": "53 61"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_fireblast_pwr",
+                    "value": 72
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pyr_fireblast_pwr",
+                    "value": 152
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_fireblast_life",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pyr_fireblast_life",
+                    "value": 3
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%pyr_fireblast_dmg $DMG_FIRE\\n%pyr_fireblast_sdmg $DMG_FIRE/sec\\n%pyr_fireblast_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pyr_fireblast_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "pyr_fireballs",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Fire Blade",
+            "description": "Sweeping arc of fire that can hit multiple enemies.  Increased critical chance.",
+            "descshort": "Melee",
+            "icon": 5,
+            "icon_texture": "textures/ui/sunfire_icons1.png",
+            "name": "pyr_flameswd",
+            "power": "power6",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_flameswd_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "pyr_flameswd_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_flameswd_dmg",
+                    "value": "75 86"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "pyr_flameswd_dmg",
+                    "value": "201 224"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_flameswd_pwr",
+                    "value": 46
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "pyr_flameswd_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_flameswd_crit",
+                    "value": 0.15
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "pyr_flameswd_crit",
+                    "value": 0.71
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%pyr_flameswd_dmg $DMG_FIRE\\n+%pyr_flameswd_crit:p critical chance\\n%pyr_flameswd_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pyr_flameswd_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "pyr_flmthrow",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%pyr_flameswd_crit",
+                        "scope_node": "pyr_power6"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Torch Fury",
+            "description": "Adds $DMG_FIRE to melee attacks for self and allies.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/sunfire_icons1.png",
+            "name": "pyr_flamefury",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_flamefury_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pyr_flamefury_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_flamefury_pdmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pyr_flamefury_pdmg",
+                    "value": 1.47
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_flamefury_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pyr_flamefury_pwr",
+                    "value": 516
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_flamefury_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pyr_flamefury_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_flamefury_ar",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pyr_flamefury_ar",
+                    "value": 2.6
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%pyr_flamefury_pdmg:s $DMG_FIRE\\n%pyr_flamefury_ar:s $AR\\n%pyr_flamefury_life seconds\\n%pyr_flamefury_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pyr_flamefury_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Flame Shield",
+            "description": "Forms shield of atomic particles that increases defense and damages enemies",
+            "descshort": "Boost",
+            "icon": 7,
+            "icon_texture": "textures/ui/sunfire_icons1.png",
+            "name": "pyr_ionshield",
+            "power": "power8",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_ionshield_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pyr_ionshield_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_ionshield_dr",
+                    "value": 1.4
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pyr_ionshield_dr",
+                    "value": 2.8
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_ionshield_dmg",
+                    "value": "3 5"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pyr_ionshield_dmg",
+                    "value": "21 26"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_ionshield_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pyr_ionshield_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_ionshield_pwr",
+                    "value": 236
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pyr_ionshield_pwr",
+                    "value": 504
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "+%pyr_ionshield_dr $DR\\n%pyr_ionshield_dmg $DMG_FIRE/sec\\n%pyr_ionshield_life seconds\\n%pyr_ionshield_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pyr_ionshield_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "pyr_flamefury",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "WILDFIRE",
+            "description": "Mushroom cloud that causes $DMG_FIRE and $DMG_RADIATION",
+            "descshort": "Radial",
+            "icon": 8,
+            "icon_texture": "textures/ui/sunfire_icons1.png",
+            "name": "pyr_nucblast",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_nucblast_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "pyr_nucblast_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_nucblast_fdmg",
+                    "value": "37 43"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "pyr_nucblast_fdmg",
+                    "value": "72 82"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_nucblast_rdmg",
+                    "value": "72 82"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "pyr_nucblast_rdmg",
+                    "value": "121 135"
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%pyr_nucblast_fdmg $DMG_FIRE\\n%pyr_nucblast_rdmg $DMG_RADIATION",
+                "require": {
+                    "cat": "level",
+                    "level": "%pyr_nucblast_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Flaming Pillar",
+            "description": "Creates a column of flame that harms nearby enemies",
+            "descshort": "Radial",
+            "icon": 9,
+            "icon_texture": "textures/ui/sunfire_icons1.png",
+            "name": "pyr_flamecol",
+            "power": "power10",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_flamecol_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pyr_flamecol_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_flamecol_dmg",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pyr_flamecol_dmg",
+                    "value": "79 89"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_flamecol_kb",
+                    "value": 370
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pyr_flamecol_kb",
+                    "value": 620
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_flamecol_pwr",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pyr_flamecol_pwr",
+                    "value": 164
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%pyr_flamecol_dmg $DMG_FIRE\\n%pyr_flamecol_kb $KB\\n%pyr_flamecol_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pyr_flamecol_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "pyr_flmthrow",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "FIRE IT UP",
+            "description": "Makes Pyro invincible, and increases his damage",
+            "descshort": "Boost",
+            "icon": 13,
+            "icon_texture": "textures/ui/sunfire_icons1.png",
+            "name": "pyr_rising",
+            "power": "power11",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_rising_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "pyr_rising_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_rising_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "pyr_rising_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "+^100% $DMG\\n%pyr_rising_lif Seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%pyr_rising_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Flame Mastery",
+            "description": "Increases damage and chance for criticals with $DMG_FIRE",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/sunfire_icons1.png",
+            "name": "pyr_firemaster",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_firemaster_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pyr_firemaster_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_firemaster_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pyr_firemaster_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_firemaster_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pyr_firemaster_crit",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%pyr_firemaster_dmg:s Damage\\n+%pyr_firemaster_crit:p chance for criticals",
+                "require": {
+                    "category": "level",
+                    "level": "%pyr_firemaster_req"
+                },
+                "require": {
+                    "category": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%pyr_firemaster_dmg",
+                        "scope_damage": "dmg_fire"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%pyr_firemaster_crit",
+                        "scope_damage": "dmg_fire"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Elemental Combat",
+            "description": "Adds additional $DMG_FIRE to melee attacks",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/sunfire_icons1.png",
+            "name": "pyr_elemcom",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_elemcom_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pyr_elemcom_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_elemcom_dmg",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pyr_elemcom_dmg",
+                    "value": 2.6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%pyr_elemcom_dmg:p as $DMG_FIRE",
+                "require": {
+                    "category": "level",
+                    "level": "%pyr_elemcom_req"
+                },
+                "powerup": {
+                    "class": "add_attack",
+                    "damagepercent": "%pyr_elemcom_dmg",
+                    "damagetype": "dmg_fire",
+                    "life": -1,
+                    "special_fx": {
+                        "effect": "char/sun/special_trail",
+                        "how_used": "custom"
+                    },
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        }
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Scorch",
+            "description": "Increases all resistances",
+            "descshort": "Passive",
+            "icon": 12,
+            "icon_texture": "textures/ui/sunfire_icons1.png",
+            "name": "pyr_ionize",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_ionize_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pyr_ionize_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_ionize_resist",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pyr_ionize_resist",
+                    "value": 0.47
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pyr_ionize_firer",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pyr_ionize_firer",
+                    "value": 1
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%pyr_ionize_resist:p $RES_ENERGY\\n+%pyr_ionize_resist:p $RES_MENTAL\\n+%pyr_ionize_resist:p $RES_RADIATION\\n+%pyr_ionize_resist:p $RES_ELEMENTAL\\n+%pyr_ionize_firer:p Resistance to $DMG_FIRE",
+                "require": {
+                    "category": "level",
+                    "level": "%pyr_ionize_req"
+                },
+                "require": {
+                    "category": "skill",
+                    "item": "pyr_elemcom",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_elemental",
+                        "level": "%pyr_ionize_resist"
+                    },
+                    "affecter": {
+                        "attribute": "resist_mental",
+                        "level": "%pyr_ionize_resist"
+                    },
+                    "affecter": {
+                        "attribute": "resist_energy",
+                        "level": "%pyr_ionize_resist"
+                    },
+                    "affecter": {
+                        "attribute": "resist_radiation",
+                        "level": "%pyr_ionize_resist"
+                    },
+                    "affecter": {
+                        "attribute": "resist_fire",
+                        "level": "%pyr_ionize_firer"
+                    }
+                }
+            }
+        }
+    }
+}
