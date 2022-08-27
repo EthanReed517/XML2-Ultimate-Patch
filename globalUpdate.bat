@@ -72,6 +72,10 @@ echo Sabretooth
 cd "%~dp0\1. Playable Characters\Sabretooth"
 call update.bat 
 cd ..\..
+echo Scarlet Witch
+cd "%~dp0\1. Playable Characters\Scarlet Witch"
+call update.bat 
+cd ..\..
 echo Storm
 cd "%~dp0\1. Playable Characters\Storm"
 call update.bat 
