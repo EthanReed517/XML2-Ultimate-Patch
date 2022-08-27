@@ -124,6 +124,10 @@ echo Pyro
 cd "%~dp0\1. Playable Characters\Pyro"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
 cd ..\..
+echo Rogue
+cd "%~dp0\1. Playable Characters\Rogue"
+call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+cd ..\..
 echo Sabretooth
 cd "%~dp0\1. Playable Characters\Sabretooth"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%

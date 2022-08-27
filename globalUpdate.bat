@@ -64,6 +64,10 @@ echo Pyro
 cd "%~dp0\1. Playable Characters\Pyro"
 call update.bat 
 cd ..\..
+echo Rogue
+cd "%~dp0\1. Playable Characters\Rogue"
+call update.bat 
+cd ..\..
 echo Sabretooth
 cd "%~dp0\1. Playable Characters\Sabretooth"
 call update.bat 
