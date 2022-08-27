@@ -141,6 +141,10 @@
                 "time": 0
             },
             "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.42
+            },
+            "trigger": {
                 "bolt": "Bip01 R Hand",
                 "effect": "char/rogue/p1_charge",
                 "fxlevel": 1,
@@ -217,12 +221,19 @@
                 "time": 0
             },
             "trigger": {
+                "name": "whoosh_light",
+                "time": 0.24
+            },
+            "trigger": {
                 "bolt": "Bip01 R Hand",
                 "effect": "char/rogue/p1_charge",
                 "fxlevel": 2,
-                "name": "effect_sound",
+                "name": "effect '\r\r\n      time = 0"
+            },
+            "trigger": {
+                "name": "sound",
                 "sound": "char/vogue_m/p2_charge",
-                "time": 0
+                "time": 0.4
             },
             "trigger": {
                 "maxrange": 60,
@@ -402,6 +413,10 @@
                 "level": 1
             },
             "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.5
+            },
+            "trigger": {
                 "bolt": "Bip01 R Hand",
                 "effect": "char/rogue/p1_charge",
                 "fxlevel": 3,
@@ -486,18 +501,10 @@
                 "time": 0
             },
             "trigger": {
-                "beameffect": "char/rogue/p7_power",
-                "healthpct": 0.1,
-                "maxrange": 600,
-                "name": "remove_powerups",
-                "powerup_class": "harming",
-                "powerusage": "%rog_heal_pwr",
-                "time": 0.4
-            },
-            "trigger": {
                 "apply_ally": "all",
                 "life": "%rog_heal_life",
                 "name": "powerup",
+                "powerusage": "%rog_heal_pwr",
                 "time": 0.6,
                 "special_fx": {
                     "effect": "char/rogue/p7_aura",
@@ -537,6 +544,14 @@
                 "time": -1
             },
             "trigger": {
+                "name": "whoosh_light",
+                "time": 0.16
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.46
+            },
+            "trigger": {
                 "bolt": "Bip01 R Hand",
                 "effect": "char/rogue/p1_charge",
                 "fxlevel": 1,
@@ -564,7 +579,6 @@
                 "damagescale": "normal",
                 "damagetype": "dmg_physical",
                 "fxlevel": 2,
-                "hiteffect": "char/rogue/p1_impact",
                 "index": 1,
                 "name": "punch",
                 "powerusage": "%rog_tremor_pwr",
@@ -617,6 +631,7 @@
             "description": "MANIC SLAM",
             "handler": "ch_teleport_dash_start",
             "icon": 8,
+            "lockangles": true,
             "name": "power9",
             "playspeed": 10,
             "powerup_tag": "rog_power9",
@@ -712,6 +727,7 @@
             "combotextfinisher": "Depletion",
             "description": "ENERGY DRAIN",
             "handler": "ch_rogue_energy_drain_atk",
+            "lockangles": true,
             "name": "power9_contact",
             "playspeed": 10,
             "powerup_tag": "rog_power9",
@@ -874,6 +890,7 @@
             "blendtime": 0,
             "description": "REFLECTIVE AURA",
             "icon": 10,
+            "lockangles": true,
             "name": "power11",
             "powerup_tag": "rog_power11",
             "priority": 5,
