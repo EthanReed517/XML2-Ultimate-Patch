@@ -15,6 +15,7 @@ magneto = ["astonishing","60s","70s","weaponx","future","winter","civilian"]
 nightcrawler = ["70s","weaponx","winter"]
 phoenix = ["astonishing","weaponx","civilian","future"]
 professorx = ["60s","70s","weaponx","future","winter"]
+pyro = ["astonishing","aoa","60s","70s","weaponx","future","winter","civilian"]
 sabretooth = ["astonishing","aoa","60s","70s","weaponx","future","civilian"]
 storm = []
 wolverine = ["60s"]
@@ -72,6 +73,8 @@ if name == "Phoenix.txt":
     pspEntry(name,phoenix)
 if name == "ProfessorX.txt":
     pspEntry(name,professorx)
+if name == "Pyro.txt":
+    pspEntry(name,pyro)
 if name == "Sabretooth.txt":
     pspEntry(name,sabretooth)
 if name == "Storm.txt":
