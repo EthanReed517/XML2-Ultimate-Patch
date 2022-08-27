@@ -1,0 +1,866 @@
+{
+    "talents": {
+        "talent": {
+            "descname": "Probability Syphon",
+            "description": "Each team member absorbs 20% of inflicted $DMG into $EP",
+            "descshort": "Boost",
+            "icon": 0,
+            "icon_texture": "textures/ui/scarletwitch_icons1.png",
+            "name": "scar_prob_syph",
+            "power": "power1",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_prob_syph_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "scar_prob_syph_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_prob_syph_pwr",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "scar_prob_syph_pwr",
+                    "value": 512
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_prob_syph_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "scar_prob_syph_lif",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%scar_prob_syph_lif seconds\\n%scar_prob_syph_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%scar_prob_syph_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Amplify Luck",
+            "description": "Amplify entire team's luck, increasing $DMG and chance of critical hits",
+            "descshort": "Boost",
+            "icon": 1,
+            "icon_texture": "textures/ui/scarletwitch_icons1.png",
+            "name": "scar_amplify",
+            "power": "power2",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_amplify_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "scar_amplify_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_amplify_pwr",
+                    "value": 96
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "scar_amplify_pwr",
+                    "value": 512
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_amplify_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "scar_amplify_dmg",
+                    "value": 1.19
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_amplify_cri",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "scar_amplify_cri",
+                    "value": 1.12
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_amplify_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "scar_amplify_lif",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%scar_amplify_dmg:s $DMG\\n%scar_amplify_cri:s chance of critical hit\\n%scar_amplify_lif seconds\\n%scar_amplify_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%scar_amplify_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "scar_prob_syph",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Combustion",
+            "description": "Use probability to spontaneously combust surrounding enemies and objects",
+            "descshort": "Radial",
+            "icon": 2,
+            "icon_texture": "textures/ui/scarletwitch_icons1.png",
+            "name": "scar_combustion",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_combustion_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "scar_combustion_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_combustion_pwr",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "scar_combustion_pwr",
+                    "value": 126
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_combustion_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "scar_combustion_dmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_combustion_rad",
+                    "value": 120
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "scar_combustion_rad",
+                    "value": 144
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%scar_combustion_dmg $DMG_PHYSICAL\\n%scar_combustion_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%scar_combustion_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Hex Bolt",
+            "description": "Fire a single Hex-Bolt",
+            "descshort": "Projectile",
+            "icon": 3,
+            "icon_texture": "textures/ui/scarletwitch_icons1.png",
+            "name": "scar_hex_bolt",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_hex_bolt_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "scar_hex_bolt_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_hex_bolt_pwr",
+                    "value": 16
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "scar_hex_bolt_pwr",
+                    "value": 128
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_hex_bolt_dmg",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "scar_hex_bolt_dmg",
+                    "value": "195 217"
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%scar_hex_bolt_dmg $DMG_ENERGY\\n%scar_hex_bolt_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%scar_hex_bolt_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Reality Shift",
+            "description": "Launch a Hex bolt that has a chance to turn enemy into a crate with something good inside",
+            "descshort": "Special",
+            "icon": 4,
+            "icon_texture": "textures/ui/scarletwitch_icons1.png",
+            "name": "scar_real_shift",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_real_shift_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "scar_real_shift_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_real_shift_pwr",
+                    "value": 36
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "scar_real_shift_pwr",
+                    "value": 130
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_real_shift_dmg",
+                    "value": "53 61"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "scar_real_shift_dmg",
+                    "value": "198 220"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_real_shift_pct",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "scar_real_shift_pct",
+                    "value": 0.2
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%scar_real_shift_dmg $DMG_ENERGY\\n%scar_real_shift_pct:p chance\\n%scar_real_shift_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%scar_real_shift_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "scar_combustion",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Heal",
+            "description": "Give party regenerative healing for a time",
+            "descshort": "Boost",
+            "icon": 5,
+            "icon_texture": "textures/ui/scarletwitch_icons1.png",
+            "name": "scar_heal",
+            "power": "power6",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_heal_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "scar_heal_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_heal_pwr",
+                    "value": 144
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "scar_heal_pwr",
+                    "value": 520
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_heal_pct",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "scar_heal_pct",
+                    "value": 0.04
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_heal_lif",
+                    "value": 10
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "scar_heal_lif",
+                    "value": 10
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%scar_heal_pct:p $HP/sec\\n%scar_heal_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%scar_heal_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "scar_amplify",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Hex Locked",
+            "description": "Fire several Hex-Bolts with a chance to cause a Deadly Strike (1/3 instant health loss)",
+            "descshort": "Projectile",
+            "icon": 6,
+            "icon_texture": "textures/ui/scarletwitch_icons1.png",
+            "name": "scar_hex_locked",
+            "power": "power7",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_hex_locked_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "scar_hex_locked_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_hex_locked_pwr",
+                    "value": 52
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "scar_hex_locked_pwr",
+                    "value": 146
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_hex_locked_dmg",
+                    "value": "43 50"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "scar_hex_locked_dmg",
+                    "value": "121 135"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_hex_locked_pct",
+                    "value": 0.16
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "scar_hex_locked_pct",
+                    "value": 0.3
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_hex_locked_num",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "scar_hex_locked_num",
+                    "value": 5
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%scar_hex_locked_num Hex-Bolts\\n%scar_hex_locked_dmg $DMG_ENERGY\\n%scar_hex_locked_pct:p chance\\n%scar_hex_locked_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%scar_hex_locked_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "scar_hex_bolt",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Hex Explosion",
+            "description": "Fire a Hex-Bolt which causes nearby objects to explode violently",
+            "descshort": "Projectile",
+            "icon": 7,
+            "icon_texture": "textures/ui/scarletwitch_icons1.png",
+            "name": "scar_hex_explos",
+            "power": "power8",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_hex_explos_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "scar_hex_explos_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_hex_explos_pwr",
+                    "value": 82
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "scar_hex_explos_pwr",
+                    "value": 170
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_hex_explos_dm1",
+                    "value": "69 79"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "scar_hex_explos_dm1",
+                    "value": "140 157"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_hex_explos_dm2",
+                    "value": "37 43"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "scar_hex_explos_dm2",
+                    "value": "117 132"
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%scar_hex_explos_dm1 initial $DMG_ENERGY\\n%scar_hex_explos_dm2 explosion $DMG_ENERGY\\n%scar_hex_explos_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%scar_hex_explos_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "scar_hex_locked",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "ANARCHY ASSAULT",
+            "description": "Unleash Magick bursts with a random $DMG type, with a chance to convert enemies for a time.",
+            "descshort": "Radial",
+            "icon": 8,
+            "icon_texture": "textures/ui/scarletwitch_icons1.png",
+            "name": "scar_chthonic",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_chthonic_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "scar_chthonic_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_chthonic_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "scar_chthonic_dmg",
+                    "value": "279 309"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_chthonic_pct",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "scar_chthonic_pct",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_chthonic_lif",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "scar_chthonic_lif",
+                    "value": 34
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%scar_chthonic_dmg $DMG\\n%scar_chthonic_pct:p chance to convert\\n%scar_chthonic_lif second conversion",
+                "require": {
+                    "cat": "level",
+                    "level": "%scar_chthonic_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Misfortune",
+            "description": "Causes enemy attacks to backfire, reflecting a percentage of damage back on themselves.",
+            "descshort": "Boost",
+            "icon": 9,
+            "icon_texture": "textures/ui/scarletwitch_icons1.png",
+            "name": "scar_misfortune",
+            "power": "power10",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_misfortune_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "scar_misfortune_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_misfortune_pwr",
+                    "value": 74
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "scar_misfortune_pwr",
+                    "value": 155
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_misfortune_dmg",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "scar_misfortune_dmg",
+                    "value": 4.8
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_misfortune_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "scar_misfortune_lif",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%scar_misfortune_dmg:p $DMG relfected\\n%scar_misfortune_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%scar_misfort_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "scar_real_shift",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Deflect Missiles",
+            "description": "Increases the chance of deflecting missile attacks.",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/scarletwitch_icons1.png",
+            "name": "scar_deflect",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_deflect_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "scar_deflect_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_deflect_pct",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "scar_deflect_pct",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%scar_deflect_pct:p chance to deflect",
+                "require": {
+                    "cat": "level",
+                    "level": "%scar_deflect_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "scar_scar_touch",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%scar_deflect_pct",
+                        "scope_attack": "projectile"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Hex Mastery",
+            "description": "Increase $DMG and chance of criticals when using Hex-Bolt attacks",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/scarletwitch_icons1.png",
+            "name": "scar_hex_master",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_hex_master_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "scar_hex_master_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_hex_master_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "scar_hex_master_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_hex_master_cri",
+                    "value": 1.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "scar_hex_master_cri",
+                    "value": 1.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%scar_hex_master_dmg:s $DMG\\n%scar_hex_master_cri:s chance of critical hit",
+                "require": {
+                    "cat": "level",
+                    "level": "%scar_hex_master_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%scar_hex_master_dmg",
+                        "scope_attack": "projectile"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_critical",
+                        "level": "%scar_hex_master_cri",
+                        "scope_attack": "projectile"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Scarlet's Touch",
+            "description": "Increase chance of critical hit on all attacks",
+            "descshort": "Passive",
+            "icon": 12,
+            "icon_texture": "textures/ui/scarletwitch_icons1.png",
+            "name": "scar_scar_touch",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_scar_touch_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "scar_scar_touch_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_scar_touch_pct",
+                    "value": 0.03
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "scar_scar_touch_pct",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_scar_touch_str",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "scar_scar_touch_str",
+                    "value": 10
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%scar_scar_touch_str:f% chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%scar_scar_touch_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%scar_scar_touch_pct"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "REVITALIZE",
+            "description": "Restore full $HP for entire party, and raise max $HP",
+            "descshort": "Xtreme Boost",
+            "icon": 13,
+            "icon_texture": "textures/ui/scarletwitch_icons1.png",
+            "name": "scar_immortal",
+            "power": "power11",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_immortal_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "scar_immortal_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "scar_immortal_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "scar_immortal_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "+^25% max $HP\\n%scar_immortal_lif Seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%scar_immortal_req"
+                }
+            }
+        },
+        "talent": {
+            "hidden": true,
+            "name": "scar_psionic",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "class": "trail_replace",
+                    "life": -1,
+                    "special_fx": {
+                        "effect": "char/scar/special_trail",
+                        "how_used": "custom"
+                    },
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

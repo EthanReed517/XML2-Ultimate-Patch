@@ -1,0 +1,1000 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/scarletwitch_icons1.png",
+        "FightMove": {
+            "animenum": "ea_attack_popup",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "handler": "ch_popup_attack",
+            "lockangles": true,
+            "name": "popupattack",
+            "startchaintime": 0.6,
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.3,
+                "name": "trail",
+                "time": 0.15
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "angoffset": "0 30 0",
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "27 -7 30",
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "3 5",
+                "damagetype": "dmg_physical",
+                "entity": "switch_p4_proj",
+                "filename": "ents_scarletwitch",
+                "fulltargeting": true,
+                "fxlevel": 1,
+                "life": 0.3,
+                "name": "projectile",
+                "speed": 400,
+                "targetable": true,
+                "time": 0.35,
+                "victimeventtag": 15,
+                "victimeventtag2": 16,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "trigger": {
+                "finisher": true,
+                "life": 0.25,
+                "name": "xtreme_start",
+                "tag": 15,
+                "time": -1,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "filteractor": true,
+                "maxdangerrating": 10,
+                "name": "filter",
+                "noboss": true,
+                "passtag": 17,
+                "tag": 16,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "class": "scale_actor",
+                "life": 1.2,
+                "name": "powerup",
+                "scaledownrate": 1,
+                "scaleuprate": -20,
+                "tag": 17,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "scale_factor",
+                    "level": 0.5
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "buff",
+            "animenum": "ea_power1",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "powerup_tag": "scar_power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "scar_prob_syph",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/switch_m/p1_charge",
+                "time": 0.45
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "class": "absorb",
+                "damagepercent": 0.2,
+                "energy": true,
+                "inflicted": true,
+                "life": "%scar_prob_syph_lif",
+                "name": "powerup",
+                "powerusage": "%scar_prob_syph_pwr",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/switch/p1_aura",
+                    "fxlevel": 1
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "buff",
+            "animenum": "ea_power2",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "powerup_tag": "scar_power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "scar_amplify",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/switch_m/p2_charge",
+                "time": 0.45
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%scar_amplify_lif",
+                "name": "powerup",
+                "powerusage": "%scar_amplify_pwr",
+                "time": 0.5,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "damage",
+                    "level": "%scar_amplify_dmg"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_critical",
+                    "level": "%scar_amplify_cri"
+                },
+                "special_fx": {
+                    "effect": "char/switch/p1_aura",
+                    "fxlevel": 2
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Combustion",
+            "combotextstarter": "Combusting",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "powerup_tag": "scar_power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "scar_combustion",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/switch/p3_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/switch_m/p3_charge",
+                "time": 0.4
+            },
+            "trigger": {
+                "damage": 1,
+                "damagetype": "dmg_fire",
+                "fxlevel": 1,
+                "maxrange": "%scar_combustion_rad",
+                "name": "radial",
+                "powerusage": "%scar_combustion_pwr",
+                "time": 0.6,
+                "victimeventtag": 100
+            },
+            "trigger": {
+                "failtag": 102,
+                "filteractor": true,
+                "name": "event_filter",
+                "passtag": 101,
+                "tag": 100,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%scar_combustion_dmg",
+                "damagetype": "dmg_fire",
+                "life": 1,
+                "name": "powerup",
+                "tag": 101,
+                "time": -1,
+                "special_fx": {
+                    "effect": "char/switch/p3_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "damageMod": {
+                    "name": "dmgmod_weld",
+                    "remove": "dmgmod_no_pain"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "150 167",
+                "damagetype": "dmg_fire",
+                "life": 2,
+                "name": "powerup",
+                "tag": 102,
+                "time": -1,
+                "special_fx": {
+                    "effect": "char/switch/p3_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "damageMod": {
+                    "name": "dmgmod_weld"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Bolt",
+            "combotextstarter": "Hex",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "powerup_tag": "scar_power4",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "scar_hex_bolt",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/switch_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/switch/p4_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/switch_m/p5_charge",
+                "time": 0.48
+            },
+            "trigger": {
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%scar_hex_bolt_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "entity": "switch_p4_proj",
+                "filename": "ents_scarletwitch",
+                "fulltargeting": true,
+                "name": "projectile",
+                "offset": "25 0 50",
+                "powerusage": "%scar_hex_bolt_pwr",
+                "speed": 600,
+                "targetable": true,
+                "time": 0.48
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power4",
+            "cansteal": false,
+            "combotextfinisher": "Shift",
+            "combotextstarter": "Reality",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power5",
+            "powerup_tag": "scar_power5",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "scar_real_shift",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/switch_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/switch/p4_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/switch_m/p4_power",
+                "time": 0.48
+            },
+            "trigger": {
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "entity": "switch_p5_proj",
+                "filename": "ents_scarletwitch",
+                "fulltargeting": true,
+                "index": 0,
+                "name": "projectile",
+                "offset": "25 0 50",
+                "powerusage": "%scar_real_shift_pwr",
+                "speed": 500,
+                "targetable": true,
+                "time": 0.48,
+                "victimeventtag1": 99,
+                "victimeventtag2": 101
+            },
+            "trigger": {
+                "maxdangerrating": 10,
+                "name": "filter",
+                "noboss": true,
+                "passtag": 100,
+                "tag": 99,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "chance": "%scar_real_shift_pct",
+                "name": "otherevent",
+                "othertag": 200,
+                "othertag2": 300,
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "fail_tag": 101,
+                "instantkillonly": true,
+                "name": "remove",
+                "nosponsor": false,
+                "success_tag": 201,
+                "tag": 200,
+                "time": -1
+            },
+            "trigger": {
+                "entity": "switch_p5_crate",
+                "filename": "ents_scarletwitch",
+                "name": "spawn",
+                "offset": "0 0 20",
+                "tag": 201,
+                "time": -1
+            },
+            "trigger": {
+                "damage": "%scar_real_shift_dmg",
+                "damagetype": "dmg_energy",
+                "index": 1,
+                "name": "selfattack",
+                "tag": 101,
+                "time": -1,
+                "type": "ce_atk_self"
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/switch_v/laugh",
+                "tag": 300,
+                "time": -1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "buff",
+            "animenum": "ea_power2",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "powerup_tag": "scar_power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "scar_heal",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 5,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 5,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/switch_m/p2_charge",
+                "time": 0.45
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%scar_heal_lif",
+                "name": "powerup",
+                "powerusage": "%scar_heal_pwr",
+                "time": 0.5,
+                "affecter": {
+                    "attribute": "health_regen_pct",
+                    "level": "%scar_heal_pct"
+                },
+                "special_fx": {
+                    "effect": "char/switch/p2_aura",
+                    "fxlevel": 1
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power7",
+            "combotextfinisher": "Locked",
+            "combotextstarter": "Withering",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power7",
+            "powerup_tag": "scar_power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "scar_hex_locked",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 4,
+                "name": "effect_sound",
+                "sound": "char/switch_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/switch/p4_power",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/switch_m/p4_power",
+                "time": 0.48
+            },
+            "trigger": {
+                "attacktype": "projectile",
+                "count": "%scar_hex_locked_num",
+                "damage": "%scar_hex_locked_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "entity": "switch_p7_proj",
+                "filename": "ents_scarletwitch",
+                "name": "projectile",
+                "offset": "25 0 50",
+                "powerusage": "%scar_hex_locked_pwr",
+                "speed": 300,
+                "time": 0.48,
+                "victimeventtag": 100
+            },
+            "trigger": {
+                "apply_chance": "%scar_hex_locked_pct",
+                "class": "atk_instant_pct",
+                "life": 3,
+                "name": "powerup",
+                "percent": 0.33,
+                "selfonly": true,
+                "tag": 100,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/switch/p3_impact",
+                    "fxlevel": 5
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Explosion",
+            "combotextstarter": "Hexed",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8",
+            "powerup_tag": "scar_power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "scar_hex_explos",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 4,
+                "name": "effect_sound",
+                "sound": "char/switch_m/p5_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/switch/p4_power",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/switch_m/p4_power",
+                "time": 0.48
+            },
+            "trigger": {
+                "attacktype": "projectile",
+                "count": 1,
+                "damagescale": "none",
+                "entity": "switch_p8_proj",
+                "explodedamage": "%scar_hex_explos_dm1",
+                "filename": "ents_scarletwitch",
+                "name": "projectile",
+                "offset": "25 0 50",
+                "powerusage": "%scar_hex_explos_pwr",
+                "speed": 450,
+                "time": 0.48,
+                "victimeventtag": 100
+            },
+            "trigger": {
+                "damage": "%scar_hex_explos_dm2",
+                "fxlevel": 6,
+                "hiteffect": "char/switch/p3_power",
+                "maxrange": 84,
+                "name": "explodeobjects",
+                "radius": 48,
+                "tag": 50,
+                "time": -1,
+                "type": "ce_atk_blast_objects"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "event": {
+            "damage": "%scar_chthonic_dmg",
+            "damagescale": "none",
+            "inherit": "radial",
+            "maxrange": 350,
+            "name": "p9_blast"
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "animenum": "ea_power9",
+            "blendtime": 0,
+            "combotextfinisher": "Chaos",
+            "description": "ANARCHY ASSAULT",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power9",
+            "playspeed": 10,
+            "powerup_tag": "scar_power9",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "scar_chthonic",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/switch/p9_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/switch_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/switch/p9_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "filteractor": true,
+                "maxdangerrating": 10,
+                "name": "bossfilter",
+                "noboss": true,
+                "passtag": 99,
+                "tag": 98,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "apply_chance": "%scar_chthonic_pct",
+                "class": "delayed_damage",
+                "damageamount": "%scar_chthonic_dmg",
+                "damagetype": "dmg_energy",
+                "life": 30,
+                "name": "powerup",
+                "tag": 99,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_converted"
+                },
+                "affecter": {
+                    "attribute": "team_switch",
+                    "level": 1
+                }
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": 0,
+                "damagelevel": 1,
+                "index": 1,
+                "maxrange": 350,
+                "name": "convert",
+                "time": 0.45,
+                "type": "ce_atk",
+                "victimeventtag": 98
+            },
+            "trigger": {
+                "name": "randomattack",
+                "tag0": 10,
+                "tag1": 20,
+                "tag2": 30,
+                "tag3": 40,
+                "time": 0.7,
+                "type": "ce_random_event"
+            },
+            "trigger": {
+                "name": "otherevent",
+                "othertag": 11,
+                "othertag2": 12,
+                "tag": 10,
+                "time": -1
+            },
+            "trigger": {
+                "effect": "char/switch/p9_impact",
+                "fxlevel": 1,
+                "name": "effect",
+                "tag": 11,
+                "time": -1
+            },
+            "trigger": {
+                "damagetype": "dmg_cold",
+                "name": "p9_blast",
+                "tag": 12,
+                "time": -1
+            },
+            "trigger": {
+                "name": "otherevent",
+                "othertag": 21,
+                "othertag2": 22,
+                "tag": 20,
+                "time": -1
+            },
+            "trigger": {
+                "effect": "char/switch/p9_impact",
+                "fxlevel": 2,
+                "name": "effect",
+                "tag": 21,
+                "time": -1
+            },
+            "trigger": {
+                "damagetype": "dmg_physical",
+                "name": "p9_blast",
+                "tag": 22,
+                "time": -1
+            },
+            "trigger": {
+                "name": "otherevent",
+                "othertag": 31,
+                "othertag2": 32,
+                "tag": 30,
+                "time": -1
+            },
+            "trigger": {
+                "effect": "char/switch/p9_impact",
+                "fxlevel": 3,
+                "name": "effect",
+                "tag": 31,
+                "time": -1
+            },
+            "trigger": {
+                "damagetype": "dmg_mental",
+                "name": "p9_blast",
+                "tag": 32,
+                "time": -1
+            },
+            "trigger": {
+                "name": "otherevent",
+                "othertag": 41,
+                "othertag2": 42,
+                "tag": 40,
+                "time": -1
+            },
+            "trigger": {
+                "effect": "char/switch/p9_impact",
+                "fxlevel": 4,
+                "name": "effect",
+                "tag": 41,
+                "time": -1
+            },
+            "trigger": {
+                "damagetype": "dmg_energy",
+                "name": "p9_blast",
+                "tag": 42,
+                "time": -1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectilenear",
+            "animenum": "ea_power10",
+            "combotextfinisher": "Doom",
+            "combotextstarter": "Cursed",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power10",
+            "powerup_tag": "scar_power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "scar_misfortune",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/switch/p10_charge",
+                "name": "effect_sound",
+                "sound": "char/switch_m/p10_charge",
+                "time": 0.4
+            },
+            "trigger": {
+                "damage": 0,
+                "maxrange": 120,
+                "name": "radial",
+                "powerusage": "%scar_misfortune_pwr",
+                "time": 0.4,
+                "victimeventtag": 10,
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "class": "hurt_attacker",
+                "damagepercent": "%scar_misfortune_dmg",
+                "damagetype": "physical",
+                "effect": "char/switch/p10_aura",
+                "hurtowner": true,
+                "life": "%scar_misfortune_lif",
+                "name": "powerup",
+                "tag": 10,
+                "time": -1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "animenum": "ea_power1",
+            "blendtime": 0,
+            "description": "REVITALIZE",
+            "icon": 13,
+            "lockangles": true,
+            "name": "power11",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "scar_chthonic",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 6,
+                "name": "effect_sound",
+                "sound": "char/switch_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/switch/p1_charge",
+                "fxlevel": 6,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/switch_m/p4_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%scar_immortal_lif",
+                "name": "powerup",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/switch/p2_aura",
+                    "fxlevel": 2
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "maxhealth",
+                    "level": 1.25
+                }
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": 1,
+                "name": "powerup",
+                "time": 0.5,
+                "affecter": {
+                    "attribute": "health_regen_pct",
+                    "level": 10
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}
