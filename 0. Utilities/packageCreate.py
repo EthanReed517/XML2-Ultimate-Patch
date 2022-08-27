@@ -33,7 +33,7 @@ def userInput():
 def packageInfo(name):
     nameFile = name + ".pkgb.json"
     nameNCFile = name + "_nc.pkgb.json"
-    skinNo = name[name.index("_")+1:len(name)]
+    skinNo = name[name.rindex("_")+1:len(name)]
     return [nameFile,nameNCFile,skinNo]
 
 # This function opens the package and returns its contents
