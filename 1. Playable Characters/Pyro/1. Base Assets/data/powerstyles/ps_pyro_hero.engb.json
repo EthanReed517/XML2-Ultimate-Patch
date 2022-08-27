@@ -1,7 +1,7 @@
 {
     "PowerStyle": {
         "cansteal": true,
-        "iconfile": "textures/ui/sunfire_icons1.png",
+        "iconfile": "textures/ui/pyro_icons1.png",
         "event": {
             "beambolt": "Bip01 L Hand",
             "damage": 0,
@@ -90,28 +90,33 @@
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
-                "effect": "char/sun/p3_charge",
+                "effect": "char/pyrohero/p3_charge",
                 "fxlevel": 2,
                 "name": "effect",
                 "time": 0
             },
             "trigger": {
                 "bolt": "Bip01 R Hand",
-                "effect": "char/sun/p3_charge",
+                "effect": "char/pyrohero/p3_charge",
                 "fxlevel": 2,
                 "name": "effect",
                 "time": 0
             },
             "trigger": {
                 "name": "sound",
-                "sound": "char/pcpyro_m/p1_charge",
-                "time": 0.4
+                "sound": "char/pcpyro_m/p3_charge",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/pcpyro_m/p4_impact",
+                "time": 0.43
             },
             "trigger": {
                 "damage": "%pyr_ignite_dmg",
                 "damagetype": "dmg_fire",
                 "fxlevel": 2,
-                "hiteffect": "base/material/explode/exp_generic_sml",
+                "hiteffect": "char/pyrohero/p1_impact",
                 "name": "blast",
                 "numblasts": 1,
                 "powerusage": "%pyr_ignite_pwr",
@@ -167,13 +172,13 @@
                 "time": 0.1,
                 "special_fx": {
                     "bolt": "Bip01 R Forearm",
-                    "effect": "char/sun/p2_power",
+                    "effect": "char/pyrohero/p2_power",
                     "fxlevel": 1,
                     "how_used": "primary"
                 },
                 "special_fx": {
                     "bolt": "Bip01 L Forearm",
-                    "effect": "char/sun/p2_power",
+                    "effect": "char/pyrohero/p2_power",
                     "fxlevel": 1,
                     "how_used": "primary"
                 }
@@ -236,7 +241,7 @@
                 "tag": 101,
                 "time": -1,
                 "special_fx": {
-                    "effect": "char/sun/p2_aura",
+                    "effect": "char/pyrohero/p2_aura",
                     "fxlevel": 1,
                     "how_used": "primary"
                 },
@@ -255,7 +260,7 @@
                 "tag": 102,
                 "time": -1,
                 "special_fx": {
-                    "effect": "char/sun/p2_aura",
+                    "effect": "char/pyrohero/p2_aura",
                     "fxlevel": 2,
                     "how_used": "primary"
                 },
@@ -290,7 +295,7 @@
             },
             "trigger": {
                 "bolt": "Bip01 R Hand",
-                "effect": "char/sun/p3_charge",
+                "effect": "char/pyrohero/p3_charge",
                 "fxlevel": 1,
                 "name": "effect_sound",
                 "sound": "char/pcpyro_m/p3_charge",
@@ -331,6 +336,110 @@
         },
         "FightMove": {
             "aireusetime": 5,
+            "aitype": "rangednolos",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Fire",
+            "combotextstarter": "Ball",
+            "icon": 2,
+            "lockangles": true,
+            "name": "powerB",
+            "playspeed": 1.7,
+            "priority": 5,
+            "startchaintime": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "pyr_fireball",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/pyrohero/p3_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/pcpyro_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "78 12 -173",
+                "attack_bone_pos": "25 -8 50",
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%pyr_fireball_dmg",
+                "damagetype": "dmg_fire",
+                "entity": "pyr_fire_ball2",
+                "filename": "ents_pyro_hero",
+                "Knockback": "40\r\n      maxrange = 900",
+                "name": "projectile",
+                "powerusage": "%pyr_fireball_pwr",
+                "speed": 700,
+                "tag": 1,
+                "targetable": true,
+                "time": 0.4
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "samepowerclick",
+                "result": "powerB_2"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power5",
+            "lockangles": true,
+            "name": "powerB_2",
+            "playspeed": 1.5,
+            "priority": 5,
+            "startchaintime": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "pyr_fireball",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/pyrohero/p3_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/pcpyro_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "arc": 0,
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "25 8 50",
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%pyr_fireball_dmg",
+                "damagetype": "dmg_fire",
+                "entity": "pyr_fire_ball2",
+                "filename": "ents_pyro_hero",
+                "Knockback": "40\r      maxrange = 800",
+                "name": "projectile",
+                "powerusage": "%pyr_fireball_pwr2",
+                "speed": 700,
+                "targetable": true,
+                "time": 0.5,
+                "damageMod": {
+                    "name": "dmgmod_weld"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "samepowerclick",
+                "result": "powerB"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
             "aitype": "projectile",
             "animenum": "ea_power4",
             "combotextfinisher": "Fire",
@@ -347,7 +456,7 @@
             },
             "trigger": {
                 "bolt": "Bip01 R Hand",
-                "effect": "char/sun/p3_charge",
+                "effect": "char/pyrohero/p3_charge",
                 "fxlevel": 2,
                 "name": "effect_sound",
                 "sound": "char/pcpyro_m/p4_charge",
@@ -365,6 +474,7 @@
                 "filename": "ents_pyro_hero",
                 "maxrange": 800,
                 "name": "projectile",
+                "powerusage": "%pyr_fireballs_pwr",
                 "speed": 120,
                 "spread": 110,
                 "tag": 1,
@@ -378,12 +488,13 @@
         "FightMove": {
             "aireusetime": 5,
             "aitype": "projectile",
-            "animenum": "ea_power5",
+            "animenum": "ea_attack_knockback",
             "combotextfinisher": "Torch",
             "combotextstarter": "Charred",
             "icon": 4,
             "lockangles": true,
             "name": "power5",
+            "playspeed": 1.1,
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -391,8 +502,15 @@
                 "level": 1
             },
             "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/pyrohero/p3_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
                 "bolt": "Bip01 R Hand",
-                "effect": "char/sun/p3_charge",
+                "effect": "char/pyrohero/p3_charge",
                 "fxlevel": 2,
                 "name": "effect_sound",
                 "sound": "char/pcpyro_m/p3_charge",
@@ -416,7 +534,7 @@
                 "speed": 600,
                 "tag": 1,
                 "targetable": true,
-                "time": 0.4,
+                "time": 0.3,
                 "damageMod": {
                     "name": "dmgmod_weld"
                 }
@@ -453,19 +571,6 @@
                 "result": "idle"
             }
         },
-        "event": {
-            "arc": 180,
-            "damage": "%pyr_flameswd_dmg",
-            "damagelevel": 2,
-            "damagescale": "none",
-            "damagetype": "dmg_fire",
-            "fxlevel": 1,
-            "hiteffect": "char/sun/p2_aura",
-            "inherit": "punch_heavy",
-            "maxrange": 72,
-            "name": "power6_dmg",
-            "powerusage": "%pyr_flameswd_pwr"
-        },
         "FightMove": {
             "aireusetime": 5,
             "aitype": "aoe",
@@ -475,6 +580,42 @@
             "icon": 5,
             "lockangles": true,
             "name": "power6",
+            "playspeed": 1.3,
+            "powerup_tag": "pyr_power6",
+            "priority": 5,
+            "startchaintime": 0.6,
+            "require": {
+                "cat": "skill",
+                "item": "pyr_flameswd",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/pyrohero/p6_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/pcpyro_m/p6_charge",
+                "time": 0.1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power6b"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_attack_heavy1",
+            "combotextfinisher": "Blade",
+            "combotextstarter": "Roasted",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6b",
+            "playspeed": 1.5,
             "powerup_tag": "pyr_power6",
             "priority": 5,
             "require": {
@@ -483,22 +624,27 @@
                 "level": 1
             },
             "trigger": {
-                "bolt": "Bip01 R Hand",
-                "effect": "char/sun/p6_charge",
-                "fxlevel": 1,
-                "name": "effect_sound",
-                "sound": "char/pcpyro_m/p6_charge",
-                "time": 0.21
+                "name": "whoosh_light",
+                "time": 0.1
             },
             "trigger": {
-                "effect": "char/sun/p6_power",
+                "effect": "char/pyrohero/p6_power",
                 "fxlevel": 1,
                 "name": "effect",
-                "time": 0.21
+                "time": 0.2
             },
             "trigger": {
-                "name": "power6_dmg",
-                "time": 0.67,
+                "arc": 180,
+                "damage": "%pyr_flameswd_dmg",
+                "damagelevel": 2,
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "fxlevel": 1,
+                "inherit": "punch_heavy",
+                "maxrange": 72,
+                "name": "blast",
+                "powerusage": "%pyr_flameswd_pwr",
+                "time": 0.35,
                 "damageMod": {
                     "name": "dmgmod_weld"
                 },
@@ -514,7 +660,7 @@
         "FightMove": {
             "aireusetime": 20,
             "aitype": "buffself",
-            "animenum": "ea_power1",
+            "animenum": "ea_power6",
             "combotextfinisher": "Blaze",
             "combotextstarter": "Blazing",
             "icon": 6,
@@ -527,21 +673,21 @@
                 "level": 1
             },
             "trigger": {
-                "effect": "char/sun/p10_power",
+                "effect": "char/pyrohero/p10_power",
                 "fxlevel": 2,
                 "name": "effect",
                 "time": 0
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
-                "effect": "char/sun/p6_charge",
+                "effect": "char/pyrohero/p6_charge",
                 "fxlevel": 2,
                 "name": "effect",
                 "time": 0
             },
             "trigger": {
                 "bolt": "Bip01 R Hand",
-                "effect": "char/sun/p6_charge",
+                "effect": "char/pyrohero/p6_charge",
                 "fxlevel": 2,
                 "name": "effect",
                 "time": 0
@@ -553,34 +699,40 @@
             },
             "trigger": {
                 "apply_ally": "all",
-                "damage": "3 5",
+                "apply_enemy": "none",
+                "apply_self": true,
+                "class": "add_attack",
+                "damagepercent": "%pyr_flamefury_pdmg",
+                "damagetype": "dmg_fire",
                 "life": "%pyr_flamefury_life",
                 "name": "powerup",
                 "powerusage": "%pyr_flamefury_pwr",
                 "time": 0.5,
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    }
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%pyr_flamefury_ar"
+                },
                 "special_fx": {
                     "bolt": "Bip01 L Hand",
-                    "effect": "char/sun/p7_aura",
+                    "effect": "char/pyrohero/p7_aura",
                     "fxlevel": 1,
                     "how_used": "primary"
                 },
                 "special_fx": {
                     "bolt": "Bip01 R Hand",
-                    "effect": "char/sun/p7_aura",
+                    "effect": "char/pyrohero/p7_aura",
                     "fxlevel": 1,
                     "how_used": "primary"
-                },
-                "affecter": {
-                    "affect_type": "scale",
-                    "attribute": "damage",
-                    "level": "%pyr_flamefury_pdmg",
-                    "scope_damage": "dmg_fire"
-                },
-                "affecter": {
-                    "affect_type": "scale",
-                    "attribute": "atk_attack_rating",
-                    "level": "%pyr_flamefury_ar",
-                    "scope_damage": "dmg_fire"
                 }
             },
             "chain": {
@@ -605,20 +757,20 @@
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
-                "effect": "char/sun/p6_charge",
+                "effect": "char/pyrohero/p6_charge",
                 "fxlevel": 2,
                 "name": "effect",
                 "time": 0
             },
             "trigger": {
                 "bolt": "Bip01 R Hand",
-                "effect": "char/sun/p6_charge",
+                "effect": "char/pyrohero/p6_charge",
                 "fxlevel": 2,
                 "name": "effect",
                 "time": 0
             },
             "trigger": {
-                "effect": "char/sun/p8_charge",
+                "effect": "char/pyrohero/p8_charge",
                 "fxlevel": 1,
                 "name": "effect_sound",
                 "sound": "char/pcpyro_m/p8_charge",
@@ -637,13 +789,13 @@
                 "share_radius": 120,
                 "time": 0.5,
                 "special_fx": {
-                    "effect": "char/sun/p8_aura",
+                    "effect": "char/pyrohero/p8_aura",
                     "fxlevel": 1,
                     "how_used": "primary",
                     "share_filter": "owner"
                 },
                 "special_fx": {
-                    "effect": "char/sun/p2_aura",
+                    "effect": "char/pyrohero/p2_aura",
                     "fxlevel": 1,
                     "how_used": "primary",
                     "share_filter": "shared"
@@ -707,14 +859,14 @@
                 "time": 0
             },
             "trigger": {
-                "effect": "char/sun/p9_charge",
+                "effect": "char/pyrohero/p9_charge",
                 "fxlevel": 1,
                 "name": "effect",
                 "tag": 1,
                 "time": 0
             },
             "trigger": {
-                "effect": "char/sun/p9_impact",
+                "effect": "char/pyrohero/p9_impact",
                 "fxlevel": 1,
                 "name": "effect",
                 "tag": 2,
@@ -728,17 +880,22 @@
                 "damagetype": "dmg_fire",
                 "maxrange": 600,
                 "name": "punch",
-                "time": 0.7
+                "time": 0.7,
+                "victimeventtag": 101
             },
             "trigger": {
-                "arc": 180,
-                "attacktype": "blast",
+                "class": "harming",
                 "damage": "%pyr_nucblast_rdmg",
-                "damagescale": "none",
-                "damagetype": "dmg_radiation",
-                "maxrange": 600,
-                "name": "punch",
-                "time": 0.7
+                "damagetype": "dmg_fire",
+                "life": 4,
+                "name": "powerup",
+                "tag": 101,
+                "time": -1,
+                "special_fx": {
+                    "effect": "char/pyrohero/p2_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                }
             },
             "chain": {
                 "action": "Idle",
@@ -748,12 +905,13 @@
         "FightMove": {
             "aireusetime": 5,
             "aitype": "aoe",
-            "animenum": "ea_power1",
+            "animenum": "ea_power8",
             "combotextfinisher": "Flame",
             "combotextstarter": "Combustible",
             "icon": 9,
             "lockangles": true,
             "name": "power10",
+            "playspeed": 1.5,
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -761,43 +919,48 @@
                 "level": 1
             },
             "trigger": {
-                "effect": "char/sun/p10_power",
+                "effect": "char/pyrohero/p10_power",
                 "fxlevel": 1,
                 "name": "effect",
-                "time": 0
+                "time": 0.1
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
-                "effect": "char/sun/p6_charge",
+                "effect": "char/pyrohero/p6_charge",
                 "fxlevel": 2,
                 "name": "effect",
                 "time": 0
             },
             "trigger": {
                 "bolt": "Bip01 R Hand",
-                "effect": "char/sun/p6_charge",
+                "effect": "char/pyrohero/p6_charge",
                 "fxlevel": 2,
                 "name": "effect",
                 "time": 0
             },
             "trigger": {
+                "name": "effect_sound",
+                "sound": "char/pcpyro_m/p3_charge",
+                "time": 0.1
+            },
+            "trigger": {
                 "name": "sound",
-                "sound": "char/pcpyro_m/p1_charge",
+                "sound": "char/pcpyro_m/p8_charge",
                 "time": 0.4
             },
             "trigger": {
                 "arc": 180,
                 "attacktype": "blast",
                 "damage": "%pyr_flamecol_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_fire",
-                "hiteffect": "base/material/explode/exp_generic_sml",
                 "inherit": "punch",
                 "knockback": "%pyr_flamecol_kb",
                 "name": "fire_column",
                 "powerattack": true,
                 "powerusage": "%pyr_flamecol_pwr",
                 "radius": 36,
-                "time": 0.4,
+                "time": 0.55,
                 "damageMod": {
                     "name": "dmgmod_auto_knockback"
                 }
@@ -837,20 +1000,20 @@
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
-                "effect": "char/sun/p6_charge",
+                "effect": "char/pyrohero/p6_charge",
                 "fxlevel": 3,
                 "name": "effect",
                 "time": 0
             },
             "trigger": {
                 "bolt": "Bip01 R Hand",
-                "effect": "char/sun/p6_charge",
+                "effect": "char/pyrohero/p6_charge",
                 "fxlevel": 3,
                 "name": "effect",
                 "time": 0
             },
             "trigger": {
-                "effect": "char/sun/p8_charge",
+                "effect": "char/pyrohero/p8_charge",
                 "fxlevel": 2,
                 "name": "effect_sound",
                 "sound": "char/pcpyro_m/p1_charge",
@@ -861,7 +1024,7 @@
                 "name": "powerup",
                 "time": 0.5,
                 "special_fx": {
-                    "effect": "char/sun/p8_aura",
+                    "effect": "char/pyrohero/p8_aura",
                     "fxlevel": 2,
                     "how_used": "primary"
                 },
