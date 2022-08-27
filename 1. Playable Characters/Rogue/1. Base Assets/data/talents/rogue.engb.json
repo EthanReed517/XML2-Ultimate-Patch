@@ -1,0 +1,796 @@
+{
+    "talents": {
+        "talent": {
+            "descname": "Smash",
+            "description": "Increased melee punch with $KB.",
+            "descshort": "Melee",
+            "icon": 0,
+            "icon_texture": "textures/ui/rogue_icons1.png",
+            "name": "rogue_smash",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_smash_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "rog_smash_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_smash_dmg",
+                    "value": 3.5
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "rog_smash_dmg",
+                    "value": 9.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_smash_ar",
+                    "value": 1.15
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "rog_smash_ar",
+                    "value": 1.85
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_smash_pwr",
+                    "value": 8
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "rog_smash_pwr",
+                    "value": 76
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_smash_kb",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "rog_smash_kb",
+                    "value": 620
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%rog_smash_dmg:s $DMG_PHYSICAL  (%rog_smash_dmg:x)\\n%rog_smash_kb $KB\\n%rog_smash_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%rog_smash_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%rog_smash_dmg",
+                        "scope_node": "rog_power1"
+                    },
+                    "affecter": {
+                        "attribute": "atk_attack_rating",
+                        "level": "%rog_smash_ar",
+                        "scope_node": "rog_power1"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Power Theft",
+            "description": "Steals a power from the target (if possible) and stuns them.",
+            "descshort": "Special",
+            "icon": 1,
+            "icon_texture": "textures/ui/rogue_icons1.png",
+            "name": "rogue_ability",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_ability_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "rog_ability_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_ability_dmg",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "rog_ability_dmg",
+                    "value": 6.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_ability_pwr",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "rog_ability_pwr",
+                    "value": 76
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_ability_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "rog_ability_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_ability_slife",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "rog_ability_slife",
+                    "value": 5
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%rog_ability_dmg:s stolen power damage\\n%rog_ability_life second steal\\n%rog_ability_slife second stun\\n%rog_ability_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%rog_ability_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "rogue_smash",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "stolen_damage",
+                        "level": "%rog_ability_dmg"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Bedazzle",
+            "description": "Baits nearby enemies into attacking you while lowering their fighting abilities for a time.",
+            "descshort": "Debuff",
+            "icon": 2,
+            "icon_texture": "textures/ui/rogue_icons1.png",
+            "name": "rogue_taunt",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_taunt_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "rog_taunt_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_taunt_ar",
+                    "value": 0.9
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "rog_taunt_ar",
+                    "value": 0.48
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_taunt_dr",
+                    "value": 0.9
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "rog_taunt_dr",
+                    "value": 0.48
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_taunt_pwr",
+                    "value": 32
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "rog_taunt_pwr",
+                    "value": 304
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_taunt_life",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "rog_taunt_life",
+                    "value": 21
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%rog_taunt_ar:s $AR\\n%rog_taunt_dr:s $DR\\n%rog_taunt_life seconds\\n%rog_taunt_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%rog_taunt_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Heal",
+            "description": "Raises $HP regeneration rate for the whole party for a time and instantly removes any harmful effects at the cost of 10% of her own $HP",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/rogue_icons1.png",
+            "name": "rogue_heal",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_heal_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "rog_heal_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_heal_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "rog_heal_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_heal_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "rog_heal_pwr",
+                    "value": 308
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_heal_pct",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "rog_heal_pct",
+                    "value": 0.04
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "+%rog_heal_pct:p $HP/s\\n%rog_heal_life seconds\\n%rog_heal_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%rog_heal_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "rogue_taunt",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Southern Shout",
+            "description": "Increases $HP and $EP maximums of entire team for a time.",
+            "descshort": "Boost",
+            "icon": 3,
+            "icon_texture": "textures/ui/rogue_icons1.png",
+            "name": "rogue_shout",
+            "power": "power4",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_shout_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "rog_shout_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_shout_life",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "rog_shout_life",
+                    "value": 120
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_shout_pwr",
+                    "value": 144
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "rog_shout_pwr",
+                    "value": 304
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_shout_health",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "rog_shout_health",
+                    "value": 1.28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_shout_energy",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "rog_shout_energy",
+                    "value": 1.28
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%rog_shout_health:s Max $HP\\n%rog_shout_energy:s Max $EP\\n%rog_shout_life seconds\\n%rog_shout_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%rog_shout_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "rogue_heal",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Energy Overflow",
+            "description": "Releases built up energy in a 180 degree forward arc",
+            "descshort": "Radial",
+            "icon": 4,
+            "icon_texture": "textures/ui/rogue_icons1.png",
+            "name": "rogue_vortex",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_vortex_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "rog_vortex_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_vortex_dmg",
+                    "value": "34 40"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "rog_vortex_dmg",
+                    "value": "121 135"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_vortex_pwr",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "rog_vortex_pwr",
+                    "value": 84
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%rog_vortex_dmg $DMG_ENERGY\\n%rog_vortex_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%rog_vortex_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "rogue_ability",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Torpedo Strike",
+            "description": "Lunges forward and attacks in a torpedo fashion knocking enemies back",
+            "descshort": "Charge",
+            "icon": 9,
+            "icon_texture": "textures/ui/rogue_icons1.png",
+            "name": "rogue_torpedo",
+            "power": "power10",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_torpedo_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "rog_torpedo_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_torpedo_dmg",
+                    "value": 5.5
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "rog_torpedo_dmg",
+                    "value": 9.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_torpedo_ar",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "rog_torpedo_ar",
+                    "value": 2.76
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_torpedo_pwr",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "rog_torpedo_pwr",
+                    "value": 80
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%rog_torpedo_dmg:s $DMG_PHYSICAL (%rog_torpedo_dmg:x)\\n%rog_torpedo_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%rog_torpedo_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%rog_torpedo_dmg",
+                        "scope_node": "rog_power10"
+                    },
+                    "affecter": {
+                        "attribute": "atk_attack_rating",
+                        "level": "%rog_torpedo_ar",
+                        "scope_node": "rog_power10"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Tremor",
+            "description": "Leaps into the air and comes down hard with a smash attack",
+            "descshort": "Melee",
+            "icon": 7,
+            "icon_texture": "textures/ui/rogue_icons1.png",
+            "name": "rogue_tremor",
+            "power": "power8",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_tremor_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "rog_tremor_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_tremor_pwr",
+                    "value": 52
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "rog_tremor_pwr",
+                    "value": 110
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_tremor_dmg",
+                    "value": 3.3
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "rog_tremor_dmg",
+                    "value": 4.7
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_tremor_life",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "rog_tremor_life",
+                    "value": 5
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%rog_tremor_dmg:s $DMG_PHYSICAL (%rog_tremor_dmg:x)\\n%rog_tremor_life second stun\\n%rog_tremor_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%rog_tremor_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "rogue_torpedo",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%rog_tremor_dmg",
+                        "scope_node": "rog_power8"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "MANIC SLAM",
+            "description": "Saps $EP from all enemies, stuns them, and prevents them from using their powers for a time",
+            "descshort": "Charge",
+            "icon": 8,
+            "icon_texture": "textures/ui/rogue_icons1.png",
+            "name": "rogue_xtreme",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_xtreme_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "rog_xtreme_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_xtreme_pct",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "rog_xtreme_pct",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_xtreme_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "rog_xtreme_dmg",
+                    "value": "279 309"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_xtreme_slife",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "rog_xtreme_slife",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_xtreme_nlife",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "rog_xtreme_nlife",
+                    "value": 10
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%rog_xtreme_dmg $DMG_PHYSICAL\\n%rog_xtreme_pct:p of damage as $EP\\n%rog_xtreme_slife second stun\\n%rog_xtreme_nlife seconds without powers",
+                "require": {
+                    "cat": "level",
+                    "level": "%rog_xtreme_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_vampire_energy",
+                        "level": "%rog_xtreme_pct",
+                        "scope_node": "rog_power9"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "REFLECTIVE AURA",
+            "description": "Deflects all damage taken back onto enemies for a time",
+            "descshort": "Boost",
+            "icon": 10,
+            "icon_texture": "textures/ui/rogue_icons1.png",
+            "name": "rogue_xfeed",
+            "power": "power11",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_xfeed_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "rog_xfeed_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_xfeed_life",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "rog_xfeed_life",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%rog_xfeed_life seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%rog_xfeed_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Prism Shield",
+            "description": "Passive ability that adds to resistances.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/rogue_icons1.png",
+            "name": "rogue_prism",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_prism_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "rog_prism_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_prism_resist",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "rog_prism_resist",
+                    "value": 0.6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%rog_prism_resist:p $RES_ELEMENTAL\\n+%rog_prism_resist:p $RES_MENTAL\\n+%rog_prism_resist:p $RES_ENERGY",
+                "require": {
+                    "cat": "level",
+                    "level": "%rog_prism_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_elemental",
+                        "level": "%rog_prism_resist"
+                    },
+                    "affecter": {
+                        "attribute": "resist_mental",
+                        "level": "%rog_prism_resist"
+                    },
+                    "affecter": {
+                        "attribute": "resist_energy",
+                        "level": "%rog_prism_resist"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Hardened",
+            "description": "Increases $DR",
+            "descshort": "Passive",
+            "icon": 12,
+            "icon_texture": "textures/ui/rogue_icons1.png",
+            "name": "rogue_hard",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_hard_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "rog_hard_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rog_hard_dr",
+                    "value": 1.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "rog_hard_dr",
+                    "value": 2
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%rog_hard_dr:s $DR",
+                "require": {
+                    "cat": "level",
+                    "level": "%rog_hard_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "defense_rating",
+                        "level": "%rog_hard_dr"
+                    }
+                }
+            }
+        }
+    }
+}
