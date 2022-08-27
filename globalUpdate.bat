@@ -60,6 +60,10 @@ echo Professor X
 cd "%~dp0\1. Playable Characters\Professor X"
 call update.bat 
 cd ..\..
+echo Pyro
+cd "%~dp0\1. Playable Characters\Pyro"
+call update.bat 
+cd ..\..
 echo Sabretooth
 cd "%~dp0\1. Playable Characters\Sabretooth"
 call update.bat 

@@ -68,6 +68,14 @@ echo defaultman
 cd "%~dp0\1. Playable Characters\defaultman"
 call compile.bat %consoleChoice%
 cd ..\..
+echo Beast
+cd "%~dp0\1. Playable Characters\Beast"
+call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+cd ..\..
+echo Bishop
+cd "%~dp0\1. Playable Characters\Bishop"
+call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+cd ..\..
 echo Colossus
 cd "%~dp0\1. Playable Characters\Colossus"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
@@ -106,6 +114,18 @@ call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
 cd ..\..
 echo Nightcrawler
 cd "%~dp0\1. Playable Characters\Nightcrawler"
+call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+cd ..\..
+echo Professor X
+cd "%~dp0\1. Playable Characters\Professor X"
+call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+cd ..\..
+echo Pyro
+cd "%~dp0\1. Playable Characters\Pyro"
+call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+cd ..\..
+echo Sabretooth
+cd "%~dp0\1. Playable Characters\Sabretooth"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
 cd ..\..
 echo Storm
