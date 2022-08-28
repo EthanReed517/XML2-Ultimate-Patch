@@ -56,14 +56,6 @@
                     "name": "dmgmod_auto_knockback"
                 }
             },
-            "trigger": {
-                "finisher": true,
-                "life": 0.25,
-                "name": "xtreme_start",
-                "tag": 15,
-                "time": -1,
-                "worldspeed": 0.5
-            },
             "chain": {
                 "action": "powers",
                 "result": "powers"
@@ -111,7 +103,7 @@
                 "damage": "%sun_ignite_dmg",
                 "damagetype": "dmg_fire",
                 "fxlevel": 2,
-                "hiteffect": "base/material/explode/exp_generic_sml",
+                "hiteffect": "char/sun/p1_impact",
                 "name": "blast",
                 "numblasts": 1,
                 "powerusage": "%sun_ignite_pwr",
@@ -400,6 +392,11 @@
                 "time": 0
             },
             "trigger": {
+                "name": "sound",
+                "sound": "char/sun_m/p1_charge",
+                "time": 0.1
+            },
+            "trigger": {
                 "actorbolt": "Bip01 R Hand",
                 "arc": 0,
                 "attack_bone_angles": "0 0 0",
@@ -454,19 +451,6 @@
                 "result": "idle"
             }
         },
-        "event": {
-            "arc": 180,
-            "damage": "%sun_flameswd_dmg",
-            "damagelevel": 2,
-            "damagescale": "none",
-            "damagetype": "dmg_fire",
-            "fxlevel": 1,
-            "hiteffect": "char/sun/p2_aura",
-            "inherit": "punch_heavy",
-            "maxrange": 72,
-            "name": "power6_dmg",
-            "powerusage": "%sun_flameswd_pwr"
-        },
         "FightMove": {
             "aireusetime": 5,
             "aitype": "aoe",
@@ -498,8 +482,16 @@
                 "time": 0.21
             },
             "trigger": {
-                "name": "power6_dmg",
-                "time": 0.67,
+                "arc": 180,
+                "damage": "%sun_flameswd_dmg",
+                "damagelevel": 2,
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "fxlevel": 1,
+                "maxrange": 72,
+                "name": "blast",
+                "powerusage": "%sun_flameswd_pwr",
+                "time": 0.6,
                 "damageMod": {
                     "name": "dmgmod_weld"
                 },
@@ -554,11 +546,29 @@
             },
             "trigger": {
                 "apply_ally": "all",
-                "damage": "3 5",
+                "apply_enemy": "none",
+                "apply_self": true,
+                "class": "add_attack",
+                "damagepercent": "%sun_flamefury_pdmg",
+                "damagetype": "dmg_fire",
                 "life": "%sun_flamefury_life",
                 "name": "powerup",
                 "powerusage": "%sun_flamefury_pwr",
                 "time": 0.5,
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    }
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%sun_flamefury_ar"
+                },
                 "special_fx": {
                     "bolt": "Bip01 L Hand",
                     "effect": "char/sun/p7_aura",
@@ -570,18 +580,6 @@
                     "effect": "char/sun/p7_aura",
                     "fxlevel": 1,
                     "how_used": "primary"
-                },
-                "affecter": {
-                    "affect_type": "scale",
-                    "attribute": "damage",
-                    "level": "%sun_flamefury_pdmg",
-                    "scope_damage": "dmg_fire"
-                },
-                "affecter": {
-                    "affect_type": "scale",
-                    "attribute": "atk_attack_rating",
-                    "level": "%sun_flamefury_ar",
-                    "scope_damage": "dmg_fire"
                 }
             },
             "chain": {
@@ -678,7 +676,7 @@
             "animenum": "ea_power9",
             "blendtime": 0,
             "combotextfinisher": "Eruption",
-            "description": "SUPER NOVA",
+            "description": "SUPERNOVA",
             "icon": 8,
             "lockangles": true,
             "name": "power9",
@@ -729,17 +727,22 @@
                 "damagetype": "dmg_fire",
                 "maxrange": 600,
                 "name": "punch",
-                "time": 0.7
+                "time": 0.7,
+                "victimeventtag": 101
             },
             "trigger": {
-                "arc": 180,
-                "attacktype": "blast",
+                "class": "harming",
                 "damage": "%sun_nucblast_rdmg",
-                "damagescale": "none",
                 "damagetype": "dmg_radiation",
-                "maxrange": 600,
-                "name": "punch",
-                "time": 0.7
+                "life": 4,
+                "name": "powerup",
+                "tag": 101,
+                "time": -1,
+                "special_fx": {
+                    "effect": "char/sun/p2_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                }
             },
             "chain": {
                 "action": "Idle",
@@ -782,23 +785,28 @@
                 "time": 0
             },
             "trigger": {
-                "name": "sound",
+                "name": "effect_sound",
                 "sound": "char/sun_m/p1_charge",
+                "time": 0.1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/sun_m/p8_charge",
                 "time": 0.4
             },
             "trigger": {
                 "arc": 180,
                 "attacktype": "blast",
                 "damage": "%sun_flamecol_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_fire",
-                "hiteffect": "base/material/explode/exp_generic_sml",
                 "inherit": "punch",
                 "knockback": "%sun_flamecol_kb",
                 "name": "fire_column",
                 "powerattack": true,
                 "powerusage": "%sun_flamecol_pwr",
                 "radius": 36,
-                "time": 0.4,
+                "time": 0.45,
                 "damageMod": {
                     "name": "dmgmod_auto_knockback"
                 }
