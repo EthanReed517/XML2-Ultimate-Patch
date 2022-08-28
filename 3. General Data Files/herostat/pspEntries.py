@@ -21,6 +21,7 @@ sabretooth = ["astonishing","aoa","60s","70s","weaponx","future","civilian"]
 scarletWitch = ["astonishing","aoa","70s","future"]
 storm = []
 sunfire = ["astonishing","70s","weaponx","future","winter","civilian"]
+toad = ["astonishing","60s","70s","weaponx","winter"]
 wolverine = ["60s"]
 
 # ######### #
@@ -88,5 +89,7 @@ if name == "Storm.txt":
     pspEntry(name,storm)
 if name == "Sunfire.txt":
     pspEntry(name,sunfire)
+if name == "Toad.txt":
+    pspEntry(name,toad)
 if name == "Wolverine.txt":
     pspEntry(name,wolverine)
