@@ -1,0 +1,1214 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/psylocke_icons1.png",
+        "FightMove": {
+            "aitype": "beam",
+            "animenum": "ea_attack_knockback",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackknockback2",
+            "startchaintime": 0.6,
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/psyloc/p2_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/psyloc_m/p12_power",
+                "time": 0.3
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/psyloc/p2_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "life": 0.14,
+                "name": "slide",
+                "targetdistance": 70,
+                "targetradius": 57,
+                "time": 0.25
+            },
+            "trigger": {
+                "attack_type": "psionic",
+                "damage": "3 5",
+                "damage_type": "dmg_telekinesis",
+                "fxlevel": 1,
+                "hiteffect": "char/psyloc/p1_impact",
+                "knockback": 245,
+                "maxrange": 80,
+                "name": "punch",
+                "time": 0.5,
+                "victimeventtag": 15,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "finisher": true,
+                "life": 0.25,
+                "name": "xtreme_start",
+                "tag": 15,
+                "time": -1,
+                "worldspeed": 0.5
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle",
+            "noncombat": true,
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/psylocke_blade_01",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "strafeleft"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "straferight"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "advance"
+            },
+            "chain": {
+                "action": "retreat",
+                "result": "retreat"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "groundattack",
+                "result": "groundattack"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            },
+            "chain": {
+                "action": "special",
+                "result": "boredloop"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_start",
+            "handler": "ch_move_jump",
+            "lockangles": true,
+            "name": "jump",
+            "startchaintime": 0.3,
+            "chain": {
+                "action": "move",
+                "result": "airjump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "jumploop",
+            "noncombat": true,
+            "chain": {
+                "action": "move",
+                "result": "airjump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_double_jump_start",
+            "blendtime": 0.1,
+            "handler": "ch_move_jump",
+            "name": "airjump",
+            "startchaintime": 0.5,
+            "turnrate": 0.2,
+            "chain": {
+                "action": "special",
+                "result": "doublejumpland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_land",
+            "blendtime": 0.1,
+            "endchaintime": 0.7,
+            "handler": "ch_move_jump_land",
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "doublejumpland",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "blendtime": 0.07,
+            "combotextfinisher": "Slash",
+            "combotextstarter": "Slicing",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "powerup_tag": "psylocke_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "psy_slash",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/psyloc/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.05
+            },
+            "trigger": {
+                "effect": "char/psyloc/p1_arc",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.27
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/psyloc_m/p1_power",
+                "time": 0.27
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "punch",
+                "damage": "%psy_slash_dmg",
+                "damagelevel": 2,
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "knockback": 0,
+                "maxrange": 60,
+                "name": "punch",
+                "powerattack": true,
+                "powerusage": "%psy_slash_pwr",
+                "tag": 1,
+                "time": 0.4,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Bolt",
+            "combotextstarter": "Crushing",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "powerup_tag": "psylocke_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "psy_bolts",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/psyloc/p2_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/psyloc/p1_arc",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/psyloc_m/p2_power",
+                "time": 0.3
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "projectile",
+                "center": true,
+                "count": "%psy_bolts_num",
+                "damage": "%psy_bolts_dmg",
+                "damagelevel": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "entity": "psybolt",
+                "filename": "ents_psylocke",
+                "knockback": 0,
+                "maxrange": 800,
+                "name": "projectile",
+                "powerusage": "%psy_bolts_pwr",
+                "speed": 600,
+                "tag": 1,
+                "time": 0.36
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "projectile",
+                "center": true,
+                "count": "%psy_bolts_num",
+                "damage": 0,
+                "damagelevel": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "entity": "psybolt2",
+                "filename": "ents_psylocke",
+                "knockback": 0,
+                "maxrange": 800,
+                "name": "projectile",
+                "speed": 600,
+                "tag": 2,
+                "time": 0.36
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Torrent",
+            "combotextstarter": "Psionic",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "playspeed": 1.4,
+            "powerup_tag": "psylocke_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "psy_blast",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%psy_blast_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/psyloc/p3_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/psyloc/p3_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/psyloc_m/p3_charge",
+                "time": 0
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damagescale": "none",
+                "damagetype": "dmg_telekinesis",
+                "fxlevel": 1,
+                "inherit": "punch",
+                "knockback": "%psy_blast_kb",
+                "name": "radial_punch",
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/psyloc/p3_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "size": 0.3,
+                "time": 0.45
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/psyloc_m/p3_power",
+                "time": 0.45
+            },
+            "trigger": {
+                "damage": "%psy_blast_dmg",
+                "maxrange": 144,
+                "name": "radial_punch",
+                "time": 0.45
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_menu_action",
+            "combotextfinisher": "Focus",
+            "combotextstarter": "Mental",
+            "icon": 4,
+            "name": "power4",
+            "playspeed": 1.5,
+            "powerup_tag": "psylocke_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "psy_focus",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/psyloc_m/p5_power",
+                "time": 0
+            },
+            "trigger": {
+                "life": "%psy_focus_lif",
+                "name": "powerup",
+                "powerusage": "%psy_focus_pwr",
+                "time": 0.7,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/psyloc/ability_fly",
+                    "fxlevel": 2
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "maxenergy",
+                    "level": "%psy_focus_ep"
+                },
+                "affecter": {
+                    "attribute": "defense_rating",
+                    "level": "%psy_focus_def"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_menu_action",
+            "combotextfinisher": "Perception",
+            "combotextstarter": "Telepathic",
+            "icon": 3,
+            "name": "power5",
+            "powerup_tag": "psylocke_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "psy_defense",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/psyloc_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "life": "%psy_defense_lif",
+                "name": "powerup",
+                "powerusage": "%psy_defense_pwr",
+                "time": 0.7,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%psy_defense_sd"
+                },
+                "special_fx": {
+                    "effect": "char/psyloc/psylocke_armor",
+                    "fxlevel": 2
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Blades",
+            "combotextstarter": "Psychic",
+            "icon": 5,
+            "name": "power6",
+            "powerup_tag": "psylocke_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "psy_wield",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/psyloc_m/p6_power",
+                "time": 0
+            },
+            "trigger": {
+                "life": "%psy_wield_lif",
+                "name": "powerup",
+                "powerusage": "%psy_wield_pwr",
+                "time": 0.7,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "damage",
+                    "level": "%psy_wield_dmg"
+                },
+                "bolton": {
+                    "bolt": "Bip01 L Hand",
+                    "model": "models/bolton/psylocke_blade_02"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "event": {
+            "damage": "%psy_xtreme_dmg",
+            "damagelevel": 2,
+            "damagetype": "dmg_mental",
+            "enemynumber": 0,
+            "hiteffect": "char/psyloc/p4_impact",
+            "inherit": "blast",
+            "maxrange": 225,
+            "name": "psybolt",
+            "radius": 60,
+            "random": true,
+            "victimeventtag": 2
+        },
+        "FightMove": {
+            "animenum": "ea_power4",
+            "blendtime": 0,
+            "combotextfinisher": "Onslaught",
+            "description": "PSYCHIC ONSLAUGHT",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power7",
+            "playspeed": 10,
+            "powerup_tag": "psylocke_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "psy_xtreme",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": 4,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "life": 2,
+                "name": "powerup",
+                "tag": 2,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/psyloc/powerup_slow"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": 0.3
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/psyloc_m/p7_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/psyloc/p4_onslaught",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/psyloc/p4_onslaught",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "enemynumber": 0,
+                "name": "psybolt",
+                "time": 0.7
+            },
+            "trigger": {
+                "enemynumber": 1,
+                "name": "psybolt",
+                "time": 0.715
+            },
+            "trigger": {
+                "enemynumber": 2,
+                "name": "psybolt",
+                "time": 0.73
+            },
+            "trigger": {
+                "enemynumber": 3,
+                "name": "psybolt",
+                "time": 0.745
+            },
+            "trigger": {
+                "enemynumber": 4,
+                "name": "psybolt",
+                "time": 0.76
+            },
+            "trigger": {
+                "enemynumber": 5,
+                "name": "psybolt",
+                "time": 0.775
+            },
+            "trigger": {
+                "enemynumber": 6,
+                "name": "psybolt",
+                "time": 0.79
+            },
+            "trigger": {
+                "enemynumber": 7,
+                "name": "psybolt",
+                "time": 0.805
+            },
+            "trigger": {
+                "enemynumber": 8,
+                "name": "psybolt",
+                "time": 0.82
+            },
+            "trigger": {
+                "enemynumber": 9,
+                "name": "psybolt",
+                "time": 0.835
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4",
+            "blendtime": 0,
+            "combotextfinisher": "Cloak",
+            "description": "CRIMSON DAWN",
+            "icon": 7,
+            "lockchaining": false,
+            "lockangles": true,
+            "name": "power8",
+            "playspeed": 2,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "psy_xtreme2",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/psyloc_m/p8_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/psyloc_m/p8_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "add": "cloaked",
+                "name": "disapear",
+                "tag": 10,
+                "time": -1,
+                "type": "ce_renderfx"
+            },
+            "trigger": {
+                "name": "appear",
+                "remove": "cloaked",
+                "tag": 11,
+                "time": -1,
+                "type": "ce_renderfx"
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "class": "callevents",
+                "life": "%psy_xtreme2_lif",
+                "name": "powerup",
+                "time": 0.35,
+                "Functionevent": {
+                    "function": "activate",
+                    "triggertag": 10
+                },
+                "Functionevent": {
+                    "function": "deactivate",
+                    "triggertag": 11
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Pelvis",
+                    "effect": "char/psyloc/special_xtreme",
+                    "fxlevel": 3,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%psy_xtreme2_dr"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "xp",
+                    "level": "%psy_xtreme2_xp"
+                },
+                "affecter": {
+                    "attribute": "invisible"
+                }
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "class": "callevents",
+                "life": "%psy_xtreme2_lif",
+                "name": "powerup",
+                "time": 0.35,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/psyloc/ability_eye",
+                    "fxlevel": 2
+                },
+                "Functionevent": {
+                    "function": "deactivate",
+                    "triggertag": 12
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%psy_xtreme2_dr"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "xp",
+                    "level": "%psy_xtreme2_xp"
+                }
+            },
+            "trigger": {
+                "combatnode": "idle2",
+                "forcerestart": true,
+                "name": "othernode",
+                "tag": 12,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle2",
+            "noncombat": true,
+            "trigger": {
+                "boltslot": "ebolton_altweapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "boltslot": "ebolton_clawright",
+                "name": "bolton",
+                "removebolton": true,
+                "time": 0
+            },
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/psylocke_blade_01",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0
+            },
+            "trigger": {
+                "critical": true,
+                "name": "powerup",
+                "remove_tag": "psy_p10_link",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle3"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "fallback": "idle",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle3",
+            "noncombat": true,
+            "require": {
+                "cat": "skill",
+                "item": "psy_power",
+                "level": 1
+            },
+            "trigger": {
+                "inherit": "powerup",
+                "life": -1,
+                "name": "blade_02",
+                "tag_name": "blade_02",
+                "time": 0,
+                "bolton": {
+                    "bolt": "Bip01 R Hand",
+                    "model": "models/bolton/psylocke_blade_02"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle4"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "fallback": "idle",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle4",
+            "noncombat": true,
+            "require": {
+                "cat": "skill",
+                "item": "psy_power",
+                "level": 6
+            },
+            "trigger": {
+                "critical": true,
+                "name": "powerup",
+                "remove_tag": "blade_02",
+                "time": 0
+            },
+            "trigger": {
+                "inherit": "powerup",
+                "life": -1,
+                "name": "blade_03",
+                "tag_name": "blade_03",
+                "time": 0,
+                "bolton": {
+                    "bolt": "Bip01 R Hand",
+                    "model": "models/bolton/psylocke_blade_03"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aicomborange": "melee",
+            "aicombotype": "end",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Strike",
+            "combotextstarter": "Lashing",
+            "icon": 11,
+            "lockangles": true,
+            "name": "power9",
+            "playspeed": 1.5,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "psy_whip",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/psyloc_m/p9_power",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/psyloc/p6_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.473
+            },
+            "trigger": {
+                "angle": 0,
+                "arc": 90,
+                "attacktype": "punch",
+                "damage": "%psy_whip_dmg",
+                "damagelevel": 2,
+                "damagescale": "none",
+                "damagetype": "dmg_telekinesis",
+                "fxlevel": 2,
+                "height": 0,
+                "hiteffect": "char/psyloc/p6_impact",
+                "index": 2,
+                "knockback": 370,
+                "maxrange": 120,
+                "name": "punch",
+                "powerattack": true,
+                "powerusage": "%psy_whip_pwr",
+                "time": 0.526,
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beamanyrange",
+            "animenum": "ea_attack_stun3",
+            "combotextfinisher": "Beam",
+            "combotextstarter": "Mental",
+            "icon": 12,
+            "lockangles": true,
+            "name": "power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "psy_spea",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "remove_on_node_end": true,
+                "tag_name": "psy_p10_link",
+                "time": 0,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/psyloc/ability_flyb",
+                    "fxlevel": 2,
+                    "how_used": "primary",
+                    "never_cycle": true
+                }
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/psyloc_m/p10_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/psyloc_m/p10_power",
+                "time": 0.38
+            },
+            "trigger": {
+                "arc": 0,
+                "attack_bone_angles": "-122 -37 9",
+                "attack_bone_pos": "15 0 57",
+                "attacktype": "beam",
+                "beambolt": "Bip01 L Hand",
+                "beameffect": "char/psyloc/p2_power",
+                "damage": "%psy_spea_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "hiteffect": "char/psyloc/p2_impactb",
+                "maxrange": 800,
+                "name": "beam",
+                "pierce": true,
+                "powerusage": "%psy_spea_pwr",
+                "time": 0.38
+            },
+            "trigger": {
+                "critical": true,
+                "name": "powerup",
+                "remove_tag": "psy_p10_link",
+                "time": 0.6
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aitype": "melee",
+            "animenum": "ea_power10",
+            "blendtime": 0.07,
+            "combotextfinisher": "Slice",
+            "combotextstarter": "Telekinetic",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power11",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "psy_sword",
+                "level": 1
+            },
+            "trigger": {
+                "life": 0.1,
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/psyloc/p1_trail",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/psyloc/p1_trail",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.29
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/psyloc_m/p11_power",
+                "time": 0.27
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "punch",
+                "damage": "%psy_sword_dmg",
+                "damagelevel": 2,
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "knockback": 0,
+                "maxrange": 60,
+                "name": "punch",
+                "powerattack": true,
+                "powerusage": "%psy_sword_pwr",
+                "tag": 1,
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power11_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "power11_end",
+            "noncombat": true,
+            "trigger": {
+                "boltslot": "ebolton_clawright",
+                "name": "bolton",
+                "removebolton": true,
+                "time": 0
+            },
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/psylocke_blade_01",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "strafeleft"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "straferight"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "advance"
+            },
+            "chain": {
+                "action": "retreat",
+                "result": "retreat"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "groundattack",
+                "result": "groundattack"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            },
+            "chain": {
+                "action": "special",
+                "result": "boredloop"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        }
+    }
+}

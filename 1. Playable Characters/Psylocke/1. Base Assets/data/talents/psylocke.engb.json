@@ -1,0 +1,867 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "psy_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_mental",
+                        "level": 1
+                    }
+                }
+            }
+        },
+        "talent": {
+            "hidden": true,
+            "name": "psy_psionic",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "class": "trail_replace",
+                    "life": -1,
+                    "special_fx": {
+                        "effect": "char/psyloc/special_elemental",
+                        "how_used": "custom"
+                    },
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        }
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Psychic Slash",
+            "description": "A powerful Psychic Blade attack that stuns enemies.",
+            "descshort": "Melee",
+            "icon": 0,
+            "icon_texture": "textures/ui/psylocke_icons2.png",
+            "name": "psy_slash",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_slash_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "psy_slash_req",
+                    "value": 56
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_slash_dmg",
+                    "value": "20 26"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "psy_slash_dmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_slash_pwr",
+                    "value": 18
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "psy_slash_pwr",
+                    "value": 128
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%psy_slash_dmg $DMG_MENTAL\\n%psy_slash_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%psy_slash_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Psychic Spikes",
+            "description": "Psylocke throws multiple spikes of Psychic Energy at enemies.",
+            "descshort": "Projectile",
+            "icon": 1,
+            "icon_texture": "textures/ui/psylocke_icons2.png",
+            "name": "psy_bolts",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_bolts_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "psy_bolts_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_bolts_dmg",
+                    "value": "17 22"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "psy_bolts_dmg",
+                    "value": "117 132"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_bolts_num",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "psy_bolts_num",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_bolts_pwr",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "psy_bolts_pwr",
+                    "value": 140
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%psy_bolts_dmg $DMG_MENTAL\\n%psy_bolts_num bolt(s)\\n%psy_bolts_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%psy_bolts_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Telekinetic Explosion",
+            "description": "Unleashes an intense explosion of Telekinetic Energy that knocks back enemies and objects.",
+            "descshort": "Radial",
+            "icon": 2,
+            "icon_texture": "textures/ui/psylocke_icons2.png",
+            "name": "psy_blast",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_blast_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "psy_blast_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_blast_dmg",
+                    "value": "34 40"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "psy_blast_dmg",
+                    "value": "121 135"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_blast_pwr",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "psy_blast_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_blast_kb",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "psy_blast_kb",
+                    "value": 620
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%psy_blast_dmg Telekinetic Dmg\\n%psy_blast_kb $KB\\n%psy_blast_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%psy_blast_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Mental Focus",
+            "description": "Psylocke focuses her Telekinetic Energy and boosts her Defense and max $EP.",
+            "descshort": "Boost",
+            "icon": 4,
+            "icon_texture": "textures/ui/psylocke_icons2.png",
+            "name": "psy_focus",
+            "power": "power4",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_focus_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "psy_focus_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_focus_def",
+                    "value": 1.3
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "psy_focus_def",
+                    "value": 2.09
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_focus_ep",
+                    "value": 1.1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "psy_focus_ep",
+                    "value": 1.3
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_focus_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "psy_focus_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_focus_pwr",
+                    "value": 48
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "psy_focus_pwr",
+                    "value": 484
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%psy_focus_def:s $DR\\n%psy_focus_ep:s max $EP\\n%psy_focus_lif seconds\\n%psy_focus_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%psy_focus_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Extrasensory Perception",
+            "description": "Psylocke uses her Telepathy to enhance her allies' senses, increasing the entire team's Movement Speed.",
+            "descshort": "Boost",
+            "icon": 3,
+            "icon_texture": "textures/ui/psylocke_icons2.png",
+            "name": "psy_defense",
+            "power": "power5",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_defense_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "psy_defense_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_defense_pwr",
+                    "value": 32
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "psy_defense_pwr",
+                    "value": 312
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_defense_sd",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "psy_defense_sd",
+                    "value": 2.1
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_defense_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "psy_defense_lif",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%psy_defense_sd:s Movement Speed\\n%psy_defense_lif seconds\\n%psy_defense_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%psy_defense_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "psy_focus",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Dual Wield",
+            "description": "Psylocke wields two Psychic Blades at once, increasing her Melee $DMG.",
+            "descshort": "Boost",
+            "icon": 5,
+            "icon_texture": "textures/ui/psylocke_icons2.png",
+            "name": "psy_wield",
+            "power": "power6",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_wield_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "psy_wield_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_wield_dmg",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "psy_wield_dmg",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_wield_pwr",
+                    "value": 90
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "psy_wield_pwr",
+                    "value": 492
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_wield_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "psy_wield_lif",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%psy_wield_dmg:s Melee $DMG (%psy_wield_dmg:x)\\n%psy_wield_lif seconds\\n%psy_wield_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%psy_wield_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "psy_power",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "PSYCHIC ONSLAUGHT",
+            "description": "An Xtreme radial attack that rains Psychic Blades down on enemies.",
+            "descshort": "Radial",
+            "icon": 6,
+            "icon_texture": "textures/ui/psylocke_icons2.png",
+            "name": "psy_xtreme",
+            "power": "power7",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_xtreme_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "psy_xtreme_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_xtreme_dmg",
+                    "value": "88 100"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "psy_xtreme_dmg",
+                    "value": "282 313"
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%psy_xtreme_dmg $DMG_MENTAL",
+                "require": {
+                    "cat": "level",
+                    "level": "%psy_xtreme_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "CRIMSON DAWN",
+            "description": "Using the power of Crimson Dawn, Psylocke makes herself and her allies invisible and gives them $DR and $XP bonuses.",
+            "descshort": "Boost",
+            "icon": 7,
+            "icon_texture": "textures/ui/psylocke_icons2.png",
+            "name": "psy_xtreme2",
+            "power": "power8",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_xtreme2_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "psy_xtreme2_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_xtreme2_dr",
+                    "value": 1.15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "psy_xtreme2_dr",
+                    "value": 1.75
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_xtreme2_xp",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "psy_xtreme2_xp",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_xtreme2_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "psy_xtreme2_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "All allies become invisible\\n%psy_xtreme2_dr:s $DR\\n%psy_xtreme2_xp:s $XP\\n%psy_xtreme2_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%psy_xtreme2_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Psionic Swipe",
+            "description": "Knocks back enemies with a Psionic lashing attack.",
+            "descshort": "Special",
+            "icon": 11,
+            "icon_texture": "textures/ui/psylocke_icons2.png",
+            "name": "psy_whip",
+            "power": "power9",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_whip_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "psy_whip_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_whip_dmg",
+                    "value": "66 75"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "psy_whip_dmg",
+                    "value": "130 146"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_whip_pwr",
+                    "value": 72
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "psy_whip_pwr",
+                    "value": 152
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%psy_whip_dmg Telekinetic Dmg\\n%psy_whip_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%psy_whip_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Psionic Projection",
+            "description": "Projects a beam of Psionic Energy capable of piercing through enemies.",
+            "descshort": "Beam",
+            "icon": 12,
+            "icon_texture": "textures/ui/psylocke_icons2.png",
+            "name": "psy_spea",
+            "power": "power10",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_spea_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "psy_spea_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_spea_pwr",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "psy_spea_pwr",
+                    "value": 128
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_spea_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "psy_spea_dmg",
+                    "value": "195 217"
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%psy_spea_dmg $DMG_MENTAL\\n%psy_spea_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%psy_spea_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Psychic Katana",
+            "description": "Psylocke lunges at her target with a katana made of Psychic Energy.",
+            "descshort": "Melee",
+            "icon": 8,
+            "icon_texture": "textures/ui/psylocke_icons2.png",
+            "name": "psy_sword",
+            "power": "power11",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_sword_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "psy_sword_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_sword_dmg",
+                    "value": "75 86"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "psy_sword_dmg",
+                    "value": "201 224"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_sword_pwr",
+                    "value": 46
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "psy_sword_pwr",
+                    "value": 132
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%psy_sword_dmg $DMG_MENTAL\\n%psy_sword_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%psy_sword_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Blade Mastery",
+            "description": "Increases the size and damage of Psylocke's Psychic Blade, and increases Critical chance for Psychic Blade attacks.",
+            "descshort": "Passive",
+            "icon": 8,
+            "icon_texture": "textures/ui/psyloc_icons2.png",
+            "name": "psy_power",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_power_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "psy_power_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_power_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "psy_power_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_power_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "psy_power_crit",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%psy_power_dmg:s $DMG\\n+%psy_power_crit:p Critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%psy_power_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "BoltOn": {
+                        "bolt": "Bip01 R Hand",
+                        "model": "models/bolton/psylocke_blade_02",
+                        "slot": "ebolton_weapon"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%psy_power_dmg",
+                        "scope_damage": "dmg_mental"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%psy_power_crit",
+                        "scope_damage": "dmg_mental"
+                    }
+                }
+            },
+            "level": {
+                "count": 10,
+                "description": "%psy_power_dmg:s $DMG\\n+%psy_power_crit:p Critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%psy_power_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "BoltOn": {
+                        "bolt": "Bip01 R Hand",
+                        "model": "models/bolton/psylocke_blade_03",
+                        "slot": "ebolton_weapon"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%psy_power_dmg",
+                        "scope_damage": "dmg_mental"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%psy_power_crit",
+                        "scope_damage": "dmg_mental"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Psionic Strike",
+            "description": "Adds $DMG_MENTAL to Melee attacks.",
+            "descshort": "Passive",
+            "icon": 9,
+            "icon_texture": "textures/ui/psylocke_icons2.png",
+            "name": "psy_ment_comb",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_ment_comb_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "psy_ment_comb_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "psy_ment_comb_dmg",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "psy_ment_comb_dmg",
+                    "value": 3.6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%psy_ment_comb_dmg:p $DMG_MENTAL",
+                "require": {
+                    "cat": "level",
+                    "level": "%psy_ment_comb_req"
+                },
+                "powerup": {
+                    "class": "add_attack",
+                    "damagepercent": "%psy_ment_comb_dmg",
+                    "damagetype": "dmg_mental",
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        }
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Precognition",
+            "description": "Increases chance to dodge Melee attacks and projectiles.",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/psylocke_icons2.png",
+            "name": "psy_dodge",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dodge_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dodge_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dodge_chance",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dodge_chance",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%dodge_chance:p chance to dodge",
+                "require": {
+                    "cat": "level",
+                    "level": "%dodge_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%dodge_chance",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        },
+                        "scope": {
+                            "scope_attack": "projectile"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
