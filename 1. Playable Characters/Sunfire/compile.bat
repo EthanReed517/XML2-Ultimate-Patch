@@ -14,6 +14,7 @@ goto consoleChoiceSection
 :unneeded
 REM can remove unneeded folders. Customize as needed
 rmdir /s /q "0. Staging\1. Data Entries"
+rmdir /s /q "0. Staging\2. Bonus Loading Screens"
 REM files on the PC that aren't modified by the X2UP can be removed here
 if  %consoleChoice%==PC (
 	del >nul "0. Staging\actors\12_sunfire.igb"
