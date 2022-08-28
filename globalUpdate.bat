@@ -80,6 +80,10 @@ echo Storm
 cd "%~dp0\1. Playable Characters\Storm"
 call update.bat 
 cd ..\..
+echo Sunfire
+cd "%~dp0\1. Playable Characters\Sunfire"
+call update.bat 
+cd ..\..
 echo Wolverine
 cd "%~dp0\1. Playable Characters\Wolverine"
 call update.bat 
