@@ -144,6 +144,10 @@ echo Sunfire
 cd "%~dp0\1. Playable Characters\Sunfire"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
 cd ..\..
+echo Toad
+cd "%~dp0\1. Playable Characters\Toad"
+call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+cd ..\..
 echo Wolverine
 cd "%~dp0\1. Playable Characters\Wolverine"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
