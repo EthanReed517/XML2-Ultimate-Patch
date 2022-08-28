@@ -20,6 +20,7 @@ rogue = ["60s","70s","weaponx","future","winter"]
 sabretooth = ["astonishing","aoa","60s","70s","weaponx","future","civilian"]
 scarletWitch = ["astonishing","aoa","70s","future"]
 storm = []
+sunfire = ["astonishing","70s","weaponx","future","winter","civilian"]
 wolverine = ["60s"]
 
 # ######### #
@@ -85,5 +86,7 @@ if name == "ScarletWitch.txt":
     pspEntry(name,scarletWitch)
 if name == "Storm.txt":
     pspEntry(name,storm)
+if name == "Sunfire.txt":
+    pspEntry(name,sunfire)
 if name == "Wolverine.txt":
     pspEntry(name,wolverine)
