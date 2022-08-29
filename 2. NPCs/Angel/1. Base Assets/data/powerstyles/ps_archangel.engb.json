@@ -1,0 +1,504 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "animenum": "ea_fly_idle",
+            "fallback": "jumploop",
+            "handler": "ch_flying",
+            "lockchaining": false,
+            "name": "flying",
+            "noncombat": true,
+            "powerup_tag": "flying",
+            "require": {
+                "cat": "skill",
+                "item": "flight",
+                "level": 1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "flying"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "flycharge"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_flying_slamattack_start",
+            "combotextfinisher": "Rush",
+            "combotextstarter": "Charging",
+            "handler": "ch_fly_move",
+            "lockangles": true,
+            "name": "flycharge",
+            "playspeed": 2,
+            "powerup_tag": "flying",
+            "turnrate": 0.2,
+            "require": {
+                "cat": "skill",
+                "item": "flight",
+                "level": 1
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": 4,
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "flycharge_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "endchaintime": 1,
+            "icon": 3,
+            "lockangles": true,
+            "name": "attacklight1",
+            "startchaintime": 0.9,
+            "trigger": {
+                "effect": "char/archa/special_attacklight",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.38
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.45
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "null"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "null"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_heavy1",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "icon": 7,
+            "lockangles": true,
+            "name": "attackheavy1",
+            "startchaintime": 0.8,
+            "trigger": {
+                "effect": "char/archa/special_attacklight",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.2
+            },
+            "trigger": {
+                "height": 10,
+                "name": "kick_heavy",
+                "time": 0.38
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "null"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "null"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 2.5,
+            "aitype": "projectile",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_attack",
+            "trigger": {
+                "name": "sound",
+                "sound": "char/archa_m/p1_charge",
+                "time": 0
+            },
+            "event": {
+                "actorbolt": "Bip01 Pelvis",
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "damagetype": "dmg_physical",
+                "entity": "metal_feathers",
+                "filename": "ents_archangel",
+                "fulltargeting": true,
+                "inherit": "projectile",
+                "name": "archa_proj",
+                "powerusage": 1,
+                "speed": 600,
+                "targetable": true
+            },
+            "trigger": {
+                "effect": "char/archa/p1_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/archa_m/p1_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "attack_bone_angles": "85 -87 -175",
+                "attack_bone_pos": "-4 0 39",
+                "fulltargeting": true,
+                "name": "archa_proj",
+                "offset": "0 -48 20",
+                "time": 0.5
+            },
+            "trigger": {
+                "attack_bone_angles": "85 -87 -175",
+                "attack_bone_pos": "-4 0 39",
+                "fulltargeting": true,
+                "name": "archa_proj",
+                "offset": "0 48 20",
+                "time": 0.5
+            },
+            "trigger": {
+                "attack_bone_angles": "-86 -87 -4",
+                "attack_bone_pos": "-9 0 37",
+                "fulltargeting": true,
+                "name": "archa_proj",
+                "offset": "0 40 20",
+                "time": 0.52
+            },
+            "trigger": {
+                "attack_bone_angles": "-86 -87 -4",
+                "attack_bone_pos": "-9 0 37",
+                "fulltargeting": true,
+                "name": "archa_proj",
+                "offset": "0 -40 20",
+                "time": 0.52
+            },
+            "trigger": {
+                "attack_bone_angles": "-87 -86 -3",
+                "attack_bone_pos": "-10 0 37",
+                "fulltargeting": true,
+                "name": "archa_proj",
+                "offset": "0 32 20",
+                "time": 0.54
+            },
+            "trigger": {
+                "attack_bone_angles": "-87 -86 -3",
+                "attack_bone_pos": "-10 0 37",
+                "fulltargeting": true,
+                "name": "archa_proj",
+                "offset": "0 -32 20",
+                "time": 0.54
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power_smash",
+            "priority": 5,
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%mdmg_high",
+                "damagelevel": 1,
+                "damagescale": "difficulty",
+                "inherit": "punch",
+                "knockback": 500,
+                "name": "radial_punch",
+                "damageMod": {
+                    "name": "dmgmod_ground_only"
+                },
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "donothing": true,
+                "life": 1,
+                "name": "hotspot",
+                "radius": 180,
+                "time": 0
+            },
+            "trigger": {
+                "jump": true,
+                "life": 0.4,
+                "name": "hotspot",
+                "radius": 190,
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/archa_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": 3,
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/archa/p2_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.32
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/archa_m/p2_power",
+                "time": 0.52
+            },
+            "trigger": {
+                "index": 1,
+                "maxrange": 50,
+                "name": "radial_punch",
+                "time": 0.52
+            },
+            "trigger": {
+                "index": 2,
+                "maxrange": 100,
+                "name": "radial_punch",
+                "time": 0.62
+            },
+            "trigger": {
+                "index": 3,
+                "maxrange": 150,
+                "name": "radial_punch",
+                "time": 0.72
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 9999,
+            "aitype": "projectile",
+            "animenum": "ea_power3",
+            "lockangles": true,
+            "name": "power_boost",
+            "trigger": {
+                "name": "sound",
+                "sound": "char/archa_m/p1_charge",
+                "time": 0
+            },
+            "event": {
+                "attacktype": "projectile",
+                "bolt": "Bip01 Pelvis",
+                "count": 1,
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "damagetype": "dmg_physical",
+                "entity": "metal_feathers",
+                "filename": "ents_archangel",
+                "fulltargeting": true,
+                "inherit": "projectile",
+                "name": "archa_proj2",
+                "powerusage": 1,
+                "speed": 600,
+                "targetable": true
+            },
+            "trigger": {
+                "effect": "char/archa/p1_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/archa_m/p1_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "attack_bone_angles": "61 -90 -151",
+                "attack_bone_pos": "-6 0 38",
+                "fulltargeting": true,
+                "name": "archa_proj2",
+                "offset": "0 -48 50",
+                "time": 0.5
+            },
+            "trigger": {
+                "attack_bone_angles": "61 -90 -151",
+                "attack_bone_pos": "-6 0 38",
+                "fulltargeting": true,
+                "name": "archa_proj2",
+                "offset": "0 48 50",
+                "time": 0.5
+            },
+            "trigger": {
+                "attack_bone_angles": "-79 -89 -11",
+                "attack_bone_pos": "-7 0 38",
+                "fulltargeting": true,
+                "name": "archa_proj2",
+                "offset": "0 40 50",
+                "time": 0.52
+            },
+            "trigger": {
+                "attack_bone_angles": "-79 -89 -11",
+                "attack_bone_pos": "-7 0 38",
+                "fulltargeting": true,
+                "name": "archa_proj2",
+                "offset": "0 -40 50",
+                "time": 0.52
+            },
+            "trigger": {
+                "attack_bone_angles": "-86 -86 -3",
+                "attack_bone_pos": "-10 0 37",
+                "fulltargeting": true,
+                "name": "archa_proj2",
+                "offset": "0 32 50",
+                "time": 0.54
+            },
+            "trigger": {
+                "attack_bone_angles": "-86 -86 -3",
+                "attack_bone_pos": "-10 0 37",
+                "fulltargeting": true,
+                "name": "archa_proj2",
+                "offset": "0 -32 50",
+                "time": 0.54
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aitype": "null",
+            "animenum": "ea_power4",
+            "blendtime": 0,
+            "lockangles": true,
+            "name": "blockattacks",
+            "priority": 5,
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_power5",
+            "lockangles": true,
+            "name": "power_xtreme",
+            "priority": 5,
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%mdmg_high",
+                "damagelevel": 1,
+                "damagescale": "difficulty",
+                "inherit": "punch",
+                "knockback": 500,
+                "name": "radial_punch",
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground_only"
+                }
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "donothing": true,
+                "life": 2,
+                "name": "hotspot",
+                "radius": 180,
+                "time": 0
+            },
+            "trigger": {
+                "jump": true,
+                "life": 0.5,
+                "name": "hotspot",
+                "radius": 190,
+                "time": 0.6
+            },
+            "trigger": {
+                "effect": "char/archa/p5_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/archa_m/p5_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": 3,
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/archa/p5_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/archa_m/p5_power",
+                "time": 0.72
+            },
+            "trigger": {
+                "index": 1,
+                "maxrange": 50,
+                "name": "radial_punch",
+                "time": 0.72
+            },
+            "trigger": {
+                "index": 2,
+                "maxrange": 100,
+                "name": "radial_punch",
+                "time": 0.82
+            },
+            "trigger": {
+                "index": 3,
+                "maxrange": 150,
+                "name": "radial_punch",
+                "time": 0.85
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
