@@ -157,6 +157,14 @@ cd "%~dp0\1. Playable Characters\Wolverine"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
 cd ..\..
 
+
+REM 2. NPCs
+echo Compiling NPCs...
+echo Angel
+cd "%~dp0\2. NPCs\Angel"
+call compile.bat %consoleChoice%
+cd ..\..
+
 REM 3. General Data Files
 echo Compiling general data files...
 echo herostat

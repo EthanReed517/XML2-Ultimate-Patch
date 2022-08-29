@@ -97,6 +97,13 @@ cd "%~dp0\1. Playable Characters\Wolverine"
 call update.bat 
 cd ..\..
 
+REM 2. NPCs
+echo Updating NPCs...
+echo Angel
+cd "%~dp0\2. NPC\Angel"
+call update.bat 
+cd ..\..
+
 echo Updating data files...
 echo herostat
 cd "%~dp0\3. General Data Files\herostat"
