@@ -120,6 +120,10 @@ echo Professor X
 cd "%~dp0\1. Playable Characters\Professor X"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
 cd ..\..
+echo Psylocke
+cd "%~dp0\1. Playable Characters\Psylocke"
+call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+cd ..\..
 echo Pyro
 cd "%~dp0\1. Playable Characters\Pyro"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
