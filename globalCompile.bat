@@ -156,6 +156,13 @@ echo Wolverine
 cd "%~dp0\1. Playable Characters\Wolverine"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
 cd ..\..
+REM characters not in the PSP version
+if not %consoleChoice%==PSP (
+	echo Jubilee
+	cd "%~dp0\1. Playable Characters\Jubilee"
+	call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+	cd ..\..
+)
 
 
 REM 2. NPCs

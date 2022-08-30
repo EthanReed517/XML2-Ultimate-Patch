@@ -44,6 +44,10 @@ echo Jean Grey
 cd "%~dp0\1. Playable Characters\Jean Grey"
 call update.bat 
 cd ..\..
+echo Jubilee
+cd "%~dp0\1. Playable Characters\Jubilee"
+call update.bat 
+cd ..\..
 echo Juggernaut
 cd "%~dp0\1. Playable Characters\Juggernaut"
 call update.bat 
