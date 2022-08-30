@@ -28,6 +28,10 @@ echo Deadpool
 cd "%~dp0\1. Playable Characters\Deadpool"
 call update.bat 
 cd ..\..
+echo Emma Frost
+cd "%~dp0\1. Playable Characters\Emma Frost"
+call update.bat 
+cd ..\..
 echo Gambit
 cd "%~dp0\1. Playable Characters\Gambit"
 call update.bat 
