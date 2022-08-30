@@ -1,0 +1,1292 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/emmafrost_icons1.png",
+        "FightMove": {
+            "aitype": "projectile",
+            "animenum": "ea_attack_stun3",
+            "lockangles": true,
+            "name": "attackstun3",
+            "priority": 5,
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/emmaf/effect_hand_d",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.15
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/emmaf/effect_hand_d",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.15
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/emmaf_m/p13_power",
+                "time": 0.6
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "43 -9 39",
+                "attacktype": "projectile",
+                "count": 3,
+                "damage": "3 5",
+                "damagescale": "none",
+                "damagetype": "dmg_telekinesis",
+                "entity": "frost_stun",
+                "filename": "ents_emmaf",
+                "fulltargeting": true,
+                "inherit": "projectile",
+                "name": "projectile",
+                "noautoaim": true,
+                "speed": 600,
+                "targetable": true,
+                "time": 0.6,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "aoe",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Illusions",
+            "combotextstarter": "Terrorizing",
+            "icon": 0,
+            "is_power": true,
+            "lockangles": true,
+            "name": "power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "emma_fear",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%emma_fear_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/emmaf_m/p1_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/emmaf/effect_hand_d",
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/emmaf/effect_hand_d",
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "randomattack",
+                "tag": 101,
+                "tag0": 10,
+                "tag1": 20,
+                "tag2": 30,
+                "time": -1,
+                "type": "ce_random_event"
+            },
+            "trigger": {
+                "life": "%emma_fear_lif",
+                "name": "powerup",
+                "tag": 10,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/emmaf/emma_head",
+                    "fxlevel": 2
+                },
+                "affecter": {
+                    "attribute": "fear",
+                    "level": 1
+                }
+            },
+            "trigger": {
+                "class": "stunned",
+                "life": "%emma_fear_lif",
+                "name": "powerup",
+                "tag": 20,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": 0.2
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/emmaf/emma_head",
+                    "fxlevel": 2
+                }
+            },
+            "trigger": {
+                "life": "%emma_fear_lif",
+                "name": "powerup",
+                "tag": 30,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/emmaf/emma_head",
+                    "fxlevel": 2
+                },
+                "affecter": {
+                    "attribute": "team_switch",
+                    "level": 1
+                }
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%emma_fear_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_telekinesis",
+                "fxlevel": 1,
+                "inherit": "punch",
+                "name": "radial_punch",
+                "victimeventtag": 101
+            },
+            "trigger": {
+                "effect": "char/emmaf/p2_fear",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "maxrange": 80,
+                "name": "radial_punch",
+                "time": 0.5
+            },
+            "trigger": {
+                "maxrange": 100,
+                "name": "radial_punch",
+                "time": 0.59
+            },
+            "trigger": {
+                "maxrange": 120,
+                "name": "radial_punch",
+                "tag": 4,
+                "time": 0.6
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_attack_heavy2",
+            "combotextfinisher": "Bolts",
+            "combotextstarter": "Mental",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power2",
+            "powerup_tag": "emma_power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "emma_bolt",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/emmaf/emma_head",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/emmaf/effect_hand_d",
+                "name": "effect_sound",
+                "sound": "char/emmaf_m/p2_power",
+                "time": 0.48
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/emmaf/effect_hand_d",
+                "name": "effect"
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "projectile",
+                "center": true,
+                "count": "%emma_bolt_num",
+                "damage": "%emma_bolt_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_telekinesis",
+                "entity": "p2_emma_bolts",
+                "filename": "ents_emmaf",
+                "maxrange": 800,
+                "name": "projectile",
+                "offset": "25 0 0",
+                "powerusage": "%emma_bolt_pwr",
+                "speed": 450,
+                "tag": 1,
+                "targetable": true,
+                "time": 0.48,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                },
+                "damagemod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_attack_trip2",
+            "combotextfinisher": "Slam",
+            "combotextstarter": "Mental",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "emma_burst",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%emma_burst_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/emmaf_m/p3_charge",
+                "time": 0
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "psionic",
+                "damagescale": "none",
+                "damagetype": "dmg_telekinesis",
+                "fxlevel": 1,
+                "inherit": "punch",
+                "knockback": 600,
+                "name": "p_radius",
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/emmaf/emma_head",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/emmaf/p3_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/emmaf_m/p3_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "damage": "%emma_burst_dmg",
+                "maxrange": 125,
+                "name": "p_radius",
+                "tag": 2,
+                "time": 0.5
+            },
+            "trigger": {
+                "damage": "%emma_burst_dmg",
+                "knockback": 400,
+                "maxrange": 175,
+                "name": "p_radius",
+                "tag": 3,
+                "time": 0.6
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beam",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Beam",
+            "combotextstarter": "Psionic",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "powerup_tag": "emma_power4",
+            "priority": 5,
+            "event": {
+                "arc": 0,
+                "attacktype": "beam",
+                "beameffect": "char/emmaf/p1_hero_power",
+                "damagescale": "none",
+                "damagetype": "dmg_telekinesis",
+                "fxlevel": 1,
+                "inherit": "beam",
+                "maxrange": 800,
+                "name": "beam_white"
+            },
+            "require": {
+                "cat": "skill",
+                "item": "emma_beam",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/emmaf/emma_head",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Hand",
+                "effect": "char/emmaf/effect_hand_d",
+                "name": "effect_sound",
+                "sound": "char/emmaf_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/emmaf/effect_hand_d",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/emmaf_m/p4_impact",
+                "time": 0.45
+            },
+            "trigger": {
+                "attack_bone_angles": "-105 -36 10",
+                "attack_bone_pos": "35 4 57",
+                "beambolt": "Bip01 R Hand",
+                "damagelevel": 10,
+                "hiteffect": "char/emmaf/p12_impact",
+                "name": "beam_white",
+                "powerusage": "%emma_beam_pwr",
+                "time": 0.5,
+                "victimeventtag1": 99,
+                "victimeventtag2": 101,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "maxdangerrating": 10,
+                "name": "filter",
+                "noboss": true,
+                "passtag": 100,
+                "tag": 99,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "chance": "%emma_beam_pct",
+                "name": "otherevent",
+                "othertag": 200,
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "fail_tag": 101,
+                "instantkillonly": true,
+                "name": "remove",
+                "nosponsor": false,
+                "success_tag": 201,
+                "tag": 200,
+                "time": -1
+            },
+            "trigger": {
+                "damage": "%emma_beam_dmg",
+                "damagetype": "dmg_telekinesis",
+                "index": 1,
+                "name": "selfattack",
+                "tag": 101,
+                "time": -1,
+                "type": "ce_atk_self"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_attack_light2",
+            "combotextfinisher": "Insanity",
+            "combotextstarter": "Excruciating",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power5",
+            "powerup_tag": "emma_power5",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "emma_insanity",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/emmaf_m/p5_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/emmaf/emma_head",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/emmaf/effect_hand_d",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/emmaf/effect_hand_d",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/emmaf/p7_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "size": 3,
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/emmaf/p6_stun",
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/emmaf/p6_stun",
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/emmaf_m/p5_power",
+                "time": 0.6
+            },
+            "trigger": {
+                "damage": 1,
+                "damagetype": "dmg_telekinesis",
+                "fxlevel": 1,
+                "maxrange": "%emma_insanity_rad",
+                "name": "radial",
+                "powerusage": "%emma_insanity_pwr",
+                "time": 0.6,
+                "victimeventtag": 100,
+                "victimeventtag2": 10
+            },
+            "trigger": {
+                "failtag": 102,
+                "filteractor": true,
+                "name": "event_filter",
+                "passtag": 101,
+                "tag": 100,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%emma_insanity_dmg",
+                "damagetype": "dmg_telekinesis",
+                "life": "%emma_insanity_lif",
+                "name": "powerup",
+                "tag": 101,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/emmaf/emma_head",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "damageMod": {
+                    "name": "dmgmod_weld",
+                    "remove": "dmgmod_no_pain"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "180 197",
+                "damagetype": "dmg_telekinesis",
+                "life": 2,
+                "name": "powerup",
+                "tag": 102,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/emmaf/emma_head",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "class": "suspend",
+                "combatnode": "suspended_victim",
+                "endvictimtag": 20,
+                "life": "%emma_insanity_lif",
+                "minsuspendtime": 2,
+                "name": "powerup",
+                "tag": 10,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/emmaf/emma_head"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_ko_head1",
+            "lockangles": true,
+            "name": "suspended_victim",
+            "playspeed": 2,
+            "priority": "uninterruptable",
+            "priority_override": "uninterruptable",
+            "chain": {
+                "action": "idle",
+                "result": "suspended_victim"
+            }
+        },
+        "FightMove": {
+            "aitype": "projectile",
+            "animenum": "ea_resist_popup",
+            "icon": 5,
+            "lockspeed": true,
+            "name": "power6",
+            "priority": 5,
+            "startchaintime": 0.7,
+            "turnrate": 0.15,
+            "require": {
+                "cat": "skill",
+                "item": "emma_blast",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/emmaf/emma_head",
+                "fxlevel": 2,
+                "how_used": "primary"
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/emmaf_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%emma_blast_pwr",
+                "time": 0
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power6_loop"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power6_end"
+            }
+        },
+        "FightMove": {
+            "aitype": "projectile",
+            "animenum": "ea_menu_idle",
+            "combotextfinisher": "Devastation",
+            "combotextstarter": "Psionic",
+            "energypersecond": "%emma_blast_pwr",
+            "icon": 5,
+            "lockchaining": true,
+            "lockspeed": true,
+            "locktransitionangles": true,
+            "name": "power6_loop",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.7,
+            "turnrate": 0.5,
+            "event": {
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "19 0 56",
+                "beambolt": "Bip01 R Hand",
+                "damage": 0,
+                "damagetype": "dmg_mental",
+                "fxlevel": 1,
+                "inherit": "beam",
+                "knockback": 20,
+                "maxrange": 450,
+                "name": "blast_dmg",
+                "pierce": true,
+                "radius": 24,
+                "spawneffect": "char/emmaf/p11_power",
+                "victimeventtag": 100,
+                "victimeventtag2": 120,
+                "damagemod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/emmaf/emma_head",
+                "fxlevel": 2,
+                "name": "effect",
+                "how_used": "primary"
+            },
+            "trigger": {
+                "allow_actors": true,
+                "allow_non_actors": false,
+                "class": "harming",
+                "damage": "%emma_blast_dmg",
+                "damagetype": "dmg_mental",
+                "life": 1,
+                "name": "powerup",
+                "tag": 100,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 head",
+                    "effect": "char/emmaf/emma_head",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "damageMod": {
+                    "remove": "dmgmod_no_pain"
+                }
+            },
+            "trigger": {
+                "chance": "%emma_blast_pct",
+                "name": "otherevent",
+                "othertag": 104,
+                "tag": 103,
+                "time": -1
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": 1,
+                "damagetype": "dmg_mental",
+                "knockback": 400,
+                "name": "powerup",
+                "tag": 104,
+                "time": -1,
+                "damagemod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/emmaf/emma_head",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "allow_actors": false,
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%emma_blast_dmg2",
+                "damagetype": "dmg_mental",
+                "life": 2,
+                "name": "powerup",
+                "tag": 120,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/emmaf/emma_head",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "damageMod": {
+                    "remove": "dmgmod_no_pain"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/emmaf_m/p6_power",
+                "time": 0
+            },
+            "trigger": {
+                "index": 1,
+                "name": "blast_dmg",
+                "time": 0.15
+            },
+            "trigger": {
+                "index": 2,
+                "name": "blast_dmg",
+                "time": 0.3
+            },
+            "trigger": {
+                "index": 3,
+                "name": "blast_dmg",
+                "time": 0.45
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/emmaf_m/p6_power",
+                "time": 0.46
+            },
+            "trigger": {
+                "index": 4,
+                "name": "blast_dmg",
+                "time": 0.6
+            },
+            "trigger": {
+                "index": 5,
+                "name": "blast_dmg",
+                "time": 0.75
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/emmaf_m/p6_power",
+                "time": 0.8
+            },
+            "trigger": {
+                "index": 6,
+                "name": "blast_dmg",
+                "time": 0.9
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power6_loop"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power6_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_heavy2",
+            "icon": 5,
+            "lockspeed": true,
+            "locktransitionangles": true,
+            "name": "power6_end",
+            "noautoaim": true,
+            "priority": 5,
+            "turnrate": 0.2,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/emmaf_m/p6_impact",
+                "time": 0
+            },
+            "event": {
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "19 0 56",
+                "beambolt": "Bip01 R Hand",
+                "damage": "%emma_blast_dmg",
+                "damagetype": "dmg_mental",
+                "fxlevel": 1,
+                "inherit": "beam",
+                "knockback": 20,
+                "maxrange": 450,
+                "name": "tapend",
+                "pierce": true,
+                "radius": 24,
+                "spawneffect": "char/emmaf/p11_power",
+                "victimeventtag": 100,
+                "victimeventtag2": 120,
+                "damagemod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/emmaf/emma_head",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "name": "tapend",
+                "time": 0
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power3",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power10",
+            "powerup_tag": "emma_power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "emma_diam_form",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/emmaf/p4_shell",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/emmaf_m/p10_power",
+                "time": 0.45
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%emma_diam_form_lif",
+                "name": "powerup",
+                "remove_skin_on_exit": true,
+                "skin": 9010,
+                "skin_swap": true,
+                "powerusage": "%emma_diam_form_pwr",
+                "time": 0.45,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%emma_diam_form_def"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": "%emma_diam_form_dmg"
+                },
+                "affecter": {
+                    "attribute": "atk_damage",
+                    "level": "%emma_diam_form_dma",
+                    "scope_damage": "dmg_physical"
+                },
+                "affecter": {
+                    "attribute": "resist_radiation",
+                    "level": "%emma_diam_form_def"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage_scope",
+                    "damagetype": "dmg_mental",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage_scope",
+                    "damagetype": "dmg_telekinesis",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "sum",
+                    "attribute": "deflect_projectiles",
+                    "level": 1
+                },
+                "affecter": {
+                    "attribute": "might_heaviness",
+                    "level": 1
+                },
+                "affecter": {
+                    "attribute": "might_structure",
+                    "level": 1
+                },
+                "affecter": {
+                    "attribute": "nullify",
+                    "level": 1
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Spine1",
+                    "effect": "char/emmaf/sparkles",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "buff",
+            "animenum": "ea_attack_heavy2",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power11",
+            "powerup_tag": "emma_power11",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "emma_heal",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/emmaf_m/p11_power",
+                "time": 0.45
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%emma_heal_lif",
+                "name": "powerup",
+                "powerusage": "%emma_heal_pwr",
+                "time": 0.5,
+                "affecter": {
+                    "attribute": "health_regen_pct",
+                    "level": "%emma_heal_pct"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/emmaf/emma_head",
+                    "fxlevel": 2
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_attack_light1",
+            "combotextfinisher": "Vortex",
+            "combotextstarter": "Confusion",
+            "icon": 13,
+            "lockangles": true,
+            "name": "power12",
+            "playspeed": 1.5,
+            "powerup_tag": "emma_power12",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "emma_ment_vort",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%emma_ment_vort_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/emmaf/p1_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/emmaf_m/p12_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/emmaf/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/emmaf/p6_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_enemy": "none",
+                "apply_self": true,
+                "class": "absorb",
+                "damagepercent": 0.2,
+                "energy": true,
+                "inflicted": true,
+                "life": "%emma_ment_vort_lif",
+                "name": "powerup",
+                "time": 0.5,
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/emmaf/p6_power",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/emmaf/p6_power",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4",
+            "blendtime": 0,
+            "combotextfinisher": "Madness",
+            "description": "PSYCHIC BEDLAM",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power8",
+            "playspeed": 10,
+            "powerup_tag": "emma_power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "emma_psy_bedlam",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/emmaf/p8_bedlam",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/emmaf_m/p8_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/emmaf/p8_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/emmaf/p8_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": 0,
+                "damagelevel": 1,
+                "index": 1,
+                "maxrange": 350,
+                "name": "convert",
+                "time": 0.43,
+                "type": "ce_atk",
+                "victimeventtag": 98
+            },
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "base/material/explode/exp_generic_sml",
+                "name": "effect",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "psionic",
+                "damage": "%emma_psy_bedlam_dmg",
+                "damagelevel": 1,
+                "damagetype": "dmg_telekinesis",
+                "index": 2,
+                "knockback": 190,
+                "maxrange": 350,
+                "name": "psychichbedlam",
+                "time": 0.45,
+                "type": "ce_atk",
+                "victimeventtag": 100,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "maxdangerrating": 10,
+                "name": "no_bosses",
+                "noboss": true,
+                "passtag": 99,
+                "tag": 98,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "chance": "%emma_psy_bedlam_pct",
+                "name": "do_chance",
+                "othertag": 200,
+                "tag": 99,
+                "time": -1,
+                "type": "ce_otherevent"
+            },
+            "trigger": {
+                "class": "callevents",
+                "life": 30,
+                "name": "powerup",
+                "tag": 200,
+                "time": -1,
+                "FunctionEvent": {
+                    "function": "deactivate",
+                    "triggertag": 201
+                },
+                "affecter": {
+                    "attribute": "team_switch",
+                    "level": 1
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/emmaf/emma_head",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "base/material/explode/exp_generic_med",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "instantkillonly": true,
+                "name": "remove_me",
+                "nosponsor": false,
+                "tag": 201,
+                "time": -1,
+                "type": "ce_remove"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "animenum": "ea_menu_action",
+            "blendtime": 0,
+            "description": "HAIL TO THE QUEEN",
+            "icon": 14,
+            "lockangles": true,
+            "playspeed": 2,
+            "name": "power9",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "emma_xtreme2",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/emmaf/effect_hand_d",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/emmaf/effect_hand_d",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/emmaf/effect_hand_d",
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/emmaf/effect_hand_d",
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "effect": "char/emmaf/effect_hand_d",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/emmaf_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/emmaf_m/p9_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%emma_xtreme2_lif",
+                "name": "powerup",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/emmaf/p9_trail"
+                },
+                "trigger": {
+                    "bolt": "Bip01 Pelvis",
+                    "effect": "char/emmaf/p9_hail"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": 2
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "damage",
+                    "level": 2,
+                    "scope_damage": "dmg_telekinesis"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
