@@ -1,0 +1,723 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/jubilee_icons1.png",
+        "FightMove": {
+            "aitype": "projectile",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Fling",
+            "combotextstarter": "Sparkling",
+            "fallback": "attacklight1",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "powerup_tag": "jubilee_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "energy_burst",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/jubilee/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/jubilee_m/p1_power",
+                "time": 0
+            },
+            "trigger": {
+                "Arc": 0,
+                "AttackType": "projectile",
+                "center": true,
+                "count": "%energy_burst_num",
+                "Damage": "%energy_burst_dmg",
+                "DamageLevel": 2,
+                "DamageType": "dmg_energy",
+                "entity": "fireworks",
+                "filename": "ents_jubilee",
+                "Knockback": 0,
+                "MaxRange": 800,
+                "name": "projectile",
+                "PowerAttack": true,
+                "powerusage": "%energy_burst_pwr",
+                "Speed": 600,
+                "tag": 1,
+                "Targetable": true,
+                "time": 0.45
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "aoe",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Pulse",
+            "combotextstarter": "Blinding",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "powerup_tag": "jubilee_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "photo_flash",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%photo_flash_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/jubilee/p2_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/jubilee/p2_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/jubilee/p2_flash",
+                "fxlevel": 3,
+                "name": "effect",
+                "tag": 1,
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/jubilee_m/p2_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "apply_chance": "%photo_flash_pct",
+                "life": 10,
+                "name": "powerup",
+                "tag": 101,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_dazed"
+                },
+                "affecter": {
+                    "attribute": "fear",
+                    "level": 1
+                }
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%photo_flash_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "inherit": "punch",
+                "name": "radial_punch",
+                "victimeventtag": 100,
+                "victimeventtag2": 101,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "maxrange": 80,
+                "name": "radial_punch",
+                "time": 0.5
+            },
+            "trigger": {
+                "maxrange": 100,
+                "name": "radial_punch",
+                "time": 0.59
+            },
+            "trigger": {
+                "maxrange": 120,
+                "name": "radial_punch",
+                "tag": 4,
+                "time": 0.6
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power5",
+            "combotextfinisher": "Detonation",
+            "combotextstarter": "Exploding",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "powerup_tag": "jubilee_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "detonate",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/jubilee/special_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "allow_actors": true,
+                "allow_non_actors": true,
+                "center_bolt": true,
+                "class": "time_bomb",
+                "damagetype": "dmg_energy",
+                "damage": "%detonate_dmg",
+                "knockback": "%detonate_kb",
+                "radius": 144,
+                "func_deactivate": "timebomb_deactivate",
+                "life": 3,
+                "name": "powerup",
+                "powerup": "special",
+                "tag": 5,
+                "time": -1,
+                "special_fx": {
+                    "center_bolt": true,
+                    "effect": "char/jubilee/special_chargedobj",
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/jubilee/special_explosion",
+                    "how_used": "custom",
+                    "tag": 1,
+                    "name": "effect_sound",
+                    "sound": "char/jubilee_m/p3_impact"
+                },
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/jubilee_m/p3_charge",
+                "time": 0.5
+            },
+            "trigger": {
+                "damage": 1,
+                "damageLevel": 10,
+                "DamageType": "dmg_energy",
+                "name": "punch",
+                "PowerAttack": true,
+                "powerusage": "%detonate_pwr",
+                "time": 0.75,
+                "VictimEventTag": 5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Combustion",
+            "combotextstarter": "Scorching",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "combustion",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/jubilee/p10_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/jubilee_m/p7_charge",
+                "time": 0.24
+            },
+            "trigger": {
+                "effect": "char/jubilee/p10_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.33
+            },
+            "trigger": {
+                "effect": "char/jubilee/p10_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.33
+            },
+            "trigger": {
+                "damage": 1,
+                "damagetype": "dmg_fire",
+                "fxlevel": 1,
+                "maxrange": "%combustion_rad",
+                "name": "radial",
+                "powerusage": "%combustion_pwr",
+                "time": 0.33,
+                "victimeventtag": 100
+            },
+            "trigger": {
+                "failtag": 102,
+                "filteractor": true,
+                "name": "event_filter",
+                "passtag": 101,
+                "tag": 100,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%combustion_dmg",
+                "damagetype": "dmg_fire",
+                "life": 1,
+                "name": "powerup",
+                "tag": 101,
+                "time": -1,
+                "special_fx": {
+                    "effect": "char/jubilee/p3_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary",
+                    "name": "effect_sound",
+                    "sound": "char/jubilee_m/p7_impact"
+                },
+                "damageMod": {
+                    "name": "dmgmod_weld",
+                    "remove": "dmgmod_no_pain"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "150 167",
+                "damagetype": "dmg_fire",
+                "life": 2,
+                "name": "powerup",
+                "tag": 102,
+                "time": -1,
+                "special_fx": {
+                    "effect": "char/jubilee/p3_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "damageMod": {
+                    "name": "dmgmod_weld"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Explosion",
+            "combotextstarter": "Energetic",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power5",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "jub_hex_explos",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/jubilee/p3_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/jubilee/p3_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/jubilee_m/p8_power",
+                "time": 0.48
+            },
+            "trigger": {
+                "attacktype": "projectile",
+                "count": 1,
+                "damagescale": "none",
+                "entity": "jub_explode",
+                "explodedamage": "%jub_hex_explos_dm1",
+                "filename": "ents_jubilee",
+                "name": "projectile",
+                "offset": "25 0 50",
+                "powerusage": "%jub_hex_explos_pwr",
+                "speed": 1000,
+                "targetable": true,
+                "time": 0.48,
+                "victimeventtag": 100
+            },
+            "trigger": {
+                "damage": "%jub_hex_explos_dm2",
+                "hiteffect": "char/jubilee/special_explosion",
+                "maxrange": 84,
+                "name": "explodeobjects",
+                "radius": 48,
+                "tag": 50,
+                "time": -1,
+                "type": "ce_atk_blast_objects"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "aoe",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Drain",
+            "combotextstarter": "Piercing",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "taunt",
+                "level": 1
+            },
+            "trigger": {
+                "level": 0.75,
+                "life": "%taunt_life",
+                "name": "powerup",
+                "tag": 2,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/jubilee/special_weaken"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%taunt_ar"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%taunt_dr"
+                }
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/jubilee/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/jubilee/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/jubilee_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "Arc": 180,
+                "AttackType": "blast",
+                "Damage": 0,
+                "damagetype": "dmg_direct",
+                "MaxRange": 120,
+                "name": "taunt",
+                "PowerAttack": true,
+                "powerusage": "%taunt_pwr",
+                "tag": 1,
+                "time": 0.6,
+                "type": "ce_atk",
+                "VictimEventTag": 2
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "buff",
+            "combotextfinisher": "Sparkle",
+            "combotextstarter": "Rallying",
+            "animenum": "ea_menu_action",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "jub_rally",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/jubilee/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/jubilee_m/p10_power",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%jub_rally_lif",
+                "name": "powerup",
+                "powerusage": "%jub_rally_pwr",
+                "time": 0.625,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%jub_rally_spd"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "damage",
+                    "level": "%jub_rally_dmg"
+                },
+                "special_fx": {
+                    "effect": "char/jubilee/special_peprally"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power5",
+            "combotextfinisher": "Nullifier",
+            "combotextstarter": "Draining",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power8",
+            "playspeed": 1,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "jub_shield",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/jubilee_m/p6_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/jubilee/p6_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/jubilee/p6_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%jub_shield_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%jub_shield_pwr",
+                "time": 0.75,
+                "special_fx": {
+                    "bolt": "Bip01 Pelvis",
+                    "effect": "char/jubilee/p7_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "def_damage_scope",
+                    "scope_damage": "dmg_energy"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "event": {
+            "damage": "%jub_inde_damage",
+            "damagelevel": 5,
+            "damagetype": "dmg_energy",
+            "enemyNumber": 0,
+            "hiteffect": "char/jubilee/p4_impact",
+            "inherit": "blast",
+            "maxrange": 250,
+            "name": "firework",
+            "numblasts": 1,
+            "radius": 60,
+            "random": true
+        },
+        "event": {
+            "damage": "%jub_inde_damage",
+            "damagelevel": 5,
+            "damagetype": "dmg_energy",
+            "enemyNumber": 0,
+            "hiteffect": "char/jubilee/p4_impactb",
+            "inherit": "blast",
+            "maxrange": 250,
+            "name": "firework_blue",
+            "numblasts": 1,
+            "radius": 60,
+            "random": true
+        },
+        "FightMove": {
+            "animenum": "ea_power4",
+            "blendtime": 0,
+            "combotextfinisher": "Sparklers",
+            "combotextstarter": "Explosive",
+            "Description": "INDEPENDENCE DAY",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power9",
+            "playspeed": 10,
+            "powerup_tag": "jubilee_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "jubilee_xtreme",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": 4,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/jubilee_m/p5_power",
+                "time": 0.22
+            },
+            "trigger": {
+                "effect": "char/jubilee/p4_fireworks",
+                "name": "effect",
+                "PowerUsage": 6,
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/jubilee/p4_bolts",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "firework",
+                "tag": 3,
+                "time": 0.8
+            },
+            "trigger": {
+                "name": "firework_blue",
+                "tag": 4,
+                "time": 0.82
+            },
+            "trigger": {
+                "name": "firework",
+                "tag": 5,
+                "time": 0.84
+            },
+            "trigger": {
+                "name": "firework_blue",
+                "tag": 6,
+                "time": 0.86
+            },
+            "trigger": {
+                "name": "firework",
+                "tag": 7,
+                "time": 0.88
+            },
+            "trigger": {
+                "name": "firework_blue",
+                "tag": 8,
+                "time": 0.9
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "animenum": "ea_power5",
+            "combotextfinisher": "Shield",
+            "combotextstarter": "Lumikinetic",
+            "description": "LUMIKINETIC SHIELD",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "jubilee_xtreme2",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "effect": "char/jubilee/p6_aura",
+                "name": "effect_sound",
+                "sound": "char/jubilee_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/jubilee_m/p9_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%jubilee_xtreme2_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "time": 0.7,
+                "special_fx": {
+                    "effect": "char/jubilee/p6_aura",
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "maxenergy",
+                    "level": "%jubilee_xtreme2_mep"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}

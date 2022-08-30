@@ -1,0 +1,772 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "jub_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_energy",
+                        "level": 0.05
+                    },
+                    "affecter": {
+                        "attribute": "resist_mental",
+                        "level": 0.05
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Fireworks Fling",
+            "description": "Jubilee throws charged fireworks at enemies.",
+            "descshort": "Projectile",
+            "icon": 0,
+            "icon_texture": "textures/ui/jubilee_icons2.png",
+            "name": "energy_burst",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "energy_burst_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "energy_burst_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "energy_burst_dmg",
+                    "value": "6 9"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "energy_burst_dmg",
+                    "value": "117 132"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "energy_burst_num",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "energy_burst_num",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "energy_burst_pwr",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "energy_burst_pwr",
+                    "value": 140
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%energy_burst_dmg $DMG_ENERGY per firework\\n%energy_burst_num firework(s)\\n%energy_burst_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%energy_burst_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Strobe Flash",
+            "description": "A radial Light attack that confuses enemies.",
+            "descshort": "Radial",
+            "icon": 1,
+            "icon_texture": "textures/ui/jubilee_icons2.png",
+            "name": "photo_flash",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "photo_flash_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "photo_flash_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "photo_flash_pwr",
+                    "value": 62
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "photo_flash_pwr",
+                    "value": 173
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "photo_flash_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "photo_flash_dmg",
+                    "value": "82 93"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "photo_flash_pct",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "photo_flash_pct",
+                    "value": 0.75
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%photo_flash_dmg $DMG_ENERGY\\n%photo_flash_pct:p chance to confuse\\n%photo_flash_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%photo_flash_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Molecular Detonation",
+            "description": "Jubilee manipulates Energy to detonate matter at an atomic level, causing objects and enemies to popup and even explode.",
+            "descshort": "Special",
+            "icon": 2,
+            "icon_texture": "textures/ui/jubilee_icons2.png",
+            "name": "detonate",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "detonate_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "detonate_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "detonate_dmg",
+                    "value": "108 121"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "detonate_dmg",
+                    "value": "214 238"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "detonate_kb",
+                    "value": 190
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "detonate_kb",
+                    "value": 430
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "detonate_pwr",
+                    "value": 66
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "detonate_pwr",
+                    "value": 140
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%detonate_dmg $DMG_ENERGY\\n%detonate_kb popup\\n%detonate_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%detonate_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Scorching Sparklers",
+            "description": "Releases a radial wave of Lumikinetic Energy that causes anything it touches to ignite and spontaneously combust.",
+            "descshort": "Radial",
+            "icon": 3,
+            "icon_texture": "textures/ui/jubilee_icons2.png",
+            "name": "combustion",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "combustion_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "combustion_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "combustion_pwr",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "combustion_pwr",
+                    "value": 126
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "combustion_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "combustion_dmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "combustion_rad",
+                    "value": 120
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "combustion_rad",
+                    "value": 144
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%combustion_dmg $DMG_FIRE\\n%combustion_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%combustion_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Exploding Fireworks",
+            "description": "Jubilee launches a firework which causes nearby objects and enemies to explode violently.",
+            "descshort": "Projectile",
+            "icon": 4,
+            "icon_texture": "textures/ui/jubilee_icons2.png",
+            "name": "jub_hex_explos",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jub_hex_explos_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "jub_hex_explos_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jub_hex_explos_pwr",
+                    "value": 82
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "jub_hex_explos_pwr",
+                    "value": 170
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jub_hex_explos_dm1",
+                    "value": "69 79"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "jub_hex_explos_dm1",
+                    "value": "140 157"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jub_hex_explos_dm2",
+                    "value": "37 43"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "jub_hex_explos_dm2",
+                    "value": "117 132"
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%jub_hex_explos_dm1 initial $DMG_ENERGY\\n%jub_hex_explos_dm2 explosion $DMG_ENERGY\\n%jub_hex_explos_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%jub_hex_explos_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Bait",
+            "description": "Jubilee taunts her enemies, reducing their stats and baiting them into attacking her.",
+            "descshort": "Boost",
+            "icon": 5,
+            "icon_texture": "textures/ui/jubilee_icons2.png",
+            "name": "taunt",
+            "power": "power6",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "taunt_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "taunt_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "taunt_ar",
+                    "value": 0.9
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "taunt_ar",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "taunt_dr",
+                    "value": 0.9
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "taunt_dr",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "taunt_pwr",
+                    "value": 100
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "taunt_pwr",
+                    "value": 384
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "taunt_life",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "taunt_life",
+                    "value": 21
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%taunt_ar:s $AR\\n%taunt_dr:s $DR\\n%taunt_life seconds\\n%taunt_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%taunt_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Pep Rally",
+            "description": "Enhances party speed and increases Melee $DMG.",
+            "descshort": "Boost",
+            "icon": 7,
+            "icon_texture": "textures/ui/jubilee_icons2.png",
+            "name": "jub_rally",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jub_rally_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "jub_rally_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jub_rally_pwr",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "jub_rally_pwr",
+                    "value": 350
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jub_rally_spd",
+                    "value": 1.1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "jub_rally_spd",
+                    "value": 1.45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jub_rally_dmg",
+                    "value": 1.3
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "jub_rally_dmg",
+                    "value": 1.65
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jub_rally_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "jub_rally_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%jub_rally_spd:s Movement Speed\\n%jub_rally_dmg:s $DMG\\n%jub_rally_lif seconds\\n%jub_rally_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%jub_rally_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Energy Nullification",
+            "description": "Nullifies all incoming $DMG_ENERGY.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/jubilee_icons2.png",
+            "name": "jub_shield",
+            "power": "power8",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jub_shield_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "jub_shield_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jub_shield_pwr",
+                    "value": 85
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "jub_shield_pwr",
+                    "value": 465
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jub_shield_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "jub_shield_lif",
+                    "value": 46
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%jub_shield_lif seconds\\n%jub_shield_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%jub_shield_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "INDEPENDENCE DAY",
+            "description": "Jubilee fills the sky with brilliant fireworks that rain down upon enemies and explode.",
+            "descshort": "Blast",
+            "icon": 8,
+            "icon_texture": "textures/ui/jubilee_icons2.png",
+            "name": "jubilee_xtreme",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jub_inde_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "jub_inde_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jub_inde_damage",
+                    "value": "88 100"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "jub_inde_damage",
+                    "value": "282 313"
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%jub_inde_damage $DMG_ENERGY per firework",
+                "require": {
+                    "cat": "level",
+                    "level": "%jub_inde_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "LUMIKINETIC SHIELD",
+            "description": "Jubilee envelops the party in a protective shield of light, making them invulnerable for a time and increasing their max $EP.",
+            "descshort": "Boost",
+            "icon": 9,
+            "icon_texture": "textures/ui/jubilee_icons2.png",
+            "name": "jubilee_xtreme2",
+            "power": "power10",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jubilee_xtreme2_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "jubilee_xtreme2_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jubilee_xtreme2_mep",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "jubilee_xtreme2_mep",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jubilee_xtreme2_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "jubilee_xtreme2_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%jubilee_xtreme2_mep:s max $EP\\n%jubilee_xtreme2_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%jubilee_xtreme2_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Lumikinetic Combat",
+            "description": "Adds $DMG_ENERGY to Melee attacks.",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/jubilee_icons2.png",
+            "name": "energy_combat",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "combat_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "combat_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "combat_dscale",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "combat_dscale",
+                    "value": 2.6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%combat_dscale:s $DMG_ENERGY",
+                "require": {
+                    "cat": "level",
+                    "level": "%combat_req"
+                },
+                "powerup": {
+                    "class": "add_attack",
+                    "damagepercent": "%combat_dscale",
+                    "damagetype": "dmg_energy",
+                    "life": -1,
+                    "special_fx": {
+                        "effect": "char/jubilee/special_trail",
+                        "how_used": "custom"
+                    },
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        }
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Lumikinetic Mastery",
+            "description": "Increases the damage and Critical chance of all of Jubilee's Energy powers and increases her Energy and Mental Resistances.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/jubilee_icons2.png",
+            "name": "jubilee_ps_mast",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jub_ps_mast_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "jub_ps_mast_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jub_ps_mast_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "jub_ps_mast_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jub_ps_mast_cri",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "jub_ps_mast_cri",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jub_ps_mast_res",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "jub_ps_mast_res",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%jub_ps_mast_dmg:s damage\\n+%jub_ps_mast_cri:p Critical chance\\n+%daz_ps_mast_res:p $RES_ENERGY\\n+%daz_ps_mast_res:p $RES_MENTAL",
+                "require": {
+                    "cat": "level",
+                    "level": "%jub_ps_mast_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%jub_ps_mast_dmg",
+                        "scope_damage": "dmg_energy"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%jub_ps_mast_cri",
+                        "scope_damage": "dmg_energy"
+                    },
+                    "affecter": {
+                        "attribute": "resist_energy",
+                        "level": "%jub_ps_mast_res"
+                    },
+                    "affecter": {
+                        "attribute": "resist_mental",
+                        "level": "%jub_ps_mast_res"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Point Blank",
+            "description": "Adds $DMG to all powers that hit enemies within 6 feet of Jubilee.",
+            "descshort": "Passive",
+            "icon": 12,
+            "icon_texture": "textures/ui/jubilee_icons2.png",
+            "name": "jubilee_pblank",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jubilee_pblank_pct",
+                    "value": 0.04
+                },
+                "talentvalue": {
+                    "level": 9,
+                    "name": "jubilee_pblank_pct",
+                    "value": 0.2
+                }
+            },
+            "level": {
+                "count": 9,
+                "description": "+%jubilee_pblank_pct:p Added $DMG",
+                "powerup": {
+                    "class": "add_attack",
+                    "damagepercent": "%jubilee_pblank_pct",
+                    "life": -1,
+                    "max_distance": 72,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope_powers": true
+                    }
+                }
+            }
+        }
+    }
+}
