@@ -6,8 +6,8 @@ REM * Section 0 - User Input *
 REM **************************
 
 REM fill in the name of the character's PC packages here
-set pcPkgb=cable_11501.pkgb.json
-set pcPkgbNc=cable_11501_nc.pkgb.json
+set pcPkgb=magma_3601.pkgb.json
+set pcPkgbNc=magma_3601_nc.pkgb.json
 
 goto consoleChoiceSection
 
