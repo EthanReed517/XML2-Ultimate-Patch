@@ -3,6 +3,7 @@
 # ########### #
 beast = ["astonishing","aoa","60s","70s","weaponx","future","winter","civilian"]
 bishop = ["astonishing","60s","weaponx","future","winter"]
+cable = ["astonishing","70s","weaponx","future","winter"]
 colossus = ["70s"]
 cyclops = ["weaponx","civilian"]
 darkphoenix = ["astonishing","aoa","60s","70s","weaponx","future","winter"]
@@ -55,6 +56,8 @@ if name == "Beast.txt":
     pspEntry(name,beast)
 if name == "Bishop.txt":
     pspEntry(name,bishop)
+if name == "Cable.txt":
+    pspEntry(name,cable)
 if name == "Colossus.txt":
     pspEntry(name,colossus)
 if name == "Cyclops.txt":
