@@ -76,6 +76,12 @@ echo Bishop
 cd "%~dp0\1. Playable Characters\Bishop"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
 cd ..\..
+if not %consoleChoice%==GC (
+	echo Cable
+	cd "%~dp0\1. Playable Characters\Cable"
+	call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+	cd ..\..
+)
 echo Colossus
 cd "%~dp0\1. Playable Characters\Colossus"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
@@ -108,6 +114,12 @@ echo Jean Grey
 cd "%~dp0\1. Playable Characters\Jean Grey"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
 cd ..\..
+if not %consoleChoice%==PSP (
+	echo Jubilee
+	cd "%~dp0\1. Playable Characters\Jubilee"
+	call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+	cd ..\..
+)
 echo Juggernaut
 cd "%~dp0\1. Playable Characters\Juggernaut"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
@@ -160,13 +172,6 @@ echo Wolverine
 cd "%~dp0\1. Playable Characters\Wolverine"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
 cd ..\..
-REM characters not in the PSP version
-if not %consoleChoice%==PSP (
-	echo Jubilee
-	cd "%~dp0\1. Playable Characters\Jubilee"
-	call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
-	cd ..\..
-)
 
 
 REM 2. NPCs
