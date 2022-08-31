@@ -1,0 +1,907 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/cable_icons1.png",
+        "event": {
+            "inherit": "powerup",
+            "life": -1,
+            "name": "gloweyeon",
+            "no_shadow": true,
+            "tag_name": "eye_on",
+            "special_fx": {
+                "bolt": "Bip01 Head",
+                "effect": "char/cable/special_aura",
+                "how_used": "primary"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle",
+            "noncombat": true,
+            "trigger": {
+                "name": "gloweyeon",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Spine2",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/cable_rifle_back",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "strafeleft"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "straferight"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "advance"
+            },
+            "chain": {
+                "action": "retreat",
+                "result": "retreat"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "groundattack",
+                "result": "groundattack"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            },
+            "chain": {
+                "action": "special",
+                "result": "boredloop"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_menu_action",
+            "blendtime": 0.05,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "attackknockback2",
+            "playspeed": 1,
+            "startchaintime": 0.4,
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/cable_rifle",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0.07
+            },
+            "chain": {
+                "action": "idle",
+                "result": "attackknockback2_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power14",
+            "blendtime": 0.1,
+            "endchaintime": 1,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "attackknockback2_end",
+            "priority": 5,
+            "startchaintime": 0.8,
+            "trigger": {
+                "arc": 72,
+                "attack_bone_angles": "-85 -76 -13",
+                "attack_bone_pos": "15 -4 47",
+                "attacktype": "beam",
+                "beambolt": "Bip01 R Hand",
+                "beameffect": "char/cable/p2_power",
+                "damage": "%cable_p1_dmg",
+                "damagelevel": 2,
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "fxlevel": 1,
+                "hiteffect": "char/cable/p1_impact",
+                "inherit": "beam",
+                "knockback": 190,
+                "maxrange": 96,
+                "name": "kick_heavy",
+                "pierce": true,
+                "tag": 11,
+                "time": 0.21,
+                "damageMod": {
+                    "name": "dmgmod_weld"
+                },
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cable_m/p11_impact",
+                "time": 0.21
+            },
+            "trigger": {
+                "bolt": "Bip01 Spine2",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/cable_rifle_back",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0.86
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beam",
+            "animenum": "ea_menu_action",
+            "blendtime": 0.05,
+            "icon": 0,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power1",
+            "startchaintime": 0.4,
+            "require": {
+                "cat": "skill",
+                "item": "cable_p1",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%cable_p1_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/cable_rifle",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0.07
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power1_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power14",
+            "blendtime": 0.1,
+            "combotextfinisher": "Beam",
+            "combotextstarter": "Plasma",
+            "endchaintime": 1,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power1_end",
+            "powerup_tag": "cable_gun",
+            "priority": 5,
+            "startchaintime": 0.8,
+            "trigger": {
+                "arc": 0,
+                "attack_bone_angles": "-85 -76 -13",
+                "attack_bone_pos": "15 -4 47",
+                "attacktype": "beam",
+                "beambolt": "Bip01 R Hand",
+                "beameffect": "char/cable/p1_power",
+                "damage": "%cable_p1_dmg",
+                "damagelevel": 2,
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "fxlevel": 1,
+                "hiteffect": "char/cable/p1_impact",
+                "inherit": "beam",
+                "maxrange": 800,
+                "name": "rifle_blast",
+                "pierce": true,
+                "tag": 2,
+                "time": 0.21,
+                "damageMod": {
+                    "name": "dmgmod_weld"
+                },
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cable_m/p1_power",
+                "time": 0.21
+            },
+            "trigger": {
+                "bolt": "Bip01 Spine2",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/cable_rifle_back",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0.86
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 10,
+            "aitype": "projectile",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Spikes",
+            "combotextstarter": "Psionic",
+            "icon": 1,
+            "lockangles": true,
+            "lockchaining": false,
+            "name": "power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "cable_p2",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/cable/p2_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cable_m/p2_charge",
+                "time": 0.3
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "projectile",
+                "center": true,
+                "damage": "%cable_p2_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "entity": "p2_projectile",
+                "filename": "ents_cable",
+                "maxrange": 800,
+                "name": "projectile",
+                "offset": "25 0 0",
+                "powerusage": "%cable_p2_pwr",
+                "speed": 450,
+                "spread": 12,
+                "tag": 1,
+                "targetable": true,
+                "time": 0.44,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 30,
+            "aitype": "aoe",
+            "animenum": "ea_power2",
+            "icon": 2,
+            "name": "power3",
+            "powerup_tag": "cable_gun",
+            "priority": 5,
+            "startchaintime": 0.41,
+            "require": {
+                "cat": "skill",
+                "item": "cable_p3",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%cable_p3_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_altweapon",
+                "model": "models/bolton/cable_psimitar",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0.4
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power3_release"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2_end",
+            "combotextfinisher": "Swipe",
+            "combotextstarter": "Sweeping",
+            "icon": 2,
+            "name": "power3_release",
+            "powerup_tag": "cable_gun",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cable_m/p3_power",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/cable/p3_power",
+                "name": "effect",
+                "time": 0
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%cable_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "inherit": "punch",
+                "maxrange": "%cable_p3_rad",
+                "name": "blender",
+                "victimeventtag": 100,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "name": "blender",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "blender",
+                "time": 0.5
+            },
+            "trigger": {
+                "name": "blender",
+                "time": 0.7
+            },
+            "trigger": {
+                "boltslot": "ebolton_altweapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.9,
+                "type": "ce_bolton"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "projectile",
+            "animenum": "ea_menu_action",
+            "blendtime": 0.05,
+            "icon": 3,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power4",
+            "powerup_tag": "cable_gun",
+            "startchaintime": 0.4,
+            "require": {
+                "cat": "skill",
+                "item": "cable_p4",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%cable_p4_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/cable_rifle",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0.07
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power4_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power14",
+            "blendtime": 0.1,
+            "combotextfinisher": "Blast",
+            "combotextstarter": "Energy",
+            "endchaintime": 1,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power4_end",
+            "powerup_tag": "cable_gun",
+            "priority": 5,
+            "startchaintime": 0.8,
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "35 -4 47",
+                "attacktype": "projectile",
+                "damage": "%cable_p4_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "entity": "cable_p4_proj",
+                "explodedamage": "%cable_p4_dmg",
+                "exploderadius": 36,
+                "filename": "ents_cable",
+                "fulltargeting": true,
+                "knockback": 245,
+                "name": "projectile",
+                "speed": 650,
+                "tag": 20,
+                "targetable": true,
+                "time": 0.21,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cable_m/p4_power",
+                "time": 0.21
+            },
+            "trigger": {
+                "bolt": "Bip01 Spine2",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/cable_rifle_back",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0.86
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "aoe",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Distortion",
+            "combotextstarter": "Chrono",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power5",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "cable_p5",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%cable_p5_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/cable/p5_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/cable_m/p5_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/cable/p5_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.3
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%cable_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "fxlevel": 1,
+                "inherit": "punch",
+                "name": "radial_punch",
+                "time": 0.3,
+                "victimeventtag": 100
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cable_m/p5_impact",
+                "time": 0.3
+            },
+            "trigger": {
+                "life": "%cable_p5_life",
+                "name": "powerup",
+                "tag": 100,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%cable_p5_spd"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_dazed"
+                }
+            },
+            "trigger": {
+                "effect": "char/cable/p5_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.35
+            },
+            "trigger": {
+                "maxrange": 80,
+                "name": "radial_punch",
+                "time": 0.35
+            },
+            "trigger": {
+                "maxrange": 100,
+                "name": "radial_punch",
+                "time": 0.44
+            },
+            "trigger": {
+                "maxrange": 120,
+                "name": "radial_punch",
+                "tag": 4,
+                "time": 0.45
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "buffself",
+            "animenum": "ea_power7",
+            "combotextfinisher": "Shield",
+            "combotextstarter": "Defensive",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "powerup_tag": "cable_power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "cable_p6",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/cable/p6_aura",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cable_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cable_m/p6_power",
+                "time": 0.45
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "life": "%cable_p6_lif",
+                "name": "powerup",
+                "powerusage": "%cable_p6_pwr",
+                "time": 0.45,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%cable_p6_def"
+                },
+                "affecter": {
+                    "attribute": "def_absorb_damage",
+                    "level": "%cable_p6_dmg",
+                    "scope_damage": "dmg_energy"
+                },
+                "special_fx": {
+                    "effect": "char/cable/p6_aura",
+                    "fxlevel": 1
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Command",
+            "combotextstarter": "Tactical",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "cable_p7",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/cable/p7_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/cable_m/p7_power",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%cable_p7_life",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%cable_p7_pwr",
+                "time": 0.35,
+                "special_fx": {
+                    "effect": "char/cable/p7_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "all_talents",
+                    "level": "%cable_p7_skills",
+                    "scope_talent": "cable_p7"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_ground",
+            "blendtime": 0,
+            "description": "PSYCHIC SLAM",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power8",
+            "powerup_tag": "cable_power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "cable_p8",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/cable/p8_charge",
+                "name": "effect_sound",
+                "sound": "char/cable_m/p8_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/cable/p8_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "psionic",
+                "damage": "%cable_p8_dmg",
+                "damagelevel": 1,
+                "damagetype": "dmg_telekinesis",
+                "fxlevel": 1,
+                "maxrange": 350,
+                "name": "psycho_slam",
+                "time": 0.3,
+                "type": "ce_atk",
+                "victimeventtag": 100,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                },
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power6",
+            "blendtime": 0,
+            "description": "CHANNEL RAGE",
+            "icon": 9,
+            "name": "power9",
+            "powerup_tag": "cable_power9",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "cable_p9",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "alternate": true,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/cable/p9_charge",
+                "name": "effect_sound",
+                "sound": "char/cable_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/cable/p9_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cable_m/p9_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "life": "%cab_rage_life",
+                "name": "powerup",
+                "time": 0.35,
+                "special_fx": {
+                    "effect": "char/cable/p9_aura",
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "deflect_damage",
+                    "level": 1
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Cloak",
+            "combotextstarter": "Telepathic",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "cable_p10",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%cable_p10_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cable_m/p10_power",
+                "time": 0
+            },
+            "trigger": {
+                "add": "cloaked",
+                "name": "disapear",
+                "tag": 10,
+                "time": -1,
+                "type": "ce_renderfx"
+            },
+            "trigger": {
+                "name": "appear",
+                "remove": "cloaked",
+                "tag": 11,
+                "time": -1,
+                "type": "ce_renderfx"
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "class": "callevents",
+                "life": "%cable_p10_lif",
+                "name": "powerup",
+                "time": 0.35,
+                "Functionevent": {
+                    "function": "activate",
+                    "triggertag": 10
+                },
+                "Functionevent": {
+                    "function": "deactivate",
+                    "triggertag": 11
+                },
+                "affecter": {
+                    "attribute": "invisible"
+                },
+                "affecter": {
+                    "attribute": "critical",
+                    "level": "%cable_p10_cri"
+                },
+                "special_fx": {
+                    "effect": "char/cable/p10_power",
+                    "fxlevel": 3,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/cable/p10_power",
+                    "fxlevel": 4,
+                    "how_used": "deactivation"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
