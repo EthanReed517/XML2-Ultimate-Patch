@@ -1,0 +1,809 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "can_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_elemental",
+                        "level": 0.05
+                    },
+                    "affecter": {
+                        "attribute": "resist_fire",
+                        "level": 0.05
+                    },
+                    "affecter": {
+                        "attribute": "resist_physical",
+                        "level": 0.05
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Rocket Launch",
+            "description": "Cannonball launches forward towards the targeted enemy, damaging and stunning them.",
+            "descshort": "Melee",
+            "icon": 0,
+            "icon_texture": "textures/ui/cannonball_icons2.png",
+            "name": "can_rocket",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_rocket_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "can_rocket_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_rocket_pdmg",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "can_rocket_pdmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_rocket_pwr",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "can_rocket_pwr",
+                    "value": 126
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%can_rocket_pdmg $DMG_FIRE\\n%can_rocket_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%can_rocket_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Blast Field",
+            "description": "Cannonball uses his Blast Field to make himself immune to $DMG_PHYSICAL for a time. Can level up to include all party members.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/cannonball_icons2.png",
+            "name": "can_party",
+            "power": "power2",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_party_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "can_party_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_party_lif",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "can_party_lif",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_party_pwr",
+                    "value": 88
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "can_party_pwr",
+                    "value": 480
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_party_aon",
+                    "value": 0
+                },
+                "talentvalue": {
+                    "level": 10,
+                    "name": "can_party_aon",
+                    "value": 0
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "can_party_aon",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "can_party_aon",
+                    "value": 1
+                }
+            },
+            "level": {
+                "count": 10,
+                "description": "%can_party_lif seconds\\n%can_party_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%can_party_req"
+                }
+            },
+            "level": {
+                "count": 8,
+                "description": "%can_party_lif seconds\\n%can_party_pwr $EP\\nApplies to all allies",
+                "require": {
+                    "cat": "level",
+                    "level": "%can_party_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Bio-Kinetic Blast",
+            "description": "Unleashes a two-handled Bio-Kinetic Blast that pierces through enemies and causes splash damage.",
+            "descshort": "Melee",
+            "icon": 1,
+            "icon_texture": "textures/ui/cannonball_icons2.png",
+            "name": "can_blast",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_blast_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "can_blast_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_blast_dmg",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "can_blast_dmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_blast_pwr",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "can_blast_pwr",
+                    "value": 126
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%can_blast_dmg $DMG_FIRE\\n%can_blast_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%can_blast_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Bio-Kinetic Burst",
+            "description": "A flurry of Bio-Kinetic punches that damage and stun enemies.",
+            "descshort": "Melee",
+            "icon": 2,
+            "icon_texture": "textures/ui/cannonball_icons2.png",
+            "name": "can_multi",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_multi_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "can_multi_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_multi_dmg",
+                    "value": "17 22"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "can_multi_dmg",
+                    "value": "117 132"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_multi_dmgp",
+                    "value": "15 20"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "can_multi_dmgp",
+                    "value": "94 107"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_multi_pwr",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "can_multi_pwr",
+                    "value": 140
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%can_multi_dmg $DMG_FIRE first blow\\n%can_multi_dmgp additional blows\\n%can_multi_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%can_multi_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Explosive Blows",
+            "description": "Cannonball charges his body with Thermochemical Energy and does more and more $DMG_FIRE with each attack.",
+            "descshort": "Boost",
+            "icon": 7,
+            "icon_texture": "textures/ui/cannonball_icons2.png",
+            "name": "can_explosive",
+            "power": "power5",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_explosive_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "can_explosive_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_explosive_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "can_explosive_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_explosive_res",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "can_explosive_res",
+                    "value": 2.6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_explosive_dmg",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "can_explosive_dmg",
+                    "value": 0.47
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_explosive_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "can_explosive_pwr",
+                    "value": 516
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%can_explosive_res:p $DMG_FIRE\\n%can_explosive_life seconds\\n%can_explosive_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%can_explosive_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Angular Momentum",
+            "description": "Cannonball uses Thermochemical Energy to boost his Defense and Movement Speed.",
+            "descshort": "Boost",
+            "icon": 8,
+            "icon_texture": "textures/ui/cannonball_icons2.png",
+            "name": "cball_focus",
+            "power": "power6",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cball_focus_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "cball_focus_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cball_focus_def",
+                    "value": 1.3
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "cball_focus_def",
+                    "value": 2.09
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cball_focus_speed",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "cball_focus_speed",
+                    "value": 2.09
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cball_focus_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "cball_focus_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cball_focus_pwr",
+                    "value": 48
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "cball_focus_pwr",
+                    "value": 484
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%cball_focus_def:s $DR\\n%cball_focus_speed:s Movement Speed\\n%cball_focus_lif seconds\\n%cball_focus_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%cball_focus_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "SHOCKWAVES",
+            "description": "Cannonball launches into the air and slams into the ground, damaging and knocking down nearby enemies.",
+            "descshort": "Radial",
+            "icon": 9,
+            "icon_texture": "textures/ui/cannonball_icons2.png",
+            "name": "can_shock",
+            "power": "power7",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_shock_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "can_shock_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_shock_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "can_shock_dmg",
+                    "value": "279 309"
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%can_shock_dmg $DMG_FIRE",
+                "require": {
+                    "cat": "level",
+                    "level": "%can_shock_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "CHARGE",
+            "description": "Cannonball extends his Bio-Kinetic Field to cover all party members, making everyone invulnerable for a time and increasing their max $EP.",
+            "descshort": "Boost",
+            "icon": 10,
+            "icon_texture": "textures/ui/cannonball_icons2.png",
+            "name": "can_xtreme2",
+            "power": "power8",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_xtreme2_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "can_xtreme2_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_xtreme2_mep",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "can_xtreme2_mep",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_xtreme2_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "can_xtreme2_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%can_xtreme2_mep:s max $EP\\n%can_xtreme2_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%can_xtreme2_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Propulsive Uppercut",
+            "description": "A slow but powerful Bio-Kinetic uppercut that sends enemies flying.",
+            "descshort": "Melee",
+            "icon": 3,
+            "icon_texture": "textures/ui/cannonball_icons2.png",
+            "name": "can_p9",
+            "power": "power9",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_p9_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "can_p9_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_p9_dmg",
+                    "value": "75 86"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "can_p9_dmg",
+                    "value": "201 224"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_p9_pwr",
+                    "value": 46
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "can_p9_pwr",
+                    "value": 132
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%can_p9_dmg $DMG_FIRE\\n%can_p9_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%can_p9_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Blast Field Overload",
+            "description": "Cannonball charges up his Blast Field and expands it outwards, causing $DMG_FIRE to all enemies it touches.",
+            "descshort": "Radial",
+            "icon": 4,
+            "icon_texture": "textures/ui/cannonball_icons2.png",
+            "name": "can_p10",
+            "power": "power10",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_p10_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "can_p10_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_p10_dmg",
+                    "value": "46 54"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "can_p10_dmg",
+                    "value": "95 107"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_p10_pwr",
+                    "value": 92
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "can_p10_pwr",
+                    "value": 198
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%can_p10_dmg $DMG_FIRE\\n%can_p10_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%can_p10_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Disruptive Thrust",
+            "description": "Cannonball launches upwards, releasing a radial blast of Thermochemical Energy that damages and stuns nearby enemies.",
+            "descshort": "Radial",
+            "icon": 5,
+            "icon_texture": "textures/ui/cannonball_icons2.png",
+            "name": "can_disrupt_sho",
+            "power": "power11",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_disrupt_sho_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "can_disrupt_sho_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_disrupt_sho_pwr",
+                    "value": 36
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "can_disrupt_sho_pwr",
+                    "value": 142
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_disrupt_sho_dmg",
+                    "value": "21 26"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "can_disrupt_sho_dmg",
+                    "value": "79 89"
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%can_disrupt_sho_dmg $DMG_FIRE\\n%can_disrupt_sho_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%can_disrupt_sho_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Thermochemical Energy Mastery",
+            "description": "Increases damage and chance for Criticals with $DMG_FIRE.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/cannonball_icons2.png",
+            "name": "can_firemaster",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_firemaster_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "can_firemaster_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_firemaster_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "can_firemaster_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_firemaster_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "can_firemaster_crit",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%can_firemaster_dmg:s $DMG_FIRE\\n+%can_firemaster_crit:p Critical chance",
+                "require": {
+                    "category": "level",
+                    "level": "%can_firemaster_req"
+                },
+                "require": {
+                    "category": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%can_firemaster_dmg",
+                        "scope_damage": "dmg_fire"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%can_firemaster_crit",
+                        "scope_damage": "dmg_fire"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Blast Field Resistance",
+            "description": "Increases Cannonball's resistances to Elemental, Fire, and Physical damage.",
+            "descshort": "Passive",
+            "icon": 12,
+            "icon_texture": "textures/ui/cannonball_icons2.png",
+            "name": "cannon_prism",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_prism_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "can_prism_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_prism_resist",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "can_prism_resist",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%can_prism_resist:p $RES_ELEMENTAL\\n+%can_prism_resist:p $RES_FIRE\\n+%can_prism_resist:p $RES_PHYSICAL",
+                "require": {
+                    "cat": "level",
+                    "level": "%can_prism_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_elemental",
+                        "level": "%can_prism_resist"
+                    },
+                    "affecter": {
+                        "attribute": "resist_fire",
+                        "level": "%can_prism_resist"
+                    },
+                    "affecter": {
+                        "attribute": "resist_physical",
+                        "level": "%can_prism_resist"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Blast Field Deflection",
+            "description": "Cannonball's Blast Field gives him a chance to deflect projectile attacks.",
+            "descshort": "Passive",
+            "icon": 13,
+            "icon_texture": "textures/ui/cannonball_icons2.png",
+            "name": "can_can_def",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_can_def_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "can_can_def_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_can_def_pct",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "can_can_def_pct",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%can_can_def_pct:p chance to dodge",
+                "require": {
+                    "cat": "level",
+                    "level": "%can_can_def_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%can_can_def_pct",
+                        "scope_attack": "projectile"
+                    }
+                }
+            }
+        }
+    }
+}
