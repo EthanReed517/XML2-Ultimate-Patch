@@ -82,6 +82,12 @@ if not %consoleChoice%==GC (
 	call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
 	cd ..\..
 )
+if not %consoleChoice%==GC (
+	echo Cannonball
+	cd "%~dp0\1. Playable Characters\Cannonball"
+	call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+	cd ..\..
+)
 echo Colossus
 cd "%~dp0\1. Playable Characters\Colossus"
 call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
