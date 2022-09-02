@@ -29,7 +29,6 @@ set bonusFeatures=Y
 set bonusLoad=Y
 set pspXml1Comic=Y
 
-
 REM ******************
 REM * Code Execution *
 REM ******************
