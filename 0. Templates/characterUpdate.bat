@@ -2,17 +2,17 @@
 REM ***************
 REM * User Inputs *
 REM ***************
-REM Fill in the following variable prompts with the name of the files or leave blank if it doesn't apply
+REM Fill in the following variable prompts with the name of the files or leave it as "" if it doesn't apply
 
 REM Data Entry Options
-set codexEntry=
-set dangerEntry=
-set herostatEntry=
-set itemsEntry=
-set npcstatEntry1=
-set npcstatEntry2=
-set npcstatEntry3=
-set reviewEntry=
+set codexEntry=""
+set dangerEntry=""
+set herostatEntry=""
+set itemsEntry=""
+set npcstatEntry1=""
+set npcstatEntry2=""
+set npcstatEntry3=""
+set reviewEntry=""
 
 REM Fill in the following variable prompts with either "Y" for "Yes" or "N" for "No"
 
