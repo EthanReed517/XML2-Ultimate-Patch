@@ -14,21 +14,6 @@ set npcstatEntry2=IcemanSimple
 set npcstatEntry3=Sin_Ice
 set reviewEntry=Iceman
 
-REM Fill in the following variable prompts with either "Y" for "Yes" or "N" for "No"
-
-REM Console options
-set PC=Y
-set GC=Y
-set PS2=Y
-set PSP=Y
-set XB=Y
-
-REM Additional content options
-set bonusComic=Y
-set bonusFeatures=N
-set bonusLoad=N
-set pspXml1Comic=N
-
 REM ******************
 REM * Code Execution *
 REM ******************
@@ -68,88 +53,112 @@ REM section for other files
 REM files that exist in base assets
 echo Copying additional files...
 robocopy >nul /e /v "1. Base Assets\ui\models\characters" "..\..\4. Menus\Character Select Screen\1. Base Assets\ui\models\characters"
-robocopy >nul /e /v "1. Base Assets\textures\comic" "..\..\4. Menus\Comic Covers\1. Base Assets\textures\comic"
-robocopy >nul /e /v "1. Base Assets\textures\loading" "..\..\4. Menus\Loading Screens\1. Base Assets\textures\loading"
-if %bonusComic%==Y (
+if exist "1. Base Assets\textures\comic" (
+	robocopy >nul /e /v "1. Base Assets\textures\comic" "..\..\4. Menus\Comic Covers\1. Base Assets\textures\comic"
+)
+if exist "1. Base Assets\textures\loading" (
+	robocopy >nul /e /v "1. Base Assets\textures\loading" "..\..\4. Menus\Loading Screens\1. Base Assets\textures\loading"
+)
+if exist "1. Base Assets\2. Bonus Comic Covers" (
 	robocopy >nul /e /v "1. Base Assets\2. Bonus Comic Covers" "..\..\4. Menus\Comic Covers\1. Base Assets\2. Bonus Comic Covers"
 )
-if %bonusFeatures%==Y (
+if exist "1. Base Assets\2. Bonus Features" (
 	robocopy >nul /e /v "1. Base Assets\2. Bonus Features" "..\..\7. Bonus Features\1. Base Assets\2. Bonus Features"
 )
-if %bonusLoad%==Y (
+if exist "1. Base Assets\2. Bonus Loading Screens" (
 	robocopy >nul /e /v "1. Base Assets\2. Bonus Loading Screens" "..\..\4. Menus\Loading Screens\1. Base Assets\2. Bonus Loading Screens"
 )
-if %pspXml1Comic%==Y (
+if exist "1. Base Assets\2. Comics for XML1 and PSP characters" (
 	robocopy >nul /e /v "1. Base Assets\2. Comics for XML1 and PSP characters" "..\..\4. Menus\Loading Screens\1. Base Assets\2. Comics for XML1 and PSP characters"
 )
 
 REM PC-exclusive files
-if %PC%==Y (
+if exist "2. Default Assets - PC\sounds" (
 	robocopy >nul /e /v "2. Default Assets - PC\sounds" "..\..\8. Sounds\2. Default Assets - PC\sounds"
 )
 
 REM GC-exclusive files
-if %GC%==Y (
-	robocopy >nul /e /v "2. Default Assets - GameCube\sounds" "..\..\8. Sounds\2. Default Assets - GameCube\sounds"
-	robocopy >nul /e /v "2. Default Assets - GameCube\textures\comic" "..\..\4. Menus\Comic Covers\2. Default Assets - GameCube\textures\comic"
-	robocopy >nul /e /v "2. Default Assets - GameCube\textures\loading" "..\..\4. Menus\Loading Screens\2. Default Assets - GameCube\textures\loading"
-	if %bonusComic%==Y (
+if exist "2. Default Assets - GameCube" (
+	if exist "2. Default Assets - GameCube\sounds" (
+		robocopy >nul /e /v "2. Default Assets - GameCube\sounds" "..\..\8. Sounds\2. Default Assets - GameCube\sounds"
+	)
+	if exist "2. Default Assets - GameCube\textures\comic" (
+		robocopy >nul /e /v "2. Default Assets - GameCube\textures\comic" "..\..\4. Menus\Comic Covers\2. Default Assets - GameCube\textures\comic"
+	)
+	if exist "2. Default Assets - GameCube\textures\loading" (
+		robocopy >nul /e /v "2. Default Assets - GameCube\textures\loading" "..\..\4. Menus\Loading Screens\2. Default Assets - GameCube\textures\loading"
+	)
+	if exist "2. Default Assets - GameCube\2. Bonus Comic Covers" (
 		robocopy >nul /e /v "2. Default Assets - GameCube\2. Bonus Comic Covers" "..\..\4. Menus\Comic Covers\2. Default Assets - GameCube\2. Bonus Comic Covers"
 	)
-	if %bonusFeatures%==Y (
+	if exist "2. Default Assets - GameCube\2. Bonus Features" (
 		robocopy >nul /e /v "2. Default Assets - GameCube\2. Bonus Features" "..\..\7. Bonus Features\2. Default Assets - GameCube\2. Bonus Features"
 	)
-	if %bonusLoad%==Y (
+	if exist "2. Default Assets - GameCube\2. Bonus Loading Screens" (
 		robocopy >nul /e /v "2. Default Assets - GameCube\2. Bonus Loading Screens" "..\..\4. Menus\Loading Screens\2. Default Assets - GameCube\2. Bonus Loading Screens"
 	)
-	if %pspXml1Comic%==Y (
+	if exist "2. Default Assets - GameCube\2. Comics for XML1 and PSP characters" (
 		robocopy >nul /e /v "2. Default Assets - GameCube\2. Comics for XML1 and PSP characters" "..\..\4. Menus\Loading Screens\2. Default Assets - GameCube\2. Comics for XML1 and PSP characters"
 	)
 )
 
 REM PS2-exclusive files
-if %PS2%==Y (
-	robocopy >nul /e /v "2. Default Assets - PS2\sounds" "..\..\8. Sounds\2. Default Assets - PS2\sounds"
-	robocopy >nul /e /v "2. Default Assets - PS2\textures\comic" "..\..\4. Menus\Comic Covers\2. Default Assets - PS2\textures\comic"
-	robocopy >nul /e /v "2. Default Assets - PS2\textures\loading" "..\..\4. Menus\Loading Screens\2. Default Assets - PS2\textures\loading"
-	if %bonusComic%==Y (
+if exist "2. Default Assets - PS2" (
+	if exist "2. Default Assets - PS2\sounds" (
+		robocopy >nul /e /v "2. Default Assets - PS2\sounds" "..\..\8. Sounds\2. Default Assets - PS2\sounds"
+	)
+	if exist "2. Default Assets - PS2\textures\comic" (
+		robocopy >nul /e /v "2. Default Assets - PS2\textures\comic" "..\..\4. Menus\Comic Covers\2. Default Assets - PS2\textures\comic"
+	)
+	if exist "2. Default Assets - PS2\textures\loading" (
+		robocopy >nul /e /v "2. Default Assets - PS2\textures\loading" "..\..\4. Menus\Loading Screens\2. Default Assets - PS2\textures\loading"
+	)
+	if exist "2. Default Assets - PS2\2. Bonus Comic Covers" (
 		robocopy >nul /e /v "2. Default Assets - PS2\2. Bonus Comic Covers" "..\..\4. Menus\Comic Covers\2. Default Assets - PS2\2. Bonus Comic Covers"
 	)
-	if %bonusFeatures%==Y (
+	if exist "2. Default Assets - PS2\2. Bonus Features" (
 		robocopy >nul /e /v "2. Default Assets - PS2\2. Bonus Features" "..\..\7. Bonus Features\2. Default Assets - PS2\2. Bonus Features"
 	)
-	if %bonusLoad%==Y (
+	if exist "2. Default Assets - PS2\2. Bonus Loading Screens" (
 		robocopy >nul /e /v "2. Default Assets - PS2\2. Bonus Loading Screens" "..\..\4. Menus\Loading Screens\2. Default Assets - PS2\2. Bonus Loading Screens"
 	)
-	if %pspXml1Comic%==Y (
+	if exist "2. Default Assets - PS2\2. Comics for XML1 and PSP characters" (
 		robocopy >nul /e /v "2. Default Assets - PS2\2. Comics for XML1 and PSP characters" "..\..\4. Menus\Loading Screens\2. Default Assets - PS2\2. Comics for XML1 and PSP characters"
 	)
 )
 
 REM PSP-exclusive files
-if %PSP%==Y (
+if exist "2. Default Assets - PSP" (
 	robocopy >nul /e /v "2. Default Assets - PSP\ui\models\characters" "..\..\4. Menus\Character Select Screen\2. Default Assets - PSP\ui\models\characters"
-	robocopy >nul /e /v "2. Default Assets - PSP\sounds" "..\..\8. Sounds\2. Default Assets - PSP\sounds"
-	robocopy >nul /e /v "2. Default Assets - PSP\textures\comic" "..\..\4. Menus\Comic Covers\2. Default Assets - PSP\textures\comic"
-	robocopy >nul /e /v "2. Default Assets - PSP\textures\loading" "..\..\4. Menus\Loading Screens\2. Default Assets - PSP\textures\loading"
-	if %bonusComic%==Y (
+	if exist "2. Default Assets - PSP\sounds" (
+		robocopy >nul /e /v "2. Default Assets - PSP\sounds" "..\..\8. Sounds\2. Default Assets - PSP\sounds"
+	)
+	if exist "2. Default Assets - PSP\textures\comic" (
+		robocopy >nul /e /v "2. Default Assets - PSP\textures\comic" "..\..\4. Menus\Comic Covers\2. Default Assets - PSP\textures\comic"
+	)
+	if exist "2. Default Assets - PSP\textures\loading" (
+		robocopy >nul /e /v "2. Default Assets - PSP\textures\loading" "..\..\4. Menus\Loading Screens\2. Default Assets - PSP\textures\loading"
+	)
+	if exist "2. Default Assets - PSP\2. Bonus Comic Covers" (
 		robocopy >nul /e /v "2. Default Assets - PSP\2. Bonus Comic Covers" "..\..\4. Menus\Comic Covers\2. Default Assets - PSP\2. Bonus Comic Covers"
 	)
-	if %bonusFeatures%==Y (
+	if exist "2. Default Assets - PSP\2. Bonus Features" (
 		robocopy >nul /e /v "2. Default Assets - PSP\2. Bonus Features" "..\..\7. Bonus Features\2. Default Assets - PSP\2. Bonus Features"
 	)
-	if %bonusLoad%==Y (
+	if exist "2. Default Assets - PSP\2. Bonus Loading Screens" (
 		robocopy >nul /e /v "2. Default Assets - PSP\2. Bonus Loading Screens" "..\..\4. Menus\Loading Screens\2. Default Assets - PSP\2. Bonus Loading Screens"
 	)
-	if %pspXml1Comic%==Y (
+	if exist "2. Default Assets - PSP\2. Comics for XML1 and PSP characters" (
 		robocopy >nul /e /v "2. Default Assets - PSP\2. Comics for XML1 and PSP characters" "..\..\4. Menus\Loading Screens\2. Default Assets - PSP\2. Comics for XML1 and PSP characters"
 	)
 )
 
 REM Xbox-exclusive files
-if %XB%==Y (
-	robocopy >nul /e /v "2. Default Assets - Xbox\sounds" "..\..\8. Sounds\2. Default Assets - Xbox\sounds"
-	if %bonusFeatures%==Y (
+if exist "2. Default Assets - Xbox" (
+	if exist "2. Default Assets - Xbox\sounds" (
+		robocopy >nul /e /v "2. Default Assets - Xbox\sounds" "..\..\8. Sounds\2. Default Assets - Xbox\sounds"
+	)
+	if exist "2. Default Assets - Xbox\2. Bonus Features" (
 		robocopy >nul /e /v "2. Default Assets - Xbox\2. Bonus Features" "..\..\7. Bonus Features\2. Default Assets - Xbox\2. Bonus Features"
 	)
 )
