@@ -34,7 +34,7 @@ CHOICE /C 1234 /M "Which Mod Pack are you using? "
 IF ERRORLEVEL 4 SET modPackChoice=MUE & goto skinPackSection
 IF ERRORLEVEL 3 SET modPackChoice=BHE & goto skinPackSection
 IF ERRORLEVEL 2 SET modPackChoice=AXE & goto skinPackSection
-IF ERRORLEVEL 1	SET modPackChoice=X2UP & goto skinPackSection
+IF ERRORLEVEL 1 SET modPackChoice=X2UP & goto skinPackSection
 
 :skinPackSection
 REM currently, the default skin pack will be the only option. BaconWizard17 will implement redesign and custom skin packs later
@@ -70,113 +70,113 @@ call compile.bat %consoleChoice%
 cd ..\..
 echo Beast
 cd "%~dp0\1. Playable Characters\Beast"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Bishop
 cd "%~dp0\1. Playable Characters\Bishop"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 if not %consoleChoice%==GC (
 	echo Cable
 	cd "%~dp0\1. Playable Characters\Cable"
-	call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+	call compile.bat %consoleChoice% %celChoice%
 	cd ..\..
 )
 if not %consoleChoice%==GC (
 	echo Cannonball
 	cd "%~dp0\1. Playable Characters\Cannonball"
-	call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+	call compile.bat %consoleChoice% %celChoice%
 	cd ..\..
 )
 echo Colossus
 cd "%~dp0\1. Playable Characters\Colossus"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Cyclops
 cd "%~dp0\1. Playable Characters\Cyclops"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Deadpool
 cd "%~dp0\1. Playable Characters\Deadpool"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Emma Frost
 cd "%~dp0\1. Playable Characters\Emma Frost"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Gambit
 cd "%~dp0\1. Playable Characters\Gambit"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Iceman
 cd "%~dp0\1. Playable Characters\Iceman"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Iron Man
 cd "%~dp0\1. Playable Characters\Iron Man"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Jean Grey
 cd "%~dp0\1. Playable Characters\Jean Grey"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 if not %consoleChoice%==PSP (
 	echo Jubilee
 	cd "%~dp0\1. Playable Characters\Jubilee"
-	call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+	call compile.bat %consoleChoice% %celChoice%
 	cd ..\..
 )
 echo Juggernaut
 cd "%~dp0\1. Playable Characters\Juggernaut"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Magneto
 cd "%~dp0\1. Playable Characters\Magneto"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Nightcrawler
 cd "%~dp0\1. Playable Characters\Nightcrawler"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Professor X
 cd "%~dp0\1. Playable Characters\Professor X"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Psylocke
 cd "%~dp0\1. Playable Characters\Psylocke"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Pyro
 cd "%~dp0\1. Playable Characters\Pyro"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Rogue
 cd "%~dp0\1. Playable Characters\Rogue"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Sabretooth
 cd "%~dp0\1. Playable Characters\Sabretooth"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Scarlet Witch
 cd "%~dp0\1. Playable Characters\Scarlet Witch"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Storm
 cd "%~dp0\1. Playable Characters\Storm"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Sunfire
 cd "%~dp0\1. Playable Characters\Sunfire"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Toad
 cd "%~dp0\1. Playable Characters\Toad"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 echo Wolverine
 cd "%~dp0\1. Playable Characters\Wolverine"
-call compile.bat %consoleChoice% %skinPackChoice% %celChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 
 
@@ -184,7 +184,7 @@ REM 2. NPCs
 echo Compiling NPCs...
 echo Angel
 cd "%~dp0\2. NPCs\Angel"
-call compile.bat %consoleChoice%
+call compile.bat %consoleChoice% %celChoice%
 cd ..\..
 
 REM 3. General Data Files
