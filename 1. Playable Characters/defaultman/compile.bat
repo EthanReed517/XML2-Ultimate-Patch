@@ -1,13 +1,28 @@
 @echo off
-echo Compiling defaultman
+echo Compiling Defaultman's character assets 
+
+REM **************************
+REM * Section 0 - User Input *
+REM **************************
+
+goto consoleChoiceSection
+
+:unneeded
+REM files on the PC that aren't modified by the X2UP can be listed here
+if  %consoleChoice%==PC (
+	echo.
+	REM nothing here. Keeping just in case
+)
+goto compilePCcont
 
 REM ***********************************
 REM * Section 1 - Establish Variables *
 REM ***********************************
 
+:consoleChoiceSection
 REM get console choice from main compiler script
 set "consoleChoice=%~1"
-goto :consoleChoiceCheck
+goto consoleChoiceCheck
 REM console not selected, main compiler prompt not used, pick console
 :consoleChoicePrompt
 echo.
@@ -18,14 +33,14 @@ echo [3] PlayStation 2
 echo [4] PlayStation Portable (PSP)
 echo [5] Xbox
 CHOICE /C 12345 /M "Which console are you using? "
-IF ERRORLEVEL 5 SET consoleChoice=XB & goto :section2
-IF ERRORLEVEL 4 SET consoleChoice=PSP & goto :section2
-IF ERRORLEVEL 3 SET consoleChoice=PS2 & goto :section2
-IF ERRORLEVEL 2 SET consoleChoice=GC & goto :section2
-IF ERRORLEVEL 1	SET consoleChoice=PC & goto :section2
+IF ERRORLEVEL 5 SET consoleChoice=XB & goto section2
+IF ERRORLEVEL 4 SET consoleChoice=PSP & goto section2
+IF ERRORLEVEL 3 SET consoleChoice=PS2 & goto section2
+IF ERRORLEVEL 2 SET consoleChoice=GC & goto section2
+IF ERRORLEVEL 1	SET consoleChoice=PC & goto section2
 REM Checks if console was selected from main compiler script/if main compiler script was used
 :consoleChoiceCheck
-if "%consoleChoice%"=="" goto :consoleChoicePrompt
+if "%consoleChoice%"=="" goto consoleChoicePrompt
 
 REM ***************************
 REM * Section 2 - Move Assets *
@@ -37,21 +52,44 @@ echo Compiling assets...
 md "0. Staging"
 robocopy >nul /e /v "1. Base Assets" "0. Staging"
 REM proceed based on console selection
-if %consoleChoice%==PC goto :movePC
-if %consoleChoice%==GC goto :compileConsole
-if %consoleChoice%==PS2 goto :compileConsole
-if %consoleChoice%==PSP goto :movePSP
-if %consoleChoice%==XB goto :compileConsole
+if %consoleChoice%==PC goto movePC
+if %consoleChoice%==GC goto moveGameCube
+if %consoleChoice%==PS2 goto movePS2
+if %consoleChoice%==PSP goto movePSP
+if %consoleChoice%==XB goto moveXbox
 
 REM PC options
 :movePC
+REM default assets are included regardless of skin pack choice
+REM assets without cel shading are stored in a separate folder for the PC
+REM they're easy to move, so they'll be left in
 robocopy >nul /e /v "2. Default Assets - PC" "0. Staging"
-goto :compilePC
+goto compilePC
+
+REM GameCube options
+:moveGameCube
+REM default assets are included regardless of skin pack choice
+robocopy >nul /e /v "2. Default Assets - GameCube" "0. Staging"
+goto compileConsole
+
+REM PS2 options
+:movePS2
+REM default assets are included regardless of skin pack choice
+robocopy >nul /e /v "2. Default Assets - PS2" "0. Staging"
+goto compileConsole
 
 REM PSP options
 :movePSP
+REM default assets are included regardless of skin pack choice
+REM PSP does not use cel shading, so the cel shading option is ignored
 robocopy >nul /e /v "2. Default Assets - PSP" "0. Staging"
-goto :compileConsole
+goto compileConsole
+
+REM xbox options
+:moveXbox
+REM default assets are included regardless of skin pack choice
+robocopy >nul /e /v "2. Default Assets - Xbox" "0. Staging"
+goto compileConsole
 
 REM ******************************
 REM * Section 3 - Compile Assets *
@@ -60,45 +98,59 @@ REM ******************************
 :compileConsole
 REM can remove unneeded folders
 rmdir /s /q "0. Staging\1. Data Entries"
-copy >nul "..\..\0. Compilers" "0. Staging"
-REM change directory to 0. Staging folder, run fbbuilder, then change back to main directory
-cd "%~dp0\0. Staging"
-call fbbuilder.bat
-del >nul *.cfg
-del >nul enter.vbs
-del >nul fbbuilder.bat
-md "packages\generated\characters"
-for /r %%x in (*.fb) do move >nul "%%x" "packages\generated\characters"
-cd ..
-
-REM move files and clean up
-robocopy >nul /e /v "0. Staging" "..\..\0. Ready Files\assetsfb Files"
-rmdir /s /q "0. Staging"
-
-goto :end
-
-:compilePC
-REM can remove unneeded folders
-rmdir /s /q "0. Staging\1. Data Entries"
 REM copy compilers
 copy >nul "..\..\0. Compilers" "0. Staging"
 REM change directory to 0. Staging folder and execute scripts
 cd "%~dp0\0. Staging"
+REM run fbbuilder
+call fbbuilder.bat
+REM move packages to proper place
+md "packages\generated\characters"
+for /r %%x in (*.fb) do move >nul "%%x" "packages\generated\characters"
+goto cleanUp
+
+:compilePC
+REM can remove unneeded folders
+rmdir /s /q "0. Staging\1. Data Entries"
+goto unneeded
+:compilePCCont
+REM copy compilers
+copy >nul "..\..\0. Compilers" "0. Staging"
+REM change directory to 0. Staging folder and execute scripts
+cd "%~dp0\0. Staging"
+REM compile data files
 cmd /c ravenFormatsCompile.bat
+goto cleanUp
+
+:cleanUp
 del /s >nul *.json
 REM clean up extra stuff
 del >nul *.cfg
 del >nul enter.vbs
 del >nul fbbuilder.bat
 del >nul ravenFormatsCompile.bat
+if %consoleChoice%==PC goto finalizePC
+goto finalizeConsole
+
+:finalizeConsole
 REM move back to the main folder
 cd ..
+REM need to remove any files that are in the packages
+rmdir /s /q "0. Staging/actors"
+rmdir /s /q "0. Staging/hud"
+rmdir /s /q "0. Staging/ui"
+REM move files and clean up
+robocopy >nul /e /v "0. Staging" "..\..\0. Ready Files\Files to Add to assetsfb.wad"
+rmdir /s /q "0. Staging"
+goto end
 
+:finalizePC
+REM move back to the main folder
+cd ..
 REM move files and clean up
 robocopy >nul /e /v "0. Staging" "..\..\0. Ready Files"
 rmdir /s /q "0. Staging"
-
-goto :end
+goto end
 
 :end
 echo Transfer Complete

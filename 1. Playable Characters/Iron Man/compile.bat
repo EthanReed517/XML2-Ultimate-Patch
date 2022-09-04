@@ -12,24 +12,12 @@ set pcPkgbNc=ironman_1501_nc.pkgb.json
 REM fill in the name of the character's talents file here (without the file extension)
 set talentsName=ironman
 
-REM Fill in the following variable prompts with either "Y" for "Yes" or "N" for "No"
-REM Additional content options
-set hasBonusComic=N
-set hasBonusFeatures=N
-set hasBonusLoad=Y
-set hasPspXml1Comic=N
-REM Files that not every character has but will be included in console packages and don't need to be kept loose in the release
-set hasEntities=Y
-set hasFightstyle=N
-set hasModels=Y
-
 goto consoleChoiceSection
 
 :unneeded
 REM files on the PC that aren't modified by the X2UP can be listed here
 if  %consoleChoice%==PC (
 	del >nul "0. Staging\actors\15_ironman.igb"
-	del >nul "0. Staging\actors\116_tony_stark.igb"
 	del >nul "0. Staging\actors\128_civilian_male.igb"
 	rmdir /s /q "0. Staging/models"
 )
@@ -159,16 +147,16 @@ REM ******************************
 :compileConsole
 REM can remove unneeded folders
 rmdir /s /q "0. Staging\1. Data Entries"
-if %hasBonusComic%==Y (
+if exist "0. Staging\2. Bonus Comic Covers" (
 	rmdir /s /q "0. Staging\2. Bonus Comic Covers"
 )
-if %hasBonusFeatures%==Y (
+if exist "0. Staging\2. Bonus Features" (
 	rmdir /s /q "0. Staging\2. Bonus Features"
 )
-if %hasBonusLoad%==Y (
+if exist "0. Staging\2. Bonus Loading Screens" (
 	rmdir /s /q "0. Staging\2. Bonus Loading Screens"
 )
-if %hasPspXml1Comic%==Y (
+if exist "0. Staging\2. Comics for XML1 and PSP Characters" (
 	rmdir /s /q "0. Staging\2. Comics for XML1 and PSP Characters"
 )
 rmdir /s /q "0. Staging\3. No Cel Shade Assets"
@@ -192,16 +180,16 @@ goto cleanUp
 :compilePC
 REM can remove unneeded folders
 rmdir /s /q "0. Staging\1. Data Entries"
-if %hasBonusComic%==Y (
+if exist "0. Staging\2. Bonus Comic Covers" (
 	rmdir /s /q "0. Staging\2. Bonus Comic Covers"
 )
-if %hasBonusFeatures%==Y (
+if exist "0. Staging\2. Bonus Features" (
 	rmdir /s /q "0. Staging\2. Bonus Features"
 )
-if %hasBonusLoad%==Y (
+if exist "0. Staging\2. Bonus Loading Screens" (
 	rmdir /s /q "0. Staging\2. Bonus Loading Screens"
 )
-if %hasPspXml1Comic%==Y (
+if exist "0. Staging\2. Comics for XML1 and PSP Characters" (
 	rmdir /s /q "0. Staging\2. Comics for XML1 and PSP Characters"
 )
 goto unneeded
@@ -230,7 +218,8 @@ del >nul *.cfg
 del >nul enter.vbs
 del >nul fbbuilder.bat
 del >nul ravenFormatsCompile.bat
-del >nul *.py
+del >nul cfgCreate.py
+del >nul packageCreate.py
 del >nul compile.ini
 if %consoleChoice%==PC goto finalizePC
 goto finalizeConsole
@@ -245,13 +234,13 @@ rmdir /s /q "0. Staging/hud"
 rmdir /s /q "0. Staging/sounds"
 rmdir /s /q "0. Staging/textures"
 rmdir /s /q "0. Staging/ui"
-if %hasEntities%==Y (
+if exist "0. Staging/data/entities" (
 	rmdir /s /q "0. Staging/data/entities"
 )
-if %hasFightstyle%==Y (
+if exist "0. Staging/data/fightstyles" (
 	rmdir /s /q "0. Staging/data/fightstyles"
 )
-if %hasModels%==Y (
+if exist "0. Staging/models" (
 	rmdir /s /q "0. Staging/models"
 )
 REM move files and clean up

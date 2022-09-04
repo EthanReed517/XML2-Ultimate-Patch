@@ -1,5 +1,5 @@
 @echo off
-echo Compiling Angel's NPC assets 
+echo Compiling NAME's NPC assets 
 
 REM **************************
 REM * Section 0 - User Input *
@@ -10,8 +10,7 @@ goto consoleChoiceSection
 :unneeded
 REM files on the PC that aren't modified by the X2UP can be listed here
 if  %consoleChoice%==PC (
-	del >nul "0. Staging\actors\10_archangel.igb"
-	del >nul "0. Staging\actors\135_archangel_apoc.igb"
+	del >nul "0. Staging\actors\XX_name.igb"
 	rmdir /s /q "0. Staging\data"
 	rmdir /s /q "0. Staging\effects"
 )
