@@ -1,0 +1,445 @@
+{
+    "PowerStyle": {
+        "cansteal": false,
+        "FightMove": {
+            "aireusetime": 2,
+            "aitype": "beamanyrange",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power1",
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/abyss_m/p1_charge",
+                "time": 0.33
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/abyss_m/p1_power",
+                "time": 0.55
+            },
+            "trigger": {
+                "arc": 0,
+                "attack_bone_angles": "8 -25 -61",
+                "attack_bone_pos": "24 0 39",
+                "attacktype": "beam",
+                "beambolt": "Bip01 R Hand",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "knockback": 305,
+                "maxrange": 170,
+                "name": "beam",
+                "powerusage": 6,
+                "time": 0.35,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 2,
+            "aitype": "melee",
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power2",
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/abyss_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/abyss_m/p1_power",
+                "time": 0.55
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "name": "punch",
+                "time": 0.5,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power8_start",
+            "blendtime": 0,
+            "lockangles": true,
+            "name": "power8",
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/abyss_m/p3_charge",
+                "time": 0
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "inherit": "punch",
+                "name": "p_radius"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power8_hold"
+            },
+            "trigger": {
+                "actorskin": 4001,
+                "anim": "power_8_start",
+                "anim_set": "40_abyss_chest",
+                "bolt": "Bip01 Spine1",
+                "boltslot": "ebolton_weapon",
+                "ignoreanimmap": true,
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "effect": "char/abyss/p3_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power8_loop",
+            "blendtime": 0,
+            "lockangles": true,
+            "name": "power8_hold",
+            "priority": "uninterruptable",
+            "trigger": {
+                "effect": "char/abyss/p3_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "chain": {
+                "action": "special",
+                "result": "power8_transition"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power8_hold"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power8",
+            "blendtime": 0,
+            "lockangles": true,
+            "name": "power8_transition",
+            "priority": 5,
+            "trigger": {
+                "donothing": true,
+                "life": 1.5,
+                "name": "hotspot",
+                "radius": 180,
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power8_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power8_end",
+            "blendtime": 0,
+            "lockangles": true,
+            "name": "power8_end",
+            "priority": 5,
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "inherit": "punch",
+                "name": "p_radius",
+                "damageMod": {
+                    "name": "dmgmod_ground_only"
+                }
+            },
+            "trigger": {
+                "jump": true,
+                "life": 0.4,
+                "name": "hotspot",
+                "radius": 190,
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/abyss/p3_power",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "index": 2,
+                "knockback": 1000,
+                "maxrange": 105,
+                "name": "p_radius",
+                "tag": 3,
+                "time": 0.43,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5.6,
+            "aitype": "aoe",
+            "animenum": "ea_power8_start",
+            "blendtime": 0,
+            "lockangles": true,
+            "name": "power9",
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/abyss_m/p3_charge",
+                "time": 0
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "inherit": "punch",
+                "name": "p_radius"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power8_transition"
+            },
+            "trigger": {
+                "actorskin": 4001,
+                "anim": "power_8_start",
+                "anim_set": "40_abyss_chest",
+                "bolt": "Bip01 Spine1",
+                "boltslot": "ebolton_weapon",
+                "ignoreanimmap": true,
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "effect": "char/abyss/p3_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5.6,
+            "aitype": "aoe",
+            "animenum": "ea_power4",
+            "lockangles": true,
+            "name": "power4",
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/abyss_m/p3_charge",
+                "time": 0
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "inherit": "punch",
+                "name": "p_radius"
+            },
+            "trigger": {
+                "damage": "%mdmg_high",
+                "index": 2,
+                "knockback": 430,
+                "maxrange": 105,
+                "name": "p_radius",
+                "tag": 3,
+                "time": 0.45,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "damage": "%mdmg_high",
+                "index": 2,
+                "knockback": 430,
+                "maxrange": 125,
+                "name": "p_radius",
+                "tag": 3,
+                "time": 0.55,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "damage": "%mdmg_high",
+                "index": 2,
+                "knockback": 430,
+                "maxrange": 145,
+                "name": "p_radius",
+                "tag": 3,
+                "time": 0.65,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beamanyrange",
+            "animenum": "ea_power5",
+            "lockangles": true,
+            "name": "power5",
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "attacktype": "beam",
+                "beambolt": "Bip01 R Hand",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "damagetype": "dmg_mental",
+                "name": "beam",
+                "powerusage": 6,
+                "time": 0.55
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6.5,
+            "aitype": "projectile",
+            "animenum": "ea_power6",
+            "lockangles": true,
+            "name": "power6",
+            "priority": 5,
+            "trigger": {
+                "angoffset": "0 -45 0",
+                "count": 1,
+                "entity": "abyss_projectile",
+                "filename": "ents_abyss",
+                "name": "grenade_projectile",
+                "offset": "80 0 70",
+                "speed": 570,
+                "tag": 1,
+                "time": 0.45,
+                "type": "ce_atk_spawn"
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/abyss_m/p6_charge",
+                "time": 0.55
+            },
+            "trigger": {
+                "effect": "char/abyss/p6_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beamanyrange",
+            "animenum": "ea_power7",
+            "lockangles": true,
+            "name": "power7",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/abyss_m/p4_charge",
+                "time": 0.4
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "attack_bone_angles": "-24 -11 -51",
+                "attack_bone_pos": "40 0 23",
+                "attacktype": "beam",
+                "beambolt": "Bip01 R Hand",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "damagetype": "dmg_mental",
+                "hiteffect": "char/abyss/p1_impact",
+                "name": "beam",
+                "powerusage": 6,
+                "time": 0.55,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power14",
+            "blendtime": 0,
+            "lockangles": true,
+            "name": "loadbombs",
+            "priority": "uninterruptable",
+            "trigger": {
+                "effect": "char/abyss/p3_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}

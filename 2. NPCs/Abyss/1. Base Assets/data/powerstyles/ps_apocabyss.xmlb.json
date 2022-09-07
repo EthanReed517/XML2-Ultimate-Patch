@@ -1,0 +1,116 @@
+{
+    "PowerStyle": {
+        "cansteal": false,
+        "FightMove": {
+            "aireusetime": 2,
+            "aitype": "beamanyrange",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power1",
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/abys_s_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/abys_s_m/p1_power",
+                "time": 0.55
+            },
+            "trigger": {
+                "arc": 0,
+                "attack_bone_angles": "8 -25 -61",
+                "attack_bone_pos": "24 0 39",
+                "attacktype": "beam",
+                "beambolt": "Bip01 R Hand",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "knockback": 305,
+                "maxrange": 170,
+                "name": "beam",
+                "powerusage": 6,
+                "time": 0.35
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 2,
+            "aitype": "melee",
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power2",
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/abys_s_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/abys_s_m/p1_power",
+                "time": 0.55
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "name": "punch",
+                "time": 0.5,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power6",
+            "lockangles": true,
+            "name": "power6",
+            "priority": 5,
+            "trigger": {
+                "angoffset": "0 -45 0",
+                "count": 1,
+                "entity": "abyss_projectile",
+                "filename": "ents_abyss",
+                "name": "grenade_projectile",
+                "offset": "20 0 30",
+                "speed": 485,
+                "tag": 1,
+                "time": 0.45,
+                "type": "ce_atk_spawn"
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/abyss/p6_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/abys_s_m/p6_charge",
+                "time": 0
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
