@@ -9,9 +9,10 @@ set codexEntry=""
 set dangerEntry=""
 set herostatEntry=""
 set itemsEntry=""
-set npcstatEntry1=Brood
-set npcstatEntry2=""
-set npcstatEntry3=""
+set npcstatEntry1=Brood_a
+set npcstatEntry2=Brood_b
+set npcstatEntry3=Brood_c
+set npcstatEntry4=Brood_d
 set reviewEntry=""
 
 REM ******************
@@ -44,6 +45,9 @@ if not %npcstatEntry2%=="" (
 )
 if not %npcstatEntry3%=="" (
 	copy >nul "1. Base Assets\1. Data Entries\NPCstat_%npcstatEntry3%.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\%npcstatEntry3%.json"
+)
+if not %npcstatEntry4%=="" (
+	copy >nul "1. Base Assets\1. Data Entries\NPCstat_%npcstatEntry4%.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\%npcstatEntry4%.json"
 )
 if not %reviewEntry%=="" (
 	copy >nul "1. Base Assets\1. Data Entries\ReviewPaths_%reviewEntry%.json" "..\..\3. General Data Files\review_paths\1. Base Assets\0. Review_Paths Entries\%reviewEntry%.json"
