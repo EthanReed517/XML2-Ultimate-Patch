@@ -1,0 +1,1024 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/darkphoenix_icons1.png",
+        "event": {
+            "damagescale": "none",
+            "name": "teleport_data_store",
+            "type": "ce_atk_teleport_mark_start"
+        },
+        "event": {
+            "entity": "drk_ph_nullo",
+            "filename": "ents_darkphoenix",
+            "inherit": "relative_spawn",
+            "name": "who_to_hit",
+            "relative": "target",
+            "type": "ce_atk_spawn_relative"
+        },
+        "event": {
+            "name": "set_visible",
+            "teleportation_caused": true,
+            "type": "ce_force_visibility"
+        },
+        "FightMove": {
+            "aitype": "beam",
+            "animenum": "ea_attack_knockback",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackknockback2",
+            "startchaintime": 0.6,
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/drkphoenx/p2_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/darkp_m/p11_power",
+                "time": 0.35
+            },
+            "trigger": {
+                "life": 0.14,
+                "name": "slide",
+                "targetdistance": 70,
+                "targetradius": 57,
+                "time": 0.25
+            },
+            "trigger": {
+                "attack_type": "psionic",
+                "damage": "3 5",
+                "damage_type": "dmg_telekinesis",
+                "fxlevel": 1,
+                "hiteffect": "char/drkphoenx/p6_impact",
+                "knockback": 245,
+                "maxrange": 80,
+                "name": "punch",
+                "time": 0.5,
+                "victimeventtag": 15,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "finisher": true,
+                "life": 0.25,
+                "name": "xtreme_start",
+                "tag": 15,
+                "time": -1,
+                "worldspeed": 0.5
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aitype": "rangednolos",
+            "animenum": "ea_power2_end",
+            "combotextfinisher": "Inferno",
+            "combotextstarter": "Burning",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "playspeed": 1.3,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "dark_inferno",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/drkphoenx/p1_charge",
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/darkp_m/p1_power",
+                "time": 0.25
+            },
+            "trigger": {
+                "attackerheight": false,
+                "attacktype": "direct",
+                "count": 1,
+                "damage": "%dark_inferno_dmg",
+                "damagelevel": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "fxlevel": 1,
+                "maxrange": 110,
+                "name": "who_to_hit",
+                "powerusage": "%dark_inferno_pwr",
+                "tag": 1,
+                "time": 0.5,
+                "victimeventtag": 100
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%dark_inferno_radmg",
+                "damagetype": "dmg_bleed",
+                "force_stack": false,
+                "life": "%dark_inferno_life",
+                "name": "powerup",
+                "tag": 100,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectilenear",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Manipulation",
+            "combotextstarter": "Telekinetic",
+            "handler": "ch_telekinesis",
+            "icon": 1,
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "power2",
+            "powerup_tag": "darkp_power2",
+            "priority": 5,
+            "startchaintime": 0.1,
+            "require": {
+                "cat": "skill",
+                "item": "dark_telek",
+                "level": 1
+            },
+            "trigger": {
+                "attacktype": "psionic",
+                "damage": 0,
+                "damagelevel": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "maxrange": 300,
+                "name": "telekinesis_dmg",
+                "tag": 2,
+                "time": -1,
+                "type": "ce_atk_self",
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%dark_telek_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/drkphoenx/p2_power",
+                "name": "effect",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "effect": "char/drkphoenx/p2_charge",
+                "name": "effect",
+                "tag": 101,
+                "time": -1
+            },
+            "trigger": {
+                "damage": "%dark_telek_dm1",
+                "damagetype": "dmg_physical",
+                "heaviness": "%dark_telek_hvy",
+                "impactdamage": "%dark_telek_dm2",
+                "name": "suspend",
+                "tag": 1,
+                "time": -1,
+                "tklevel": 11
+            },
+            "chain": {
+                "action": "special",
+                "result": "power2_hold"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power2_release"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2",
+            "energypersecond": "%pho_telek_pwr",
+            "handler": "ch_telekinesis",
+            "icon": 1,
+            "lockangles": true,
+            "lockchaining": true,
+            "locktransitionangles": true,
+            "name": "power2_hold",
+            "priority": 5,
+            "startchaintime": 1,
+            "trigger": {
+                "effect": "char/drkphoenx/p2_power",
+                "name": "effect",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "effect": "char/drkphoenx/p2_charge",
+                "name": "effect",
+                "tag": 101,
+                "time": -1
+            },
+            "trigger": {
+                "loop_timeout": 5,
+                "loop_type": "start",
+                "name": "sound",
+                "sound": "char/darkp_m/p2_charge",
+                "time": 0
+            },
+            "chain": {
+                "action": "special",
+                "result": "power2_hold"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power2_release"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2_end",
+            "lockangles": true,
+            "name": "power2_release",
+            "priority": "uninterruptable",
+            "trigger": {
+                "name": "sound",
+                "sound": "char/darkp_m/p2_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/drkphoenx/p2_charge",
+                "fxlevel": 2,
+                "loop_type": "stop",
+                "name": "effect_sound",
+                "sound": "char/darkp_m/p2_charge",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "aoe",
+            "animenum": "ea_power10",
+            "combotextfinisher": "Erosion",
+            "combotextstarter": "Mind",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "playspeed": 1.5,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "dark_wash",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/drkphoenx/p3_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/drkphoenx/p3_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/drkphoenx/p3_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/drkphoenx/p3_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/darkp_m/p3_charge",
+                "time": 0.25
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%dark_wash_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_telekinesis",
+                "fxlevel": 1,
+                "inherit": "punch",
+                "life": "%dark_wash_tim",
+                "name": "radial_punch",
+                "powerusage": "%dark_wash_pwr",
+                "victimeventtag": 102,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                },
+                "damageMod": {
+                    "name": "dmgmod_immobilize"
+                }
+            },
+            "trigger": {
+                "effect": "char/drkphoenx/p3_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.6
+            },
+            "trigger": {
+                "maxrange": 80,
+                "name": "radial_punch",
+                "time": 0.6
+            },
+            "trigger": {
+                "maxrange": 100,
+                "name": "radial_punch",
+                "time": 0.69
+            },
+            "trigger": {
+                "maxrange": 120,
+                "name": "radial_punch",
+                "tag": 4,
+                "time": 0.7
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "rangednolos",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Fluctuation",
+            "combotextstarter": "Cosmic",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "playspeed": 1.2,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "dark_matter",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/drkphoenx/p4_power",
+                "name": "effect",
+                "time": 0.515
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/darkp_m/p4_charge",
+                "time": 0.1
+            },
+            "trigger": {
+                "attackerheight": false,
+                "attacktype": "direct",
+                "count": 1,
+                "damage": "%dark_matter_dmg",
+                "damagelevel": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_telekinesis",
+                "fxlevel": 1,
+                "maxrange": 150,
+                "name": "who_to_hit",
+                "powerusage": "%dark_matter_pwr",
+                "tag": 1,
+                "time": 0.485,
+                "victimeventtag1": 10,
+                "victimeventtag2": 11
+            },
+            "trigger": {
+                "life": 1,
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 10,
+                "time": -1
+            },
+            "trigger": {
+                "class": "vacuum",
+                "life": 1,
+                "name": "powerup",
+                "tag": 11,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 10,
+            "aitype": "buffself",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Drain",
+            "combotextstarter": "Healing",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power5",
+            "playspeed": 1.3,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "dark_absorb",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/drkphoenx/p5_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/drkphoenx/p5_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/drkphoenx/p5_power",
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/darkp_m/p5_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "attackerheight": false,
+                "attacktype": "direct",
+                "count": 1,
+                "damage": "%dark_absorb_dmg",
+                "damagelevel": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "fxlevel": 1,
+                "maxrange": 110,
+                "name": "who_to_hit",
+                "powerusage": "%dark_absorb_pwr",
+                "selfeventtag": 107,
+                "time": 0.485
+            },
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/drkphoenx/p5_charge",
+                "name": "effect",
+                "time": 0.775
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "life": "%dark_absorb_life",
+                "name": "powerup",
+                "tag": 107,
+                "time": 0.5,
+                "affecter": {
+                    "attribute": "health_regen_pct",
+                    "level": "%dark_absorb_regen"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power1",
+            "cansteal": false,
+            "combotextfinisher": "Transmutation",
+            "combotextstarter": "Matter",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "dark_shift",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/drkphoenx/p5_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/drkphoenx/p5_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/darkp_m/p6_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "entity": "dark_p6_proj",
+                "filename": "ents_darkphoenix",
+                "fulltargeting": true,
+                "index": 0,
+                "name": "projectile",
+                "offset": "25 0 50",
+                "powerusage": "%dark_shift_pwr",
+                "speed": 500,
+                "targetable": true,
+                "time": 0.48,
+                "victimeventtag1": 99,
+                "victimeventtag2": 101
+            },
+            "trigger": {
+                "maxdangerrating": 10,
+                "name": "filter",
+                "noboss": true,
+                "passtag": 100,
+                "tag": 99,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "chance": "%dark_shift_pct",
+                "name": "otherevent",
+                "othertag": 200,
+                "othertag2": 300,
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "fail_tag": 101,
+                "instantkillonly": true,
+                "name": "remove",
+                "nosponsor": false,
+                "success_tag": 201,
+                "tag": 200,
+                "time": -1
+            },
+            "trigger": {
+                "entity": "dark_p6_crate",
+                "filename": "ents_darkphoenix",
+                "name": "spawn",
+                "offset": "0 0 20",
+                "tag": 201,
+                "time": -1
+            },
+            "trigger": {
+                "damage": "%dark_shift_dmg",
+                "damagetype": "dmg_mental",
+                "index": 1,
+                "name": "selfattack",
+                "tag": 101,
+                "time": -1,
+                "type": "ce_atk_self"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Shield",
+            "combotextstarter": "Protective",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power7",
+            "playspeed": 1.25,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "dark_shield",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/darkp_m/p7_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/drkphoenx/p7_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/phoenx_m/p7_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/drkphoenx/p7_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/drkphoenx/p7_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%dark_shield_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%dark_shield_pwr",
+                "time": 0.75,
+                "special_fx": {
+                    "bolt": "Bip01 Pelvis",
+                    "effect": "char/drkphoenx/p7_aura",
+                    "fxlevel": 1
+                },
+                "affecter": {
+                    "attribute": "spend_damage",
+                    "level": 1000000
+                }
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": false,
+                "apply_chance": "%dark_shield_aon",
+                "life": "%dark_shield_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%dark_shield_pwr",
+                "time": 0.75,
+                "special_fx": {
+                    "bolt": "Bip01 Pelvis",
+                    "effect": "char/drkphoenx/p7_aura",
+                    "fxlevel": 1
+                },
+                "affecter": {
+                    "attribute": "spend_damage",
+                    "level": 1000000
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Barrier",
+            "combotextstarter": "Nullifying",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8",
+            "playspeed": 1.5,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "dark_cosmic",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/darkp_m/p8_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%dark_cosmic_life",
+                "name": "powerup",
+                "powerusage": "%dark_cosmic_pwr",
+                "time": 0.9,
+                "special_fx": {
+                    "effect": "char/drkphoenx/p8_aura",
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "power_cost",
+                    "level": "%dark_cosmic_scale"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage_scope",
+                    "level": 0,
+                    "scope_damage": "dmg_energy"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2",
+            "combotextfinisher": "Burn",
+            "description": "BURN",
+            "endchaintime": 0.95,
+            "handler": "ch_tele_jump",
+            "icon": 8,
+            "name": "power9",
+            "noautoaim": true,
+            "playspeed": 20,
+            "powerup_tag": "dark_power9",
+            "priority": 5,
+            "startchaintime": 0.9,
+            "turnrate": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "dark_xtreme",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": 4,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/darkp_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/drkphoenx/p9_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_fire",
+                "isxtreme": true,
+                "maxrange": 250,
+                "name": "teleport_data_store",
+                "powerusage": 0,
+                "time": 0
+            },
+            "trigger": {
+                "count": "set",
+                "name": "count",
+                "time": 0,
+                "value": "%dark_xtreme_hits"
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/darkp_m/p9_power",
+                "time": 0.9
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power9_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2_end",
+            "blendtime": 0,
+            "endchaintime": 0.95,
+            "fallback": "power9_end",
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "power9_loop",
+            "noautoaim": true,
+            "playspeed": 10,
+            "powerup_tag": "dark_power9",
+            "priority": 5,
+            "startchaintime": 0.9,
+            "require": {
+                "cat": "counter",
+                "level": 1
+            },
+            "trigger": {
+                "count": "add",
+                "name": "count",
+                "time": 0,
+                "value": -1
+            },
+            "trigger": {
+                "bolt": "Bip01 Spine2",
+                "effect": "char/drkphoenx/p9_aura",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/darkp_m/p9_power",
+                "time": 0
+            },
+            "trigger": {
+                "attacktype": "direct",
+                "maxrange": 240,
+                "name": "teleport_scaled_atk",
+                "powerusage": 0,
+                "time": 0
+            },
+            "trigger": {
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_teleport",
+                "height": 18,
+                "name": "teleport_punch",
+                "powerusage": 0,
+                "time": 0.33
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power9_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2_end",
+            "blendtime": 0.1,
+            "endchaintime": 0.95,
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "power9_end",
+            "noautoaim": true,
+            "playspeed": 1,
+            "priority": 5,
+            "startchaintime": 0.9,
+            "trigger": {
+                "bolt": "Bip01 Spine2",
+                "effect": "char/drkphoenx/p9_aura",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.1
+            },
+            "trigger": {
+                "attacktype": "direct",
+                "maxrange": 250,
+                "name": "teleport_return",
+                "powerusage": 0,
+                "time": 0
+            },
+            "trigger": {
+                "cleardata": true,
+                "name": "teleport_data_store",
+                "time": 0.45
+            },
+            "trigger": {
+                "end": true,
+                "name": "xtreme_start",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "blendtime": 0,
+            "combotextfinisher": "Manipulation",
+            "description": "TEMPORAL MANIPULATION",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power10",
+            "playspeed": 2,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "dark_temporal",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": 2,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/drkphoenx/p10_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "center_bolt": true,
+                "life": "%dark_temporal_life",
+                "name": "powerup",
+                "time": 0.5,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "extra_potions",
+                    "level": "%dark_temporal_packs"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "extra_money",
+                    "level": "%dark_temporal_tech"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Spine2",
+                    "effect": "char/drkphoenx/p10_aura"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/darkp_m/p10_power",
+                "time": 0.02
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_fly_idle",
+            "energypersecond": "%flight_pwr",
+            "fallback": "jumploop",
+            "handler": "ch_flying",
+            "lockchaining": false,
+            "name": "flying",
+            "noncombat": true,
+            "powerup_tag": "flying",
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/drkphoenx/ability_fly_torso",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "require": {
+                "cat": "skill",
+                "item": "flight",
+                "level": 1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "flying"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "flymelee1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "flycharge"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        }
+    }
+}

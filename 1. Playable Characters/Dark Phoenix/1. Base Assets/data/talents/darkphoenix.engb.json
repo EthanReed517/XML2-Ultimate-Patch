@@ -1,0 +1,954 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "dark_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_mental",
+                        "level": 1
+                    },
+                    "affecter": {
+                        "attribute": "resist_radiation",
+                        "level": 0.05
+                    },
+                    "affecter": {
+                        "attribute": "resist_energy",
+                        "level": 0.05
+                    },
+                    "affecter": {
+                        "attribute": "resist_fire",
+                        "level": 0.05
+                    },
+                    "affecter": {
+                        "attribute": "resist_elemental",
+                        "level": 0.05
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Cosmic Pyrokinesis",
+            "description": "Engulfs enemies with intensely-burning cosmic flames, causing $DMG_BLEED.",
+            "descshort": "Blast",
+            "icon": 0,
+            "icon_texture": "textures/ui/darkphoenix_icons2.png",
+            "name": "dark_inferno",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_inferno_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dark_inferno_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_inferno_pwr",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dark_inferno_pwr",
+                    "value": 140
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_inferno_dmg",
+                    "value": "21 28"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dark_inferno_dmg",
+                    "value": "98 104"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_inferno_radmg",
+                    "value": "5 10"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dark_inferno_radmg",
+                    "value": "60 70"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_inferno_life",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dark_inferno_life",
+                    "value": 5
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%dark_inferno_dmg initial $DMG_FIRE\\n%dark_inferno_radmg $DMG_BLEED over %dark_inferno_life seconds\\n%dark_inferno_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%dark_inferno_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Cosmic Telekinesis",
+            "description": "Gives Dark Phoenix the ability to lift and throw objects and enemies. Can build bridges.\\n(~41Press And Hold~~)",
+            "descshort": "Special",
+            "icon": 1,
+            "icon_texture": "textures/ui/darkphoenix_icons2.png",
+            "name": "dark_telek",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_telek_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "dark_telek_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_telek_pwr",
+                    "value": 16
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "dark_telek_pwr",
+                    "value": 128
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_telek_dm1",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "dark_telek_dm1",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_telek_dm2",
+                    "value": "8 11"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "dark_telek_dm2",
+                    "value": "79 89"
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 1,
+                    "name": "dark_telek_hvy",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 8,
+                    "name": "dark_telek_hvy",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 20,
+                    "name": "dark_telek_hvy",
+                    "value": 2
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "Heavy objects\\n%dark_telek_dm1 $DMG_FIRE at lift\\n%dark_telek_dm2 $DMG_PHYSICAL at impact\\n%dark_telek_pwr $EP per second",
+                "require": {
+                    "cat": "level",
+                    "level": "%dark_telek_req"
+                }
+            },
+            "level": {
+                "count": 13,
+                "description": "Massive objects\\n%dark_telek_dm1 $DMG_FIRE at lift\\n%dark_telek_dm2 $DMG_PHYSICAL at impact\\n%dark_telek_pwr per second",
+                "require": {
+                    "cat": "level",
+                    "level": "%dark_telek_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Mind Erode",
+            "description": "A powerful wave of Psychic Energy that erodes enemies' mental faculties, causing them to become immobilized for a time.",
+            "descshort": "Radial",
+            "icon": 2,
+            "icon_texture": "textures/ui/phoenix_icons2.png",
+            "name": "dark_wash",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_wash_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "dark_wash_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_wash_pwr",
+                    "value": 62
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "dark_wash_pwr",
+                    "value": 173
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_wash_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "dark_wash_dmg",
+                    "value": "82 93"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_wash_tim",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "dark_wash_tim",
+                    "value": 6
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%dark_wash_dmg Telekinetic Dmg\\n%dark_wash_tim seconds immobile\\n%dark_wash_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%dark_wash_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Mind Over Matter",
+            "description": "Dark Phoenix opens up multiple tiny wormholes and flood the area with Telekinetic Energy, causing enemies to randomly become either stunned or get flung across the room.",
+            "descshort": "Blast",
+            "icon": 3,
+            "icon_texture": "textures/ui/darkphoenix_icons2.png",
+            "name": "dark_matter",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_matter_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dark_matter_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_matter_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dark_matter_pwr",
+                    "value": 180
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_matter_dmg",
+                    "value": "9 12"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dark_matter_dmg",
+                    "value": "120 135"
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%dark_matter_dmg Telekinetic Dmg\\n%dark_matter_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%dark_matter_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "dark_telek",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Lifeforce Absorption",
+            "description": "Dark Phoenix drains the enemy's lifeforce and restores a portion of the entire party's $HP.",
+            "descshort": "Debuff",
+            "icon": 4,
+            "icon_texture": "textures/ui/drkphoenix_icons2.png",
+            "name": "dark_absorb",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_absorb_req",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dark_absorb_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_absorb_dmg",
+                    "value": "27 32"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dark_absorb_dmg",
+                    "value": "195 207"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_absorb_life",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dark_absorb_life",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_absorb_pwr",
+                    "value": 64
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dark_absorb_pwr",
+                    "value": 264
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_absorb_regen",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dark_absorb_regen",
+                    "value": 0.2
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%dark_absorb_dmg $DMG_FIRE\\n%dark_absorb_regen:p $HP per second for 3 seconds\\n%dark_absorb_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%dark_absorb_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Matter Transmutation",
+            "description": "Throws a homing spike of Mental Energy that has a chance of transmutating the target into an object.",
+            "descshort": "Special",
+            "icon": 5,
+            "icon_texture": "textures/ui/darkphoenix_icons2.png",
+            "name": "dark_shift",
+            "power": "power6",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_shift_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "dark_shift_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_shift_pwr",
+                    "value": 36
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "dark_shift_pwr",
+                    "value": 130
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_shift_dmg",
+                    "value": "53 61"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "dark_shift_dmg",
+                    "value": "198 220"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_shift_pct",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "dark_shift_pct",
+                    "value": 0.2
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%dark_shift_dmg $DMG_MENTAL\\n%dark_shift_pct:p chance\\n%dark_shift_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%dark_shift_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "dark_matter",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Cosmic Shield",
+            "description": "Dark Phoenix pulls Cosmic Energy from the space around her and uses it to nullify all $DMG_PHYSICAL for a time. Can level up to also protect the entire party.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/darkphoenix_icons2.png",
+            "name": "dark_shield",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_shield_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dark_shield_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_shield_lif",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dark_shield_lif",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_shield_pwr",
+                    "value": 88
+                },
+                "talentvalue": {
+                    "level": 17,
+                    "name": "dark_shield_pwr",
+                    "value": 480
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_shield_aon",
+                    "value": 0
+                },
+                "talentvalue": {
+                    "level": 10,
+                    "name": "dark_shield_aon",
+                    "value": 0
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "dark_shield_aon",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "dark_shield_aon",
+                    "value": 1
+                }
+            },
+            "level": {
+                "count": 10,
+                "description": "%dark_shield_lif seconds\\n%dark_shield_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%dark_shield_req"
+                }
+            },
+            "level": {
+                "count": 8,
+                "description": "%dark_shield_lif seconds\\n%dark_shield_pwr $EP\\nApplies to all allies",
+                "require": {
+                    "cat": "level",
+                    "level": "%dark_shield_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Cosmic Absorption",
+            "description": "Dark Phoenix's Cosmic powers allow her to nullify all $DMG_ENERGY and reduce her $EP consumption for a time.",
+            "descshort": "Boost",
+            "icon": 7,
+            "icon_texture": "textures/ui/darkphoenix_icons2.png",
+            "name": "dark_cosmic",
+            "power": "power8",
+            "type": "boost",
+            "value_priority": 1,
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_cosmic_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "dark_cosmic_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_cosmic_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "dark_cosmic_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_cosmic_scale",
+                    "value": 0.95
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "dark_cosmic_scale",
+                    "value": 0.75
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_cosmic_pwr",
+                    "value": 110
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "dark_cosmic_pwr",
+                    "value": 420
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%dark_cosmic_scale:s $EP cost\\n%dark_cosmic_life seconds\\n%dark_cosmic_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%dark_cosmic_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "dark_shield",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "BURN",
+            "description": "Dark Phoenix creates a quantum singularity, allowing her to teleport around the room and burn multiple enemies.",
+            "descshort": "Special",
+            "icon": 8,
+            "icon_texture": "textures/ui/darkphoenix_icons2.png",
+            "name": "dark_xtreme",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_xtreme_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "dark_xtreme_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_xtreme_bst",
+                    "value": 6.5
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "dark_xtreme_bst",
+                    "value": 15.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_xtreme_bns",
+                    "value": 1.75
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "dark_xtreme_bns",
+                    "value": 3.15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_xtreme_hits",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "dark_xtreme_hits",
+                    "value": 11
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%dark_xtreme_bst:s $DMG_FIRE (%dark_xtreme_bst:x)\\n%dark_xtreme_hits attacks",
+                "require": {
+                    "cat": "level",
+                    "level": "%dark_xtreme_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "TEMPORAL MANIPULATION",
+            "description": "Dark Phoenix manipulates time and space to increase the number of Techbit, Health Pack, and Energy Pack drops.",
+            "descshort": "Boost",
+            "icon": 9,
+            "icon_texture": "textures/ui/darkphoenix_icons2.png",
+            "name": "dark_temporal",
+            "power": "power10",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_temporal_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "dark_temporal_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_temporal_packs",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "dark_temporal_packs",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_temporal_tech",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "dark_temporal_tech",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_temporal_life",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "dark_temporal_life",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%dark_temporal_packs:p Health Packs and Energy Packs\\n%dark_temporal_tech:p Techbits\\n%dark_temporal_life seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%dark_temporal_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Cosmic Deflection",
+            "description": "Gives Dark Phoenix a chance to deflect incoming projectiles.",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/darkphoenix_icons2.png",
+            "name": "dark_defl_mis",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_defl_mis_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dark_defl_mis_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_defl_mis_pct",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dark_defl_mis_pct",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%dark_defl_mis_pct:p chance to dodge",
+                "require": {
+                    "cat": "level",
+                    "level": "%dark_defl_mis_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%dark_defl_mis_pct",
+                        "scope_attack": "projectile"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Cosmic Mastery",
+            "description": "Increases damage and Critical chance of all Mental and Fire attacks.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/darkphoenix_icons2.png",
+            "name": "dark_forcem",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_forcem_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dark_forcem_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_forcem_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dark_forcem_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_forcem_cri",
+                    "value": 1.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dark_forcem_cri",
+                    "value": 1.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%dark_forcem_dmg:s $DMG_MENTAL\\n%dark_forcem_dmg:s $DMG_FIRE\\n+%dark_forcem_cri:p Critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%dark_forcem_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%dark_forcem_dmg",
+                        "scope_damage": "dmg_mental"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%dark_forcem_dmg",
+                        "scope_damage": "dmg_telekinesis"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%dark_forcem_dmg",
+                        "scope_damage": "dmg_fire"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%dark_forcem_cri",
+                        "scope_damage": "dmg_mental"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%dark_forcem_cri",
+                        "scope_damage": "dmg_telekinesis"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%dark_forcem_cri",
+                        "scope_damage": "dmg_fire"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Cosmic Resistance",
+            "description": "Increases Dark Phoenix's Energy, Radiation, Elemental, and Fire resistances.",
+            "descshort": "Passive",
+            "icon": 12,
+            "icon_texture": "textures/ui/phoenix_icons2.png",
+            "name": "dark_ionize",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_ionize_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dark_ionize_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_ionize_resist",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dark_ionize_resist",
+                    "value": 0.57
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%dark_ionize_resist:p $RES_ENERGY\\n+%dark_ionize_resist:p $RES_RADIATION\\n+%dark_ionize_resist:p $RES_ELEMENTAL\\n+%dark_ionize_resist:p Resistance to $DMG_FIRE",
+                "require": {
+                    "category": "level",
+                    "level": "%dark_ionize_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_energy",
+                        "level": "%dark_ionize_resist"
+                    },
+                    "affecter": {
+                        "attribute": "resist_radiation",
+                        "level": "%dark_ionize_resist"
+                    },
+                    "affecter": {
+                        "attribute": "resist_elemental",
+                        "level": "%dark_ionize_resist"
+                    },
+                    "affecter": {
+                        "attribute": "resist_fire",
+                        "level": "%dark_ionize_resist"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Cosmic Empowerment",
+            "description": "Gives all Melee attacks a chance to flood enemies' bodies with harmful Cosmic Radiation.",
+            "descshort": "Passive",
+            "icon": 13,
+            "icon_texture": "textures/ui/darkphoenix_icons2.png",
+            "name": "dark_rad",
+            "type": "passive",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_rad_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dark_rad_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_rad_dmg",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dark_rad_dmg",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_rad_chnc",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dark_rad_chnc",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%dark_rad_dmg% $DMG_RADIATION\\n%dark_rad_chnc:p chance per hit",
+                "require": {
+                    "cat": "level",
+                    "level": "%dark_rad_req"
+                },
+                "powerup": {
+                    "chance": "%dark_rad_chnc",
+                    "class": "add_harming",
+                    "damagepercent": "%dark_rad_dmg",
+                    "damagetype": "dmg_radiation",
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
