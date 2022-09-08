@@ -1,0 +1,121 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "aireusetime": 2,
+            "aitype": "projectile",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_attack",
+            "priority": 5,
+            "event": {
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "entity": "shield_projectile",
+                "filename": "ents_shield",
+                "inherit": "projectile",
+                "name": "shield_proj",
+                "offset": "40 -1 51",
+                "powerusage": 1,
+                "speed": 1000,
+                "targetable": true
+            },
+            "event": {
+                "inherit": "shield_proj",
+                "name": "shield_projright",
+                "offset": "45 -6 53"
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "shield_projright",
+                "time": 0.18
+            },
+            "trigger": {
+                "effect": "char/shield/p1_shot",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/shield_m/p1_charge",
+                "time": 0.18
+            },
+            "trigger": {
+                "name": "shield_proj",
+                "time": 0.25
+            },
+            "trigger": {
+                "effect": "char/shield/p1_shot",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/shield_m/p1_charge",
+                "time": 0.25
+            },
+            "trigger": {
+                "name": "shield_projright",
+                "time": 0.36
+            },
+            "trigger": {
+                "effect": "char/shield/p1_shot",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/shield_m/p1_charge",
+                "time": 0.36
+            },
+            "trigger": {
+                "name": "shield_proj",
+                "time": 0.46
+            },
+            "trigger": {
+                "effect": "char/shield/p1_shot",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/shield_m/p1_charge",
+                "time": 0.46
+            },
+            "trigger": {
+                "name": "shield_projright",
+                "time": 0.55
+            },
+            "trigger": {
+                "effect": "char/shield/p1_shot",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/shield_m/p1_charge",
+                "time": 0.55
+            },
+            "trigger": {
+                "name": "shield_proj",
+                "time": 0.65
+            },
+            "trigger": {
+                "effect": "char/shield/p1_shot",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/shield_m/p1_charge",
+                "time": 0.65
+            },
+            "trigger": {
+                "name": "shield_projright",
+                "time": 0.74
+            },
+            "trigger": {
+                "effect": "char/shield/p1_shot",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/shield_m/p1_charge",
+                "time": 0.74
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        }
+    }
+}
