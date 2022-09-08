@@ -1,0 +1,572 @@
+{
+    "FightingStyle": {
+        "animations": "fightstyle_huge",
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "run",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "null"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_walk1",
+            "handler": "ch_move",
+            "lockchaining": false,
+            "name": "walk",
+            "noncombat": true,
+            "trigger": {
+                "animbased": true,
+                "name": "footstep",
+                "time": 0.25,
+                "volume": 0.25
+            },
+            "trigger": {
+                "animbased": true,
+                "name": "footstep",
+                "time": 0.75,
+                "volume": 0.25
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "run",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "null"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jog1",
+            "handler": "ch_move",
+            "lockchaining": false,
+            "name": "jog",
+            "noncombat": true,
+            "trigger": {
+                "animbased": true,
+                "name": "footstep",
+                "time": 0.25,
+                "volume": 0.5
+            },
+            "trigger": {
+                "animbased": true,
+                "name": "footstep",
+                "time": 0.75,
+                "volume": 0.5
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "run",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_run1",
+            "handler": "ch_move",
+            "lockchaining": false,
+            "name": "run",
+            "noncombat": true,
+            "trigger": {
+                "animbased": true,
+                "name": "footstep",
+                "time": 0.25,
+                "volume": 1
+            },
+            "trigger": {
+                "animbased": true,
+                "name": "footstep",
+                "time": 0.75,
+                "volume": 1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "run",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_guard_decide",
+            "lockangles": true,
+            "lockchaining": false,
+            "lockspeed": true,
+            "name": "guarddecide",
+            "noncombat": true,
+            "startchaintime": 0.5,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "grabfallback"
+            },
+            "chain": {
+                "action": "special2",
+                "result": "grabfallback"
+            },
+            "chain": {
+                "action": "special",
+                "result": "grabfallback"
+            },
+            "chain": {
+                "action": "special3",
+                "result": "grabfallback"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_ground",
+            "endchaintime": 0.95,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "grabfallback",
+            "playspeed": 0.75,
+            "startchaintime": 0.5,
+            "event": {
+                "inherit": "punch_veryheavy",
+                "knockback": 120,
+                "name": "haymaker",
+                "damageMod": {
+                    "name": "dmgmod_bounce"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.2
+            },
+            "trigger": {
+                "life": 0.1,
+                "movement": 0,
+                "name": "slide",
+                "time": 0.24
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "life": 0.2,
+                "name": "trail",
+                "offsetend": 25,
+                "time": 0.18
+            },
+            "trigger": {
+                "height": -20,
+                "name": "haymaker",
+                "time": 0.4
+            },
+            "trigger": {
+                "height": -15,
+                "name": "haymaker",
+                "tag": 10,
+                "time": 0.5
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "endchaintime": 0.95,
+            "lockangles": true,
+            "name": "attacklight1",
+            "playspeed": 1,
+            "startchaintime": 0.5,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.21,
+                "name": "trail",
+                "time": 0.22
+            },
+            "trigger": {
+                "angle": -30,
+                "height": 15,
+                "name": "punch_heavy",
+                "time": 0.36
+            },
+            "trigger": {
+                "angle": 15,
+                "height": 10,
+                "name": "punch_heavy",
+                "time": 0.42
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight2"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light2",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight2",
+            "playspeed": 0.7,
+            "startchaintime": 0.5,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.3,
+                "name": "trail",
+                "offsetend": 10,
+                "time": 0.14
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 10,
+                "name": "punch_heavy",
+                "time": 0.32
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight3"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "endchaintime": 0.85,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight3",
+            "playspeed": 1,
+            "startchaintime": 0.5,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.21,
+                "name": "trail",
+                "time": 0.22
+            },
+            "trigger": {
+                "angle": -30,
+                "height": 15,
+                "knockback": 190,
+                "name": "punch_heavy",
+                "time": 0.36
+            },
+            "trigger": {
+                "angle": 15,
+                "height": 10,
+                "knockback": 190,
+                "name": "punch_heavy",
+                "time": 0.42
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight2"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_heavy1",
+            "endchaintime": 0.85,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attackheavy1",
+            "playspeed": 1,
+            "startchaintime": 0.55,
+            "event": {
+                "inherit": "punch_veryheavy",
+                "knockback": 120,
+                "name": "bigpunch"
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.31
+            },
+            "trigger": {
+                "life": 0.1,
+                "movement": 0,
+                "name": "slide",
+                "time": 0.35
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.23,
+                "name": "trail",
+                "offsetend": 10,
+                "time": 0.36
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 5,
+                "name": "bigpunch",
+                "time": 0.49
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy2"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_ground",
+            "endchaintime": 0.95,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackheavy2",
+            "playspeed": 0.75,
+            "startchaintime": 0.5,
+            "event": {
+                "inherit": "punch_veryheavy",
+                "knockback": 40,
+                "name": "haymaker",
+                "damageMod": {
+                    "name": "dmgmod_bounce"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.2
+            },
+            "trigger": {
+                "life": 0.1,
+                "movement": 0,
+                "name": "slide",
+                "time": 0.24
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "life": 0.2,
+                "name": "trail",
+                "offsetend": 25,
+                "time": 0.18
+            },
+            "trigger": {
+                "height": -20,
+                "name": "haymaker",
+                "time": 0.4
+            },
+            "trigger": {
+                "height": -15,
+                "name": "haymaker",
+                "tag": 10,
+                "time": 0.5
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}
