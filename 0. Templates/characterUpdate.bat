@@ -12,6 +12,9 @@ set itemsEntry=""
 set npcstatEntry1=""
 set npcstatEntry2=""
 set npcstatEntry3=""
+set npcstatEntry4=""
+set npcstatEntry5=""
+set npcstatEntry6=""
 set reviewEntry=""
 
 REM ******************
@@ -44,6 +47,15 @@ if not %npcstatEntry2%=="" (
 )
 if not %npcstatEntry3%=="" (
 	copy >nul "1. Base Assets\1. Data Entries\NPCstat_%npcstatEntry3%.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\%npcstatEntry3%.json"
+)
+if not %npcstatEntry4%=="" (
+	copy >nul "1. Base Assets\1. Data Entries\NPCstat_%npcstatEntry4%.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\%npcstatEntry4%.json"
+)
+if not %npcstatEntry5%=="" (
+	copy >nul "1. Base Assets\1. Data Entries\NPCstat_%npcstatEntry5%.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\%npcstatEntry5%.json"
+)
+if not %npcstatEntry6%=="" (
+	copy >nul "1. Base Assets\1. Data Entries\NPCstat_%npcstatEntry6%.json" "..\..\3. General Data Files\npcstat\1. Base Assets\0. NPCstat Entries\%npcstatEntry6%.json"
 )
 if not %reviewEntry%=="" (
 	copy >nul "1. Base Assets\1. Data Entries\ReviewPaths_%reviewEntry%.json" "..\..\3. General Data Files\review_paths\1. Base Assets\0. Review_Paths Entries\%reviewEntry%.json"
