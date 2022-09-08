@@ -9,9 +9,9 @@ set codexEntry=""
 set dangerEntry=""
 set herostatEntry=""
 set itemsEntry=""
-set npcstatEntry1=CollectorArmored
-set npcstatEntry2=""
-set npcstatEntry3=""
+set npcstatEntry1=CollectorArmored_a
+set npcstatEntry2=CollectorArmored_b
+set npcstatEntry3=CollectorArmored_c
 set reviewEntry=""
 
 REM ******************
