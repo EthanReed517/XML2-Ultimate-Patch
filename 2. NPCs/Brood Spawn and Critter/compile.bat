@@ -1,5 +1,5 @@
 @echo off
-echo Compiling NAME's NPC assets 
+echo Compiling Brood Spawn and Cerci Critter NPC assets 
 
 REM **************************
 REM * Section 0 - User Input *
