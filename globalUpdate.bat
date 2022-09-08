@@ -32,6 +32,10 @@ echo Cyclops
 cd "%~dp0\1. Playable Characters\Cyclops"
 call update.bat 
 cd ..\..
+echo Dark Phoenix
+cd "%~dp0\1. Playable Characters\Dark Phoenix"
+call update.bat 
+cd ..\..
 echo Deadpool
 cd "%~dp0\1. Playable Characters\Deadpool"
 call update.bat 

@@ -90,6 +90,10 @@ echo Cyclops
 cd "%~dp0\1. Playable Characters\Cyclops"
 call compile.bat %consoleChoice% %modeChoice% %celChoice%
 cd ..\..
+echo Dark Phoenix
+cd "%~dp0\1. Playable Characters\Dark Phoenix"
+call compile.bat %consoleChoice% %modeChoice% %celChoice%
+cd ..\..
 echo Deadpool
 cd "%~dp0\1. Playable Characters\Deadpool"
 call compile.bat %consoleChoice% %modeChoice% %celChoice%
