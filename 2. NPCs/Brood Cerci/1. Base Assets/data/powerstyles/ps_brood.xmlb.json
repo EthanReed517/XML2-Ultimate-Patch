@@ -1,0 +1,275 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle",
+            "noncombat": true,
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_walk1",
+            "handler": "ch_move",
+            "lockchaining": false,
+            "name": "walk",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jog1",
+            "handler": "ch_move",
+            "lockchaining": false,
+            "name": "jog",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_run1",
+            "handler": "ch_move",
+            "lockchaining": false,
+            "name": "run",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_run1",
+            "handler": "ch_move",
+            "lockchaining": false,
+            "name": "sprint",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_attack",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/brood_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/brood_m/p1_power",
+                "time": 0.4
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "damagetype": "dmg_physical",
+                "name": "punch",
+                "powerusage": 1,
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 2.5,
+            "aitype": "projectile",
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power_smash",
+            "priority": 5,
+            "trigger": {
+                "angoffset": "0 -45 0",
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "entity": "brood_projectile",
+                "filename": "ents_brood",
+                "lobattarget": true,
+                "name": "projectile",
+                "powerattack": true,
+                "speed": 265,
+                "tag": 1,
+                "time": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/brood_m/p2_charge",
+                "time": 0
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 10,
+            "aitype": "rangednolos",
+            "animenum": "ea_power3",
+            "lockangles": true,
+            "name": "power_boost",
+            "trigger": {
+                "name": "sound",
+                "sound": "char/brood_m/p3_charge",
+                "time": 0.7
+            },
+            "trigger": {
+                "angoffset": "0 75 0",
+                "attacktype": "projectile",
+                "count": 1,
+                "entity": "critteregg",
+                "filename": "ents_brood",
+                "name": "projectile",
+                "offset": "-40 0 0",
+                "powerattack": true,
+                "powerusage": 3,
+                "speed": 350,
+                "spread": 60,
+                "time": 0.7
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_ko_head1",
+            "death": true,
+            "lockangles": true,
+            "name": "deathgen",
+            "priority": "uninterruptable",
+            "sequenced": true,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/brood_m/death",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/brood/special_death",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "remove",
+                "time": 0
+            }
+        }
+    }
+}
