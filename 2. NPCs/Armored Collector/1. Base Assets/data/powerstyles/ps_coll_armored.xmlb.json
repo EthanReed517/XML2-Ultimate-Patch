@@ -1,0 +1,79 @@
+{
+    "PowerStyle": {
+        "cansteal": false,
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_attack",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/colarm_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "name": "punch",
+                "powerusage": 1,
+                "time": 0.45
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 2.5,
+            "aitype": "projectile",
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power_smash",
+            "priority": 5,
+            "event": {
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "damagetype": "dmg_wind",
+                "entity": "colarm_projectile",
+                "filename": "ents_colarm",
+                "inherit": "projectile",
+                "name": "colarm_proj",
+                "powerusage": 1,
+                "speed": 400,
+                "targetable": true
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/colarm_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "attack_bone_angles": "3 2 -3",
+                "attack_bone_pos": "5 -8 51",
+                "name": "colarm_proj",
+                "time": 0.35
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "attack_bone_angles": "3 2 -3",
+                "attack_bone_pos": "5 -8 51",
+                "name": "colarm_proj",
+                "time": 0.49
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
