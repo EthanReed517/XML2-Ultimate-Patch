@@ -5,7 +5,7 @@ REM ***************
 REM Fill in the following variable prompts with the name of the files or leave it as "" if it doesn't apply
 
 REM Data Entry Options
-set codexEntry=""
+set codexEntry=Abyss
 set dangerEntry=""
 set herostatEntry=""
 set itemsEntry=""
