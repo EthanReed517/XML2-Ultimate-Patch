@@ -1,0 +1,289 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "beam",
+            "animenum": "ea_power4",
+            "lockangles": true,
+            "priority": 5,
+            "lockangles": true,
+            "name": "power_attack",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "dazzler_laser",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/svsdaz/p1_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/svsdaz_m/p1_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/svsdaz/p1_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "7 0 37",
+                "beambolt": "Bip01 R Hand",
+                "beameffect": "char/svsdaz/p1_power",
+                "damage": "%mdmg_high",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "fxlevel": 1,
+                "hiteffect": "char/svsdaz/p1_impact",
+                "inherit": "beam",
+                "maxrange": 500,
+                "name": "prismeam",
+                "pierce": true,
+                "radius": 0,
+                "spawneffect": "char/svsdaz/p1_spawn",
+                "split_count": 4,
+                "split_damage": "13 15",
+                "tag": 3,
+                "time": 0.55
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/svsdaz_m/p1_impact",
+                "time": 0.55
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "aoe",
+            "animenum": "ea_power1",
+            "handler": "ch_gambitboltons",
+            "lockangles": true,
+            "name": "power_smash",
+            "powerup_tag": "dazzler_dazzle",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "dazzler_dazzle",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/svsdaz/p1_charge",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/svsdaz_m/p2_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/svsdaz/p1_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "life": 6,
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 100,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_stunned",
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "failtag": 100,
+                "is_flying": true,
+                "name": "filter",
+                "time": 0.11
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/svsdaz/p2_flash2",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.11
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/svsdaz/p2_flash3",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.11
+            },
+            "trigger": {
+                "effect": "char/svsdaz/p2_flash",
+                "fxlevel": 3,
+                "name": "effect",
+                "tag": 1,
+                "time": 0.26
+            },
+            "trigger": {
+                "damage": "%mdmg_high",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "maxrange": 300,
+                "name": "radial",
+                "tag": 101,
+                "victimeventtag": 100,
+                "time": 0.48
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "aoe",
+            "animenum": "ea_power3",
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power_boost",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "dazzler_lshow",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "remove_on_node_end": true,
+                "shared_tag": "shared_electric",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/svsdaz_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/svsdaz/p4_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "next_eventtag": 1,
+                "powerusage": 0,
+                "time": 0.51
+            },
+            "trigger": {
+                "effect": "char/svsdaz/p4_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "next_eventtag": 2,
+                "sound": "char/dazz_m/p4_power",
+                "tag": 1,
+                "time": -1
+            },
+            "trigger": {
+                "damage": "%mdmg_high",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "inherit": "radial",
+                "knockback": 190,
+                "maxrange": 72,
+                "name": "elec_surge",
+                "tag": 2,
+                "time": 0.51,
+                "victimeventtag": 100,
+                "victimeventtag2": 102,
+                "damagemod": {
+                    "name": "dmgmod_no_hiteffect"
+                }
+            },
+            "trigger": {
+                "apply_chance": 0.3,
+                "life": 1,
+                "name": "powerup",
+                "shared_tag": "shared_stun",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "apply_chance": 0.3,
+                "life": 10,
+                "name": "powerup",
+                "tag": 102,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_dazed"
+                },
+                "affecter": {
+                    "attribute": "fear",
+                    "level": 1
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power_xtreme",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "dazzler_photon",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/svsdaz/p5_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/svsdaz_m/p5_charge",
+                "time": 0
+            },
+            "trigger": {
+                "attacktype": "projectile",
+                "count": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "entity": "svsdaz_p5_proj",
+                "explodedamage": 85,
+                "filename": "ents_svsdaz",
+                "name": "projectile",
+                "offset": "25 0 50",
+                "powerusage": 0,
+                "speed": 450,
+                "time": 0.48,
+                "victimeventtag": 100
+            },
+            "trigger": {
+                "damage": 70,
+                "fxlevel": 6,
+                "hiteffect": "char/svsdaz/p5_power",
+                "maxrange": 84,
+                "name": "explodeobjects",
+                "radius": 48,
+                "tag": 50,
+                "time": -1,
+                "type": "ce_atk_blast_objects"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}
