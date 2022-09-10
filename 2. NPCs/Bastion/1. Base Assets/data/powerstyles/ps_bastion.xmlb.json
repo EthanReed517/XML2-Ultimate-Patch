@@ -1,0 +1,206 @@
+{
+    "PowerStyle": {
+        "cansteal": false,
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "endchaintime": 1,
+            "icon": 3,
+            "lockangles": true,
+            "name": "attacklight1",
+            "startchaintime": 0.9,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.38
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/bast/attack",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/bast/attack",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.62
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "null"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "null"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_heavy1",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "icon": 7,
+            "lockangles": true,
+            "name": "attackheavy1",
+            "startchaintime": 0.8,
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/bast/attack",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "height": 10,
+                "name": "kick_heavy",
+                "time": 0.38
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "null"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "null"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beamanyrange",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_attack",
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/bast/p1_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/bast_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/bast/p1_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/bast_m/p1_power",
+                "time": 0.58
+            },
+            "trigger": {
+                "arc": 0,
+                "attack_bone_angles": "-21 -58 -66",
+                "attack_bone_pos": "48 -1 47",
+                "attacktype": "beam",
+                "beambolt": "Bip01 L Hand",
+                "beameffect": "char/bast/p1_power",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "damagetype": "dmg_mental",
+                "hiteffect": "char/bast/p1_impact",
+                "maxrange": 800,
+                "name": "beam",
+                "powerusage": 6,
+                "time": 0.58
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power_smash",
+            "priority": 5,
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/bast/p2_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/bast_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/bast/p2_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power3",
+            "name": "power_boost",
+            "priority": 5,
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/bast/p1_charge",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/bast_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/bast/p1_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/bast/p1_impact",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/bast_m/p3_power",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
