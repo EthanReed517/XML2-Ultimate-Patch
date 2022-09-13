@@ -1,0 +1,54 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "aireusetime": 2,
+            "aitype": "projectile",
+            "animenum": "ea_power1",
+            "description": "UT: Plasma burst",
+            "lockangles": true,
+            "name": "power_attack",
+            "event": {
+                "actorbolt": "Bip01 L Hand",
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%mdmg_high",
+                "damagetype": "dmg_fire",
+                "entity": "inf_plasma",
+                "filename": "ents_infinite_adv_cap",
+                "inherit": "projectile",
+                "name": "inf_plasma",
+                "powerusage": 1,
+                "speed": 800,
+                "targetable": true
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/inf_ac_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "attack_bone_angles": "-97 -13 2",
+                "attack_bone_pos": "30 18 59",
+                "name": "inf_plasma",
+                "time": 0.4
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "-87 -26 -16",
+                "attack_bone_pos": "5 -22 55",
+                "name": "inf_plasma",
+                "time": 0.47
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/inf_ac_m/p1_power",
+                "time": 0.53
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
