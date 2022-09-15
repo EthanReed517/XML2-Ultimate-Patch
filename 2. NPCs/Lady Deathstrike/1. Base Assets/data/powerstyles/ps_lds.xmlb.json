@@ -1,0 +1,158 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "aireusetime": 2.5,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_attack",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/nlds_m/p1_charge",
+                "time": 0.15
+            },
+            "trigger": {
+                "effect": "char/lds/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.22
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "index": 1,
+                "knockback": 190,
+                "maxrange": 95,
+                "name": "punch",
+                "powerusage": 3,
+                "time": 0.24
+            },
+            "trigger": {
+                "effect": "char/lds/p1_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.42
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "index": 2,
+                "knockback": 305,
+                "maxrange": 105,
+                "name": "punch",
+                "powerusage": 3,
+                "tag": 2,
+                "time": 0.5,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "effect": "char/lds/p1_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.65
+            },
+            "trigger": {
+                "bolt": "Bip01 L Toe0",
+                "effect": "char/lds/p1_charge",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0.65
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "effect": "char/lds/p1_charge",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0.65
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 7,
+            "aitype": "aoe",
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power_smash",
+            "priority": 5,
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "inherit": "punch",
+                "name": "p_radius"
+            },
+            "trigger": {
+                "life": 0.5,
+                "name": "hotspot",
+                "radius": 140,
+                "time": 0
+            },
+            "trigger": {
+                "life": 0.5,
+                "name": "hotspot",
+                "radius": 140,
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "effect": "char/lds/p2_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/nlds_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Toe0",
+                "effect": "char/lds/p2_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/lds/p2_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/nlds_m/p2_power",
+                "time": 0.19
+            },
+            "trigger": {
+                "damage": "%mdmg_high",
+                "index": 1,
+                "knockback": 40,
+                "maxrange": 85,
+                "name": "p_radius",
+                "time": 0.25
+            },
+            "trigger": {
+                "damage": "%mdmg_high",
+                "index": 2,
+                "knockback": 305,
+                "maxrange": 105,
+                "name": "p_radius",
+                "tag": 3,
+                "time": 0.45,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
