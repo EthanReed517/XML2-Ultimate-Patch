@@ -1,0 +1,248 @@
+{
+    "PowerStyle": {
+        "cansteal": false,
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "endchaintime": 1,
+            "icon": 3,
+            "lockangles": true,
+            "name": "attacklight1",
+            "startchaintime": 0.9,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.38
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/mrsin/attack",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.43
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.45
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "null"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "null"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_heavy1",
+            "endchaintime": 1,
+            "icon": 7,
+            "lockangles": true,
+            "name": "attackheavy1",
+            "startchaintime": 0.8,
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/mrsin/attack",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/mrsin/attack",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "height": 10,
+                "name": "kick_heavy",
+                "time": 0.38
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "null"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "null"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "beamanyrange",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power1",
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mrsin_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/mrsin/p1_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.18
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mrsin_m/p1_power",
+                "time": 0.48
+            },
+            "trigger": {
+                "arc": 0,
+                "attack_bone_angles": "-93 -80 4",
+                "attack_bone_pos": "6 -2 46",
+                "attacktype": "beam",
+                "beambolt": "Bip01 Head",
+                "beameffect": "char/mrsin/p1_power",
+                "damage": 90,
+                "damagescale": "difficulty",
+                "fxlevel": 1,
+                "hiteffect": "char/mrsin/p1_impact",
+                "maxrange": 800,
+                "name": "beam",
+                "powerusage": 6,
+                "spawneffect": "char/mrsin/p1_charge",
+                "time": 0.48
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power2",
+            "priority": 5,
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": 120,
+                "damagescale": "difficulty",
+                "inherit": "punch",
+                "name": "p_radius"
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/mrsin/attack",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/mrsin_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/mrsin/attack",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mrsin_m/p2_power",
+                "time": 0.19
+            },
+            "trigger": {
+                "effect": "char/mrsin/p2_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "damage": "%mdmg_high",
+                "maxrange": 105,
+                "name": "p_radius",
+                "time": 0.45
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "name": "powerup_vuln",
+            "trigger": {
+                "name": "powerup",
+                "remove_tag": "fear",
+                "tag": 70,
+                "time": 0
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "tag": 73,
+                "tag_name": "fear",
+                "time": 0,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_fear"
+                }
+            },
+            "trigger": {
+                "name": "powerup",
+                "remove_tag": "null",
+                "tag": 80,
+                "time": 0
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "tag": 83,
+                "tag_name": "null",
+                "time": 0,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "map/egypt/scr_sinister_nullified",
+                    "fxlevel": 1
+                },
+                "special_fx": {
+                    "effect": "map/egypt/scr_sinister_nullified",
+                    "fxlevel": 2
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}
