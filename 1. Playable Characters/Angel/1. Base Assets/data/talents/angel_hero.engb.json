@@ -1,0 +1,827 @@
+{
+    "talents": {
+        "talent": {
+            "descname": "Feather Shot",
+            "description": "Throws a volley of razor sharp feathers that home in on enemies and pierce through them. Puts out fires.",
+            "descshort": "Projectile",
+            "icon": 0,
+            "icon_texture": "textures/ui/angel_icons2.png",
+            "name": "ang_darts",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_darts_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "ang_darts_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_darts_dmg",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "ang_darts_dmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_darts_pwr",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "ang_darts_pwr",
+                    "value": 126
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%ang_darts_dmg Blade Dmg\\n%ang_darts_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ang_darts_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Aerial Dash",
+            "description": "Charges against enemies and objects, knocking them back.\\n(~41Press And Hold~~)",
+            "descshort": "Charge",
+            "icon": 1,
+            "icon_texture": "textures/ui/angel_icons2.png",
+            "name": "ang_rush",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_rush_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "ang_rush_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_rush_dmg",
+                    "value": "15 19"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "ang_rush_dmg",
+                    "value": "145 162"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_rush_kb",
+                    "value": 200
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "ang_rush_kb",
+                    "value": 300
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_rush_pwr",
+                    "value": 19
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "ang_rush_pwr",
+                    "value": 130
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%ang_rush_dmg $DMG_PHYSICAL\\n%ang_rush_kb $KB\\n%ang_rush_pwr $EP per second",
+                "require": {
+                    "cat": "level",
+                    "level": "%ang_rush_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "ang_regen",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Wing Sweep",
+            "description": "Angel spins with outstretched wings, popping up surrounding enemies. Puts out fires.",
+            "descshort": "Radial",
+            "icon": 2,
+            "icon_texture": "textures/ui/angel_icons2.png",
+            "name": "ang_wings",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_wings_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ang_wings_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_wings_dmg",
+                    "value": "8 11"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ang_wings_dmg",
+                    "value": "54 62"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_wings_pwr",
+                    "value": 30
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ang_wings_pwr",
+                    "value": 160
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%ang_wings_dmg x2 $DMG_WIND\\n%ang_wings_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ang_wings_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Blessed Blade",
+            "description": "Angel swings his sword in an arc, causing $DMG_BLEED.",
+            "descshort": "Melee",
+            "icon": 3,
+            "icon_texture": "textures/ui/angel_icons2.png",
+            "name": "ang_sword",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_sword_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ang_sword_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_sword_dmg",
+                    "value": "20 25"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ang_sword_dmg",
+                    "value": "76 87"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_sword_dmg2",
+                    "value": "42 48"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ang_sword_dmg2",
+                    "value": "156 174"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_sword_pwr",
+                    "value": 42
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ang_sword_pwr",
+                    "value": 140
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%ang_sword_dmg initial Blade Dmg\\n%ang_sword_dmg2 $DMG_BLEED over 3 seconds\\n%ang_sword_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ang_sword_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Toxic Plume",
+            "description": "Unleashes a sweep of toxic feathers that home in on targets, stunning them. Puts out fires.",
+            "descshort": "Projectile",
+            "icon": 4,
+            "icon_texture": "textures/ui/angel_icons2.png",
+            "name": "ang_throw",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_throw_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "ang_throw_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_throw_dmg",
+                    "value": "49 57"
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "ang_throw_dmg",
+                    "value": "125 140"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_throw_stn",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "ang_throw_stn",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_throw_pwr",
+                    "value": 62
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "ang_throw_pwr",
+                    "value": 152
+                }
+            },
+            "level": {
+                "count": 12,
+                "description": "%ang_throw_dmg Blade Dmg\\n%ang_throw_stn second stun\\n%ang_throw_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ang_throw_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Dive Bomb",
+            "description": "Angel flies up and slams back down, knocking back all nearby enemies.",
+            "descshort": "Radial",
+            "icon": 5,
+            "icon_texture": "textures/ui/angel_icons2.png",
+            "name": "ang_torpedo",
+            "power": "power6",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_torpedo_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "ang_torpedo_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_torpedo_dmg",
+                    "value": "57 66"
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "ang_torpedo_dmg",
+                    "value": "118 132"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_torpedo_kb",
+                    "value": 200
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "ang_torpedo_kb",
+                    "value": 350
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_torpedo_pwr",
+                    "value": 83
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "ang_torpedo_pwr",
+                    "value": 165
+                }
+            },
+            "level": {
+                "count": 12,
+                "description": "%ang_torpedo_dmg $DMG_PHYSICAL\\n%ang_torpedo_kb $KB\\n%ang_torpedo_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ang_torpedo_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "ang_rush",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Aerobatics",
+            "description": "Chance to dodge all incoming attacks.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/angel_icons2.png",
+            "name": "ang_aero",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_aero_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ang_aero_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_aero_life",
+                    "value": 18
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ang_aero_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_aero_pwr",
+                    "value": 88
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ang_aero_pwr",
+                    "value": 480
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_aero_pct",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ang_aero_pct",
+                    "value": 0.67
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%ang_aero_pct:p chance to dodge\\n%ang_aero_life seconds\\n%ang_aero_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ang_aero_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Archangel",
+            "description": "Genetic tampering increases Angel's Attack Speed, $AR, and Critical chance on all attacks.",
+            "descshort": "Boost",
+            "icon": 7,
+            "icon_texture": "textures/ui/angel_icons2.png",
+            "name": "ang_arch",
+            "power": "power8",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_arch_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ang_arch_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_arch_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ang_arch_pwr",
+                    "value": 516
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_arch_crt",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ang_arch_crt",
+                    "value": 0.4
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_arch_atk",
+                    "value": 1.15
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ang_arch_atk",
+                    "value": 2.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_arch_spe",
+                    "value": 1.03
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ang_arch_spe",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_arch_lif",
+                    "value": 18
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ang_arch_lif",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%ang_arch_spe:s Attack Speed\\n%ang_arch_atk:s $AR\\n+%ang_arch_crt:p Critical chance\\n%ang_arch_lif seconds\\n%ang_arch_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ang_arch_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "WING HURRICANE",
+            "description": "Using his wings, Angel creates a gale force wind storm that knock back all nearby enemies and causes $DMG_WIND. Puts out fires.",
+            "descshort": "Radial",
+            "icon": 8,
+            "icon_texture": "textures/ui/angel_icons2.png",
+            "name": "ang_xtreme",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_xtreme_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "ang_xtreme_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_xtreme_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "ang_xtreme_dmg",
+                    "value": "279 305"
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%ang_xtreme_dmg $DMG_WIND",
+                "require": {
+                    "cat": "level",
+                    "level": "%ang_xtreme_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "ang_wings",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "BLOOD OF THE MARTYR",
+            "description": "Restores full $HP and raises $HP regeneration rate for the entire party.",
+            "descshort": "Boost",
+            "icon": 9,
+            "icon_texture": "textures/ui/angel_icons2.png",
+            "name": "ang_restore",
+            "power": "power10",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_restore_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "ang_restore_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_restore_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "ang_restore_lif",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_restore_pct",
+                    "value": 0.02
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "ang_restore_pct",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%ang_restore_pct:p $HP per second\\n%ang_restore_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%ang_restore_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "ang_regen",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Wing Mastery",
+            "description": "Increases damage and Critical chance with all feather and flying attacks.",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/angel_icons2.png",
+            "name": "ang_wingm",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_wingm_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "ang_wingm_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_wingm_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "ang_wingm_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_wingm_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "ang_wingm_crit",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 12,
+                "description": "%ang_wingm_dmg:s $DMG\\n+%ang_wingm_crit:p Critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%ang_wingm_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%ang_wingm_dmg",
+                        "scope_damage": "flier"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%ang_wingm_crit",
+                        "scope_damage": "flier"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Regeneration",
+            "description": "Heals over time.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/angel_icons2.png",
+            "name": "ang_regen",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_regen_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ang_regen_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_regen_health",
+                    "value": 0.0017
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ang_regen_health",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_regen_health_p",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ang_regen_health_p",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_regen_health_t",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ang_regen_health_t",
+                    "value": 6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%ang_regen_health_p:f% of max $HP every %ang_regen_health_t seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%ang_regen_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "health_regen_pct",
+                        "level": "%ang_regen_health"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Acute Perception",
+            "description": "Angel's excellent perception increases his chance to anticipate and dodge incoming projectiles.",
+            "descshort": "Passive",
+            "icon": 12,
+            "icon_texture": "textures/ui/angel_icons2.png",
+            "name": "ang_dodge",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_dodge_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ang_dodge_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_dodge_chance",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ang_dodge_chance",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%ang_dodge_chance:p chance to dodge",
+                "require": {
+                    "cat": "level",
+                    "level": "%ang_dodge_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%ang_dodge_chance",
+                        "scope_attack": "projectile"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Aerial Ace",
+            "description": "Angel's flying expertise gives him a natural increase to $AR and $DR.",
+            "descshort": "Passive",
+            "icon": 13,
+            "icon_texture": "textures/ui/blob_icons2.png",
+            "name": "ang_ace",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_ace_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ang_ace_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_ace_atr",
+                    "value": 1.07
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ang_ace_atr",
+                    "value": 1.75
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ang_ace_def",
+                    "value": 1.11
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ang_ace_def",
+                    "value": 1.84
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%ang_ace_atr:s $AR\\n%ang_ace_def:s $DR",
+                "require": {
+                    "cat": "level",
+                    "level": "%ang_ace_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "attack_rating",
+                        "level": "%ang_ace_atr"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "defense_rating",
+                        "level": "%ang_ace_def"
+                    }
+                }
+            }
+        }
+    }
+}

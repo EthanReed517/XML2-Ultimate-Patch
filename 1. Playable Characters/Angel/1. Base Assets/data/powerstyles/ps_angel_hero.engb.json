@@ -1,0 +1,936 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/angel_icons1.png",
+        "FightMove": {
+            "animenum": "ea_menu_action",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackstun3",
+            "powerup_tag": "flier",
+            "startchaintime": 0.66,
+            "trigger": {
+                "name": "slide",
+                "targetdistance": 70,
+                "targetfoundeventtag": 15,
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/angel_m/p11_power",
+                "time": 0.3
+            },
+            "trigger": {
+                "effect": "char/angel/p5_power",
+                "name": "effect",
+                "time": 0.35
+            },
+            "event": {
+                "inherit": "punch_heavy",
+                "maxrange": 60,
+                "name": "stun",
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "angle": 60,
+                "name": "stun",
+                "time": 0.38
+            },
+            "trigger": {
+                "name": "stun",
+                "time": 0.42
+            },
+            "trigger": {
+                "angle": -45,
+                "name": "stun",
+                "time": 0.46
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "projectile",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Darts",
+            "combotextstarter": "Feathered",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "powerup_tag": "flier",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ang_darts",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/angel_m/p1_charge",
+                "time": 0
+            },
+            "event": {
+                "actorbolt": "Bip01 Pelvis",
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%ang_darts_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_blade",
+                "entity": "metal_feathers",
+                "filename": "ents_angel",
+                "inherit": "projectile",
+                "name": "archa_proj",
+                "pierce": true,
+                "powerusage": "%ang_darts_pwr",
+                "speed": 600,
+                "targetable": true,
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
+            },
+            "trigger": {
+                "effect": "char/angel/p1_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/angel_m/p1_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "attack_bone_angles": "85 -87 -175",
+                "attack_bone_pos": "-4 0 39",
+                "fulltargeting": true,
+                "name": "archa_proj",
+                "offset": "0 -48 20",
+                "time": 0.5
+            },
+            "trigger": {
+                "attack_bone_angles": "85 -87 -175",
+                "attack_bone_pos": "-4 0 39",
+                "fulltargeting": true,
+                "name": "archa_proj",
+                "offset": "0 48 20",
+                "time": 0.5
+            },
+            "trigger": {
+                "attack_bone_angles": "-86 -87 -4",
+                "attack_bone_pos": "-9 0 37",
+                "fulltargeting": true,
+                "name": "archa_proj",
+                "offset": "0 40 20",
+                "time": 0.52
+            },
+            "trigger": {
+                "attack_bone_angles": "-86 -87 -4",
+                "attack_bone_pos": "-9 0 37",
+                "fulltargeting": true,
+                "name": "archa_proj",
+                "offset": "0 -40 20",
+                "time": 0.52
+            },
+            "trigger": {
+                "attack_bone_angles": "-87 -86 -3",
+                "attack_bone_pos": "-10 0 37",
+                "fulltargeting": true,
+                "name": "archa_proj",
+                "offset": "0 32 20",
+                "time": 0.54
+            },
+            "trigger": {
+                "attack_bone_angles": "-87 -86 -3",
+                "attack_bone_pos": "-10 0 37",
+                "fulltargeting": true,
+                "name": "archa_proj",
+                "offset": "0 -32 20",
+                "time": 0.54
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aitype": "melee",
+            "animenum": "ea_fly_fast",
+            "combotextfinisher": "Dash",
+            "combotextstarter": "Aerial",
+            "energypersecond": "%ang_rush_pwr",
+            "fallback": "jumploop",
+            "handler": "ch_skating",
+            "icon": 1,
+            "locktransitionangles": true,
+            "name": "power2",
+            "noautoaim": true,
+            "playspeed": 1.5,
+            "powerup_tag": "flier",
+            "priority": 5,
+            "startchaintime": 0.95,
+            "turnrate": 0.4,
+            "require": {
+                "cat": "skill",
+                "item": "ang_rush",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "only_non_looped": true,
+                "powerusage": "%ang_rush_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/angel/p2_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/angel_m/p2_charge",
+                "time": 0
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power2"
+            },
+            "chain": {
+                "action": "touch",
+                "result": "power2_dive"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power2_dive"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_flying_slamattack_end",
+            "combotextfinisher": "Dash",
+            "combotextstarter": "Aerial",
+            "energypersecond": "%ang_rush_pwr",
+            "handler": "ch_charge_move",
+            "name": "power2_dive",
+            "noautoaim": true,
+            "playspeed": 1,
+            "powerup_tag": "flier",
+            "priority": 5,
+            "startchaintime": 0.4,
+            "turnrate": 0.4,
+            "trigger": {
+                "arc": 120,
+                "damage": "%ang_rush_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "height": -20,
+                "knockback": "%ang_rush_kb",
+                "name": "punch",
+                "tag": 1,
+                "tiles": true,
+                "time": -1,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                },
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "loop_timeout": 1,
+                "loop_type": "start",
+                "name": "sound",
+                "sound": "char/angel_m/p2_loop",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power2_land"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_land",
+            "locktransitionangles": true,
+            "name": "power2_land",
+            "noautoaim": true,
+            "playspeed": 1,
+            "priority": 5,
+            "turnrate": 0.4,
+            "trigger": {
+                "effect": "char/angel/p2_impact",
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/angel_m/p2_impact",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Sweep",
+            "combotextstarter": "Winged",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "noautoaim": true,
+            "powerup_tag": "flier",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ang_wings",
+                "level": 1
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/angel_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/angel/p3_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.32
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/angel_m/p3_power",
+                "time": 0.52
+            },
+            "event": {
+                "arc": 180,
+                "damage": "%ang_wings_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "inherit": "punch",
+                "knockback": 250,
+                "maxrange": 85,
+                "name": "winger",
+                "tiles": true,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                },
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
+            },
+            "trigger": {
+                "index": 1,
+                "name": "winger",
+                "powerusage": "%ang_wings_pwr",
+                "time": 0.4
+            },
+            "trigger": {
+                "index": 2,
+                "name": "winger",
+                "time": 0.57
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "melee",
+            "animenum": "ea_grab_break_v",
+            "combotextfinisher": "Slice",
+            "combotextstarter": "Blessed",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "playspeed": 1.2,
+            "powerup_tag": "ang_power4",
+            "priority": 5,
+            "startchaintime": 0.35,
+            "require": {
+                "cat": "skill",
+                "item": "ang_sword",
+                "level": 1
+            },
+            "trigger": {
+                "life": 1.1,
+                "name": "powerup",
+                "powerusage": "%ang_sword_pwr",
+                "time": 0,
+                "bolton": {
+                    "bolt": "Bip01 R Hand",
+                    "model": "models/bolton/angel_sword"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power4b"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_heavy1",
+            "combotextfinisher": "Slice",
+            "combotextstarter": "Blessed",
+            "lockangles": true,
+            "name": "power4b",
+            "playspeed": 1,
+            "powerup_tag": "ang_power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ang_sword",
+                "level": 1
+            },
+            "trigger": {
+                "life": 0.15,
+                "movement": 25,
+                "name": "slide",
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/angel_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/angel/p4_power",
+                "name": "effect",
+                "time": 0.28
+            },
+            "event": {
+                "arc": 65,
+                "damage": "%ang_sword_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_blade",
+                "inherit": "punch",
+                "maxrange": 65,
+                "name": "sword",
+                "tiles": true,
+                "victimeventtag": 2
+            },
+            "trigger": {
+                "angle": -30,
+                "height": 10,
+                "name": "sword",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "sword",
+                "time": 0.34
+            },
+            "trigger": {
+                "angle": 30,
+                "height": -10,
+                "name": "sword",
+                "time": 0.38
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%ang_sword_dmg2",
+                "damagetype": "dmg_bleed",
+                "life": 3,
+                "name": "powerup",
+                "tag": 2,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Spine2",
+                    "effect": "effects/base/hit/hit_bleed"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_menu_action",
+            "combotextfinisher": "Spray",
+            "combotextstarter": "Toxic",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power5",
+            "playspeed": 1,
+            "powerup_tag": "flier",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ang_throw",
+                "level": 1
+            },
+            "trigger": {
+                "life": "%ang_throw_stn",
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/angel_m/p5_power",
+                "time": 0.35
+            },
+            "trigger": {
+                "effect": "char/angel/p5_power",
+                "name": "effect",
+                "time": 0.35
+            },
+            "event": {
+                "arc": 65,
+                "damage": "%ang_throw_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "inherit": "punch",
+                "maxrange": 65,
+                "name": "sweep",
+                "tiles": true,
+                "victimeventtag": 100,
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
+            },
+            "trigger": {
+                "angle": 30,
+                "name": "sweep",
+                "time": 0.4
+            },
+            "trigger": {
+                "name": "sweep",
+                "time": 0.44
+            },
+            "trigger": {
+                "angle": -30,
+                "name": "sweep",
+                "time": 0.48
+            },
+            "event": {
+                "actorbolt": "Bip01 Pelvis",
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%ang_throw_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "entity": "metal_feathers2",
+                "filename": "ents_angel",
+                "inherit": "projectile",
+                "name": "plume",
+                "speed": 600,
+                "targetable": true
+            },
+            "trigger": {
+                "attack_bone_angles": "85 -87 -175",
+                "attack_bone_pos": "-4 0 39",
+                "name": "plume",
+                "offset": "55 -40 20",
+                "powerusage": "%ang_throw_pwr",
+                "time": 0.38
+            },
+            "trigger": {
+                "attack_bone_angles": "85 -87 -175",
+                "attack_bone_pos": "-4 0 39",
+                "name": "plume",
+                "offset": "80 0 20",
+                "time": 0.41
+            },
+            "trigger": {
+                "attack_bone_angles": "-86 -87 -4",
+                "attack_bone_pos": "-4 0 39",
+                "name": "plume",
+                "offset": "55 40 20",
+                "time": 0.45
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "aoe",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Torpedo",
+            "combotextstarter": "Aerial",
+            "handler": "ch_fly_move",
+            "icon": 5,
+            "lockangles": false,
+            "name": "power6",
+            "noautoaim": true,
+            "playspeed": 1.2,
+            "powerup_tag": "flier",
+            "priority": 5,
+            "turnrate": 0.7,
+            "require": {
+                "cat": "skill",
+                "item": "ang_torpedo",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%ang_torpedo_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/angel_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/angel/p6_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/angel/p6_power",
+                "name": "effect",
+                "time": 0.1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/angel/p6_power",
+                "name": "effect",
+                "time": 0.1
+            },
+            "trigger": {
+                "life": 0.9,
+                "name": "powerup",
+                "time": 0.3,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": 0
+                }
+            },
+            "trigger": {
+                "effect": "char/angel/p6_impact",
+                "name": "effect_sound",
+                "sound": "char/angel_m/p6_power",
+                "time": 0.76
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0.76
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": "%ang_torpedo_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "knockback": "%ang_torpedo_kb",
+                "maxrange": 90,
+                "name": "punch",
+                "tiles": true,
+                "time": 0.76,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumploop"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "jumploop"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_fly_idle",
+            "combotextfinisher": "Acrobatics",
+            "combotextstarter": "Acrobatic",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power7",
+            "noautoaim": true,
+            "powerup_tag": "flier",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ang_aero",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/angel_m/p7_power",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/angel/p7_power",
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "life": "%ang_aero_life",
+                "name": "powerup",
+                "powerusage": "%ang_aero_pwr",
+                "time": 0.6,
+                "special_fx": {
+                    "effect": "char/angel/p7_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "def_dodge",
+                    "level": "%ang_aero_pct"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Enhancement",
+            "combotextstarter": "Enhanced",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8",
+            "noautoaim": true,
+            "powerup_tag": "ang_power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ang_arch",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/angel/p8_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.32
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/angel_m/p8_power",
+                "time": 0
+            },
+            "trigger": {
+                "life": "%ang_arch_lif",
+                "name": "powerup",
+                "powerusage": "%ang_arch_pwr",
+                "time": 0.8,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%ang_arch_atk"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move_attack",
+                    "level": "%ang_arch_spe"
+                },
+                "affecter": {
+                    "attribute": "atk_critical",
+                    "level": "%ang_arch_crt"
+                },
+                "special_fx": {
+                    "effect": "char/angel/p8_aura",
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/angel/p8_charge"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/angel/p8_charge"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2",
+            "combotextfinisher": "Hurricane",
+            "description": "WING HURRICANE",
+            "icon": 8,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power9",
+            "noautoaim": true,
+            "powerup_tag": "flier",
+            "priority": 10,
+            "require": {
+                "cat": "skill",
+                "item": "ang_xtreme",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": 4.2,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.25
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "event": {
+                "arc": 180,
+                "damage": "%ang_xtreme_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_wind",
+                "index": 2,
+                "inherit": "punch",
+                "knockback": 250,
+                "name": "radial_punch",
+                "tiles": true,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/angel_m/p9_power",
+                "time": 0.15
+            },
+            "trigger": {
+                "effect": "char/angel/p9_power",
+                "name": "effect",
+                "time": 0.32
+            },
+            "trigger": {
+                "maxrange": 100,
+                "name": "radial_punch",
+                "time": 0.32
+            },
+            "trigger": {
+                "maxrange": 200,
+                "name": "radial_punch",
+                "time": 0.42
+            },
+            "trigger": {
+                "maxrange": 300,
+                "name": "radial_punch",
+                "time": 0.52
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1",
+            "blendtime": 0,
+            "combotextfinisher": "Restoration",
+            "description": "BLOOD OF THE MARTYR",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power10",
+            "playspeed": 1.5,
+            "priority": 10,
+            "require": {
+                "cat": "skill",
+                "item": "ang_restore",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/angel/p10_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/angel/p10_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/angel/p10_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/angel_m/p10_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": 0.1,
+                "name": "powerup",
+                "time": 0.5,
+                "affecter": {
+                    "attribute": "health_regen_pct",
+                    "level": 10
+                }
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%ang_restore_lif",
+                "name": "powerup",
+                "time": 0.6,
+                "special_fx": {
+                    "effect": "char/angel/p10_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "health_regen_pct",
+                    "level": "%ang_restore_pct"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aitype": "null",
+            "animenum": "ea_block",
+            "blendtime": 0,
+            "lockangles": true,
+            "name": "blockattacks",
+            "priority": 5,
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
