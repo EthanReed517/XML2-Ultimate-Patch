@@ -1,0 +1,80 @@
+{
+    "PowerStyle": {
+        "cansteal": false,
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beamanyrange",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_attack",
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/inf/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/inf_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/inf_m/p1_power",
+                "time": 0.55
+            },
+            "trigger": {
+                "arc": 0,
+                "attack_bone_angles": "6 9 -2",
+                "attack_bone_pos": "11 -10 48",
+                "attacktype": "beam",
+                "beambolt": "Bip01 R Hand",
+                "beameffect": "char/inf/p1_power",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "damagetype": "dmg_mental",
+                "hiteffect": "char/inf/p1_impact",
+                "maxrange": 800,
+                "name": "beam",
+                "powerusage": 6,
+                "spawneffect": "char/inf/p1_shot",
+                "time": 0.55
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power_smash",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/inf_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "name": "punch",
+                "powerusage": 3,
+                "tag": 2,
+                "time": 0.33
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
