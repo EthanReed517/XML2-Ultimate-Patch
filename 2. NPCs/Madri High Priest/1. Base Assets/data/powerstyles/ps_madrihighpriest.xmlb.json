@@ -1,0 +1,206 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power1_start",
+            "name": "power_smash",
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/mad_hp/p2_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mad_hp_m/p1_charge",
+                "time": 0.5
+            },
+            "trigger": {
+                "effect": "char/mad_hp/p2_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.9
+            },
+            "trigger": {
+                "angle": 180,
+                "arc": 45,
+                "maxrange": 200,
+                "name": "teleport",
+                "powerusage": 3,
+                "time": 0.9
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "teleport_in"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1_end",
+            "lockangles": true,
+            "name": "teleport_in",
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/mad_hp/p2_impact",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mad_hp_m/p1_power",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "resurrect",
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power_boost",
+            "playspeed": 1.5,
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/mad_hp/p3_power",
+                "name": "effect_sound",
+                "sound": "char/mad_hp_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/mad_hp/p3_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/mad_hp/p3_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "systemshock",
+                "powerusage": 3,
+                "time": 0.5,
+                "type": "ce_resurrect"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 2.5,
+            "aitype": "projectile",
+            "animenum": "ea_power3",
+            "lockangles": true,
+            "name": "power_attack",
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/mad_hp/p1_charge_right",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/mad_hp_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/mad_hp/p1_charge_left",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "event": {
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "damagetype": "dmg_fire",
+                "entity": "elemental_bolts",
+                "filename": "ents_madri",
+                "inherit": "projectile",
+                "name": "dh_proj",
+                "powerusage": 1,
+                "speed": 400,
+                "targetable": true
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "-44 -34 126",
+                "attack_bone_pos": "16 8 38",
+                "index": 1,
+                "name": "dh_proj",
+                "time": 0.28
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mad_hp_m/p3_power",
+                "time": 0.28
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "attack_bone_angles": "-73 -43 176",
+                "attack_bone_pos": "5 -12 54",
+                "index": 2,
+                "name": "dh_proj",
+                "time": 0.45
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mad_hp_m/p3_power",
+                "time": 0.45
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "-121 -58 -173",
+                "attack_bone_pos": "5 7 57",
+                "index": 3,
+                "name": "dh_proj",
+                "time": 0.62
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mad_hp_m/p3_power",
+                "time": 0.62
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_resurrect_v",
+            "lockangles": true,
+            "name": "resurrect_v",
+            "nodamage": true,
+            "playspeed": 2,
+            "trigger": {
+                "effect": "char/morl_b/special_resurrect",
+                "name": "effect",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}
