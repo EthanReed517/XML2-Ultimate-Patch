@@ -11,6 +11,7 @@ goto consoleChoiceSection
 REM files on the PC that aren't modified by the X2UP can be listed here
 if  %consoleChoice%==PC (
 	del >nul "0. Staging\actors\74_madri_high_priest.igb"
+	rmdir /s /q "0. Staging\data\entities"
 )
 goto compilePCcont
 
