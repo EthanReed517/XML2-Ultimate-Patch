@@ -11,9 +11,6 @@ if not "%CurrDirName%"=="XML2-Ultimate-Patch" (
 
 copy >nul "0. Utilities\cfgToPkgb.py" "%CurrDirNameFull%"
 
-echo DEBUG
-pause
-
 cd %CurrDirNameFull%
 
 for %%i in (*.cfg) do (
