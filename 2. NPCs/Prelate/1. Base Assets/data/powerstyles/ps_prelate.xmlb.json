@@ -1,0 +1,57 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "event": {
+            "arc": 20,
+            "attacktype": "punch",
+            "damage": "%mdmg_high",
+            "damagescale": "difficulty",
+            "damagetype": "dmg_blade",
+            "inherit": "punch",
+            "knockback": 305,
+            "name": "prelate_slash1"
+        },
+        "event": {
+            "damage": "%mdmg_high",
+            "inherit": "prelate_slash1",
+            "knockback": 245,
+            "name": "prelate_slash2",
+            "damageMod": {
+                "name": "dmgmod_stun"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_attack",
+            "priority": 5,
+            "trigger": {
+                "effect": "char/pre/p1_power",
+                "name": "effect_sound",
+                "sound": "char/pre_m/p1_charge",
+                "time": 0.15
+            },
+            "trigger": {
+                "name": "prelate_slash1",
+                "time": 0.15
+            },
+            "trigger": {
+                "index": 1,
+                "name": "prelate_slash2",
+                "time": 0.7
+            },
+            "trigger": {
+                "index": 2,
+                "name": "sound",
+                "sound": "char/pre_m/p1_power",
+                "time": 0.7
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
