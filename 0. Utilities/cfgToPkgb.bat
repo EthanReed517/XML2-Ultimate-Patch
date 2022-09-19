@@ -20,8 +20,10 @@ cd %CurrDirNameFull%
 REM perform the cfg to pkgb conversion
 for %%i in (*.cfg) do (
 	echo %%~ni | python cfgToPkgb.py
-	cls
 )
+
+REM clear the command prompt
+cls
 
 REM clean up by removing the python script
 del >nul cfgToPkgb.py
