@@ -1,0 +1,98 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "aireusetime": 3.7,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "name": "power_attack",
+            "priority": 5,
+            "trigger": {
+                "effect": "char/svsnin/p1_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/svsnin/p1_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/svsnh_m/p1_charge",
+                "time": 0.3
+            },
+            "trigger": {
+                "arc": 65,
+                "attacktype": "punch",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "index": 1,
+                "knockback": 40,
+                "maxrange": 80,
+                "name": "punch",
+                "powerusage": 2,
+                "time": 0.23
+            },
+            "trigger": {
+                "arc": 65,
+                "attacktype": "punch",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "index": 2,
+                "knockback": 245,
+                "maxrange": 80,
+                "name": "punch",
+                "powerusage": 2,
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "resurrect",
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power_boost",
+            "playspeed": 1.5,
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/svsnh/p3_power",
+                "name": "effect_sound",
+                "sound": "char/svsnh_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/svsnh/p3_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/svsnh/p3_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "systemshock",
+                "powerusage": 3,
+                "time": 0.5,
+                "type": "ce_resurrect"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}
