@@ -1,0 +1,258 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "animenum": "ea_fly_idle",
+            "fallback": "jumploop",
+            "handler": "ch_flying",
+            "lockchaining": false,
+            "name": "flying",
+            "noncombat": true,
+            "powerup_tag": "flying",
+            "require": {
+                "cat": "skill",
+                "item": "flight",
+                "level": 1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "flying"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "flycharge"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_flying_slamattack_start",
+            "handler": "ch_fly_move",
+            "lockangles": true,
+            "name": "flycharge",
+            "playspeed": 2,
+            "powerup_tag": "flying",
+            "turnrate": 0.2,
+            "require": {
+                "cat": "skill",
+                "item": "flight",
+                "level": 1
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": 4,
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "flycharge_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "endchaintime": 1,
+            "icon": 3,
+            "lockangles": true,
+            "name": "attacklight1",
+            "startchaintime": 0.9,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.38
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.45
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "null"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "null"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_heavy1",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "icon": 7,
+            "lockangles": true,
+            "name": "attackheavy1",
+            "startchaintime": 0.8,
+            "trigger": {
+                "effect": "char/sauron/special_attackheavy",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.2
+            },
+            "trigger": {
+                "height": 10,
+                "name": "kick_heavy",
+                "time": 0.38
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "null"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "null"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_attack",
+            "trigger": {
+                "name": "sound",
+                "sound": "char/sauron_m/p1_charge",
+                "time": 0
+            },
+            "event": {
+                "actorbolt": "Bip01 Pelvis",
+                "attack_bone_angles": "-65 -76 -11",
+                "attack_bone_pos": "5 0 87",
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "damagetype": "dmg_physical",
+                "entity": "laserbolt",
+                "filename": "ents_sauron",
+                "fulltargeting": true,
+                "inherit": "projectile",
+                "name": "laserbolt",
+                "powerusage": 1,
+                "speed": 600,
+                "targetable": true
+            },
+            "trigger": {
+                "effect": "char/sauron/p1_shot",
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "fulltargeting": true,
+                "name": "laserbolt",
+                "offset": "0 -48 10",
+                "time": 0.3
+            },
+            "trigger": {
+                "fulltargeting": true,
+                "name": "laserbolt",
+                "offset": "0 48 10",
+                "time": 0.4
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/sauron_m/p1_power",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power_smash",
+            "priority": 5,
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%mdmg_high",
+                "damagelevel": 1,
+                "damagescale": "difficulty",
+                "inherit": "punch",
+                "knockback": 500,
+                "name": "radial_punch",
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/sauron_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": 3,
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/sauron/p2_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.32
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/sauron_m/p2_power",
+                "time": 0.19
+            },
+            "trigger": {
+                "maxrange": 50,
+                "name": "radial_punch",
+                "time": 0.52
+            },
+            "trigger": {
+                "maxrange": 100,
+                "name": "radial_punch",
+                "time": 0.62
+            },
+            "trigger": {
+                "maxrange": 150,
+                "name": "radial_punch",
+                "time": 0.72
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
