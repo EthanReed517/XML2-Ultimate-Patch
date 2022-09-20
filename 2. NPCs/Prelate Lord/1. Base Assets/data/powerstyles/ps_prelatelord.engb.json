@@ -1,0 +1,174 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "projectile",
+            "animenum": "ea_power2",
+            "description": "Lightning Spheres",
+            "lockangles": true,
+            "name": "power_smash",
+            "event": {
+                "actorbolt": "Bip01 R Hand",
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "damagetype": "dmg_cold",
+                "entity": "prel_ice",
+                "filename": "ents_prelate",
+                "inherit": "projectile",
+                "name": "prellord_ice",
+                "powerusage": 1,
+                "speed": 600,
+                "targetable": true
+            },
+            "event": {
+                "actorbolt": "Bip01 L Hand",
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "damagetype": "dmg_fire",
+                "entity": "prel_fire",
+                "filename": "ents_prelate",
+                "inherit": "projectile",
+                "name": "prellord_fire",
+                "powerusage": 1,
+                "speed": 600,
+                "targetable": true
+            },
+            "trigger": {
+                "effect": "char/prelrd/p2_power",
+                "name": "effect_sound",
+                "sound": "char/prelrd_m/p2_charge",
+                "time": 0.15
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/prelrd/p2_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.15
+            },
+            "trigger": {
+                "attack_bone_angles": "52 43 -32",
+                "attack_bone_pos": "5 -14 39",
+                "index": 1,
+                "name": "prellord_ice",
+                "time": 0.45
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/prelrd/p2_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.15
+            },
+            "trigger": {
+                "attack_bone_angles": "108 67 12",
+                "attack_bone_pos": "12 13 38",
+                "index": 2,
+                "name": "prellord_fire",
+                "time": 0.7
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 2,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_attack",
+            "priority": 5,
+            "trigger": {
+                "effect": "char/prelrd/p1_power",
+                "name": "effect",
+                "time": 0.25
+            },
+            "trigger": {
+                "damagescale": "difficulty",
+                "name": "punch",
+                "time": 0.32
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/prelrd_m/p2_charge",
+                "time": 0.25
+            }
+        },
+        "FightMove": {
+            "aireusetime": 18,
+            "aitype": "buffself",
+            "animenum": "ea_power3",
+            "description": "Cloaking Device",
+            "lockangles": true,
+            "name": "power_boost",
+            "nodamage": true,
+            "priority": 5,
+            "trigger": {
+                "effect": "char/prelrd/p3_power",
+                "name": "effect",
+                "time": 0.45
+            },
+            "trigger": {
+                "add": "cloaked",
+                "name": "tintout",
+                "time": 0.55,
+                "type": "ce_renderfx"
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/prelrd_m/p3_charge",
+                "time": 0.47
+            },
+            "trigger": {
+                "life": 9,
+                "name": "powerup",
+                "powerusage": 3,
+                "time": 0.75,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": 0.1
+                }
+            },
+            "trigger": {
+                "class": "invisible",
+                "life": 5,
+                "name": "powerup",
+                "no_think": true,
+                "time": 0.75,
+                "affecter": {
+                    "attribute": "invisible"
+                }
+            },
+            "trigger": {
+                "life": 4.75,
+                "name": "powerup",
+                "time": 0.75,
+                "special_fx": {
+                    "effect": "char/prelrd/p3_expire",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "name": "tintin",
+                "remove": "cloaked",
+                "time": 0.85,
+                "type": "ce_renderfx"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
