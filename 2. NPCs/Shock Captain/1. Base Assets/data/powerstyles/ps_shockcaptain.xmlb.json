@@ -1,0 +1,52 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "aireusetime": 2.7,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "name": "power_attack",
+            "priority": 5,
+            "event": {
+                "arc": 180,
+                "attacktype": "punch",
+                "damage": "%mdmg_high",
+                "damagelevel": 1,
+                "inherit": "punch",
+                "knockback": 305,
+                "maxrange": 78,
+                "name": "radial_punch",
+                "powerattack": true
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/shk_c_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/shk_c/p1_charge",
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/shk_c/p1_impact",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/shk_c_m/p1_power",
+                "time": 0.45
+            },
+            "trigger": {
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "name": "radial_punch",
+                "powerusage": 2,
+                "time": 0.45
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
