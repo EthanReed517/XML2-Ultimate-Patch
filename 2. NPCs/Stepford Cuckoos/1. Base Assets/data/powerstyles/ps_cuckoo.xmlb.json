@@ -1,0 +1,253 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_smash",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cuck_m/p1_charge",
+                "time": 0
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "psionic",
+                "damage": "4 5",
+                "damagescale": "difficulty",
+                "inherit": "punch",
+                "knockback": 600,
+                "name": "p_radius",
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/cuck/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/cuck/p1_impact",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/cuck_m/p1_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "damage": "4 5",
+                "maxrange": 125,
+                "name": "p_radius",
+                "tag": 2,
+                "time": 0.5
+            },
+            "trigger": {
+                "damage": "4 5",
+                "knockback": 400,
+                "maxrange": 175,
+                "name": "p_radius",
+                "tag": 3,
+                "time": 0.6
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beamanyrange",
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power_attack",
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/cuck/p2_charge",
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cuck_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cuck_m/p2_power",
+                "time": 0.47
+            },
+            "trigger": {
+                "arc": 0,
+                "attack_bone_angles": "-103 -34 9",
+                "attack_bone_pos": "34 3 57",
+                "attacktype": "beam",
+                "beambolt": "Bip01 L Hand",
+                "beameffect": "char/cuck/p2_power",
+                "damage": "15 18",
+                "damagescale": "difficulty",
+                "damagetype": "dmg_mental",
+                "hiteffect": "char/cuck/p2_impact",
+                "maxrange": 800,
+                "name": "beam",
+                "powerusage": 6,
+                "time": 0.47
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 2.4,
+            "aitype": "melee",
+            "animenum": "ea_power3",
+            "lockangles": true,
+            "name": "power_boost",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cuck_m/p3_charge",
+                "time": 0.29
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cuck_m/p3_charge",
+                "time": 0.57
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/cuck/p3_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/cuck/p3_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "damagelevel": 8,
+                "damagescale": "difficulty",
+                "damagetype": "dmg_mental",
+                "index": 1,
+                "knockback": "15 18",
+                "maxrange": 48,
+                "name": "punch",
+                "time": 0.29,
+                "victimeventtag": 1
+            },
+            "trigger": {
+                "damage": "15 18",
+                "damagelevel": 8,
+                "damagescale": "difficulty",
+                "damagetype": "dmg_mental",
+                "index": 2,
+                "knockback": "15 18",
+                "maxrange": 48,
+                "name": "punch",
+                "time": 0.57,
+                "victimeventtag": 1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_ko_head1",
+            "death": true,
+            "lockangles": true,
+            "name": "deathgen",
+            "priority": "uninterruptable",
+            "sequenced": true,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/cuck_m/death",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/cuck/special_death",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "remove",
+                "time": 0
+            }
+        },
+        "FightMove": {
+            "name": "powerup_noknock",
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "tag": 70,
+                "tag_name": "shield",
+                "time": 0,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_knockback",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_mind_control",
+                    "level": 0.1
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_pain",
+                    "level": 0
+                },
+                "affecter": {
+                    "attribute": "def_grab"
+                },
+                "affecter": {
+                    "attribute": "def_pickup"
+                },
+                "affecter": {
+                    "attribute": "def_finisher"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_stun",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "no_iceshell",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_knockback",
+                    "level": 0
+                },
+                "affecter": {
+                    "attribute": "slow_immune",
+                    "level": 1
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}
