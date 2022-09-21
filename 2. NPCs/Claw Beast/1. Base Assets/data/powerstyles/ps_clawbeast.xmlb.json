@@ -1,0 +1,89 @@
+{
+    "PowerStyle": {
+        "cansteal": false,
+        "FightMove": {
+            "aireusetime": 3.4,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "name": "power_attack",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/clwbst_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/clwbst/p1_power",
+                "name": "effect_sound",
+                "sound": "char/clwbst_m/p1_power",
+                "time": 0.44
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "damagetype": "dmg_radiation",
+                "maxrange": 120,
+                "name": "punch",
+                "powerusage": 2,
+                "time": 0.44
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3.5,
+            "aitype": "melee",
+            "animenum": "ea_power2",
+            "name": "power_smash",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/clwbst_m/p2_charge",
+                "time": 0.4
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/clwbst/p2_charge",
+                "name": "effect",
+                "time": 0.35
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/clwbst_m/p2_power",
+                "time": 0.73
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%mdmg_low",
+                "damagescale": "difficulty",
+                "index": 1,
+                "name": "punch",
+                "powerusage": 2,
+                "time": 0.45
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/clwbst/p2_charge",
+                "name": "effect",
+                "time": 0.65
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%mdmg_low",
+                "damagescale": "difficulty",
+                "index": 2,
+                "name": "punch",
+                "powerusage": 2,
+                "time": 0.75
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
