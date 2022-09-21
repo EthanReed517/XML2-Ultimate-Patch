@@ -1,0 +1,109 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beamanyrange",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_attack",
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/zelmin_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/zelmin/p1_charge",
+                "name": "effect",
+                "time": 0.18
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/zelmin_m/p1_power",
+                "time": 0.55
+            },
+            "trigger": {
+                "arc": 0,
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "34 4 40",
+                "attacktype": "beam",
+                "beambolt": "Bip01 L Hand",
+                "beameffect": "char/zelmin/p1_power",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "damagetype": "dmg_mental",
+                "hiteffect": "char/zelmin/p1_impact",
+                "maxrange": 800,
+                "name": "beam",
+                "powerusage": 6,
+                "time": 0.55
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power_smash",
+            "priority": 5,
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/zelmin/p2_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/zelmin/p2_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/zelmin_m/p2_charge",
+                "time": 0.25
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/zelmin_m/p2_power",
+                "time": 0.56
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "index": 1,
+                "knockback": 40,
+                "name": "punch",
+                "powerusage": 3,
+                "time": 0.25
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "index": 2,
+                "knockback": 40,
+                "name": "punch",
+                "powerusage": 3,
+                "time": 0.6
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
