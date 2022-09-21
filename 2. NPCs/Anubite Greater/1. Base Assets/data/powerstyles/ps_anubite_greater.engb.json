@@ -1,0 +1,93 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "aireusetime": 2,
+            "aitype": "projectile",
+            "animenum": "ea_power1",
+            "description": "UT: Plasma burst",
+            "lockangles": true,
+            "name": "power_attack",
+            "event": {
+                "actorbolt": "Bip01 R Hand",
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%mdmg_high",
+                "damagetype": "dmg_elemental",
+                "entity": "anub_energy",
+                "filename": "ents_anubite",
+                "inherit": "projectile",
+                "name": "anub_energy",
+                "powerusage": 1,
+                "speed": 800,
+                "targetable": true
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/anub_g/p1_charge",
+                "name": "effect_sound",
+                "sound": "char/anub_l_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/anub_l_m/p1_power",
+                "time": 0.53
+            },
+            "trigger": {
+                "attack_bone_angles": "-102 -16 -83",
+                "attack_bone_pos": "24 -18 50",
+                "name": "anub_energy",
+                "time": 0.56
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "resurrect",
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power_boost",
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/anub_l_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/anub_g/p2_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/anub_g/p2_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/anub_g/p2_power",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "systemshock",
+                "powerusage": 3,
+                "time": 0.5,
+                "type": "ce_resurrect"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}
