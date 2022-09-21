@@ -1,0 +1,263 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "endchaintime": 1,
+            "icon": 3,
+            "lockangles": true,
+            "name": "attacklight1",
+            "startchaintime": 0.9,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.38
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.62
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "null"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "null"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_heavy1",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "icon": 7,
+            "lockangles": true,
+            "name": "attackheavy1",
+            "startchaintime": 0.8,
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.2
+            },
+            "trigger": {
+                "height": 10,
+                "name": "kick_heavy",
+                "time": 0.38
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "null"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "null"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 2,
+            "animenum": "ea_power1",
+            "handler": "ch_telekinesis",
+            "lockangles": true,
+            "lockchaining": false,
+            "name": "power_attack",
+            "powerup_tag": "phoenix_psionic",
+            "priority": 5,
+            "startchaintime": 0.1,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/stryfe_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/stryfe/p1_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "effect": "char/stryfe/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "tag": 101,
+                "time": -1
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "damage": "%mdmg_high",
+                "damagetype": "dmg_telekinesis",
+                "energypersecond": "4 5",
+                "heaviness": 4,
+                "impactdamage": "8 11",
+                "name": "suspend",
+                "powerusage": 0,
+                "tag": 1,
+                "time": -1,
+                "tklevel": 11
+            },
+            "chain": {
+                "action": "special",
+                "result": "power_attack_hold"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power_attack_release"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1",
+            "handler": "ch_telekinesis",
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "power_attack_hold",
+            "priority": 5,
+            "startchaintime": 1,
+            "turnrate": 0.75,
+            "trigger": {
+                "effect": "char/stryfe/p1_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "effect": "char/stryfe/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "tag": 101,
+                "time": -1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power_attack_release"
+            },
+            "chain": {
+                "action": "special",
+                "result": "power_attack_hold"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1_end",
+            "lockangles": true,
+            "name": "power_attack_release",
+            "priority": 6,
+            "trigger": {
+                "loop_type": "stop",
+                "name": "sound",
+                "sound": "char/stryfe_m/p1_charge",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 28,
+            "aitype": "aoe",
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power_smash",
+            "priority": 5,
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%mdmg_high",
+                "damagelevel": 1,
+                "damagescale": "difficulty",
+                "inherit": "punch",
+                "knockback": "100 125",
+                "name": "radial_punch",
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/stryfe/p2_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/stryfe_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/stryfe/p2_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/stryfe/p2_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": 3,
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/stryfe/p2_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/stryfe_m/p2_power",
+                "time": 0.52
+            },
+            "trigger": {
+                "maxrange": 50,
+                "name": "radial_punch",
+                "time": 0.76
+            },
+            "trigger": {
+                "maxrange": 100,
+                "name": "radial_punch",
+                "time": 0.8
+            },
+            "trigger": {
+                "maxrange": 150,
+                "name": "radial_punch",
+                "time": 0.84
+            },
+            "trigger": {
+                "maxrange": 200,
+                "name": "radial_punch",
+                "time": 0.94
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
