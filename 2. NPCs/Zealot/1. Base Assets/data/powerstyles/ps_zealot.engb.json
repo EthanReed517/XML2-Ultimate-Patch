@@ -1,0 +1,135 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "projectile",
+            "animenum": "ea_power2",
+            "description": "UT: Plasma burst",
+            "lockangles": true,
+            "name": "power_attack",
+            "event": {
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%mdmg_high",
+                "entity": "zealot_rock",
+                "filename": "ents_zealot",
+                "inherit": "projectile",
+                "name": "zealot_rock",
+                "powerusage": 1,
+                "speed": 700,
+                "targetable": true,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "trigger": {
+                "effect": "char/zealot/p1_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/zealot_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "zealot_rock",
+                "time": 0.4
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/zealot_m/p2_power",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 7,
+            "aitype": "aoe",
+            "animenum": "ea_power3",
+            "lockangles": true,
+            "name": "power_boost",
+            "priority": 5,
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "inherit": "punch",
+                "name": "p_radius"
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "absolute": false,
+                "attackerheight": false,
+                "entity": "debris",
+                "filename": "ents_zealot",
+                "name": "relative_spawn",
+                "offset": "0 0 40",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/zealot/p3_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/zealot/p3_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/zealot/p3_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/zealot_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/zealot_m/p3_power",
+                "time": 0.76
+            },
+            "trigger": {
+                "life": 1,
+                "name": "hotspot",
+                "radius": 250,
+                "time": 0.3
+            },
+            "trigger": {
+                "damage": "%mdmg_high",
+                "index": 1,
+                "knockback": 555,
+                "maxrange": 85,
+                "name": "p_radius",
+                "time": 0.76,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "damage": "%mdmg_high",
+                "index": 2,
+                "knockback": 555,
+                "maxrange": 125,
+                "name": "p_radius",
+                "time": 0.8,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
