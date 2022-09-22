@@ -160,7 +160,7 @@
                 "victimeventtag": 101
             },
             "trigger": {
-                "effect": "char/emmaf/p2_fear",
+                "effect": "char/emmaf/p1_fear",
                 "fxlevel": 1,
                 "name": "effect",
                 "time": 0
@@ -341,7 +341,7 @@
             "event": {
                 "arc": 0,
                 "attacktype": "beam",
-                "beameffect": "char/emmaf/p1_hero_power",
+                "beameffect": "char/emmaf/p4_power",
                 "damagescale": "none",
                 "damagetype": "dmg_telekinesis",
                 "fxlevel": 1,
@@ -384,7 +384,7 @@
                 "attack_bone_pos": "35 4 57",
                 "beambolt": "Bip01 R Hand",
                 "damagelevel": 10,
-                "hiteffect": "char/emmaf/p12_impact",
+                "hiteffect": "char/emmaf/p4_impact",
                 "name": "beam_white",
                 "powerusage": "%emma_beam_pwr",
                 "time": 0.5,
@@ -483,13 +483,13 @@
             },
             "trigger": {
                 "bolt": "Bip01 Head",
-                "effect": "char/emmaf/p6_stun",
+                "effect": "char/emmaf/p5_stun",
                 "name": "effect",
                 "time": 0.2
             },
             "trigger": {
                 "bolt": "Bip01 Head",
-                "effect": "char/emmaf/p6_stun",
+                "effect": "char/emmaf/p5_stun",
                 "name": "effect",
                 "time": 0.2
             },
@@ -533,7 +533,6 @@
                     "how_used": "primary"
                 },
                 "damageMod": {
-                    "name": "dmgmod_weld",
                     "remove": "dmgmod_no_pain"
                 }
             },
@@ -588,14 +587,14 @@
             }
         },
         "FightMove": {
+            "aireusetime": 5,
             "aitype": "projectile",
             "animenum": "ea_resist_popup",
             "icon": 5,
-            "lockspeed": true,
+            "lockangles": true,
             "name": "power6",
             "priority": 5,
             "startchaintime": 0.7,
-            "turnrate": 0.15,
             "require": {
                 "cat": "skill",
                 "item": "emma_blast",
@@ -605,7 +604,8 @@
                 "bolt": "Bip01 Head",
                 "effect": "char/emmaf/emma_head",
                 "fxlevel": 2,
-                "how_used": "primary"
+                "name": "effect",
+                "time": 0
             },
             "trigger": {
                 "name": "sound",
@@ -617,30 +617,6 @@
                 "powerusage": "%emma_blast_pwr",
                 "time": 0
             },
-            "chain": {
-                "action": "samepowerhold",
-                "result": "power6_loop"
-            },
-            "chain": {
-                "action": "Idle",
-                "result": "power6_end"
-            }
-        },
-        "FightMove": {
-            "aitype": "projectile",
-            "animenum": "ea_menu_idle",
-            "combotextfinisher": "Devastation",
-            "combotextstarter": "Psionic",
-            "energypersecond": "%emma_blast_pwr",
-            "icon": 5,
-            "lockchaining": true,
-            "lockspeed": true,
-            "locktransitionangles": true,
-            "name": "power6_loop",
-            "noautoaim": true,
-            "priority": 5,
-            "startchaintime": 0.7,
-            "turnrate": 0.5,
             "event": {
                 "attack_bone_angles": "0 0 0",
                 "attack_bone_pos": "19 0 56",
@@ -654,19 +630,12 @@
                 "name": "blast_dmg",
                 "pierce": true,
                 "radius": 24,
-                "spawneffect": "char/emmaf/p11_power",
+                "spawneffect": "char/emmaf/p6_power",
                 "victimeventtag": 100,
                 "victimeventtag2": 120,
                 "damagemod": {
                     "name": "dmgmod_no_damage"
                 }
-            },
-            "trigger": {
-                "bolt": "Bip01 Head",
-                "effect": "char/emmaf/emma_head",
-                "fxlevel": 2,
-                "name": "effect",
-                "how_used": "primary"
             },
             "trigger": {
                 "allow_actors": true,
@@ -742,94 +711,6 @@
                 "index": 1,
                 "name": "blast_dmg",
                 "time": 0.15
-            },
-            "trigger": {
-                "index": 2,
-                "name": "blast_dmg",
-                "time": 0.3
-            },
-            "trigger": {
-                "index": 3,
-                "name": "blast_dmg",
-                "time": 0.45
-            },
-            "trigger": {
-                "name": "sound",
-                "sound": "char/emmaf_m/p6_power",
-                "time": 0.46
-            },
-            "trigger": {
-                "index": 4,
-                "name": "blast_dmg",
-                "time": 0.6
-            },
-            "trigger": {
-                "index": 5,
-                "name": "blast_dmg",
-                "time": 0.75
-            },
-            "trigger": {
-                "name": "sound",
-                "sound": "char/emmaf_m/p6_power",
-                "time": 0.8
-            },
-            "trigger": {
-                "index": 6,
-                "name": "blast_dmg",
-                "time": 0.9
-            },
-            "chain": {
-                "action": "samepowerhold",
-                "result": "power6_loop"
-            },
-            "chain": {
-                "action": "Idle",
-                "result": "power6_end"
-            }
-        },
-        "FightMove": {
-            "animenum": "ea_attack_heavy2",
-            "icon": 5,
-            "lockspeed": true,
-            "locktransitionangles": true,
-            "name": "power6_end",
-            "noautoaim": true,
-            "priority": 5,
-            "turnrate": 0.2,
-            "trigger": {
-                "name": "sound",
-                "sound": "char/emmaf_m/p6_impact",
-                "time": 0
-            },
-            "event": {
-                "attack_bone_angles": "0 0 0",
-                "attack_bone_pos": "19 0 56",
-                "beambolt": "Bip01 R Hand",
-                "damage": "%emma_blast_dmg",
-                "damagetype": "dmg_mental",
-                "fxlevel": 1,
-                "inherit": "beam",
-                "knockback": 20,
-                "maxrange": 450,
-                "name": "tapend",
-                "pierce": true,
-                "radius": 24,
-                "spawneffect": "char/emmaf/p11_power",
-                "victimeventtag": 100,
-                "victimeventtag2": 120,
-                "damagemod": {
-                    "name": "dmgmod_auto_knockback"
-                },
-                "special_fx": {
-                    "bolt": "Bip01 Head",
-                    "effect": "char/emmaf/emma_head",
-                    "fxlevel": 2,
-                    "how_used": "primary"
-                }
-            },
-            "trigger": {
-                "name": "tapend",
-                "time": 0
             },
             "chain": {
                 "action": "Idle",
@@ -920,7 +801,7 @@
                 },
                 "special_fx": {
                     "bolt": "Bip01 Spine1",
-                    "effect": "char/emmaf/sparkles",
+                    "effect": "char/emmaf/p10_sparkles",
                     "fxlevel": 1,
                     "how_used": "primary"
                 }
@@ -950,7 +831,8 @@
                 "time": 0.45
             },
             "trigger": {
-                "apply_ally": "all",
+                "apply_ally": "none",
+                "apply_self": true,
                 "life": "%emma_heal_lif",
                 "name": "powerup",
                 "powerusage": "%emma_heal_pwr",
@@ -994,7 +876,7 @@
             },
             "trigger": {
                 "bolt": "Bip01 R Hand",
-                "effect": "char/emmaf/p1_charge",
+                "effect": "char/emmaf/p12_charge",
                 "fxlevel": 1,
                 "name": "effect_sound",
                 "sound": "char/emmaf_m/p12_power",
@@ -1002,13 +884,13 @@
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
-                "effect": "char/emmaf/p1_charge",
+                "effect": "char/emmaf/p12_charge",
                 "fxlevel": 1,
                 "name": "effect",
                 "time": 0
             },
             "trigger": {
-                "effect": "char/emmaf/p6_power",
+                "effect": "char/emmaf/p12_power",
                 "fxlevel": 3,
                 "name": "effect",
                 "time": 0
@@ -1026,13 +908,13 @@
                 "time": 0.5,
                 "special_fx": {
                     "bolt": "Bip01 L Hand",
-                    "effect": "char/emmaf/p6_power",
+                    "effect": "char/emmaf/p12_power",
                     "fxlevel": 2,
                     "how_used": "primary"
                 },
                 "special_fx": {
                     "bolt": "Bip01 R Hand",
-                    "effect": "char/emmaf/p6_power",
+                    "effect": "char/emmaf/p12_power",
                     "fxlevel": 2,
                     "how_used": "primary"
                 }
@@ -1255,16 +1137,15 @@
                 "time": 0.1
             },
             "trigger": {
-                "apply_ally": "all",
+                "apply_ally": "none",
+                "apply_self": true,
                 "life": "%emma_xtreme2_lif",
                 "name": "powerup",
                 "time": 0.5,
                 "special_fx": {
-                    "effect": "char/emmaf/p9_trail"
-                },
-                "trigger": {
-                    "bolt": "Bip01 Pelvis",
-                    "effect": "char/emmaf/p9_hail"
+                    "effect": "char/emmaf/p9_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
                 },
                 "affecter": {
                     "affect_type": "scale",
