@@ -1,0 +1,162 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "aireusetime": 2.7,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "name": "power_attack",
+            "priority": 5,
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/deth_c/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/deth_c/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/deth_c/p1_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.28
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/deth_c_m/p1_charge",
+                "time": 0.1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/deth_c_m/p1_power",
+                "time": 0.28
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "knockback": 245,
+                "name": "punch",
+                "powerusage": 2,
+                "time": 0.28
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_resurrect_v",
+            "lockangles": true,
+            "name": "resurrect_v",
+            "nodamage": true,
+            "playspeed": 2,
+            "trigger": {
+                "effect": "char/deth_c/special_resurrect",
+                "name": "effect",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "name": "powerup_holocaust",
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "tag": 71,
+                "tag_name": "shield",
+                "time": 0,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_knockback",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_mind_control",
+                    "level": 0.1
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_pain",
+                    "level": 0
+                },
+                "affecter": {
+                    "attribute": "def_grab"
+                },
+                "affecter": {
+                    "attribute": "def_pickup"
+                },
+                "affecter": {
+                    "attribute": "def_finisher"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_stun",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "no_iceshell",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_knockback",
+                    "level": 0
+                },
+                "affecter": {
+                    "attribute": "slow_immune",
+                    "level": 1
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_psy_lift1",
+            "name": "hangtime",
+            "nodamage": false,
+            "playspeed": 1,
+            "chain": {
+                "action": "idle",
+                "result": "hangtime"
+            }
+        },
+        "FightMove": {
+            "name": "powerup_suckage",
+            "trigger": {
+                "name": "powerup",
+                "remove_tag": "suckage",
+                "tag": 70,
+                "time": 0
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "tag": 73,
+                "tag_name": "suckage",
+                "time": 0,
+                "special_fx": {
+                    "bolt": "Bip01 Pelvis",
+                    "effect": "char/holo/special_suck_victim"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}
