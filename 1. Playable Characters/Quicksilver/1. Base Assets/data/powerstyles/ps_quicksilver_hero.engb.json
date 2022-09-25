@@ -1,0 +1,1117 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/quicksilver_icons1.png",
+        "event": {
+            "inherit": "powerup",
+            "life": -1,
+            "name": "quickspeed",
+            "no_stack": true,
+            "tag_name": "quick_speed",
+            "affecter": {
+                "affect_type": "scale",
+                "attribute": "move",
+                "level": 1.5
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle",
+            "noncombat": true,
+            "trigger": {
+                "name": "quickspeed",
+                "time": 0
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "strafeleft"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "straferight"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "advance"
+            },
+            "chain": {
+                "action": "retreat",
+                "result": "retreat"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "groundattack",
+                "result": "groundattack"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            },
+            "chain": {
+                "action": "special",
+                "result": "boredloop"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "projectilenear",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Surge",
+            "combotextstarter": "Thundering",
+            "icon": 12,
+            "lockangles": true,
+            "name": "power1",
+            "playspeed": 1.5,
+            "powerup_tag": "quick_power1",
+            "priority": 5,
+            "event": {
+                "attacktype": "punch",
+                "damage": "3 5",
+                "fxlevel": 1,
+                "hiteffect": "char/quickhero/p1_impact",
+                "inherit": "punch",
+                "knockback": "%quick_charge_kb",
+                "name": "smash",
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "require": {
+                "cat": "skill",
+                "item": "quick_charge",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 Spine2",
+                "effect": "char/quickhero/special_trail",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/quick_m/p1_charge",
+                "time": 0.2
+            },
+            "trigger": {
+                "life": 0.3,
+                "movement": 200,
+                "name": "slide",
+                "targetdistance": 200,
+                "targetradius": 40,
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "smash",
+                "powerusage": "%quick_charge_pwr",
+                "time": 0.4
+            },
+            "trigger": {
+                "name": "smash",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Slam",
+            "combotextstarter": "Charged",
+            "icon": 7,
+            "name": "power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "q_form",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/quickhero/p1_charge",
+                "fxlevel": 6,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/quickhero/p1_charge",
+                "fxlevel": 6,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/quickhero/p2_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": false,
+                "center_bolt": true,
+                "life": "%q_form_time",
+                "name": "powerup",
+                "powerusage": "%q_form_pwr",
+                "time": 0.5,
+                "affecter": {
+                    "attribute": "attack_rating",
+                    "level": "%q_form_atk_boost"
+                },
+                "affecter": {
+                    "attribute": "defense_rating",
+                    "level": "%q_form_def_boost"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%q_form_move_scale"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/quickhero/p7_aura",
+                    "fxlevel": 1
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/quickhero/p7_aura",
+                    "fxlevel": 1
+                },
+                "special_fx": {
+                    "effect": "char/quickhero/p7_aura",
+                    "fxlevel": 2
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/quick_m/p2_power",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "buffself",
+            "animenum": "ea_attack_stun3",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "quick_shield",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/quickhero/p6_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/quick_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/quickhero/p6_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/quickhero/p6_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/quick_m/p3_power",
+                "time": 0.7
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%quk_shield_life",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%quk_shield_pwr",
+                "time": 0.7,
+                "special_fx": {
+                    "effect": "char/quickhero/p6_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_damage": "dmg_physical"
+                    }
+                },
+                "affecter": {
+                    "attribute": "reflect_damage",
+                    "level": "%quk_shield_dmg_ref"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "event": {
+            "arc": 180,
+            "damage": 1,
+            "inherit": "punch",
+            "knockback": 245,
+            "maxrange": 36,
+            "name": "quick_vortex_punch",
+            "damageMod": {
+                "name": "dmgmod_extinguish"
+            }
+        },
+        "event": {
+            "attacktype": "punch",
+            "damage": "%quick_whirl_dmg",
+            "damagetype": "dmg_physical",
+            "knockback": 245,
+            "name": "self_vortex_punch",
+            "type": "ce_atk_self"
+        },
+        "FightMove": {
+            "aireusetime": 12,
+            "aitype": "aoe",
+            "animenum": "ea_power5",
+            "blendtime": 0.49,
+            "icon": 4,
+            "lockangles": true,
+            "name": "power4",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.7,
+            "require": {
+                "cat": "skill",
+                "item": "quick_whirlwind",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%quick_whirl_pwr",
+                "time": 0
+            },
+            "event": {
+                "name": "set_visible",
+                "teleportation_caused": false,
+                "type": "ce_force_visibility"
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/quick_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/quickhero/p4_power",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.4,
+                "visible": false
+            },
+            "trigger": {
+                "name": "quick_vortex_punch",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power4_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power7",
+            "blendtime": 0.5,
+            "combotextfinisher": "Twister",
+            "combotextstarter": "Tempestuous",
+            "energypersecond": "%quick_whirl_pwr",
+            "fallback": "attacklight1",
+            "handler": "ch_magnetic_grasp",
+            "locktransitionangles": true,
+            "name": "power4_loop",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.4,
+            "turnrate": 0.6,
+            "trigger": {
+                "effect": "char/quickhero/p4_power",
+                "loop_timeout": 2,
+                "loop_type": "start",
+                "name": "effect_sound",
+                "sound": "char/quick_m/p4_loop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/quickhero/special_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "quick_vortex_punch",
+                "tag": 100,
+                "time": 0,
+                "victimeventtag": 101,
+                "victimeventtag2": 102
+            },
+            "trigger": {
+                "failtag": 104,
+                "filteractor": true,
+                "name": "filtevent",
+                "passtag": 103,
+                "tag": 102,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%quick_whirl_dmg",
+                "damagetype": "dmg_physical",
+                "life": 1,
+                "name": "powerup",
+                "tag": 103,
+                "time": -1
+            },
+            "trigger": {
+                "name": "self_vortex_punch",
+                "tag": 104,
+                "time": -1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power4_end"
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power4_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_stun",
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power4_end",
+            "playspeed": 1.2,
+            "priority": 5,
+            "trigger": {
+                "loop_type": "stop",
+                "name": "sound",
+                "sound": "char/quick_m/p4_loop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.3,
+                "visible": true
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/quick_m/p4_impact",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power11",
+            "blendtime": 0,
+            "description": "SPEEDY PICKPOCKET",
+            "icon": 15,
+            "lockangles": true,
+            "name": "power5",
+            "playspeed": 2,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "quick_pickpocket",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": 2,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/quickhero/p1_charge",
+                "fxlevel": 7,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/quickhero/p11_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "center_bolt": true,
+                "life": "%quick_pocket_life",
+                "name": "powerup",
+                "time": 0.65,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "extra_potions",
+                    "level": "%quick_pocket_packs"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "extra_money",
+                    "level": "%quick_pocket_tech"
+                },
+                "special_fx": {
+                    "effect": "char/quickhero/p11_aura",
+                    "fxlevel": 2
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/quick_m/p5_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/quick_m/p5_power",
+                "time": 0.65
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Clap",
+            "combotextstarter": "Booming",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "powerup_tag": "quick_power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "quick_clap",
+                "level": 1
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "3 5",
+                "inherit": "punch",
+                "name": "radial_punch",
+                "tiles": false
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": 0,
+                "damagetype": "dmg_wind",
+                "inherit": "punch",
+                "name": "radial_wind",
+                "tiles": false,
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/quickhero/p1_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/quick_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/quickhero/p1_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/quickhero/p2_impact",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.65
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/quick_m/p6_impact",
+                "time": 0.65
+            },
+            "trigger": {
+                "arc": 45,
+                "maxrange": "%quick_clap_ft",
+                "name": "radial_punch",
+                "powerusage": "%quick_clap_pwr",
+                "time": 0.7
+            },
+            "trigger": {
+                "arc": 45,
+                "maxrange": "%quick_clap_ft",
+                "name": "radial_wind",
+                "time": 0.7
+            },
+            "trigger": {
+                "arc": 45,
+                "maxrange": "%quick_clap_ft",
+                "name": "radial_punch",
+                "tiles": true,
+                "time": 0.7
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "melee",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Punch",
+            "combotextstarter": "Lifting",
+            "icon": 14,
+            "lockangles": true,
+            "name": "power7",
+            "powerup_tag": "quick_power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "quick_uppercut",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/quickhero/p1_charge",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/quick_m/p7_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "slide",
+                "targetdistance": 70,
+                "time": 0.1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/quick_m/p7_power",
+                "time": 0.35
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "3 5",
+                "fxlevel": 3,
+                "hiteffect": "char/quickhero/p1_impact",
+                "name": "punch",
+                "powerusage": "%quick_uppercut_pwr",
+                "time": 0.35,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power5",
+            "blendtime": 0,
+            "combotextfinisher": "Rampage",
+            "description": "QUICKSILVER RUSH",
+            "handler": "ch_restore_visible_on_interrupt",
+            "icon": 2,
+            "name": "power8",
+            "playspeed": 5,
+            "powerup_tag": "quick_power8",
+            "priority": "uninterruptable",
+            "require": {
+                "cat": "skill",
+                "item": "quick_xtreme",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "event": {
+                "name": "set_visible",
+                "teleportation_caused": false,
+                "type": "ce_force_visibility"
+            },
+            "trigger": {
+                "life": 5,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/quick_m/p8_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.4,
+                "visible": false
+            },
+            "trigger": {
+                "effect": "char/quickhero/p8_power",
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/quick_m/p8_impact",
+                "time": 0.4
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_physical",
+                "knockback": 300,
+                "maxrange": 300,
+                "name": "punch",
+                "time": 0.45,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.7,
+                "visible": true
+            },
+            "trigger": {
+                "end": true,
+                "name": "xtreme_start",
+                "time": 1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aitype": "projectile",
+            "animenum": "ea_spin_right",
+            "combotextfinisher": "Shot",
+            "combotextstarter": "Quick",
+            "endchaintime": 0.9,
+            "icon": 13,
+            "lockangles": true,
+            "name": "power9",
+            "priority": 5,
+            "startchaintime": 0.1,
+            "turnrate": 0.15,
+            "require": {
+                "cat": "talent",
+                "item": "quick_shuriken",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/quick_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/quickhero/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/quickhero/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/quickhero/p1_power",
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "projectile",
+                "center": true,
+                "count": 1,
+                "damage": "%quick_p9_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_electricity",
+                "entity": "quick_blast",
+                "filename": "ents_quickhero",
+                "fulltargeting": true,
+                "maxrange": 800,
+                "name": "projectile",
+                "offset": "25 0 10",
+                "powerusage": "%quick_p9_pwr",
+                "speed": 800,
+                "tag": 1,
+                "targetable": true,
+                "time": 0.49,
+                "victimeventtag": 100
+            },
+            "trigger": {
+                "life": "%quick_p9_stun",
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 100,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "event": {
+            "damagescale": "none",
+            "name": "teleport_data_store",
+            "type": "ce_atk_teleport_mark_start"
+        },
+        "event": {
+            "name": "set_visible",
+            "teleportation_caused": true,
+            "type": "ce_force_visibility"
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_jump_atk_land",
+            "cansteal": false,
+            "combotextfinisher": "Frenzy",
+            "combotextstarter": "Fast",
+            "endchaintime": 0.95,
+            "handler": "ch_tele_jump",
+            "icon": 9,
+            "name": "power10",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.9,
+            "turnrate": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "qck_fnzy",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 Spine2",
+                "effect": "char/quickhero/special_trail",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.38
+            },
+            "trigger": {
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_physical",
+                "forceretargeting": true,
+                "maxrange": 360,
+                "name": "teleport_data_store",
+                "nostomp": true,
+                "powerusage": "%qck_fnzy_pwr",
+                "time": 0.38
+            },
+            "trigger": {
+                "count": "set",
+                "name": "count",
+                "time": 0,
+                "value": "%qck_fnzy_num_att"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power10_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1",
+            "blendtime": 0,
+            "combotextfinisher": "Frenzy",
+            "combotextstarter": "Fast",
+            "endchaintime": 0.95,
+            "fallback": "power10_end",
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "power10_loop",
+            "noautoaim": true,
+            "playspeed": 2,
+            "powerup_tag": "qck_power10",
+            "priority": 5,
+            "startchaintime": 0.9,
+            "require": {
+                "cat": "counter",
+                "level": 1
+            },
+            "trigger": {
+                "count": "add",
+                "name": "count",
+                "time": 0,
+                "value": -1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/quick_m/p10_power",
+                "time": 0
+            },
+            "trigger": {
+                "attacktype": "direct",
+                "maxrange": "%qck_tele_range",
+                "name": "teleport_scaled_atk",
+                "time": 0
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.45,
+                "visible": true
+            },
+            "trigger": {
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_teleport",
+                "height": 18,
+                "name": "teleport_punch",
+                "time": 0.33
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power10_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_land",
+            "blendtime": 0,
+            "combotextfinisher": "Frenzy",
+            "combotextstarter": "Fast",
+            "endchaintime": 0.95,
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "power10_end",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.9,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/quick_m/p10_power",
+                "time": 0
+            },
+            "trigger": {
+                "attacktype": "direct",
+                "maxrange": 360,
+                "name": "teleport_return",
+                "powerusage": 0,
+                "time": 0.05
+            },
+            "trigger": {
+                "cleardata": true,
+                "name": "teleport_data_store",
+                "set_visible": true,
+                "time": 0.5
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_grab_break",
+            "endchaintime": 0.99,
+            "handler": "ch_tele_jump",
+            "name": "teleportfailedstrike",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.9,
+            "trigger": {
+                "effect": "char/quickhero/p10_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/quick_m/p10_impact",
+                "teleport_visible": false,
+                "time": 0.9
+            },
+            "trigger": {
+                "attacktype": "direct",
+                "maxrange": 360,
+                "name": "teleport_return",
+                "powerusage": 0,
+                "time": 0.92
+            },
+            "trigger": {
+                "effect": "char/quickhero/p10_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.95
+            },
+            "trigger": {
+                "cleardata": true,
+                "name": "teleport_data_store",
+                "set_visible": true,
+                "time": 0.95
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_ground",
+            "blendtime": 0,
+            "combotextfinisher": "Frenzy",
+            "combotextstarter": "Fast",
+            "endchaintime": 0.95,
+            "handler": "ch_teleport_stomp",
+            "lockangles": true,
+            "name": "teleportstomp",
+            "noautoaim": true,
+            "powerup_tag": "qck_power10",
+            "priority": 6,
+            "startchaintime": 0.9,
+            "trigger": {
+                "effect": "char/quickhero/p10_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/quick_m/p10_impact",
+                "time": 0
+            },
+            "trigger": {
+                "damage": "3 5",
+                "damagescale": "normal",
+                "damagetype": "dmg_teleport",
+                "height": -72,
+                "maxrange": 3,
+                "name": "teleport_punch",
+                "time": 0.33
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.45,
+                "visible": true
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power10_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_grab_break",
+            "blendtime": 0,
+            "endchaintime": 0.95,
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "postteleport",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.9,
+            "trigger": {
+                "effect": "char/quickhero/p10_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/quick_m/p10_impact",
+                "time": 0
+            },
+            "trigger": {
+                "cleardata": true,
+                "name": "teleport_data_store",
+                "set_visible": true,
+                "time": 0.45
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            }
+        }
+    }
+}
