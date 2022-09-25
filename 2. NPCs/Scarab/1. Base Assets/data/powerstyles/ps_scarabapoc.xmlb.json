@@ -1,0 +1,144 @@
+{
+    "PowerStyle": {
+        "cansteal": false,
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle",
+            "noncombat": true,
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "run",
+                "result": "walk"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_walk1",
+            "handler": "ch_move",
+            "lockchaining": false,
+            "name": "walk",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "run",
+                "result": "walk"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_walk1",
+            "handler": "ch_move",
+            "lockchaining": false,
+            "name": "jog",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "run",
+                "result": "walk"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_walk1",
+            "handler": "ch_move",
+            "lockchaining": false,
+            "name": "run",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "run",
+                "result": "walk"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "death": true,
+            "lockangles": true,
+            "name": "deathgen",
+            "priority": "uninterruptable",
+            "sequenced": true,
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "base/material/explode/exp_generic_sml",
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "name": "remove",
+                "time": 0.51
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "death": true,
+            "lockangles": true,
+            "name": "suicide",
+            "priority": "uninterruptable",
+            "sequenced": true,
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "80 100",
+                "knockback": 500,
+                "maxrange": 84,
+                "name": "punch",
+                "powerattack": true,
+                "powerusage": 4,
+                "time": 0.3,
+                "verticalrange": 36,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "base/material/explode/exp_generic_lrg",
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "remove",
+                "time": 0.31
+            }
+        }
+    }
+}
