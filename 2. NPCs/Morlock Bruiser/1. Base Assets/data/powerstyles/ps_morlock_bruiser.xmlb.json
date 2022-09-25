@@ -1,0 +1,128 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "aireusetime": 2.7,
+            "aitype": "melee",
+            "animenum": "ea_power2",
+            "name": "power_attack",
+            "priority": 5,
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/morl_b/p1_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/morl_b_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/morl_b_m/p1_power",
+                "time": 0.35
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "knockback": 245,
+                "name": "punch",
+                "powerusage": 2,
+                "time": 0.45,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_smash",
+            "priority": 5,
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%mdmg_low",
+                "damagelevel": 1,
+                "damagescale": "difficulty",
+                "inherit": "punch",
+                "name": "radial_punch"
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/morl_b/p2_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/morl_b_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/morl_b/p2_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": 3,
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/morl_b/p2_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/morl_b_m/p2_power",
+                "time": 0.46
+            },
+            "trigger": {
+                "maxrange": 50,
+                "name": "radial_punch",
+                "time": 0.46
+            },
+            "trigger": {
+                "maxrange": 100,
+                "name": "radial_punch",
+                "time": 0.5
+            },
+            "trigger": {
+                "maxrange": 150,
+                "name": "radial_punch",
+                "time": 0.54
+            },
+            "trigger": {
+                "maxrange": 200,
+                "name": "radial_punch",
+                "time": 0.58
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_resurrect_v",
+            "lockangles": true,
+            "name": "resurrect_v",
+            "nodamage": true,
+            "trigger": {
+                "effect": "char/morl_b/special_resurrect",
+                "name": "effect",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}
