@@ -1,0 +1,848 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "quick_slow",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "slow_immune",
+                        "level": 1
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Silver Streak",
+            "description": "Charges towards enemies and objects, knocking them back.",
+            "descshort": "Melee",
+            "icon": 12,
+            "icon_texture": "textures/ui/quicksilver_icons2.png",
+            "name": "quick_charge",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_charge_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "quick_charge_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_charge_dmg",
+                    "value": 3.5
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "quick_charge_dmg",
+                    "value": 9.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_charge_kb",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "quick_charge_kb",
+                    "value": 305
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_charge_ar",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "quick_charge_ar",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_charge_pwr",
+                    "value": 10
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "quick_charge_pwr",
+                    "value": 92
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%quick_charge_dmg:s $DMG_PHYSICAL (%quick_charge_dmg:x)\\n%quick_charge_kb $KB\\n%quick_charge_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%quick_charge_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%quick_charge_dmg",
+                        "scope_node": "quick_power1"
+                    },
+                    "affecter": {
+                        "attribute": "atk_attack_rating",
+                        "level": "%quick_charge_ar",
+                        "scope_node": "quick_power1"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Slipstream",
+            "description": "Quicksilver generates a slipstream that allows his allies to move as fast as he does.",
+            "descshort": "Boost",
+            "icon": 7,
+            "icon_texture": "textures/ui/quicksilver_icons2.png",
+            "name": "q_form",
+            "power": "power2",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "q_form_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "q_form_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "q_form_atk_boost",
+                    "value": 1.1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "q_form_atk_boost",
+                    "value": 2.08
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "q_form_def_boost",
+                    "value": 1.3
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "q_form_def_boost",
+                    "value": 2.09
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "q_form_move_scale",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "q_form_move_scale",
+                    "value": 2.09
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "q_form_time",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "q_form_time",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "q_form_pwr",
+                    "value": 48
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "q_form_pwr",
+                    "value": 504
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%q_form_atk_boost:s $AR, %q_form_def_boost:s $DR\\n%q_form_move_scale:s Movement Speed\\n%q_form_time seconds\\n%q_form_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%q_form_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Wundagore Shield",
+            "description": "All party members are enveloped in a shield of windgusts caused by Quicksilver's backdraft, reflecting some Melee $DMG back at attackers.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/quicksilver_icons2.png",
+            "name": "quick_shield",
+            "power": "power3",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quk_shield_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "quk_shield_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quk_shield_pwr",
+                    "value": 32
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "quk_shield_pwr",
+                    "value": 304
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quk_shield_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "quk_shield_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quk_shield_dmg_ref",
+                    "value": 0.15
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "quk_shield_dmg_ref",
+                    "value": 0.57
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%quk_shield_dmg_ref:p $DMG_MELEE\\n%quk_shield_life seconds\\n%quk_shield_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%quk_shield_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Whirlwind Spin",
+            "description": "Quicksilver creates a powerful wind vortex that pulls in objects and enemies, damaging them on contact.\\n(~41Press And Hold~~)",
+            "descshort": "Radial",
+            "icon": 4,
+            "icon_texture": "textures/ui/quicksilver_icons2.png",
+            "name": "quick_whirlwind",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_whirl_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "quick_whirl_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_whirl_pwr",
+                    "value": 36
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "quick_whirl_pwr",
+                    "value": 142
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_whirl_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "quick_whirl_dmg",
+                    "value": "117 132"
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%quick_whirl_dmg $DMG_WIND\\n%quick_whirl_pwr $EP per second",
+                "require": {
+                    "cat": "level",
+                    "level": "%quick_whirl_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "SPEEDY PICKPOCKET",
+            "description": "Increases Techbit, Health Pack and Energy Pack drops.",
+            "descshort": "Boost",
+            "icon": 15,
+            "icon_texture": "textures/ui/quicksilver_icons2.png",
+            "name": "quick_pickpocket",
+            "power": "power5",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_pocket_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "quick_pocket_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_pocket_packs",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "quick_pocket_packs",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_pocket_tech",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "quick_pocket_tech",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_pocket_life",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "quick_pocket_life",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%quick_pocket_packs:p Health Packs and Energy Packs\\n%quick_pocket_tech:p Techbits\\n%quick_pocket_life seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%quick_pocket_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Accelerated Clap",
+            "description": "A thunderous clap that sends out a 140 degree blast of damage.",
+            "descshort": "Radial",
+            "icon": 5,
+            "icon_texture": "textures/ui/quicksilver_icons2.png",
+            "name": "quick_clap",
+            "power": "power6",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_clap_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "quick_clap_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_clap_dmg",
+                    "value": 3.3
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "quick_clap_dmg",
+                    "value": 6.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_clap_pwr",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "quick_clap_pwr",
+                    "value": 86
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_clap_ft",
+                    "value": 120
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "quick_clap_ft",
+                    "value": 144
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%quick_clap_dmg:s $DMG_PHYSICAL (%quick_clap_dmg:x)\\n%quick_clap_ft radius\\n%quick_clap_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%quick_clap_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%quick_clap_dmg",
+                        "scope_node": "quick_power6"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Supersonic Uppercut",
+            "description": "An super-fast punch that pops enemies up into the air.",
+            "descshort": "Melee",
+            "icon": 14,
+            "icon_texture": "textures/ui/quicksilver_icons2.png",
+            "name": "quick_uppercut",
+            "power": "power7",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_uppercut_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "quick_uppercut_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_uppercut_pwr",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "quick_uppercut_pwr",
+                    "value": 76
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_uppercut_dmg",
+                    "value": 4.1
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "quick_uppercut_dmg",
+                    "value": 9.2
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%quick_uppercut_dmg:s $DMG_PHYSICAL (%quick_uppercut_dmg:x)\\n%quick_uppercut_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%quick_uppercut_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%quick_uppercut_dmg",
+                        "scope_node": "quick_power7"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "QUICKSILVER RUSH",
+            "description": "Quicksilver sprints around the area and attacks every enemy in sight.",
+            "descshort": "Radial",
+            "icon": 2,
+            "icon_texture": "textures/ui/quicksilver_icons2.png",
+            "name": "quick_xtreme",
+            "power": "power8",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_xtreme_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "quick_xtreme_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_xtreme_dmg",
+                    "value": 7.5
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "quick_xtreme_dmg",
+                    "value": 15.5
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%quick_xtreme_dmg:s $DMG_PHYSICAL (%quick_xtreme_dmg:x)",
+                "require": {
+                    "cat": "level",
+                    "level": "%quick_xtreme_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%quick_xtreme_dmg",
+                        "scope_node": "quick_power8"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Quick Shot",
+            "description": "Quicksilver creates a charge of static Electricity with his hands and hurls it at an enemy.",
+            "descshort": "Projectile",
+            "icon": 13,
+            "icon_texture": "textures/ui/quicksilver_icons2.png",
+            "name": "quick_shuriken",
+            "power": "power9",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_shuriken_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "quick_shuriken_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_shuriken_dmg",
+                    "value": "6 9"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "quick_shuriken_dmg",
+                    "value": "117 132"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_shuriken_num",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "quick_shuriken_num",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_shuriken_pwr",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "quick_shuriken_pwr",
+                    "value": 140
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%quick_shuriken_dmg $DMG_ELECTRICITY\\n%quick_shuriken_stun second stun\\n%quick_shuriken_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%quick_shuriken_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Fast Frenzy",
+            "description": "Rapidly runs to attack multiple targets, stunning them.",
+            "descshort": "Melee",
+            "icon": 9,
+            "icon_texture": "textures/ui/quicksilver_icons2.png",
+            "name": "qck_fnzy",
+            "power": "power10",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "qck_fnzy_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "qck_fnzy_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "qck_fnzy_dam_boost",
+                    "value": 3.3
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "qck_fnzy_dam_boost",
+                    "value": 4.75
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "qck_fnzy_atk_bonus",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "qck_fnzy_atk_bonus",
+                    "value": 2.76
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "qck_fnzy_num_att",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "qck_fnzy_num_att",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "qck_fnzy_pwr",
+                    "value": 62
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "qck_fnzy_pwr",
+                    "value": 140
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%qck_fnzy_dam_boost:s $DMG_MELEE (%qck_fnzy_dam_boost:x)\\n%qck_fnzy_num_att attacks\\n%qck_fnzy_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%qck_fnzy_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_attack_rating",
+                        "level": "%qck_fnzy_atk_bonus",
+                        "scope_node": "qck_power10"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "level": "%qck_fnzy_dam_boost",
+                        "scope_node": "qck_power10"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Regeneration",
+            "description": "Heals over time.",
+            "descshort": "Passive",
+            "icon": 1,
+            "icon_texture": "textures/ui/quicksilver_icons2.png",
+            "name": "q_regen",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "q_regen_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "q_regen_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "q_regen_health",
+                    "value": 0.0017
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "q_regen_health",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "q_regen_health_p",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "q_regen_health_p",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "q_regen_health_t",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "q_regen_health_t",
+                    "value": 6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%q_regen_health_p:f% of max $HP every %q_regen_health_t seconds",
+                "require": {
+                    "category": "level",
+                    "level": "%q_regen_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "health_regen_pct",
+                        "level": "%q_regen_health"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Enhanced Speed",
+            "description": "Quicksilver's enhanced speed allows for a natural increase in $AR and $DR.",
+            "descshort": "Passive",
+            "icon": 0,
+            "icon_texture": "textures/ui/quicksilver_icons2.png",
+            "name": "quick_senses",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_senses_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "quick_senses_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_senses_ar",
+                    "value": 1.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "quick_senses_ar",
+                    "value": 1.8
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_senses_dr",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "quick_senses_dr",
+                    "value": 1.75
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%quick_senses_ar:s $AR\\n%quick_senses_dr:s $DR",
+                "require": {
+                    "category": "level",
+                    "level": "%quick_senses_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "attack_rating",
+                        "level": "%quick_senses_ar"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "defense_rating",
+                        "level": "%quick_senses_dr"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Quick Reflexes",
+            "description": "Increases chance to dodge Melee attacks and projectiles.",
+            "descshort": "Passive",
+            "icon": 3,
+            "icon_texture": "textures/ui/quicksilver_icons2.png",
+            "name": "quick_dodge",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "qudodge_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "qudodge_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "qudodge_chance",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "qudodge_chance",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%qudodge_chance:p chance to dodge",
+                "require": {
+                    "cat": "level",
+                    "level": "%qudodge_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%qudodge_chance",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        },
+                        "scope": {
+                            "scope_attack": "projectile"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
