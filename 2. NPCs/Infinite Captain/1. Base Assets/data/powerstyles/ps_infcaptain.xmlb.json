@@ -1,0 +1,62 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beamanyrange",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_attack",
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/inf_c/p1_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/inf_c_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/inf_c_m/p1_power",
+                "time": 0.35
+            },
+            "event": {
+                "attacktype": "beam",
+                "hiteffect": "char/inf_c/p1_impact",
+                "inherit": "beam",
+                "name": "energy_blast",
+                "time": 0.35
+            },
+            "trigger": {
+                "arc": 0,
+                "attack_bone_angles": "-157 -1 -1",
+                "attack_bone_pos": "26 -12 49",
+                "beambolt": "Bip01 R Forearm",
+                "beameffect": "char/inf_c/p1_power_right",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "damagetype": "dmg_mental",
+                "maxrange": 800,
+                "name": "energy_blast",
+                "powerusage": 1,
+                "time": 0.35
+            },
+            "trigger": {
+                "attack_bone_angles": "-24 -2 0",
+                "attack_bone_pos": "26 11 50",
+                "beambolt": "Bip01 L Forearm",
+                "beameffect": "char/inf_c/p1_power_left",
+                "name": "energy_blast",
+                "time": 0.35
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}
