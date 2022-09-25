@@ -1,0 +1,67 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_attack",
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "inherit": "punch",
+                "knockback": 40,
+                "name": "p_radius",
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/pow_m_m/p1_charge",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/pow_m/p1_charge",
+                "name": "effect",
+                "time": 0.28
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/pow_m/p1_charge",
+                "name": "effect",
+                "time": 0.28
+            },
+            "trigger": {
+                "effect": "char/pow_m/p1_power",
+                "name": "effect",
+                "time": 0.42
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/pow_m_m/p1_power",
+                "time": 0.42
+            },
+            "trigger": {
+                "damage": "%mdmg_high",
+                "maxrange": 75,
+                "name": "p_radius",
+                "tag": 2,
+                "time": 0.42
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
