@@ -1,0 +1,90 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_attack",
+            "priority": 5,
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/mutmix/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/mutmix/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mutmix_m/p1_charge",
+                "time": 0.15
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "knockback": 120,
+                "name": "punch",
+                "time": 0.5,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beam",
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power_smash",
+            "priority": 5,
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/mutmix/p1_charge",
+                "name": "effect_sound",
+                "sound": "char/mutmix_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mutmix_m/p2_power",
+                "time": 0.54
+            },
+            "trigger": {
+                "arc": 0,
+                "attack_bone_angles": "-45 -32 -23",
+                "attack_bone_pos": "26 -3 57",
+                "attacktype": "beam",
+                "beambolt": "Bip01 R Hand",
+                "beameffect": "char/mutmix/p2_power",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "hiteffect": "char/mutmix/p2_impact",
+                "knockback": 245,
+                "maxrange": 800,
+                "name": "beam",
+                "powerusage": 6,
+                "spawneffect": "char/mutmix/p2_shot",
+                "time": 0.54
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}
