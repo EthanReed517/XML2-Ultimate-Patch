@@ -1,0 +1,904 @@
+{
+    "talents": {
+        "talent": {
+            "descname": "Earth Crack",
+            "description": "Avalanche cracks open the earth and sends chunks of rock smashing up through the ground, popping up any enemy they hit.",
+            "descshort": "Blast",
+            "icon": 0,
+            "icon_texture": "textures/ui/avalanche_icons2.png",
+            "name": "aval_crack",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_crack_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "aval_crack_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_crack_pwr",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "aval_crack_pwr",
+                    "value": 126
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_crack_num",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "aval_crack_num",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_crack_dmg",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "aval_crack_dmg",
+                    "value": "195 217"
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%aval_crack_dmg $DMG_PHYSICAL\\n%aval_crack_num spikes\\n%aval_crack_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%aval_crack_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Landslide",
+            "description": "Avalanche slides on a wave of earth, knocking enemies back with a kick on contact.\\n(~41Press And Hold~~)",
+            "descshort": "Charge",
+            "icon": 2,
+            "icon_texture": "textures/ui/avalanche_icons2.png",
+            "name": "aval_rock_slide",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rock_slide_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "rock_slide_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rock_slide_pwr",
+                    "value": 19
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "rock_slide_pwr",
+                    "value": 130
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rock_slide_dmg",
+                    "value": "53 61"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "rock_slide_dmg",
+                    "value": "198 220"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "rock_slide_kb",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "rock_slide_kb",
+                    "value": 245
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%rock_slide_dmg $DMG_PHYSICAL\\n%rock_slide_kb $KB\\n%rock_slide_pwr $EP per second",
+                "require": {
+                    "cat": "level",
+                    "level": "%rock_slide_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Upheaval",
+            "description": "Raises a boulder from the ground then detonates it, damaging nearby enemies and knocking them back. Puts out fires.",
+            "descshort": "Radial",
+            "icon": 4,
+            "icon_texture": "textures/ui/avalanche_icons2.png",
+            "name": "aval_earth",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_earth_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "aval_earth_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_earth_pwr",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "aval_earth_pwr",
+                    "value": 158
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_earth_dmg",
+                    "value": "10 13"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "aval_earth_dmg",
+                    "value": "66 75"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_earth_dmg2",
+                    "value": "14 18"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "aval_earth_dmg2",
+                    "value": "95 107"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_earth_kb",
+                    "value": 250
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "aval_earth_kb",
+                    "value": 550
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%aval_earth_dmg boulder $DMG_PHYSICAL\\n%aval_earth_dmg2 explosion $DMG_PHYSICAL\\n%aval_earth_kb $KB\\n%aval_earth_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%aval_earth_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Tremors",
+            "description": "Creates a travelling tremor that damaging enemies on contact. Puts out fires.",
+            "descshort": "Special",
+            "icon": 14,
+            "icon_texture": "textures/ui/avalanche_icons2.png",
+            "name": "aval_rubb",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_rubb_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "aval_rubb_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_rubb_pwr",
+                    "value": 44
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "aval_rubb_pwr",
+                    "value": 145
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_rubb_lif",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "aval_rubb_lif",
+                    "value": 9
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_rubb_dmg",
+                    "value": "31 37"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "aval_rubb_dmg",
+                    "value": "117 132"
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%aval_rubb_dmg $DMG_PHYSICAL per second\\n%aval_rubb_lif seconds\\n%aval_rubb_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%aval_rubb_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Earthen Cage",
+            "description": "Spikes rise up from the ground and create a cage around an enemy, trapping them for a time.",
+            "descshort": "Trap",
+            "icon": 3,
+            "icon_texture": "textures/ui/avalanche_icons2.png",
+            "name": "aval_sink",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_sink_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "aval_sink_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_sink_pwr",
+                    "value": 150
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "aval_sink_pwr",
+                    "value": 60
+                }
+            },
+            "level": {
+                "count": 12,
+                "description": "%aval_sink_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%aval_sink_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "aval_earth",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Boulder Blast",
+            "description": "Avalanche encases himself with large rocks then blasts them outward, knocking back surrounding enemies. Puts out fires.",
+            "descshort": "Blast",
+            "icon": 6,
+            "icon_texture": "textures/ui/avalanche_icons2.png",
+            "name": "aval_robla",
+            "power": "power6",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_robla_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "aval_robla_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_robla_pwr",
+                    "value": 86
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "aval_robla_pwr",
+                    "value": 175
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_robla_knb",
+                    "value": 250
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "aval_robla_knb",
+                    "value": 450
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_robla_dmg",
+                    "value": "40 46"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "aval_robla_dmg",
+                    "value": "80 90"
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%aval_robla_dmg $DMG_PHYSICAL\\n%aval_robla_knb $KB\\n%aval_robla_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%aval_robla_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "aval_sink",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "EARTHQUAKE",
+            "description": "An Xtreme radial attack that deals $DMG_PHYSICAL and causes knockback. Puts out fires.",
+            "descshort": "Xtreme",
+            "icon": 1,
+            "icon_texture": "textures/ui/avalanche_icons2.png",
+            "name": "aval_xtreme",
+            "power": "power7",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_xtreme_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "aval_xtreme_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_xtreme_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "aval_xtreme_dmg",
+                    "value": "279 309"
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%aval_xtreme_dmg $DMG_PHYSICAL",
+                "require": {
+                    "cat": "level",
+                    "level": "%aval_xtreme_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "SEISMIC PROTECTION",
+            "description": "Avalanche becomes invulnerable and spends no $EP for a time.",
+            "descshort": "Boost",
+            "icon": 7,
+            "icon_texture": "textures/ui/avalanche_icons2.png",
+            "name": "aval_xtreme2",
+            "power": "power8",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_xtreme2_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 4,
+                    "name": "aval_xtreme2_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_xtreme2_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 4,
+                    "name": "aval_xtreme2_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 4,
+                "description": "%aval_xtreme2_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%aval_xtreme2_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Aftershocks",
+            "description": "Charging his body, Avalanche does more damage with each attack.",
+            "descshort": "Boost",
+            "icon": 12,
+            "icon_texture": "textures/ui/avalanche_icons2.png",
+            "name": "ava_explosive",
+            "power": "power9",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ava_explosive_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "ava_explosive_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ava_explosive_life",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "ava_explosive_life",
+                    "value": 25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ava_explosive_res",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 158,
+                    "name": "ava_explosive_res",
+                    "value": 2.6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ava_explosive_dmg",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "ava_explosive_dmg",
+                    "value": 0.47
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ava_explosive_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "ava_explosive_pwr",
+                    "value": 516
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%ava_explosive_res:p $AR\\n%ava_explosive_life seconds\\n%ava_explosive_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ava_explosive_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Tremor Shield",
+            "description": "Strong tremors surround Avalanche which absorb $DMG_ELEMENTAL and damage enemies on contact.",
+            "descshort": "Boost",
+            "icon": 15,
+            "icon_texture": "textures/ui/avalanche_icons2.png",
+            "name": "aval_vshie",
+            "power": "power10",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_vshie_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "aval_vshie_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_vshie_pwr",
+                    "value": 116
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "aval_vshie_pwr",
+                    "value": 512
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_vshie_dmg",
+                    "value": "4 6"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "aval_vshie_dmg",
+                    "value": "34 44"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_vshie_def",
+                    "value": 0.87
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "aval_vshie_def",
+                    "value": 0.62
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_vshie_lif",
+                    "value": 18
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "aval_vshie_lif",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%aval_vshie_def:s $DMG taken\\n%aval_vshie_dmg $DMG_PHYSICAL\\n%aval_vshie_lif seconds\\n%aval_vshie_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%aval_vshie_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "aval_shie",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Seismic Waves",
+            "description": "Avalanche creates seismic waves that turns $DMG_ENERGY inflicted on him into $HP and increase his $DMG_PHYSICAL.",
+            "descshort": "Boost",
+            "icon": 5,
+            "icon_texture": "textures/ui/avalanche_icons1.png",
+            "name": "aval_shie",
+            "power": "power11",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_shie_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "aval_shie_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_shie_pwr",
+                    "value": 88
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "aval_shie_pwr",
+                    "value": 504
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_shie_dmg",
+                    "value": 0.45
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "aval_shie_dmg",
+                    "value": 0.87
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_shie_def",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "aval_shie_def",
+                    "value": 2.6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_shie_dma",
+                    "value": 1.1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "aval_shie_dma",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_shie_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "aval_shie_lif",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%aval_shie_dmg:p $DMG, %aval_shie_def:s $DR\\n%aval_shie_dma:s $DMG_PHYSICAL\\n%aval_shie_lif seconds\\n%aval_shie_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%aval_shie_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Defensive Stance",
+            "description": "Combat training increases Avalanche's chance to dodge Melee attacks.",
+            "descshort": "Passive",
+            "icon": 8,
+            "icon_texture": "textures/ui/avalanche_icons2.png",
+            "name": "aval_resi",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_resi_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "aval_resi_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_resi_chance",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "aval_resi_chance",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%aval_resi_chance:p chance to dodge",
+                "require": {
+                    "cat": "level",
+                    "level": "%aval_resi_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%aval_resi_chance",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        }
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Seismic Fists",
+            "description": "Adds additional $DMG_PHYSICAL to Melee attacks.",
+            "descshort": "Passive",
+            "icon": 9,
+            "icon_texture": "textures/ui/avalanche_icons2.png",
+            "name": "aval_fist",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_fist_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "aval_fist_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_fist_dscale",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "aval_fist_dscale",
+                    "value": 1
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%aval_fist_dscale:p $DMG_PHYSICAL",
+                "require": {
+                    "cat": "level",
+                    "level": "%aval_fist_req"
+                },
+                "powerup": {
+                    "class": "add_attack",
+                    "damagepercent": "%aval_fist_dscale",
+                    "damagetype": "dmg_physical",
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        },
+                        "scope": {
+                            "scope_non_powers": true
+                        }
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Armored Battle Suit",
+            "description": "Increases $DR and reduces incoming $DMG_PHYSICAL.",
+            "descshort": "Passive",
+            "icon": 13,
+            "icon_texture": "textures/ui/avalanche_icons2.png",
+            "name": "aval_armo",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_armo_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "aval_armo_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_armo_def",
+                    "value": 1.15
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "aval_armo_def",
+                    "value": 2.27
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "aval_armo_dmg",
+                    "value": 0.96
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "aval_armo_dmg",
+                    "value": 0.75
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%aval_armo_def:s $DR\\n%aval_armo_dmg:s $DMG_PHYSICAL taken",
+                "require": {
+                    "cat": "level",
+                    "level": "%aval_armo_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "defense_rating",
+                        "level": "%aval_armo_def"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "def_damage_scope",
+                        "level": "%aval_armo_dmg",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        }
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Seismic Mastery",
+            "description": "Increases damage and Critical chance for all Seismic attacks.",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/avalanche_icons2.png",
+            "name": "ava_seis_mast",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ava_seis_mast_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ava_seis_mast_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ava_seis_mast_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ava_seis_mast_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ava_seis_mast_cri",
+                    "value": 1.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ava_seis_mast_cri",
+                    "value": 1.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%ava_seis_mast_dmg:s Seismic Dmg\\n+%ava_seis_mast_cri:p Critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%ava_seis_mast_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "level": "%ava_seis_mast_dmg",
+                        "scope_node": "ava_seis"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%ava_seis_mast_cri",
+                        "scope_node": "ava_seis"
+                    }
+                }
+            }
+        }
+    }
+}

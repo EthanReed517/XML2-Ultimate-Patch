@@ -1,0 +1,1139 @@
+{
+    "PowerStyle": {
+        "cansteal": false,
+        "iconfile": "textures/ui/avalanche_icons1.png",
+        "FightMove": {
+            "animenum": "ea_jump_start",
+            "handler": "ch_move_jump",
+            "lockangles": true,
+            "name": "jump",
+            "startchaintime": 0.1,
+            "chain": {
+                "action": "move",
+                "result": "power2"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "jumploop",
+            "noncombat": true,
+            "chain": {
+                "action": "move",
+                "result": "power2"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 7,
+            "aitype": "projectile",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Spike",
+            "combotextstarter": "Rock",
+            "icon": 0,
+            "name": "power1",
+            "playspeed": 1.6,
+            "powerup_tag": "ava_seis",
+            "priority": 5,
+            "turnrate": 0.2,
+            "require": {
+                "cat": "skill",
+                "item": "aval_crack",
+                "level": 1
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/avalan_m/p1_charge",
+                "time": 0.15
+            },
+            "trigger": {
+                "effect": "char/avalan/p1_power",
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/avalan/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/avalan_m/p1_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "attacktype": "projectile",
+                "count": "%aval_crack_num",
+                "damage": "%aval_crack_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "entity": "quake_crack",
+                "filename": "ents_avalanche",
+                "maxrange": 800,
+                "name": "projectile",
+                "offset": "0 -2 20",
+                "powerattack": true,
+                "powerusage": "%aval_crack_pwr",
+                "randomvelocity": 100,
+                "speed": 800,
+                "tag": 1,
+                "targetable": false,
+                "tiles": true,
+                "time": 0.6,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_batter_up",
+            "blendtime": 0,
+            "cansteal": false,
+            "combotextfinisher": "Slide",
+            "combotextstarter": "Sliding",
+            "energypersecond": "%rock_slide_pwr",
+            "fallback": "jumploop",
+            "handler": "ch_skating",
+            "icon": 2,
+            "lockangles": false,
+            "locktransitionangles": true,
+            "name": "power2",
+            "noautoaim": true,
+            "playspeed": 3,
+            "powerup_tag": "ava_seis",
+            "priority": 5,
+            "startchaintime": 0.95,
+            "turnrate": 0.4,
+            "require": {
+                "cat": "skill",
+                "item": "aval_rock_slide",
+                "level": 1
+            },
+            "trigger": {
+                "loop_timeout": 1,
+                "loop_type": "start",
+                "name": "sound",
+                "sound": "char/avalan_m/p2_loop",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%rock_slide_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "knockback": "%rock_slide_kb",
+                "name": "punch",
+                "tag": 1,
+                "tiles": true,
+                "time": -1
+            },
+            "trigger": {
+                "count": "set",
+                "name": "count",
+                "only_non_looped": true,
+                "tag": 5,
+                "time": 0,
+                "value": 1
+            },
+            "trigger": {
+                "effect": "char/avalan/p2_power",
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/avalan/p2_power",
+                "name": "effect",
+                "time": 0.7
+            },
+            "trigger": {
+                "count": "add",
+                "name": "count",
+                "tag": 6,
+                "time": 0.5,
+                "value": -1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "skateend"
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power2"
+            },
+            "chain": {
+                "action": "touch",
+                "result": "skateend2"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_knockback",
+            "combotextfinisher": "Kick",
+            "combotextstarter": "Sliding",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "skateend2",
+            "playspeed": 1.2,
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%rock_slide_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/avalan/p2_power",
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "life": 0.5,
+                "movement": 40,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%rock_slide_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "height": -30,
+                "knockback": "%rock_slide_kb",
+                "maxrange": 60,
+                "name": "punch",
+                "time": 0.25,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "special",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "skateend",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "skateend"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_power4",
+            "blendtime": 0,
+            "combotextfinisher": "Upheaval",
+            "combotextstarter": "Boulder",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power3",
+            "noautoaim": true,
+            "playspeed": 2.2,
+            "powerup_tag": "ava_seis",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "aval_earth",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/avalan/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/avalan/p3_power",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/avalan_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/avalan/p3_impact",
+                "name": "effect",
+                "time": 0.6
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%aval_earth_dmg",
+                "damagetype": "dmg_pysical",
+                "life": 1,
+                "name": "powerup",
+                "tag": 100,
+                "time": -1,
+                "damageMod": {
+                    "remove": "dmgmod_no_pain"
+                }
+            },
+            "trigger": {
+                "actorbolt": "Bip01 Pelvis",
+                "angoffset": "0 -90 0",
+                "attacktype": "projectile",
+                "center": true,
+                "damage": 0,
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "entity": "rock_smash",
+                "filename": "ents_avalanche",
+                "maxinstances": 1,
+                "name": "projectile",
+                "offset": "25 -5 -70",
+                "powerusage": "%aval_earth_pwr",
+                "speed": 70,
+                "time": 0.2
+            },
+            "event": {
+                "attacktype": "blast",
+                "damage": "%aval_earth_dmg2",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "inherit": "punch",
+                "knockback": "%aval_earth_kb",
+                "name": "radial_punch",
+                "tiles": true,
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                },
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "arc": 50,
+                "damage": 1,
+                "index": 1,
+                "knockback": 0,
+                "maxrange": 100,
+                "name": "radial_punch",
+                "tiles": true,
+                "time": 0,
+                "victimeventtag": 100,
+                "damageMod": {
+                    "remove": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "arc": 70,
+                "damage": 1,
+                "index": 1,
+                "knockback": 0,
+                "maxrange": 60,
+                "name": "radial_punch",
+                "tiles": true,
+                "time": 0,
+                "victimeventtag": 100,
+                "damageMod": {
+                    "remove": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "arc": 40,
+                "index": 2,
+                "maxrange": 155,
+                "name": "radial_punch",
+                "time": 0.7
+            },
+            "trigger": {
+                "arc": 60,
+                "index": 2,
+                "maxrange": 120,
+                "name": "radial_punch",
+                "time": 0.7
+            },
+            "trigger": {
+                "arc": 80,
+                "index": 2,
+                "maxrange": 90,
+                "name": "radial_punch",
+                "time": 0.7
+            },
+            "trigger": {
+                "arc": 100,
+                "index": 2,
+                "maxrange": 70,
+                "name": "radial_punch",
+                "time": 0.7
+            },
+            "trigger": {
+                "arc": 180,
+                "index": 2,
+                "name": "radial_punch",
+                "time": 0.7
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/avalan_m/p3_power",
+                "time": 0.7
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "aoe",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Tremors",
+            "combotextstarter": "Rumbling",
+            "icon": 14,
+            "lockangles": true,
+            "name": "power4",
+            "playspeed": 1.3,
+            "powerup_tag": "ava_seis",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "aval_rubb",
+                "level": 1
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/avalan_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/avalan/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/avalan/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%aval_rubb_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "entity": "earth_rumble",
+                "filename": "ents_avalanche",
+                "life": "%aval_rubb_lif",
+                "maxinstances": 2,
+                "maxrange": 800,
+                "name": "projectile",
+                "powerusage": "%aval_rubb_pwr",
+                "speed": 120,
+                "tag": 1,
+                "targetable": false,
+                "time": 0.5,
+                "tracecheck": false,
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "event": {
+            "entity": "quick_sand",
+            "filename": "ents_avalanche",
+            "inherit": "relative_spawn",
+            "name": "spawn_sand",
+            "relative": "target",
+            "type": "ce_atk_spawn_relative"
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "projectilenear",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Cage",
+            "combotextstarter": "Confining",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power5",
+            "noautoaim": true,
+            "playspeed": 1.2,
+            "powerup_tag": "ava_seis",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "aval_sink",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/avalan_m/p5_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/avalan/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/avalan/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "attacktype": "direct",
+                "damage": "%aval_sink_dmg",
+                "damagelevel": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "fxlevel": 1,
+                "maxrange": 250,
+                "name": "spawn_sand",
+                "powerusage": "%aval_sink_pwr",
+                "radius": 80,
+                "time": 0.3,
+                "tiles": true,
+                "tracecheck": false,
+                "victimeventtag": 101,
+                "damageMod": {
+                    "name": "dmgmod_no_pain"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "failtag": 200,
+                "name": "failtag",
+                "passtag": 102,
+                "tag": 101,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "failtag": 200,
+                "combatnode": "stuck",
+                "forcerestart": true,
+                "name": "othernode",
+                "tag": 102,
+                "time": -1
+            },
+            "trigger": {
+                "damage": "8 11",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "index": 2,
+                "name": "hitmyself",
+                "tag": 200,
+                "time": -1,
+                "type": "ce_atk_self"
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/avalan_m/p5_power",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "aoe",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Blast",
+            "combotextstarter": "Rocky",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power6",
+            "playspeed": 0.5,
+            "powerup_tag": "ava_seis",
+            "priority": 5,
+            "startchaintime": 0.55,
+            "require": {
+                "cat": "skill",
+                "item": "aval_robla",
+                "level": 1
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%aval_robla_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "inherit": "punch",
+                "maxrange": 80,
+                "name": "radial_punch",
+                "tiles": true,
+                "time": 0.28,
+                "victimeventtag": 100,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%aval_robla_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "life": 1.7,
+                "name": "powerup",
+                "time": 0,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_knockback",
+                    "level": 0
+                }
+            },
+            "trigger": {
+                "life": 1,
+                "name": "powerup",
+                "time": 0.3,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": 0
+                }
+            },
+            "trigger": {
+                "absolute": false,
+                "attackerheight": false,
+                "entity": "avadebris",
+                "filename": "ents_avalanche",
+                "name": "relative_spawn",
+                "offset": "5 5 40",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/avalan/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/avalan/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/avalan/p6_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/avalan_m/p6_charge",
+                "time": 0.1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power6b"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "aoe",
+            "animenum": "ea_grab_break_v",
+            "combotextfinisher": "Blast",
+            "combotextstarter": "Rocky",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power6b",
+            "playspeed": 1,
+            "powerup_tag": "ava_seis",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "aval_robla",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/avalan_m/p6_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/avalan/p1_charge",
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/avalan/p1_charge",
+                "name": "effect",
+                "time": 0.2
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%aval_robla_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "inherit": "punch",
+                "knockback": "%aval_robla_knb",
+                "name": "radial_punch",
+                "tiles": true,
+                "victimeventtag": 100,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
+            },
+            "trigger": {
+                "maxrange": 100,
+                "name": "radial_punch",
+                "time": 0.2
+            },
+            "trigger": {
+                "maxrange": 150,
+                "name": "radial_punch",
+                "time": 0.23
+            },
+            "trigger": {
+                "maxrange": 200,
+                "name": "radial_punch",
+                "time": 0.26
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2",
+            "blendtime": 0,
+            "combotextfinisher": "Earthquake",
+            "description": "EARTHQUAKE",
+            "icon": 1,
+            "lockangles": true,
+            "playspeed": 6,
+            "powerup_tag": "ava_seis",
+            "name": "power7",
+            "require": {
+                "cat": "skill",
+                "item": "aval_xtreme",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": 4,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/avalan_m/p7_power",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/avalan/p7_charge",
+                "name": "effect",
+                "time": 0.1
+            },
+            "trigger": {
+                "effect": "char/avalan/p7_impact",
+                "name": "effect",
+                "time": 0.65
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%aval_xtreme_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "inherit": "punch",
+                "knockback": 700,
+                "maxrange": 350,
+                "name": "kick",
+                "tag": 1,
+                "tiles": true,
+                "time": 0.65,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "apply_enemy": "all",
+                "apply_self": false,
+                "life": 3,
+                "name": "powerup",
+                "tag": 3,
+                "time": 0.8,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": 0.5
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power5",
+            "combotextfinisher": "Barrier",
+            "description": "SEISMIC PROTECTION",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8",
+            "playspeed": 1,
+            "powerup_tag": "ava_seis",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "aval_xtreme2",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/avalan_m/p8_power",
+                "time": 0.3
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/avalan/p1_charge",
+                "name": "effect",
+                "time": 0.05
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/avalan/p1_charge",
+                "name": "effect",
+                "time": 0.05
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/avalan/p1_charge",
+                "name": "effect",
+                "time": 0.22
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "life": "%aval_xtreme2_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "time": 0.6,
+                "special_fx": {
+                    "effect": "char/avalan/p8_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "power_cost",
+                    "level": 0
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Blows",
+            "combotextstarter": "Quaking",
+            "icon": 12,
+            "lockangles": true,
+            "name": "power9",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ava_explosive",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/avalan_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "class": "add_attack",
+                "damagepercent": "%ava_explosive_dmg",
+                "damagetype": "dmg_physical",
+                "life": "%ava_explosive_life",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%ava_explosive_pwr",
+                "time": 0.45,
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/avalan/p1_charge",
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/avalan/p1_charge",
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%ava_explosive_res"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Shield",
+            "combotextstarter": "Tremor",
+            "icon": 15,
+            "lockangles": true,
+            "name": "power10",
+            "noautoaim": true,
+            "playspeed": 1.3,
+            "powerup_tag": "ava_seis",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "aval_vshie",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/avalan_m/p10_charge",
+                "time": 0.45
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/avalan/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/avalan/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "class": "touch_damage",
+                "damage": "%aval_vshie_dmg",
+                "damagetype": "dmg_pysical",
+                "life": "%aval_vshie_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%aval_vshie_pwr",
+                "time": 0.7,
+                "special_fx": {
+                    "effect": "char/avalan/p10_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/avalan/p10_power",
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": "%aval_vshie_def",
+                    "scope": {
+                        "scope_damage": "dmg_elemental"
+                    }
+                }
+            },
+            "trigger": {
+                "damage": 1,
+                "damagetype": "dmg_wind",
+                "maxrange": 60,
+                "name": "radial",
+                "time": 0.7
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Reverberations",
+            "combotextstarter": "Seismic",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power11",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "aval_shie",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/avalan_m/p11_charge",
+                "time": 0.45
+            },
+            "trigger": {
+                "life": "%aval_shie_lif",
+                "name": "powerup",
+                "powerusage": "%aval_shie_pwr",
+                "time": 0.45,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%aval_shie_def"
+                },
+                "affecter": {
+                    "attribute": "def_absorb_damage",
+                    "level": "%aval_shie_dmg",
+                    "scope_damage": "dmg_energy"
+                },
+                "affecter": {
+                    "attribute": "atk_damage",
+                    "level": "%aval_shie_dma",
+                    "scope_damage": "dmg_physical"
+                },
+                "special_fx": {
+                    "effect": "char/avalan/p11_power",
+                    "fxlevel": 3,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/avalan/p11_power",
+                    "fxlevel": 4,
+                    "how_used": "deactivation"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
