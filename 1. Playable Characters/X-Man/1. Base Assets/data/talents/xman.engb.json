@@ -1,0 +1,857 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "xman_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_mental",
+                        "level": 1
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Plasma Bolt",
+            "description": "Fires a beam of Mental Plasma Energy that stuns enemies.",
+            "descshort": "Beam",
+            "icon": 0,
+            "icon_texture": "textures/ui/xman_icons2.png",
+            "name": "xman_bolt",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_bolt_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "xman_bolt_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_bolt_dmg",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "xman_bolt_dmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_bolt_pwr",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "xman_bolt_pwr",
+                    "value": 126
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%xman_bolt_dmg $DMG_MENTAL\\n%xman_bolt_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%xman_bolt_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Telekinesis",
+            "description": "Gives X-Man the ability to lift and throw objects and enemies. Can build bridges.\\n(~41Press And Hold~~)",
+            "descshort": "Special",
+            "icon": 1,
+            "icon_texture": "textures/ui/xman_icons2.png",
+            "name": "xman_telek",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_telek_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "xman_telek_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_telek_pwr",
+                    "value": 16
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "xman_telek_pwr",
+                    "value": 128
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_telek_dm1",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "xman_telek_dm1",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_telek_dm2",
+                    "value": "8 11"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "xman_telek_dm2",
+                    "value": "79 89"
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 1,
+                    "name": "xman_telek_hvy",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 8,
+                    "name": "xman_telek_hvy",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 20,
+                    "name": "xman_telek_hvy",
+                    "value": 2
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "Heavy objects\\n%xman_telek_dm1 Telekinetic Dmg at lift\\n%xman_telek_dm2 $DMG_PHYSICAL at impact\\n%xman_telek_pwr $EP per second",
+                "require": {
+                    "cat": "level",
+                    "level": "%xman_telek_req"
+                }
+            },
+            "level": {
+                "count": 13,
+                "description": "Massive objects\\n%xman_telek_dm1 Telekinetic Dmg at lift\\n%xman_telek_dm2 $DMG_PHYSICAL at impact\\n%xman_telek_pwr $EP per second",
+                "require": {
+                    "cat": "level",
+                    "level": "%xman_telek_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Mind Control",
+            "description": "A radial blast of Mental Plasma Energy that has a chance of converting enemies.",
+            "descshort": "Radial",
+            "icon": 2,
+            "icon_texture": "textures/ui/xman_icons2.png",
+            "name": "xman_wash",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_wash_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "xman_wash_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_wash_pwr",
+                    "value": 62
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "xman_wash_pwr",
+                    "value": 173
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_wash_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "xman_wash_dmg",
+                    "value": "82 93"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_wash_lif",
+                    "value": 10
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "xman_wash_lif",
+                    "value": 10
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_wash_pct",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "xman_wash_pct",
+                    "value": 0.3
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%xman_wash_dmg Telekinetic Dmg\\n%xman_wash_pct:p chance of converting\\n%xman_wash_lif second conversion\\n%xman_wash_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%xman_wash_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Telekinetic Tornado",
+            "description": "X-Man uses his Telekinesis to create a Telekinetic Tornado that lifts and throws any objects and enemies in its path.",
+            "descshort": "Trap",
+            "icon": 3,
+            "icon_texture": "textures/ui/xman_icons2.png",
+            "name": "xman_whirlwind",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_whirl_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "xman_whirl_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_whirl_dmg",
+                    "value": "27 33"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "xman_whirl_dmg",
+                    "value": "79 89"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_whirl_pwr",
+                    "value": 62
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "xman_whirl_pwr",
+                    "value": 174
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_whirl_life",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "xman_whirl_life",
+                    "value": 11
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%xman_whirl_dmg Telekinetic Dmg per second for %xman_whirl_life seconds\\n%xman_whirl_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%xman_whirl_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "xman_telek",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Telekinetic Crush",
+            "description": "X-Man Telekinetically lifts his enemies and crushes their bodies, causing Bleed $DMG.",
+            "descshort": "Special",
+            "icon": 4,
+            "icon_texture": "textures/ui/xman_icons2.png",
+            "name": "xman_hold",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_hold_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_hold_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_hold_pwr",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_hold_pwr",
+                    "value": 164
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_hold_dmg",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_hold_dmg",
+                    "value": "79 89"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_hold_dm2",
+                    "value": "3 5"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_hold_dm2",
+                    "value": "34 40"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_hold_lif",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_hold_lif",
+                    "value": 4
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%xman_hold_dmg Telekinetic Dmg\\n%xman_hold_dm2 Bleed $DMG over 4 seconds\\n%xman_hold_lif second hold\\n%xman_hold_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%xman_hold_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "xman_telek",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Plasma Overflow",
+            "description": "X-Man charges objects and enemies with massive amounts of Mental Plasma Energy, causing them to explode, popup, and take massive damage.",
+            "descshort": "Special",
+            "icon": 5,
+            "icon_texture": "textures/ui/xman_icons2.png",
+            "name": "xman_charge",
+            "power": "power6",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_charge_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "xman_charge_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_charge_dmg",
+                    "value": "108 121"
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "xman_charge_dmg",
+                    "value": "214 238"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_charge_kb",
+                    "value": 190
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "xman_charge_kb",
+                    "value": 430
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_charge_pwr",
+                    "value": 66
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "xman_charge_pwr",
+                    "value": 140
+                }
+            },
+            "level": {
+                "count": 12,
+                "description": "%xman_charge_dmg Telekinetic Dmg on explosion\\n%xman_charge_kb popup\\n%xman_charge_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%xman_charge_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Plasma Fists",
+            "description": "X-Man charges all party members' fists with Mental Plasma Energy, adding $DMG_MENTAL to Melee attacks for a time.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/xman_icons2.png",
+            "name": "xman_fist",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_fist_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_fist_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_fist_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_fist_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_fist_ar",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_fist_ar",
+                    "value": 2.6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_fist_pct",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_fist_pct",
+                    "value": 0.47
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_fist_pwr",
+                    "value": 80
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_fist_pwr",
+                    "value": 390
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%xman_fist_pct:p $DMG_MENTAL\\n%xman_fist_ar:s $AR\\n%xman_fist_life seconds\\n%xman_fist_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%xman_fist_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Shamanistic Healing",
+            "description": "X-Man slowly restores all party members' $HP for a time.",
+            "descshort": "Boost",
+            "icon": 7,
+            "icon_texture": "textures/ui/xman_icons2.png",
+            "name": "xman_heal",
+            "power": "power8",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_heal_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_heal_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_heal_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_heal_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_heal_regen",
+                    "value": 0.02
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_heal_regen",
+                    "value": 0.02
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_heal_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_heal_pwr",
+                    "value": 516
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%xman_heal_regen:p $HP restored per second\\n%xman_heal_life seconds\\n%xman_heal_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%xman_heal_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Hive Mind",
+            "description": "X-Man links the minds of all party members together, reducing $EP cost and giving all attacks a greater chance of causing Criticals.",
+            "descshort": "Boost",
+            "icon": 8,
+            "icon_texture": "textures/ui/xman_icons2.png",
+            "name": "xman_hive",
+            "power": "power9",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_hive_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_hive_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_hive_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_hive_pwr",
+                    "value": 516
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_hive_scale",
+                    "value": 0.95
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_hive_scale",
+                    "value": 0.75
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_hive_dr",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_hive_dr",
+                    "value": 2.6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_hive_cri",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_hive_cri",
+                    "value": 0.15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_hive_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "xman_hive_lif",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%xman_hive_scale:s $EP cost\\n%xman_hive_cri:p Critical chance\\n%xman_hive_lif seconds\\n%xman_hive_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%xman_hive_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "xman_cvoy"
+                }
+            }
+        },
+        "talent": {
+            "descname": "PLASMA GUARDIAN",
+            "description": "Summons a guardian made of Mental Plasma Energy that fires homing Mental bolts at enemies.",
+            "descshort": "Trap",
+            "icon": 9,
+            "icon_texture": "textures/ui/xman_icons2.png",
+            "name": "xman_guard",
+            "power": "power10",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_guard_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "xman_guard_req",
+                    "value": 42
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_guard_dmg",
+                    "value": "108 121"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "xman_guard_dmg",
+                    "value": "214 238"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_guard_hth",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "xman_guard_hth",
+                    "value": 82
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_guard_lif",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "xman_guard_lif",
+                    "value": 26
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%xman_guard_dmg Telekinetic Dmg\\n%xman_guard_hth guardian $HP\\n%xman_guard_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%xman_guard_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "PLASMA FILTER",
+            "description": "X-Man envelops the entire party in a shield made of Mental Plasma Energy that filters out all Radiation, Electricity, and Energy damage.",
+            "descshort": "Boost",
+            "icon": 10,
+            "icon_texture": "textures/ui/xman_icons2.png",
+            "name": "xman_filter",
+            "power": "power11",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_filter_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "xman_filter_req",
+                    "value": 42
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_filter_lif",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "xman_filter_lif",
+                    "value": 35
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%xman_filter_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%xman_filter_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "xman_fist"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Mental Mastery",
+            "description": "Increases damage and Critical chance of all Mental attacks.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/xman_icons2.png",
+            "name": "xman_ment_mast",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_ment_mast_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "xman_ment_mast_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_ment_mast_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "xman_ment_mast_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_ment_mast_cri",
+                    "value": 1.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "xman_ment_mast_cri",
+                    "value": 1.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%xman_ment_mast_dmg:s $DMG_MENTAL and Telekinetic Dmg",
+                "require": {
+                    "cat": "level",
+                    "level": "%xman_ment_mast_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%xman_ment_mast_dmg",
+                        "scope_damage": "dmg_mental"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%xman_ment_mast_dmg",
+                        "scope_damage": "dmg_telekinesis"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Clairvoyance",
+            "description": "Gives X-Man a chance to dodge incoming projectiles and Melee attacks.",
+            "descshort": "Passive",
+            "icon": 12,
+            "icon_texture": "textures/ui/xman_icons2.png",
+            "name": "xman_cvoy",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_cvoy_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "xman_cvoy_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "xman_cvoy_chance",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "xman_cvoy_chance",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%xman_cvoy_chance:p chance to dodge",
+                "require": {
+                    "cat": "level",
+                    "level": "%xman_cvoy_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%xman_cvoy_chance",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        },
+                        "scope": {
+                            "scope_attack": "projectile"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

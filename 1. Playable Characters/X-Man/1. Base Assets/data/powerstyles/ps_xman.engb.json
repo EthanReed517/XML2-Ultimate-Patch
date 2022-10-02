@@ -1,0 +1,979 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/xman_icons1.png",
+        "event": {
+            "inherit": "powerup",
+            "life": -1,
+            "name": "xmaneyeon",
+            "no_stack": true,
+            "tag_name": "xmaneye_on",
+            "special_fx": {
+                "bolt": "Bip01 Head",
+                "effect": "char/xman/special_aura",
+                "how_used": "primary"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle",
+            "noncombat": true,
+            "trigger": {
+                "name": "xmaneyeon",
+                "time": 0
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "strafeleft"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "straferight"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "advance"
+            },
+            "chain": {
+                "action": "retreat",
+                "result": "retreat"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            },
+            "chain": {
+                "action": "special",
+                "result": "boredloop"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "aitype": "beam",
+            "animenum": "ea_attack_knockback",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackknockback2",
+            "startchaintime": 0.6,
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/xman/p2_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/xman_m/p12_power",
+                "time": 0.3
+            },
+            "trigger": {
+                "life": 0.14,
+                "name": "slide",
+                "targetdistance": 70,
+                "targetradius": 57,
+                "time": 0.25
+            },
+            "trigger": {
+                "attack_type": "blast",
+                "damage": "3 5",
+                "damage_type": "dmg_telekinesis",
+                "fxlevel": 1,
+                "hiteffect": "char/xman/p1_impact",
+                "knockback": 245,
+                "maxrange": 80,
+                "name": "punch",
+                "time": 0.5,
+                "victimeventtag": 14,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "finisher": true,
+                "life": 0.25,
+                "name": "xtreme_start",
+                "tag": 15,
+                "time": -1,
+                "worldspeed": 0.5
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beam",
+            "animenum": "ea_attack_knockback",
+            "combotextfinisher": "Bolt",
+            "combotextstarter": "Plasma",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "playspeed": 1,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "xman_bolt",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/xman_m/p1_charge",
+                "tag": 3,
+                "time": 0.45
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "beam",
+                "beambolt": "Bip01 Head",
+                "beameffect": "char/xman/p1_power",
+                "damage": "%xman_bolt_dmg",
+                "damagelevel": 2,
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "fxlevel": 1,
+                "hiteffect": "char/xman/p1_impact",
+                "inherit": "beam",
+                "maxrange": 800,
+                "name": "bolt",
+                "powerusage": "%xman_bolt_pwr",
+                "spawneffect": "char/xman/p1_charge",
+                "tag": 4,
+                "time": 0.5,
+                "damageMod": {
+                    "name": "dmgmod_weld"
+                },
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                },
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectilenear",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Manipulation",
+            "combotextstarter": "Telekinetic",
+            "handler": "ch_telekinesis",
+            "icon": 1,
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "power2",
+            "powerup_tag": "xman_power2",
+            "priority": 5,
+            "startchaintime": 0.1,
+            "require": {
+                "cat": "skill",
+                "item": "xman_telek",
+                "level": 1
+            },
+            "trigger": {
+                "attacktype": "psionic",
+                "damage": 0,
+                "damagelevel": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_telekinesis",
+                "maxrange": 300,
+                "name": "telekinesis_dmg",
+                "tag": 2,
+                "time": -1,
+                "type": "ce_atk_self",
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                },
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%xman_telek_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/xman/p2_power",
+                "name": "effect",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "effect": "char/xman/p2_charge",
+                "name": "effect",
+                "tag": 101,
+                "time": -1
+            },
+            "trigger": {
+                "damage": "%xman_telek_dm1",
+                "damagetype": "dmg_physical",
+                "heaviness": "%xman_telek_hvy",
+                "impactdamage": "%xman_telek_dm2",
+                "name": "suspend",
+                "tag": 1,
+                "time": -1,
+                "tklevel": 11
+            },
+            "chain": {
+                "action": "special",
+                "result": "power2_hold"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power2_release"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2",
+            "energypersecond": "%xman_telek_pwr",
+            "handler": "ch_telekinesis",
+            "icon": 1,
+            "lockangles": true,
+            "lockchaining": true,
+            "locktransitionangles": true,
+            "name": "power2_hold",
+            "priority": 5,
+            "startchaintime": 1,
+            "trigger": {
+                "effect": "char/xman/p2_power",
+                "name": "effect",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "effect": "char/xman/p2_charge",
+                "name": "effect",
+                "tag": 101,
+                "time": -1
+            },
+            "trigger": {
+                "loop_timeout": 5,
+                "loop_type": "start",
+                "name": "sound",
+                "sound": "char/xman_m/p2_charge",
+                "time": 0
+            },
+            "chain": {
+                "action": "special",
+                "result": "power2_hold"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power2_release"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2_end",
+            "lockangles": true,
+            "name": "power2_release",
+            "priority": "uninterruptable",
+            "trigger": {
+                "name": "sound",
+                "sound": "char/xman_m/p2_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/xman/p2_charge",
+                "fxlevel": 2,
+                "loop_type": "stop",
+                "name": "effect_sound",
+                "sound": "char/xman_m/p2_charge",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "aoe",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Domination",
+            "combotextstarter": "Mental",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "xman_wash",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/xman_m/p3_charge",
+                "time": 0.25
+            },
+            "trigger": {
+                "effect": "char/xman/p3_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.5
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%xman_wash_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_telekinesis",
+                "inherit": "punch",
+                "name": "radial_punch",
+                "victimeventtag": 105,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "maxdangerrating": 10,
+                "name": "no_bosses",
+                "noboss": true,
+                "passtag": 102,
+                "tag": 105,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "chance": "%xman_wash_pct",
+                "name": "do_chance",
+                "othertag": 200,
+                "tag": 102,
+                "time": -1,
+                "type": "ce_otherevent"
+            },
+            "trigger": {
+                "life": "%xman_wash_lif",
+                "name": "powerup",
+                "tag": 200,
+                "time": -1,
+                "affecter": {
+                    "attribute": "team_switch",
+                    "level": 1
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_converted"
+                }
+            },
+            "trigger": {
+                "maxrange": 80,
+                "name": "radial_punch",
+                "powerusage": "%xman_wash_pwr",
+                "time": 0.381
+            },
+            "trigger": {
+                "maxrange": 110,
+                "name": "radial_punch",
+                "time": 0.428
+            },
+            "trigger": {
+                "maxrange": 144,
+                "name": "radial_punch",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "projectilenear",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Twister",
+            "combotextstarter": "Tempestuous",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "playspeed": 1.5,
+            "powerup_tag": "xman_power4",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "xman_whirlwind",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/xman_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/xman/p4_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%xman_whirl_dmg",
+                "damagelevel": 2,
+                "damagescale": "none",
+                "damagetype": "dmg_telekinetic",
+                "entity": "xman_tornado",
+                "filename": "ents_xman",
+                "life": "%xman_whirl_life",
+                "maxinstances": 2,
+                "maxrange": 800,
+                "name": "projectile",
+                "powerusage": "%xman_whirl_pwr",
+                "speed": 90,
+                "tag": 9,
+                "targetable": false,
+                "time": 0.2,
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 7,
+            "aitype": "aoe",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Crush",
+            "combotextstarter": "Telekinetic",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power5",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "xman_hold",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/xman/p5_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/xman/p5_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/xman_m/p5_power",
+                "time": 0
+            },
+            "trigger": {
+                "damage": 0,
+                "index": 1,
+                "knockback": 40,
+                "maxrange": 120,
+                "name": "radial",
+                "powerusage": "%xman_hold_pwr",
+                "time": 0.36,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "damage": 1,
+                "damagetype": "dmg_telekinesis",
+                "index": 2,
+                "maxrange": 156,
+                "name": "radial",
+                "time": 0.45,
+                "victimeventtag": 10,
+                "victimeventtag2": 15
+            },
+            "trigger": {
+                "class": "suspend",
+                "combatnode": "suspended_victim",
+                "endvictimtag": 20,
+                "life": "%xman_hold_lif",
+                "minsuspendtime": 2,
+                "name": "powerup",
+                "tag": 10,
+                "time": -1
+            },
+            "trigger": {
+                "attacks_per_second": 3,
+                "class": "harming",
+                "damage": "%xman_hold_dm2",
+                "damagetype": "dmg_bleed",
+                "life": 4,
+                "name": "powerup",
+                "tag": 15,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Pelvis",
+                    "effect": "char/xman/p5_power",
+                    "fxlevel": 1
+                }
+            },
+            "trigger": {
+                "damage": "%xman_hold_dmg",
+                "damagetype": "dmg_telekinesis",
+                "name": "attackself",
+                "tag": 20,
+                "time": -1,
+                "type": "ce_atk_self"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_psy_loop",
+            "lockangles": true,
+            "name": "suspended_victim",
+            "playspeed": 0.5,
+            "priority": "uninterruptable",
+            "priority_override": "uninterruptable",
+            "chain": {
+                "action": "idle",
+                "result": "suspended_victim"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 10,
+            "aitype": "projectilenear",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Overflow",
+            "combotextstarter": "Energetic",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "xman_charge",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/xman_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/xman/p6_charge",
+                "fxlevel": 6,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/xman/p6_charge",
+                "fxlevel": 6,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "allow_actors": true,
+                "allow_non_actors": true,
+                "center_bolt": true,
+                "class": "time_bomb",
+                "damagetype": "dmg_telekinetic",
+                "damage": "%xman_charge_dmg",
+                "knockback": "%xman_charge_kb",
+                "radius": 144,
+                "func_deactivate": "timebomb_deactivate",
+                "life": 3,
+                "name": "powerup",
+                "powerup": "special",
+                "tag": 5,
+                "time": -1,
+                "special_fx": {
+                    "center_bolt": true,
+                    "effect": "char/xman/special_chargedobj",
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/xman/special_explosion",
+                    "how_used": "custom",
+                    "tag": 1,
+                    "name": "effect_sound",
+                    "sound": "char/xman_m/p6_impact"
+                },
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "damage": 1,
+                "damagelevel": 10,
+                "damagetype": "dmg_telekinetic",
+                "name": "punch",
+                "powerattack": true,
+                "powerusage": "%xman_charge_pwr",
+                "time": 0.75,
+                "victimeventtag": 5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Strike",
+            "combotextstarter": "Psionic",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "xman_fist",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/xman_m/p7_charge",
+                "time": 0.4
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "class": "add_attack",
+                "damagepercent": "%xman_fist_pct",
+                "damagetype": "dmg_mental",
+                "life": "%xman_fist_life",
+                "name": "powerup",
+                "powerusage": "%xman_fist_pwr",
+                "time": 0.5,
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    }
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%xman_fist_ar"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/xman/ability_fly_hand",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/xman/ability_fly_hand",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Healing",
+            "combotextstarter": "Shamanistic",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "xman_heal",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%xman_heal_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/xman_m/p8_charge",
+                "time": 0.4
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "life": "%xman_heal_life",
+                "name": "powerup",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/xman/p8_aura",
+                    "fxlevel": 3,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "health_regen_pct",
+                    "level": "%xman_heal_regen"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_attack_knockback",
+            "combotextfinisher": "Surge",
+            "combotextstarter": "Connecting",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power9",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "xman_hive",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%xman_hive_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/xman_m/p9_charge",
+                "time": 0.4
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "life": "%xman_hive_lif",
+                "name": "powerup",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/xman/p9_aura",
+                    "fxlevel": 3,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "affect_type = scale",
+                    "attribute": "power_cost",
+                    "level": "%xman_hive_scale"
+                },
+                "affecter": {
+                    "attribute": "critical",
+                    "level": "%xman_hive_cri"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power7",
+            "cansteal": false,
+            "combotextfinisher": "Guardian",
+            "description": "PLASMA GUARDIAN",
+            "icon": 9,
+            "lockangles": true,
+            "lockchaining": false,
+            "name": "power10",
+            "powerup_tag": "xman_power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "xman_guard",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0.5
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/xman_m/p10_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/xman/p10_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/xman_m/p10_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/xman/p10_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/xman/p10_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "-71 -12 -177",
+                "attack_bone_pos": "6 -6 77",
+                "count": 1,
+                "damage": "%xman_guard_dmg",
+                "damagetype": "dmg_telekinesis",
+                "entity": "xman_guardian",
+                "filename": "ents_xman",
+                "firingrate": 1,
+                "health": "%xman_guard_hth",
+                "life": "%xman_guard_lif",
+                "maxinstances": 1,
+                "name": "guardian",
+                "powerusage": 0,
+                "projectileent": "xman_projectile",
+                "speed": 300,
+                "time": 0.5,
+                "type": "ce_atk_spawn_sentry"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power5",
+            "blendtime": 0,
+            "cansteal": false,
+            "combotextfinisher": "Barrier",
+            "description": "PLASMA FILTER",
+            "icon": 10,
+            "lockangles": true,
+            "lockchaining": false,
+            "name": "power11",
+            "powerup_tag": "xman_power11",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "xman_filter",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0.5
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/xman_m/p11_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/xman_m/p11_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "life": "%hav_filter_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "time": 0.4,
+                "special_fx": {
+                    "effect": "char/xman/p11_aura",
+                    "fxlevel": 3
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage_scope",
+                    "level": 0,
+                    "scope_damage": "dmg_energy"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage_scope",
+                    "level": 0,
+                    "scope_damage": "dmg_radiation"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage_scope",
+                    "level": 0,
+                    "scope_damage": "dmg_electricity"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
