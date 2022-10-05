@@ -1,0 +1,868 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "blob_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "def_knockback",
+                        "level": 0
+                    },
+                    "affecter": {
+                        "attribute": "resist_elemental",
+                        "level": 0.05
+                    },
+                    "affecter": {
+                        "attribute": "resist_physical",
+                        "level": 0.05
+                    },
+                    "affecter": {
+                        "attribute": "resist_radiation",
+                        "level": 0.05
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Heavy Fist",
+            "description": "A Melee attack strong enough to do $KB.",
+            "descshort": "Melee",
+            "icon": 4,
+            "icon_texture": "textures/ui/blob_icons2.png",
+            "name": "blob_fist",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_fist_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "blob_fist_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_fist_dmg",
+                    "value": 3.5
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "blob_fist_dmg",
+                    "value": 9.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_fist_kb",
+                    "value": 50
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "blob_fist_kb",
+                    "value": 600
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_fist_pwr",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "blob_fist_pwr",
+                    "value": 126
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%blob_fist_dmg:s $DMG_PHYSICAL (%blob_fist_dmg:x)\\n%blob_fist_kb $KB\\n%blob_fist_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%blob_fist_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%blob_fist_dmg",
+                        "scope_node": "blob_power1"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Belly Bounce",
+            "description": "Blob knocks back multiple enemies with a belly thrust.",
+            "descshort": "Special",
+            "icon": 3,
+            "icon_texture": "textures/ui/blob_icons2.png",
+            "name": "blob_slap",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_slap_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "blob_slap_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_slap_dmg",
+                    "value": 3.3
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "blob_slap_dmg",
+                    "value": 7.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_slap_knb",
+                    "value": 350
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "blob_slap_knb",
+                    "value": 350
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_slap_pwr",
+                    "value": 19
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "blob_slap_pwr",
+                    "value": 130
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%blob_slap_dmg:s $DMG_PHYSICAL (%blob_slap_dmg:x)\\n%blob_slap_knb $KB\\n%blob_slap_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%blob_slap_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%blob_slap_dmg",
+                        "scope_node": "blob_power2"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Flesh Bomb",
+            "description": "Blob leaps forward and somersaults, damaging enemies on contact.\\n(~41Rapid Tap~~)",
+            "descshort": "Special",
+            "icon": 7,
+            "icon_texture": "textures/ui/blob_icons2.png",
+            "name": "blob_pinball",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_pinball_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "blob_pinball_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_pinball_dmg",
+                    "value": 3.1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "blob_pinball_dmg",
+                    "value": 6.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_pinball_pwr",
+                    "value": 30
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "blob_pinball_pwr",
+                    "value": 160
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%blob_pinball_dmg:s $DMG_PHYSICAL (%blob_pinball_dmg:x)\\n%blob_pinball_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%blob_pinball_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "blob_slap",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%blob_pinball_dmg",
+                        "scope_node": "blob_power3"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Belly Flop",
+            "description": "A belly flop that has a chance of doing a 'Deadly Strike' (33% instant $HP loss).",
+            "descshort": "Radial",
+            "icon": 6,
+            "icon_texture": "textures/ui/blob_icons2.png",
+            "name": "blob_belly",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_belly_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "blob_belly_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_belly_pwr",
+                    "value": 42
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "blob_belly_pwr",
+                    "value": 140
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_belly_chance",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "blob_belly_chance",
+                    "value": 0.19
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_belly_kb",
+                    "value": 250
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "blob_belly_kb",
+                    "value": 550
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_belly_dmg",
+                    "value": 3.3
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "blob_belly_dmg",
+                    "value": 6
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%blob_belly_dmg:s $DMG_PHYSICAL (%blob_belly_dmg:x)\\n%blob_belly_kb $KB\\n%blob_belly_chance:p chance for Deadly Strike\\n%blob_belly_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%blob_belly_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "blob_pinball",
+                    "level": 1
+                },
+                "powerup": {
+                    "chance": "%blob_belly_chance",
+                    "class": "atk_instant_pct",
+                    "life": -1,
+                    "percent": 0.33,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope_node": "blob_power4"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%blob_belly_dmg",
+                        "scope_node": "blob_power4"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Stomp",
+            "description": "Blob slams his foot down, sending out a stunning concussive blast.",
+            "descshort": "Melee",
+            "icon": 1,
+            "icon_texture": "textures/ui/blob_icons2.png",
+            "name": "blob_smash",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_smash_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "blob_smash_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_smash_dmg",
+                    "value": 3.7
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "blob_smash_dmg",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_smash_life",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "blob_smash_life",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_smash_pwr",
+                    "value": 62
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "blob_smash_pwr",
+                    "value": 152
+                }
+            },
+            "level": {
+                "count": 12,
+                "description": "%blob_smash_dmg:s $DMG_PHYSICAL (%blob_smash_dmg:x)\\n%blob_smash_life second stun\\n%blob_smash_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%blob_smash_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%blob_smash_dmg",
+                        "scope_node": "blob_power5"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Rump Rumble",
+            "description": "Blob sits down, causing knockback in a huge radius. Does reduced damage and knockback to enemies that are further away.\\n(~41Double Jump~~)",
+            "descshort": "Radial",
+            "icon": 8,
+            "icon_texture": "textures/ui/blob_icons2.png",
+            "name": "blob_butt",
+            "power": "power6",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_butt_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "blob_butt_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_butt_dmg",
+                    "value": 3.3
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "blob_butt_dmg",
+                    "value": 4.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_butt_rng",
+                    "value": 300
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "blob_butt_rng",
+                    "value": 300
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_butt_pwr",
+                    "value": 83
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "blob_butt_pwr",
+                    "value": 165
+                }
+            },
+            "level": {
+                "count": 10,
+                "description": "%blob_butt_dmg:s max $DMG_PHYSICAL (%blob_butt_dmg:x)\\n%blob_butt_rng:r ft radius\\n-10% power every 5 ft\\n%blob_butt_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%blob_butt_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%blob_butt_dmg",
+                        "scope_node": "blob_power6"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "IMMOVABLE OBJECT",
+            "description": "Makes Blob invincible and doubles his damage for a time.",
+            "descshort": "Boost",
+            "icon": 12,
+            "icon_texture": "textures/ui/blob_icons2.png",
+            "name": "blob_object",
+            "power": "power7",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_object_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "blob_object_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_object_life",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "blob_object_life",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 4,
+                "description": "+100% $DMG\\n%blob_object_life seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%blob_object_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "GRAVITY BOMB",
+            "description": "Blob smashes the ground, dealing massive $DMG_PHYSICAL to all nearby enemies with a chance to slow them for a time.",
+            "descshort": "Xtreme",
+            "icon": 5,
+            "icon_texture": "textures/ui/blob_icons2.png",
+            "name": "blob_grav",
+            "power": "power8",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_grav_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "blob_grav_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_grav_dmg",
+                    "value": 6.5
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "blob_grav_dmg",
+                    "value": 15.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_grav_chan",
+                    "value": 0.2
+                },
+                "talentvalue": {
+                    "level": 8,
+                    "name": "blob_grav_chan",
+                    "value": 0.34
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_grav_lif",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 8,
+                    "name": "blob_grav_lif",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%blob_grav_dmg:s $DMG_PHYSICAL (%blob_grav_dmg:x)\\n%blob_grav_chan:p chance\\n%blob_grav_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%blob_grav_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%blob_grav_dmg",
+                        "scope_node": "blob_power8"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Rubberized Recoil",
+            "description": "Blob's rubbery skin reduces damage received and reflects some damage back at attackers.",
+            "descshort": "Boost",
+            "icon": 10,
+            "icon_texture": "textures/ui/blob_icons2.png",
+            "name": "blob_shield",
+            "power": "power9",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_shield_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "blob_shield_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_shield_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "blob_shield_pwr",
+                    "value": 516
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_shield_lif",
+                    "value": 18
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "blob_shield_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_shield_dmg",
+                    "value": 0.9
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "blob_shield_dmg",
+                    "value": 0.7
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%blob_shield_dmg:s $DMG taken\\n%blob_shield_lif seconds\\n%blob_shield_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%blob_shield_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "blob_thick",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Big Bully",
+            "description": "Taunts enemies into close combat, reducing their $AR and $DR.",
+            "descshort": "Boost",
+            "icon": 11,
+            "icon_texture": "textures/ui/blob_icons2.png",
+            "name": "blob_taunt",
+            "power": "power10",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_taunt_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "blob_taunt_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_taunt_ar",
+                    "value": 0.9
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "blob_taunt_ar",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_taunt_dr",
+                    "value": 0.9
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "blob_taunt_dr",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_taunt_pwr",
+                    "value": 100
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "blob_taunt_pwr",
+                    "value": 384
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_taunt_life",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "blob_taunt_life",
+                    "value": 21
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%blob_taunt_ar:s $AR\\n%blob_taunt_dr:s $DR\\n%blob_taunt_life seconds\\n%blob_taunt_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%blob_taunt_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Thick Skin",
+            "description": "Increases Blob's $RES_ELEMENTAL, $RES_RADIATION, and Physical resistance.",
+            "descshort": "Passive",
+            "icon": 9,
+            "icon_texture": "textures/ui/blob_icons2.png",
+            "name": "blob_thick",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_thick_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "blob_thick_req",
+                    "value": 32
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_thick_pct",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "blob_thick_pct",
+                    "value": 0.47
+                }
+            },
+            "level": {
+                "count": 12,
+                "description": "+%blob_thick_pct:p $RES_ELEMENTAL\\n+%blob_thick_pct:p $RES_RADIATION\\n+%blob_thick_pct:p Physical resistance",
+                "require": {
+                    "cat": "level",
+                    "level": "%blob_thick_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_elemental",
+                        "level": "%blob_thick_pct"
+                    },
+                    "affecter": {
+                        "attribute": "resist_radiation",
+                        "level": "%blob_thick_pct"
+                    },
+                    "affecter": {
+                        "attribute": "resist_physical",
+                        "level": "%blob_thick_pct"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Mass Shifting",
+            "description": "Gives Blob a natural $AR and $DR increase.",
+            "descshort": "Passive",
+            "icon": 2,
+            "icon_texture": "textures/ui/blob_icons2.png",
+            "name": "blob_hardened",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_hardened_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "blob_hardened_req",
+                    "value": 36
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_hardened_atr",
+                    "value": 1.07
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "blob_hardened_atr",
+                    "value": 1.62
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blob_hardened_def",
+                    "value": 1.15
+                },
+                "talentvalue": {
+                    "level": 12,
+                    "name": "blob_hardened_def",
+                    "value": 2.25
+                }
+            },
+            "level": {
+                "count": 12,
+                "description": "%blob_hardened_atr:s $AR\\n%blob_hardened_def:s $DR",
+                "require": {
+                    "cat": "level",
+                    "level": "%blob_hardened_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "attack_rating",
+                        "level": "%blob_hardened_atr"
+                    }
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "defense_rating",
+                        "level": "%blob_hardened_def"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Projectile Redirection",
+            "description": "Gives Blob a chance to deflect incoming projectiles.",
+            "descshort": "Passive",
+            "icon": 0,
+            "icon_texture": "textures/ui/blob_icons2.png",
+            "name": "blo_defl_mis",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blo_defl_mis_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "blo_defl_mis_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "blo_defl_mis_pct",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "blo_defl_mis_pct",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%blo_defl_mis_pct:p chance to deflect",
+                "require": {
+                    "cat": "level",
+                    "level": "%blo_defl_mis_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%blo_defl_mis_pct",
+                        "scope_attack": "projectile"
+                    }
+                }
+            }
+        }
+    }
+}
