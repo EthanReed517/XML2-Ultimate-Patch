@@ -84,7 +84,7 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "can_party_req",
-                    "value": 7
+                    "value": 1
                 },
                 "talentvalue": {
                     "level": 18,
@@ -161,7 +161,7 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "can_blast_req",
-                    "value": 1
+                    "value": 7
                 },
                 "talentvalue": {
                     "level": 20,
@@ -210,7 +210,7 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "can_multi_req",
-                    "value": 7
+                    "value": 14
                 },
                 "talentvalue": {
                     "level": 18,
@@ -254,12 +254,17 @@
                 "require": {
                     "cat": "level",
                     "level": "%can_multi_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "can_blast",
+                    "level": 1
                 }
             }
         },
         "talent": {
             "descname": "Explosive Blows",
-            "description": "Cannonball charges his body with Thermochemical Energy and does more and more $DMG_FIRE with each attack.",
+            "description": "Cannonball charges his body with Thermo-Chemical Energy and does more and more $DMG_FIRE with each attack.",
             "descshort": "Boost",
             "icon": 7,
             "icon_texture": "textures/ui/cannonball_icons2.png",
@@ -329,7 +334,7 @@
         },
         "talent": {
             "descname": "Angular Momentum",
-            "description": "Cannonball uses Thermochemical Energy to boost his Defense and Movement Speed.",
+            "description": "Cannonball uses Thermo-Chemical Energy to boost his Defense and Movement Speed.",
             "descshort": "Boost",
             "icon": 8,
             "icon_texture": "textures/ui/cannonball_icons2.png",
@@ -340,7 +345,7 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "cball_focus_req",
-                    "value": 7
+                    "value": 21
                 },
                 "talentvalue": {
                     "level": 16,
@@ -439,7 +444,7 @@
         },
         "talent": {
             "descname": "CHARGE",
-            "description": "Cannonball extends his Bio-Kinetic Field to cover all party members, making everyone invulnerable for a time and increasing their max $EP.",
+            "description": "Cannonball extends his Blast Field to cover all party members, making everyone invulnerable for a time and increasing their max $EP.",
             "descshort": "Boost",
             "icon": 10,
             "icon_texture": "textures/ui/cannonball_icons2.png",
@@ -484,6 +489,11 @@
                 "require": {
                     "cat": "level",
                     "level": "%can_xtreme2_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "can_party",
+                    "level": 1
                 }
             }
         },
@@ -582,12 +592,17 @@
                 "require": {
                     "cat": "level",
                     "level": "%can_p10_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "can_party",
+                    "level": 1
                 }
             }
         },
         "talent": {
             "descname": "Disruptive Thrust",
-            "description": "Cannonball launches upwards, releasing a radial blast of Thermochemical Energy that damages and stuns nearby enemies.",
+            "description": "Cannonball launches upwards, releasing a radial blast of Thermo-Chemical Energy that damages and stuns nearby enemies.",
             "descshort": "Radial",
             "icon": 5,
             "icon_texture": "textures/ui/cannonball_icons2.png",
@@ -635,7 +650,7 @@
             }
         },
         "talent": {
-            "descname": "Thermochemical Energy Mastery",
+            "descname": "Thermo-Chemical Energy Mastery",
             "description": "Increases damage and chance for Criticals with $DMG_FIRE.",
             "descshort": "Passive",
             "icon": 11,
@@ -645,7 +660,7 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "can_firemaster_req",
-                    "value": 1
+                    "value": 21
                 },
                 "talentvalue": {
                     "level": 15,
@@ -681,7 +696,7 @@
                     "level": "%can_firemaster_req"
                 },
                 "require": {
-                    "category": "skill",
+                    "cat": "skill",
                     "item": "mutantmaster",
                     "level": 1
                 },
@@ -703,53 +718,58 @@
         },
         "talent": {
             "descname": "Blast Field Resistance",
-            "description": "Increases Cannonball's resistances to Elemental, Fire, and Physical damage.",
+            "description": "Increases Cannonball's Elemental, Fire, and Physical resistances.",
             "descshort": "Passive",
             "icon": 12,
             "icon_texture": "textures/ui/cannonball_icons2.png",
-            "name": "cannon_prism",
+            "name": "can_prism",
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
                     "name": "can_prism_req",
-                    "value": 14
+                    "value": 7
                 },
                 "talentvalue": {
-                    "level": 15,
+                    "level": 12,
                     "name": "can_prism_req",
-                    "value": 28
+                    "value": 32
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "can_prism_resist",
-                    "value": 0.05
+                    "name": "can_prism_pct",
+                    "value": 0.1
                 },
                 "talentvalue": {
-                    "level": 15,
-                    "name": "can_prism_resist",
-                    "value": 0.5
+                    "level": 12,
+                    "name": "can_prism_pct",
+                    "value": 0.47
                 }
             },
             "level": {
-                "count": 15,
-                "description": "+%can_prism_resist:p $RES_ELEMENTAL\\n+%can_prism_resist:p $RES_FIRE\\n+%can_prism_resist:p $RES_PHYSICAL",
+                "count": 12,
+                "description": "+%can_prism_pct:p Elemental resistance\\n+%can_prism_pct:p Fire resistance\\n+%can_prism_pct:p Physical resistance",
                 "require": {
                     "cat": "level",
                     "level": "%can_prism_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "can_party",
+                    "level": 1
                 },
                 "powerup": {
                     "life": -1,
                     "affecter": {
                         "attribute": "resist_elemental",
-                        "level": "%can_prism_resist"
+                        "level": "%can_prism_pct"
                     },
                     "affecter": {
                         "attribute": "resist_fire",
-                        "level": "%can_prism_resist"
+                        "level": "%can_prism_pct"
                     },
                     "affecter": {
                         "attribute": "resist_physical",
-                        "level": "%can_prism_resist"
+                        "level": "%can_prism_pct"
                     }
                 }
             }
@@ -792,7 +812,7 @@
                 },
                 "require": {
                     "cat": "skill",
-                    "item": "mutantmaster",
+                    "item": "can_party",
                     "level": 1
                 },
                 "powerup": {
