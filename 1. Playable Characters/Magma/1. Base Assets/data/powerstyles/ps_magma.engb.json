@@ -1,0 +1,798 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/magma_icons1.png",
+        "FightMove": {
+            "animenum": "ea_jump_start",
+            "handler": "ch_move_jump",
+            "lockangles": true,
+            "name": "jump",
+            "startchaintime": 0.1,
+            "chain": {
+                "action": "move",
+                "result": "power5"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "jumploop",
+            "noncombat": true,
+            "chain": {
+                "action": "move",
+                "result": "power5"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Blast",
+            "combotextstarter": "Fiery",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "powerup_tag": "magma_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "magma_blast",
+                "level": 1
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "arc": 0,
+                "attacktype": "projectile",
+                "count": "%mag_fireballs_num",
+                "damage": "%mag_fireballs_dmg",
+                "damagetype": "dmg_fire",
+                "entity": "mag_ball",
+                "filename": "ents_magma",
+                "knockback": 300,
+                "maxrange": 800,
+                "name": "projectile",
+                "powerusage": "%mag_fireballs_pwr",
+                "speed": 850,
+                "tag": 1,
+                "targetable": true,
+                "time": 0.35,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/magma_m/p1_power",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "event": {
+            "damage": 100,
+            "damageType": "dmg_fire",
+            "fxlevel": 1,
+            "hiteffect": "char/magma/p2_power",
+            "inherit": "blast",
+            "maxrange": 250,
+            "name": "lava_rift",
+            "powerup_tag": "magma_power",
+            "radius": 48,
+            "targetable": true,
+            "damageMod": {
+                "name": "dmgmod_popup"
+            },
+            "damageMod": {
+                "name": "dmgmod_environment"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Eruption",
+            "combotextstarter": "Molten",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "lava_fissure",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/magma_m/p2_charge",
+                "time": 0.1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/magma_m/p2_power",
+                "time": 0.4
+            },
+            "trigger": {
+                "damage": "%mag_fire_pill_dmg",
+                "fxlevel": 4,
+                "name": "lava_rift",
+                "powerusage": "%mag_fire_pill_pwr",
+                "radius": 120,
+                "tag": 1,
+                "time": 0.4
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Transformation",
+            "combotextstarter": "Burning",
+            "icon": 6,
+            "lockangles": true,
+            "Name": "power3",
+            "powerup_tag": "magma_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "magma_form",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/magma_m/p3_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%mag_form_life",
+                "name": "powerup",
+                "powerusage": "%mag_form_pwr",
+                "skin": 3610,
+                "skin_swap": true,
+                "tag": 1,
+                "time": 0.3,
+                "affecter": {
+                    "attribute": "might_heaviness",
+                    "level": 1
+                },
+                "affecter": {
+                    "attribute": "might_structure",
+                    "level": 1
+                },
+                "special_fx": {
+                    "effect": "char/magma/p3_power",
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "apply_self": true,
+                "center_bolt": true,
+                "class": "add_attack",
+                "damagepercent": "%mag_form_pdmg",
+                "damagetype": "dmg_fire",
+                "life": "%mag_form_life",
+                "name": "powerup",
+                "tag": 3,
+                "time": 0.3
+            },
+            "trigger": {
+                "class": "touch_damage",
+                "damage": "%mag_form_dmg",
+                "damagetype": "dmg_fire",
+                "life": "%mag_form_life",
+                "name": "powerup",
+                "tag": 2,
+                "time": 0.3
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_menu_action",
+            "combotextfinisher": "Inferno",
+            "combotextstarter": "Towering",
+            "icon": 2,
+            "lockangles": true,
+            "Name": "power4",
+            "playspeed": 1.5,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "magma_column",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%magma_column_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/magma/p4_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "tag": 1,
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/magma_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/magma_m/p4_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "effect": "char/magma/p4_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "tag": 2,
+                "time": 0.5
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%magma_column_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "inherit": "punch",
+                "knockback": "%magma_column_kb",
+                "name": "fire_column",
+                "powerattack": true,
+                "radius": 36,
+                "time": 0.51,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power5",
+            "blendtime": 0,
+            "combotextfinisher": "Smash",
+            "combotextstarter": "Skating",
+            "energypersecond": "%fire_slide_pwr",
+            "fallback": "jumploop",
+            "handler": "ch_skating",
+            "icon": 3,
+            "lockangles": false,
+            "locktransitionangles": true,
+            "Name": "power5",
+            "playspeed": 8,
+            "priority": 5,
+            "startchaintime": 0.95,
+            "turnrate": 0.2,
+            "require": {
+                "cat": "skill",
+                "item": "magma_skating",
+                "level": 1
+            },
+            "trigger": {
+                "loop_timeout": 1,
+                "loop_type": "start",
+                "name": "sound",
+                "sound": "char/magma_m/p5_loop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/magma/p5_power1",
+                "name": "effect",
+                "tag": 77,
+                "time": -1
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%fire_slide_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "knockback": "%fire_slide_kb",
+                "name": "punch",
+                "PowerAttack": true,
+                "tag": 1,
+                "time": -1
+            },
+            "trigger": {
+                "count": "set",
+                "name": "count",
+                "only_non_looped": true,
+                "tag": 5,
+                "time": 0,
+                "value": 1
+            },
+            "trigger": {
+                "effect": "char/magma/p5_power2",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "count": "add",
+                "name": "count",
+                "tag": 6,
+                "time": 0.5,
+                "value": -1
+            },
+            "trigger": {
+                "effect": "char/magma/p5_power2",
+                "name": "effect",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "idle",
+                "result": "skateend"
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power5"
+            },
+            "chain": {
+                "action": "touch",
+                "result": "fastballhit"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "skateend",
+            "noncombat": true,
+            "trigger": {
+                "effect": "char/magma/p5_power3",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/magma/p1_impact",
+                "name": "effect",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "skateend"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "event": {
+            "damage": "%magma_xtreme_dmg",
+            "damagetype": "dmg_fire",
+            "hiteffect": "char/magma/p6_impact",
+            "inherit": "blast",
+            "maxrange": 225,
+            "name": "lava_impact",
+            "numblasts": 4,
+            "radius": 60,
+            "random": true
+        },
+        "FightMove": {
+            "animenum": "ea_power4",
+            "blendtime": 0,
+            "combotextfinisher": "Volcano",
+            "Description": "VOLCANO",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power6",
+            "playspeed": 10,
+            "powerup_tag": "magma_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "magma_xtreme",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/magma_m/p6_power",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/magma/p6_power1",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/magma/p6_power2",
+                "name": "effect",
+                "time": 0.1,
+                "timebased": true
+            },
+            "trigger": {
+                "life": 1.5,
+                "motor": "vibrate",
+                "name": "rumble",
+                "time": 0.15,
+                "vibrate": 0.75
+            },
+            "trigger": {
+                "damage": "%magma_xtreme_dmg",
+                "name": "lava_impact",
+                "tag": 2,
+                "time": 0.175,
+                "timebased": true
+            },
+            "trigger": {
+                "damage": "%magma_xtreme_dmg",
+                "name": "lava_impact",
+                "tag": 3,
+                "time": 0.2,
+                "timebased": true
+            },
+            "trigger": {
+                "damage": "%magma_xtreme_dmg",
+                "name": "lava_impact",
+                "tag": 4,
+                "time": 0.225,
+                "timebased": true
+            },
+            "trigger": {
+                "damage": "%magma_xtreme_dmg",
+                "name": "lava_impact",
+                "tag": 5,
+                "time": 0.25,
+                "timebased": true
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_jump_atk_land",
+            "blendtime": 0,
+            "combotextfinisher": "Shake ",
+            "combotextstarter": "Quaking",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power7",
+            "powerup_tag": "magma_power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "magma_earth",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%magma_ear_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/magma_m/p7_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "effect": "char/magma/p7_power",
+                "name": "effect",
+                "time": 0.6
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%magma_ear_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "knockback": "%magma_ear_kb",
+                "maxrange": 250,
+                "name": "punch",
+                "tag": 1,
+                "time": 0.6,
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                },
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_menu_action",
+            "combotextfinisher": "Burst",
+            "combotextstarter": "Lively",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8",
+            "playspeed": 3,
+            "powerup_tag": "magma_power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "magma_fired",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/magma_m/p8_power",
+                "time": 0.16
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%magma_fired_life",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%magma_fired_pwr",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/magma/p8_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "maxhealth",
+                    "level": "%magma_fired_def"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "maxenergy",
+                    "level": "%magma_fired_def"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "beam",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Lava",
+            "combotextstarter": "Flowing",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power9",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "magbeam",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/magma_m/p9_power",
+                "time": 0.4
+            },
+            "trigger": {
+                "arc": 0,
+                "attack_bone_angles": "-95 2 17",
+                "attack_bone_pos": "41 -6 37",
+                "attacktype": "beam",
+                "beambolt": "Bip01 R Hand",
+                "beameffect": "char/magma/p9_power",
+                "damage": "%magbeam_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "fxlevel": 1,
+                "hiteffect": "char/magma/p9_impact",
+                "inherit": "beam",
+                "maxrange": 800,
+                "name": "op_blast",
+                "powerusage": "%magbeam_pwr",
+                "tag": 2,
+                "time": 0.4,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Smoke",
+            "combotextstarter": "Obscuringing",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power10",
+            "powerup_tag": "magma_power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "magma_focus",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/magma/p10_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/magma/p10_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/magma/p10_power",
+                "name": "effect",
+                "time": 0.48
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/magma_m/p10_power",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%magma_focus_life",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%magma_focus_pwr",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/magma/p10_aura",
+                    "fxlevel": 3,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/magma/p10_aura",
+                    "fxlevel": 4,
+                    "how_used": "deactivation"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%magma_focus_def"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_menu_action",
+            "blendtime": 0,
+            "combotextfinisher": "Eagle",
+            "description": "VOLCANIC EAGLE",
+            "icon": 10,
+            "lockangles": true,
+            "name": "power11",
+            "playspeed": 3,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "magma_rising",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/magma_m/p11_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/magma/p11_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/magma_m/p11_power",
+                "time": 0.4
+            },
+            "trigger": {
+                "life": "%magma_rising_lif",
+                "name": "powerup",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/magma/p11_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": 2
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
