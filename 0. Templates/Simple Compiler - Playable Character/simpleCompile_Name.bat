@@ -1,18 +1,22 @@
 @echo off
-echo Compiling NPC - Sin_Cyc
+echo Compiling Playable Character - Name
 
 REM **************************
 REM * Section 0 - User Input *
 REM **************************
 
 REM get the name of the character's packages
-set packageName=sin_cyc_01
-REM playable characters (and some NPCs) need the name of the xml packages listed as well
-set xmlPackageName=""
+set packageName=name_XX
+REM playable characters need the name of the xml packages listed as well
+set xmlPackageName=name_xml
 REM define other values for the compiler
-set effectsFolder=sincyc
-set powerstyle=ps_sin_cyclops
-set soundFile=cyc_s_m
+set comicCover=name_cov
+set effectsFolder=name
+set loadingScreen1=XX01
+set loadingScreen2=XX02
+set loadingScreen3=XX03
+set powerstyle=ps_name
+set soundFile=name_m
 
 REM ******************************
 REM * Section 1 - Main Execution *
@@ -21,12 +25,10 @@ REM ******************************
 REM create a folder where the files will go (if it's not already created)
 md "0. Complete Files"
 REM move into the folder where the cfg files are
-cd "%~dp0\0. CFG Files\2. NPCs"
+cd "%~dp0\0. CFG Files\1. Playable Characters"
 REM copy the cfg files out to the main folder
 for /r %%x in (%packageName%*) do copy >nul "%%x" "..\.."
-if not %xmlPackageName%=="" (
-	copy >nul "%xmlPackageName%.fb.cfg" "..\.."
-)
+copy >nul "%xmlPackageName%.fb.cfg" "..\.."
 REM move back out to the main folder
 cd ..\..
 REM move the compilers into the main folder
@@ -42,15 +44,13 @@ REM move the fb packages to the correct folder
 for /r %%x in (*.fb) do move >nul "%%x" "0. Complete Files\Files to Add to assetsfb.wad\packages\generated\characters"
 
 REM copy additional files
-if not %powerstyle%=="" (
-	robocopy >nul /e /v "data\powerstyles" "0. Complete Files\Files to Add to assetsfb.wad\data\powerstyles" "%powerstyle%.engb"
-)
-if not %effectsFolder%=="" (
-	robocopy >nul /e /v "effects\char\%effectsFolder%" "0. Complete Files\Files to Add to assetsfb.wad\effects\char\%effectsFolder%"
-)
-if not %soundfile%=="" (
-	robocopy >nul /e /v "sounds\eng\%soundfile:~0,1%\%soundfile:~1,1%" "0. Complete Files\sounds\eng\%soundfile:~0,1%\%soundfile:~1,1%" "%soundfile%.zsm"
-)
+robocopy >nul /e /v "data\powerstyles" "0. Complete Files\Files to Add to assetsfb.wad\data\powerstyles" "%powerstyle%.engb"
+robocopy >nul /e /v "effects\char\%effectsFolder%" "0. Complete Files\Files to Add to assetsfb.wad\effects\char\%effectsFolder%"
+robocopy >nul /e /v "sounds\eng\%soundfile:~0,1%\%soundfile:~1,1%" "0. Complete Files\sounds\eng\%soundfile:~0,1%\%soundfile:~1,1%" "%soundfile%.zsm"
+robocopy >nul /e /v "textures\comic" "0. Complete Files\Files to Add to assetsfb.wad\textures\comic" "%comicCover%.igb"
+robocopy >nul /e /v "textures\loading" "0. Complete Files\Files to Add to assetsfb.wad\textures\loading" "%loadingScreen1%.igb"
+robocopy >nul /e /v "textures\loading" "0. Complete Files\Files to Add to assetsfb.wad\textures\loading" "%loadingScreen2%.igb"
+robocopy >nul /e /v "textures\loading" "0. Complete Files\Files to Add to assetsfb.wad\textures\loading" "%loadingScreen3%.igb"
 
 REM delete the compilers 
 del >nul enter.vbs

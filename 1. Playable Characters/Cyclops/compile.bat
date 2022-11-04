@@ -107,7 +107,7 @@ REM Checks if cel shading choice was selected from main compiler script/if main 
 if "%celChoice%"=="" goto celChoicePrompt
 
 REM ***************************
-REM * Section 2 - move Assets *
+REM * Section 2 - Move Assets *
 REM ***************************
 
 :section2

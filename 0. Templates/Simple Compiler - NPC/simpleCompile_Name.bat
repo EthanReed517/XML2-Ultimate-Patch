@@ -1,18 +1,18 @@
 @echo off
-echo Compiling NPC - Sin_Cyc
+echo Compiling NPC - Name
 
 REM **************************
 REM * Section 0 - User Input *
 REM **************************
 
 REM get the name of the character's packages
-set packageName=sin_cyc_01
+set packageName=name_XX
 REM playable characters (and some NPCs) need the name of the xml packages listed as well
 set xmlPackageName=""
 REM define other values for the compiler
-set effectsFolder=sincyc
-set powerstyle=ps_sin_cyclops
-set soundFile=cyc_s_m
+set effectsFolder=name
+set powerstyle=ps_name
+set soundFile=name_m
 
 REM ******************************
 REM * Section 1 - Main Execution *
