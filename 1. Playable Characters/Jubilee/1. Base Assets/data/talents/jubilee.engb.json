@@ -192,6 +192,10 @@
                 "require": {
                     "cat": "level",
                     "level": "%detonate_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "jub_hex_explos"
                 }
             }
         },
@@ -251,6 +255,10 @@
                 "require": {
                     "cat": "level",
                     "level": "%combustion_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "photo_flash"
                 }
             }
         },
@@ -310,6 +318,10 @@
                 "require": {
                     "cat": "level",
                     "level": "%jub_hex_explos_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "combustion"
                 }
             }
         },
@@ -599,39 +611,39 @@
             "descshort": "Passive",
             "icon": 10,
             "icon_texture": "textures/ui/jubilee_icons2.png",
-            "name": "energy_combat",
+            "name": "ene_combat",
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
-                    "name": "combat_req",
+                    "name": "ene_combat_req",
                     "value": 1
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "combat_req",
+                    "name": "ene_combat_req",
                     "value": 15
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "combat_dscale",
+                    "name": "ene_combat_dscale",
                     "value": 0.5
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "combat_dscale",
-                    "value": 2.6
+                    "name": "ene_combat_dscale",
+                    "value": 3.6
                 }
             },
             "level": {
                 "count": 15,
-                "description": "%combat_dscale:s $DMG_ENERGY",
+                "description": "+%ene_combat_dscale:p $DMG_ENERGY",
                 "require": {
                     "cat": "level",
                     "level": "%combat_req"
                 },
                 "powerup": {
                     "class": "add_attack",
-                    "damagepercent": "%combat_dscale",
+                    "damagepercent": "%ene_combat_dscale",
                     "damagetype": "dmg_energy",
                     "life": -1,
                     "special_fx": {
@@ -655,11 +667,11 @@
         },
         "talent": {
             "descname": "Lumikinetic Mastery",
-            "description": "Increases the damage and Critical chance of all of Jubilee's Energy powers and increases her Energy and Mental resistances.",
+            "description": "Increases the damage and Critical chance of all of Jubilee's powers and increases her Energy and Mental resistances.",
             "descshort": "Passive",
             "icon": 11,
             "icon_texture": "textures/ui/jubilee_icons2.png",
-            "name": "jubilee_ps_mast",
+            "name": "jub_ps_mast",
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
@@ -722,9 +734,20 @@
                         "scope_damage": "dmg_energy"
                     },
                     "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%jub_ps_mast_dmg",
+                        "scope_damage": "dmg_fire"
+                    },
+                    "affecter": {
                         "attribute": "atk_critical",
                         "level": "%jub_ps_mast_cri",
                         "scope_damage": "dmg_energy"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%jub_ps_mast_cri",
+                        "scope_damage": "dmg_fire"
                     },
                     "affecter": {
                         "attribute": "resist_energy",
@@ -739,34 +762,50 @@
         },
         "talent": {
             "descname": "Point Blank",
-            "description": "Adds $DMG to all powers that hit enemies within 6 feet of Jubilee.",
+            "description": "Adds damage to all powers that hit enemies within 6 feet of Jubilee.",
             "descshort": "Passive",
             "icon": 12,
             "icon_texture": "textures/ui/jubilee_icons2.png",
-            "name": "jubilee_pblank",
+            "name": "jub_pblank",
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
-                    "name": "jubilee_pblank_pct",
+                    "name": "jub_pblank_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "jub_pblank_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "jub_pblank_dscale",
                     "value": 0.04
                 },
                 "talentvalue": {
-                    "level": 9,
-                    "name": "jubilee_pblank_pct",
+                    "level": 15,
+                    "name": "jub_pblank_dscale",
                     "value": 0.2
                 }
             },
             "level": {
-                "count": 9,
-                "description": "+%jubilee_pblank_pct:p Added $DMG",
+                "count": 15,
+                "description": "+%jub_pblank_dscale:p added damage",
+                "require": {
+                    "cat": "level",
+                    "level": "%jub_pblank_req"
+                },
                 "powerup": {
                     "class": "add_attack",
-                    "damagepercent": "%jubilee_pblank_pct",
+                    "damagepercent": "%jub_pblank_dscale",
                     "life": -1,
                     "max_distance": 72,
                     "affecter": {
                         "attribute": "powerup_scope",
-                        "scope_powers": true
+                        "scope": {
+                            "scope_powers": true
+                        }
                     }
                 }
             }
