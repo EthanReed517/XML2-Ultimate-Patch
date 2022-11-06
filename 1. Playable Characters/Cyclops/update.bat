@@ -27,6 +27,9 @@ set itemsEntry=Cyclops
 set npcstatEntry1=Cyclops_MC
 set npcstatEntry2=CyclopsSimple
 set npcstatEntry3=Sin_Cyc
+set npcstatEntry4=""
+set npcstatEntry5=""
+set npcstatEntry6=""
 set reviewEntry=Cyclops
 
 REM ******************
@@ -73,6 +76,15 @@ if not %npcstatEntry2%=="" (
 )
 if not %npcstatEntry3%=="" (
 	copy >nul "%baseFolder%\%dataFolder%\NPCstat_%npcstatEntry3%.json" "%destination%\npcstat\%baseFolder%\0. NPCstat Entries\%npcstatEntry3%.json"
+)
+if not %npcstatEntry4%=="" (
+	copy >nul "%baseFolder%\%dataFolder%\NPCstat_%npcstatEntry4%.json" "%destination%\npcstat\%baseFolder%\0. NPCstat Entries\%npcstatEntry4%.json"
+)
+if not %npcstatEntry5%=="" (
+	copy >nul "%baseFolder%\%dataFolder%\NPCstat_%npcstatEntry5%.json" "%destination%\npcstat\%baseFolder%\0. NPCstat Entries\%npcstatEntry5%.json"
+)
+if not %npcstatEntry6%=="" (
+	copy >nul "%baseFolder%\%dataFolder%\NPCstat_%npcstatEntry6%.json" "%destination%\npcstat\%baseFolder%\0. NPCstat Entries\%npcstatEntry6%.json"
 )
 if not %reviewEntry%=="" (
 	copy >nul "%baseFolder%\%dataFolder%\ReviewPaths_%reviewEntry%.json" "%destination%\review_paths\%baseFolder%\0. Review_Paths Entries\%reviewEntry%.json"
