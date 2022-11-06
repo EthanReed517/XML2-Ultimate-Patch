@@ -13,6 +13,9 @@ REM fill in the name of the character's NPC packages here (without the file exte
 set npcName1=beast_0501
 set npcName2=beastboss_0501
 set npcName3=""
+set npcName4=""
+set npcName5=""
+set npcName6=""
 
 REM fill in the name of the character's simple compilers here (without the file extension)
 set simpleCompilePlayable=simpleCompile_Beast_Hero

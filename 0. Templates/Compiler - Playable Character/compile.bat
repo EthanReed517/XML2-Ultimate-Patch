@@ -13,12 +13,18 @@ REM fill in the name of the character's NPC packages here (without the file exte
 set npcName1=name_mc_20001
 set npcName2=namesimple_XX01
 set npcName3=sin_name_XX01
+set npcName4=""
+set npcName5=""
+set npcName6=""
 
 REM fill in the name of the character's simple compilers here (without the file extension)
 set simpleCompilePlayable=simpleCompile_Name
 set simpleCompileNPC1=simpleCompile_Name_mc
 set simpleCompileNPC2=simpleCompile_NameSimple
 set simpleCompileNPC3=simpleCompile_Sin_Name
+set simpleCompileNPC4=""
+set simpleCompileNPC5=""
+set simpleCompileNPC6=""
 
 REM fill in the name of the character's talents file here (without the file extension)
 set talentsName=name
@@ -230,13 +236,16 @@ copy >nul compile.ini "0. Staging"
 REM copy compilers
 copy >nul "..\..\0. Compilers" "0. Staging"
 REM for the partial build, move in the compiler. 
-if %modeChoice%==partial (
+if not %modeChoice%==full (
 	md "0. Staging\0. Compilers\1. Playable Characters"
 	md "0. Staging\0. Compilers\2. NPCs"
 	copy >nul "%simpleCompilePlayable%.bat" "0. Staging\0. Compilers\1. Playable Characters\%simpleCompilePlayable:~6%.bat"
 	copy >nul "%simpleCompileNPC1%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC1:~6%.bat"
 	copy >nul "%simpleCompileNPC2%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC2:~6%.bat"
 	copy >nul "%simpleCompileNPC3%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC3:~6%.bat"
+	copy >nul "%simpleCompileNPC4%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC4:~6%.bat"
+	copy >nul "%simpleCompileNPC5%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC5:~6%.bat"
+	copy >nul "%simpleCompileNPC6%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC6:~6%.bat"
 )
 REM change directory to 0. Staging folder and execute scripts
 cd "%~dp0\0. Staging"
@@ -250,7 +259,7 @@ if %modeChoice%==full (
 	md "packages\generated\characters"
 	for /r %%x in (*.fb) do move >nul "%%x" "packages\generated\characters"
 )
-if %modeChoice%==partial (
+if not %modeChoice%==full (
 	md "0. CFG Files\1. Playable Characters"
 	md "0. CFG Files\2. NPCs"
 	move >nul "%npcName1%.fb.cfg" "0. CFG Files\2. NPCs"
@@ -259,6 +268,12 @@ if %modeChoice%==partial (
 	move >nul "%npcName2%_nc.fb.cfg" "0. CFG Files\2. NPCs"
 	move >nul "%npcName3%.fb.cfg" "0. CFG Files\2. NPCs"
 	move >nul "%npcName3%_nc.fb.cfg" "0. CFG Files\2. NPCs"
+	move >nul "%npcName4%.fb.cfg" "0. CFG Files\2. NPCs"
+	move >nul "%npcName4%_nc.fb.cfg" "0. CFG Files\2. NPCs"
+	move >nul "%npcName5%.fb.cfg" "0. CFG Files\2. NPCs"
+	move >nul "%npcName5%_nc.fb.cfg" "0. CFG Files\2. NPCs"
+	move >nul "%npcName6%.fb.cfg" "0. CFG Files\2. NPCs"
+	move >nul "%npcName6%_nc.fb.cfg" "0. CFG Files\2. NPCs"
 	for %%x in (*.cfg) do move >nul "%%x" "0. CFG Files\1. Playable Characters"
 )
 goto cleanUp
@@ -316,7 +331,7 @@ goto cleanUp
 :cleanUp
 del /s >nul *.json
 REM clean up extra stuff
-if not %modeChoice%==partial del >nul *.cfg
+if %modeChoice%==full del >nul *.cfg
 del >nul enter.vbs
 del >nul fbbuilder.bat
 del >nul ravenFormatsCompile.bat
@@ -330,14 +345,8 @@ goto finalizeConsole
 REM move back to the main folder
 cd ..
 REM need to remove any files that are in the packages
-REM for solo build, files need to be moved to the release instead of deleted
-if %modeChoice%==solo (
-	robocopy >nul /e /v "0. Staging\sounds" "0. Release\sounds"
-	robocopy >nul /e /v "0. Staging\textures\comic" "0. Release\Files to Add to assetsfb.wad\textures\comic"
-	robocopy >nul /e /v "0. Staging\textures\loading" "0. Release\Files to Add to assetsfb.wad\textures\loading"
-	robocopy >nul /e /v "0. Staging\ui\models\characters" "0. Release\Character Select Portrait"
-) 
-if not %modeChoice%==partial (
+REM this only applies for full mode. Other modes are not in packages
+if %modeChoice%==full (
 	rmdir /s /q "0. Staging/actors"
 	rmdir /s /q "0. Staging/data/talents"
 	rmdir /s /q "0. Staging/hud"
@@ -362,7 +371,7 @@ if %modeChoice%==partial (
 	robocopy >nul /e /v "0. Staging" "..\..\0. Ready Files"
 )
 if %modeChoice%==solo (
-	robocopy >nul /e /v "0. Staging" "0. Release\Files to Add to assetsfb.wad"
+	robocopy >nul /e /v "0. Staging" "0. Release"
 )
 rmdir /s /q "0. Staging"
 goto end
