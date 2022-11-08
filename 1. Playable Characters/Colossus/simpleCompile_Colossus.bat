@@ -1,22 +1,22 @@
 @echo off
-echo Compiling Playable Character - Angel
+echo Compiling Playable Character - Colossus
 
 REM **************************
 REM * Section 0 - User Input *
 REM **************************
 
 REM get the name of the character's packages
-set packageName=name_XX
+set packageName=colossus_09
 REM playable characters need the name of the xml packages listed as well
-set xmlPackageName=name_xml
+set xmlPackageName=colossus_xml
 REM define other values for the compiler
-set comicCover=name_cov
-set effectsFolder=name
-set loadingScreen1=XX01
-set loadingScreen2=XX02
-set loadingScreen3=XX03
-set powerstyle=ps_name
-set soundFile=name_m
+set comicCover=colossus_cov
+set effectsFolder=coloss
+set loadingScreen1=0901
+set loadingScreen2=0902
+set loadingScreen3=0903
+set powerstyle=ps_colossus
+set soundFile=coloss_m
 
 REM ******************************
 REM * Section 1 - Main Execution *

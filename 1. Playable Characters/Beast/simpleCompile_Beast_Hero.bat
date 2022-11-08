@@ -1,5 +1,5 @@
 @echo off
-echo Compiling Playable Character - Name
+echo Compiling Playable Character - Beast_Hero
 
 REM **************************
 REM * Section 0 - User Input *

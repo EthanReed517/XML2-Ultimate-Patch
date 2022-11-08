@@ -1,12 +1,12 @@
 @echo off
-echo Compiling NPC - Beast
+echo Compiling NPC - BishopSimple
 
 REM **************************
 REM * Section 0 - User Input *
 REM **************************
 
 REM get the name of the character's packages
-set packageName=beast_05
+set packageName=bishopsimple_18
 REM playable characters (and some NPCs) need the name of the xml packages listed as well
 set xmlPackageName=""
 REM define other values for the compiler

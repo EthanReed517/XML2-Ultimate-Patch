@@ -1,5 +1,5 @@
 @echo off
-echo Compiling NPC - Name
+echo Compiling NPC - BeastBoss
 
 REM **************************
 REM * Section 0 - User Input *
