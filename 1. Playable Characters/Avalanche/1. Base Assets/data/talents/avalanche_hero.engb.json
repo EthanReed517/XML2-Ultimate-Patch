@@ -2,7 +2,7 @@
     "talents": {
         "talent": {
             "descname": "Earth Crack",
-            "description": "Avalanche cracks open the earth and sends chunks of rock smashing up through the ground, popping up any enemy they hit.",
+            "description": "Avalanche cracks open the earth and sends chunks of rock smashing up through the ground, popping up any enemy in the way.",
             "descshort": "Blast",
             "icon": 0,
             "icon_texture": "textures/ui/avalanche_icons2.png",
@@ -32,7 +32,7 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "aval_crack_num",
-                    "value": 2
+                    "value": 1
                 },
                 "talentvalue": {
                     "level": 20,
@@ -52,7 +52,7 @@
             },
             "level": {
                 "count": 20,
-                "description": "%aval_crack_dmg $DMG_PHYSICAL\\n%aval_crack_num spikes\\n%aval_crack_pwr $EP",
+                "description": "%aval_crack_dmg $DMG_PHYSICAL\\n%aval_crack_num spike(s)\\n%aval_crack_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%aval_crack_req"
@@ -822,13 +822,8 @@
                     "affecter": {
                         "affect_type": "scale",
                         "attribute": "def_damage_scope",
-                        "level": "%aval_armo_dmg",
-                        "scope": {
-                            "scope_attack": "punch"
-                        },
-                        "scope": {
-                            "scope_attack": "kick"
-                        }
+                        "damagetype": "dmg_physical",
+                        "level": "%aval_armo_dmg"
                     }
                 }
             }
@@ -874,7 +869,7 @@
             },
             "level": {
                 "count": 15,
-                "description": "%ava_seis_mast_dmg:s Seismic Dmg\\n+%ava_seis_mast_cri:p Critical chance",
+                "description": "%ava_seis_mast_dmg:s $DMG\\n+%ava_seis_mast_cri:p Critical chance",
                 "require": {
                     "cat": "level",
                     "level": "%ava_seis_mast_req"
