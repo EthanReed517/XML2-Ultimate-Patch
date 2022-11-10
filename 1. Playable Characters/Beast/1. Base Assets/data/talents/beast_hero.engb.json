@@ -796,76 +796,6 @@
             }
         },
         "talent": {
-            "descname": "Terminal Velocity",
-            "description": "Beast calculates his terminal velocity, increasing his Defense and Movement Speed.",
-            "descshort": "Boost",
-            "icon": 11,
-            "icon_texture": "textures/ui/beast_icons2.png",
-            "name": "bst_focus",
-            "power": "power12",
-            "type": "boost",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "bst_focus_req",
-                    "value": 21
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "bst_focus_req",
-                    "value": 59
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "bst_focus_def",
-                    "value": 1.3
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "bst_focus_def",
-                    "value": 2.09
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "bst_focus_speed",
-                    "value": 1.25
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "bst_focus_speed",
-                    "value": 2.09
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "bst_focus_lif",
-                    "value": 13
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "bst_focus_lif",
-                    "value": 55
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "bst_focus_pwr",
-                    "value": 48
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "bst_focus_pwr",
-                    "value": 484
-                }
-            },
-            "level": {
-                "count": 16,
-                "description": "%bst_focus_def:s $DR\\n%bst_focus_speed:s Movement Speed\\n%bst_focus_lif seconds\\n%bst_focus_pwr $EP",
-                "require": {
-                    "cat": "level",
-                    "level": "%bst_focus_req"
-                }
-            }
-        },
-        "talent": {
             "descname": "Regeneration",
             "description": "Heals over time.",
             "descshort": "Passive",
@@ -1015,45 +945,45 @@
         },
         "talent": {
             "descname": "Astonishing Reflexes",
-            "description": "Increases Beast's chance to dodge Melee attacks and projectiles.",
+            "description": "Gives Beast a chance to dodge projectiles and all powered and non-powered Melee attacks.",
             "descshort": "Passive",
             "icon": 14,
             "icon_texture": "textures/ui/beast_icons2.png",
-            "name": "beast_dodge",
+            "name": "beas_cvoy",
             "talentvalues": {
                 "talentvalue": {
-                    "level": 4,
-                    "name": "beast_dodge_req",
-                    "value": 1
+                    "level": 1,
+                    "name": "beas_cvoy_req",
+                    "value": 7
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "beast_dodge_req",
-                    "value": 20
+                    "name": "beas_cvoy_req",
+                    "value": 28
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "beast_dodge_chance",
-                    "value": 0.05
+                    "name": "beas_cvoy_chance",
+                    "value": 0.08
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "beast_dodge_chance",
+                    "name": "beas_cvoy_chance",
                     "value": 0.5
                 }
             },
             "level": {
                 "count": 15,
-                "description": "%beast_dodge_chance:p chance to dodge",
+                "description": "%beas_cvoy_chance:p chance to dodge",
                 "require": {
                     "cat": "level",
-                    "level": "%beast_dodge_req"
+                    "level": "%beas_cvoy_req"
                 },
                 "powerup": {
                     "life": -1,
                     "affecter": {
                         "attribute": "def_dodge",
-                        "level": "%beast_dodge_chance",
+                        "level": "%beas_cvoy_chance",
                         "scope": {
                             "scope_attack": "punch"
                         },
