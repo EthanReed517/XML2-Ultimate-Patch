@@ -1,0 +1,972 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "dazzler_stun",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "stun_immune",
+                        "level": 1
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Prism Beam",
+            "description": "Shoots a concentrated beam of Light. Can level up to split at the point of contact with enemies.",
+            "descshort": "Beam",
+            "icon": 0,
+            "icon_texture": "textures/ui/dazzler_icons2.png",
+            "name": "dazzler_laser",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_laser_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "daz_laser_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_laser_dmg",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "daz_laser_dmg",
+                    "value": "189 212"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_laser_pwr",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "daz_laser_pwr",
+                    "value": 140
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_laser_num",
+                    "value": 0
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "daz_laser_num",
+                    "value": 4
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%daz_laser_dmg $DMG_ENERGY\\n%daz_laser_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%daz_laser_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Razzle Dazzle",
+            "description": "A blinding radial Light attack that stuns enemies.",
+            "descshort": "Radial",
+            "icon": 1,
+            "icon_texture": "textures/ui/dazzler_icons2.png",
+            "name": "dazzler_dazzle",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_dazzle_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "daz_dazzle_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_dazzle_pwr",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "daz_dazzle_pwr",
+                    "value": 116
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_dazzle_dmg",
+                    "value": "6 9"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "daz_dazzle_dmg",
+                    "value": "56 65"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_dazzle_life",
+                    "value": "1 3"
+                },
+                "talentvalue": {
+                    "level": 3,
+                    "name": "daz_dazzle_life",
+                    "value": "2 4"
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "daz_dazzle_life",
+                    "value": "3 5"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "daz_dazzle_life",
+                    "value": "4 6"
+                },
+                "talentvalue": {
+                    "level": 9,
+                    "name": "daz_dazzle_life",
+                    "value": "5 7"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "daz_dazzle_life",
+                    "value": "6 8"
+                },
+                "talentvalue": {
+                    "level": 13,
+                    "name": "daz_dazzle_life",
+                    "value": "7 9"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "daz_dazzle_life",
+                    "value": "8 10"
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "daz_dazzle_life",
+                    "value": "10 12"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "daz_dazzle_life",
+                    "value": "12 14"
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%daz_dazzle_dmg $DMG_ENERGY\\n%daz_dazzle_life seconds\\n%daz_dazzle_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%daz_dazzle_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Disco Glider",
+            "description": "Slides on a burst of Light, damaging and blinding enemies.\\n(~41Press And Hold~~)",
+            "descshort": "Charge",
+            "icon": 2,
+            "icon_texture": "textures/ui/dazzler_icons2.png",
+            "name": "dazzler_glide",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_glide_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "daz_glide_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_glide_pwr",
+                    "value": 34
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "daz_glide_pwr",
+                    "value": 130
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_glide_dmg",
+                    "value": "53 61"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "daz_glide_dmg",
+                    "value": "198 220"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_glide_kb",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "daz_glide_kb",
+                    "value": 245
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%daz_glide_dmg $DMG_ENERGY\\n%daz_glide_kb $KB\\n%daz_glide_pwr $EP/s",
+                "require": {
+                    "cat": "level",
+                    "level": "%daz_glide_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "dazzler_laser",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Laser Light Show",
+            "description": "Unleashes a dazzling radial laser Light show that causes $DMG_ENERGY, $KB, and sometimes blindness.",
+            "descshort": "Radial",
+            "icon": 3,
+            "icon_texture": "textures/ui/dazzler_icons2.png",
+            "name": "dazzler_lshow",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_lshow_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "daz_lshow_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_lshow_pwr",
+                    "value": 42
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "daz_lshow_pwr",
+                    "value": 145
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_lshow_dmg",
+                    "value": "31 34"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "daz_lshow_dmg",
+                    "value": "160 172"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_lshow_pct",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 13,
+                    "name": "daz_lshow_pct",
+                    "value": 0.46
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "daz_lshow_pct",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%daz_lshow_dmg $DMG_ENERGY\\n%daz_lshow_pct:p chance to blind\\n%daz_lshow_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%daz_lshow_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "dazzler_dazzle",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Photon Explosion",
+            "description": "Throw a photon that causes nearby objects to explode violently with charged Light particles.",
+            "descshort": "Projectile",
+            "icon": 4,
+            "icon_texture": "textures/ui/dazzler_icons2.png",
+            "name": "dazzler_photon",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_photon_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "daz_photon_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_photon_pwr",
+                    "value": 82
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "daz_photon_pwr",
+                    "value": 170
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_photon_dm1",
+                    "value": "69 79"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "daz_photon_dm1",
+                    "value": "140 157"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_photon_dm2",
+                    "value": "37 43"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "daz_photon_dm2",
+                    "value": "117 132"
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%daz_photon_dm1 initial $DMG_ENERGY\\n%daz_photon_dm2 explosion $DMG_ENERGY\\n%daz_photon_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%daz_photon_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "dazzler_lshow",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Sonic Burst",
+            "description": "Releases a burst of stored Sound that is so painful it can confuse enemies and make them flee.",
+            "descshort": "Radial",
+            "icon": 5,
+            "icon_texture": "textures/ui/dazzler_icons2.png",
+            "name": "dazzler_sonic",
+            "power": "power6",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_sonic_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "daz_sonic_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_sonic_pwr",
+                    "value": 82
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "daz_sonic_pwr",
+                    "value": 170
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_sonic_dmg",
+                    "value": "69 79"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "daz_sonic_dmg",
+                    "value": "181 187"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_sonic_pct",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 6,
+                    "name": "daz_sonic_pct",
+                    "value": 0.35
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "daz_sonic_pct",
+                    "value": 0.75
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%daz_sonic_dmg $DMG_PHYSICAL\\n%daz_sonic_pct:p chance to confuse\\n%daz_sonic_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%daz_sonic_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Destructive Shield",
+            "description": "Dazzler envelopes herself in a shield made of laser Light that raises defenses and can vaporizes projectiles.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/dazzler_icons2.png",
+            "name": "dazzler_dshield",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_dshield_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "daz_dshield_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_dshield_pwr",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "daz_dshield_pwr",
+                    "value": 512
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_dshield_def",
+                    "value": 0.95
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "daz_dshield_def",
+                    "value": 0.67
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_dshield_disp",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "daz_dshield_disp",
+                    "value": 0.33
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_dshield_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "daz_dshield_life",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%daz_dshield_life seconds\\n%daz_dshield_disp:p damage shielded\\n%daz_dshield_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%daz_dshield_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Laser Shield",
+            "description": "Dazzler forms a shield of charged Light particles that can blur her enemies' vision as well as increase her Attack and evasiveness.",
+            "descshort": "Boost",
+            "icon": 7,
+            "icon_texture": "textures/ui/dazzler_icons2.png",
+            "name": "dazzler_myst",
+            "power": "power8",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_myst_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "daz_myst_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_myst_ar",
+                    "value": 0.9
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "daz_myst_ar",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_myst_atk",
+                    "value": 1.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "daz_myst_atk",
+                    "value": 2.08
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_myst_dod",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "daz_myst_dod",
+                    "value": 0.67
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_myst_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "daz_myst_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_myst_pwr",
+                    "value": 236
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "daz_myst_pwr",
+                    "value": 504
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%daz_myst_atk:s $AR\\n%daz_myst_dod:p chance to dodge incoming attacks\\n%daz_myst_life seconds\\n%daz_myst_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%daz_myst_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "dazzler_dshield",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "DISCO FEVER",
+            "description": "Dazzler creates an intense laser Light display that damages and stuns all enemies. If an enemy is already stunned, then the Light display will critically hit them for 50% of their life.",
+            "descshort": "Radial",
+            "icon": 9,
+            "icon_texture": "textures/ui/dazzler_icons2.png",
+            "name": "dazzler_overload",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_overload_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "daz_overload_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_overload_dmg",
+                    "value": "83 94"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "daz_overload_dmg",
+                    "value": "277 309"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_overload_life",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "daz_overload_life",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%daz_overload_dmg $DMG_ENERGY\\n%daz_overload_life Seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%daz_overload_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Light Mist",
+            "description": "Dazzler creates a fog bank made of defracted Light that increases her Defense and damages her enemies.",
+            "descshort": "Boost",
+            "icon": 8,
+            "icon_texture": "textures/ui/dazzler_icons2.png",
+            "name": "dazzler_lshield",
+            "power": "power10",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_lshield_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "daz_lshield_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_lshield_dr",
+                    "value": 1.3
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "daz_lshield_dr",
+                    "value": 3.09
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_lshield_dmg",
+                    "value": "3 5"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "daz_lshield_dmg",
+                    "value": "21 26"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_lshield_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "daz_lshield_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_lshield_pwr",
+                    "value": 236
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "daz_lshield_pwr",
+                    "value": 504
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%daz_lshield_dr:s $DR\\n%daz_lshield_dmg $DMG_ENERGY per second\\n%daz_lshield_life seconds\\n%daz_lshield_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%daz_lshield_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "dazzler_myst",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "HOLOGRAPHIC TRICKERY",
+            "description": "Dazzler creates a holographic duplicate of herself made of solid Light that can attack enemies.",
+            "descshort": "Boost",
+            "icon": 10,
+            "icon_texture": "textures/ui/dazzler_icons2.png",
+            "name": "dazzler_holo",
+            "power": "power11",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_holo_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "daz_holo_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_holo_hlt",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "daz_holo_hlt",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_holo_dmg",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "daz_holo_dmg",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_holo_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "daz_holo_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "One hologram created\\n%daz_holo_lif Seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%daz_holo_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Photon Deflection",
+            "description": "Gives Dazzler a chance to dodge projectile attacks by defracting and refracting Light.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/dazzler_icons2.png",
+            "name": "dazzler_pdefl",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_pdefl_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "daz_pdefl_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_pdefl_pct",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "daz_pdefl_pct",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%daz_pdefl_pct:p chance to dodge",
+                "require": {
+                    "cat": "level",
+                    "level": "%daz_pdefl_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%daz_pdefl_pct",
+                        "scope_attack": "projectile"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Photo-Sonic Mastery",
+            "description": "Increases the damage of all of Dazzler's Light and Sonic powers and makes her resistant to $DMG_ENERGY.",
+            "descshort": "Passive",
+            "icon": 12,
+            "icon_texture": "textures/ui/dazzler_icons2.png",
+            "name": "dazzler_ps_mast",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_ps_mast_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "daz_ps_mast_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_ps_mast_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "daz_ps_mast_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_ps_mast_cri",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "daz_ps_mast_cri",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_ps_mast_res",
+                    "value": 0.02
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "daz_ps_mast_res",
+                    "value": 0.3
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%daz_ps_mast_dmg:s damage done by Light and Sonic powers\\n+%daz_ps_mast_cri:p Critical chance with Light and Sonic powers\\n+%daz_ps_mast_res:p $RES_ENERGY",
+                "require": {
+                    "cat": "level",
+                    "level": "%daz_ps_mast_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%daz_ps_mast_dmg",
+                        "scope_damage": "dmg_energy"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%daz_ps_mast_cri",
+                        "scope_damage": "dmg_energy"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%daz_ps_mast_dmg",
+                        "scope_node": "daz_sonic"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%daz_ps_mast_cri",
+                        "scope_node": "daz_sonic"
+                    },
+                    "affecter": {
+                        "attribute": "resist_energy",
+                        "level": "%daz_ps_mast_res"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Resurrection Factor",
+            "description": "Dazzler's mysterious resurrection factor gives her a chance to auto-resurrect.",
+            "descshort": "Passive",
+            "icon": 13,
+            "icon_texture": "textures/ui/dazzler_icons2.png",
+            "name": "dazzler_resfac",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_resfac_req",
+                    "value": 30
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "daz_resfac_req",
+                    "value": 65
+                },
+                "talentvalue": {
+                    "level": 0,
+                    "name": "daz_resfac_hlth",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_resfac_hlth",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "daz_resfac_hlth",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 0,
+                    "name": "daz_resfac_pct",
+                    "value": 0
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daz_resfac_pct",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "daz_resfac_pct",
+                    "value": 0.33
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%daz_resfac_pct:p chance for resurrection with %daz_resfac_hlth:p $HP",
+                "require": {
+                    "cat": "level",
+                    "level": "%daz_resfac_req"
+                }
+            }
+        }
+    }
+}
