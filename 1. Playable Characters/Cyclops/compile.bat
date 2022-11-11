@@ -411,7 +411,11 @@ goto cleanUp
 :cleanUp
 del /s >nul *.json
 REM clean up extra stuff
-if %modeChoice%==full del >nul *.cfg
+if %consoleChoice%==PC (
+	del >nul *.cfg
+) else if %modeChoice%==full (
+	del >nul *.cfg
+)
 del >nul enter.vbs
 del >nul fbbuilder.bat
 del >nul ravenFormatsCompile.bat
