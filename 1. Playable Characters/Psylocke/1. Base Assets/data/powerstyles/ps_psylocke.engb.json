@@ -974,7 +974,7 @@
             "aitype": "beamanyrange",
             "animenum": "ea_attack_stun3",
             "combotextfinisher": "Beam",
-            "combotextstarter": "Mental",
+            "combotextstarter": "Psychic",
             "icon": 12,
             "lockangles": true,
             "name": "power10",
@@ -1045,8 +1045,8 @@
             "aitype": "melee",
             "animenum": "ea_power10",
             "blendtime": 0.07,
-            "combotextfinisher": "Slice",
-            "combotextstarter": "Telekinetic",
+            "combotextfinisher": "Lunge",
+            "combotextstarter": "Slicing",
             "icon": 8,
             "lockangles": true,
             "name": "power11",
@@ -1089,12 +1089,20 @@
                 "damagescale": "none",
                 "damagetype": "dmg_mental",
                 "knockback": 0,
+                "life": "%psy_sword_tim",
                 "maxrange": 60,
                 "name": "punch",
                 "powerattack": true,
                 "powerusage": "%psy_sword_pwr",
                 "tag": 1,
-                "time": 0.5
+                "targetable": true,
+                "time": 0.5,
+                "damageMod": {
+                    "name": "dmgmod_immobilize"
+                },
+                "damageMod": {
+                    "name": "dmgmod_drain"
+                }
             },
             "chain": {
                 "action": "Idle",

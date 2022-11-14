@@ -487,9 +487,9 @@
             }
         },
         "talent": {
-            "descname": "Psionic Swipe",
+            "descname": "Psionic Sweep",
             "description": "Knocks back enemies with a Psionic lashing attack.",
-            "descshort": "Special",
+            "descshort": "Melee",
             "icon": 11,
             "icon_texture": "textures/ui/psylocke_icons2.png",
             "name": "psy_whip",
@@ -595,8 +595,8 @@
             }
         },
         "talent": {
-            "descname": "Psychic Katana",
-            "description": "Psylocke lunges at her target with a katana made of Psychic Energy.",
+            "descname": "Psychic Lunge",
+            "description": "Psylocke lunges at an enemy with her Psychic Blade, absorbing some $EP and immobilizing them for a time.",
             "descshort": "Melee",
             "icon": 8,
             "icon_texture": "textures/ui/psylocke_icons2.png",
@@ -625,6 +625,16 @@
                 },
                 "talentvalue": {
                     "level": 1,
+                    "name": "psy_sword_tim",
+                    "value": 4
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "psy_sword_tim",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
                     "name": "psy_sword_pwr",
                     "value": 46
                 },
@@ -636,7 +646,7 @@
             },
             "level": {
                 "count": 14,
-                "description": "%psy_sword_dmg $DMG_MENTAL\\n%psy_sword_pwr $EP",
+                "description": "%psy_sword_dmg $DMG_MENTAL\\n%psy_sword_tim seconds immobilized\\n%psy_sword_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%psy_sword_req"
@@ -645,7 +655,7 @@
         },
         "talent": {
             "descname": "Blade Mastery",
-            "description": "Increases the size and damage of Psylocke's Psychic Blade, and increases Critical chance for Psychic Blade attacks.",
+            "description": "Increases the size and damage of Psylocke's Psychic Blade and increases Critical chance for Psychic Blade attacks.",
             "descshort": "Passive",
             "icon": 8,
             "icon_texture": "textures/ui/psyloc_icons2.png",
@@ -809,7 +819,7 @@
         },
         "talent": {
             "descname": "Precognition",
-            "description": "Increases chance to dodge Melee attacks and projectiles.",
+            "description": "Increases chance to dodge projectiles and powered and non-powered Melee attacks.",
             "descshort": "Passive",
             "icon": 10,
             "icon_texture": "textures/ui/psylocke_icons2.png",
