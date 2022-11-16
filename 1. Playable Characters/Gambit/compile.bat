@@ -10,9 +10,9 @@ set pcPkgb=gambit_1301.pkgb.json
 set pcPkgbNc=gambit_1301_nc.pkgb.json
 
 REM fill in the name of the character's NPC packages here (without the file extension)
-set npcName1=name_mc_20001
-set npcName2=namesimple_XX01
-set npcName3=sin_name_XX01
+set npcName1=gamnit_mc_20013
+set npcName2=gambitsimple_1301
+set npcName3=""
 set npcName4=""
 set npcName5=""
 set npcName6=""
