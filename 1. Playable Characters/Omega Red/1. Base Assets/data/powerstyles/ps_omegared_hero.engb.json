@@ -1,0 +1,833 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/omegared_icons1.png",
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "melee",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Whip",
+            "combotextstarter": "Tentacle",
+            "endchaintime": 1,
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "powerup_tag": "coil_power",
+            "priority": 5,
+            "startchaintime": 0.9,
+            "require": {
+                "cat": "skill",
+                "item": "omega_p1",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Forearm",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/omega_red_attack_light1_left",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0.01,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "boltslot": "ebolton_weapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.99,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/omegar_m/p1_power",
+                "time": 0.38
+            },
+            "trigger": {
+                "arc": 20,
+                "attacktype": "punch",
+                "damage": "%omega_p1_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_radiation",
+                "knockback": 0,
+                "hiteffect": "char/omega_hero/p1_impact",
+                "maxrange": 90,
+                "name": "punch",
+                "powerattack": true,
+                "powerusage": "%omega_p1_pwr",
+                "tag": 1,
+                "time": 0.45,
+                "victimeventtag": 105,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%omega_p1_dmg",
+                "damagetype": "dmg_radiation",
+                "life": 0.5,
+                "name": "powerup",
+                "tag": 105,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aicomborange": "melee",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Sweep",
+            "combotextstarter": "Swinging",
+            "endchaintime": 1,
+            "icon": 3,
+            "lockangles": true,
+            "name": "power2",
+            "powerup_tag": "coil_power",
+            "priority": 5,
+            "startchaintime": 0.8,
+            "require": {
+                "cat": "skill",
+                "item": "omega_p2",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Forearm",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/omega_red_attack_heavy1_right",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0.01,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/omegar_m/p2_power",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/omega_hero/p2_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.38
+            },
+            "trigger": {
+                "angle": 0,
+                "arc": 90,
+                "attacktype": "punch",
+                "damage": "%omega_p2_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_radiation",
+                "height": 0,
+                "index": 2,
+                "knockback": 370,
+                "maxrange": 120,
+                "name": "punch",
+                "powerattack": true,
+                "powerusage": "%omega_p2_pwr",
+                "time": 0.38,
+                "victimeventtag": 106,
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%omega_p2_dmg",
+                "damagetype": "dmg_radiation",
+                "life": 0.5,
+                "name": "powerup",
+                "tag": 106,
+                "time": -1
+            },
+            "trigger": {
+                "boltslot": "ebolton_weapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.99,
+                "type": "ce_bolton"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "aoe",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Swing",
+            "combotextstarter": "Whirling",
+            "icon": 11,
+            "is_power": true,
+            "lockangles": true,
+            "name": "power3",
+            "powerup_tag": "coil_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "omega_p3",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Forearm",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/omega_red_power_2_left",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0.01,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "bolt": "Bip01 R Forearm",
+                "boltslot": "ebolton_altweapon",
+                "model": "models/bolton/omega_red_power_2_right",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0.01,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "boltslot": "ebolton_weapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.99,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "boltslot": "ebolton_altweapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.99,
+                "type": "ce_bolton"
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%omega_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_radiation",
+                "inherit": "punch",
+                "name": "p_radius",
+                "victimeventtag": 107
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/omega_hero/p3_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/omegar_m/p3_power",
+                "time": 0.19
+            },
+            "trigger": {
+                "damage": "%omega_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_radiation",
+                "index": 1,
+                "knockback": "%omega_p3_kb",
+                "maxrange": 144,
+                "name": "p_radius",
+                "powerusage": "%omega_p3_pwr",
+                "time": 0.36,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "damage": "%omega_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_radiation",
+                "index": 3,
+                "knockback": "%omega_p3_kb",
+                "maxrange": 144,
+                "name": "p_radius",
+                "time": 0.57,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%omega_p3_dmg",
+                "damagetype": "dmg_radiation",
+                "life": 0.5,
+                "name": "powerup",
+                "tag": 107,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "aoe",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Spores",
+            "combotextstarter": "Toxic",
+            "icon": 5,
+            "is_power": true,
+            "lockangles": true,
+            "name": "power4",
+            "powerup_tag": "death_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "omega_p4",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/omegar_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%omega_p4_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/omega_hero/p4_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.35
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%omega_p4_dmg",
+                "damagetype": "dmg_radiation",
+                "life": 10,
+                "name": "powerup",
+                "share_life": 5,
+                "share_radius": 60,
+                "tag": 20,
+                "time": -1
+            },
+            "trigger": {
+                "arc": 35,
+                "damage": 1,
+                "damagescale": "none",
+                "maxrange": 160,
+                "name": "radial",
+                "time": 0.5,
+                "victimeventtag": 20
+            },
+            "trigger": {
+                "arc": 35,
+                "damage": 1,
+                "damagescale": "none",
+                "maxrange": 160,
+                "name": "radial",
+                "time": 0.7,
+                "victimeventtag": 20
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 7,
+            "aitype": "projectile",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Grenade",
+            "combotextstarter": "Napalm",
+            "endchaintime": 1,
+            "icon": 4,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power5",
+            "playspeed": 1.5,
+            "powerup_tag": "death_power",
+            "startchaintime": 0.8,
+            "require": {
+                "cat": "skill",
+                "item": "omega_p5",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%omega_p5_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "35 -4 47",
+                "attacktype": "projectile",
+                "damage": "%omega_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "entity": "omega_p5_proj",
+                "explodedamage": "%omega_p5_dmg",
+                "exploderadius": 36,
+                "filename": "ents_omegared",
+                "knockback": 245,
+                "name": "projectile",
+                "speed": 650,
+                "time": 0.26,
+                "victimeventtag": 100,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%omega_p5_dmg",
+                "damagetype": "dmg_fire",
+                "life": 10,
+                "name": "powerup",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/omegar_m/p5_power",
+                "time": 0.26
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 30,
+            "aitype": "projectilenear",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Snare",
+            "combotextstarter": "Draining",
+            "icon": 1,
+            "is_power": true,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power6",
+            "powerup_tag": "coil_power",
+            "priority": 5,
+            "startchaintime": 0.99,
+            "require": {
+                "cat": "skill",
+                "item": "omega_p6",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/omegar_m/p6_charge",
+                "time": 0.38
+            },
+            "trigger": {
+                "bolt": "Bip01 L Forearm",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/omega_red_attack_light1_left",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0.01,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "boltslot": "ebolton_weapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.99,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "arc": 0,
+                "attack_bone_angles": "-76 -83 -13",
+                "attack_bone_pos": "-6 -3 52",
+                "attacktype": "direct",
+                "beambolt": "Bip01 Head",
+                "damage": "%omega_p6_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_radiation",
+                "hiteffect": "char/omega_hero/p6_impact",
+                "maxrange": 120,
+                "name": "beam",
+                "powerusage": "%omega_p6_pwr",
+                "radius": 20,
+                "time": 0.35,
+                "selfeventtag": 102,
+                "victimeventtag1": 101,
+                "victimeventtag2": 103,
+                "special_fx": {
+                    "how_used": "primary",
+                    "sound": "char/omegar_m/p6_power"
+                }
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%omega_p6_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_radiation",
+                "do_pain": true,
+                "effect_cust1": "base/material/break/brk_paper",
+                "life": "%omega_p6_life",
+                "name": "powerup",
+                "tag": 101,
+                "time": -1,
+                "bolton": {
+                    "bolt": "Bip01 Pelvis",
+                    "model": "models/bolton/omega_red_victim_coil",
+                    "replacecurrent": true
+                },
+                "bolton": {
+                    "bolt": "Bip01 Spine1",
+                    "model": "models/bolton/omega_red_victim_coil",
+                    "replacecurrent": true
+                },
+                "bolton": {
+                    "bolt": "Bip01 Spine2",
+                    "model": "models/bolton/omega_red_victim_coil",
+                    "replacecurrent": true
+                },
+                "damageMod": {
+                    "name": "dmgmod_immobilize"
+                }
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%omega_p6_life",
+                "name": "powerup",
+                "tag": 102,
+                "time": 0.5,
+                "affecter": {
+                    "attribute": "health_regen_pct",
+                    "level": "%omega_p6_regen"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/omegar_m/p6_power",
+                "tag": 103,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Drain",
+            "combotextstarter": "Sapping",
+            "icon": 13,
+            "is_power": true,
+            "lockangles": true,
+            "name": "power7",
+            "powerup_tag": "death_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "omega_p7",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/omegar_m/p7_power",
+                "time": 0
+            },
+            "trigger": {
+                "class": "absorb",
+                "damagepercent": "%omega_p7_pct",
+                "energy": true,
+                "inflicted": true,
+                "life": "%omega_p7_lif",
+                "name": "powerup",
+                "sponsor": true,
+                "time": 0.45
+            },
+            "trigger": {
+                "center_bolt": true,
+                "class": "harming",
+                "damage": "%omega_p7_dmg",
+                "life": "%omega_p7_lif",
+                "name": "powerup",
+                "powerusage": "%omega_p7_pwr",
+                "share_enemies": true,
+                "share_life": 1,
+                "share_radius": 80,
+                "time": 0.45,
+                "special_fx": {
+                    "effect": "char/omega_hero/p7_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary",
+                    "never_cycle": true,
+                    "share_filter": "owner"
+                },
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "share_filter": "shared"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Pheromones",
+            "combotextstarter": "Invigorating",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power8",
+            "playspeed": 1.5,
+            "priority": 5,
+            "powerup_tag": "death_power",
+            "require": {
+                "cat": "skill",
+                "item": "omega_p8",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/omega_hero/p8_aura",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/omegar_m/p8_power",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%omega_p8_life",
+                "name": "powerup",
+                "powerusage": "%omega_p8_pwr",
+                "time": 0.9,
+                "special_fx": {
+                    "effect": "char/omega_hero/p8_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "all_talents",
+                    "level": "%omega_p8_skills",
+                    "scope_talent": "omega_p8"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "power_cost",
+                    "level": "%omega_p8_scale"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2",
+            "combotextfinisher": "Destroyer",
+            "description": "OMEGA DESTROYER",
+            "icon": 15,
+            "lockangles": true,
+            "noautoaim": true,
+            "name": "power9",
+            "playspeed": 2,
+            "powerup_tag": "coil_power",
+            "priority": 10,
+            "require": {
+                "cat": "skill",
+                "item": "omega_p9",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": 4.2,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.18
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Forearm",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/omega_red_power_2_left",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0.01,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "bolt": "Bip01 R Forearm",
+                "boltslot": "ebolton_altweapon",
+                "model": "models/bolton/omega_red_power_2_right",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0.01,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "boltslot": "ebolton_weapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.99,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "boltslot": "ebolton_altweapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.99,
+                "type": "ce_bolton"
+            },
+            "event": {
+                "arc": 180,
+                "damage": "%omega_p9_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_radiation",
+                "index": 2,
+                "inherit": "punch",
+                "knockback": 610,
+                "name": "p_radius",
+                "victimeventtag": 108,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_drain"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/omegar_m/p9_power",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/omega_hero/p9_power",
+                "name": "effect",
+                "time": 0.32
+            },
+            "trigger": {
+                "maxrange": 100,
+                "name": "p_radius",
+                "time": 0.32
+            },
+            "trigger": {
+                "maxrange": 200,
+                "name": "p_radius",
+                "time": 0.42
+            },
+            "trigger": {
+                "maxrange": 300,
+                "name": "p_radius",
+                "time": 0.52
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%omega_p9_dmg",
+                "damagetype": "dmg_radiation",
+                "life": 5,
+                "name": "powerup",
+                "tag": 108,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2",
+            "blendtime": 0,
+            "combotextfinisher": "Factor",
+            "description": "DEATH FACTOR",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power10",
+            "playspeed": 3,
+            "priority": 5,
+            "powerup_tag": "death_power",
+            "require": {
+                "cat": "skill",
+                "item": "omega_p10",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/omega_hero/p10_aura",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/omegar_m/p10_power",
+                "time": 0.4
+            },
+            "trigger": {
+                "life": "%omega_p10_lif",
+                "name": "powerup",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/omega_hero/p10_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "maxenergy",
+                    "level": "%omega_p10_max"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "xp",
+                    "level": "%omega_p10_xp"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
