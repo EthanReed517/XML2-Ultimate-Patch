@@ -9,6 +9,23 @@ REM fill in the name of the character's PC packages here
 set pcPkgb=juggernaut_3401.pkgb.json
 set pcPkgbNc=juggernaut_3401_nc.pkgb.json
 
+REM fill in the name of the character's NPC packages here (without the file extension)
+set npcName1=juggernaut_mc_20017
+set npcName2=juggernautsimple_3401
+set npcName3=""
+set npcName4=""
+set npcName5=""
+set npcName6=""
+
+REM fill in the name of the character's simple compilers here (without the file extension)
+set simpleCompilePlayable=simpleCompile_Juggernaut
+set simpleCompileNPC1=simpleCompile_Juggernaut_mc
+set simpleCompileNPC2=simpleCompile_JuggernautSimple
+set simpleCompileNPC3=""
+set simpleCompileNPC4=""
+set simpleCompileNPC5=""
+set simpleCompileNPC6=""
+
 REM fill in the name of the character's talents file here (without the file extension)
 set talentsName=juggernaut
 
@@ -57,13 +74,23 @@ goto modeChoiceCheck
 REM mode not selected, main compiler prompt not used, pick mode
 :modeChoicePrompt
 echo.
-echo Console not selected.
-echo [1] Full build: builds the character files for the full X2UP.
-echo [2] Solo build: builds the character for individual release.
-CHOICE /C 12 /M "Which build will you use? "
-IF ERRORLEVEL 2 SET modeChoice=solo & set celChoice=yes & goto section2
-IF ERRORLEVEL 1	SET modeChoice=full & goto celChoiceSection
-REM Checks if console was selected from main compiler script/if main compiler script was used
+echo Mode not selected.
+if %consoleChoice%==PC (
+	echo [1] Full build: builds the character files for the full X2UP.
+	echo [2] Solo build: builds the character for individual release.
+	CHOICE /C 12 /M "Which build will you use? "
+	IF ERRORLEVEL 2 SET modeChoice=solo & set celChoice=yes & goto section2
+	IF ERRORLEVEL 1	SET modeChoice=full & goto celChoiceSection
+) else (
+	echo [1] Full build: builds the character files for the full X2UP.
+	echo [2] Partial build: alternate full release without building the packages.
+	echo [3] Solo build: builds the character for individual release.
+	CHOICE /C 123 /M "Which build will you use? "
+	IF ERRORLEVEL 3 SET modeChoice=solo & set celChoice=yes & goto section2
+	IF ERRORLEVEL 2 SET modeChoice=partial & set celChoice=yes & goto section2
+	IF ERRORLEVEL 1	SET modeChoice=full & goto celChoiceSection
+)
+REM Checks if mode was selected from main compiler script/if main compiler script was used
 :modeChoiceCheck
 if "%modeChoice%"=="" goto modeChoicePrompt
 
@@ -204,16 +231,59 @@ copy >nul "..\..\0. Utilities\cfgCreate.py" "0. Staging"
 copy >nul compile.ini "0. Staging"
 REM copy compilers
 copy >nul "..\..\0. Compilers" "0. Staging"
+REM for the partial build, move in the compiler. 
+if not %modeChoice%==full (
+	md "0. Staging\0. Compilers\1. Playable Characters"
+	md "0. Staging\0. Compilers\2. NPCs"
+	copy >nul "%simpleCompilePlayable%.bat" "0. Staging\0. Compilers\1. Playable Characters\%simpleCompilePlayable:~6%.bat"
+	copy >nul "%simpleCompileNPC1%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC1:~6%.bat"
+	copy >nul "%simpleCompileNPC2%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC2:~6%.bat"
+	copy >nul "%simpleCompileNPC3%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC3:~6%.bat"
+	copy >nul "%simpleCompileNPC4%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC4:~6%.bat"
+	copy >nul "%simpleCompileNPC5%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC5:~6%.bat"
+	copy >nul "%simpleCompileNPC6%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC6:~6%.bat"
+)
 REM change directory to 0. Staging folder and execute scripts
 cd "%~dp0\0. Staging"
 REM create cfgs and compile data files
 python cfgCreate.py
 cmd /c ravenFormatsCompile.bat
-REM run fbbuilder
-call fbbuilder.bat
-REM move packages to proper place
-md "packages\generated\characters"
-for /r %%x in (*.fb) do move >nul "%%x" "packages\generated\characters"
+if %modeChoice%==full (
+	REM run fbbuilder
+	call fbbuilder.bat
+	REM move packages to proper place
+	md "packages\generated\characters"
+	for /r %%x in (*.fb) do move >nul "%%x" "packages\generated\characters"
+)
+if not %modeChoice%==full (
+	md "0. CFG Files\1. Playable Characters"
+	md "0. CFG Files\2. NPCs"
+	move >nul "%npcName1%.fb.cfg" "0. CFG Files\2. NPCs"
+	move >nul "%npcName1%_nc.fb.cfg" "0. CFG Files\2. NPCs"
+	if exist "%npcName1:~0,-5%_xml.fb.cfg" move >nul "%npcName1:~0,-5%_xml.fb.cfg" "0. CFG Files\2. NPCs"
+	if exist "%npcName1:~0,-6%_xml.fb.cfg" move >nul "%npcName1:~0,-6%_xml.fb.cfg" "0. CFG Files\2. NPCs"
+	move >nul "%npcName2%.fb.cfg" "0. CFG Files\2. NPCs"
+	move >nul "%npcName2%_nc.fb.cfg" "0. CFG Files\2. NPCs"
+	if exist "%npcName2:~0,-5%_xml.fb.cfg" move >nul "%npcName2:~0,-5%_xml.fb.cfg" "0. CFG Files\2. NPCs"
+	if exist "%npcName2:~0,-6%_xml.fb.cfg" move >nul "%npcName2:~0,-6%_xml.fb.cfg" "0. CFG Files\2. NPCs"
+	move >nul "%npcName3%.fb.cfg" "0. CFG Files\2. NPCs"
+	move >nul "%npcName3%_nc.fb.cfg" "0. CFG Files\2. NPCs"
+	if exist "%npcName3:~0,-5%_xml.fb.cfg" move >nul "%npcName3:~0,-5%_xml.fb.cfg" "0. CFG Files\2. NPCs"
+	if exist "%npcName3:~0,-6%_xml.fb.cfg" move >nul "%npcName3:~0,-6%_xml.fb.cfg" "0. CFG Files\2. NPCs"
+	move >nul "%npcName4%.fb.cfg" "0. CFG Files\2. NPCs"
+	move >nul "%npcName4%_nc.fb.cfg" "0. CFG Files\2. NPCs"
+	if exist "%npcName4:~0,-5%_xml.fb.cfg" move >nul "%npcName4:~0,-5%_xml.fb.cfg" "0. CFG Files\2. NPCs"
+	if exist "%npcName4:~0,-6%_xml.fb.cfg" move >nul "%npcName4:~0,-6%_xml.fb.cfg" "0. CFG Files\2. NPCs"
+	move >nul "%npcName5%.fb.cfg" "0. CFG Files\2. NPCs"
+	move >nul "%npcName5%_nc.fb.cfg" "0. CFG Files\2. NPCs"
+	if exist "%npcName5:~0,-5%_xml.fb.cfg" move >nul "%npcName5:~0,-5%_xml.fb.cfg" "0. CFG Files\2. NPCs"
+	if exist "%npcName5:~0,-6%_xml.fb.cfg" move >nul "%npcName5:~0,-6%_xml.fb.cfg" "0. CFG Files\2. NPCs"
+	move >nul "%npcName6%.fb.cfg" "0. CFG Files\2. NPCs"
+	move >nul "%npcName6%_nc.fb.cfg" "0. CFG Files\2. NPCs"
+	if exist "%npcName6:~0,-5%_xml.fb.cfg" move >nul "%npcName6:~0,-5%_xml.fb.cfg" "0. CFG Files\2. NPCs"
+	if exist "%npcName6:~0,-6%_xml.fb.cfg" move >nul "%npcName6:~0,-6%_xml.fb.cfg" "0. CFG Files\2. NPCs"
+	for %%x in (*.cfg) do move >nul "%%x" "0. CFG Files\1. Playable Characters"
+)
 goto cleanUp
 
 :compilePC
@@ -269,7 +339,11 @@ goto cleanUp
 :cleanUp
 del /s >nul *.json
 REM clean up extra stuff
-del >nul *.cfg
+if %consoleChoice%==PC (
+	del >nul *.cfg
+) else if %modeChoice%==full (
+	del >nul *.cfg
+)
 del >nul enter.vbs
 del >nul fbbuilder.bat
 del >nul ravenFormatsCompile.bat
@@ -283,33 +357,33 @@ goto finalizeConsole
 REM move back to the main folder
 cd ..
 REM need to remove any files that are in the packages
-REM for solo build, files need to be moved to the release instead of deleted
-if %modeChoice%==solo (
-	robocopy >nul /e /v "0. Staging\sounds" "0. Release\sounds"
-	robocopy >nul /e /v "0. Staging\textures\comic" "0. Release\Files to Add to assetsfb.wad\textures\comic"
-	robocopy >nul /e /v "0. Staging\textures\loading" "0. Release\Files to Add to assetsfb.wad\textures\loading"
-	robocopy >nul /e /v "0. Staging\ui\models\characters" "0. Release\Character Select Portrait"
-) 
-rmdir /s /q "0. Staging/actors"
-rmdir /s /q "0. Staging/data/talents"
-rmdir /s /q "0. Staging/hud"
-rmdir /s /q "0. Staging/sounds"
-rmdir /s /q "0. Staging/textures"
-rmdir /s /q "0. Staging/ui"
-if exist "0. Staging/data/entities" (
-	rmdir /s /q "0. Staging/data/entities"
-)
-if exist "0. Staging/data/fightstyles" (
-	rmdir /s /q "0. Staging/data/fightstyles"
-)
-if exist "0. Staging/models" (
-	rmdir /s /q "0. Staging/models"
+REM this only applies for full mode. Other modes are not in packages
+if %modeChoice%==full (
+	rmdir /s /q "0. Staging/actors"
+	rmdir /s /q "0. Staging/data/talents"
+	rmdir /s /q "0. Staging/hud"
+	rmdir /s /q "0. Staging/sounds"
+	rmdir /s /q "0. Staging/textures"
+	rmdir /s /q "0. Staging/ui"
+	if exist "0. Staging/data/entities" (
+		rmdir /s /q "0. Staging/data/entities"
+	)
+	if exist "0. Staging/data/fightstyles" (
+		rmdir /s /q "0. Staging/data/fightstyles"
+	)
+	if exist "0. Staging/models" (
+		rmdir /s /q "0. Staging/models"
+	)
 )
 REM move files and clean up
 if %modeChoice%==full (
 	robocopy >nul /e /v "0. Staging" "..\..\0. Ready Files\Files to Add to assetsfb.wad"
-) else (
-	robocopy >nul /e /v "0. Staging" "0. Release\Files to Add to assetsfb.wad"
+)
+if %modeChoice%==partial (
+	robocopy >nul /e /v "0. Staging" "..\..\0. Ready Files"
+)
+if %modeChoice%==solo (
+	robocopy >nul /e /v "0. Staging" "0. Release"
 )
 rmdir /s /q "0. Staging"
 goto end
