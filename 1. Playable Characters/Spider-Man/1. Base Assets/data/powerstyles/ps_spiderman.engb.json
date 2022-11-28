@@ -1,0 +1,1140 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/spiderman_icons1.png",
+        "event": {
+            "damagescale": "none",
+            "name": "teleport_data_store",
+            "type": "ce_atk_teleport_mark_start"
+        },
+        "event": {
+            "count": 1,
+            "entity": "web_bullet",
+            "filename": "ents_spiderman",
+            "fulltargeting": true,
+            "inherit": "projectile",
+            "life": 0.75,
+            "name": "webbing_bullet",
+            "speed": 800,
+            "targetable": true
+        },
+        "event": {
+            "attacktype": "beam",
+            "beameffect": "char/spider/webbing_beam_shot",
+            "damagetype": "dmg_physical",
+            "fxlevel": 1,
+            "hiteffect": "char/spider/webbing_impact",
+            "inherit": "beam",
+            "knockback": 0,
+            "maxrange": 600,
+            "name": "webbing_shot"
+        },
+        "FightMove": {
+            "animenum": "ea_jump_start",
+            "handler": "ch_move_jump",
+            "lockangles": true,
+            "name": "jump",
+            "startchaintime": 0.1,
+            "chain": {
+                "action": "move",
+                "result": "power5"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "jumploop",
+            "noncombat": true,
+            "chain": {
+                "action": "move",
+                "result": "power5"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power1_start",
+            "icon": 0,
+            "is_power": true,
+            "lockangles": true,
+            "name": "power1",
+            "noautoaim": true,
+            "powerup_tag": "spider_web",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "spider_p1",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%spider_p1_pwr",
+                "time": -1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power1_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1_hold",
+            "blendtime": 0,
+            "combotextfinisher": "Bullets",
+            "combotextstarter": "Web",
+            "icon": 0,
+            "is_power": true,
+            "lockangles": false,
+            "locktransitionangles": true,
+            "name": "power1_loop",
+            "noautoaim": true,
+            "powerup_tag": "spider_web",
+            "turnrate": 0.2,
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%spider_p1_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/spider/p1_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/spider_m/p1_power",
+                "time": 0
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "40 -5 27",
+                "damage": "%spider_p1_dmg",
+                "damagescale": "none",
+                "name": "webbing_bullet",
+                "time": 0,
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
+            },
+            "trigger": {
+                "effect": "char/spider/p1_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/spider_m/p1_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "39 3 26",
+                "damage": "%spider_p1_dmg",
+                "damagescale": "none",
+                "name": "webbing_bullet",
+                "time": 0.5,
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power1_loop"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "beam",
+            "animenum": "ea_power2_loop",
+            "combotextfinisher": "Snare",
+            "combotextstarter": "Trapping",
+            "icon": 9,
+            "is_power": true,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power2",
+            "powerup_tag": "spider_web",
+            "priority": 5,
+            "startchaintime": 0.99,
+            "require": {
+                "cat": "skill",
+                "item": "spider_p2",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spider_m/p2_power",
+                "time": 0.35
+            },
+            "trigger": {
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "34 -4 17",
+                "beambolt": "Bip01 R Hand",
+                "damage": "%spider_p2_dmg",
+                "damagetype": "dmg_physical",
+                "name": "webbing_shot",
+                "powerusage": "%spider_p2_pwr",
+                "radius": 20,
+                "time": 0.35,
+                "victimeventtag": 101,
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
+            },
+            "trigger": {
+                "class": "freeze",
+                "do_pain": true,
+                "effect_cust1": "base/material/break/brk_paper",
+                "life": "%spider_p2_life",
+                "name": "powerup",
+                "tag": 101,
+                "time": -1,
+                "affecter": {
+                    "attribute": "frozen",
+                    "level": 1
+                },
+                "special_fx": {
+                    "effect": "char/spider/webbing_freeze",
+                    "fxlevel": 1,
+                    "how_used": "primary",
+                    "never_cycle": true
+                },
+                "special_fx": {
+                    "bolt": "Bip01 L Toe0",
+                    "effect": "char/spider/webbing_freeze",
+                    "fxlevel": 1,
+                    "how_used": "primary",
+                    "never_cycle": true
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Toe0",
+                    "effect": "char/spider/webbing_freeze",
+                    "fxlevel": 1,
+                    "how_used": "primary",
+                    "never_cycle": true
+                },
+                "bolton": {
+                    "bolt": "Bip01 Pelvis",
+                    "model": "models/bolton/spiderman_victim_coil",
+                    "replacecurrent": true
+                },
+                "bolton": {
+                    "bolt": "Bip01 Spine1",
+                    "model": "models/bolton/spiderman_victim_coil",
+                    "replacecurrent": true
+                },
+                "bolton": {
+                    "bolt": "Bip01 Spine2",
+                    "model": "models/bolton/spiderman_victim_coil",
+                    "replacecurrent": true
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "aoe",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Mace",
+            "combotextstarter": "Twirling",
+            "icon": 2,
+            "name": "power3",
+            "powerup_tag": "spider_web",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "spider_p3",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%spider_p3_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spider_m/p3_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_altweapon",
+                "model": "models/bolton/webmace",
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0.4
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%spider_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "inherit": "punch",
+                "maxrange": 120,
+                "name": "blender",
+                "victimeventtag": 100,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "name": "blender",
+                "time": 0.5
+            },
+            "trigger": {
+                "effect": "char/spider/p3_power",
+                "name": "effect",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power3_release"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power3",
+            "combotextfinisher": "Mace",
+            "combotextstarter": "Twirling",
+            "icon": 2,
+            "name": "power3_release",
+            "powerup_tag": "spider_web",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spider_m/p3_power",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/spider/p3_power",
+                "name": "effect",
+                "time": 0.1
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%spider_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "inherit": "punch",
+                "maxrange": "%spider_p3_rad",
+                "name": "blender",
+                "victimeventtag": 100,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "name": "blender",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "blender",
+                "time": 0.5
+            },
+            "trigger": {
+                "name": "blender",
+                "time": 0.7
+            },
+            "trigger": {
+                "boltslot": "ebolton_altweapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.9,
+                "type": "ce_bolton"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "projectilenear",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Slingshot",
+            "combotextstarter": "Flinging",
+            "icon": 3,
+            "is_power": true,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power4",
+            "playspeed": 1,
+            "powerup_tag": "spider_web",
+            "priority": 5,
+            "startchaintime": 0.99,
+            "require": {
+                "cat": "skill",
+                "item": "spider_p4",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%spider_p4_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "critical": true,
+                "name": "powerup",
+                "remove_tag": "spider_sling1",
+                "time": -1
+            },
+            "trigger": {
+                "critical": true,
+                "name": "powerup",
+                "remove_tag": "spider_sling2",
+                "time": -1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spider_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%spider_p4_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spider_m/p4_power",
+                "time": 0.22
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "remove_on_node_end": true,
+                "time": 0.38,
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/spider/p5_power",
+                    "fxlevel": 1,
+                    "how_used": "primary",
+                    "never_cycle": true
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/spider/p5_power",
+                    "fxlevel": 1,
+                    "how_used": "primary",
+                    "never_cycle": true
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power4_release"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power8_start",
+            "blendtime": 0.05,
+            "combotextfinisher": "Slingshot",
+            "combotextstarter": "Flinging",
+            "handler": "ch_fastball",
+            "icon": 3,
+            "is_power": true,
+            "lockangles": true,
+            "lockspeed": true,
+            "locktransitionangles": true,
+            "name": "power4_release",
+            "playspeed": 1,
+            "powerup_tag": "spider_web",
+            "priority": 5,
+            "trigger": {
+                "arc": 180,
+                "damage": "%spider_p4_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "knockback": "%spider_p4_kb",
+                "name": "punch",
+                "tag": 1,
+                "time": -1,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "critical": true,
+                "name": "powerup",
+                "remove_tag": "spider_sling1",
+                "time": 0.25
+            },
+            "trigger": {
+                "critical": true,
+                "name": "powerup",
+                "remove_tag": "spider_sling2",
+                "time": 0.25
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spider_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/spider/p4_release",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.16
+            },
+            "trigger": {
+                "bolt": "Bip01 L Toe0",
+                "effect": "char/spider/p4_release",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.16
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "effect": "char/spider/p4_release",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.16
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power4_hit_nothing"
+            },
+            "chain": {
+                "action": "touch",
+                "result": "power4_hit_enemy"
+            },
+            "chain": {
+                "action": "special2",
+                "result": "power4_hit_enemy"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4_end",
+            "combotextfinisher": "Slingshot",
+            "combotextstarter": "Flinging",
+            "icon": 3,
+            "is_power": true,
+            "lockangles": true,
+            "name": "power4_hit_enemy",
+            "powerup_tag": "spider_web",
+            "priority": 5,
+            "trigger": {
+                "damage": 0,
+                "knockback": 0,
+                "name": "kick",
+                "time": 0,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "life": 0.5,
+                "name": "slide",
+                "targetradius": 20,
+                "targetvictim": true,
+                "time": 0
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": 0,
+                "damagescale": "none",
+                "knockback": "%spider_p4_kb",
+                "maxrange": 72,
+                "name": "kick",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 20,
+                "damage": "%spider_p4_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "index": 2,
+                "name": "kick",
+                "time": 0.2,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1_end",
+            "combotextfinisher": "Slingshot",
+            "combotextstarter": "Flinging",
+            "icon": 3,
+            "is_power": true,
+            "lockangles": true,
+            "name": "power4_hit_nothing",
+            "powerup_tag": "spider_web",
+            "priority": 5,
+            "trigger": {
+                "arc": 20,
+                "damage": "%spider_p4_dmg",
+                "damagescale": "none",
+                "name": "kick",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": 0,
+                "damagescale": "none",
+                "knockback": "%spider_p4_kb",
+                "maxrange": 72,
+                "name": "kick",
+                "time": 0.15
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power16",
+            "blendtime": 0,
+            "combotextfinisher": "Swing",
+            "combotextstarter": "Swinging",
+            "energypersecond": "%spider_p5_pwr",
+            "fallback": "jumploop",
+            "handler": "ch_skating",
+            "icon": 1,
+            "lockangles": false,
+            "locktransitionangles": true,
+            "name": "power5",
+            "playspeed": 0.8,
+            "powerup_tag": "spider_web",
+            "priority": 5,
+            "startchaintime": 0.95,
+            "turnrate": 0.2,
+            "require": {
+                "cat": "skill",
+                "item": "spider_p5",
+                "level": 1
+            },
+            "trigger": {
+                "loop_timeout": 1,
+                "loop_type": "start",
+                "name": "sound",
+                "sound": "char/spider_m/p5_loop",
+                "time": 0
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "remove_on_node_end": true,
+                "time": 0.09,
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/spider/p5_power",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%spider_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "knockback": "%spider_p5_pwr",
+                "name": "punch",
+                "powerattack": true,
+                "tag": 1,
+                "time": -1
+            },
+            "trigger": {
+                "count": "set",
+                "name": "count",
+                "only_non_looped": true,
+                "tag": 5,
+                "time": 0,
+                "value": 1
+            },
+            "trigger": {
+                "count": "add",
+                "name": "count",
+                "tag": 6,
+                "time": 0.5,
+                "value": -1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "skateend"
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power5"
+            },
+            "chain": {
+                "action": "touch",
+                "result": "fastballhit"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "skateend",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "skateend"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Gloves",
+            "combotextstarter": "Webbed",
+            "icon": 11,
+            "lockangles": true,
+            "name": "power6",
+            "powerup_tag": "spider_web",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "spider_p6",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spider_m/p6_charge",
+                "time": 0.22
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "class": "add_attack",
+                "damagepercent": "%spider_p6_pct",
+                "damagetype": "dmg_physical",
+                "life": "%spider_p6_tim",
+                "name": "powerup",
+                "powerusage": "%spider_p6_pwr",
+                "tag": 3,
+                "time": 0.5,
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    }
+                },
+                "affecter": {
+                    "attribute": "attack_rating",
+                    "level": "%spider_p6_ar"
+                },
+                "bolton": {
+                    "bolt": "Bip01 R Hand",
+                    "model": "models/bolton/webglove_right"
+                },
+                "bolton": {
+                    "bolt": "Bip01 L Hand",
+                    "model": "models/bolton/webglove_left"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Sense",
+            "combotextstarter": "Spider",
+            "icon": 5,
+            "is_power": true,
+            "lockangles": true,
+            "name": "power7",
+            "playspeed": 2,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "spider_p7",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spider_m/p7_power",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%spider_p7_life",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%spider_p7_pwr",
+                "time": 0.5,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/spider/p7_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%spider_p7_speed"
+                },
+                "affecter": {
+                    "attribute": "reveal_hidden"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "animenum": "ea_power6",
+            "combotextfinisher": "Nullifier",
+            "combotextstarter": "Nullifying",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power8",
+            "playspeed": 1,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "spider_p8",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/spider/p8_aura",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/cable/p6_aura",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spider_m/p8_power",
+                "time": 0
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%spider_p8_lif",
+                "name": "powerup",
+                "powerusage": "%spider_p8_pwr",
+                "remove_skin_on_exit": true,
+                "skin": 18800,
+                "skin_swap": true,
+                "time": 0.65,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage_scope",
+                    "level": 0,
+                    "scope_damage": "dmg_elemental"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage_scope",
+                    "level": 0,
+                    "scope_damage": "dmg_energy"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "combotextfinisher": "Bash",
+            "description": "BUNGEE BASH",
+            "endchaintime": 0.95,
+            "handler": "ch_tele_jump",
+            "icon": 10,
+            "name": "power9",
+            "noautoaim": true,
+            "playspeed": 10,
+            "powerup_tag": "spider_power9",
+            "priority": "uninterruptable",
+            "startchaintime": 0.9,
+            "turnrate": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "spider_p9",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": 5,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spider_m/p5_loop",
+                "time": 0
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "remove_on_node_end": true,
+                "time": 0.09,
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/spider/p5_power",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "damage": "7 9",
+                "damagescale": "normal",
+                "damagetype": "dmg_physical",
+                "forceretargeting": true,
+                "isxtreme": true,
+                "maxrange": 250,
+                "name": "teleport_data_store",
+                "nofailifnotarget": true,
+                "powerusage": 0,
+                "time": 0
+            },
+            "trigger": {
+                "count": "set",
+                "name": "count",
+                "time": 0,
+                "value": "%spider_p9_hits"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power9_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power14",
+            "blendtime": 0,
+            "endchaintime": 0.95,
+            "fallback": "power9_end",
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "power9_loop",
+            "noautoaim": true,
+            "playspeed": 10,
+            "powerup_tag": "spider_power9",
+            "priority": "uninterruptable",
+            "startchaintime": 0.9,
+            "require": {
+                "cat": "counter",
+                "level": 1
+            },
+            "trigger": {
+                "count": "add",
+                "name": "count",
+                "time": 0,
+                "value": -1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spider_m/p5_loop",
+                "time": 0
+            },
+            "trigger": {
+                "attacktype": "direct",
+                "maxrange": 250,
+                "name": "teleport_scaled_atk",
+                "powerusage": 0,
+                "time": 0
+            },
+            "trigger": {
+                "damage": "7 9",
+                "damagescale": "normal",
+                "damagetype": "dmg_physical",
+                "name": "teleport_punch",
+                "powerusage": 0,
+                "time": 0.33
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power9_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power5_end",
+            "blendtime": 0.1,
+            "endchaintime": 0.95,
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "power9_end",
+            "noautoaim": true,
+            "playspeed": 5,
+            "powerup_tag": "spider_power9",
+            "priority": "uninterruptable",
+            "startchaintime": 0.9,
+            "trigger": {
+                "attacktype": "direct",
+                "maxrange": 250,
+                "name": "teleport_return",
+                "powerusage": 0,
+                "time": 0
+            },
+            "trigger": {
+                "cleardata": true,
+                "name": "teleport_data_store",
+                "time": 0.45
+            },
+            "trigger": {
+                "end": true,
+                "name": "xtreme_start",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4_end",
+            "blendtime": 6,
+            "combotextfinisher": "Armor",
+            "description": "SPIDER ARMOR",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "spider_p10",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.7
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spider_m/p10_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%spider_p10_lif",
+                "name": "powerup",
+                "remove_skin_on_exit": true,
+                "skin": 18810,
+                "skin_swap": true,
+                "time": 0.5,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": 2
+                },
+                "affecter": {
+                    "attribute": "might_heaviness",
+                    "level": 2
+                },
+                "affecter": {
+                    "attribute": "might_structure",
+                    "level": 2
+                }
+            },
+            "trigger": {
+                "effect": "char/spider/p10_charge",
+                "name": "effect",
+                "time": 0.7
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
