@@ -18,9 +18,9 @@ set npcName5=""
 set npcName6=""
 
 REM fill in the name of the character's simple compilers here (without the file extension)
-set simpleCompilePlayable=simpleCompile_Nightcrawler
-set simpleCompileNPC1=simpleCompile_Nightcrawler_mc
-set simpleCompileNPC2=simpleCompile_NightcrawlerSimple
+set simpleCompilePlayable=compile_Nightcrawler
+set simpleCompileNPC1=compile_Nightcrawler_mc
+set simpleCompileNPC2=compile_NightcrawlerSimple
 set simpleCompileNPC3=""
 set simpleCompileNPC4=""
 set simpleCompileNPC5=""
@@ -241,13 +241,13 @@ REM for the partial build, move in the compiler.
 if not %modeChoice%==full (
 	md "0. Staging\0. Compilers\1. Playable Characters"
 	md "0. Staging\0. Compilers\2. NPCs"
-	copy >nul "%simpleCompilePlayable%.bat" "0. Staging\0. Compilers\1. Playable Characters\%simpleCompilePlayable:~6%.bat"
-	copy >nul "%simpleCompileNPC1%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC1:~6%.bat"
-	copy >nul "%simpleCompileNPC2%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC2:~6%.bat"
-	copy >nul "%simpleCompileNPC3%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC3:~6%.bat"
-	copy >nul "%simpleCompileNPC4%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC4:~6%.bat"
-	copy >nul "%simpleCompileNPC5%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC5:~6%.bat"
-	copy >nul "%simpleCompileNPC6%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC6:~6%.bat"
+	copy >nul "0. Simple Compilers\%simpleCompilePlayable%.bat" "0. Staging\0. Compilers\1. Playable Characters\%simpleCompilePlayable:~6%.bat"
+	copy >nul "0. Simple Compilers\%simpleCompileNPC1%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC1:~6%.bat"
+	copy >nul "0. Simple Compilers\%simpleCompileNPC2%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC2:~6%.bat"
+	copy >nul "0. Simple Compilers\%simpleCompileNPC3%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC3:~6%.bat"
+	copy >nul "0. Simple Compilers\%simpleCompileNPC4%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC4:~6%.bat"
+	copy >nul "0. Simple Compilers\%simpleCompileNPC5%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC5:~6%.bat"
+	copy >nul "0. Simple Compilers\%simpleCompileNPC6%.bat" "0. Staging\0. Compilers\2. NPCs\%simpleCompileNPC6:~6%.bat"
 )
 REM change directory to 0. Staging folder and execute scripts
 cd "%~dp0\0. Staging"
