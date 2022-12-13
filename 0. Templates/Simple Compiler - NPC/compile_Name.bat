@@ -1,13 +1,13 @@
 @echo off
-echo Compiling NPC - Nightcrawler_MC
+echo Compiling NPC - NAME
 
 REM **************************
 REM * Section 0 - User Input *
 REM **************************
 
 REM get the name of the character and their number
-set charName=nightcrawler_mc
-set charNum=200
+set charName=name
+set charNum=XX
 REM define other values for the compiler
 set effectsFolder=""
 set powerstyle=""

@@ -6,14 +6,14 @@ REM ***************
 REM Fill in the following variable prompts with the name of the files or leave it as "" if it doesn't apply
 
 REM Data Entry Options
-set codexEntry=Nightcrawler
-set dangerEntry=Nightcrawler
-set herostatEntry=Nightcrawler
-set itemsEntry=Nightcrawler
-set npcstatEntry1=Nightcrawler_MC
-set npcstatEntry2=NightcrawlerSimple
+set codexEntry=""
+set npcstatEntry1=name
+set npcstatEntry2=""
 set npcstatEntry3=""
-set reviewEntry=Nightcrawler
+set npcstatEntry4=""
+set npcstatEntry5=""
+set npcstatEntry6=""
+set reviewEntry=""
 
 REM ******************************
 REM * Section 1 - Main Execution *
@@ -30,13 +30,13 @@ if not "%CurrDirName%"=="XML2-Ultimate-Patch" (
 	goto dircheck
 )
 REM copy the .bat file so it can be used
-copy >nul "0. Update Scripts\updatePlayable.bat" "%CurrDirNameFull%"
+copy >nul "0. Update Scripts\updateNPC.bat" "%CurrDirNameFull%"
 REM change back to the directory of the batch file
 cd %CurrDirNameFull%
 
 REM call the main compiler
-call updatePlayable.bat
-del >nul updatePlayable.bat
+call updateNPC.bat
+del >nul updateNPC.bat
 
 REM return from the compiler, display success message
 echo Transfer Complete

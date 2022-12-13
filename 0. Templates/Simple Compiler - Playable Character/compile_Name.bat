@@ -1,17 +1,21 @@
 @echo off
-echo Compiling NPC - Nightcrawler_MC
+echo Compiling Playable Character - NAME
 
 REM **************************
 REM * Section 0 - User Input *
 REM **************************
 
 REM get the name of the character and their number
-set charName=nightcrawler_mc
-set charNum=200
+set charName=name
+set charNum=XX
 REM define other values for the compiler
-set effectsFolder=""
-set powerstyle=""
-set soundFile=""
+set comicCover=name_cov
+set effectsFolder=name
+set loadingScreen1=XX01
+set loadingScreen2=XX02
+set loadingScreen3=XX03
+set powerstyle=ps_name
+set soundFile=name_m
 
 REM fill in if the character needs a special compilation process on consoles
 REM (like Cyclops with his skin-specific visor)
@@ -24,7 +28,7 @@ REM ******************************
 REM * Section 1 - Main Execution *
 REM ******************************
 REM copy the compiler
-copy >nul "0. Compilers\2. NPCs\compileCommon.bat" "%~dp0"
+copy >nul "0. Compilers\1. Playable Characters\compileCommon.bat" "%~dp0"
 REM execute the compiler
 call compileCommon.bat
 REM delete the compiler

@@ -6,14 +6,14 @@ REM ***************
 REM Fill in the following variable prompts with the name of the files or leave it as "" if it doesn't apply
 
 REM Data Entry Options
-set codexEntry=Nightcrawler
-set dangerEntry=Nightcrawler
-set herostatEntry=Nightcrawler
-set itemsEntry=Nightcrawler
-set npcstatEntry1=Nightcrawler_MC
-set npcstatEntry2=NightcrawlerSimple
+set codexEntry=name
+set dangerEntry=name
+set herostatEntry=name
+set itemsEntry=name
+set npcstatEntry1=name_MC
+set npcstatEntry2=nameSimple
 set npcstatEntry3=""
-set reviewEntry=Nightcrawler
+set reviewEntry=name
 
 REM ******************************
 REM * Section 1 - Main Execution *
