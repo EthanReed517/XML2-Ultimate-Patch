@@ -143,7 +143,7 @@ if exist "0. Staging\2. Bonus Features" rmdir /s /q "0. Staging\2. Bonus Feature
 if exist "0. Staging\2. Bonus Loading Screens" rmdir /s /q "0. Staging\2. Bonus Loading Screens"
 
 REM read the list of unneeded PC files and delete them
-for /f "delims=" %%f in (PCunmodified.txt) do del "0. Staging\%%f"
+for /f "delims=" %%f in (PCunmodified.cfg) do del "0. Staging\%%f"
 
 REM copy compilers
 copy >nul "..\..\0. Compilers\ravenFormatsCompile.bat" "0. Staging"
