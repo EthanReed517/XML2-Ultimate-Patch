@@ -20,6 +20,13 @@ set npcNum2=0601
 set npcName3=""
 set npcNum3=""
 
+REM fill in which consoles the character is available on (options are Y or N):
+set hasPC=Y
+set hasGC=Y
+set hasPS2=Y
+set hasPSP=Y
+set hasXB=Y
+
 REM fill in if the character needs a special compilation process on consoles
 REM (like Cyclops with his skin-specific visor)
 REM options are Y or N

@@ -60,16 +60,42 @@ if %modeChoice%==solo md "0. Release"
 robocopy >nul /e /v "1. Base Assets" "0. Staging"
 REM proceed based on console selection
 if %consoleChoice%==PC (
-	robocopy >nul /e /v "2. Default Assets - PC" "0. Staging"
-	goto compilePC
+	if %hasPC%==N (
+		goto end
+	) else (
+		robocopy >nul /e /v "2. Default Assets - PC" "0. Staging"
+		goto compilePC
+	)
 ) else if %consoleChoice%==XB (
-	robocopy >nul /e /v "2. Default Assets - Xbox" "0. Staging"
-	REM Xbox can use icons2 in the talents file, so it goes to the compilation stage immediately
-	goto compileConsole
+	if %hasXB%==N (
+		goto end
+	) else (
+		robocopy >nul /e /v "2. Default Assets - Xbox" "0. Staging"
+		REM Xbox can use icons2 in the talents file, so it goes to the compilation stage immediately
+		goto compileConsole
+	)
 ) else (
-	if %consoleChoice%==GC robocopy >nul /e /v "2. Default Assets - GameCube" "0. Staging"
-	if %consoleChoice%==PS2 robocopy >nul /e /v "2. Default Assets - PS2" "0. Staging"
-	if %consoleChoice%==PSP robocopy >nul /e /v "2. Default Assets - PSP" "0. Staging"
+	if %consoleChoice%==GC (
+		if %hasGC%==N (
+			goto end
+		) else (
+			robocopy >nul /e /v "2. Default Assets - GameCube" "0. Staging"
+		)
+	)
+	if %consoleChoice%==PS2 (
+		if %hasPS2%==N (
+			goto end
+		) else (
+			robocopy >nul /e /v "2. Default Assets - PS2" "0. Staging"
+		)
+	)
+	if %consoleChoice%==PSP (
+		if %hasPSP%==N (
+			goto end
+		) else (
+			robocopy >nul /e /v "2. Default Assets - PSP" "0. Staging"
+		)
+	)
 	REM other consoles need to use icons1 in the talents file, so they go there first
 	goto icons1
 )
