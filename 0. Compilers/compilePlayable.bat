@@ -139,10 +139,12 @@ REM copy python script for creating additional cfg files
 copy >nul "..\..\0. Compilers\cfgCreate.py" "0. Staging"
 copy >nul compile.ini "0. Staging"
 REM copy compilers
-copy >nul "..\..\0. Compilers\enter.vbs" "0. Staging"
-copy >nul "..\..\0. Compilers\fbbuilder.bat" "0. Staging"
 copy >nul "..\..\0. Compilers\ravenFormatsCompile.bat" "0. Staging"
-if %specialCompile%==Y copy >nul %specialCompileName%.bat "0. Staging"
+if %modeChoice%==full (
+	copy >nul "..\..\0. Compilers\enter.vbs" "0. Staging"
+	copy >nul "..\..\0. Compilers\fbbuilder.bat" "0. Staging"
+	if %specialCompile%==Y copy >nul %specialCompileName%.bat "0. Staging"
+)
 REM for the partial and solo builds, copy the simple compilers to the staging folder
 if not %modeChoice%==full (
 	md "0. Staging\0. Compilers\1. Playable Characters"
@@ -235,6 +237,7 @@ if %consoleChoice%==PC (
 if not %consoleChoice%==PC (
 	del >nul enter.vbs
 	del >nul fbbuilder.bat
+	del >nul %specialCompileName%.bat
 	del >nul cfgCreate.py
 )
 del >nul ravenFormatsCompile.bat
