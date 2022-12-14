@@ -206,7 +206,7 @@ if exist "0. Staging\2. Bonus Loading Screens" rmdir /s /q "0. Staging\2. Bonus 
 if exist "0. Staging\2. Comics for XML1 and PSP Characters" rmdir /s /q "0. Staging\2. Comics for XML1 and PSP Characters"
 
 REM read the list of unneeded PC files and delete them
-for /f "delims=" %%f in (PCunmodified.cfg) do del "0. Staging\%%f"
+for /f "delims=" %%f in (PCunmodified.cfg) do del /Q "0. Staging\%%f"
 
 REM copy python script for creating additional pkgb files
 copy >nul "..\..\0. Compilers\packageCreate.py" "0. Staging"
