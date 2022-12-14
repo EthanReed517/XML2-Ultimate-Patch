@@ -1,19 +1,21 @@
 REM section for map stuff
-Setlocal EnableDelayedExpansion
-for /f "delims=" %%f in (updateMaps.cfg) do (
-	set line=%%f
-	if "!line:~0,1!"=="#" (
-		REM a line that starts with "#" is a comment and can be ignored
-		echo.
-	) else if "!line:~0,1!"=="^" (
-		REM lines in the file that represent the map path start with a "^". Set that as the path when it appears
-		set mapPath=..\..\5. Maps\!line:~1!
-	) else (
-		REM if it's not a line that represents the map path, it's a file that needs to be copied
-		copy "!line!" "!mapPath!\!line!"
+if exist updateMaps.cfg (
+	Setlocal EnableDelayedExpansion
+	for /f "delims=" %%f in (updateMaps.cfg) do (
+		set line=%%f
+		if "!line:~0,1!"=="#" (
+			REM a line that starts with "#" is a comment and can be ignored
+			echo.
+		) else if "!line:~0,1!"=="^" (
+			REM lines in the file that represent the map path start with a "^". Set that as the path when it appears
+			set mapPath=..\..\5. Maps\!line:~1!
+		) else (
+			REM if it's not a line that represents the map path, it's a file that needs to be copied
+			copy "!line!" "!mapPath!\!line!"
+		)
 	)
+	endlocal
 )
-endlocal
 
 REM section for data entries
 echo Copying data entries to data files...
