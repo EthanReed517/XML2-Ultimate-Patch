@@ -1,31 +1,31 @@
 @echo off
-echo Compiling NAME's character assets 
+echo Compiling Spider-Man's character assets 
 
 REM **************************
 REM * Section 0 - User Input *
 REM **************************
 
 REM playable character's internal name
-set charName=name
+set charName=spiderman
 REM playable character's first skin number
-set charNum=XX01
+set charNum=18801
 REM playable character's talents file
-set talentsName=name
+set talentsName=spiderman
 
 REM fill in the names and skin numbers of any NPCs for this character
-set npcName1=name_mc
-set npcNum1=200XX
-set npcName2=namesimple
-set npcNum2=XX01
-set npcName3=sin_name
-set npcNum3=XX00
+set npcName1=""
+set npcNum1=""
+set npcName2=""
+set npcNum2=""
+set npcName3=""
+set npcNum3=""
 
 REM fill in which consoles the character is available on (options are Y or N):
 set hasPC=Y
-set hasGC=Y
-set hasPS2=Y
-set hasPSP=Y
-set hasXB=Y
+set hasGC=N
+set hasPS2=N
+set hasPSP=N
+set hasXB=N
 
 REM fill in if the character needs a special compilation process on consoles
 REM (like Cyclops with his skin-specific visor)
