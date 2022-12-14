@@ -9,7 +9,6 @@ REM get the name of the character and their number
 set charName=name
 set charNum=XX
 REM define other values for the compiler
-set comicCover=name_cov
 set effectsFolder=name
 set loadingScreen1=XX01
 set loadingScreen2=XX02

@@ -30,7 +30,6 @@ REM copy additional files
 if not %powerstyle%=="" robocopy >nul /e /v "data\powerstyles" "0. Complete Files\Files to Add to assetsfb.wad\data\powerstyles" "%powerstyle%.engb"
 if not %effectsFolder%=="" robocopy >nul /e /v "effects\char\%effectsFolder%" "0. Complete Files\Files to Add to assetsfb.wad\effects\char\%effectsFolder%"
 if not %soundfile%=="" robocopy >nul /e /v "sounds\eng\%soundfile:~0,1%\%soundfile:~1,1%" "0. Complete Files\sounds\eng\%soundfile:~0,1%\%soundfile:~1,1%" "%soundfile%.zsm"
-if not %comicCover%=="" robocopy >nul /e /v "textures\comic" "0. Complete Files\Files to Add to assetsfb.wad\textures\comic" "%comicCover%.igb"
 if not %loadingScreen1%=="" robocopy >nul /e /v "textures\loading" "0. Complete Files\Files to Add to assetsfb.wad\textures\loading" "%loadingScreen1%.igb"
 if not %loadingScreen2%=="" robocopy >nul /e /v "textures\loading" "0. Complete Files\Files to Add to assetsfb.wad\textures\loading" "%loadingScreen2%.igb"
 if not %loadingScreen3%=="" robocopy >nul /e /v "textures\loading" "0. Complete Files\Files to Add to assetsfb.wad\textures\loading" "%loadingScreen3%.igb"

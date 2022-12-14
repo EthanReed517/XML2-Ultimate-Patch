@@ -9,7 +9,6 @@ REM get the name of the character and their number
 set charName=cyclops
 set charNum=01
 REM define other values for the compiler
-set comicCover=cyclops
 set effectsFolder=cyclop
 set loadingScreen1=0101
 set loadingScreen2=0102
