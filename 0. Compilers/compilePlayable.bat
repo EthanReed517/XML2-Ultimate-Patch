@@ -251,15 +251,15 @@ cd ..
 REM need to remove any files that are in the packages
 REM this only applies for full mode. Other modes are not in packages
 if %modeChoice%==full (
-	rmdir /s /q "0. Staging/actors"
-	rmdir /s /q "0. Staging/data/talents"
-	rmdir /s /q "0. Staging/hud"
-	rmdir /s /q "0. Staging/sounds"
-	rmdir /s /q "0. Staging/textures"
-	rmdir /s /q "0. Staging/ui"
-	if exist "0. Staging/data/entities" rmdir /s /q "0. Staging/data/entities"
-	if exist "0. Staging/data/fightstyles" rmdir /s /q "0. Staging/data/fightstyles"
-	if exist "0. Staging/models" rmdir /s /q "0. Staging/models"
+	rmdir /s /q "0. Staging\actors"
+	rmdir /s /q "0. Staging\data\talents"
+	rmdir /s /q "0. Staging\hud"
+	rmdir /s /q "0. Staging\sounds"
+	rmdir /s /q "0. Staging\textures"
+	rmdir /s /q "0. Staging\ui"
+	if exist "0. Staging\data\entities" rmdir /s /q "0. Staging\data\entities"
+	if exist "0. Staging\data\fightstyles" rmdir /s /q "0. Staging\data\fightstyles"
+	if exist "0. Staging\models" rmdir /s /q "0. Staging\models"
 )
 REM move files and clean up
 if %modeChoice%==full robocopy >nul /e /v "0. Staging" "..\..\0. Ready Files\Files to Add to assetsfb.wad"
@@ -279,10 +279,10 @@ if %modeChoice%==solo (
 	robocopy >nul /e /v "0. Staging\textures\loading" "0. Release\textures\loading"
 	robocopy >nul /e /v "0. Staging\ui\models\characters" "0. Release\ui\models\characters"
 ) 
-if exist "0. Staging/sounds" rmdir /s /q "0. Staging/sounds"
-if exist "0. Staging/sounds" rmdir /s /q "0. Staging/textures/comic"
-if exist "0. Staging/sounds" rmdir /s /q "0. Staging/textures/loading"
-rmdir /s /q "0. Staging/ui/models"
+if exist "0. Staging\sounds" rmdir /s /q "0. Staging\sounds"
+if exist "0. Staging\textures\comic" rmdir /s /q "0. Staging\textures\comic"
+if exist "0. Staging\textures\loading" rmdir /s /q "0. Staging\textures\loading"
+rmdir /s /q "0. Staging\ui\models"
 REM move files and clean up
 if %modeChoice%==full (
 	robocopy >nul /e /v "0. Staging" "..\..\0. Ready Files"

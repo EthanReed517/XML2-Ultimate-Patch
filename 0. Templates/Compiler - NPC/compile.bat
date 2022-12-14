@@ -41,15 +41,13 @@ if not "%CurrDirName%"=="XML2-Ultimate-Patch" (
 	goto dircheck
 )
 REM copy the .bat file so it can be used
-copy >nul "0. Compilers\compilePlayable.bat" "%CurrDirNameFull%"
+copy >nul "0. Compilers\compileNPC.bat" "%CurrDirNameFull%"
 REM change back to the directory of the batch file
 cd %CurrDirNameFull%
 
 REM call the main compiler
-call compilePlayable.bat
-del >nul compilePlayable.bat
+call compileNPC.bat
+del >nul compileNPC.bat
 
 REM return from the compiler, display success message
 echo Transfer Complete
-
-pause
