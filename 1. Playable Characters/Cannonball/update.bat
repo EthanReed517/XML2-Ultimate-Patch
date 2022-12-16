@@ -7,7 +7,7 @@ REM Fill in the following variable prompts with the name of the files or leave i
 
 REM Data Entry Options
 set codexEntry=Cannonball
-set dangerEntry=""
+set dangerEntry=Cannonball
 set herostatEntry=Cannonball
 set itemsEntry=""
 set npcstatEntry1=""
