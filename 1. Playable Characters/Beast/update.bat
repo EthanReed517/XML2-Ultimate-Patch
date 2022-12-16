@@ -8,7 +8,7 @@ REM Fill in the following variable prompts with the name of the files or leave i
 REM Data Entry Options
 set codexEntry=Beast
 set dangerEntry=Beast
-set herostatEntry=Beast_hero
+set herostatEntry=Beast
 set itemsEntry=“”
 set npcstatEntry1=Beast
 set npcstatEntry2=BeastBoss
