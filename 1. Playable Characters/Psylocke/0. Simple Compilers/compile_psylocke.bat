@@ -1,20 +1,20 @@
 @echo off
-echo Compiling Playable Character - X-Man
+echo Compiling Playable Character - Psylocke
 
 REM **************************
 REM * Section 0 - User Input *
 REM **************************
 
 REM get the name of the character and their number
-set charName=xman
-set charNum=35
+set charName=psylocke
+set charNum=154
 REM define other values for the compiler
-set effectsFolder=xman
-set loadingScreen1=3501
-set loadingScreen2=""
+set effectsFolder=psyloc
+set loadingScreen1=15401
+set loadingScreen2=15402
 set loadingScreen3=""
-set powerstyle=ps_xman
-set soundFile=xman_m
+set powerstyle=ps_psylocke
+set soundFile=psyloc_m
 
 REM fill in if the character needs a special compilation process on consoles
 REM (like Cyclops with his skin-specific visor)
