@@ -19,9 +19,9 @@ set soundFile=magma_m
 REM fill in if the character needs a special compilation process on consoles
 REM (like Cyclops with his skin-specific visor)
 REM options are Y or N
-set specialCompile=N
+set specialCompile=Y
 REM if the character has a special compiler process, list the name here (no file extension)
-set specialCompileName=""
+set specialCompileName=specialCompile_magma
 
 REM ******************************
 REM * Section 1 - Main Execution *
