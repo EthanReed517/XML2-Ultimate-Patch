@@ -1,0 +1,1058 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/america_icons1.png",
+        "event": {
+            "inherit": "skinsegment",
+            "name": "shield_hide",
+            "show": false,
+            "skinsegment": "shield_segment"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "shield_show",
+            "show": true,
+            "skinsegment": "shield_segment"
+        },
+        "FightMove": {
+            "animenum": "ea_power12",
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackknockback2",
+            "event": {
+                "inherit": "punch_heavy",
+                "knockback": 245,
+                "maxrange": 60,
+                "name": "shield_knock",
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "fxlevel": 1,
+                "hiteffect": "char/captam/p1_impact",
+                "name": "shield_knock",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle",
+            "noncombat": true,
+            "playspeed": 1.5,
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "strafeleft"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "straferight"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "advance"
+            },
+            "chain": {
+                "action": "retreat",
+                "result": "retreat"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "groundattack",
+                "result": "groundattack"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            },
+            "chain": {
+                "action": "special",
+                "result": "boredloop"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_start",
+            "handler": "ch_move_jump",
+            "lockangles": true,
+            "name": "jump",
+            "startchaintime": 0.3,
+            "chain": {
+                "action": "move",
+                "result": "airjump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "jumploop",
+            "noncombat": true,
+            "chain": {
+                "action": "move",
+                "result": "airjump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_double_jump_start",
+            "blendtime": 0.1,
+            "handler": "ch_move_jump",
+            "name": "airjump",
+            "startchaintime": 0.5,
+            "turnrate": 0.2,
+            "chain": {
+                "action": "special",
+                "result": "doublejumpland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_land",
+            "blendtime": 0.1,
+            "endchaintime": 0.7,
+            "handler": "ch_move_jump_land",
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "doublejumpland",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_blocking",
+            "blendtime": 0.1,
+            "fallback": "blocking",
+            "handler": "ch_block",
+            "icon": 12,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "blocking",
+            "priority": 6,
+            "startchaintime": 0.2,
+            "require": {
+                "cat": "skill",
+                "item": "block"
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": 1,
+                "time": -1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "remove_on_node_end": true,
+                "time": 0,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "damage_to_energy",
+                    "level": "%block_dmgasenrg"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "reflect_damage",
+                    "level": "%cap_mastery_chance",
+                    "scope": {
+                        "scope_attack": "projectile"
+                    },
+                    "scope": {
+                        "scope_attack": "beam"
+                    }
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_grab",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_knockback",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_popup",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_finisher",
+                    "level": 0
+                }
+            },
+            "chain": {
+                "action": "special",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "rollforward"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "dodgeright"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "dodgeleft"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "projectile",
+            "animenum": "ea_power1",
+            "blendtime": 0,
+            "combotextfinisher": "Onslaught",
+            "combotextstarter": "Rallying",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "powerup_tag": "captam_shield",
+            "priority": 5,
+            "startchaintime": 0.4,
+            "require": {
+                "cat": "skill",
+                "item": "captam_p1",
+                "level": 1
+            },
+            "trigger": {
+                "name": "shield_show",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/captam_m/p1_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/captam/p1_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/captam/p1_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "shield_hide",
+                "time": 0.27
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "16 0 48",
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%captam_p1_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "entity": "shield_shot",
+                "filename": "ents_captainamerica",
+                "fulltargeting": true,
+                "knockback": 120,
+                "maxrange": 800,
+                "name": "projectile",
+                "powerusage": "%captam_p1_pwr",
+                "speed": 450,
+                "targetable": true,
+                "time": 0.27,
+                "Damagemod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "name": "shield_show",
+                "time": 0.99
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "melee",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Slam",
+            "combotextstarter": "Valorous",
+            "icon": 3,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power2",
+            "playspeed": 0.5,
+            "priority": 5,
+            "startchaintime": 0.25,
+            "require": {
+                "cat": "skill",
+                "item": "captam_p2",
+                "level": 1
+            },
+            "trigger": {
+                "name": "shield_show",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%captam_p2_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/captam/p2_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/captam_m/p2_charge",
+                "time": 0
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power2_release"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "melee",
+            "animenum": "ea_power2_end",
+            "combotextfinisher": "Slam",
+            "combotextstarter": "Valorous",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power2_release",
+            "powerup_tag": "captam_shield",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "captam_p2",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/captam/p2_release",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/captam_m/p2_power",
+                "tag": 1,
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/captam/p2_release",
+                "name": "effect",
+                "tag": 2,
+                "time": 0.16
+            },
+            "trigger": {
+                "life": 0.3,
+                "movement": 0,
+                "name": "slide",
+                "targetdistance": 90,
+                "targetradius": 40,
+                "time": 0.16
+            },
+            "trigger": {
+                "effect": "char/captam/p2_release",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%captam_p2_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "name": "punch",
+                "tag": 3,
+                "time": 0.2,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "effect": "char/captam/p2_release",
+                "fxlevel": 5,
+                "name": "effect",
+                "time": 0.67
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "aoe",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Slice",
+            "combotextstarter": "Spinning",
+            "handler": "ch_nightcrawlerboltons",
+            "icon": 2,
+            "lockangles": false,
+            "name": "power3",
+            "powerup_tag": "captam_shield",
+            "priority": 5,
+            "startchaintime": 0.95,
+            "require": {
+                "cat": "skill",
+                "item": "captam_p3",
+                "level": 1
+            },
+            "event": {
+                "arc": 180,
+                "attack_type": "punch",
+                "damage": "%captam_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "inherit": "radial",
+                "knockback": "%captam_p3_kb",
+                "maxrange": 120,
+                "name": "shield_slice",
+                "tiles": true,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "name": "shield_show",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%captam_p3_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/captam_m/p3_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "effect": "char/captam/p3_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "angle": -45,
+                "name": "shield_slice",
+                "time": 0.27
+            },
+            "trigger": {
+                "angle": -135,
+                "name": "shield_slice",
+                "time": 0.37
+            },
+            "trigger": {
+                "angle": 135,
+                "name": "shield_slice",
+                "time": 0.45
+            },
+            "trigger": {
+                "angle": -45,
+                "name": "shield_slice",
+                "time": 0.51
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "melee",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Charge",
+            "combotextstarter": "Avenging",
+            "energypersecond": "%captam_p4_pwr",
+            "fallback": "jumploop",
+            "handler": "ch_charge_move",
+            "icon": 10,
+            "locktransitionangles": true,
+            "name": "power4",
+            "noautoaim": true,
+            "powerup_tag": "captam_shield",
+            "priority": 5,
+            "startchaintime": 0.95,
+            "turnrate": 0.2,
+            "require": {
+                "cat": "skill",
+                "item": "captam_p4",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "only_non_looped": true,
+                "powerusage": "%captam_p4_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "shield_show",
+                "time": 0
+            },
+            "trigger": {
+                "loop_timeout": 1,
+                "loop_type": "start",
+                "name": "sound",
+                "sound": "char/captam_m/p4_loop",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": "%captam_p4_dmg",
+                "knockback": "%captam_p4_kb",
+                "name": "punch",
+                "tag": 1,
+                "tiles": true,
+                "time": -1,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                },
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "remove_on_node_end": true,
+                "time": 0,
+                "special_fx": {
+                    "bolt": "Bip01 Spine2",
+                    "effect": "char/captam/p4_power",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/captam/p4_power",
+                    "fxlevel": 3,
+                    "how_used": "primary"
+                }
+            },
+            "chain": {
+                "action": "special",
+                "result": "power4"
+            },
+            "chain": {
+                "action": "touch",
+                "result": "power4_break"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "fastballland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_grab_break",
+            "icon": 10,
+            "lockangles": true,
+            "lockspeed": true,
+            "locktransitionangles": true,
+            "name": "power4_break",
+            "noautoaim": true,
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/captam_m/p4_impact",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "melee",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Smash",
+            "combotextstarter": "Quick",
+            "icon": 1,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power5",
+            "playspeed": 2,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "captam_p5",
+                "level": 1
+            },
+            "trigger": {
+                "name": "shield_show",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%captam_p5_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/captam/p5_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/captam_m/p5_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%captam_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "fxlevel": 1,
+                "hiteffect": "char/captam/p1_impact",
+                "name": "punch",
+                "time": 0.4,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Strength",
+            "combotextstarter": "Reserve",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "captam_p7",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/captam_m/p7_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/captam/p7_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "effect": "char/captam/p7_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "life": "%captam_p7_life",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%captam_p7_pwr",
+                "time": 0.46,
+                "special_fx": {
+                    "effect": "char/captam/p7_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/captam/p7_aura",
+                    "fxlevel": 2,
+                    "how_used": "deactivate"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": "%captam_p7_dmg"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "power_cost",
+                    "level": "%captam_p7_scale"
+                },
+                "affecter": {
+                    "attribute": "slow_immune",
+                    "level": 1
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power8",
+            "combotextfinisher": "Bulwark",
+            "combotextstarter": "Rallying",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "captam_p8",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/captam_m/p8_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/captam/p8_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "effect": "char/captam/p8_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "life": "%captam_life",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%captam_pwr",
+                "time": 0.46,
+                "special_fx": {
+                    "effect": "char/captam/p8_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/captam/p8_aura",
+                    "fxlevel": 2,
+                    "how_used": "deactivation"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%captam_def"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "combo_damage",
+                    "level": "%captam_com"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_stun",
+                    "level": 0
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "combotextfinisher": "Shield",
+            "description": "AVENGER'S SHIELD",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power10",
+            "playspeed": 7,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "captam_p10",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "event": {
+                "arc": 180,
+                "damage": "%captam_p10_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "inherit": "radial",
+                "maxrange": 200,
+                "name": "cap_radial",
+                "damageMod": {
+                    "name": "dmgmod_immobilize"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/captam_m/p10_power",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/captam/p10_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.15
+            },
+            "trigger": {
+                "effect": "char/captam/p10_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.15
+            },
+            "trigger": {
+                "name": "cap_radial",
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "cap_radial",
+                "time": 0.31
+            },
+            "trigger": {
+                "name": "cap_radial",
+                "time": 0.38
+            },
+            "trigger": {
+                "name": "cap_radial",
+                "time": 0.45
+            },
+            "trigger": {
+                "name": "cap_radial",
+                "time": 0.52
+            },
+            "trigger": {
+                "name": "cap_radial",
+                "time": 0.59
+            },
+            "trigger": {
+                "name": "cap_radial",
+                "time": 0.66
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power10",
+            "combotextfinisher": "Leadership",
+            "description": "BORN LEADER",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power11",
+            "playspeed": 10,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "captam_p11",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/captam_m/p11_power",
+                "time": 0.44
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/captam/p11_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/captam/p11_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.44
+            },
+            "trigger": {
+                "effect": "char/captam/p11_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "life": "%captam_p11_lif",
+                "name": "powerup",
+                "time": 0,
+                "special_fx": {
+                    "effect": "char/captam/p11_aura",
+                    "fxlevel": 1,
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/captam/p11_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "all_talents",
+                    "level": "%captam_p11_skills",
+                    "scope_talent": "captam_p11"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_knockback",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_popup",
+                    "level": 0
+                }
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "class": "callevents",
+                "life": "%captam_p11_lif",
+                "name": "powerup",
+                "time": 0,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "xp",
+                    "level": "%captam_p11_xp"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
