@@ -1,0 +1,803 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "havok_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_energy",
+                        "level": 0.05
+                    },
+                    "affecter": {
+                        "attribute": "resist_radiation",
+                        "level": 0.05
+                    },
+                    "affecter": {
+                        "attribute": "resist_fire",
+                        "level": 0.05
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Plasma Beam",
+            "description": "Havok absorbs ambient Energy and converts it into Plasma Energy, which he channels through his body and discharges it, knocking back enemies.",
+            "descshort": "Beam",
+            "icon": 0,
+            "icon_texture": "textures/ui/havok_icons2.png",
+            "name": "havok_beam",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_beam_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "hav_beam_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_beam_dmg",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "hav_beam_dmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_beam_knb",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "hav_beam_knb",
+                    "value": 620
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_beam_pwr",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "hav_beam_pwr",
+                    "value": 126
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%hav_beam_dmg $DMG_ENERGY\\n%hav_beam_knb $KB\\n%hav_beam_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%hav_beam_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Plasma Nova",
+            "description": "Unleashes a wave of Plasma Energy that knocks back enemies.",
+            "descshort": "Radial",
+            "icon": 1,
+            "icon_texture": "textures/ui/havok_icons2.png",
+            "name": "havok_blast",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_blast_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hav_blast_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_blast_dmg",
+                    "value": "43 50"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hav_blast_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_blast_rng",
+                    "value": 120
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hav_blast_rng",
+                    "value": 144
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_blast_pwr",
+                    "value": 46
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hav_blast_pwr",
+                    "value": 170
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_blast_knb",
+                    "value": 200
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hav_blast_knb",
+                    "value": 300
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%hav_blast_dmg $DMG_ENERGY\\n%hav_blast_rng radius\\n%hav_blast_knb knockback\\n%hav_blast_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%hav_blast_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Plasma Blasts",
+            "description": "Rapidly discharges blasts of Plasma Energy at enemies.\\n(~41Press And Hold Or Tap~~)",
+            "descshort": "Projectile",
+            "icon": 2,
+            "icon_texture": "textures/ui/havok_icons2.png",
+            "name": "havok_multi",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_multi_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "hav_multi_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_multi_dmg",
+                    "value": "66 75"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "hav_multi_dmg",
+                    "value": "127 143"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_multi_pwr",
+                    "value": 94
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "hav_multi_pwr",
+                    "value": 155
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%hav_multi_dmg $DMG_ENERGY\\n%hav_multi_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%hav_multi_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Plasma Detonation",
+            "description": "Havok fills the target with Plasma Energy, which explodes after a time, causing popup.",
+            "descshort": "Special",
+            "icon": 3,
+            "icon_texture": "textures/ui/havok_icons2.png",
+            "name": "hav_detonate",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_detonate_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "hav_detonate_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_detonate_dmg",
+                    "value": "108 121"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "hav_detonate_dmg",
+                    "value": "214 238"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_detonate_kb",
+                    "value": 190
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "hav_detonate_kb",
+                    "value": 430
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_detonate_pwr",
+                    "value": 66
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "hav_detonate_pwr",
+                    "value": 140
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%hav_detonate_dmg $DMG_ENERGY\\n%hav_detonate_kb popup\\n%hav_detonate_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%hav_detonate_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Plasma Discharge",
+            "description": "Havok discharges an orb of Plasma Energy that explodes on contact, knocking back enemies.",
+            "descshort": "Projectile",
+            "icon": 4,
+            "icon_texture": "textures/ui/havok_icons2.png",
+            "name": "havok_power6",
+            "power": "power6",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "havok_power6_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "havok_power6_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "havok_power6_dmg",
+                    "value": "69 79"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "havok_power6_dmg",
+                    "value": "140 157"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "havok_power6_dmg2",
+                    "value": "37 43"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "havok_power6_dmg2",
+                    "value": "117 132"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "havok_power6_pwr",
+                    "value": 82
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "havok_power6_pwr",
+                    "value": 170
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%havok_power6_dmg initial $DMG_ENERGY\\n%havok_power6_dmg2 explosion $DMG_ENERGY\\n%havok_power6_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%havok_power6_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "havok_multi",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Plasma Absorption",
+            "description": "Havok absorbs ambient Energy from his environment, restoring his $HP and increasing his $DR for a time.",
+            "descshort": "Boost",
+            "icon": 5,
+            "icon_texture": "textures/ui/havok_icons2.png",
+            "name": "hav_absorb",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_absorb_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "hav_absorb_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_absorb_pwr",
+                    "value": 88
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "hav_absorb_pwr",
+                    "value": 504
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_absorb_def",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "hav_absorb_def",
+                    "value": 2.6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_absorb_regen",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "hav_absorb_regen",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_absorb_lif",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "hav_absorb_lif",
+                    "value": 13
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%hav_absorb_regen:p $HP per second\\n%hav_absorb_def:s $DR\\n%hav_absorb_lif seconds\\n%hav_absorb_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%hav_absorb_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Plasma Synergy",
+            "description": "Adds $DMG_ENERGY to Melee attacks for the entire party.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/havok_icons2.png",
+            "name": "havok_fury",
+            "power": "power8",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_fury_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hav_fury_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_fury_dmg",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hav_fury_dmg",
+                    "value": 0.47
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_fury_ar",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hav_fury_ar",
+                    "value": 2.6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_fury_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hav_fury_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_fury_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hav_fury_pwr",
+                    "value": 516
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%hav_fury_dmg:p $DMG_ENERGY\\n%hav_fury_ar:s $AR\\n%hav_fury_life seconds\\n%hav_fury_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%hav_fury_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Command",
+            "description": "Uses his natural leadership abilities to boost the effectiveness of all skills for the entire team.",
+            "descshort": "Boost",
+            "icon": 7,
+            "icon_texture": "textures/ui/havok_icons2.png",
+            "name": "havok_p9",
+            "power": "power9",
+            "type": "boost",
+            "value_priority": 1,
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "havok_p9_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "havok_p9_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "havok_p9_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "havok_p9_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "havok_p9_skills",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "havok_p9_skills",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "havok_p9_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "havok_p9_pwr",
+                    "value": 516
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "+%havok_p9_skills all learned skills\\n%havok_p9_life seconds\\n%havok_p9_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%havok_p9_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "PLASMA PULSE",
+            "description": "Havok creates two radial pulses of Plasma Energy, each of which knocks back enemies and has a chance to do a 'Deadly Strike' (33% instant $HP loss).",
+            "descshort": "Radial",
+            "icon": 8,
+            "icon_texture": "textures/ui/havok_icons2.png",
+            "name": "havok_p10",
+            "power": "power10",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "havok_p10_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "havok_p10_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "havok_p10_dmg",
+                    "value": "54 66"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "havok_p10_dmg",
+                    "value": "234 264"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "havok_p10_chance",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "havok_p10_chance",
+                    "value": 0.19
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%havok_p10_dmg $DMG_ENERGY per pulse\\n%havok_p10_chance:p chance for Deadly Strike",
+                "require": {
+                    "cat": "level",
+                    "level": "%havok_p10_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "havok_blast",
+                    "level": 1
+                },
+                "powerup": {
+                    "chance": "%havok_p10_chance",
+                    "class": "atk_instant_pct",
+                    "life": -1,
+                    "percent": 0.33,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope_node": "hav_power10"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "PLASMA CHARGE",
+            "description": "Havok absorbs all nearby ambient Energy, allowing the entire party to use no $EP for a time, as well as take no $DMG_ENERGY, $DMG_FIRE, and $DMG_RADIATION.",
+            "descshort": "Boost",
+            "icon": 9,
+            "icon_texture": "textures/ui/havok_icons2.png",
+            "name": "havok_p11",
+            "power": "power11",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "havok_p11_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "havok_p11_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "havok_p11_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "havok_p11_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%havok_p11_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%havok_p11_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "hav_absorb",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Plasma Mastery",
+            "description": "Increases damage and Critical chance with $DMG_ENERGY.",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/havok_icons2.png",
+            "name": "hav_mastery",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_mastery_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "hav_mastery_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_mastery_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "hav_mastery_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_mastery_cri",
+                    "value": 1.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "hav_mastery_cri",
+                    "value": 1.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%hav_mastery_dmg:s $DMG_ENERGY\\n%hav_mastery_cri:s Critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%hav_mastery_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%hav_mastery_dmg",
+                        "scope_damage": "dmg_energy"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%hav_mastery_cri",
+                        "scope_damage": "dmg_energy"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Plasma Disruption",
+            "description": "Gives Havok a chance to dodge incoming projectiles.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/havok_icons2.png",
+            "name": "havok_grid",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_grid_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "hav_grid_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hav_grid_chance",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "hav_grid_chance",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%hav_grid_chance:p chance to dodge",
+                "require": {
+                    "cat": "level",
+                    "level": "%hav_grid_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%hav_grid_chance",
+                        "scope_attack": "projectile"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Plasma Immunity",
+            "description": "Increases resistances to $DMG_ENERGY, $DMG_RADIATION, and $DMG_FIRE.",
+            "descshort": "Passive",
+            "icon": 12,
+            "icon_texture": "textures/ui/havok_icons2.png",
+            "name": "havok_ionize",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "havok_ionize_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "havok_ionize_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "havok_ionize_resist",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "havok_ionize_resist",
+                    "value": 1
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%havok_ionize_resist:p Energy resistance\\n+%havok_ionize_resist:p Radiation resistance\\n+%havok_ionize_resist:p Fire resistance",
+                "require": {
+                    "cat": "level",
+                    "level": "%havok_ionize_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_energy",
+                        "level": "%havok_ionize_resist"
+                    },
+                    "affecter": {
+                        "attribute": "resist_radiation",
+                        "level": "%havok_ionize_resist"
+                    },
+                    "affecter": {
+                        "attribute": "resist_fire",
+                        "level": "%havok_ionize_resist"
+                    }
+                }
+            }
+        }
+    }
+}
