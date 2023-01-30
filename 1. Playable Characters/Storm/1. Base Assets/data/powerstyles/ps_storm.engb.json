@@ -82,13 +82,8 @@
             },
             "trigger": {
                 "name": "sound",
-                "sound": "char/storm_m/p2_charge",
-                "time": 0
-            },
-            "trigger": {
-                "name": "sound",
                 "sound": "char/storm_m/p1_charge",
-                "time": 0.25
+                "time": 0
             },
             "trigger": {
                 "bolt": "Bip01 R Hand",
@@ -97,11 +92,6 @@
                 "name": "effect",
                 "tag": 2,
                 "time": 0
-            },
-            "trigger": {
-                "name": "sound",
-                "sound": "char/storm_m/p2_charge",
-                "time": 0.4
             },
             "trigger": {
                 "name": "sound",
@@ -159,11 +149,6 @@
                 "name": "sound",
                 "sound": "char/storm_m/p2_charge",
                 "time": 0.25
-            },
-            "trigger": {
-                "name": "sound",
-                "sound": "char/storm_m/p2_charge",
-                "time": 0
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
@@ -233,18 +218,6 @@
                 "effect": "char/storm/p2_charge",
                 "name": "effect",
                 "time": 0
-            },
-            "trigger": {
-                "bolt": "Bip01 L Hand",
-                "effect": "char/storm/p2_charge",
-                "name": "effect",
-                "time": 0.5
-            },
-            "trigger": {
-                "bolt": "Bip01 R Hand",
-                "effect": "char/storm/p2_charge",
-                "name": "effect",
-                "time": 0.5
             },
             "trigger": {
                 "damage": 0,
@@ -598,29 +571,24 @@
                 "time": 0
             },
             "trigger": {
-                "callonhurt": true,
-                "class": "hurt_attacker",
-                "damage": "%storm_armor_dmg",
-                "life": "%storm_armor_life",
+                "apply_ally": "all",
+                "life": "%storm_shield_life",
                 "name": "powerup",
-                "onlyhurtmelee": true,
-                "powerusage": "%storm_armor_pwr",
-                "tag": 2,
-                "time": 0.5,
+                "no_shadow": true,
+                "powerusage": "%storm_shield_pwr",
+                "time": 0.7,
                 "special_fx": {
-                    "effect": "char/iceman/p8_aura",
+                    "effect": "char/storm/p7_aura",
                     "fxlevel": 1,
                     "how_used": "primary"
-                }
-            },
-            "trigger": {
-                "life": "%storm_armor_life",
-                "name": "powerup",
-                "time": 0.5,
+                },
                 "affecter": {
-                    "affect_type": "scale",
-                    "attribute": "def_damage",
-                    "level": "%storm_armor_hlth"
+                    "attribute": "resist_elemental",
+                    "level": "%storm_shield_res"
+                },
+                "affecter": {
+                    "attribute": "resist_energy",
+                    "level": "%storm_shield_res"
                 }
             },
             "chain": {
