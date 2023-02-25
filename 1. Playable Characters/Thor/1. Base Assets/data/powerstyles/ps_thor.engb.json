@@ -1,0 +1,1878 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/thor_icons1.png",
+        "event": {
+            "critical": true,
+            "inherit": "skinsegment",
+            "name": "hammer_hand_hide",
+            "show": false,
+            "skinsegment": "hammer_segment"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "hammer_hand_show",
+            "show": true,
+            "skinsegment": "hammer_segment"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "hammer_back_hide",
+            "show": false,
+            "skinsegment": "hammer_back_segment"
+        },
+        "event": {
+            "critical": true,
+            "inherit": "skinsegment",
+            "name": "hammer_back_show",
+            "show": true,
+            "skinsegment": "hammer_back_segment"
+        },
+        "event": {
+            "critical": true,
+            "inherit": "skinsegment",
+            "name": "hammer_to_hand",
+            "show": true,
+            "show2": false,
+            "skinsegment": "hammer_segment",
+            "skinsegment2": "hammer_back_segment"
+        },
+        "event": {
+            "critical": true,
+            "inherit": "skinsegment",
+            "name": "hammer_to_back",
+            "show": false,
+            "show2": true,
+            "skinsegment": "hammer_segment",
+            "skinsegment2": "hammer_back_segment"
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle",
+            "noncombat": true,
+            "playspeed": 1,
+            "trigger": {
+                "name": "hammer_to_back",
+                "time": 0
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "strafeleft"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "straferight"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "advance"
+            },
+            "chain": {
+                "action": "retreat",
+                "result": "retreat"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "groundattack",
+                "result": "groundattack"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            },
+            "chain": {
+                "action": "special",
+                "result": "boredloop"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_fly_idle",
+            "energypersecond": "%flight_pwr",
+            "fallback": "jumploop",
+            "handler": "ch_flying",
+            "lockchaining": false,
+            "name": "flying",
+            "noncombat": true,
+            "powerup_tag": "flying",
+            "require": {
+                "cat": "skill",
+                "item": "flight",
+                "level": 1
+            },
+            "trigger": {
+                "name": "hammer_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "name": "hammer_to_back",
+                "next_eventtag": 11,
+                "tag": 10,
+                "time": -1
+            },
+            "trigger": {
+                "class": "remove_on_events",
+                "life": -1,
+                "name": "powerup",
+                "on_flying_end": true,
+                "remove_eventtag": 10,
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "flying"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "flymelee1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "flycharge"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_blocking",
+            "blendtime": 0.1,
+            "handler": "ch_block",
+            "icon": 13,
+            "lockangles": true,
+            "lockchaining": false,
+            "locktransitionangles": true,
+            "name": "blocking",
+            "priority": 6,
+            "require": {
+                "cat": "skill",
+                "item": "block"
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": 1,
+                "time": -1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "remove_on_node_end": true,
+                "time": 0,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "damage_to_energy",
+                    "level": "%block_dmgasenrg"
+                }
+            },
+            "trigger": {
+                "name": "hammer_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "critical": "on_exit",
+                "name": "hammer_to_back",
+                "time": -1
+            },
+            "chain": {
+                "action": "special",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "rollforward"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "dodgeright"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "dodgeleft"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "blendtime": 0,
+            "endchaintime": 1,
+            "lockangles": true,
+            "name": "attacklight1",
+            "powerup_tag": "thor_hammer",
+            "priority": 3,
+            "startchaintime": 0.57,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.29
+            },
+            "trigger": {
+                "movement": 10,
+                "name": "slide",
+                "time": 0.28
+            },
+            "trigger": {
+                "bolt": "fx01",
+                "life": 0.37,
+                "name": "trail",
+                "time": 0.21
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.36
+            },
+            "trigger": {
+                "name": "hammer_to_hand",
+                "time": 0.07
+            },
+            "trigger": {
+                "critical": "on_exit",
+                "name": "hammer_to_back",
+                "time": 0.86
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight2"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attacktrip1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light2",
+            "blendtime": 0,
+            "endchaintime": 1,
+            "lockangles": true,
+            "name": "attacklight2",
+            "powerup_tag": "thor_hammer",
+            "priority": 3,
+            "startchaintime": 0.57,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.33
+            },
+            "trigger": {
+                "movement": 20,
+                "name": "slide",
+                "time": 0.21
+            },
+            "trigger": {
+                "bolt": "fx01",
+                "life": 0.4,
+                "name": "trail",
+                "time": 0.25
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.36
+            },
+            "trigger": {
+                "name": "hammer_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "critical": "on_exit",
+                "name": "hammer_to_back",
+                "time": 0.8
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight3"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "popupattack"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light3",
+            "blendtime": 0,
+            "lockangles": true,
+            "name": "attacklight3",
+            "powerup_tag": "thor_hammer",
+            "priority": 3,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.27
+            },
+            "trigger": {
+                "movement": 10,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "fx01",
+                "life": 0.35,
+                "name": "trail",
+                "time": 0.18
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.31
+            },
+            "trigger": {
+                "name": "hammer_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "critical": "on_exit",
+                "name": "hammer_to_back",
+                "time": 0.87
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_heavy1",
+            "endchaintime": 0.85,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attackheavy1",
+            "playspeed": 1,
+            "powerup_tag": "thor_hammer",
+            "priority": 3,
+            "startchaintime": 0.55,
+            "event": {
+                "inherit": "punch_veryheavy",
+                "knockback": 120,
+                "name": "bigpunch"
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.31
+            },
+            "trigger": {
+                "life": 0.1,
+                "movement": 0,
+                "name": "slide",
+                "time": 0.35
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.23,
+                "name": "trail",
+                "offsetend": 10,
+                "time": 0.36
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 5,
+                "name": "bigpunch",
+                "time": 0.49
+            },
+            "trigger": {
+                "name": "hammer_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "critical": "on_exit",
+                "name": "hammer_to_back",
+                "time": 0.8
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attackstun1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy2"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_heavy2",
+            "endchaintime": 0.95,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackheavy2",
+            "playspeed": 1,
+            "powerup_tag": "thor_hammer",
+            "priority": 3,
+            "startchaintime": 0.5,
+            "event": {
+                "inherit": "punch_veryheavy",
+                "knockback": 40,
+                "name": "haymaker"
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.2
+            },
+            "trigger": {
+                "life": 0.1,
+                "movement": 0,
+                "name": "slide",
+                "time": 0.24
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.2,
+                "name": "trail",
+                "offsetend": 25,
+                "time": 0.18
+            },
+            "trigger": {
+                "height": 10,
+                "name": "haymaker",
+                "tag": 10,
+                "time": 0.33
+            },
+            "trigger": {
+                "name": "hammer_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "critical": "on_exit",
+                "name": "hammer_to_back",
+                "time": 0.87
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_popup",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "handler": "ch_popup_attack",
+            "lockangles": true,
+            "name": "popupattack",
+            "playspeed": 1,
+            "powerup_tag": "thor_hammer",
+            "priority": 5,
+            "startchaintime": 0.52,
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.17
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "charge": 1,
+                "name": "charge",
+                "time": 0
+            },
+            "trigger": {
+                "knockback": 0,
+                "maxrange": 50,
+                "name": "punch_heavy",
+                "time": 0.3,
+                "damagemod": {
+                    "name": "dmgmod_popup"
+                },
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "name": "hammer_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "critical": "on_exit",
+                "name": "hammer_to_back",
+                "time": 0.8
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.176
+            },
+            "trigger": {
+                "movement": 20,
+                "name": "slide",
+                "time": 0.176
+            },
+            "trigger": {
+                "bolt": "fx01",
+                "life": 0.4,
+                "name": "trail",
+                "time": 0.3
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_trip2",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attacktrip1",
+            "playspeed": 2,
+            "powerup_tag": "thor_hammer",
+            "startchaintime": 0.5,
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.16,
+                "name": "trail",
+                "time": 0.26
+            },
+            "trigger": {
+                "angle": 10,
+                "height": 0,
+                "name": "punch_heavy",
+                "time": 0.42
+            },
+            "trigger": {
+                "name": "hammer_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "critical": "on_exit",
+                "name": "hammer_to_back",
+                "time": 0.87
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacktrip2"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackknockback1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_trip1",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacktrip2",
+            "powerup_tag": "thor_hammer",
+            "startchaintime": 1,
+            "event": {
+                "inherit": "kick",
+                "knockback": 0,
+                "name": "sweep",
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "name": "hammer_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "critical": "on_exit",
+                "name": "hammer_to_back",
+                "time": 0.87
+            },
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.13
+            },
+            "trigger": {
+                "movement": 10,
+                "name": "slide",
+                "time": 0.06
+            },
+            "trigger": {
+                "bolt": "fx01",
+                "life": 0.4,
+                "name": "trail",
+                "time": 0.13
+            },
+            "trigger": {
+                "angle": -30,
+                "height": -10,
+                "index": 1,
+                "name": "sweep",
+                "time": 0.28
+            },
+            "trigger": {
+                "angle": 0,
+                "height": -10,
+                "index": 1,
+                "name": "sweep",
+                "time": 0.3
+            },
+            "trigger": {
+                "angle": 30,
+                "height": -10,
+                "index": 1,
+                "name": "sweep",
+                "time": 0.33
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_stun1",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attackstun1",
+            "playspeed": 1,
+            "powerup_tag": "thor_hammer",
+            "startchaintime": 0.5,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.35,
+                "name": "trail",
+                "time": 0.18
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 0,
+                "name": "punch_heavy",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackstun2"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_stun2",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackstun2",
+            "playspeed": 1,
+            "powerup_tag": "thor_hammer",
+            "startchaintime": 0.5625,
+            "event": {
+                "inherit": "punch_heavy",
+                "knockback": 0,
+                "maxrange": 56,
+                "name": "backhand1"
+            },
+            "trigger": {
+                "name": "hammer_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "critical": "on_exit",
+                "name": "hammer_to_back",
+                "time": 1
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "fx01",
+                "life": 0.4,
+                "name": "trail",
+                "time": 0.24
+            },
+            "trigger": {
+                "name": "backhand1",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackstun3"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_stun3",
+            "endchaintime": 0.95,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackstun3",
+            "playspeed": 1,
+            "powerup_tag": "thor_hammer",
+            "startchaintime": 0.5,
+            "event": {
+                "inherit": "punch_heavy",
+                "knockback": 40,
+                "name": "skullcrack",
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.19,
+                "name": "trail",
+                "time": 0.29
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.19,
+                "name": "trail",
+                "time": 0.29
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 10,
+                "index": 1,
+                "name": "skullcrack",
+                "time": 0.48
+            },
+            "trigger": {
+                "name": "hammer_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "critical": "on_exit",
+                "name": "hammer_to_back",
+                "time": 1
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power13",
+            "blendtime": 0.1,
+            "endchaintime": 1,
+            "fallback": "attackheavy2",
+            "lockangles": true,
+            "name": "attackknockback2",
+            "powerup_tag": "thor_hammer",
+            "priority": 5,
+            "startchaintime": 0.8,
+            "event": {
+                "inherit": "punch_heavy",
+                "knockback": 245,
+                "maxrange": 60,
+                "name": "hammer_knock",
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damagemod": {
+                    "name": "dmgmod_no_atk_roll"
+                },
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "name": "hammer_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 20,
+                "name": "slide",
+                "targetdistance": 50,
+                "time": 0.1
+            },
+            "trigger": {
+                "bolt": "fx01",
+                "life": 0.35,
+                "name": "trail",
+                "offsetend": 12,
+                "time": 0.25
+            },
+            "trigger": {
+                "name": "hammer_knock",
+                "time": 0.4
+            },
+            "trigger": {
+                "critical": "on_exit",
+                "name": "hammer_to_back",
+                "time": 1
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Might",
+            "combotextstarter": "Sundering",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "priority": 5,
+            "startchaintime": 0.6,
+            "powerup_tag": "thor_p1",
+            "require": {
+                "cat": "skill",
+                "item": "thor_p1",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/thor/ability_fly_hand",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/thor_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%thor_p1_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "hammer_hand_show",
+                "time": 0.1
+            },
+            "trigger": {
+                "name": "hammer_back_hide",
+                "time": 0.1
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_hand_hide",
+                "time": -1
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_back_show",
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power1_release"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1_end",
+            "combotextfinisher": "Might",
+            "combotextstarter": "Sundering",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1_release",
+            "priority": 5,
+            "powerup_tag": "thor_p1",
+            "require": {
+                "cat": "skill",
+                "item": "thor_p1",
+                "level": 1
+            },
+            "trigger": {
+                "name": "slide",
+                "targetdistance": 120,
+                "targetradius": 65,
+                "time": 0.1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/thor/ability_fly_hand",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/thor_m/p1_power",
+                "time": 0.3
+            },
+            "trigger": {
+                "effect": "char/thor/p1_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.36
+            },
+            "trigger": {
+                "arc": 65,
+                "attacktype": "punch",
+                "damage": "%thor_p1_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "hiteffect": "char/thor/p1_impact",
+                "knockback": 120,
+                "name": "punch",
+                "time": 0.37,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_hand_hide",
+                "time": 0.67
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_back_show",
+                "time": 0.67
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Strike",
+            "combotextstarter": "Uru",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "powerup_tag": "thor_hammer",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "thor_p2",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/thor_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "hammer_hand_show",
+                "time": 0.1
+            },
+            "trigger": {
+                "name": "hammer_back_hide",
+                "time": 0.1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/thor/p2_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/thor_m/p2_power",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/thor/p2_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/thor_m/p2_impact",
+                "time": 0.5
+            },
+            "trigger": {
+                "effect": "char/thor/p2_impact",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.56
+            },
+            "trigger": {
+                "damage": "%thor_p2_dmg",
+                "knockback": "%thor_p2_kb",
+                "maxrange": 100,
+                "name": "radial",
+                "offset": 65,
+                "radius": "%thor_p2_rad",
+                "powerusage": "%thor_p2_pwr",
+                "tiles": true,
+                "time": 0.56,
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                },
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_hand_hide",
+                "time": 0.92
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_back_show",
+                "time": 0.92
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "event": {
+            "entity": "thor_p3_lightning",
+            "filename": "ents_thor",
+            "inherit": "relative_spawn",
+            "name": "spawn_lightning",
+            "relative": "target",
+            "type": "ce_atk_spawn_relative"
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "rangednolos",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Rage",
+            "combotextstarter": "Electric",
+            "endchaintime": 0.88,
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "playspeed": 4.5,
+            "powerup_tag": "thor_hammer",
+            "priority": 5,
+            "startchaintime": 0.15,
+            "require": {
+                "cat": "skill",
+                "item": "thor_p3",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/thor_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "hammer_hand_show",
+                "time": 0.04
+            },
+            "trigger": {
+                "name": "hammer_back_hide",
+                "time": 0.04
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/thor/ability_fly_hand",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/thor_m/p3_power",
+                "time": 0.15
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/thor/ability_fly_hand",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "attackerheight": false,
+                "attacktype": "direct",
+                "count": 1,
+                "damage": "%thor_p3_dmg",
+                "damagelevel": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_electricity",
+                "maxrange": 190,
+                "name": "spawn_lightning",
+                "powerusage": "%thor_p3_pwr",
+                "time": 0.15,
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                },
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_hand_hide",
+                "time": 0.945
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_back_show",
+                "time": 0.945
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "projectilenear",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Whirlwind",
+            "combotextstarter": "Whirling",
+            "icon": 3,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power4",
+            "powerup_tag": "thor_hammer",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "thor_p4",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/thor_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%thor_p4_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "hammer_hand_show",
+                "time": 0.4
+            },
+            "trigger": {
+                "name": "hammer_back_hide",
+                "time": 0.4
+            },
+            "trigger": {
+                "effect": "char/thor/p4_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.25
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power4_loop1"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4_loop",
+            "combotextfinisher": "Whirlwind",
+            "combotextstarter": "Whirling",
+            "icon": 3,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power4_loop1",
+            "powerup_tag": "thor_hammer",
+            "priority": 5,
+            "trigger": {
+                "critical": true,
+                "name": "hammer_hand_hide",
+                "time": -1
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_back_show",
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power4_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4_loop",
+            "combotextfinisher": "Whirlwind",
+            "combotextstarter": "Whirling",
+            "icon": 3,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power4_loop",
+            "powerup_tag": "thor_hammer",
+            "priority": 5,
+            "startchaintime": 0.75,
+            "trigger": {
+                "loop_timeout": 1,
+                "loop_type": "start",
+                "name": "sound",
+                "sound": "char/thor_m/p4_loop",
+                "time": 0
+            },
+            "trigger": {
+                "class": "touch_damage",
+                "damage": "%thor_p4_dmg",
+                "damagetype": "dmg_wind",
+                "life": "%thor_p4_life",
+                "name": "powerup",
+                "tag": 2,
+                "time": 0.3
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "remove_on_node_end": true,
+                "time": 0,
+                "special_fx": {
+                    "effect": "char/thor/p4_power",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "reflect_damage",
+                    "level": "%thor_p4_chance",
+                    "scope": {
+                        "scope_attack": "projectile"
+                    },
+                    "scope": {
+                        "scope_attack": "beam"
+                    }
+                }
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_hand_hide",
+                "time": -1
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_back_show",
+                "time": -1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power4_release"
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power4_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4_end",
+            "combotextfinisher": "Whirlwind",
+            "combotextstarter": "Whirling",
+            "blendtime": 0.2,
+            "icon": 3,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power4_release",
+            "powerup_tag": "thor_hammer",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/thor_m/p4_impact",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%thor_p4_dmg",
+                "damagelevel": 2,
+                "damagescale": "none",
+                "damagetype": "dmg_wind",
+                "entity": "thor_tornado",
+                "filename": "ents_thor",
+                "life": "%thor_p4_lif",
+                "maxinstances": 2,
+                "maxrange": 800,
+                "name": "projectile",
+                "speed": 90,
+                "tag": 1,
+                "targetable": false,
+                "time": 0,
+                "tracecheck": false,
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                },
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_hand_hide",
+                "time": 0.75
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_back_show",
+                "time": 0.75
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 10,
+            "aitype": "projectile",
+            "animenum": "ea_power5",
+            "blendtime": 0,
+            "combotextfinisher": "Sledgehammer",
+            "combotextstarter": "Valhallan",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power5",
+            "powerup_tag": "thor_hammer",
+            "priority": 5,
+            "startchaintime": 0.4,
+            "require": {
+                "cat": "skill",
+                "item": "thor_p5",
+                "level": 1
+            },
+            "trigger": {
+                "name": "hammer_back_hide",
+                "time": 0
+            },
+            "trigger": {
+                "name": "hammer_hand_show",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/thor_m/p5_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/thor_m/p5_power",
+                "time": 0.37
+            },
+            "trigger": {
+                "effect": "char/thor/p5_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.37
+            },
+            "trigger": {
+                "effect": "char/thor/p5_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.37
+            },
+            "trigger": {
+                "name": "hammer_hand_hide",
+                "time": 0.27
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angle": "0 0 0",
+                "attack_bone_pos": "18 -19 30",
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%thor_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "entity": "thor_p5_proj",
+                "filename": "ents_thor",
+                "fulltargeting": true,
+                "maxrange": 800,
+                "name": "projectile",
+                "powerusage": "%thor_p5_pwr",
+                "speed": 450,
+                "targetable": true,
+                "time": 0.27,
+                "damagemod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "name": "hammer_back_show",
+                "time": 0.99
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_attack_popup",
+            "combotextfinisher": "Speed",
+            "combotextstarter": "Speedy",
+            "icon": 5,
+            "lockangles": true,
+            "lockspeed": true,
+            "name": "power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "thor_p6",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/thor_m/p6_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/thor/p6_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.166
+            },
+            "trigger": {
+                "effect": "char/thor/p6_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.166
+            },
+            "trigger": {
+                "name": "hammer_hand_show",
+                "time": 0.18
+            },
+            "trigger": {
+                "name": "hammer_back_hide",
+                "time": 0.18
+            },
+            "trigger": {
+                "life": "%thor_p6_lif",
+                "name": "powerup",
+                "powerusage": "%thor_p6_pwr",
+                "time": 0.5,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move_attack",
+                    "level": "%thor_p6_spd"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_dodge",
+                    "level": "%thor_p6_dgd",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    }
+                },
+                "special_fx": {
+                    "effect": "char/thor/p6_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_hand_hide",
+                "time": 0.85
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_back_show",
+                "time": 0.85
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power7",
+            "combotextfinisher": "Amplification",
+            "combotextstarter": "Asgardian",
+            "icon": 6,
+            "lockangles": true,
+            "lockspeed": true,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "thor_p7",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/thor_m/p7_power",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/thor/p7_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.258
+            },
+            "trigger": {
+                "effect": "char/thor/p7_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.258
+            },
+            "trigger": {
+                "name": "hammer_hand_show",
+                "time": 0.18
+            },
+            "trigger": {
+                "name": "hammer_back_hide",
+                "time": 0.18
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "life": "%thor_p7_lif",
+                "name": "powerup",
+                "powerusage": "%thor_p7_pwr",
+                "time": 0.5,
+                "affecter": {
+                    "attribute": "all_talents",
+                    "level": "%thor_p7_ski",
+                    "scope_talent": "thor_p7"
+                },
+                "special_fx": {
+                    "effect": "char/thor/p7_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_hand_hide",
+                "time": 0.85
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_back_show",
+                "time": 0.85
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "combotextfinisher": "Smite",
+            "description": "WRATH OF THE GODS",
+            "icon": 7,
+            "lockangles": true,
+            "lockspeed": true,
+            "name": "power8",
+            "playspeed": 8,
+            "powerup_tag": "thor_hammer",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "thor_p8",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "hammer_hand_show",
+                "time": 0.1
+            },
+            "trigger": {
+                "name": "hammer_back_hide",
+                "time": 0.1
+            },
+            "trigger": {
+                "effect": "char/thor/p8_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/thor_m/p8_charge",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/thor/p8_impact",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/thor_m/p8_impact",
+                "time": 0.605
+            },
+            "trigger": {
+                "damage": "%thor_p8_dmg",
+                "damagetype": "dmg_electricity",
+                "knockback": 610,
+                "maxrange": 300,
+                "name": "radial",
+                "offset": 65,
+                "tiles": true,
+                "time": 0.605,
+                "damagemod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damagemod": {
+                    "name": "dmgmod_energize"
+                },
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_to_back",
+                "time": 0.92
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power8",
+            "combotextfinisher": "Empowerment",
+            "description": "BY THE POWER OF ODIN",
+            "icon": 8,
+            "lockangles": true,
+            "lockspeed": true,
+            "name": "power9",
+            "playspeed": 4,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "thor_p9",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/thor/ability_fly_hand",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/thor_m/p9_power",
+                "time": 0.15
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/thor_m/p9_charge",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/thor/p9_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "hammer_hand_show",
+                "time": 0.18
+            },
+            "trigger": {
+                "name": "hammer_back_hide",
+                "time": 0.18
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%thor_p9_lif",
+                "name": "powerup",
+                "time": 0.5,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": "%thor_p9_dmg",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    },
+                    "scope": {
+                        "scope_non_powers": true
+                    }
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": 0
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/thor/ability_fly_hand",
+                    "fxlevel": 1
+                },
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/thor/ability_fly_hand",
+                    "fxlevel": 1
+                }
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_hand_hide",
+                "time": 0.85
+            },
+            "trigger": {
+                "critical": true,
+                "name": "hammer_back_show",
+                "time": 0.85
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}

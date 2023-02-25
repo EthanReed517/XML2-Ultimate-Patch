@@ -282,7 +282,7 @@
         },
         "talent": {
             "descname": "Web Gloves",
-            "description": "Gives the entire party gloves made of webbing for a time, adding more $DMG_PHYSICAL to their Melee attacks and increasing their $AR.",
+            "description": "Gives the entire party gloves made of webbing for a time, adding more $DMG_PHYSICAL to their Melee attacks and increasing their Attack Rating.",
             "descshort": "Boost",
             "icon": 11,
             "icon_texture": "textures/ui/spiderman_icons2.png",
@@ -312,23 +312,23 @@
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "spider_p6_tim",
-                    "value": 13
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "spider_p6_tim",
-                    "value": 55
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "spider_p6_pct",
+                    "name": "spider_p6_dmg",
                     "value": 0.15
                 },
                 "talentvalue": {
                     "level": 16,
-                    "name": "spider_p6_pct",
+                    "name": "spider_p6_dmg",
                     "value": 1
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "spider_p6_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "spider_p6_lif",
+                    "value": 55
                 },
                 "talentvalue": {
                     "level": 1,
@@ -343,7 +343,7 @@
             },
             "level": {
                 "count": 16,
-                "description": "+%spider_p6_pct:p $DMG_PHYSICAL\\n+%spider_p6_ar $AR\\n%spider_p6_tim:f seconds\\n%spider_p6_pwr $EP",
+                "description": "+%spider_p6_dmg:p $DMG_PHYSICAL\\n%spider_p6_ar $AR\\n%spider_p6_lif seconds\\n%spider_p6_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%spider_p6_req"
@@ -676,7 +676,7 @@
             },
             "level": {
                 "count": 15,
-                "description": "%spider_pass2_dmg:s $DMG\\n+%spider_pass2_crit:p Critical chance",
+                "description": "%spider_pass2_dmg:s Dmg\\n+%spider_pass2_crit:p Critical chance",
                 "require": {
                     "cat": "level",
                     "level": "%spider_pass2_req"

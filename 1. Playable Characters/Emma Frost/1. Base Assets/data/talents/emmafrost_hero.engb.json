@@ -252,8 +252,8 @@
         },
         "talent": {
             "descname": "Touch of Insanity ",
-            "description": "Emma fires a powerful Psychic blast that causes her enemies intense Mental pain, making them go insane as they fall unconscious from the shock.",
-            "descshort": "Special",
+            "description": "Emma unleashes a powerful Psychic blast that causes her enemies intense, continuous Mental pain.",
+            "descshort": "Debuff",
             "icon": 4,
             "icon_texture": "textures/ui/emmafrost_icons2.png",
             "name": "emma_insanity",
@@ -277,17 +277,17 @@
                 "talentvalue": {
                     "level": 11,
                     "name": "emma_insanity_pwr",
-                    "value": 148
+                    "value": 170
                 },
                 "talentvalue": {
                     "level": 1,
                     "name": "emma_insanity_dmg",
-                    "value": "40 47"
+                    "value": "11 14"
                 },
                 "talentvalue": {
                     "level": 11,
                     "name": "emma_insanity_dmg",
-                    "value": "195 217"
+                    "value": "60 68"
                 },
                 "talentvalue": {
                     "level": 1,
@@ -302,34 +302,24 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "emma_insanity_lif",
-                    "value": 8
+                    "value": 2
                 },
                 "talentvalue": {
                     "level": 11,
                     "name": "emma_insanity_lif",
-                    "value": 27
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "emma_insanity_pct",
-                    "value": 1.0
-                },
-                "talentvalue": {
-                    "level": 11,
-                    "name": "emma_insanity_pct",
-                    "value": 1.0
+                    "value": 6
                 }
             },
             "level": {
                 "count": 11,
-                "description": "%emma_insanity_dmg $DMG_MENTAL\\n%emma_insanity_pwr $EP",
+                "description": "%emma_insanity_dmg $DMG_MENTAL\\n%emma_insanity_lif seconds\\n%emma_insanity_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%emma_insanity_req"
                 },
                 "require": {
                     "cat": "skill",
-                    "item": "emma_beam"
+                    "item": "emma_burst"
                 }
             }
         },
@@ -402,7 +392,7 @@
                 },
                 "require": {
                     "cat": "skill",
-                    "item": "emma_burst"
+                    "item": "emma_beam"
                 }
             }
         },
@@ -468,7 +458,7 @@
         },
         "talent": {
             "descname": "HAIL TO THE QUEEN",
-            "description": "Makes Emma invincible and increases her $DMG and $DMG_MENTAL for a time.",
+            "description": "Emma becomes invincible and has increased damage for a time.",
             "descshort": "Boost",
             "icon": 14,
             "icon_texture": "textures/ui/emmafrost_icons2.png",
@@ -499,7 +489,7 @@
             },
             "level": {
                 "count": 5,
-                "description": "+100% $DMG\\n%emma_xtreme2_lif seconds",
+                "description": "+100% Dmg\\n%emma_xtreme2_lif seconds",
                 "require": {
                     "cat": "level",
                     "level": "%emma_xtreme2_req"
@@ -883,20 +873,9 @@
                         "scope_damage": "dmg_mental"
                     },
                     "affecter": {
-                        "affect_type": "scale",
-                        "attribute": "damage",
-                        "level": "%emma_ment_mast_dmg",
-                        "scope_damage": "dmg_telekinesis"
-                    },
-                    "affecter": {
                         "attribute": "atk_critical",
                         "level": "%emma_ment_mast_crit",
                         "scope_damage": "dmg_mental"
-                    },
-                    "affecter": {
-                        "attribute": "atk_critical",
-                        "level": "%emma_ment_mast_crit",
-                        "scope_damage": "dmg_telekinesis"
                     }
                 }
             }

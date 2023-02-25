@@ -109,7 +109,6 @@
                 "damagelevel": 1,
                 "damagescale": "none",
                 "damagetype": "dmg_fire",
-                "fxlevel": 1,
                 "maxrange": 110,
                 "name": "who_to_hit",
                 "powerusage": "%dark_inferno_pwr",
@@ -323,7 +322,6 @@
                 "damage": "%dark_wash_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_telekinesis",
-                "fxlevel": 1,
                 "inherit": "punch",
                 "life": "%dark_wash_tim",
                 "name": "radial_punch",
@@ -398,7 +396,6 @@
                 "damagelevel": 1,
                 "damagescale": "none",
                 "damagetype": "dmg_telekinesis",
-                "fxlevel": 1,
                 "maxrange": 150,
                 "name": "who_to_hit",
                 "powerusage": "%dark_matter_pwr",
@@ -473,7 +470,6 @@
                 "damagelevel": 1,
                 "damagescale": "none",
                 "damagetype": "dmg_fire",
-                "fxlevel": 1,
                 "maxrange": 110,
                 "name": "who_to_hit",
                 "powerusage": "%dark_absorb_pwr",
@@ -622,6 +618,11 @@
                 "level": 1
             },
             "trigger": {
+                "name": "powerusage",
+                "powerusage": "%dark_shield_pwr",
+                "time": 0
+            },
+            "trigger": {
                 "name": "sound",
                 "sound": "char/darkp_m/p7_power",
                 "time": 0.1
@@ -653,7 +654,6 @@
                 "life": "%dark_shield_lif",
                 "name": "powerup",
                 "no_shadow": true,
-                "powerusage": "%dark_shield_pwr",
                 "time": 0.75,
                 "special_fx": {
                     "bolt": "Bip01 Pelvis",
@@ -661,8 +661,10 @@
                     "fxlevel": 1
                 },
                 "affecter": {
-                    "attribute": "spend_damage",
-                    "level": 1000000
+                    "affect_type": "scale",
+                    "attribute": "def_damage_scope",
+                    "level": 0,
+                    "scope_damage": "dmg_physical"
                 }
             },
             "trigger": {
@@ -672,7 +674,6 @@
                 "life": "%dark_shield_lif",
                 "name": "powerup",
                 "no_shadow": true,
-                "powerusage": "%dark_shield_pwr",
                 "time": 0.75,
                 "special_fx": {
                     "bolt": "Bip01 Pelvis",
@@ -680,8 +681,10 @@
                     "fxlevel": 1
                 },
                 "affecter": {
-                    "attribute": "spend_damage",
-                    "level": 1000000
+                    "affect_type": "scale",
+                    "attribute": "def_damage_scope",
+                    "level": 0,
+                    "scope_damage": "dmg_physical"
                 }
             },
             "chain": {

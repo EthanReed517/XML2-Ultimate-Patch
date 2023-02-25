@@ -1,0 +1,752 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "thor_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_all",
+                        "level": 0.05
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Mjolnir's Might",
+            "description": "Thor swings his hammer at an enemy, knocking them back with a chance for 'Deadly Strike' (33% instant $HP loss).",
+            "descshort": "Melee",
+            "icon": 0,
+            "icon_texture": "textures/ui/thor_icons2.png",
+            "name": "thor_p1",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p1_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "thor_p1_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p1_pwr",
+                    "value": 16
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "thor_p1_pwr",
+                    "value": 128
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p1_pct",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "thor_p1_pct",
+                    "value": 0.19
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p1_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "thor_p1_dmg",
+                    "value": "195 217"
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%thor_p1_dmg $DMG_PHYSICAL\\n%thor_p1_pct:p chance for Deadly Strike\\n%thor_p1_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%thor_p1_req"
+                },
+                "powerup": {
+                    "chance": "%thor_p1_pct",
+                    "class": "atk_instant_pct",
+                    "life": -1,
+                    "percent": 0.33,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope_node": "thor_p1"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Mjolnir Slam",
+            "description": "Thor smashes the ground with his hammer, creating a radial shockwave of $DMG_ELECTRICITY that knocks enemies back.",
+            "descshort": "Radial",
+            "icon": 1,
+            "icon_texture": "textures/ui/thor_icons2.png",
+            "name": "thor_p2",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p2_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thor_p2_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p2_dmg",
+                    "value": "21 26"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thor_p2_dmg",
+                    "value": "79 89"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p2_kb",
+                    "value": 200
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thor_p2_kb",
+                    "value": 400
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p2_rad",
+                    "value": 36
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thor_p2_rad",
+                    "value": 48
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p2_pwr",
+                    "value": 46
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thor_p2_pwr",
+                    "value": 170
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%thor_p2_dmg $DMG_ELECTRICITY\\n%thor_p2_kb $KB\\n%thor_p2_rad:r feet damage radius\\n%thor_p2_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%thor_p2_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Thor's Rage",
+            "description": "Thor summons a bolt of lightning that strikes his target.",
+            "descshort": "Blast",
+            "icon": 2,
+            "icon_texture": "textures/ui/thor_icons.png",
+            "name": "thor_p3",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p3_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "thor_p3_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p3_dmg",
+                    "value": "101 114"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "thor_p3_dmg",
+                    "value": "272 302"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p3_pwr",
+                    "value": 46
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "thor_p3_pwr",
+                    "value": 132
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%thor_p3_dmg initial $DMG_ELECTRICITY\\n%thor_p3_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%thor_p3_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "North Winds",
+            "description": "Thor swings his hammer in a circle, creating a whirlwind that damages any enemy who touches him and has a chance to reflect beams and projectiles. Releasing the button sends a massive tornado spinning towards enemies. Puts out fires.\\n(~41Press And Hold~~)",
+            "descshort": "Special",
+            "icon": 3,
+            "icon_texture": "textures/ui/thor_icons2.png",
+            "name": "thor_p4",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p4_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "thor_p4_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p4_dmg",
+                    "value": "69 79"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "thor_p4_dmg",
+                    "value": "140 157"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p4_lif",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "thor_p4_lif",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p4_chance",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "thor_p4_chance",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p4_pwr",
+                    "value": 80
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "thor_p4_pwr",
+                    "value": 166
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%thor_p4_dmg $DMG_WIND\\n%thor_p4_lif second funnel life\\n+%thor_p4_chance:p chance to reflect beams and projectiles\\n%thor_p4_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%thor_p4_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "thor_p6",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Hammer Toss",
+            "description": "Thor throws his hammer at an enemy, stunning them.",
+            "descshort": "Projectile",
+            "icon": 4,
+            "icon_texture": "textures/ui/thor_icons2.png",
+            "name": "thor_p5",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p5_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "thor_p5_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p5_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "thor_p5_dmg",
+                    "value": "195  217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p5_pwr",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "thor_p5_pwr",
+                    "value": 128
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%thor_p5_dmg $DMG_PHYSICAL\\n%thor_p5_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%thor_p5_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "God Speed",
+            "description": "Increases Thor's Attack Speed and give him a chance to dodge all powered and non-powered Melee attacks.",
+            "descshort": "Boost",
+            "icon": 5,
+            "icon_texture": "textures/ui/thor_icons2.png",
+            "name": "thor_p6",
+            "power": "power6",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p6_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thor_p6_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p6_spd",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thor_p6_spd",
+                    "value": 2.1
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p6_dgd",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thor_p6_dgd",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p6_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thor_p6_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p6_pwr",
+                    "value": 50
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thor_p6_pwr",
+                    "value": 350
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%thor_p6_spd:s Attack Speed\\n%thor_p6_dgd:p chance to dodge\\n%thor_p6_lif seconds\\n%thor_p6_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%thor_p6_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Asgard's Blessing",
+            "description": "Increases the levels of all skills for the entire party for a time.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/thor_icons2.png",
+            "name": "thor_p7",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p7_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thor_p7_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p7_ski",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thor_p7_ski",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p7_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thor_p7_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p7_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thor_p7_pwr",
+                    "value": 504
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "+%thor_p7_ski points to skills\\n%thor_p7_lif seconds\\n%thor_p7_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%thor_p7_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "WRATH OF THE GODS",
+            "description": "Thor brings down lightning from the sky, dealing $DMG_ELECTRICITY to all nearby enemies.",
+            "descshort": "Radial",
+            "icon": 7,
+            "icon_texture": "textures/ui/thor_icons2.png",
+            "name": "thor_p8",
+            "power": "power8",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p8_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "thor_p8_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p8_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "thor_p8_dmg",
+                    "value": "279 309"
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%thor_p8_dmg $DMG_ELECTRICITY",
+                "require": {
+                    "cat": "level",
+                    "level": "%thor_p8_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "thor_p2",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "BY THE POWER OF ODIN",
+            "description": "Odin grants Thor invinciblilty and greatly increases his Melee Dmg for a time.",
+            "descshort": "Boost",
+            "icon": 8,
+            "icon_texture": "textures/ui/thor_icons2.png",
+            "name": "thor_p9",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p9_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "thor_p9_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p9_dmg",
+                    "value": 1.15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "thor_p9_dmg",
+                    "value": 1.35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_p9_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "thor_p9_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%thor_p9_dmg:s Melee Dmg\\n%thor_p9_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%thor_p9_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "thor_p7",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Regeneration",
+            "description": "Heals over time.",
+            "descshort": "Passive",
+            "icon": 14,
+            "icon_texture": "textures/ui/thor_icons2.png",
+            "name": "thor_regen",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_regen_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "thor_regen_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_regen_health",
+                    "value": 0.0017
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "thor_regen_health",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_regen_health_p",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "thor_regen_health_p",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_regen_health_t",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "thor_regen_health_t",
+                    "value": 6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%thor_regen_health_p:f% of max $HP every %thor_regen_health_t seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%thor_regen_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "health_regen_pct",
+                        "level": "%thor_regen_health"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Hammer Mastery",
+            "description": "Increases damage and Critical chance with all hammer attacks.",
+            "descshort": "Passive",
+            "icon": 9,
+            "icon_texture": "textures/ui/thor_icons2.png",
+            "name": "thor_pass1",
+            "type": "passive",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_pass1_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "thor_pass1_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_pass1_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "thor_pass1_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_pass1_cri",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "thor_pass1_cri",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%thor_pass1_dmg:s $DMG\\n+%thor_pass1_cri:p Critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%thor_pass1_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "level": "%thor_pass1_dmg",
+                        "scope_node": "thor_hammer"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%thor_pass1_cri",
+                        "scope_node": "thor_hammer"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "level": "%thor_pass1_dmg",
+                        "scope_node": "thor_p1"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%thor_pass1_cri",
+                        "scope_node": "thor_p1"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Gift of the Gods",
+            "description": "Increases Thor's resistance to all types of damage.",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/thor_icons2.png",
+            "name": "thor_pass2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_pass2_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "thor_pass2_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thor_pass2_pct",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "thor_pass2_pct",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%thor_pass2_pct:p all resistances",
+                "require": {
+                    "cat": "level",
+                    "level": "%thor_pass2_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "thor_p9",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_all",
+                        "level": "%thor_pass2_pct"
+                    }
+                }
+            }
+        }
+    }
+}

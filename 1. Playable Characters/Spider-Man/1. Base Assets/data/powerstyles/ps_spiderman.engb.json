@@ -751,9 +751,9 @@
                 "apply_ally": "all",
                 "apply_self": true,
                 "class": "add_attack",
-                "damagepercent": "%spider_p6_pct",
+                "damagepercent": "%spider_p6_dmg",
                 "damagetype": "dmg_physical",
-                "life": "%spider_p6_tim",
+                "life": "%spider_p6_lif",
                 "name": "powerup",
                 "powerusage": "%spider_p6_pwr",
                 "tag": 3,
@@ -765,9 +765,13 @@
                     },
                     "scope": {
                         "scope_attack": "kick"
+                    },
+                    "scope": {
+                        "scope_non_powers": true
                     }
                 },
                 "affecter": {
+                    "affect_type": "scale",
                     "attribute": "attack_rating",
                     "level": "%spider_p6_ar"
                 },
@@ -852,12 +856,6 @@
             },
             "trigger": {
                 "effect": "char/spider/p8_aura",
-                "fxlevel": 2,
-                "name": "effect",
-                "time": 0
-            },
-            "trigger": {
-                "effect": "char/cable/p6_aura",
                 "fxlevel": 2,
                 "name": "effect",
                 "time": 0

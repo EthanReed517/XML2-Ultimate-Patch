@@ -35,7 +35,7 @@
                 "count": 3,
                 "damage": "3 5",
                 "damagescale": "none",
-                "damagetype": "dmg_telekinesis",
+                "damagetype": "dmg_mental",
                 "entity": "frost_stun",
                 "filename": "ents_emmaf",
                 "fulltargeting": true,
@@ -153,7 +153,7 @@
                 "attacktype": "blast",
                 "damage": "%emma_fear_dmg",
                 "damagescale": "none",
-                "damagetype": "dmg_telekinesis",
+                "damagetype": "dmg_mental",
                 "fxlevel": 1,
                 "inherit": "punch",
                 "name": "radial_punch",
@@ -228,7 +228,7 @@
                 "count": "%emma_bolt_num",
                 "damage": "%emma_bolt_dmg",
                 "damagescale": "none",
-                "damagetype": "dmg_telekinesis",
+                "damagetype": "dmg_mental",
                 "entity": "p2_emma_bolts",
                 "filename": "ents_emmaf",
                 "maxrange": 800,
@@ -280,7 +280,7 @@
                 "arc": 180,
                 "attacktype": "psionic",
                 "damagescale": "none",
-                "damagetype": "dmg_telekinesis",
+                "damagetype": "dmg_mental",
                 "fxlevel": 1,
                 "inherit": "punch",
                 "knockback": 600,
@@ -343,7 +343,7 @@
                 "attacktype": "beam",
                 "beameffect": "char/emmaf/p4_power",
                 "damagescale": "none",
-                "damagetype": "dmg_telekinesis",
+                "damagetype": "dmg_mental",
                 "fxlevel": 1,
                 "inherit": "beam",
                 "maxrange": 800,
@@ -421,7 +421,7 @@
             },
             "trigger": {
                 "damage": "%emma_beam_dmg",
-                "damagetype": "dmg_telekinesis",
+                "damagetype": "dmg_mental",
                 "index": 1,
                 "name": "selfattack",
                 "tag": 101,
@@ -500,28 +500,18 @@
             },
             "trigger": {
                 "damage": 1,
-                "damagetype": "dmg_telekinesis",
+                "damagetype": "dmg_mental",
                 "fxlevel": 1,
                 "maxrange": "%emma_insanity_rad",
                 "name": "radial",
                 "powerusage": "%emma_insanity_pwr",
                 "time": 0.6,
-                "victimeventtag": 100,
-                "victimeventtag2": 10
-            },
-            "trigger": {
-                "failtag": 102,
-                "filteractor": true,
-                "name": "event_filter",
-                "passtag": 101,
-                "tag": 100,
-                "time": -1,
-                "type": "ce_filter_event"
+                "victimeventtag": 101
             },
             "trigger": {
                 "class": "harming",
                 "damage": "%emma_insanity_dmg",
-                "damagetype": "dmg_telekinesis",
+                "damagetype": "dmg_mental",
                 "life": "%emma_insanity_lif",
                 "name": "powerup",
                 "tag": 101,
@@ -534,39 +524,6 @@
                 },
                 "damageMod": {
                     "remove": "dmgmod_no_pain"
-                }
-            },
-            "trigger": {
-                "allow_non_actors": true,
-                "class": "harming",
-                "damage": "180 197",
-                "damagetype": "dmg_telekinesis",
-                "life": 2,
-                "name": "powerup",
-                "tag": 102,
-                "time": -1,
-                "special_fx": {
-                    "bolt": "Bip01 Head",
-                    "effect": "char/emmaf/emma_head",
-                    "fxlevel": 2,
-                    "how_used": "primary"
-                },
-                "damageMod": {
-                    "name": "dmgmod_environment"
-                }
-            },
-            "trigger": {
-                "class": "suspend",
-                "combatnode": "suspended_victim",
-                "endvictimtag": 20,
-                "life": "%emma_insanity_lif",
-                "minsuspendtime": 2,
-                "name": "powerup",
-                "tag": 10,
-                "time": -1,
-                "special_fx": {
-                    "bolt": "Bip01 Head",
-                    "effect": "char/emmaf/emma_head"
                 }
             },
             "chain": {
@@ -1128,11 +1085,6 @@
             },
             "trigger": {
                 "name": "sound",
-                "sound": "char/emmaf_m/p9_charge",
-                "time": 0
-            },
-            "trigger": {
-                "name": "sound",
                 "sound": "char/emmaf_m/p9_power",
                 "time": 0.1
             },
@@ -1156,12 +1108,6 @@
                     "affect_type": "scale",
                     "attribute": "atk_damage",
                     "level": 2
-                },
-                "affecter": {
-                    "affect_type": "scale",
-                    "attribute": "damage",
-                    "level": 2,
-                    "scope_damage": "dmg_telekinesis"
                 }
             },
             "chain": {

@@ -161,7 +161,9 @@
             }
         },
         "FightMove": {
+            "aireusetime": 4,
             "animenum": "ea_power10",
+            "aitype": "melee",
             "cansteal": false,
             "combotextfinisher": "Launch",
             "combotextstarter": "Rocket",
@@ -255,6 +257,7 @@
         },
         "FightMove": {
             "aireusetime": 20,
+            "aitype": "buffself",
             "animenum": "ea_power5",
             "combotextfinisher": "Field",
             "combotextstarter": "Shielded",
@@ -271,6 +274,11 @@
             "trigger": {
                 "name": "sound",
                 "sound": "char/cball_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%can_party_pwr",
                 "time": 0
             },
             "trigger": {
@@ -300,7 +308,6 @@
                 "life": "%can_party_lif",
                 "name": "powerup",
                 "no_shadow": true,
-                "powerusage": "%can_party_pwr",
                 "time": 0.45,
                 "special_fx": {
                     "bolt": "Bip01 Pelvis",
@@ -321,7 +328,6 @@
                 "life": "%can_party_lif",
                 "name": "powerup",
                 "no_shadow": true,
-                "powerusage": "%can_party_pwr",
                 "time": 0.45,
                 "special_fx": {
                     "bolt": "Bip01 Pelvis",
@@ -342,7 +348,7 @@
         },
         "FightMove": {
             "aireusetime": 4,
-            "aitype": "projectilenear",
+            "aitype": "melee",
             "animenum": "ea_power1",
             "icon": 1,
             "locktransitionangles": true,
@@ -413,7 +419,7 @@
         },
         "FightMove": {
             "aireusetime": 4,
-            "aitype": "projectilenear",
+            "aitype": "melee",
             "animenum": "ea_power10",
             "blendtime": 0,
             "combotextfinisher": "Burst",
@@ -569,6 +575,8 @@
             }
         },
         "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
             "animenum": "ea_power4",
             "combotextfinisher": "Blows",
             "combotextstarter": "Explosive",
@@ -848,6 +856,7 @@
             }
         },
         "FightMove": {
+            "aireusetime": 15,
             "aitype": "melee",
             "animenum": "ea_attack_popup",
             "combotextfinisher": "Surge",
@@ -1003,7 +1012,7 @@
             }
         },
         "FightMove": {
-            "aireusetime": 4,
+            "aireusetime": 30,
             "aitype": "aoe",
             "animenum": "ea_power8",
             "combotextfinisher": "Thrust",
