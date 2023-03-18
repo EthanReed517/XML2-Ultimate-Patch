@@ -559,14 +559,25 @@
                 "time": 0
             },
             "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
                 "life": "%psy_wield_lif",
                 "name": "powerup",
                 "powerusage": "%psy_wield_pwr",
                 "time": 0.7,
                 "affecter": {
                     "affect_type": "scale",
-                    "attribute": "damage",
-                    "level": "%psy_wield_dmg"
+                    "attribute": "atk_damage",
+                    "level": "%psy_wield_dmg",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    },
+                    "scope": {
+                        "scope_non_powers": true
+                    }
                 },
                 "bolton": {
                     "bolt": "Bip01 L Hand",
