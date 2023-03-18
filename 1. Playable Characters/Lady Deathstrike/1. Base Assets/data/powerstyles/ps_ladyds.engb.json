@@ -1,0 +1,869 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/ladyds_icons1.png",
+        "event": {
+            "damagescale": "none",
+            "name": "teleport_data_store",
+            "type": "ce_atk_teleport_mark_start"
+        },
+        "FightMove": {
+            "animenum": "ea_jump_start",
+            "handler": "ch_move_jump",
+            "lockangles": true,
+            "name": "jump",
+            "startchaintime": 0.3,
+            "chain": {
+                "action": "move",
+                "result": "airjump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "jumploop",
+            "noncombat": true,
+            "chain": {
+                "action": "move",
+                "result": "airjump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_double_jump_start",
+            "blendtime": 0.1,
+            "handler": "ch_move_jump",
+            "name": "airjump",
+            "startchaintime": 0.5,
+            "turnrate": 0.2,
+            "chain": {
+                "action": "special",
+                "result": "doublejumpland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_land",
+            "blendtime": 0.1,
+            "endchaintime": 0.7,
+            "handler": "ch_move_jump_land",
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "doublejumpland",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Biter",
+            "combotextstarter": "Nail",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ladyds_p1",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%ladyd_p1_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/ladyds/p1_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/ladyds_m/p1_charge",
+                "time": 0.22
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damagetype": "dmg_blade",
+                "damage": "%ladyds_p1_dmg",
+                "damagescale": "none",
+                "index": 1,
+                "hiteffect": "char/ladyds/p4_impact",
+                "knockback": 190,
+                "maxrange": 95,
+                "name": "punch",
+                "time": 0.24
+            },
+            "trigger": {
+                "effect": "char/ladyds/p1_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/ladyds_m/p1_power",
+                "time": 0.42
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damagetype": "dmg_blade",
+                "damage": "%ladyds_p1_dmg",
+                "damagescale": "none",
+                "hiteffect": "char/ladyds/p4_impact",
+                "index": 2,
+                "knockback": 305,
+                "maxrange": 105,
+                "name": "punch",
+                "tag": 2,
+                "time": 0.5,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "effect": "char/ladyds/p1_charge",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/ladyds_m/p1_impact",
+                "time": 0.65
+            },
+            "trigger": {
+                "bolt": "Bip01 L Toe0",
+                "effect": "char/ladyds/p1_charge",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0.65
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "effect": "char/ladyds/p1_charge",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0.65
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "aoe",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Flip",
+            "combotextstarter": "Kicking",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ladyds_p2",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%ladyd_p2_pwr",
+                "time": 0
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damagetype": "dmg_physical",
+                "damage": "%ladyds_p2_dmg",
+                "damagescale": "none",
+                "inherit": "punch",
+                "name": "p_radius"
+            },
+            "trigger": {
+                "life": 0.5,
+                "name": "hotspot",
+                "radius": 140,
+                "time": 0
+            },
+            "trigger": {
+                "life": 0.5,
+                "name": "hotspot",
+                "radius": 140,
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "effect": "char/ladyds/p2_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/ladyds_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Toe0",
+                "effect": "char/ladyds/p2_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/ladyds/p2_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/ladyds_m/p2_power",
+                "time": 0.19
+            },
+            "trigger": {
+                "damagetype": "dmg_physical",
+                "damage": "%ladyds_p2_dmg",
+                "index": 1,
+                "knockback": 40,
+                "maxrange": 85,
+                "name": "p_radius",
+                "time": 0.25
+            },
+            "trigger": {
+                "damagetype": "dmg_physical",
+                "damage": "%ladyds_p2_dmg",
+                "index": 2,
+                "knockback": 305,
+                "maxrange": 105,
+                "name": "p_radius",
+                "tag": 3,
+                "time": 0.45,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Nails",
+            "combotextstarter": "Cutting",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ladyds_p3",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%ladyd_p3_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ladyds_m/p3_power",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/ladyds/p3_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damagetype": "dmg_bleed",
+                "damage": "%ladyds_p3_dmg",
+                "damagescale": "none",
+                "index": 1,
+                "hiteffect": "char/ladyds/p4_impact",
+                "name": "punch",
+                "time": 0.2
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damagetype": "dmg_bleed",
+                "damage": "%ladyds_p3_dmg",
+                "damagescale": "none",
+                "hiteffect": "char/ladyds/p4_impact",
+                "index": 2,
+                "name": "punch",
+                "time": 0.35,
+                "victimeventtag": 101
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/ladyds/p3_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.35
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damagetype": "dmg_bleed",
+                "damage": "%ladyds_p3_dmg",
+                "damagescale": "none",
+                "hiteffect": "char/ladyds/p4_impact",
+                "index": 3,
+                "name": "punch",
+                "time": 0.6,
+                "victimeventtag": 101
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/ladyds/p3_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.6
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%ladyds_p3_dmg",
+                "damagetype": "dmg_bleed",
+                "life": 0.5,
+                "name": "powerup",
+                "tag": 101,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Kick",
+            "combotextstarter": "Soaring",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ladyds_p4",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%ladyd_p4_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "effect": "char/ladyds/p4_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ladyds_m/p4_power",
+                "time": 0.35
+            },
+            "trigger": {
+                "attacktype": "kick",
+                "damagetype": "dmg_physical",
+                "damage": "%ladyds_p4_dmg",
+                "damagescale": "none",
+                "hiteffect": "char/ladyds/p4_impact",
+                "name": "punch",
+                "time": 0.35,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 10,
+            "aitype": "projectile",
+            "animenum": "ea_attack_light1",
+            "combotextfinisher": "Shuriken",
+            "combotextstarter": "Sharp",
+            "endchaintime": 0.9,
+            "icon": 4,
+            "lockangles": true,
+            "name": "power5",
+            "priority": 5,
+            "require": {
+                "cat": "talent",
+                "item": "ladyds_p5",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%ladyd_p5_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/ladyds/p5_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/ladyds_m/p5_charge",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "projectile",
+                "center": true,
+                "count": "%ladyds_p5_num",
+                "damage": "%ladyds_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_blade",
+                "entity": "shuriken",
+                "filename": "ents_ladyds",
+                "knockback": 0,
+                "maxrange": 800,
+                "name": "projectile",
+                "speed": 600,
+                "tag": 1,
+                "targetable": true,
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_attack_stun2",
+            "combotextfinisher": "Slash",
+            "combotextstarter": "Bloody",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ladyds_p6",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ladyds_m/p6_power",
+                "time": 0
+            },
+            "trigger": {
+                "class": "add_harming",
+                "damage": "%ladyds_p6_dmg",
+                "damagescale": "normal",
+                "damagetype": "dmg_bleed",
+                "life": "%ladyds_p6_life",
+                "name": "powerup",
+                "time": 0.1,
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    },
+                    "scope": {
+                        "scope_non_powers": true
+                    }
+                }
+            },
+            "trigger": {
+                "class": "feral_rage",
+                "life": "%ladyds_p6_life",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%ladyds_p6_pwr",
+                "tag": 6,
+                "time": 0.1,
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/ladyds/p6_power",
+                    "fxlevel": 3
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/ladyds/p6_power",
+                    "fxlevel": 3
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%ladyds_p6_ar"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_attack_jumpslamland",
+            "combotextfinisher": "Stance",
+            "combotextstarter": "Defensive",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ladyds_p7",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ladyds_m/p7_power",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%ladyds_life",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%ladyds_pwr",
+                "time": 0.46,
+                "special_fx": {
+                    "effect": "char/ladyds/p7_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%ladyds_def"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_trip",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_popup",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_grab",
+                    "level": 0
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_jumpslamland",
+            "combotextfinisher": "Dash",
+            "description": "DEADLY DASH",
+            "endchaintime": 0.95,
+            "handler": "ch_tele_jump",
+            "icon": 7,
+            "name": "power8",
+            "noautoaim": true,
+            "playspeed": 5,
+            "powerup_tag": "ladyds_power8",
+            "priority": 5,
+            "startchaintime": 0.9,
+            "turnrate": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "ladyds_p8",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": 4,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/ladyds/p4_power",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "damage": "7 9",
+                "damagescale": "normal",
+                "damagetype": "dmg_blade",
+                "isxtreme": true,
+                "maxrange": 250,
+                "name": "teleport_data_store",
+                "powerusage": 0,
+                "time": 0
+            },
+            "trigger": {
+                "count": "set",
+                "name": "count",
+                "time": 0,
+                "value": "%ladyds_p8_hits"
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ladyds_m/p8_power",
+                "time": 0.9
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power8_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "blendtime": 0,
+            "endchaintime": 0.95,
+            "fallback": "power8_end",
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "power8_loop",
+            "noautoaim": true,
+            "playspeed": 5,
+            "powerup_tag": "ladyds_power8",
+            "priority": 5,
+            "startchaintime": 0.9,
+            "require": {
+                "cat": "counter",
+                "level": 1
+            },
+            "trigger": {
+                "count": "add",
+                "name": "count",
+                "time": 0,
+                "value": -1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/ladyds/p3_power",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/ladyds_m/p3_power",
+                "time": 0
+            },
+            "trigger": {
+                "attacktype": "direct",
+                "maxrange": 250,
+                "name": "teleport_scaled_atk",
+                "powerusage": 0,
+                "time": 0
+            },
+            "trigger": {
+                "damage": "7 9",
+                "damagescale": "normal",
+                "damagetype": "dmg_blade",
+                "name": "teleport_punch",
+                "powerusage": 0,
+                "time": 0.33
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power8_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_jumpslamland",
+            "blendtime": 0.1,
+            "endchaintime": 0.95,
+            "handler": "ch_move_tele_land",
+            "lockangles": true,
+            "name": "power8_end",
+            "noautoaim": true,
+            "powerup_tag": "ladyds_power8",
+            "priority": 5,
+            "startchaintime": 0.9,
+            "trigger": {
+                "attacktype": "direct",
+                "maxrange": 250,
+                "name": "teleport_return",
+                "powerusage": 0,
+                "time": 0
+            },
+            "trigger": {
+                "cleardata": true,
+                "name": "teleport_data_store",
+                "time": 0.45
+            },
+            "trigger": {
+                "end": true,
+                "name": "xtreme_start",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_popup",
+            "blendtime": 0,
+            "combotextfinisher": "Cloak",
+            "description": "DIVINE WIND",
+            "icon": 8,
+            "lockchaining": false,
+            "lockangles": true,
+            "name": "power9",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ladyds_p9",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/ladyds/p4_power",
+                "name": "effect_sound",
+                "sound": "char/ladyds_m/p9_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "add": "cloaked",
+                "name": "disapear",
+                "tag": 10,
+                "time": -1,
+                "type": "ce_renderfx"
+            },
+            "trigger": {
+                "name": "appear",
+                "remove": "cloaked",
+                "tag": 11,
+                "time": -1,
+                "type": "ce_renderfx"
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "class": "callevents",
+                "life": "%ladyds_p9_lif",
+                "name": "powerup",
+                "time": 0.35,
+                "Functionevent": {
+                    "function": "activate",
+                    "triggertag": 10
+                },
+                "Functionevent": {
+                    "function": "deactivate",
+                    "triggertag": 11
+                },
+                "affecter": {
+                    "attribute": "invisible"
+                },
+                "special_fx": {
+                    "effect": "char/ladyds/p9_aura",
+                    "fxlevel": 3,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/ladyds/p9_aura",
+                    "fxlevel": 4,
+                    "how_used": "deactivation"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%ladyds_p9_sd"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
