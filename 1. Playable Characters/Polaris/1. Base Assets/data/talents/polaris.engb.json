@@ -1,0 +1,721 @@
+{
+    "talents": {
+        "talent": {
+            "descname": "Levitation",
+            "description": "Lifts and throws objects and enemies around. Can build bridges.\\n(~41Press And Hold~~)",
+            "descshort": "Special",
+            "icon": 0,
+            "icon_texture": "textures/ui/polaris_icons2.png",
+            "name": "pol_levitation",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_levitation_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "pol_levitation_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_levitation_pps",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "pol_levitation_pps",
+                    "value": 126
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_levitation_dm1",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "pol_levitation_dm1",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_levitation_dm2",
+                    "value": "9 12"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "pol_levitation_dm2",
+                    "value": "79 89"
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 1,
+                    "name": "pol_levitation_hvy",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 8,
+                    "name": "pol_telekinesis_hvy",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 20,
+                    "name": "pol_levitation_hvy",
+                    "value": 2
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "Heavy objects and enemies\\n%pol_levitation_dm1 Magnetic Dmg at lift\\n%pol_levitation_dm2 $DMG_PHYSICAL at impact\\n%pol_levitation_pps $EP per second",
+                "require": {
+                    "cat": "level",
+                    "level": "%pol_levitation_req"
+                }
+            },
+            "level": {
+                "count": 13,
+                "description": "Massive objects and enemies\\n%pol_levitation_dm1 Magnetic Dmg at lift\\n%pol_levitation_dm2 $DMG_PHYSICAL at impact\\n%pol_levitation_pps $EP per second",
+                "require": {
+                    "cat": "level",
+                    "level": "%pol_levitation_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Iron Toxicity",
+            "description": "Polaris agitates the iron in her enemies' blood, causing them to become irradiated and immobilized.",
+            "descshort": "Beam",
+            "icon": 1,
+            "icon_texture": "textures/ui/polaris_icons2.png",
+            "name": "pol_sting",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_sting_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pol_sting_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_sting_pwr",
+                    "value": 22
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pol_sting_pwr",
+                    "value": 126
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_sting_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pol_sting_dmg",
+                    "value": "195 217"
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%pol_sting_dmg $DMG_RADIATION\\n%pol_sting_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pol_sting_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Metallic Hammer",
+            "description": "Polaris throws a metal ball at an enemy that magnetizes their magnetic field, freezing them in place for a time.",
+            "descshort": "Projectile",
+            "icon": 2,
+            "icon_texture": "textures/ui/polaris_icons2.png",
+            "name": "pol_hammer",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_hammer_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pol_hammer_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_hammer_pwr",
+                    "value": 36
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pol_hammer_pwr",
+                    "value": 142
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_hammer_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pol_hammer_dmg",
+                    "value": "121 135"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_hammer_tim",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pol_hammer_tim",
+                    "value": 6
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%pol_hammer_dmg Magnetic Dmg\\n%pol_hammer_tim:f seconds\\n%pol_hammer_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pol_hammer_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Polarity Pull",
+            "description": "Polaris pulls her enemies towards her then flings them back with a radial Magnetic wave.",
+            "descshort": "Radial",
+            "icon": 3,
+            "icon_texture": "textures/ui/polarity_icons2.png",
+            "name": "pol_p4",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_p4_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "pol_p4_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_p4_ep",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "pol_p4_ep",
+                    "value": 170
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_p4_dam",
+                    "value": "34 40"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "pol_p4_dam",
+                    "value": "82 93"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_p4_dam2",
+                    "value": "21 26"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "pol_p4_dam2",
+                    "value": "79 89"
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%pol_p4_dam Magnetic Dmg from pull\\n%pol_p4_dam2 Magnetic Dmg from radial\\n%pol_p4_ep $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pol_p4_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Gravity Well",
+            "description": "Traps an enemy in a Magnetic gravity well which damages and stuns them and pulls in and damages any nearby enemies.\r\n",
+            "descshort": "Trap",
+            "icon": 4,
+            "icon_texture": "textures/ui/polaris_icons2.png",
+            "name": "pol_grav",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_grav_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pol_grav_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_grav_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pol_grav_pwr",
+                    "value": 180
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_grav_dm1",
+                    "value": "43 50"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pol_grav_dm1",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_grav_dm2",
+                    "value": "27 33"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pol_grav_dm2",
+                    "value": "69 79"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_grav_lif",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "pol_grav_lif",
+                    "value": 3
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%pol_grav_dm1 Magnetic Dmg to victim\\n%pol_grav_dm2 Magnetic Dmg to surrounding enemies\\n%pol_grav_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pol_grav_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "pol_p4",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Magnetic Forcefield",
+            "description": "Polaris creates a forcefield around the entire party, increasing everyone's Defense and giving a chance to reflect all beams and projectiles for a time.",
+            "descshort": "Boost",
+            "icon": 5,
+            "icon_texture": "textures/ui/polaris_icons2.png",
+            "name": "pol_field",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_field_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pol_field_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_field_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pol_field_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_field_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pol_field_pwr",
+                    "value": 516
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_field_dr",
+                    "value": 1.3
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pol_field_dr",
+                    "value": 2.09
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_field_chn",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "pol_field_chn",
+                    "value": 1
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%pol_field_dr:s $DR\\n+%pol_field_chn:p chance to reflect $DMG_ENERGY\\n%pol_field_lif seconds\\n%pol_field_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pol_field_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Metal Morphing",
+            "description": "Polaris bonds metal to her body at an atomic level, increasing her Melee Dmg, adding Magnetic Dmg to all non-powered Melee attacks, and making her immune to popup, grab, and trip for a time.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/polaris_icons2.png",
+            "name": "pol_morph",
+            "power": "power8",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_morph_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pol_morph_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_morph_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pol_morph_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_morph_pwr",
+                    "value": 70
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pol_morph_pwr",
+                    "value": 462
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_morph_dmg",
+                    "value": 1.1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "pol_morph_dmg",
+                    "value": 1.25
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%pol_morph_dmg:s Melee Dmg\\n%pol_morph_lif seconds\\n%pol_morph_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%pol_morph_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "MAGNETIC TEMPEST",
+            "description": "Polaris creates a massive Magnetic storm that sends enemies flying.",
+            "descshort": "Radial",
+            "icon": 7,
+            "icon_texture": "textures/ui/polaris_icons2.png",
+            "name": "pol_debris",
+            "power": "power10",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_debris_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "pol_debris_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_debris_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "pol_debris_dmg",
+                    "value": "279 309"
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%pol_debris_dmg Magnetic Dmg",
+                "require": {
+                    "cat": "level",
+                    "level": "%pol_debris_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "NEGATIVE EMOTION ABSORPTION",
+            "description": "Polaris absorbs the electromagnetic energy given off by negative emotions, increasing her size, making her invincible, and increasing her damage for a time.",
+            "descshort": "Boost",
+            "icon": 8,
+            "icon_texture": "textures/ui/polaris_icons2.png",
+            "name": "pol_p11",
+            "power": "power11",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_p11_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "pol_p11_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_p11_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "pol_p11_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "+100% $DMG\\n%pol_p11_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%pol_p11_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "pol_gain",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Magnetic Mastery",
+            "description": "Increases damage and Critical chance with Magnetic Dmg.",
+            "descshort": "Passive",
+            "icon": 9,
+            "icon_texture": "textures/ui/polaris_icons2.png",
+            "name": "pol_mmast",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_mmast_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pol_mmast_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_mmast_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pol_mmast_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_mmast_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pol_mmast_crit",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%pol_mmast_dmg:s Magnetic Dmg\\n+%pol_mmast_crit:p Critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%pol_mmast_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%pol_mmast_dmg",
+                        "scope_damage": "dmg_magnetic"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%pol_mmast_crit",
+                        "scope_damage": "dmg_magnetic"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Pestilence",
+            "description": "Increases Polaris's resistance to $DMG_RADIATION and gives a chance to reflect $DMG_RADIATION back onto attackers.",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/polaris_icons2.png",
+            "name": "pol_pest",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_pest_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pol_pest_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_pest_resist",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pol_pest_resist",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_pest_chn",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pol_pest_chn",
+                    "value": 1
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%pol_pest_resist:p Radiation resistance\\n+%pol_pest_chn:p chance to reflect $DMG_RADIATION",
+                "require": {
+                    "cat": "level",
+                    "level": "%pol_pest_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_radiation",
+                        "level": "%pol_pest_resist"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "reflect_damage",
+                        "level": "%pol_pest_chn",
+                        "scope": {
+                            "scope_damage": "dmg_radiation"
+                        }
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Magnetic Field Absorption",
+            "description": "Polaris absorbs the magnetic fields of each enemy she defeats, regenerating some of her $HP.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/polaris_icons2.png",
+            "name": "pol_gain",
+            "type": "passive",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_gain_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pol_gain_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "pol_gain_nrg",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "pol_gain_nrg",
+                    "value": 50
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%pol_gain_nrg $HP per defeated enemy",
+                "require": {
+                    "cat": "level",
+                    "level": "%pol_gain_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "health_per_kill",
+                        "level": "%pol_gain_nrg"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,829 @@
+{
+    "PowerStyle": {
+        "cansteal": false,
+        "iconfile": "textures/ui/polaris_icons1.png",
+        "event": {
+            "entity": "pol_nullo",
+            "filename": "ents_polaris",
+            "inherit": "relative_spawn",
+            "name": "who_to_hit",
+            "relative": "target",
+            "type": "ce_atk_spawn_relative"
+        },
+        "FightMove": {
+            "aitype": "beam",
+            "animenum": "ea_attack_knockback",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "icon": 7,
+            "lockangles": true,
+            "name": "attackknockback2",
+            "playspeed": 1,
+            "startchaintime": 0.6,
+            "trigger": {
+                "life": 0.14,
+                "name": "slide",
+                "targetdistance": 70,
+                "targetradius": 57,
+                "time": 0.25
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/polaris_m/p1_impact",
+                "time": 0.45
+            },
+            "trigger": {
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "0 -4 50",
+                "attack_type": "psionic",
+                "damage": 0,
+                "damage_type": "dmg_magnetic",
+                "damagescale": "normal",
+                "index": 1,
+                "maxrange": 70,
+                "name": "beam",
+                "time": 0.35,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "trigger": {
+                "effect": "char/polaris/special_finisher",
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "angle": 0,
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "7 0 60",
+                "attack_type": "psionic",
+                "damage": "3 5",
+                "damage_type": "dmg_magnetic",
+                "damagescale": "normal",
+                "hiteffect": "char/polaris/p2_impact",
+                "index": 2,
+                "knockback": 190,
+                "maxrange": 90,
+                "name": "beam",
+                "pitch": -20,
+                "time": 0.5,
+                "victimeventtag": 15,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "finisher": true,
+                "life": 0.25,
+                "name": "xtreme_start",
+                "tag": 15,
+                "time": -1,
+                "worldspeed": 0.5
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 10,
+            "aitype": "projectilenear",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Levitation",
+            "combotextstarter": "Levitating",
+            "handler": "ch_telekinesis",
+            "icon": 0,
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "power1",
+            "powerup_tag": "pol_power1",
+            "priority": 5,
+            "startchaintime": 0.5,
+            "trigger": {
+                "attacktype": "psionic",
+                "damage": 0,
+                "damagelevel": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_magnetic",
+                "maxrange": 300,
+                "name": "levitation_dmg",
+                "tag": 2,
+                "time": -1,
+                "type": "ce_atk_self",
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                },
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/polaris/p1_power",
+                "name": "effect",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%pol_levitation_pps",
+                "time": 0
+            },
+            "trigger": {
+                "damage": "%pol_levitation_dm1",
+                "damagetype": "dmg_physical",
+                "heaviness": "%pol_levitation_hvy",
+                "impactdamage": "%pol_levitation_dm2",
+                "name": "suspend",
+                "powerusage": "%pol_levitation_pps",
+                "tag": 1,
+                "time": -1,
+                "tklevel": 11
+            },
+            "chain": {
+                "action": "special",
+                "result": "power1_hold"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power1_release"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power5",
+            "energypersecond": "%pol_levitation_pps",
+            "handler": "ch_telekinesis",
+            "icon": 0,
+            "lockangles": true,
+            "lockchaining": true,
+            "locktransitionangles": true,
+            "name": "power1_hold",
+            "priority": 5,
+            "startchaintime": 1,
+            "trigger": {
+                "effect": "char/polaris/p1_power",
+                "name": "effect",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "life": 1,
+                "name": "powerup",
+                "time": 0,
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/polaris/p1_charge"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/polaris/p1_charge"
+                }
+            },
+            "trigger": {
+                "loop_timeout": 2,
+                "loop_type": "start",
+                "name": "sound",
+                "sound": "char/polaris_m/p1_charge",
+                "time": 0
+            },
+            "chain": {
+                "action": "special",
+                "result": "power1_hold"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power1_release"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4_end",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1_release",
+            "priority": "uninterruptable",
+            "trigger": {
+                "loop_type": "stop",
+                "name": "sound",
+                "sound": "char/polaris_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/polaris/p1_release",
+                "name": "effect_sound",
+                "sound": "char/polaris_m/p1_power",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "beam",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Sting",
+            "combotextstarter": "Toxic",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "playspeed": 1.2,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "pol_sting",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/polaris/p2_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/polaris_m/p2_power",
+                "time": 0.35
+            },
+            "trigger": {
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "44 2 51",
+                "beambolt": "Bip01 L Hand",
+                "beameffect": "char/polaris/p2_power",
+                "damage": "%pol_sting_dmg",
+                "damagetype": "dmg_radiation",
+                "fxlevel": 1,
+                "hiteffect": "char/polaris/p2_impact",
+                "inherit": "beam",
+                "maxrange": 800,
+                "name": "polbeam",
+                "powerusage": "%pol_sting_pwr",
+                "radius": 18,
+                "tag": 3,
+                "time": 0.58,
+                "victimeventtag": 20,
+                "damageMod": {
+                    "name": "dmgmod_immobilize"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%pol_sting_dmg",
+                "damagetype": "dmg_radiation",
+                "life": 3,
+                "name": "powerup",
+                "tag": 20,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "projectile",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Hammer",
+            "combotextstarter": "Magnetizing",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "pol_hammer",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/polaris/p3_charge",
+                "name": "effect_sound",
+                "sound": "char/polaris_m/p3_charge",
+                "time": 0.1
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "44 2 51",
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%pol_hammer_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_magnetic",
+                "entity": "metalball",
+                "filename": "ents_polaris",
+                "fulltargeting": true,
+                "hiteffect": "char/polaris/p3_impact",
+                "inherit": "projectile",
+                "maxrange": 800,
+                "name": "magbeam",
+                "powerusage": "%pol_hammer_pwr",
+                "speed": 650,
+                "radius": 18,
+                "tag": 3,
+                "targetable": true,
+                "time": 0.58,
+                "victimeventtag": 20,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "class": "freeze",
+                "do_pain": true,
+                "effect_cust1": "char/polaris/p3_shatter",
+                "life": "%pol_hammer_lif",
+                "name": "powerup",
+                "renderfx": "metalfreeze",
+                "sound1": "char/polaris_m/p3_impact",
+                "sound2": "char/polaris_m/p3_explode",
+                "tag": 20,
+                "time": -1,
+                "affecter": {
+                    "attribute": "frozen",
+                    "level": 1
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 15,
+            "aitype": "aoe",
+            "animenum": "ea_power8",
+            "combotextfinisher": "Pull",
+            "combotextstarter": "Polarity",
+            "handler": "ch_magnetic_grasp",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "noautoaim": true,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "pol_p4",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%pol_p4_ep",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/polaris/p4_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/polaris_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/polaris/p4_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "class": "vacuum",
+                "damage": "%pol_p4_dam",
+                "damagescale": "none",
+                "damagetype": "dmg_magnetic",
+                "knockback": 370,
+                "maxrange": 250,
+                "name": "punch",
+                "time": 0.6,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power4_end"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 15,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "icon": 3,
+            "lockangles": false,
+            "name": "power4_end",
+            "noautoaim": true,
+            "playspeed": 2.7,
+            "priority": 5,
+            "turnrate": 0.4,
+            "trigger": {
+                "effect": "char/polaris/p4_power",
+                "fxlevel": 2,
+                "loop_type": "stop",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/polaris_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%pol_p4_dam2",
+                "damagescale": "none",
+                "damagetype": "dmg_magnetic",
+                "knockback": 370,
+                "maxrange": 144,
+                "name": "punch",
+                "time": 0,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "beam",
+            "animenum": "ea_power12",
+            "combotextfinisher": "Trap",
+            "combotextstarter": "Gravitational",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power5",
+            "powerup_tag": "pol_power5",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "pol_grav",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/polaris/p5_charge",
+                "name": "effect_sound",
+                "sound": "char/polaris_m/p5_charge",
+                "time": 0.3
+            },
+            "trigger": {
+                "attack_bone_angles": "-66 -79 -23",
+                "attack_bone_pos": "17 -1 56",
+                "damage": 1,
+                "maxrange": 250,
+                "name": "beam",
+                "powerusage": "%pol_grav_pwr",
+                "time": 0.5,
+                "victimeventtag1": 10,
+                "victimeventtag2": 11,
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "trigger": {
+                "life": 3,
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 10,
+                "time": -1
+            },
+            "trigger": {
+                "name": "otherevent",
+                "othertag": 12,
+                "othertag2": 13,
+                "tag": 11,
+                "time": -1
+            },
+            "trigger": {
+                "class": "vacuum",
+                "life": 3,
+                "name": "powerup",
+                "tag": 12,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Spine2",
+                    "effect": "char/polaris/p5_power"
+                }
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%pol_grav_dm1",
+                "damagetype": "dmg_magnetic",
+                "life": 3,
+                "name": "powerup",
+                "tag": 13,
+                "time": -1
+            },
+            "trigger": {
+                "damage": "%pol_grav_dm2",
+                "name": "self_attack",
+                "tag": 100,
+                "time": -1,
+                "type": "ce_atk_self"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power7",
+            "combotextfinisher": "Forcefield",
+            "combotextstarter": "Magnetic",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "pol_field",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/polaris/p3_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/polaris/p3_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/polaris_m/p7_charge",
+                "time": 0.1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%pol_field_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "life": "%pol_field_lif",
+                "name": "powerup",
+                "time": 0.45,
+                "special_fx": {
+                    "effect": "char/polaris/p7_aura",
+                    "fxlevel": 1
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%pol_field_def"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "reflect_damage",
+                    "level": "%pol_field_chn",
+                    "scope": {
+                        "scope_attack": "projectile"
+                    },
+                    "scope": {
+                        "scope_attack": "beam"
+                    }
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Transmutation",
+            "combotextstarter": "Morphing",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "pol_morph",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/polaris/p8_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/polaris_m/p8_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%pol_morph_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "damagetype": "dmg_magnetic",
+                "life": "%pol_morph_lif",
+                "name": "powerup",
+                "remove_skin_on_exit": true,
+                "skin": 10300,
+                "skin_swap": true,
+                "time": 0.45,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": "%pol_morph_dmg",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    },
+                    "scope": {
+                        "scope_non_powers": true
+                    }
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_grab",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_trip",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_popup",
+                    "level": 0
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "combotextfinisher": "Tempest",
+            "description": "MAGNETIC TEMPEST",
+            "icon": 7,
+            "lockangles": true,
+            "noautoaim": true,
+            "name": "power10",
+            "playspeed": 12,
+            "powerup_tag": "pol_power10",
+            "priority": 10,
+            "require": {
+                "cat": "skill",
+                "item": "pol_debris",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/polaris/p10_charge",
+                "name": "effect_sound",
+                "sound": "char/polaris_m/p10_charge",
+                "time": 0
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%pol_debris_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_magnetic",
+                "index": 2,
+                "inherit": "punch",
+                "knockback": 610,
+                "name": "pol_radial",
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "effect": "char/polaris/p10_power",
+                "name": "effect_sound",
+                "sound": "char/polaris_m/p10_power",
+                "time": 0.55
+            },
+            "trigger": {
+                "maxrange": 100,
+                "name": "pol_radial",
+                "time": 0.65
+            },
+            "trigger": {
+                "maxrange": 200,
+                "name": "pol_radial",
+                "time": 0.75
+            },
+            "trigger": {
+                "maxrange": 300,
+                "name": "pol_radial",
+                "time": 0.85
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power8",
+            "blendtime": 0,
+            "combotextfinisher": "Growth",
+            "description": "NEGATIVE EMOTION ABSORBTION",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power11",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "pol_p11",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/polaris/p11_charge",
+                "name": "effect_sound",
+                "sound": "char/polaris_m/p11_charge",
+                "time": 0
+            },
+            "trigger": {
+                "class": "scale_actor",
+                "life": "%pol_p11_lif",
+                "name": "powerup",
+                "scaledownrate": -2,
+                "scaleuprate": 1.2,
+                "time": 0,
+                "affecter": {
+                    "attribute": "scale_factor",
+                    "level": 0.19
+                }
+            },
+            "trigger": {
+                "life": "%pol_p11_lif",
+                "name": "powerup",
+                "time": 0.5,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": 2
+                },
+                "special_fx": {
+                    "effect": "char/polaris/p11_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
