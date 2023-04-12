@@ -207,6 +207,11 @@
                 "require": {
                     "cat": "level",
                     "level": "%ladyds_p4_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "ladyds_p2",
+                    "level": 1
                 }
             }
         },
@@ -271,7 +276,7 @@
         },
         "talent": {
             "descname": "Razor Sharp",
-            "description": "Lady Deathstrike's razor sharp nails increase her Attack Rating and add $DMG_BLEED to all non-powered Melee attacks for a time.",
+            "description": "Lady Deathstrike's razor sharp nails increase her $AR and add $DMG_BLEED to all non-powered Melee attacks for a time.",
             "descshort": "Boost",
             "icon": 5,
             "icon_texture": "textures/ui/ladyds_icons2.png",
@@ -332,7 +337,7 @@
             },
             "level": {
                 "count": 18,
-                "description": "%ladyds_p6_ar:s $AR\\n%ladyds_p6_dmg $DMG_BLEED over 2 seconds\\n%ladyds_p6_life seconds\\n%ladyds_p6_pwr $EP",
+                "description": "%ladyds_p6_ar:s $AR\\n%ladyds_p6_dmg $DMG_BLEED\\n%ladyds_p6_life seconds\\n%ladyds_p6_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%ladyds_p6_req"
@@ -341,7 +346,7 @@
         },
         "talent": {
             "descname": "Defensive Stance ",
-            "description": "Lady Deathstrike adopts a defensive martial arts stance, increasing her Defense Rating and making her immune to trip, grab, and popup.",
+            "description": "Lady Deathstrike adopts a defensive martial arts stance, increasing her $DR and making her immune to trip, grab, and popup.",
             "descshort": "Boost",
             "icon": 6,
             "icon_texture": "textures/ui/ladyds_icons2.png",
@@ -551,12 +556,17 @@
                 "require": {
                     "cat": "level",
                     "level": "%ladyds_p9_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "ladyds_pass2",
+                    "level": 1
                 }
             }
         },
         "talent": {
-            "descname": "Cybernetic Upgrades",
-            "description": "Increases damage and Critical chance of all non-powered Melee attacks.",
+            "descname": "Melee Mastery",
+            "description": "Increases damage and Critical chance of all powered and non-powered Melee attacks.",
             "descshort": "Passive",
             "icon": 9,
             "icon_texture": "textures/ui/ladyds_icons2.png",
@@ -595,7 +605,7 @@
             },
             "level": {
                 "count": 15,
-                "description": "%ladyds_pass1_dmg:s damage\\n+%ladyds_pass1_crit:p Critical chance",
+                "description": "%ladyds_pass1_dmg:s Melee Dmg\\n+%ladyds_pass1_crit:p Critical chance",
                 "require": {
                     "cat": "level",
                     "level": "%ladyds_pass1_req"
@@ -616,9 +626,6 @@
                         },
                         "scope": {
                             "scope_attack": "kick"
-                        },
-                        "scope": {
-                            "scope_non_powers": true
                         }
                     },
                     "affecter": {
