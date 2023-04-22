@@ -196,7 +196,7 @@
                     "sound": "char/jubilee_m/p3_impact"
                 },
                 "damageMod": {
-                    "name": "dmgmod_auto_knockback"
+                    "name": "dmgmod_popup"
                 }
             },
             "trigger": {
@@ -452,7 +452,16 @@
                 "affecter": {
                     "affect_type": "scale",
                     "attribute": "damage",
-                    "level": "%jub_rally_dmg"
+                    "level": "%jub_rally_dmg",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    },
+                    "scope": {
+                        "scope_non_powers": true
+                    }
                 },
                 "special_fx": {
                     "effect": "char/jubilee/special_peprally"

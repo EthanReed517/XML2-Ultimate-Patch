@@ -566,7 +566,7 @@
         },
         "talent": {
             "descname": "Melee Mastery",
-            "description": "Increases damage and Critical chance of all powered and non-powered Melee attacks.",
+            "description": "Increases damage and Critical chance of all non-powered Melee attacks.",
             "descshort": "Passive",
             "icon": 9,
             "icon_texture": "textures/ui/ladyds_icons2.png",
@@ -626,6 +626,9 @@
                         },
                         "scope": {
                             "scope_attack": "kick"
+                        },
+                        "scope": {
+                            "scope_non_powers": true
                         }
                     },
                     "affecter": {
@@ -637,7 +640,7 @@
         },
         "talent": {
             "descname": "Extraordinary Reflexes",
-            "description": "Gives Lady Deathstrike a chance to dodge projectiles and all powered and non-powered Melee attacks.",
+            "description": "Gives Lady Deathstrike a chance to dodge projectiles.",
             "descshort": "Passive",
             "icon": 10,
             "icon_texture": "textures/ui/ladyds_icons2.png",
@@ -676,12 +679,6 @@
                     "affecter": {
                         "attribute": "def_dodge",
                         "level": "%ladyds_pass2_chance",
-                        "scope": {
-                            "scope_attack": "punch"
-                        },
-                        "scope": {
-                            "scope_attack": "kick"
-                        },
                         "scope": {
                             "scope_attack": "projectile"
                         }
