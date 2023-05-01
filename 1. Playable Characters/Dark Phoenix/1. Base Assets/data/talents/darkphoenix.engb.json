@@ -111,7 +111,7 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "dark_telek_req",
-                    "value": 7
+                    "value": 1
                 },
                 "talentvalue": {
                     "level": 20,
@@ -186,7 +186,7 @@
         },
         "talent": {
             "descname": "Mind Erode",
-            "description": "A powerful wave of Psychic Energy that erodes enemies' mental faculties, causing them to become immobilized for a time.",
+            "description": "A powerful wave of Psychic Energy that erodes enemies' mental faculties, causing them to become immobilized for a time. Can build bridges.",
             "descshort": "Radial",
             "icon": 2,
             "icon_texture": "textures/ui/phoenix_icons2.png",
@@ -886,8 +886,8 @@
             }
         },
         "talent": {
-            "descname": "Cosmic Empowerment",
-            "description": "Gives all Melee attacks a chance to flood enemies' bodies with harmful Cosmic Radiation.",
+            "descname": "Flaming Combat",
+            "description": "Adds $DMG_FIRE to all non-powered Melee attacks.",
             "descshort": "Passive",
             "icon": 13,
             "icon_texture": "textures/ui/darkphoenix_icons2.png",
@@ -906,37 +906,30 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "dark_rad_dmg",
-                    "value": 1
+                    "value": 0.5
                 },
                 "talentvalue": {
                     "level": 15,
                     "name": "dark_rad_dmg",
-                    "value": 5
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "dark_rad_chnc",
-                    "value": 0.05
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "dark_rad_chnc",
-                    "value": 0.5
+                    "value": 2.6
                 }
             },
             "level": {
                 "count": 15,
-                "description": "%dark_rad_dmg% $DMG_RADIATION\\n%dark_rad_chnc:p chance per hit",
+                "description": "+%dark_rad_dmg:p $DMG_FIRE",
                 "require": {
                     "cat": "level",
                     "level": "%dark_rad_req"
                 },
                 "powerup": {
-                    "chance": "%dark_rad_chnc",
-                    "class": "add_harming",
+                    "class": "add_attack",
                     "damagepercent": "%dark_rad_dmg",
-                    "damagetype": "dmg_radiation",
+                    "damagetype": "dmg_fire",
                     "life": -1,
+                    "special_fx": {
+                        "effect": "char/drkphoenx/special_trail",
+                        "how_used": "custom"
+                    },
                     "affecter": {
                         "attribute": "powerup_scope",
                         "scope": {

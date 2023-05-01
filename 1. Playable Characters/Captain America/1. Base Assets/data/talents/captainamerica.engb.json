@@ -286,7 +286,7 @@
         },
         "talent": {
             "descname": "Reserve Strength",
-            "description": "Captain America taps into his reserve of super strength and stamina, increasing his Melee Dmg, lowering his $EP cost, and granting him immunity to Slow.",
+            "description": "Captain America taps into his reserve of super strength and stamina, increasing his Melee Dmg, lowering his $EP cost, and granting him immunity to slow.",
             "descshort": "Boost",
             "icon": 4,
             "icon_texture": "textures/ui/america_icons2.png",
@@ -361,7 +361,7 @@
         },
         "talent": {
             "descname": "Rallying Cry",
-            "description": "Captain America rallies the party, increasing their Defense Rating and Combo Dmg as well as granting Stun immunity to the whole party for a time.",
+            "description": "Captain America rallies the party, increasing their Defense Rating and Combo Dmg as well as granting stun immunity to the whole party for a time.",
             "descshort": "Boost",
             "icon": 7,
             "icon_texture": "textures/ui/america_icons2.png",
@@ -476,7 +476,7 @@
         },
         "talent": {
             "descname": "BORN LEADER",
-            "description": "Captain America uses his natural leadership abilities to coordinate the party, allowing everyone to gain more $XP, increasing the levels of all skills, and granting immunity to Knockback and Popup for a time.",
+            "description": "Captain America uses his natural leadership abilities to coordinate the party, allowing everyone to gain more $XP, increasing the levels of all skills, and granting immunity to knockback and popup for a time.",
             "descshort": "Boost",
             "icon": 6,
             "icon_texture": "textures/ui/america_icons2.png",
@@ -541,7 +541,7 @@
         },
         "talent": {
             "descname": "Super Soldier",
-            "description": "Captain America's peak human reflexes give him a chance to dodge all powered and non-powered Melee attacks.",
+            "description": "Captain America's peak human reflexes give him a chance to dodge all non-powered Melee attacks.",
             "descshort": "Passive",
             "icon": 9,
             "icon_texture": "textures/ui/america_icons2.png",
@@ -590,6 +590,9 @@
                         },
                         "scope": {
                             "scope_attack": "kick"
+                        },
+                        "scope": {
+                            "scope_non_powers": true
                         }
                     }
                 }
@@ -597,7 +600,7 @@
         },
         "talent": {
             "descname": "Shield Mastery",
-            "description": "Increases damage and Critical chance with all shield attacks. Also gives Captain America a chance to reflect beams and projectiles back at enemies while blocking.",
+            "description": "Increases damage and Critical chance with all shield attacks. Also reflects a percentage of damage done by beams and projectiles back at enemies while blocking.",
             "descshort": "Passive",
             "icon": 5,
             "icon_texture": "textures/ui/america_icons2.png",
@@ -646,7 +649,7 @@
             },
             "level": {
                 "count": 15,
-                "description": "%cap_mastery_dmg:s Dmg\\n+%cap_mastery_cri:p Critical chance\\n+%cap_mastery_chance:p chance to reflect beams and projectiles",
+                "description": "%cap_mastery_dmg:s Dmg\\n+%cap_mastery_cri:p Critical chance\\n+%cap_mastery_chance:p Dmg done by beams and projectiles reflected",
                 "require": {
                     "cat": "level",
                     "level": "%cap_mastery_req"

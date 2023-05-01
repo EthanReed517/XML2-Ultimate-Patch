@@ -857,7 +857,7 @@
         },
         "talent": {
             "descname": "Beastial Instincts",
-            "description": "Beast focuses his instincts and cunning to increase his $AR and Critical chance. Levels up to reveal cloaked enemies.",
+            "description": "Beast focuses his instincts and cunning to increase his $AR, Critical chance, and jumping range. Levels up to reveal cloaked enemies.",
             "descshort": "Passive",
             "icon": 13,
             "icon_texture": "textures/ui/beast_icons2.png",
@@ -892,11 +892,21 @@
                     "level": 15,
                     "name": "beas_senses_cri",
                     "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "beas_senses_jmp",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "beas_senses_jmp",
+                    "value": 1.5
                 }
             },
             "level": {
                 "count": 10,
-                "description": "%beas_senses_ar:s $AR\\n+%beas_senses_cri:p Critical chance",
+                "description": "%beas_senses_ar:s $AR\\n+%beas_senses_cri:p Critical chance\\n+%beas_senses_jmp:p jumping range",
                 "require": {
                     "cat": "level",
                     "level": "%beas_senses_req"
@@ -911,12 +921,17 @@
                     "affecter": {
                         "attribute": "atk_critical",
                         "level": "%beas_senses_cri"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "jump",
+                        "level": "%beas_senses_jmp"
                     }
                 }
             },
             "level": {
                 "count": 5,
-                "description": "%beas_senses_ar:s $AR\\n%beas_senses_cri:p Critical chance\\nReveals hidden enemies",
+                "description": "%beas_senses_ar:s $AR\\n%beas_senses_cri:p Critical chance\\n+%beas_senses_jmp:p jumping range\\nReveals hidden enemies",
                 "require": {
                     "category": "level",
                     "level": "%beas_senses_req"
@@ -934,13 +949,18 @@
                     },
                     "affecter": {
                         "attribute": "reveal_hidden"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "jump",
+                        "level": "%beas_senses_jmp"
                     }
                 }
             }
         },
         "talent": {
             "descname": "Astonishing Reflexes",
-            "description": "Gives Beast a chance to dodge projectiles and all powered and non-powered Melee attacks.",
+            "description": "Gives Beast a chance to dodge projectiles.",
             "descshort": "Passive",
             "icon": 14,
             "icon_texture": "textures/ui/beast_icons2.png",
@@ -979,12 +999,6 @@
                     "affecter": {
                         "attribute": "def_dodge",
                         "level": "%beas_cvoy_chance",
-                        "scope": {
-                            "scope_attack": "punch"
-                        },
-                        "scope": {
-                            "scope_attack": "kick"
-                        },
                         "scope": {
                             "scope_attack": "projectile"
                         }
