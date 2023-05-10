@@ -1,18 +1,42 @@
 @ECHO OFF
+
 REM ***************
 REM * User Inputs *
 REM ***************
 REM Fill in the following variable prompts with the name of the files or leave it as "" if it doesn't apply
 
 REM Data Entry Options
+set codexEntry=""
+set dangerEntry=""
 set herostatEntry=Defaultman
+set itemsEntry=""
+set npcstatEntry1=""
+set npcstatEntry2=""
+set npcstatEntry3=""
+set reviewEntry=""
 
-REM ******************
-REM * Code Execution *
-REM ******************
-
-REM section for data entries
-echo Copying data entries to data files...
-if not %herostatEntry%=="" (
-	copy >nul "1. Base Assets\1. Data Entries\Herostat_%herostatEntry%.txt" "..\..\3. General Data Files\herostat\1. Base Assets\0. Herostat Entries\%herostatEntry%.txt"
+REM ******************************
+REM * Section 1 - Main Execution *
+REM ******************************
+REM Do not modify anything below this line!
+REM copy the compiler
+REM get the name of the current location of the batch file
+for %%I in (.) do set CurrDirNameFull=%%~fI
+REM back out to the XML2-UltimatePatch folder
+:dircheck
+for %%I in (.) do set CurrDirName=%%~nxI
+if not "%CurrDirName%"=="XML2-Ultimate-Patch" (
+	cd ..
+	goto dircheck
 )
+REM copy the .bat file so it can be used
+copy >nul "0. Update Scripts\updatePlayable.bat" "%CurrDirNameFull%"
+REM change back to the directory of the batch file
+cd %CurrDirNameFull%
+
+REM call the main compiler
+call updatePlayable.bat
+del >nul updatePlayable.bat
+
+REM return from the compiler, display success message
+echo Transfer Complete
