@@ -1,5 +1,5 @@
 @echo off
-echo Compiling Nightcrawler's character assets 
+echo Compiling Nightcrawler's character assets
 
 REM **************************
 REM * Section 0 - User Input *

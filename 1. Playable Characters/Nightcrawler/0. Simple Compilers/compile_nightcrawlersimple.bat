@@ -6,7 +6,7 @@ REM * Section 0 - User Input *
 REM **************************
 
 REM get the name of the character and their number
-set charName=nightcrawlerSimple
+set charName=nightcrawlersimple
 set charNum=06
 REM define other values for the compiler
 set effectsFolder=""
