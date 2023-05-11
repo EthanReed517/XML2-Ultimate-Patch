@@ -1,27 +1,27 @@
 @echo off
-echo Compiling Playable Character - EmmaFrost
+echo Compiling Playable Character - ProfessorX
 
 REM **************************
 REM * Section 0 - User Input *
 REM **************************
 
 REM get the name of the character and their number
-set charName=emmafrost
-set charNum=90
+set charName=professorx
+set charNum=11
 REM define other values for the compiler
-set effectsFolder=emmaf
-set loadingScreen1=9001
-set loadingScreen2=“”
-set loadingScreen3=“”
-set powerstyle=ps_emmafrost_hero
-set soundFile=emmaf_m
+set effectsFolder=profx
+set loadingScreen1=1101
+set loadingScreen2=1102
+set loadingScreen3=1103
+set powerstyle=ps_professorx
+set soundFile=profx_m
 
 REM fill in if the character needs a special compilation process on consoles
 REM (like Cyclops with his skin-specific visor)
 REM options are Y or N
-set specialCompile=Y
+set specialCompile=N
 REM if the character has a special compiler process, list the name here (no file extension)
-set specialCompileName=specialCompile_magma
+set specialCompileName=""
 
 REM ******************************
 REM * Section 1 - Main Execution *

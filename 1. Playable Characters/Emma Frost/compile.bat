@@ -10,7 +10,7 @@ set charName=emmafrost
 REM playable character's first skin number
 set charNum=9001
 REM playable character's talents file
-set talentsName=emmafrost
+set talentsName=emmafrost_hero
 
 REM fill in the names and skin numbers of any NPCs for this character
 set npcName1=frost

@@ -1,5 +1,5 @@
 @echo off
-echo Compiling Playable Character - Jean Grey
+echo Compiling Playable Character - Jean Grey (phoenix)
 
 REM **************************
 REM * Section 0 - User Input *
