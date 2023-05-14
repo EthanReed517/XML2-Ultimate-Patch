@@ -1,17 +1,17 @@
 @echo off
-echo Compiling NPC - ApocDummy
+echo Compiling NPC - CollectorArmored_B
 
 REM **************************
 REM * Section 0 - User Input *
 REM **************************
 
 REM get the name of the character and their number
-set charName=apocdummy
-set charNum=131
+set charName=collectorarmored_b
+set charNum=58
 REM define other values for the compiler
-set effectsFolder=apoc
-set powerstyle=ps_apocdummy
-set soundFile=apoc_m
+set effectsFolder=colarm
+set powerstyle=ps_coll_armored
+set soundFile=colarm_m
 
 REM fill in if the character needs a special compilation process on consoles
 REM (like Cyclops with his skin-specific visor)
