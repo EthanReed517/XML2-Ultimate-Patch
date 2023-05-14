@@ -1,17 +1,17 @@
 @echo off
-echo Compiling NPC - Anubite_apoc
+echo Compiling NPC - Anubitegreater_a
 
 REM **************************
 REM * Section 0 - User Input *
 REM **************************
 
 REM get the name of the character and their number
-set charName=anubite_apoc
-set charNum=51
+set charName=anubitegreater_a
+set charNum=52
 REM define other values for the compiler
-set effectsFolder=anub
-set powerstyle=ps_anubite
-set soundFile=anub_m
+set effectsFolder=anub_g
+set powerstyle=ps_anubite_greater
+set soundFile=anub_l_m
 
 REM fill in if the character needs a special compilation process on consoles
 REM (like Cyclops with his skin-specific visor)

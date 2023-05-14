@@ -1,5 +1,5 @@
 @echo off
-echo Compiling NPC - Anubite
+echo Compiling NPC - Anubite_a
 
 REM **************************
 REM * Section 0 - User Input *
