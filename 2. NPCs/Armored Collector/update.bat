@@ -7,9 +7,9 @@ REM Fill in the following variable prompts with the name of the files or leave i
 
 REM Data Entry Options
 set codexEntry=""
-set npcstatEntry1=CollectorArmored_A
-set npcstatEntry2=CollectorArmored_B
-set npcstatEntry3=CollectorArmored_C
+set npcstatEntry1=CollectorArmored_a
+set npcstatEntry2=CollectorArmored_b
+set npcstatEntry3=CollectorArmored_c
 set npcstatEntry4=""
 set npcstatEntry5=""
 set npcstatEntry6=""

@@ -1,17 +1,17 @@
 @echo off
-echo Compiling NPC - CollectorArmored_b
+echo Compiling NPC - AssassinDroid_d
 
 REM **************************
 REM * Section 0 - User Input *
 REM **************************
 
 REM get the name of the character and their number
-set charName=collectorarmored_b
-set charNum=58
+set charName=assassindroid_d
+set charNum=53
 REM define other values for the compiler
-set effectsFolder=colarm
-set powerstyle=ps_coll_armored
-set soundFile=colarm_m
+set effectsFolder=adroid
+set powerstyle=ps_assassindroid
+set soundFile=adroid_m
 
 REM fill in if the character needs a special compilation process on consoles
 REM (like Cyclops with his skin-specific visor)

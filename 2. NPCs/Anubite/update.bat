@@ -7,10 +7,10 @@ REM Fill in the following variable prompts with the name of the files or leave i
 
 REM Data Entry Options
 set codexEntry=""
-set npcstatEntry1=Anubite_A
+set npcstatEntry1=Anubite_a
 set npcstatEntry2=Anubite_Apoc
-set npcstatEntry3=Anubite_B
-set npcstatEntry4=Anubite_C
+set npcstatEntry3=Anubite_b
+set npcstatEntry4=Anubite_c
 set npcstatEntry5=""
 set npcstatEntry6=""
 set reviewEntry=""

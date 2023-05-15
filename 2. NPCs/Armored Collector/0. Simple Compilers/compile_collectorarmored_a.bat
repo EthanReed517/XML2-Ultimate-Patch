@@ -1,5 +1,5 @@
 @echo off
-echo Compiling NPC - CollectorArmored_A
+echo Compiling NPC - CollectorArmored_a
 
 REM **************************
 REM * Section 0 - User Input *
