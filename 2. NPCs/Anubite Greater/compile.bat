@@ -1,5 +1,5 @@
 @echo off
-echo Compiling Anubite's character assets 
+echo Compiling Anubite Greater's character assets 
 
 REM **************************
 REM * Section 0 - User Input *
