@@ -1,17 +1,17 @@
 @echo off
-echo Compiling NPC - OmegaRed
+echo Compiling NPC - POWGuard_d
 
 REM **************************
 REM * Section 0 - User Input *
 REM **************************
 
 REM get the name of the character and their number
-set charName=omegared
-set charNum=49
+set charName=powguard_d
+set charNum=85
 REM define other values for the compiler
-set effectsFolder=omega
-set powerstyle=ps_omegared
-set soundFile=mmega_m
+set effectsFolder=pow_g
+set powerstyle=ps_powguard
+set soundFile=pow_g_m
 
 REM fill in if the character needs a special compilation process on consoles
 REM (like Cyclops with his skin-specific visor)
