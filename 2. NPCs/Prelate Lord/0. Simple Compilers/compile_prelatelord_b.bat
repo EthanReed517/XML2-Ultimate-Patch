@@ -1,17 +1,17 @@
 @echo off
-echo Compiling NPC - Prelate_b
+echo Compiling NPC - PrelateLord_b
 
 REM **************************
 REM * Section 0 - User Input *
 REM **************************
 
 REM get the name of the character and their number
-set charName=prelate_b
-set charNum=87
+set charName=prelatelord_b
+set charNum=88
 REM define other values for the compiler
-set effectsFolder=pre
-set powerstyle=ps_prelate
-set soundFile=pre_m
+set effectsFolder=prelrd
+set powerstyle=ps_prelatelord
+set soundFile=prelrd_m
 
 REM fill in if the character needs a special compilation process on consoles
 REM (like Cyclops with his skin-specific visor)

@@ -9,7 +9,7 @@ REM get the name of the character and their number
 set charName=prelate_a
 set charNum=87
 REM define other values for the compiler
-set effectsFolder=pre_m
+set effectsFolder=pre
 set powerstyle=ps_prelate
 set soundFile=pre_m
 
