@@ -283,7 +283,7 @@
         },
         "talent": {
             "descname": "Telekinetic Crush",
-            "description": "X-Man Telekinetically lifts his enemies and crushes their bodies, causing $DMG_BLEED.",
+            "description": "X-Man Telekinetically lifts his enemies and crushes their bodies, doing Crushing Dmg.",
             "descshort": "Special",
             "icon": 4,
             "icon_texture": "textures/ui/xman_icons2.png",
@@ -329,21 +329,11 @@
                     "level": 16,
                     "name": "xman_hold_dm2",
                     "value": "34 40"
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "xman_hold_lif",
-                    "value": 4
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "xman_hold_lif",
-                    "value": 4
                 }
             },
             "level": {
                 "count": 16,
-                "description": "%xman_hold_dmg Telekinetic Dmg\\n%xman_hold_dm2 $DMG_BLEED over 4 seconds\\n%xman_hold_lif second hold\\n%xman_hold_pwr $EP",
+                "description": "%xman_hold_dmg Telekinetic Dmg\\n%xman_hold_dm2 Crushing Dmg over 2 seconds\\n%xman_hold_lif second hold\\n%xman_hold_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%xman_hold_req"
@@ -811,7 +801,7 @@
         },
         "talent": {
             "descname": "Clairvoyance",
-            "description": "Gives X-Man a chance to dodge projectiles and all powered and non-powered Melee attacks.",
+            "description": "Gives X-Man a chance to dodge projectiles.",
             "descshort": "Passive",
             "icon": 12,
             "icon_texture": "textures/ui/xman_icons2.png",
@@ -850,12 +840,6 @@
                     "affecter": {
                         "attribute": "def_dodge",
                         "level": "%xman_cvoy_chance",
-                        "scope": {
-                            "scope_attack": "punch"
-                        },
-                        "scope": {
-                            "scope_attack": "kick"
-                        },
                         "scope": {
                             "scope_attack": "projectile"
                         }

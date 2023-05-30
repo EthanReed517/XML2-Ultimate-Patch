@@ -1,0 +1,588 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/banshee_icons1.png",
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "beam",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Scream",
+            "combotextstarter": "Sonic",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "playspeed": 1.3,
+            "powerup_tag": "ban_power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ban_p1",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%ban_p1_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/banshee_m/p1_power",
+                "time": 0.4
+            },
+            "trigger": {
+                "attack_bone_angles": "-83 -76 -13",
+                "attack_bone_pos": "9 -3 50",
+                "attacktype": "beam",
+                "beambolt": "Bip01 Head",
+                "beameffect": "char/banshee/p1_power",
+                "damage": "%ban_p1_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_wind",
+                "hiteffect": "char/banshee/p1_impact",
+                "inherit": "beam",
+                "knockback": "%ban_p1_kb",
+                "maxrange": 800,
+                "name": "p1_beam",
+                "time": 0.4,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Barrage",
+            "combotextstarter": "Sonic",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "playspeed": 1.2,
+            "priority": 5,
+            "startchaintime": 0.7,
+            "require": {
+                "cat": "skill",
+                "item": "ban_p2",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%ban_p2_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/banshee_m/p2_power",
+                "time": 0
+            },
+            "trigger": {
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "19 0 56",
+                "beambolt": "Bip01 R Hand",
+                "damage": "%ban_p2_dmg",
+                "damagetype": "dmg_wind",
+                "fxlevel": 1,
+                "hiteffect": "char/banshee/p1_impact",
+                "inherit": "beam",
+                "knockback": 400,
+                "maxrange": 450,
+                "name": "blast_dmg",
+                "pierce": true,
+                "radius": 24,
+                "spawneffect": "char/banshee/p2_power",
+                "time": 0.1,
+                "damagemod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damagemod": {
+                    "name": "dmgmod_immobilize"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power8",
+            "combotextfinisher": "Noise",
+            "combotextstarter": "Disorienting",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ban_p3",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%ban_p3_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/banshee_m/p3_power",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/banshee/p3_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "punch",
+                "damage": "%ban_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_wind",
+                "knockback": 170,
+                "maxrange": 144,
+                "name": "punch",
+                "time": 0.4,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aitype": "melee",
+            "animenum": "ea_lunge",
+            "combotextfinisher": "Torpedo",
+            "combotextstarter": "Aerial",
+            "energypersecond": "%ban_p4_pwr",
+            "fallback": "jumploop",
+            "handler": "ch_skating",
+            "icon": 3,
+            "locktransitionangles": true,
+            "name": "power4",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.5,
+            "turnrate": 0.3,
+            "require": {
+                "cat": "skill",
+                "item": "ban_p4",
+                "level": 1
+            },
+            "trigger": {
+                "loop_timeout": 0.5,
+                "loop_type": "start",
+                "name": "sound",
+                "sound": "char/banshee_m/p4_loop",
+                "time": 0.4
+            },
+            "trigger": {
+                "effect": "char/banshee/p4_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power4"
+            },
+            "chain": {
+                "action": "touch",
+                "result": "power4_dive"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power4_dive"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_flying_slamattack_end",
+            "combotextfinisher": "Torpedo",
+            "combotextstarter": "Aerial",
+            "energypersecond": "%ban_p4_pwr",
+            "handler": "ch_charge_move",
+            "name": "power4_dive",
+            "noautoaim": true,
+            "playspeed": 1,
+            "priority": 5,
+            "startchaintime": 0.4,
+            "turnrate": 0.4,
+            "trigger": {
+                "arc": 120,
+                "damage": "%ban_p4_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_wind",
+                "knockback": "%ban_p4_kb",
+                "name": "punch",
+                "tag": 1,
+                "tiles": true,
+                "time": -1,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power4_land"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_land",
+            "locktransitionangles": true,
+            "name": "power4_land",
+            "noautoaim": true,
+            "playspeed": 1,
+            "priority": 5,
+            "turnrate": 0.4,
+            "trigger": {
+                "effect": "char/banshee/p1_impact",
+                "name": "effect_sound",
+                "sound": "char/banshee_m/flyend",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "aoe",
+            "animenum": "ea_power7",
+            "combotextfinisher": "Scream",
+            "combotextstarter": "Deafening",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power5",
+            "priority": 5,
+            "startchaintime": 0.7,
+            "require": {
+                "cat": "skill",
+                "item": "ban_p5",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%ban_p5_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/banshee/p5_head",
+                "name": "effect_sound",
+                "sound": "char/banshee_m/p5_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/banshee/p5_power",
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "punch",
+                "damage": "%ban_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_wind",
+                "maxrange": 144,
+                "name": "punch",
+                "time": 0.5,
+                "victimeventtag": 101,
+                "victimeventtag2": 102
+            },
+            "trigger": {
+                "life": "%ban_p5_lif",
+                "name": "powerup",
+                "tag": 101,
+                "time": -1,
+                "affecter": {
+                    "attribute": "fear",
+                    "level": 1
+                }
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%ban_p5_dmg",
+                "damagetype": "dmg_bleed",
+                "life": "%ban_p5_lif",
+                "name": "powerup",
+                "tag": 102,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power7",
+            "combotextfinisher": "Bubble",
+            "combotextstarter": "Sonic",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power7",
+            "playspeed": 1.2,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ban_p7",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/banshee_m/p7_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/banshee/p7_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/banshee_m/p7_power",
+                "time": 0.4
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "class": "add_attack",
+                "damagepercent": "%ban_p7_pct",
+                "damagetype": "dmg_wind",
+                "life": "%ban_p7_life",
+                "name": "powerup",
+                "powerusage": "%ban_p7_pwr",
+                "time": 0.5,
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    },
+                    "scope": {
+                        "scope_non_powers": true
+                    }
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%ban_p7_ar"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/banshee/ability_fly_hand",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/banshee/ability_fly_hand",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Variance",
+            "combotextstarter": "Changing",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ban_p8",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%ban_p8_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/banshee_m/p8_charge",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "class": "absorb",
+                "damagepercent": "%ban_p8_pct",
+                "inflicted": true,
+                "life": "%ban_p8_lif",
+                "name": "powerup",
+                "time": 0,
+                "special_fx": {
+                    "effect": "char/banshee/p8_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "combotextfinisher": "Waves",
+            "description": "SONIC WAVES",
+            "icon": 7,
+            "lockangles": true,
+            "noautoaim": true,
+            "name": "power9",
+            "playspeed": 10,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ban_p9",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/banshee/p9_charge",
+                "name": "effect_sound",
+                "sound": "char/banshee_m/p9_power",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/banshee_m/p9_power",
+                "time": 0.45
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/banshee/ability_fly",
+                "time": 0.3
+            },
+            "trigger": {
+                "effect": "char/banshee/p9_power",
+                "name": "effect",
+                "time": 0.3
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%ban_p9_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_wind",
+                "index": 2,
+                "inherit": "punch",
+                "knockback": 610,
+                "name": "ban_radial",
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "maxrange": 100,
+                "name": "ban_radial",
+                "time": 0.45
+            },
+            "trigger": {
+                "maxrange": 200,
+                "name": "ban_radial",
+                "time": 0.5
+            },
+            "trigger": {
+                "maxrange": 300,
+                "name": "ban_radial",
+                "time": 0.52
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4",
+            "blendtime": 0,
+            "combotextfinisher": "Vibrations",
+            "description": "SONIC VIBRATIONS",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "ban_p10",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/banshee/p10_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/banshee_m/p10_charge",
+                "time": 0.5
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "life": "%ban_p10_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/banshee/p10_aura",
+                    "fxlevel": 1
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "power_cost",
+                    "level": 0
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}

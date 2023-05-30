@@ -1,0 +1,696 @@
+{
+    "talents": {
+        "talent": {
+            "descname": "Sonic Scream",
+            "description": "Banshee unleashes an incredibly loud and destructive Sonic Scream that knocks back his enemy and has a chance to do a 'Deadly Strike' (33% instant $HP loss).",
+            "descshort": "Beam",
+            "icon": 0,
+            "icon_texture": "textures/ui/banshee_icons2.png",
+            "name": "ban_p1",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p1_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "ban_p1_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p1_dmg",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "ban_p1_dmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p1_kb",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "ban_p1_kb",
+                    "value": 620
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p1_chn",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "ban_p1_chn",
+                    "value": 0.19
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p1_pwr",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "ban_p1_pwr",
+                    "value": 126
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%ban_p1_dmg $DMG_WIND\\n%ban_p1_kb $KB\\n%ban_p1_chn:p chance for Deadly Strike\\n%ban_p1_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ban_p1_req"
+                },
+                "powerup": {
+                    "chance": "%ban_p1_chn",
+                    "class": "atk_instant_pct",
+                    "life": -1,
+                    "percent": 0.33,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope_node": "ban_power1"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Sonic Barrage",
+            "description": "Banshee fires a piercing Sonic blast, knocking back and immoblizing any enemies caught in its path.",
+            "descshort": "Blast",
+            "icon": 1,
+            "icon_texture": "textures/ui/banshee_icons2.png",
+            "name": "ban_p2",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p2_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "ban_p2_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p2_dmg",
+                    "value": "20 34"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "ban_p2_dmg",
+                    "value": "140 169"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p2_pwr",
+                    "value": 11
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "ban_p2_pwr",
+                    "value": 175
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%ban_p2_dmg $DMG_WIND\\n%ban_p2_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ban_p2_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "ban_p5",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Disorienting Note",
+            "description": "Banshee lets out a disorienting scream that disrupts the equilibrium of any enemies in range, stunning them and knocking them back.",
+            "descshort": "Radial",
+            "icon": 2,
+            "icon_texture": "textures/ui/banshee_icons2.png",
+            "name": "ban_p3",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p3_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ban_p3_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p3_dmg",
+                    "value": "43 50"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ban_p3_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p3_pwr",
+                    "value": 46
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ban_p3_pwr",
+                    "value": 170
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%ban_p3_dmg $DMG_WIND\\n%ban_p3_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ban_p3_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Aerial Ace",
+            "description": "Banshee dives at his enemies, knocking them back.",
+            "descshort": "Charge",
+            "icon": 3,
+            "icon_texture": "textures/ui/banshee_icons2.png",
+            "name": "ban_p4",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p4_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ban_p4_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p4_dmg",
+                    "value": "21 26"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ban_p4_dmg",
+                    "value": "145 162"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p4_kb",
+                    "value": 200
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ban_p4_kb",
+                    "value": 450
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p4_pwr",
+                    "value": 46
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ban_p4_pwr",
+                    "value": 132
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%ban_p4_dmg $DMG_WIND\\n%ban_p4_kb $KB\\n%ban_p4_pwr $EP per second",
+                "require": {
+                    "cat": "level",
+                    "level": "%ban_p4_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Deafening Scream",
+            "description": "Banshee screams loud enough to cause his enemies' ears to Bleed, making them flee.",
+            "descshort": "Radial",
+            "icon": 4,
+            "icon_texture": "textures/ui/banshee_icons2.png",
+            "name": "ban_p5",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p5_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ban_p5_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p5_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ban_p5_dmg",
+                    "value": "82 93"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p5_lif",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ban_p5_lif",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p5_pwr",
+                    "value": 62
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "ban_p5_pwr",
+                    "value": 173
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%ban_p5_dmg $DMG_WIND on impact\\n%ban_p5_dmg $DMG_BLEED per second\\n%ban_p5_lif seconds\\n%ban_p5_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ban_p5_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "ban_p3",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Sonic Bubble",
+            "description": "Banshee wraps the entire party in a bubble of Sonic Energy, adding $DMG_WIND to all non-powered Melee attacks and increasing the $AR for the entire party for a time.",
+            "descshort": "Boost",
+            "icon": 5,
+            "icon_texture": "textures/ui/banshee_icons2.png",
+            "name": "ban_p7",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p7_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ban_p7_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p7_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ban_p7_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p7_ar",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ban_p7_ar",
+                    "value": 2.6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p7_pct",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ban_p7_pct",
+                    "value": 0.47
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p7_pwr",
+                    "value": 80
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ban_p7_pwr",
+                    "value": 390
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%ban_p7_pct:p $DMG_WIND\\n%ban_p7_ar:s $AR\\n%ban_p7_life seconds\\n%ban_p7_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ban_p7_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Scream of Change",
+            "description": "As the vessel of the Spirit of Variance, Banshee scares enemies into feeling remorse for their past actions, converting a percentage of all damage he inflicts on them into $EP for a time.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/banshee_icons.png",
+            "name": "ban_p8",
+            "power": "power8",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p8_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ban_p8_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p8_pct",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ban_p8_pct",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p8_lif",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ban_p8_lif",
+                    "value": 26
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p8_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "ban_p8_pwr",
+                    "value": 516
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%ban_p8_pct:p of $DMG inflicted\\n%ban_p8_lif seconds\\n%ban_p8_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%ban_p8_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "ban_gain",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "SONIC WAVES",
+            "description": "Banshee unleashes a huge scream, creating rippling waves of Sonic Energy that cause $DMG_WIND.",
+            "descshort": "Radial",
+            "icon": 7,
+            "icon_texture": "textures/ui/banshee_icons2.png",
+            "name": "ban_p9",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p9_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "ban_p9_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p9_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "ban_p9_dmg",
+                    "value": "279 309"
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%ban_p9_dmg $DMG_WIND",
+                "require": {
+                    "cat": "level",
+                    "level": "%ban_p9_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "SONIC VIBRATIONS",
+            "description": "Banshee encases the party in vibrating Sonic Energy, allowing the entire party to use no $EP.",
+            "descshort": "Boost",
+            "icon": 8,
+            "icon_texture": "textures/ui/banshee_icons2.png",
+            "name": "ban_p10",
+            "power": "power10",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p10_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "ban_p10_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_p10_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "ban_p10_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%ban_p10_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%ban_p10_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "ban_cvoy",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Sonic Mastery",
+            "description": "Increases damage and Critical chance with $DMG_WIND.",
+            "descshort": "Passive",
+            "icon": 9,
+            "icon_texture": "textures/ui/banshee_icons2.png",
+            "name": "ban_mmast",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_mmast_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ban_mmast_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_mmast_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ban_mmast_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_mmast_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ban_mmast_crit",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%ban_mmast_dmg:s Magnetic Dmg\\n+%ban_mmast_crit:p Critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%ban_mmast_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%ban_mmast_dmg",
+                        "scope_damage": "dmg_wind"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%ban_mmast_crit",
+                        "scope_damage": "dmg_wind"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Vox Ignis",
+            "description": "As the vessel of the Spirit of Variance, Banshee regains $HP for every enemy he defeats.",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/banshee_icons2.png",
+            "name": "ban_gain",
+            "type": "passive",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_gain_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ban_gain_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_gain_nrg",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ban_gain_nrg",
+                    "value": 50
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%ban_gain_nrg $HP per defeated enemy",
+                "require": {
+                    "cat": "level",
+                    "level": "%ban_gain_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "health_per_kill",
+                        "level": "%ban_gain_nrg"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Sonic Sonar",
+            "description": "Banshee has a chance to dodge all projectiles and beam attacks. Also allows Banshee to see cloaked enemies.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/banshee_icons2.png",
+            "name": "ban_cvoy",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_cvoy_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ban_cvoy_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "ban_cvoy_chance",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "ban_cvoy_chance",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%ban_cvoy_chance:p chance to dodge\\nReveals hidden enemies",
+                "require": {
+                    "cat": "level",
+                    "level": "%ban_cvoy_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "reveal_hidden"
+                    },
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%ban_cvoy_chance",
+                        "scope": {
+                            "scope_attack": "beam"
+                        },
+                        "scope": {
+                            "scope_attack": "projectile"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
