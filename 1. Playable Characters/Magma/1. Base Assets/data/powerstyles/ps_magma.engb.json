@@ -97,9 +97,20 @@
                 "tag": 1,
                 "targetable": true,
                 "time": 0.35,
+                "victimeventtag": 101,
                 "damageMod": {
                     "name": "dmgmod_environment"
                 }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%mag_fireballs_dmg",
+                "damagetype": "dmg_fire",
+                "life": 0.5,
+                "name": "powerup",
+                "tag": 101,
+                "time": -1
             },
             "trigger": {
                 "name": "sound",
@@ -200,11 +211,11 @@
                 "time": 0.3,
                 "affecter": {
                     "attribute": "might_heaviness",
-                    "level": 1
+                    "level": "%mag_form_mt"
                 },
                 "affecter": {
                     "attribute": "might_structure",
-                    "level": 1
+                    "level": "%mag_form_mt"
                 },
                 "special_fx": {
                     "effect": "char/magma/p3_power",

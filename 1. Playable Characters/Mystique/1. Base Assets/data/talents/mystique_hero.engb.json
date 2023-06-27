@@ -1,0 +1,811 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "myst_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_radiation",
+                        "level": 0.1
+                    },
+                    "affecter": {
+                        "attribute": "resist_mental",
+                        "level": 0.1
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Single Shot",
+            "description": "Mystique fires a single piercing shot from one of her guns that trips the enemy and does $DMG_BLEED.",
+            "descshort": "Projectile",
+            "icon": 0,
+            "icon_texture": "textures/ui/mystique_icons2.png",
+            "name": "myst_p1",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p1_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "myst_p1_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p1_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "myst_p1_dmg",
+                    "value": "134 150"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p1_pwr",
+                    "value": 18
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "myst_p1_pwr",
+                    "value": 104
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%myst_p1_dmg $DMG_BLEED\\n%myst_p1_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%myst_p1_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Double Up",
+            "description": "Mystique fires multiple piercing shots from each of her guns, causing $DMG_BLEED and immobilizing any enemies she hits.",
+            "descshort": "Projectile",
+            "icon": 1,
+            "icon_texture": "textures/ui/mystique_icons2.png",
+            "name": "myst_p2",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p2_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "myst_p2_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p2_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "myst_p2_dmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p2_pwr",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "myst_p2_pwr",
+                    "value": 128
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%myst_p2_dmg $DMG_BLEED per bullet\\n%myst_p2_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%myst_p2_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Shootout",
+            "description": "Mystique fires multiple piercing bullets from each of her guns in a wide sweeping arc, causing $DMG_BLEED and stunning any enemies she hits.",
+            "descshort": "Radial",
+            "icon": 3,
+            "icon_texture": "textures/ui/mystique_icons2.png",
+            "name": "myst_p3",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p3_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "myst_p3_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p3_dmg",
+                    "value": "21 26"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "myst_p3_dmg",
+                    "value": "79 89"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p3_pwr",
+                    "value": 46
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "myst_p3_pwr",
+                    "value": 170
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%myst_p3_dmg $DMG_BLEED per bullet\\n%myst_p3_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%myst_p3_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "myst_p2",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Grenade Bomber",
+            "description": "Mystique throws a grenade that does $DMG_FIRE and knocks back enemies.",
+            "descshort": "Projectile",
+            "icon": 4,
+            "icon_texture": "textures/ui/mystique_icons2.png",
+            "name": "myst_p4",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p4_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "myst_p4_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p4_dmg",
+                    "value": "43 50"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "myst_p4_dmg",
+                    "value": "121 135"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p4_pwr",
+                    "value": 52
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "myst_p4_pwr",
+                    "value": 144
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%myst_p4_dmg $DMG_FIRE\\n%myst_p4_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%myst_p4_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Pandora's Box",
+            "description": "Mystique fires a piercing high-intensity laser bolt from a high-tech gun, doing $DMG_ENERGY with a chance for a 'Deadly Strike' (33% instant $HP loss).",
+            "descshort": "Projectile",
+            "icon": 2,
+            "icon_texture": "textures/ui/mystique_icons2.png",
+            "name": "myst_p5",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p5_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "myst_p5_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p5_dmg",
+                    "value": "66 75"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "myst_p5_dmg",
+                    "value": "130 146"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p5_chance",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "myst_p5_chance",
+                    "value": 0.19
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p5_pwr",
+                    "value": 72
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "myst_p5_pwr",
+                    "value": 152
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%myst_p5_dmg $DMG_ENERGY\\n%myst_p5_chance:p chance for Deadly Strike\\n%myst_p5_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%myst_p5_req"
+                },
+                "powerup": {
+                    "chance": "%myst_p5_chance",
+                    "class": "atk_instant_pct",
+                    "life": -1,
+                    "percent": 0.33,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope_node": "myst_p5"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "In Plain Sight",
+            "description": "Mystique shapeshifts into a nearby enemy, increasing her $AR.\\n(~41Enemies won't attack Mystique as long as they don't see her transform.~~)",
+            "descshort": "Boost",
+            "icon": 7,
+            "icon_texture": "textures/ui/mystique_icons2.png",
+            "name": "myst_p6",
+            "power": "power6",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p6_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "myst_p6_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p6_pwr",
+                    "value": 32
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "myst_p6_pwr",
+                    "value": 304
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p6_ar",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "myst_p6_ar",
+                    "value": 2.6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p6_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "myst_p6_lif",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%myst_p6_lif seconds\\n%myst_p6_ar $AR\\n%myst_p6_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%myst_p6_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Claws Out",
+            "description": "Claws appear on Mystique's hands and feet, adding $DMG_BLEED and increasing Critical chance for all non-powered Melee attacks for a time.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/mystique_icons2.png",
+            "name": "myst_p7",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p7_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "myst_p7_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p7_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "myst_p7_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p7_cri",
+                    "value": 0.02
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "myst_p7_cri",
+                    "value": 0.12
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p7_dmg",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "myst_p7_dmg",
+                    "value": 120
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p7_pwr",
+                    "value": 50
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "myst_p7_pwr",
+                    "value": 350
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%myst_p7_dmg $DMG_BLEED\\n%myst_p7_cri:p Critical chance\\n%myst_p7_life seconds\\n%myst_p7_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%myst_p7_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Civil Chaos",
+            "description": "Mystique shapeshifts into a random civilian, causing one of the following results: (~41Dr. Cornelius~~) increases Focus by 20%, (~41General Kincaid~~) increases Strike by 20%, (~41Moira MacTaggert~~) increases max $EP by 20%, (~41Senator Kelly~~) increases max $HP by 20%, (~41Stan Lee~~) doubles Combo Dmg and Combo $XP.",
+            "descshort": "Boost",
+            "icon": 8,
+            "icon_texture": "textures/ui/mystique_icons2.png",
+            "name": "myst_p8",
+            "power": "power8",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p8_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "myst_p8_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p8_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "myst_p8_pwr",
+                    "value": 516
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p8_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "myst_p8_lif",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%myst_p8_lif seconds\\n%myst_p8_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%myst_p8_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "myst_p6",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "The Enemy Within",
+            "description": "Mystique shapeshifts into a random generic enemy soldier, causing one of the following results: (~41Hellfire Club Guard~~) grants immunity to stun and trip, (~41GRSO Elite~~) adds 50% chance to dodge all forms of attack, (~41Shi'ar Gunner~~) increases $DR by 20%, (~41Skrull Commando~~) increases jumping range by 200%, (~41Super Soldier~~) adds Might.",
+            "descshort": "Boost",
+            "icon": 9,
+            "icon_texture": "textures/ui/mystique_icons2.png",
+            "name": "myst_p9",
+            "power": "power9",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p9_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "myst_p9_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p9_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "myst_p9_pwr",
+                    "value": 516
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p9_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "myst_p9_lif",
+                    "value": 55
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%myst_p9_lif seconds\\n%myst_p9_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%myst_p9_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "myst_p8",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "GRENADE FRENZY",
+            "description": "Mystique fires multiple grenades from two high-tech guns in a wide sweeping arc that each do $DMG_FIRE.",
+            "descshort": "Radial",
+            "icon": 5,
+            "icon_texture": "textures/ui/mystique_icons2.png",
+            "name": "myst_p10",
+            "power": "power10",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p10_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "myst_p10_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p10_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "myst_p10_dmg",
+                    "value": "279 309"
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%myst_p10_dmg $DMG_FIRE",
+                "require": {
+                    "cat": "level",
+                    "level": "%myst_p10_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "myst_p4",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "LET THE GAMES BEGIN",
+            "description": "Mystique shapeshifts into a random character, causing one of the following results: (~41Corsair~~) doubles the amount of Techbit, Health Pack and Energy Pack drops, (~41Forge~~) increases $XP gained by 50%, (~41Guardian~~) decreases $EP cost by 25%, (~41Lilandra~~) increases all skills by +1 level, (~41Multiple Man~~) immunity to knockback and popup.",
+            "descshort": "Boost",
+            "icon": 12,
+            "icon_texture": "textures/ui/mystique_icons2.png",
+            "name": "myst_p11",
+            "power": "power11",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p11_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "myst_p11_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_p11_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "myst_p11_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%myst_p11_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%myst_p11_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Regeneration",
+            "description": "Heals over time.",
+            "descshort": "Passive",
+            "icon": 13,
+            "icon_texture": "textures/ui/mystique_icons2.png",
+            "name": "myst_regen",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_regen_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "myst_regen_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_regen_health",
+                    "value": 0.0017
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "myst_regen_health",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_regen_health_p",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "myst_regen_health_p",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_regen_health_t",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "myst_regen_health_t",
+                    "value": 6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%myst_regen_health_p:f% of max $HP every %myst_regen_health_t seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%myst_regen_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "health_regen_pct",
+                        "level": "%myst_regen_health"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Weapon Mastery",
+            "description": "Increases damage and Critical chance with all gun and grenade attacks.",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/mystique_icons2.png",
+            "name": "myst_pass1",
+            "type": "passive",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_pass1_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "myst_pass1_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_pass1_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "myst_pass1_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_pass1_cri",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "myst_pass1_cri",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%myst_pass1_dmg:s $DMG\\n+%myst_pass1_cri:p Critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%myst_pass1_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "level": "%myst_pass1_dmg",
+                        "scope_node": "myst_gun"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%myst_pass1_cri",
+                        "scope_node": "myst_gun"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "atk_damage",
+                        "level": "%myst_pass1_dmg",
+                        "scope_node": "myst_p5"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%myst_pass1_cri",
+                        "scope_node": "myst_p5"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Point Blank",
+            "description": "Adds damage to all powers that hit enemies within 6 feet of Mystique.",
+            "descshort": "Passive",
+            "icon": 14,
+            "icon_texture": "textures/ui/mystique_icons2.png",
+            "name": "myst_pblank",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_pblank_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "myst_pblank_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "myst_pblank_dscale",
+                    "value": 0.04
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "myst_pblank_dscale",
+                    "value": 0.2
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%myst_pblank_dscale:p added Dmg",
+                "require": {
+                    "cat": "level",
+                    "level": "%myst_pblank_req"
+                },
+                "powerup": {
+                    "class": "add_attack",
+                    "damagepercent": "%myst_pblank_dscale",
+                    "life": -1,
+                    "max_distance": 72,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope": {
+                            "scope_powers": true
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

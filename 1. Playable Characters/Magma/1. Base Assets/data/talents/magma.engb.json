@@ -128,7 +128,7 @@
         },
         "talent": {
             "descname": "Fiery Form",
-            "description": "Gives Magma protection from damage, gives her Might, damages those who touch her, and increases her $DMG_FIRE.",
+            "description": "Give Magma Might, increases her $DMG_FIRE, and damages those who touch her.",
             "descshort": "Boost",
             "icon": 6,
             "icon_texture": "textures/ui/magma_icons2.png",
@@ -185,11 +185,31 @@
                     "level": 20,
                     "name": "mag_form_life",
                     "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mag_form_mt",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 10,
+                    "name": "mag_form_mt",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "mag_form_mt",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "mag_form_mt",
+                    "value": 2
                 }
             },
             "level": {
                 "count": 20,
-                "description": "%mag_form_pdmg $DMG_FIRE\\n%mag_form_dmg $DMG_FIRE upon contact\\n%mag_form_life seconds\\n%mag_form_pwr $EP",
+                "description": "Might Level %mag_form_mt\\n%mag_form_pdmg $DMG_FIRE\\n%mag_form_dmg $DMG_FIRE upon contact\\n%mag_form_life seconds\\n%mag_form_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%mag_form_req"
@@ -420,7 +440,7 @@
         },
         "talent": {
             "descname": "Pax Romana",
-            "description": "Magma fires up the party, increasing everyone's max HP and EP for a time.",
+            "description": "Magma fires up the party, increasing everyone's max $HP and $EP for a time.",
             "descshort": "Boost",
             "icon": 7,
             "icon_texture": "textures/ui/magma_icons2.png",
@@ -644,7 +664,7 @@
         },
         "talent": {
             "descname": "Fire Mastery",
-            "description": "Increases damage and chance for Criticals with $DMG_FIRE and adds resistance to $DMG_FIRE.",
+            "description": "Increases damage and chance for Criticals with $DMG_FIRE and increases her resistance to $DMG_FIRE.",
             "descshort": "Passive",
             "icon": 11,
             "icon_texture": "textures/ui/magma_icons2.png",
@@ -707,14 +727,18 @@
                     "life": -1,
                     "affecter": {
                         "affect_type": "scale",
-                        "attribute": "atk_damage",
+                        "attribute": "damage",
                         "level": "%passive1_dmg",
-                        "scope_node": "ava_seis"
+                        "scope_damage": "dmg_fire"
                     },
                     "affecter": {
                         "attribute": "atk_critical",
                         "level": "%passive1_cri",
-                        "scope_node": "ava_seis"
+                        "scope_damage": "dmg_fire"
+                    },
+                    "affecter": {
+                        "attribute": "resist_fire",
+                        "level": "%passive1_res"
                     }
                 }
             }

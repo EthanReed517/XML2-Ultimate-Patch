@@ -1,0 +1,1708 @@
+{
+    "PowerStyle": {
+        "cansteal": false,
+        "iconfile": "textures/ui/mystique_icons1.png",
+        "event": {
+            "attacktype": "projectile",
+            "count": 1,
+            "damagescale": "none",
+            "damagetype": "dmg_bleed",
+            "entity": "mystique_bullet",
+            "filename": "ents_mystique_hero",
+            "fulltargeting": true,
+            "inherit": "projectile",
+            "name": "mystproj",
+            "pierce": true,
+            "speed": 600,
+            "targetable": true
+        },
+        "event": {
+            "attacktype": "projectile",
+            "count": 1,
+            "damagescale": "none",
+            "damagetype": "dmg_energy",
+            "entity": "mystique_bolt",
+            "filename": "ents_mystique_hero",
+            "fulltargeting": true,
+            "inherit": "projectile",
+            "name": "mystbolt",
+            "pierce": true,
+            "speed": 600,
+            "targetable": true
+        },
+        "event": {
+            "boltonslot": "ebolton_weapon",
+            "boltselect": "Bip01 R Hand",
+            "inherit": "mystbolt",
+            "name": "laser_gun",
+            "offset": "35 4 57"
+        },
+        "event": {
+            "boltonslot": "ebolton_altweapon",
+            "boltselect": "Bip01 L Hand",
+            "inherit": "mystproj",
+            "name": "left_gun",
+            "offset": "30 -4 37"
+        },
+        "event": {
+            "boltonslot": "ebolton_weapon",
+            "boltselect": "Bip01 R Hand",
+            "inherit": "mystproj",
+            "name": "right_gun",
+            "offset": "30 4 37"
+        },
+        "event": {
+            "boltonslot": "ebolton_weapon",
+            "boltselect": "Bip01 R Hand",
+            "inherit": "mystproj",
+            "name": "right_gun_single",
+            "offset": "35 4 57"
+        },
+        "event": {
+            "animbased": true,
+            "center": true,
+            "damagescale": "none",
+            "damagetype": "dmg_bleed",
+            "entity": "mystique_bullet",
+            "filename": "ents_mystique_hero",
+            "fulltargetting": true,
+            "inherit": "projectile",
+            "name": "p3_gun",
+            "pierce": true,
+            "speed": 1000,
+            "targetable": true,
+            "useboltangles": true
+        },
+        "event": {
+            "animbased": true,
+            "center": true,
+            "damagescale": "none",
+            "damagetype": "dmg_fire",
+            "entity": "mystgrenade",
+            "filename": "ents_mystique_hero",
+            "fulltargetting": true,
+            "explodedamage": "%myst_p10_dmg",
+            "exploderadius": 36,
+            "inherit": "projectile",
+            "knockback": 245,
+            "name": "p10_gun",
+            "speed": 1000,
+            "targetable": true,
+            "useboltangles": true
+        },
+        "FightMove": {
+            "animenum": "ea_jump_start",
+            "handler": "ch_move_jump",
+            "lockangles": true,
+            "name": "jump",
+            "startchaintime": 0.3,
+            "chain": {
+                "action": "move",
+                "result": "airjump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "jumploop",
+            "noncombat": true,
+            "chain": {
+                "action": "move",
+                "result": "airjump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_double_jump_start",
+            "blendtime": 0.1,
+            "handler": "ch_move_jump",
+            "name": "airjump",
+            "startchaintime": 0.5,
+            "turnrate": 0.2,
+            "chain": {
+                "action": "special",
+                "result": "doublejumpland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_land",
+            "blendtime": 0.1,
+            "endchaintime": 0.7,
+            "handler": "ch_move_jump_land",
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "doublejumpland",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "projectile",
+            "animenum": "ea_power1",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "powerup_tag": "myst_gun",
+            "priority": "uninterruptable",
+            "require": {
+                "cat": "skill",
+                "item": "myst_p1",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%myst_p1_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mystiqu_m/p1_charge",
+                "time": 0.35
+            },
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/myst_gun_rhand",
+                "name": "bolton",
+                "time": 0.09,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "damage": "%myst_p1_dmg",
+                "name": "right_gun_single",
+                "time": 0.5,
+                "victimeventtag": 102,
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                }
+            },
+            "trigger": {
+                "boltslot": "ebolton_weapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.85,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%myst_p1_dmg",
+                "damagetype": "dmg_bleed",
+                "life": 0.5,
+                "name": "powerup",
+                "tag": 102,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "projectile",
+            "animenum": "ea_power6",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "powerup_tag": "myst_gun",
+            "priority": "uninterruptable",
+            "require": {
+                "cat": "skill",
+                "item": "myst_p2",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%myst_p2_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/myst_gun_rhand",
+                "name": "bolton",
+                "time": 0.08,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 L Hand",
+                "boltslot": "ebolton_altweapon",
+                "model": "models/bolton/myst_gun_lhand",
+                "name": "bolton",
+                "time": 0.08,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "boltslot": "ebolton_weapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.18,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "boltslot": "ebolton_altweapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.18,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "absolute": false,
+                "entity": "pistol",
+                "filename": "ents_mystique_hero",
+                "name": "relative_spawn",
+                "offset": "-11.379 0 0",
+                "time": 0.1764
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mystiqu_m/p2_charge",
+                "time": 0.17
+            },
+            "trigger": {
+                "effect": "char/mystique/p2_charge",
+                "name": "effect",
+                "time": 0.1764
+            },
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/myst_gun_rhand",
+                "name": "bolton",
+                "time": 0.45,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 L Hand",
+                "boltslot": "ebolton_altweapon",
+                "model": "models/bolton/myst_gun_lhand",
+                "name": "bolton",
+                "time": 0.45,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "damage": "%myst_p2_dmg",
+                "name": "left_gun",
+                "time": 0.54,
+                "victimeventtag": 103,
+                "damageMod": {
+                    "name": "dmgmod_immobilize"
+                }
+            },
+            "trigger": {
+                "damage": "%myst_p2_dmg",
+                "name": "right_gun",
+                "time": 0.58,
+                "victimeventtag": 103,
+                "damageMod": {
+                    "name": "dmgmod_immobilize"
+                }
+            },
+            "trigger": {
+                "damage": "%myst_p2_dmg",
+                "name": "left_gun",
+                "time": 0.62,
+                "victimeventtag": 103,
+                "damageMod": {
+                    "name": "dmgmod_immobilize"
+                }
+            },
+            "trigger": {
+                "damage": "%myst_p2_dmg",
+                "name": "right_gun",
+                "time": 0.66,
+                "victimeventtag": 103,
+                "damageMod": {
+                    "name": "dmgmod_immobilize"
+                }
+            },
+            "trigger": {
+                "damage": "%myst_p2_dmg",
+                "name": "left_gun",
+                "time": 0.7,
+                "victimeventtag": 103,
+                "damageMod": {
+                    "name": "dmgmod_immobilize"
+                }
+            },
+            "trigger": {
+                "damage": "%myst_p2_dmg",
+                "name": "right_gun",
+                "time": 0.74,
+                "victimeventtag": 103,
+                "damageMod": {
+                    "name": "dmgmod_immobilize"
+                }
+            },
+            "trigger": {
+                "boltslot": "ebolton_weapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.92,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "boltslot": "ebolton_altweapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.92,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%myst_p2_dmg",
+                "damagetype": "dmg_bleed",
+                "life": 0.2,
+                "name": "powerup",
+                "tag": 103,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 10,
+            "aitype": "aoe",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Shootout",
+            "combotextstarter": "Sweeping",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power3",
+            "playspeed": 1.8,
+            "powerup_tag": "myst_gun",
+            "priority": "uninterruptable",
+            "require": {
+                "cat": "skill",
+                "item": "myst_p3",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mystiqu_m/p3_charge",
+                "time": 0.1
+            },
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/myst_gun_rhand",
+                "name": "bolton",
+                "time": 0.08,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 L Hand",
+                "boltslot": "ebolton_altweapon",
+                "model": "models/bolton/myst_gun_lhand",
+                "name": "bolton",
+                "time": 0.08,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "boltslot": "ebolton_weapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.92,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "boltslot": "ebolton_altweapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.92,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "angoffset": "-1 -1 0",
+                "attack_bone_pos": "27 0 55",
+                "damage": "%myst_p3_dmg",
+                "name": "p3_gun",
+                "powerusage": "%myst_p3_pwr",
+                "time": 0.21,
+                "victimeventtag": 104,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "angoffset": "-179 -3 1",
+                "attack_bone_pos": "27 6 55",
+                "damage": "%myst_p3_dmg",
+                "name": "p3_gun",
+                "time": 0.24,
+                "victimeventtag": 104,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "angoffset": "-4 -10 -15",
+                "attack_bone_pos": "32 -8 56",
+                "damage": "%myst_p3_dmg",
+                "name": "p3_gun",
+                "time": 0.27,
+                "victimeventtag": 104,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "angoffset": "-180 -6 25",
+                "attack_bone_pos": "30 12 56",
+                "damage": "%myst_p3_dmg",
+                "name": "p3_gun",
+                "time": 0.3,
+                "victimeventtag": 104,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "angoffset": "-4 -15 -22",
+                "attack_bone_pos": "30 -15 56",
+                "damage": "%myst_p3_dmg",
+                "name": "p3_gun",
+                "time": 0.33,
+                "victimeventtag": 104,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "angoffset": "-180 -12 40",
+                "attack_bone_pos": "24 24 56",
+                "damage": "%myst_p3_dmg",
+                "name": "p3_gun",
+                "time": 0.36,
+                "victimeventtag": 104,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "angoffset": "-4 -19 -45",
+                "attack_bone_pos": "22 -27 56",
+                "damage": "%myst_p3_dmg",
+                "name": "p3_gun",
+                "time": 0.39,
+                "victimeventtag": 104,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "angoffset": "-180 -12 60",
+                "attack_bone_pos": "4 27 56",
+                "damage": "%myst_p3_dmg",
+                "name": "p3_gun",
+                "time": 0.42,
+                "victimeventtag": 104,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "angoffset": "-1 -12 -90",
+                "attack_bone_pos": "0 -32 55",
+                "damage": "%myst_p3_dmg",
+                "name": "p3_gun",
+                "time": 0.45,
+                "victimeventtag": 104,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "angoffset": "179 -11 85",
+                "attack_bone_pos": "0 26 57",
+                "damage": "%myst_p3_dmg",
+                "name": "p3_gun",
+                "time": 0.47,
+                "victimeventtag": 104,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "angoffset": "0 -5 -97",
+                "attack_bone_pos": "-7 -30 59",
+                "damage": "%myst_p3_dmg",
+                "name": "p3_gun",
+                "time": 0.5,
+                "victimeventtag": 104,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "angoffset": "179 -5 107",
+                "attack_bone_pos": "-7 30 55",
+                "damage": "%myst_p3_dmg",
+                "name": "p3_gun",
+                "time": 0.53,
+                "victimeventtag": 104,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%myst_p3_dmg",
+                "damagetype": "dmg_bleed",
+                "life": 0.5,
+                "name": "powerup",
+                "tag": 104,
+                "time": -1
+            },
+            "trigger": {
+                "effect": "char/mystique/p3_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/mystiqu_m/p3_impact",
+                "time": 0.6
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 7,
+            "aitype": "projectile",
+            "animenum": "ea_power10",
+            "combotextfinisher": "Grenade",
+            "combotextstarter": "Exploding",
+            "endchaintime": 1,
+            "icon": 4,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power4",
+            "powerup_tag": "myst_gun",
+            "priority": 5,
+            "startchaintime": 0.8,
+            "require": {
+                "cat": "skill",
+                "item": "myst_p4",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%myst_p4_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mystiqu_m/p4_charge",
+                "time": 0.25
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "angoffset": "0 -15 0",
+                "attacktype": "projectile",
+                "damage": "%myst_p4_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "entity": "mystgrenade",
+                "explodedamage": "%myst_p4_dmg",
+                "exploderadius": 36,
+                "filename": "ents_mystique_hero",
+                "knockback": 245,
+                "name": "projectile",
+                "speed": 650,
+                "time": 0.5,
+                "victimeventtag": 100,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%myst_p4_dmg",
+                "damagetype": "dmg_fire",
+                "life": 0.5,
+                "name": "powerup",
+                "tag": 100,
+                "time": -1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 7,
+            "aitype": "projectile",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Laser",
+            "combotextstarter": "Pandora's",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power5",
+            "powerup_tag": "myst_p5",
+            "priority": "uninterruptable",
+            "require": {
+                "cat": "skill",
+                "item": "myst_p5",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%myst_p5_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mystiqu_m/p5_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/myst_gun_laser_r",
+                "name": "bolton",
+                "time": 0.09,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "damage": "%myst_p5_dmg",
+                "name": "laser_gun",
+                "time": 0.5
+            },
+            "trigger": {
+                "boltslot": "ebolton_weapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.85,
+                "type": "ce_bolton"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4",
+            "combotextfinisher": "Form",
+            "combotextstarter": "Hidden",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power6",
+            "priority": "uninterruptable",
+            "require": {
+                "cat": "skill",
+                "item": "myst_p6",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%myst_p6_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mystiqu_m/p6_charge",
+                "time": 0.55
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mystiqu_m/p6_power",
+                "time": 0.9
+            },
+            "trigger": {
+                "name": "steal",
+                "maxrange": 800,
+                "tag": 11,
+                "time": 0.999,
+                "type": "ce_steal_skin"
+            },
+            "trigger": {
+                "add": "cloaked",
+                "name": "disappear",
+                "tag": 1,
+                "time": -1
+            },
+            "trigger": {
+                "name": "reappear",
+                "remove": "cloaked",
+                "tag": 2,
+                "time": -1
+            },
+            "trigger": {
+                "class": "callevents",
+                "life": "%myst_p6_lif",
+                "name": "powerup",
+                "time": 0.999,
+                "FunctionEvent": {
+                    "function": "activate",
+                    "triggertag": 1
+                },
+                "FunctionEvent": {
+                    "function": "deactivate",
+                    "triggertag": 2
+                },
+                "affecter": {
+                    "attribute": "invisible"
+                },
+                "Functionevent": {
+                    "function": "activate",
+                    "triggertag": 11
+                },
+                "Functionevent": {
+                    "function": "deactivate",
+                    "triggertag": 12
+                },
+                "affecter": {
+                    "attribute": "invisible"
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p6_power",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p6_power",
+                    "how_used": "deactivation"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%myst_p6_ar"
+                }
+            },
+            "trigger": {
+                "name": "remove",
+                "tag": 12,
+                "time": -1,
+                "type": "ce_setskin"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_grab_break_v",
+            "combotextfinisher": "Slash",
+            "combotextstarter": "Claw",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power7",
+            "priority": 5,
+            "playspeed": 1,
+            "require": {
+                "cat": "skill",
+                "item": "myst_p7",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mystiqu_m/p7_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "class": "add_harming",
+                "damage": "%myst_p7_dmg",
+                "damagescale": "normal",
+                "damagetype": "dmg_bleed",
+                "life": "%myst_p7_life",
+                "name": "powerup",
+                "time": 0.1,
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    },
+                    "scope": {
+                        "scope_non_powers": true
+                    }
+                }
+            },
+            "trigger": {
+                "class": "feral_rage",
+                "life": "%myst_p7_life",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%myst_p7_pwr",
+                "tag": 5,
+                "time": 0.1,
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/mystique/p7_power",
+                    "fxlevel": 3,
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/mystique/p7_power",
+                    "fxlevel": 3,
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 L Toe0",
+                    "effect": "char/mystique/p7_power",
+                    "fxlevel": 3,
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Toe0",
+                    "effect": "char/mystique/p7_power",
+                    "fxlevel": 3,
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/mystique/p7_power",
+                    "fxlevel": 3,
+                    "how_used": "deactivation"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/mystique/p7_power",
+                    "fxlevel": 3,
+                    "how_used": "deactivation"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 L Toe0",
+                    "effect": "char/mystique/p7_power",
+                    "fxlevel": 3,
+                    "how_used": "deactivation"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Toe0",
+                    "effect": "char/mystique/p7_power",
+                    "fxlevel": 3,
+                    "how_used": "deactivation"
+                },
+                "affecter": {
+                    "attribute": "atk_critical",
+                    "level": "%myst_p7_cri",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    },
+                    "scope": {
+                        "scope_non_powers": true
+                    }
+                }
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%myst_p7_life",
+                "name": "powerup",
+                "time": 0.1,
+                "bolton": {
+                    "bolt": "Bip01 L Hand",
+                    "model": "models/bolton/myst_hand_claws",
+                    "slot": "ebolton_clawleft"
+                },
+                "bolton": {
+                    "bolt": "Bip01 R Hand",
+                    "model": "models/bolton/myst_hand_claws",
+                    "slot": "ebolton_clawright"
+                },
+                "bolton": {
+                    "bolt": "Bip01 L Toe0",
+                    "model": "models/bolton/myst_foot_claws"
+                },
+                "bolton": {
+                    "bolt": "Bip01 R Toe0",
+                    "model": "models/bolton/myst_foot_claws"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Transformation",
+            "combotextstarter": "Disguised",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "myst_p8",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%myst_p8_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mystiqu_m/p8_charge",
+                "time": 0.55
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mystiqu_m/p8_power",
+                "time": 0.9
+            },
+            "trigger": {
+                "name": "randomattack",
+                "tag0": 50,
+                "tag1": 51,
+                "tag2": 52,
+                "tag3": 53,
+                "tag4": 54,
+                "time": 0.999,
+                "type": "ce_random_event"
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%myst_p8_lif",
+                "name": "powerup",
+                "tag": 50,
+                "remove_skin_on_exit": true,
+                "skin": 2810,
+                "skin_swap": true,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "combo_damage",
+                    "level": 2
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "combo_xp",
+                    "level": 2
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p8_power",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p8_power",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%myst_p8_lif",
+                "name": "powerup",
+                "tag": 51,
+                "remove_skin_on_exit": true,
+                "skin": 2811,
+                "skin_swap": true,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "mind",
+                    "level": 1.2
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p8_power",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p8_power",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%myst_p8_lif",
+                "name": "powerup",
+                "tag": 52,
+                "remove_skin_on_exit": true,
+                "skin": 2812,
+                "skin_swap": true,
+                "time": -1,
+                "affecter": {
+                    "attribute": "maxenergy",
+                    "level": 1.2
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p8_power",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p8_power",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%myst_p8_lif",
+                "name": "powerup",
+                "tag": 53,
+                "remove_skin_on_exit": true,
+                "skin": 2813,
+                "skin_swap": true,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "strength",
+                    "level": 1.2
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p8_power",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p8_power",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%myst_p8_lif",
+                "name": "powerup",
+                "tag": 54,
+                "remove_skin_on_exit": true,
+                "skin": 2814,
+                "skin_swap": true,
+                "time": -1,
+                "affecter": {
+                    "attribute": "maxhealth",
+                    "level": 1.2
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p8_power",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p8_power",
+                    "how_used": "deactivation"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Disguise",
+            "combotextstarter": "Shapeshifting",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power9",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "myst_p9",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%myst_p9_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mystiqu_m/p9_charge",
+                "time": 0.6
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mystiqu_m/p9_power",
+                "time": 0.9
+            },
+            "trigger": {
+                "name": "randomattack",
+                "tag0": 55,
+                "tag1": 56,
+                "tag2": 57,
+                "tag3": 58,
+                "tag4": 59,
+                "time": 0.999,
+                "type": "ce_random_event"
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%myst_p9_lif",
+                "name": "powerup",
+                "tag": 55,
+                "remove_skin_on_exit": true,
+                "skin": 2815,
+                "skin_swap": true,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_stun",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_trip",
+                    "level": 0
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p9_power",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p9_power",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%myst_p9_lif",
+                "name": "powerup",
+                "tag": 56,
+                "remove_skin_on_exit": true,
+                "skin": 2816,
+                "skin_swap": true,
+                "time": -1,
+                "affecter": {
+                    "attribute": "def_dodge",
+                    "level": 0.5
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p9_power",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p9_power",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%myst_p9_lif",
+                "name": "powerup",
+                "tag": 57,
+                "remove_skin_on_exit": true,
+                "skin": 2817,
+                "skin_swap": true,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": 1.2
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p9_power",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p9_power",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%myst_p9_lif",
+                "name": "powerup",
+                "tag": 58,
+                "remove_skin_on_exit": true,
+                "skin": 2818,
+                "skin_swap": true,
+                "time": -1,
+                "affecter": {
+                    "attribute": "might_heaviness",
+                    "level": 2
+                },
+                "affecter": {
+                    "attribute": "might_structure",
+                    "level": 2
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p9_power",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p9_power",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%myst_p9_lif",
+                "name": "powerup",
+                "tag": 59,
+                "remove_skin_on_exit": true,
+                "skin": 2819,
+                "skin_swap": true,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "jump",
+                    "level": 2
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p9_power",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p9_power",
+                    "how_used": "deactivation"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2",
+            "combotextfinisher": "Frenzy",
+            "description": "GRENADE FRENZY",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power10",
+            "playspeed": 1.8,
+            "powerup_tag": "myst_gun",
+            "priority": "uninterruptable",
+            "require": {
+                "cat": "skill",
+                "item": "myst_p10",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mystiqu_m/p10_charge",
+                "time": 0.13
+            },
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_weapon",
+                "model": "models/bolton/myst_gun_laser_r",
+                "name": "bolton",
+                "time": 0.08,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "attachpoint": "Grab1",
+                "bolt": "Bip01 L Hand",
+                "boltslot": "ebolton_altweapon",
+                "model": "models/bolton/myst_gun_laser_l",
+                "name": "bolton",
+                "time": 0.08,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "boltslot": "ebolton_weapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.92,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "boltslot": "ebolton_altweapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.92,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "angoffset": "-1 -1 0",
+                "attack_bone_pos": "27 0 55",
+                "damage": "%myst_p10_dmg",
+                "name": "p10_gun",
+                "time": 0.21,
+                "victimeventtag": 101
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "angoffset": "-179 -3 1",
+                "attack_bone_pos": "27 6 55",
+                "damage": "%myst_p10_dmg",
+                "name": "p10_gun",
+                "time": 0.24,
+                "victimeventtag": 101
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "angoffset": "-4 -10 -15",
+                "attack_bone_pos": "32 -8 56",
+                "damage": "%myst_p10_dmg",
+                "name": "p10_gun",
+                "time": 0.27,
+                "victimeventtag": 101
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "angoffset": "-180 -6 25",
+                "attack_bone_pos": "30 12 56",
+                "damage": "%myst_p10_dmg",
+                "name": "p10_gun",
+                "time": 0.3,
+                "victimeventtag": 101
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "angoffset": "-4 -15 -22",
+                "attack_bone_pos": "30 -15 56",
+                "damage": "%myst_p10_dmg",
+                "name": "p10_gun",
+                "time": 0.33,
+                "victimeventtag": 101
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "angoffset": "-180 -12 40",
+                "attack_bone_pos": "24 24 56",
+                "damage": "%myst_p10_dmg",
+                "name": "p10_gun",
+                "time": 0.36,
+                "victimeventtag": 101
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "angoffset": "-4 -19 -45",
+                "attack_bone_pos": "22 -27 56",
+                "damage": "%myst_p10_dmg",
+                "name": "p10_gun",
+                "time": 0.39,
+                "victimeventtag": 101
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "angoffset": "-180 -12 60",
+                "attack_bone_pos": "4 27 56",
+                "damage": "%myst_p10_dmg",
+                "name": "p10_gun",
+                "time": 0.42,
+                "victimeventtag": 101
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "angoffset": "-1 -12 -90",
+                "attack_bone_pos": "0 -32 55",
+                "damage": "%myst_p10_dmg",
+                "name": "p10_gun",
+                "time": 0.45,
+                "victimeventtag": 101
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "angoffset": "179 -11 85",
+                "attack_bone_pos": "0 26 57",
+                "damage": "%myst_p10_dmg",
+                "name": "p10_gun",
+                "time": 0.47,
+                "victimeventtag": 101
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "angoffset": "0 -5 -97",
+                "attack_bone_pos": "-7 -30 59",
+                "damage": "%myst_p10_dmg",
+                "name": "p10_gun",
+                "time": 0.5,
+                "victimeventtag": 101
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "angoffset": "179 -5 107",
+                "attack_bone_pos": "-7 30 55",
+                "damage": "%myst_p10_dmg",
+                "name": "p10_gun",
+                "time": 0.53,
+                "victimeventtag": 101
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%myst_p10_dmg",
+                "damagetype": "dmg_fire",
+                "life": 0.5,
+                "name": "powerup",
+                "tag": 101,
+                "time": -1
+            },
+            "trigger": {
+                "effect": "char/mystique/p3_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.55
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4",
+            "combotextfinisher": "Change",
+            "description": "LET THE GAMES BEGIN",
+            "icon": 12,
+            "lockangles": true,
+            "name": "power11",
+            "priority": "uninterruptable",
+            "require": {
+                "cat": "skill",
+                "item": "myst_p11",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mystiqu_m/p11_charge",
+                "time": 0.65
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mystiqu_m/p11_power",
+                "time": 0.9
+            },
+            "trigger": {
+                "name": "randomattack",
+                "tag0": 60,
+                "tag1": 61,
+                "tag2": 62,
+                "tag3": 63,
+                "tag4": 64,
+                "time": 0.999,
+                "type": "ce_random_event"
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%myst_p11_lif",
+                "name": "powerup",
+                "tag": 60,
+                "remove_skin_on_exit": true,
+                "skin": 2820,
+                "skin_swap": true,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "xp",
+                    "level": 1.5
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p11_power",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p11_power",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%myst_p11_lif",
+                "name": "powerup",
+                "tag": 61,
+                "remove_skin_on_exit": true,
+                "skin": 2821,
+                "skin_swap": true,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "power_cost",
+                    "level": 0.75
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p11_power",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p11_power",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%myst_p11_lif",
+                "name": "powerup",
+                "tag": 62,
+                "remove_skin_on_exit": true,
+                "skin": 2822,
+                "skin_swap": true,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_popup",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_knockback",
+                    "level": 0
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p11_power",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p11_power",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%myst_p11_lif",
+                "name": "powerup",
+                "tag": 63,
+                "remove_skin_on_exit": true,
+                "skin": 2823,
+                "skin_swap": true,
+                "time": -1,
+                "affecter": {
+                    "attribute": "all_talents",
+                    "level": 1
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p11_power",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p11_power",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": "%myst_p11_lif",
+                "name": "powerup",
+                "tag": 64,
+                "remove_skin_on_exit": true,
+                "skin": 2824,
+                "skin_swap": true,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "extra_potions",
+                    "level": 2
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "extra_money",
+                    "level": 2
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p11_power",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/mystique/p11_power",
+                    "how_used": "deactivation"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
