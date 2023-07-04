@@ -1,0 +1,672 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "hulk_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_radiation",
+                        "level": 0.05
+                    },
+                    "affecter": {
+                        "attribute": "resist_mental",
+                        "level": 0.1
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Hulk Punch",
+            "description": "Hulk punches his enemy twice. The first punch stuns the enemy and the second punch knocks them back.",
+            "descshort": "Melee",
+            "icon": 0,
+            "icon_texture": "textures/ui/hulk_icons2.png",
+            "name": "hulk_p1",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p1_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "hulk_p1_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p1_dmg",
+                    "value": "20 26"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "hulk_p1_dmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p1_pwr",
+                    "value": 8
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "hulk_p1_pwr",
+                    "value": 76
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%hulk_p1_dmg $DMG_PHYSICAL\\n%hulk_p1_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%hulk_p1_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Hulk Pound",
+            "description": "Hulk pounds the ground, knocking back his enemies with a radial wave of $DMG_PHYSICAL and creating a forward shockwave that pops up any enemies in its path.",
+            "descshort": "Radial",
+            "icon": 11,
+            "icon_texture": "textures/ui/hulk_icons2.png",
+            "name": "hulk_p2",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p2_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "hulk_p2_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p2_dmg",
+                    "value": "46 54"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "hulk_p2_dmg",
+                    "value": "95 107"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p2_pwr",
+                    "value": 92
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "hulk_p2_pwr",
+                    "value": 198
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%hulk_p2_dmg $DMG_PHYSICAL from radial wave\\n%hulk_p2_dmg $DMG_PHYSICAL from shockwave\\n%hulk_p2_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%hulk_p2_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Hulk Crash",
+            "description": "Hulk jumps into the air then crashes back down, knocking back any nearby enemies.",
+            "descshort": "Radial",
+            "icon": 2,
+            "icon_texture": "textures/ui/hulk_icons2.png",
+            "name": "hulk_p3",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p3_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hulk_p3_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p3_dmg",
+                    "value": "43 50"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hulk_p3_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p3_pwr",
+                    "value": 46
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hulk_p3_pwr",
+                    "value": 170
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%hulk_p3_dmg $DMG_PHYSICAL\\n%hulk_p3_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%hulk_p3_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Hulk Charge",
+            "description": "Hulk charges into enemies and objects, knocking them back.\\n(~41Press And Hold~~)",
+            "descshort": "Charge",
+            "icon": 3,
+            "icon_texture": "textures/ui/hulk_icons2.png",
+            "name": "hulk_p4",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p4_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "hulk_p4_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p4_dmg",
+                    "value": "75 86"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "hulk_p4_dmg",
+                    "value": "201 224"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p4_kb",
+                    "value": 245
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "hulk_p4_kb",
+                    "value": 620
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p4_pwr",
+                    "value": 48
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "hulk_p4_pwr",
+                    "value": 100
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%hulk_p4_dmg $DMG_PHYSICAL\\n%hulk_p4_kb $KB\\n%hulk_p4_pwr $EP per second",
+                "require": {
+                    "cat": "level",
+                    "level": "%hulk_p4_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Hulk Roar",
+            "description": "Hulk roars, causing enemies to run in fear with decreased $DR.",
+            "descshort": "Debuff",
+            "icon": 5,
+            "icon_texture": "textures/ui/hulk_icons2.png",
+            "name": "hulk_p6",
+            "power": "power6",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p6_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hulk_p6_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p6_life",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hulk_p6_life",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p6_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hulk_p6_pwr",
+                    "value": 308
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p6_dr",
+                    "value": 0.8
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hulk_p6_dr",
+                    "value": 0.38
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%hulk_p6_dr:s $DR\\n%hulk_p6_life seconds\\n%hulk_p6_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%hulk_p6_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Hulk Tough",
+            "description": "Increases Hulk's $DR and makes him immune to stun and slow for a time.",
+            "descshort": "Boost",
+            "icon": 9,
+            "icon_texture": "textures/ui/hulk_icons2.png",
+            "name": "hulk_p7",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p7_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hulk_p7_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p7_def",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hulk_p7_def",
+                    "value": 2.6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p7_pwr",
+                    "value": 88
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hulk_p7_pwr",
+                    "value": 504
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%hulk_p7_def:s $DR\\n%hulk_p7_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%hulk_p7_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Hulk Strong",
+            "description": "Increases Hulk's $AR and makes him immune to knockback and popup for a time.",
+            "descshort": "Boost",
+            "icon": 10,
+            "icon_texture": "textures/ui/hulk_icons2.png",
+            "name": "hulk_p8",
+            "power": "power8",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p8_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hulk_p8_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p8_ar",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hulk_p8_ar",
+                    "value": 2.6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p8_pwr",
+                    "value": 88
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hulk_p8_pwr",
+                    "value": 504
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%hulk_p8_dmg:s $AR\\n%hulk_p8_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%hulk_p8_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "HULK SMASH",
+            "description": "Hulk leaps into the air and smashes back down, doing massive $DMG_PHYSICAL in a wide radius.",
+            "descshort": "Radial",
+            "icon": 8,
+            "icon_texture": "textures/ui/hulk_icons2.png",
+            "name": "hulk_xtreme",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_xtreme_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "hulk_xtreme_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p9_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "hulk_p9_dmg",
+                    "value": "279 305"
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%hulk_p9_dmg $DMG_PHYSICAL",
+                "require": {
+                    "cat": "level",
+                    "level": "%hulk_xtreme_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "hulk_p3",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "HULK STRONGEST",
+            "description": "Hulk becomes invincible and has increased damage for a time.",
+            "descshort": "Boost",
+            "icon": 7,
+            "icon_texture": "textures/ui/hulk_icons2.png",
+            "name": "hulk_xtreme2",
+            "power": "power10",
+            "skirmish_locked": true,
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_xtreme2_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "hulk_xtreme2_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_xtreme2_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "hulk_xtreme2_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "+100% $DMG\\n%hulk_xtreme2_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%hulk_xtreme2_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "hulk_p7",
+                    "level": 1
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "hulk_p8",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Regeneration",
+            "description": "Heals over time.",
+            "descshort": "Passive",
+            "icon": 4,
+            "icon_texture": "textures/ui/hulk_icons2.png",
+            "name": "hulk_regen",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_regen_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "hulk_regen_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_regen_health",
+                    "value": 0.0017
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "hulk_regen_health",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_regen_health_p",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "hulk_regen_health_p",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_regen_health_t",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "hulk_regen_health_t",
+                    "value": 6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%hulk_regen_health_p:f% of max $HP every %hulk_regen_health_t seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%hulk_regen_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "health_regen_pct",
+                        "level": "%hulk_regen_health"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Gamma Battery",
+            "description": "Increases Hulk's resistance to $DMG_RADIATION and gives a chance to reflect $DMG_RADIATION back onto attackers.",
+            "descshort": "Passive",
+            "icon": 6,
+            "icon_texture": "textures/ui/hulk_icons2.png",
+            "name": "hulk_pass1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_pass1_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "hulk_pass1_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_pass1_resist",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "hulk_pass1_resist",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_pass1_chn",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "hulk_pass1_chn",
+                    "value": 1
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%hulk_pass1_resist:p Radiation resistance\\n+%hulk_pass1_chn:p chance to reflect $DMG_RADIATION",
+                "require": {
+                    "cat": "level",
+                    "level": "%hulk_pass1_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_radiation",
+                        "level": "%hulk_pass1_resist"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "reflect_damage",
+                        "level": "%hulk_pass1_chn",
+                        "scope": {
+                            "scope_damage": "dmg_radiation"
+                        }
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Hulk Incredible",
+            "description": "Increases Hulk's Critical chance with all powered and non-powered attacks and increases his jumping range.",
+            "descshort": "Passive",
+            "icon": 1,
+            "icon_texture": "textures/ui/hulk_icons2.png",
+            "name": "hulk_pass2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_pass2_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "hulk_pass2_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_pass2_jmp",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "hulk_pass2_jmp",
+                    "value": 3.0
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_pass2_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "hulk_pass2_crit",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%hulk_pass2_crit:p Critical chance\\n+%hulk_pass2_jmp:p jumping range",
+                "require": {
+                    "cat": "level",
+                    "level": "%hulk_pass2_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "jump",
+                        "level": "%hulk_pass2_jmp"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%hulk_pass2_crit"
+                    }
+                }
+            }
+        }
+    }
+}
