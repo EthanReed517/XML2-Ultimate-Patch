@@ -3,53 +3,6 @@
         "cansteal": true,
         "iconfile": "textures/ui/hulk_icons1.png",
         "FightMove": {
-            "animenum": "ea_blocking",
-            "blendtime": 0.1,
-            "handler": "ch_block",
-            "icon": 12,
-            "lockangles": true,
-            "lockchaining": false,
-            "locktransitionangles": true,
-            "name": "blocking",
-            "priority": 6,
-            "require": {
-                "cat": "skill",
-                "item": "block"
-            },
-            "trigger": {
-                "name": "powerusage",
-                "powerusage": 1,
-                "time": -1
-            },
-            "trigger": {
-                "life": -1,
-                "name": "powerup",
-                "remove_on_node_end": true,
-                "time": 0,
-                "affecter": {
-                    "affect_type": "scale",
-                    "attribute": "damage_to_energy",
-                    "level": "%block_dmgasenrg"
-                }
-            },
-            "chain": {
-                "action": "special",
-                "result": "idle"
-            },
-            "chain": {
-                "action": "advance",
-                "result": "rollforward"
-            },
-            "chain": {
-                "action": "straferight",
-                "result": "dodgeright"
-            },
-            "chain": {
-                "action": "strafeleft",
-                "result": "dodgeleft"
-            }
-        },
-        "FightMove": {
             "animenum": "ea_idle1",
             "handler": "ch_idle",
             "lockchaining": false,
