@@ -3,384 +3,6 @@
         "cansteal": true,
         "iconfile": "textures/ui/dazzler_icons1.png",
         "FightMove": {
-            "animenum": "ea_power2",
-            "endchaintime": 1,
-            "fallback": "attackheavy1",
-            "handler": "ch_popup_attack",
-            "lockangles": true,
-            "name": "popupattack",
-            "playspeed": 2,
-            "startchaintime": 0.6,
-            "trigger": {
-                "name": "whoosh_heavy",
-                "time": 0
-            },
-            "trigger": {
-                "movement": 0,
-                "name": "slide",
-                "time": 0
-            },
-            "trigger": {
-                "bolt": "Bip01 L Hand",
-                "effect": "char/dazzler/p5_charge",
-                "fxlevel": 1,
-                "name": "effect",
-                "time": 0
-            },
-            "trigger": {
-                "bolt": "Bip01 R Hand",
-                "life": 0.3,
-                "name": "trail",
-                "time": 0.15
-            },
-            "trigger": {
-                "actorbolt": "Bip01 R Hand",
-                "angoffset": "0 30 0",
-                "attack_bone_angles": "0 0 0",
-                "attack_bone_pos": "27 -7 30",
-                "attacktype": "projectile",
-                "count": 1,
-                "damage": "3 5",
-                "damagetype": "dmg_physical",
-                "entity": "dazzler_p4_proj",
-                "filename": "ents_dazzler",
-                "fulltargeting": true,
-                "fxlevel": 1,
-                "life": 0.3,
-                "name": "projectile",
-                "speed": 400,
-                "targetable": true,
-                "time": 0.35,
-                "victimeventtag": 15,
-                "victimeventtag2": 16,
-                "damageMod": {
-                    "name": "dmgmod_popup"
-                }
-            },
-            "trigger": {
-                "name": "sound",
-                "sound": "char/dazzler_m/p1_charge",
-                "time": 0.35
-            },
-            "trigger": {
-                "finisher": true,
-                "life": 0.25,
-                "name": "xtreme_start",
-                "tag": 15,
-                "time": -1,
-                "worldspeed": 0.5
-            },
-            "trigger": {
-                "filteractor": true,
-                "maxdangerrating": 10,
-                "name": "filter",
-                "noboss": true,
-                "passtag": 17,
-                "tag": 16,
-                "time": -1,
-                "type": "ce_filter_event"
-            },
-            "trigger": {
-                "life": 1.2,
-                "name": "powerup",
-                "shared_tag": "shared_stunned",
-                "tag": 17,
-                "time": -1,
-                "special_fx": {
-                    "bolt": "Bip01 Head",
-                    "effect": "base/powerup/pu_stunned",
-                    "how_used": "primary"
-                }
-            },
-            "chain": {
-                "action": "idle",
-                "result": "idle"
-            },
-            "chain": {
-                "action": "guard",
-                "result": "null"
-            },
-            "chain": {
-                "action": "powers",
-                "result": "powers"
-            },
-            "chain": {
-                "action": "attack",
-                "result": "attacklight1"
-            },
-            "chain": {
-                "action": "move",
-                "result": "jump"
-            }
-        },
-        "FightMove": {
-            "animenum": "ea_idle1",
-            "handler": "ch_idle",
-            "lockchaining": false,
-            "name": "idle",
-            "noncombat": true,
-            "trigger": {
-                "apply_chance": "%daz_resfac_pct",
-                "class": "callevents",
-                "life": -1,
-                "name": "powerup",
-                "time": 0.5,
-                "FunctionEvent": {
-                    "function": "death",
-                    "triggertag": 10
-                }
-            },
-            "trigger": {
-                "delay": 3,
-                "maxhealthpercent": "%daz_resfac_hlth",
-                "name": "resurrect",
-                "self": true,
-                "tag": 10,
-                "time": -1,
-                "type": "ce_resurrect"
-            },
-            "chain": {
-                "action": "walk",
-                "result": "walk"
-            },
-            "chain": {
-                "action": "jog",
-                "result": "jog"
-            },
-            "chain": {
-                "action": "run",
-                "result": "run"
-            },
-            "chain": {
-                "action": "sprint",
-                "result": "sprint"
-            },
-            "chain": {
-                "action": "strafeleft",
-                "result": "strafeleft"
-            },
-            "chain": {
-                "action": "straferight",
-                "result": "straferight"
-            },
-            "chain": {
-                "action": "advance",
-                "result": "advance"
-            },
-            "chain": {
-                "action": "retreat",
-                "result": "retreat"
-            },
-            "chain": {
-                "action": "guard",
-                "result": "guarddecide"
-            },
-            "chain": {
-                "action": "attack",
-                "result": "attacklight1"
-            },
-            "chain": {
-                "action": "smash",
-                "result": "attackheavy1"
-            },
-            "chain": {
-                "action": "groundattack",
-                "result": "groundattack"
-            },
-            "chain": {
-                "action": "move",
-                "result": "jump"
-            },
-            "chain": {
-                "action": "special",
-                "result": "boredloop"
-            },
-            "chain": {
-                "action": "powers",
-                "result": "powers"
-            }
-        },
-        "FightMove": {
-            "animenum": "ea_getup_on_back1",
-            "lockangles": true,
-            "locktransitionangles": true,
-            "name": "resurrect_v",
-            "trigger": {
-                "life": 3,
-                "name": "invulnerable",
-                "time": 0
-            },
-            "trigger": {
-                "name": "sound",
-                "sound": "char/dazzler_m/p12_power",
-                "time": 0
-            },
-            "trigger": {
-                "effect": "char/dazzler/p6_power",
-                "fxlevel": 4,
-                "name": "effect",
-                "time": 0
-            },
-            "trigger": {
-                "name": "onground",
-                "onground": false,
-                "time": 0.99
-            },
-            "chain": {
-                "action": "idle",
-                "result": "idle"
-            }
-        },
-        "FightMove": {
-            "aitype": "beam",
-            "animenum": "ea_power4",
-            "combotextfinisher": "Beam",
-            "combotextstarter": "Radiating",
-            "is_power": true,
-            "lockangles": true,
-            "priority": 5,
-            "icon": 0,
-            "name": "power1",
-            "require": {
-                "cat": "skill",
-                "item": "dazzler_laser",
-                "level": 1
-            },
-            "trigger": {
-                "bolt": "Bip01 L Hand",
-                "effect": "char/dazzler/p1_power",
-                "fxlevel": 2,
-                "name": "effect_sound",
-                "sound": "char/dazzler_m/p1_power",
-                "time": 0
-            },
-            "trigger": {
-                "bolt": "Bip01 R Hand",
-                "effect": "char/dazzler/p1_power",
-                "fxlevel": 2,
-                "name": "effect",
-                "time": 0
-            },
-            "trigger": {
-                "attack_bone_angles": "0 0 0",
-                "attack_bone_pos": "7 0 37",
-                "beambolt": "Bip01 R Hand",
-                "beameffect": "char/dazzler/p1_power",
-                "damage": "%daz_laser_dmg",
-                "damagescale": "none",
-                "damagetype": "dmg_energy",
-                "fxlevel": 1,
-                "hiteffect": "char/dazzler/p1_impact",
-                "inherit": "beam",
-                "maxrange": 500,
-                "name": "prismeam",
-                "pierce": true,
-                "powerusage": "%daz_laser_pwr",
-                "radius": 0,
-                "spawneffect": "char/dazzler/p1_spawn",
-                "split_count": "%daz_laser_num",
-                "split_damage": "13 15",
-                "tag": 3,
-                "time": 0.55
-            },
-            "trigger": {
-                "name": "sound",
-                "sound": "char/dazzler_m/p1_impact",
-                "time": 0.55
-            },
-            "chain": {
-                "action": "Idle",
-                "result": "idle"
-            }
-        },
-        "FightMove": {
-            "aireusetime": 20,
-            "aitype": "aoe",
-            "animenum": "ea_power1",
-            "combotextfinisher": "Strobe",
-            "combotextstarter": "Dazzling",
-            "handler": "ch_gambitboltons",
-            "icon": 1,
-            "lockangles": true,
-            "name": "power2",
-            "powerup_tag": "dazzler_dazzle",
-            "priority": 5,
-            "require": {
-                "cat": "skill",
-                "item": "dazzler_dazzle",
-                "level": 1
-            },
-            "trigger": {
-                "bolt": "Bip01 L Hand",
-                "effect": "char/dazzler/p1_charge",
-                "fxlevel": 3,
-                "name": "effect_sound",
-                "sound": "char/dazzler_m/p2_power",
-                "time": 0
-            },
-            "trigger": {
-                "bolt": "Bip01 R Hand",
-                "effect": "char/dazzler/p1_charge",
-                "fxlevel": 3,
-                "name": "effect",
-                "time": 0
-            },
-            "trigger": {
-                "life": "%daz_dazzle_life",
-                "name": "powerup",
-                "shared_tag": "shared_stunned",
-                "tag": 100,
-                "time": -1,
-                "special_fx": {
-                    "bolt": "Bip01 Head",
-                    "effect": "base/powerup/pu_stunned",
-                    "how_used": "primary"
-                }
-            },
-            "trigger": {
-                "failtag": 100,
-                "is_flying": true,
-                "name": "filter",
-                "time": 0.11
-            },
-            "trigger": {
-                "bolt": "Bip01 L Hand",
-                "effect": "char/dazzler/p2_flash2",
-                "fxlevel": 2,
-                "name": "effect",
-                "time": 0.11
-            },
-            "trigger": {
-                "bolt": "Bip01 R Hand",
-                "effect": "char/dazzler/p2_flash3",
-                "fxlevel": 2,
-                "name": "effect",
-                "time": 0.11
-            },
-            "trigger": {
-                "effect": "char/dazzler/p2_flash",
-                "fxlevel": 3,
-                "name": "effect",
-                "tag": 1,
-                "time": 0.26
-            },
-            "trigger": {
-                "damage": "%daz_dazzle_dmg",
-                "damagescale": "none",
-                "damagetype": "dmg_energy",
-                "maxrange": 300,
-                "name": "radial",
-                "powerusage": "%daz_dazzle_pwr",
-                "tag": 101,
-                "victimeventtag": 100,
-                "time": 0.48
-            },
-            "chain": {
-                "action": "Idle",
-                "result": "idle"
-            }
-        },
-        "FightMove": {
             "animenum": "ea_jump_start",
             "handler": "ch_move_jump",
             "lockangles": true,
@@ -443,7 +65,150 @@
             }
         },
         "FightMove": {
-            "animenum": "ea_power5",
+            "aitype": "beam",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Beam",
+            "combotextstarter": "Radiating",
+            "lockangles": true,
+            "priority": 5,
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "daz_laser",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/dazzler/p1_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/dazzler_m/p1_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/dazzler/p1_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "7 0 37",
+                "beambolt": "Bip01 R Hand",
+                "beameffect": "char/dazzler/p1_power",
+                "damage": "%daz_laser_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "fxlevel": 1,
+                "hiteffect": "char/dazzler/p1_impact",
+                "inherit": "beam",
+                "maxrange": 500,
+                "name": "prismeam",
+                "pierce": true,
+                "powerusage": "%daz_laser_pwr",
+                "radius": 0,
+                "spawneffect": "char/dazzler/p1_spawn",
+                "split_count": "%daz_laser_num",
+                "split_damage": "%daz_laser_dmg",
+                "tag": 3,
+                "time": 0.55
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/dazzler_m/p1_impact",
+                "time": 0.55
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "aoe",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Strobe",
+            "combotextstarter": "Dazzling",
+            "handler": "ch_gambitboltons",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "daz_dazzle",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/dazzler/p2_charge",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/dazzler_m/p2_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/dazzler/p2_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/dazzler/p2_flash2",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.11
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/dazzler/p2_flash3",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.11
+            },
+            "trigger": {
+                "effect": "char/dazzler/p2_flash",
+                "fxlevel": 3,
+                "name": "effect",
+                "tag": 1,
+                "time": 0.26
+            },
+            "trigger": {
+                "damage": "%daz_dazzle_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "maxrange": 300,
+                "name": "radial",
+                "powerusage": "%daz_dazzle_pwr",
+                "tag": 101,
+                "victimeventtag": 102,
+                "time": 0.48
+            },
+            "trigger": {
+                "life": "%daz_dazzle_life",
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 102,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_stunned",
+                    "how_used": "primary"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_idle",
             "blendtime": 0,
             "cansteal": false,
             "combotextfinisher": "Glide",
@@ -462,7 +227,7 @@
             "turnrate": 0.2,
             "require": {
                 "cat": "skill",
-                "item": "dazzler_glide",
+                "item": "daz_glide",
                 "level": 1
             },
             "trigger": {
@@ -478,19 +243,17 @@
                 "damage": "%daz_glide_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_energy",
-                "hiteffect": "char/dazzler/p3_impact",
                 "knockback": "%daz_glide_kb",
                 "name": "punch",
-                "PowerAttack": true,
                 "tag": 1,
                 "time": -1,
-                "victimeventtag": 100
+                "victimeventtag": 103
             },
             "trigger": {
                 "life": 15,
                 "name": "powerup",
                 "shared_tag": "shared_stunned",
-                "tag": 100,
+                "tag": 103,
                 "time": -1,
                 "special_fx": {
                     "bolt": "Bip01 Head",
@@ -543,112 +306,18 @@
             }
         },
         "FightMove": {
-            "aicanuse": false,
-            "aitype": "aoe",
-            "animenum": "ea_power3",
-            "combotextfinisher": "Radiance",
-            "combotextstarter": "Dazzling",
-            "icon": 3,
-            "is_power": true,
-            "lockangles": true,
-            "locktransitionangles": true,
-            "name": "power4",
-            "priority": 5,
-            "require": {
-                "cat": "skill",
-                "item": "dazzler_lshow",
-                "level": 1
-            },
-            "trigger": {
-                "life": -1,
-                "name": "powerup",
-                "remove_on_node_end": true,
-                "shared_tag": "shared_electric",
-                "time": 0
-            },
-            "trigger": {
-                "name": "sound",
-                "sound": "char/dazzler_m/p4_power",
-                "time": 0
-            },
-            "trigger": {
-                "effect": "char/dazzler/p4_power",
-                "fxlevel": 1,
-                "name": "effect",
-                "time": 0.1
-            },
-            "trigger": {
-                "name": "powerusage",
-                "next_eventtag": 1,
-                "powerusage": "%daz_lshow_pwr",
-                "time": 0.51
-            },
-            "trigger": {
-                "effect": "char/dazzler/p4_power",
-                "fxlevel": 2,
-                "name": "effect_sound",
-                "next_eventtag": 2,
-                "sound": "char/dazz_m/p4_power",
-                "tag": 1,
-                "time": -1
-            },
-            "trigger": {
-                "damage": "%daz_lshow_dmg",
-                "damagescale": "none",
-                "damagetype": "dmg_energy",
-                "inherit": "radial",
-                "knockback": 190,
-                "maxrange": 72,
-                "name": "elec_surge",
-                "tag": 2,
-                "time": 0.51,
-                "victimeventtag": 100,
-                "victimeventtag2": 102,
-                "damagemod": {
-                    "name": "dmgmod_no_hiteffect"
-                }
-            },
-            "trigger": {
-                "apply_chance": "%daz_lshow_pct",
-                "life": 1,
-                "name": "powerup",
-                "shared_tag": "shared_stun",
-                "tag": 100,
-                "time": -1
-            },
-            "trigger": {
-                "apply_chance": "%daz_lshow_pct",
-                "life": 10,
-                "name": "powerup",
-                "tag": 102,
-                "time": -1,
-                "special_fx": {
-                    "bolt": "Bip01 Head",
-                    "effect": "base/powerup/pu_dazed"
-                },
-                "affecter": {
-                    "attribute": "fear",
-                    "level": 1
-                }
-            },
-            "chain": {
-                "action": "Idle",
-                "result": "idle"
-            }
-        },
-        "FightMove": {
             "aireusetime": 5,
             "aitype": "projectile",
             "animenum": "ea_power2",
-            "combotextfinisher": "Blaster",
+            "combotextfinisher": "Explosion",
             "combotextstarter": "Photon",
-            "icon": 4,
+            "icon": 5,
             "lockangles": true,
             "name": "power5",
             "priority": 5,
             "require": {
                 "cat": "skill",
-                "item": "dazzler_photon",
+                "item": "daz_photon",
                 "level": 1
             },
             "trigger": {
@@ -672,7 +341,7 @@
                 "powerusage": "%daz_photon_pwr",
                 "speed": 450,
                 "time": 0.48,
-                "victimeventtag": 100
+                "victimeventtag": 50
             },
             "trigger": {
                 "damage": "%daz_photon_dm2",
@@ -696,22 +365,26 @@
             "animenum": "ea_power2",
             "combotextfinisher": "Blast",
             "combotextstarter": "Sonic",
-            "icon": 5,
+            "icon": 4,
             "lockangles": true,
             "name": "power6",
-            "powerup_tag": "daz_sonic",
             "priority": 5,
             "require": {
                 "cat": "skill",
-                "item": "dazzler_sonic",
+                "item": "daz_sonic",
                 "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%daz_sonic_pwr",
+                "time": 0
             },
             "event": {
                 "arc": 180,
                 "attacktype": "blast",
                 "damage": "%daz_sonic_dmg",
-                "damagescale": "difficulty",
-                "damagetype": "dmg_physical",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
                 "inherit": "punch",
                 "knockback": "%daz_sonic_kb",
                 "name": "p_radius",
@@ -734,11 +407,6 @@
                     "attribute": "fear",
                     "level": 1
                 }
-            },
-            "trigger": {
-                "name": "powerusage",
-                "powerusage": "%daz_sonic_pwr",
-                "time": 0
             },
             "trigger": {
                 "name": "stop",
@@ -804,73 +472,8 @@
         "FightMove": {
             "aireusetime": 20,
             "aitype": "buffself",
-            "combotextfinisher": "Barrier",
-            "combotextstarter": "Destructive",
-            "animenum": "ea_power10",
-            "icon": 6,
-            "lockangles": true,
-            "name": "power7",
-            "priority": 5,
-            "require": {
-                "cat": "skill",
-                "item": "dazzler_dshield",
-                "level": 1
-            },
-            "trigger": {
-                "bolt": "Bip01 L Hand",
-                "effect": "char/dazzler/p7_power",
-                "fxlevel": 1,
-                "name": "effect_sound",
-                "sound": "char/dazzler_m/p7_power",
-                "time": 0
-            },
-            "trigger": {
-                "bolt": "Bip01 R Hand",
-                "effect": "char/dazzler/p7_power",
-                "fxlevel": 1,
-                "name": "effect",
-                "time": 0
-            },
-            "trigger": {
-                "apply_ally": false,
-                "apply_self": true,
-                "fx_size_scale": 0.5,
-                "life": "%daz_dshield_life",
-                "name": "powerup",
-                "no_shadow": true,
-                "powerusage": "daz_dshield_pwr",
-                "time": 0.7,
-                "special_fx": {
-                    "effect": "char/dazzler/p7_aura",
-                    "fxlevel": 1,
-                    "how_used": "primary"
-                },
-                "special_fx": {
-                    "effect": "char/dazzler/p7_aura",
-                    "fxlevel": 6,
-                    "how_used": "deactivation"
-                },
-                "affecter": {
-                    "affect_type": "scale",
-                    "attribute": "def_damage",
-                    "level": "%daz_dshield_def"
-                },
-                "affecter": {
-                    "attribute": "def_dodge",
-                    "level": 1,
-                    "scope_attack": "projectile"
-                }
-            },
-            "chain": {
-                "action": "idle",
-                "result": "idle"
-            }
-        },
-        "FightMove": {
-            "aireusetime": 20,
-            "aitype": "buffself",
             "combotextfinisher": "Shield",
-            "combotextstarter": "Reflecting",
+            "combotextstarter": "Photonic",
             "animenum": "ea_power1",
             "icon": 7,
             "lockangles": true,
@@ -878,7 +481,7 @@
             "priority": 5,
             "require": {
                 "cat": "skill",
-                "item": "dazzler_myst",
+                "item": "daz_myst",
                 "level": 1
             },
             "trigger": {
@@ -897,12 +500,12 @@
                 "time": 0
             },
             "trigger": {
-                "apply_ally": false,
+                "apply_ally": "all",
                 "apply_self": true,
                 "life": "%daz_myst_life",
                 "name": "powerup",
                 "no_shadow": true,
-                "powerusage": "daz_myst_pwr",
+                "powerusage": "%daz_myst_pwr",
                 "time": 0.7,
                 "special_fx": {
                     "effect": "char/dazzler/p8_aura",
@@ -916,11 +519,17 @@
                 },
                 "affecter": {
                     "attribute": "attack_rating",
-                    "level": "%daz_myst_atk"
+                    "level": "%daz_myst_ar"
                 },
                 "affecter": {
                     "attribute": "def_dodge",
-                    "level": "%daz_myst_dod"
+                    "level": "%daz_myst_dod",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    }
                 }
             },
             "chain": {
@@ -941,7 +550,7 @@
             "priority": "uninterruptable",
             "require": {
                 "cat": "skill",
-                "item": "dazzler_overload",
+                "item": "daz_overload",
                 "level": 1
             },
             "require": {
@@ -1055,7 +664,7 @@
             "priority": 5,
             "require": {
                 "cat": "skill",
-                "item": "dazzler_lshield",
+                "item": "daz_lshield",
                 "level": 1
             },
             "trigger": {
@@ -1083,13 +692,14 @@
                 "center_bolt": true,
                 "class": "harming",
                 "damage": "%daz_lshield_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_energy",
-                "life": "%daz_lshield_life",
+                "life": "%daz_lshield_lif",
                 "name": "powerup",
                 "powerusage": "%daz_lshield_pwr",
                 "share_enemies": true,
                 "share_life": 1,
-                "share_radius": 120,
+                "share_radius": 80,
                 "time": 0.5,
                 "special_fx": {
                     "effect": "char/dazzler/p9_aura",
@@ -1097,32 +707,21 @@
                     "how_used": "primary",
                     "share_filter": "owner"
                 },
-                "special_fx": {
-                    "effect": "char/dazzler/p9_aura2",
-                    "fxlevel": 2,
-                    "how_used": "primary"
-                },
-                "special_fx": {
-                    "effect": "char/dazzler/p9_auraa",
-                    "fxlevel": 6,
-                    "how_used": "deactivation"
-                },
-                "affecter": {
-                    "attribute": "defense_rating",
-                    "level": "%daz_lshield_dr"
-                },
                 "affecter": {
                     "attribute": "powerup_scope",
                     "share_filter": "shared"
                 }
             },
             "trigger": {
-                "damage": 1,
-                "damagetype": "dmg_energy",
-                "index": 2,
-                "maxrange": 120,
-                "name": "radial",
-                "time": 0.5
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%daz_lshield_lif",
+                "name": "powerup",
+                "time": 0.5,
+                "affecter": {
+                    "attribute": "defense_rating",
+                    "level": "%daz_lshield_dr"
+                }
             },
             "chain": {
                 "action": "Idle",
@@ -1140,7 +739,7 @@
             "priority": 5,
             "require": {
                 "cat": "skill",
-                "item": "dazzler_holo",
+                "item": "daz_holo",
                 "level": 1
             },
             "require": {

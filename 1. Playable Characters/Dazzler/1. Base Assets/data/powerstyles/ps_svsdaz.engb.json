@@ -2,7 +2,7 @@
     "PowerStyle": {
         "cansteal": true,
         "FightMove": {
-            "aireusetime": 4,
+            "aireusetime": 5,
             "aitype": "beam",
             "animenum": "ea_power4",
             "lockangles": true,
@@ -62,7 +62,7 @@
             }
         },
         "FightMove": {
-            "aireusetime": 20,
+            "aireusetime": 5,
             "aitype": "aoe",
             "animenum": "ea_power1",
             "handler": "ch_gambitboltons",
@@ -77,7 +77,7 @@
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
-                "effect": "char/svsdaz/p1_charge",
+                "effect": "char/svsdaz/p2_charge",
                 "fxlevel": 3,
                 "name": "effect_sound",
                 "sound": "char/svsdaz_m/p2_power",
@@ -85,28 +85,10 @@
             },
             "trigger": {
                 "bolt": "Bip01 R Hand",
-                "effect": "char/svsdaz/p1_charge",
+                "effect": "char/svsdaz/p2_charge",
                 "fxlevel": 3,
                 "name": "effect",
                 "time": 0
-            },
-            "trigger": {
-                "life": 6,
-                "name": "powerup",
-                "shared_tag": "shared_stunned",
-                "tag": 100,
-                "time": -1,
-                "special_fx": {
-                    "bolt": "Bip01 Head",
-                    "effect": "base/powerup/pu_stunned",
-                    "how_used": "primary"
-                }
-            },
-            "trigger": {
-                "failtag": 100,
-                "is_flying": true,
-                "name": "filter",
-                "time": 0.11
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
@@ -139,95 +121,103 @@
                 "victimeventtag": 100,
                 "time": 0.48
             },
+            "trigger": {
+                "life": 6,
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 100,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_stunned",
+                    "how_used": "primary"
+                }
+            },
             "chain": {
                 "action": "Idle",
                 "result": "idle"
             }
         },
         "FightMove": {
-            "aireusetime": 20,
+            "aireusetime": 5,
             "aitype": "aoe",
-            "animenum": "ea_power3",
+            "animenum": "ea_power2",
             "lockangles": true,
-            "locktransitionangles": true,
             "name": "power_boost",
             "priority": 5,
             "require": {
                 "cat": "skill",
-                "item": "dazzler_lshow",
+                "item": "dazzler_sonic",
                 "level": 1
             },
-            "trigger": {
-                "life": -1,
-                "name": "powerup",
-                "remove_on_node_end": true,
-                "shared_tag": "shared_electric",
-                "time": 0
-            },
-            "trigger": {
-                "name": "sound",
-                "sound": "char/svsdaz_m/p4_power",
-                "time": 0
-            },
-            "trigger": {
-                "effect": "char/svsdaz/p4_power",
-                "fxlevel": 1,
-                "name": "effect",
-                "time": 0.1
-            },
-            "trigger": {
-                "name": "powerusage",
-                "next_eventtag": 1,
-                "powerusage": 0,
-                "time": 0.51
-            },
-            "trigger": {
-                "effect": "char/svsdaz/p4_power",
-                "fxlevel": 2,
-                "name": "effect_sound",
-                "next_eventtag": 2,
-                "sound": "char/dazz_m/p4_power",
-                "tag": 1,
-                "time": -1
-            },
-            "trigger": {
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
                 "damage": "%mdmg_high",
                 "damagescale": "none",
                 "damagetype": "dmg_energy",
-                "inherit": "radial",
-                "knockback": 190,
-                "maxrange": 72,
-                "name": "elec_surge",
+                "inherit": "punch",
+                "knockback": 400,
+                "name": "p_radius",
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/svsdaz/p6_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/svsdaz_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/dazzler/p6_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/svsdaz/p6_power2",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0,
+                "spawneffect": "char/svsdaz/p6_power"
+            },
+            "trigger": {
+                "effect": "char/svsdaz/p6_power2",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.68,
+                "spawneffect": "char/svsdaz/p6_power"
+            },
+            "trigger": {
+                "damage": "%mdmg_high",
+                "maxrange": 125,
+                "name": "p_radius",
                 "tag": 2,
-                "time": 0.51,
-                "victimeventtag": 100,
-                "victimeventtag2": 102,
-                "damagemod": {
-                    "name": "dmgmod_no_hiteffect"
-                }
+                "time": 0.7
             },
             "trigger": {
-                "apply_chance": 0.3,
-                "life": 1,
-                "name": "powerup",
-                "shared_tag": "shared_stun",
-                "tag": 100,
-                "time": -1
+                "damage": "%mdmg_high",
+                "knockback": 400,
+                "maxrange": 175,
+                "name": "p_radius",
+                "tag": 3,
+                "time": 0.8
             },
             "trigger": {
-                "apply_chance": 0.3,
-                "life": 10,
-                "name": "powerup",
-                "tag": 102,
-                "time": -1,
-                "special_fx": {
-                    "bolt": "Bip01 Head",
-                    "effect": "base/powerup/pu_dazed"
-                },
-                "affecter": {
-                    "attribute": "fear",
-                    "level": 1
-                }
+                "damage": "%mdmg_high",
+                "knockback": 200,
+                "maxrange": 225,
+                "name": "p_radius",
+                "tag": 4,
+                "time": 0.9
             },
             "chain": {
                 "action": "Idle",
@@ -260,17 +250,17 @@
                 "damagescale": "none",
                 "damagetype": "dmg_energy",
                 "entity": "svsdaz_p5_proj",
-                "explodedamage": 85,
+                "explodedamage": "%mdmg_high",
                 "filename": "ents_svsdaz",
                 "name": "projectile",
                 "offset": "25 0 50",
                 "powerusage": 0,
                 "speed": 450,
                 "time": 0.48,
-                "victimeventtag": 100
+                "victimeventtag": 50
             },
             "trigger": {
-                "damage": 70,
+                "damage": "%mdmg_high",
                 "fxlevel": 6,
                 "hiteffect": "char/svsdaz/p5_power",
                 "maxrange": 84,
