@@ -29,7 +29,7 @@
         },
         "talent": {
             "descname": "Heavy Fist",
-            "description": "A Melee attack strong enough to do $KB.",
+            "description": "Blob throws a punch strong enough to do $KB.",
             "descshort": "Melee",
             "icon": 4,
             "icon_texture": "textures/ui/blob_icons2.png",
@@ -49,12 +49,12 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "blob_fist_dmg",
-                    "value": 3.5
+                    "value": "11 15"
                 },
                 "talentvalue": {
                     "level": 20,
                     "name": "blob_fist_dmg",
-                    "value": 9.2
+                    "value": "195 217"
                 },
                 "talentvalue": {
                     "level": 1,
@@ -79,19 +79,10 @@
             },
             "level": {
                 "count": 20,
-                "description": "%blob_fist_dmg:s $DMG_PHYSICAL (%blob_fist_dmg:x)\\n%blob_fist_kb $KB\\n%blob_fist_pwr $EP",
+                "description": "%blob_fist_dmg $DMG_PHYSICAL\\n%blob_fist_kb $KB\\n%blob_fist_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%blob_fist_req"
-                },
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "affect_type": "scale",
-                        "attribute": "damage",
-                        "level": "%blob_fist_dmg",
-                        "scope_node": "blob_power1"
-                    }
                 }
             }
         },
@@ -112,17 +103,17 @@
                 "talentvalue": {
                     "level": 18,
                     "name": "blob_slap_req",
-                    "value": 60
+                    "value": 58
                 },
                 "talentvalue": {
                     "level": 1,
                     "name": "blob_slap_dmg",
-                    "value": 3.3
+                    "value": "21 26"
                 },
                 "talentvalue": {
                     "level": 18,
                     "name": "blob_slap_dmg",
-                    "value": 7.5
+                    "value": "95 107"
                 },
                 "talentvalue": {
                     "level": 1,
@@ -147,25 +138,16 @@
             },
             "level": {
                 "count": 18,
-                "description": "%blob_slap_dmg:s $DMG_PHYSICAL (%blob_slap_dmg:x)\\n%blob_slap_knb $KB\\n%blob_slap_pwr $EP",
+                "description": "%blob_slap_dmg $DMG_PHYSICAL\\n%blob_slap_knb $KB\\n%blob_slap_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%blob_slap_req"
-                },
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "affect_type": "scale",
-                        "attribute": "damage",
-                        "level": "%blob_slap_dmg",
-                        "scope_node": "blob_power2"
-                    }
                 }
             }
         },
         "talent": {
             "descname": "Flesh Bomb",
-            "description": "Blob leaps forward and somersaults, damaging enemies on contact.\\n(~41Rapid Tap~~)",
+            "description": "Blob leaps forward and somersaults, damaging enemies on contact.",
             "descshort": "Special",
             "icon": 7,
             "icon_texture": "textures/ui/blob_icons2.png",
@@ -185,12 +167,12 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "blob_pinball_dmg",
-                    "value": 3.1
+                    "value": "31 37"
                 },
                 "talentvalue": {
                     "level": 16,
                     "name": "blob_pinball_dmg",
-                    "value": 6.5
+                    "value": "117 132"
                 },
                 "talentvalue": {
                     "level": 1,
@@ -205,7 +187,7 @@
             },
             "level": {
                 "count": 16,
-                "description": "%blob_pinball_dmg:s $DMG_PHYSICAL (%blob_pinball_dmg:x)\\n%blob_pinball_pwr $EP",
+                "description": "%blob_pinball_dmg $DMG_PHYSICAL\\n%blob_pinball_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%blob_pinball_req"
@@ -214,21 +196,12 @@
                     "cat": "skill",
                     "item": "blob_slap",
                     "level": 1
-                },
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "affect_type": "scale",
-                        "attribute": "damage",
-                        "level": "%blob_pinball_dmg",
-                        "scope_node": "blob_power3"
-                    }
                 }
             }
         },
         "talent": {
             "descname": "Belly Flop",
-            "description": "A belly flop that has a chance of doing a 'Deadly Strike' (33% instant $HP loss).",
+            "description": "Blob does a massive belly flop that has a chance of doing a 'Deadly Strike' (33% instant $HP loss).",
             "descshort": "Radial",
             "icon": 6,
             "icon_texture": "textures/ui/blob_icons2.png",
@@ -278,17 +251,17 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "blob_belly_dmg",
-                    "value": 3.3
+                    "value": "21 26"
                 },
                 "talentvalue": {
                     "level": 14,
                     "name": "blob_belly_dmg",
-                    "value": 6
+                    "value": "95 107"
                 }
             },
             "level": {
                 "count": 14,
-                "description": "%blob_belly_dmg:s $DMG_PHYSICAL (%blob_belly_dmg:x)\\n%blob_belly_kb $KB\\n%blob_belly_chance:p chance for Deadly Strike\\n%blob_belly_pwr $EP",
+                "description": "%blob_belly_dmg $DMG_PHYSICAL\\n%blob_belly_kb $KB\\n%blob_belly_chance:p chance for Deadly Strike\\n%blob_belly_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%blob_belly_req"
@@ -305,12 +278,6 @@
                     "percent": 0.33,
                     "affecter": {
                         "attribute": "powerup_scope",
-                        "scope_node": "blob_power4"
-                    },
-                    "affecter": {
-                        "affect_type": "scale",
-                        "attribute": "damage",
-                        "level": "%blob_belly_dmg",
                         "scope_node": "blob_power4"
                     }
                 }
@@ -338,12 +305,12 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "blob_smash_dmg",
-                    "value": 3.7
+                    "value": "75 86"
                 },
                 "talentvalue": {
                     "level": 12,
                     "name": "blob_smash_dmg",
-                    "value": 6
+                    "value": "201 224"
                 },
                 "talentvalue": {
                     "level": 1,
@@ -368,19 +335,10 @@
             },
             "level": {
                 "count": 12,
-                "description": "%blob_smash_dmg:s $DMG_PHYSICAL (%blob_smash_dmg:x)\\n%blob_smash_life second stun\\n%blob_smash_pwr $EP",
+                "description": "%blob_smash_dmg $DMG_PHYSICAL\\n%blob_smash_life second stun\\n%blob_smash_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%blob_smash_req"
-                },
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "affect_type": "scale",
-                        "attribute": "damage",
-                        "level": "%blob_smash_dmg",
-                        "scope_node": "blob_power5"
-                    }
                 }
             }
         },
@@ -454,7 +412,7 @@
         },
         "talent": {
             "descname": "IMMOVABLE OBJECT",
-            "description": "Makes Blob invincible and doubles his damage for a time.",
+            "description": "Blob becomes invincible and has increased damage for a time.",
             "descshort": "Boost",
             "icon": 12,
             "icon_texture": "textures/ui/blob_icons2.png",
@@ -485,7 +443,7 @@
             },
             "level": {
                 "count": 4,
-                "description": "+100% $DMG\\n%blob_object_life seconds",
+                "description": "+100% Dmg\\n%blob_object_life seconds",
                 "require": {
                     "cat": "level",
                     "level": "%blob_object_req"
@@ -515,12 +473,12 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "blob_grav_dmg",
-                    "value": 6.5
+                    "value": "85 96"
                 },
                 "talentvalue": {
                     "level": 7,
                     "name": "blob_grav_dmg",
-                    "value": 15.5
+                    "value": "279 309"
                 },
                 "talentvalue": {
                     "level": 1,
@@ -545,19 +503,10 @@
             },
             "level": {
                 "count": 5,
-                "description": "%blob_grav_dmg:s $DMG_PHYSICAL (%blob_grav_dmg:x)\\n%blob_grav_chan:p chance\\n%blob_grav_lif seconds",
+                "description": "%blob_grav_dmg $DMG_PHYSICAL\\n%blob_grav_chan:p chance\\n%blob_grav_lif seconds",
                 "require": {
                     "cat": "level",
                     "level": "%blob_grav_req"
-                },
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "affect_type": "scale",
-                        "attribute": "damage",
-                        "level": "%blob_grav_dmg",
-                        "scope_node": "blob_power8"
-                    }
                 }
             }
         },
@@ -614,7 +563,7 @@
             },
             "level": {
                 "count": 16,
-                "description": "%blob_shield_dmg:s $DMG taken\\n%blob_shield_lif seconds\\n%blob_shield_pwr $EP",
+                "description": "%blob_shield_dmg:s Dmg taken\\n%blob_shield_lif seconds\\n%blob_shield_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%blob_shield_req"
@@ -710,9 +659,9 @@
                     "value": 7
                 },
                 "talentvalue": {
-                    "level": 12,
+                    "level": 15,
                     "name": "blob_thick_req",
-                    "value": 32
+                    "value": 28
                 },
                 "talentvalue": {
                     "level": 1,
@@ -720,13 +669,13 @@
                     "value": 0.1
                 },
                 "talentvalue": {
-                    "level": 12,
+                    "level": 15,
                     "name": "blob_thick_pct",
                     "value": 0.47
                 }
             },
             "level": {
-                "count": 12,
+                "count": 15,
                 "description": "+%blob_thick_pct:p Elemental resistance\\n+%blob_thick_pct:p Radiation resistance\\n+%blob_thick_pct:p Physical resistance",
                 "require": {
                     "cat": "level",
@@ -763,9 +712,9 @@
                     "value": 21
                 },
                 "talentvalue": {
-                    "level": 12,
+                    "level": 15,
                     "name": "blob_hardened_req",
-                    "value": 36
+                    "value": 35
                 },
                 "talentvalue": {
                     "level": 1,
@@ -773,7 +722,7 @@
                     "value": 1.07
                 },
                 "talentvalue": {
-                    "level": 12,
+                    "level": 15,
                     "name": "blob_hardened_atr",
                     "value": 1.62
                 },
@@ -783,13 +732,13 @@
                     "value": 1.15
                 },
                 "talentvalue": {
-                    "level": 12,
+                    "level": 15,
                     "name": "blob_hardened_def",
                     "value": 2.25
                 }
             },
             "level": {
-                "count": 12,
+                "count": 15,
                 "description": "%blob_hardened_atr:s $AR\\n%blob_hardened_def:s $DR",
                 "require": {
                     "cat": "level",
