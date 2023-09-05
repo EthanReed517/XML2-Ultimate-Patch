@@ -34,10 +34,10 @@
             "handler": "ch_move_jump",
             "lockangles": true,
             "name": "jump",
-            "startchaintime": 0.1,
+            "startchaintime": 0.3,
             "chain": {
                 "action": "move",
-                "result": "power5"
+                "result": "airjump"
             },
             "chain": {
                 "action": "attack",
@@ -68,7 +68,7 @@
             "noncombat": true,
             "chain": {
                 "action": "move",
-                "result": "power5"
+                "result": "airjump"
             },
             "chain": {
                 "action": "attack",
@@ -89,6 +89,52 @@
             "chain": {
                 "action": "idle",
                 "result": "jumploop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_double_jump_start",
+            "blendtime": 0.1,
+            "handler": "ch_move_jump",
+            "name": "airjump",
+            "startchaintime": 0.5,
+            "turnrate": 0.2,
+            "chain": {
+                "action": "special",
+                "result": "doublejumpland"
+            },
+            "chain": {
+                "action": "move",
+                "result": "power5"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_land",
+            "blendtime": 0.1,
+            "endchaintime": 0.7,
+            "handler": "ch_move_jump_land",
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "doublejumpland",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
             }
         },
         "FightMove": {
@@ -638,8 +684,8 @@
             "playspeed": 0.8,
             "powerup_tag": "spider_web",
             "priority": 5,
-            "startchaintime": 0.95,
-            "turnrate": 0.2,
+            "startchaintime": 0.99,
+            "turnrate": 0.5,
             "require": {
                 "cat": "skill",
                 "item": "spider_p5",
@@ -670,11 +716,14 @@
                 "damage": "%spider_p5_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
-                "knockback": "%spider_p5_pwr",
+                "knockback": "%spider_p5_kb",
+                "maxrange": 60,
                 "name": "punch",
-                "powerattack": true,
                 "tag": 1,
-                "time": -1
+                "time": -1,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
             },
             "trigger": {
                 "count": "set",
@@ -692,8 +741,8 @@
                 "value": -1
             },
             "chain": {
-                "action": "idle",
-                "result": "skateend"
+                "action": "Idle",
+                "result": "idle"
             },
             "chain": {
                 "action": "samepowerhold",
@@ -701,22 +750,11 @@
             },
             "chain": {
                 "action": "touch",
-                "result": "fastballhit"
-            }
-        },
-        "FightMove": {
-            "animenum": "ea_jump_loop",
-            "handler": "ch_jump",
-            "lockangles": true,
-            "name": "skateend",
-            "noncombat": true,
-            "chain": {
-                "action": "idle",
-                "result": "skateend"
+                "result": "power5"
             },
             "chain": {
                 "action": "special",
-                "result": "jumpland"
+                "result": "power5"
             }
         },
         "FightMove": {
