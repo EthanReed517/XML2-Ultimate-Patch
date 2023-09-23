@@ -1,0 +1,830 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "thing_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_elemental",
+                        "level": 0.05
+                    },
+                    "affecter": {
+                        "attribute": "resist_physical",
+                        "level": 0.05
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Rock-Solid Uppercut",
+            "description": "The Thing does a two-handed uppercut that pops up enemies with a chance for a 'Deadly Strike' (33% instant $HP loss).",
+            "descshort": "Melee",
+            "icon": 0,
+            "icon_texture": "textures/ui/thing_icons2.png",
+            "name": "thing_p1",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p1_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "thing_p1_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p1_dmg",
+                    "value": "20 26"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "thing_p1_dmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p1_kb",
+                    "value": 50
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "thing_p1_kb",
+                    "value": 600
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p1_pwr",
+                    "value": 8
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "thing_p1_pwr",
+                    "value": 76
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p1_pct",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "thing_p1_pct",
+                    "value": 0.19
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%thing_p1_dmg $DMG_PHYSICAL\\n%thing_p1_kb popup\\n%thing_p1_pct:p chance for Deadly Strike\\n%thing_p1_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%thing_p1_req"
+                },
+                "powerup": {
+                    "chance": "%thing_p1_pct",
+                    "class": "atk_instant_pct",
+                    "life": -1,
+                    "percent": 0.33,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope_node": "thing_power1"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Concussive Clap",
+            "description": "The Thing claps his hands, knocking back and stunning any enemies within range.",
+            "descshort": "Radial",
+            "icon": 1,
+            "icon_texture": "textures/ui/thing_icons2.png",
+            "name": "thing_p2",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p2_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "thing_p2_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p2_dmg",
+                    "value": "10 13"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "thing_p2_dmg",
+                    "value": "66 75"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p2_kb",
+                    "value": 200
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "thing_p2_kb",
+                    "value": 400
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p2_stn",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "thing_p2_stn",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p2_pwr",
+                    "value": 46
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "thing_p2_pwr",
+                    "value": 170
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%thing_p2_dmg $DMG_PHYSICAL\\n%thing_p2_kb $KB\\n%thing_p2_stn second stun\\n%thing_p2_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%thing_p2_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Earthclobber",
+            "description": "The Thing smashes his fists into the ground, popping up all nearby enemies.",
+            "descshort": "Radial",
+            "icon": 2,
+            "icon_texture": "textures/ui/thing_icons2.png",
+            "name": "thing_p3",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p3_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thing_p3_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p3_dmg",
+                    "value": "21 26"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thing_p3_dmg",
+                    "value": "95 107"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p3_kb",
+                    "value": 250
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thing_p3_kb",
+                    "value": 510
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p3_pwr",
+                    "value": 92
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thing_p3_pwr",
+                    "value": 198
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%thing_p3_dmg $DMG_PHYSICAL\\n%thing_p3_kb popup\\n%thing_p3_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%thing_p3_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "thing_p2",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Rockslide",
+            "description": "The Thing charges forward, destroying everything in his path and sending enemies flying.",
+            "descshort": "Charge",
+            "icon": 3,
+            "icon_texture": "textures/ui/thing_icons2.png",
+            "name": "thing_p4",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p4_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "thing_p4_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p4_dmg",
+                    "value": "53 61"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "thing_p4_dmg",
+                    "value": "198 220"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p4_kb",
+                    "value": 245
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "thing_p4_kb",
+                    "value": 620
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p4_pwr",
+                    "value": 34
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "thing_p4_pwr",
+                    "value": 96
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%thing_p4_dmg $DMG_PHYSICAL\\n%thing_p4_kb $KB\\n%thing_p4_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%thing_p4_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Grimm Shockwave",
+            "description": "The Thing stomps on the ground, creating a shockwave that trips and knocks back enemies.",
+            "descshort": "Melee",
+            "icon": 6,
+            "icon_texture": "textures/ui/thing_icons2.png",
+            "name": "thing_p5",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p5_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "thing_p5_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p5_dmg",
+                    "value": "75 86"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "thing_p5_dmg",
+                    "value": "201 224"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p5_pwr",
+                    "value": 48
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "thing_p5_pwr",
+                    "value": 100
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%thing_p5_dmg $DMG_PHYSICAL\\n%thing_p5_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%thing_p5_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "thing_p3",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Thick Skin",
+            "description": "The Thing's thick skin increases his Energy resistance and reflects a percentage of damage done by beams and projectiles back at enemies for a time.",
+            "descshort": "Boost",
+            "icon": 4,
+            "icon_texture": "textures/ui/thing_icons2.png",
+            "name": "thing_p6",
+            "power": "power6",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p6_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thing_p6_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p6_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thing_p6_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p6_chc",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thing_p6_chc",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p6_res",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thing_p6_res",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p6_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "thing_p6_pwr",
+                    "value": 504
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "+%thing_p6_res:p Energy resistance\\n%thing_p6_chc:p Dmg done by beams and projectiles reflected\\n%thing_p6_lif seconds\\n%thing_p6_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%thing_p6_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "thing_pass1",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Unbreakable Will",
+            "description": "The Thing's unbreakable willpower inspires the team, decreasing $EP cost and increasing Combo $XP and Combo Dmg for the whole party for a time.",
+            "descshort": "Boost",
+            "icon": 5,
+            "icon_texture": "textures/ui/thing_icons2.png",
+            "name": "thing_p7",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p7_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "thing_p7_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p7_cst",
+                    "value": 0.95
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "thing_p7_cst",
+                    "value": 0.7
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p7_coma",
+                    "value": 1.15
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "thing_p7_coma",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p7_comb",
+                    "value": 1.15
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "thing_p7_comb",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p7_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "thing_p7_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p7_pwr",
+                    "value": 48
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "thing_p7_pwr",
+                    "value": 350
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%thing_p7_cst:s $EP cost\\n%thing_p7_coma:s Combo $XP\\n%thing_p7_comb:s Combo Dmg\\n%thing_p7_lif seconds\\n%thing_p7_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%thing_p7_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "ROCK AND ROLL",
+            "description": "The Thing leaps into the air, then slams into the ground, dealing massive $DMG_PHYSICAL and slowing all nearby enemies.",
+            "descshort": "Radial",
+            "icon": 7,
+            "icon_texture": "textures/ui/thing_icons2.png",
+            "name": "thing_p8",
+            "power": "power8",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p8_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "thing_p8_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p8_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "thing_p8_dmg",
+                    "value": "279 305"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p8_spd",
+                    "value": 0.7
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "thing_p8_spd",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p8_slw",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "thing_p8_slw",
+                    "value": 12
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%thing_p8_dmg $DMG_PHYSICAL\\nSlows enemies by %thing_p8_spd:p for %thing_p8_slw seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%thing_p8_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "IT'S CLOBBERIN' TIME",
+            "description": "The Thing becomes invincible and has increased damage for a time.",
+            "descshort": "Boost",
+            "icon": 8,
+            "icon_texture": "textures/ui/thing_icons2.png",
+            "name": "thing_p9",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p9_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "thing_p9_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_p9_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "thing_p9_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "+100% Dmg\\n%thing_p9_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%thing_p9_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Heart of Granite",
+            "description": "Adds a chance to not be affected by grab, popup, stun, trip, and $KB.",
+            "descshort": "Passive",
+            "icon": 9,
+            "icon_texture": "textures/ui/thing_icons2.png",
+            "name": "thing_pass1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_pass1_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "thing_pass1_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_pass1_pct",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "thing_pass1_pct",
+                    "value": 0
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_pass1_pct2",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "thing_pass1_pct2",
+                    "value": 1
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%thing_pass1_pct2:p chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%thing_pass1_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "def_grab",
+                        "level": "%thing_pass1_pct"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "def_popup",
+                        "level": "%thing_pass1_pct"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "def_stun",
+                        "level": "%thing_pass1_pct"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "def_trip",
+                        "level": "%thing_pass1_pct"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "def_knockback",
+                        "level": "%thing_pass1_pct"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Melee Mastery",
+            "description": "Increases damage and Critical chance of all non-powered Melee attacks.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/thing_icons2.png",
+            "name": "thing_pass2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_pass2_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "thing_pass2_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_pass2_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "thing_pass2_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_pass2_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "thing_pass2_crit",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%thing_pass2_dmg:s Melee Dmg\\n+%thing_pass2_crit:p Critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%thing_pass2_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%thing_pass2_dmg",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        },
+                        "scope": {
+                            "scope_non_powers": true
+                        }
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%thing_pass2_crit",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        },
+                        "scope": {
+                            "scope_non_powers": true
+                        }
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Rock-Solid Skin",
+            "description": "Increases The Thing's $DR and increases his Elemental and Physical resistances.",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/thing_icons2.png",
+            "name": "thing_pass3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_pass3_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "thing_pass3_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_pass3_def",
+                    "value": 1.15
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "thing_pass3_def",
+                    "value": 2.27
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "thing_pass3_pct",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "thing_pass3_pct",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%thing_pass3_def:s $DR\\n+%thing_pass3_pct:p Elemental resistance\\n+%thing_pass3_pct:p Physical resistance",
+                "require": {
+                    "cat": "level",
+                    "level": "%thing_pass3_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "thing_p6",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "defense_rating",
+                        "level": "%thing_pass3_def"
+                    },
+                    "affecter": {
+                        "attribute": "resist_elemental",
+                        "level": "%thing_pass3_pct"
+                    },
+                    "affecter": {
+                        "attribute": "resist_physical",
+                        "level": "%thing_pass3_pct"
+                    }
+                }
+            }
+        }
+    }
+}
