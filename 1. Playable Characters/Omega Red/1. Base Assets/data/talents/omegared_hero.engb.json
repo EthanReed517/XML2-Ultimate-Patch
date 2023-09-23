@@ -326,8 +326,8 @@
             }
         },
         "talent": {
-            "descname": "Energizing Pheromones",
-            "description": "Omega Red emits pheromones that harm nearby enemies and converts any inflicted $DMG into $EP.",
+            "descname": "Death Pheromones",
+            "description": "Omega Red emits toxic pheromones that harm nearby enemies with $DMG_RADIATION.",
             "descshort": "Boost",
             "icon": 13,
             "icon_texture": "textures/ui/omegared_icons2.png",
@@ -347,23 +347,23 @@
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "omega_p7_pct",
-                    "value": 0.2
+                    "name": "omega_p7_epr",
+                    "value": 20
                 },
                 "talentvalue": {
                     "level": 16,
-                    "name": "omega_p7_pct",
-                    "value": 1.0
+                    "name": "omega_p7_epr",
+                    "value": 60
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "omega_p7_lif",
+                    "name": "omega_p7_res",
                     "value": 13
                 },
                 "talentvalue": {
                     "level": 16,
                     "name": "omega_p7_lif",
-                    "value": 55
+                    "value": 13
                 },
                 "talentvalue": {
                     "level": 1,
@@ -378,17 +378,17 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "omega_p7_pwr",
-                    "value": 120
+                    "value": 132
                 },
                 "talentvalue": {
                     "level": 16,
                     "name": "omega_p7_pwr",
-                    "value": 502
+                    "value": 516
                 }
             },
             "level": {
                 "count": 16,
-                "description": "%omega_p7_pct:p of $DMG inflicted\\n%omega_p7_lif seconds\\n%omega_p7_dmg $DMG_RADIATION per second\\n%omega_p7_pwr $EP",
+                "description": "%omega_p7_dmg $DMG_RADIATION per second\\n%omega_p7_lif seconds\\n%omega_p7_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%omega_p7_req"
@@ -693,7 +693,7 @@
             },
             "level": {
                 "count": 15,
-                "description": "%om_mastery1_dmg:s $DMG\\n+%om_mastery1_cri:p Critical chance",
+                "description": "%om_mastery1_dmg:s Dmg\\n+%om_mastery1_cri:p Critical chance",
                 "require": {
                     "cat": "level",
                     "level": "%om_mastery1_req"
@@ -760,7 +760,7 @@
             },
             "level": {
                 "count": 15,
-                "description": "%om_mastery2_dmg:s $DMG\\n+%om_mastery2_cri:p Critical chance",
+                "description": "%om_mastery2_dmg:s Dmg\\n+%om_mastery2_cri:p Critical chance",
                 "require": {
                     "cat": "level",
                     "level": "%om_mastery2_req"

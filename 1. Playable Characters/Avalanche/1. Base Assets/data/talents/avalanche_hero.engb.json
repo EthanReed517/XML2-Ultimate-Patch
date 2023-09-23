@@ -771,7 +771,7 @@
         },
         "talent": {
             "descname": "Armored Battle Suit",
-            "description": "Increases $DR and reduces incoming $DMG_ELEMENTAL.",
+            "description": "Increases Avalanche's $DR and adds resistance to $DMG_ELEMENTAL.",
             "descshort": "Passive",
             "icon": 13,
             "icon_texture": "textures/ui/avalanche_icons2.png",
@@ -799,18 +799,18 @@
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "aval_armo_dmg",
-                    "value": 0.96
+                    "name": "aval_armo_pct",
+                    "value": 0.1
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "aval_armo_dmg",
-                    "value": 0.75
+                    "name": "aval_armo_pct",
+                    "value": 0.47
                 }
             },
             "level": {
                 "count": 15,
-                "description": "%aval_armo_def:s $DR\\n%aval_armo_dmg:s $DMG_ELEMENTAL taken",
+                "description": "%aval_armo_def:s $DR\\n%aval_armo_pct:p Elemental resistance",
                 "require": {
                     "cat": "level",
                     "level": "%aval_armo_req"
@@ -823,10 +823,8 @@
                         "level": "%aval_armo_def"
                     },
                     "affecter": {
-                        "affect_type": "scale",
-                        "attribute": "def_damage_scope",
-                        "damagetype": "dmg_elemental",
-                        "level": "%aval_armo_dmg"
+                        "attribute": "resist_elemental",
+                        "level": "%aval_armo_pct"
                     }
                 }
             }
