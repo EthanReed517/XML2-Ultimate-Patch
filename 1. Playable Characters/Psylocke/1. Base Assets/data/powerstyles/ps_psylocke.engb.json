@@ -65,82 +65,6 @@
             }
         },
         "FightMove": {
-            "animenum": "ea_idle1",
-            "handler": "ch_idle",
-            "lockchaining": false,
-            "name": "idle",
-            "noncombat": true,
-            "trigger": {
-                "attachpoint": "Grab1",
-                "bolt": "Bip01 R Hand",
-                "boltslot": "ebolton_weapon",
-                "model": "models/bolton/psylocke_blade_01",
-                "name": "bolton",
-                "replacecurrent": true,
-                "time": 0
-            },
-            "chain": {
-                "action": "walk",
-                "result": "walk"
-            },
-            "chain": {
-                "action": "jog",
-                "result": "jog"
-            },
-            "chain": {
-                "action": "run",
-                "result": "run"
-            },
-            "chain": {
-                "action": "sprint",
-                "result": "sprint"
-            },
-            "chain": {
-                "action": "strafeleft",
-                "result": "strafeleft"
-            },
-            "chain": {
-                "action": "straferight",
-                "result": "straferight"
-            },
-            "chain": {
-                "action": "advance",
-                "result": "advance"
-            },
-            "chain": {
-                "action": "retreat",
-                "result": "retreat"
-            },
-            "chain": {
-                "action": "guard",
-                "result": "guarddecide"
-            },
-            "chain": {
-                "action": "attack",
-                "result": "attacklight1"
-            },
-            "chain": {
-                "action": "smash",
-                "result": "attackheavy1"
-            },
-            "chain": {
-                "action": "groundattack",
-                "result": "groundattack"
-            },
-            "chain": {
-                "action": "move",
-                "result": "jump"
-            },
-            "chain": {
-                "action": "special",
-                "result": "boredloop"
-            },
-            "chain": {
-                "action": "powers",
-                "result": "powers"
-            }
-        },
-        "FightMove": {
             "animenum": "ea_jump_start",
             "handler": "ch_move_jump",
             "lockangles": true,
@@ -250,11 +174,11 @@
             "animenum": "ea_power1",
             "blendtime": 0.07,
             "combotextfinisher": "Slash",
-            "combotextstarter": "Slicing",
+            "combotextstarter": "Slashing",
             "icon": 0,
             "lockangles": true,
             "name": "power1",
-            "powerup_tag": "psylocke_power",
+            "powerup_tag": "blade_power",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -283,15 +207,12 @@
                 "arc": 0,
                 "attacktype": "punch",
                 "damage": "%psy_slash_dmg",
-                "damagelevel": 2,
                 "damagescale": "none",
                 "damagetype": "dmg_mental",
                 "knockback": 0,
                 "maxrange": 60,
                 "name": "punch",
-                "powerattack": true,
                 "powerusage": "%psy_slash_pwr",
-                "tag": 1,
                 "time": 0.4,
                 "damageMod": {
                     "name": "dmgmod_stun"
@@ -307,11 +228,10 @@
             "aitype": "projectile",
             "animenum": "ea_power2",
             "combotextfinisher": "Bolt",
-            "combotextstarter": "Crushing",
+            "combotextstarter": "Devastating",
             "icon": 1,
             "lockangles": true,
             "name": "power2",
-            "powerup_tag": "psylocke_power",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -336,7 +256,6 @@
                 "center": true,
                 "count": "%psy_bolts_num",
                 "damage": "%psy_bolts_dmg",
-                "damagelevel": 1,
                 "damagescale": "none",
                 "damagetype": "dmg_mental",
                 "entity": "psybolt",
@@ -346,25 +265,6 @@
                 "name": "projectile",
                 "powerusage": "%psy_bolts_pwr",
                 "speed": 600,
-                "tag": 1,
-                "time": 0.36
-            },
-            "trigger": {
-                "arc": 0,
-                "attacktype": "projectile",
-                "center": true,
-                "count": "%psy_bolts_num",
-                "damage": 0,
-                "damagelevel": 1,
-                "damagescale": "none",
-                "damagetype": "dmg_mental",
-                "entity": "psybolt2",
-                "filename": "ents_psylocke",
-                "knockback": 0,
-                "maxrange": 800,
-                "name": "projectile",
-                "speed": 600,
-                "tag": 2,
                 "time": 0.36
             },
             "chain": {
@@ -382,7 +282,6 @@
             "lockangles": true,
             "name": "power3",
             "playspeed": 1.4,
-            "powerup_tag": "psylocke_power",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -424,6 +323,9 @@
                 "name": "radial_punch",
                 "damageMod": {
                     "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
                 }
             },
             "trigger": {
@@ -459,7 +361,6 @@
             "icon": 4,
             "name": "power4",
             "playspeed": 1.5,
-            "powerup_tag": "psylocke_power",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -489,6 +390,15 @@
                 "affecter": {
                     "attribute": "defense_rating",
                     "level": "%psy_focus_def"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_stun",
+                    "level": 0
+                },
+                "affecter": {
+                    "attribute": "slow_immune",
+                    "level": 1
                 }
             },
             "chain": {
@@ -504,7 +414,6 @@
             "combotextstarter": "Telepathic",
             "icon": 3,
             "name": "power5",
-            "powerup_tag": "psylocke_power",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -546,7 +455,7 @@
             "combotextstarter": "Psychic",
             "icon": 5,
             "name": "power6",
-            "powerup_tag": "psylocke_power",
+            "powerup_tag": "blade_power",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -559,6 +468,34 @@
                 "time": 0
             },
             "trigger": {
+                "apply_chance": "%psy_power_ca",
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%psy_wield_lif",
+                "name": "powerup",
+                "powerusage": "%psy_wield_pwr",
+                "time": 0.7,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": "%psy_wield_dmg",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    },
+                    "scope": {
+                        "scope_non_powers": true
+                    }
+                },
+                "bolton": {
+                    "bolt": "Bip01 L Hand",
+                    "model": "models/bolton/psylocke_blade_01"
+                }
+            },
+            "trigger": {
+                "apply_chance": "%psy_power_cb",
                 "apply_ally": "none",
                 "apply_self": true,
                 "life": "%psy_wield_lif",
@@ -584,23 +521,37 @@
                     "model": "models/bolton/psylocke_blade_02"
                 }
             },
+            "trigger": {
+                "apply_chance": "%psy_power_cc",
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%psy_wield_lif",
+                "name": "powerup",
+                "powerusage": "%psy_wield_pwr",
+                "time": 0.7,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": "%psy_wield_dmg",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    },
+                    "scope": {
+                        "scope_non_powers": true
+                    }
+                },
+                "bolton": {
+                    "bolt": "Bip01 L Hand",
+                    "model": "models/bolton/psylocke_blade_03"
+                }
+            },
             "chain": {
                 "action": "Idle",
                 "result": "idle"
             }
-        },
-        "event": {
-            "damage": "%psy_xtreme_dmg",
-            "damagelevel": 2,
-            "damagetype": "dmg_mental",
-            "enemynumber": 0,
-            "hiteffect": "char/psyloc/p7_impact",
-            "inherit": "blast",
-            "maxrange": 225,
-            "name": "psybolt",
-            "radius": 60,
-            "random": true,
-            "victimeventtag": 2
         },
         "FightMove": {
             "animenum": "ea_power4",
@@ -611,7 +562,7 @@
             "lockangles": true,
             "name": "power7",
             "playspeed": 10,
-            "powerup_tag": "psylocke_power",
+            "powerup_tag": "blade_power",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -649,54 +600,38 @@
                 "time": 0
             },
             "trigger": {
-                "enemynumber": 0,
-                "name": "psybolt",
-                "time": 0.7
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%psy_xtreme_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "maxrange": 400,
+                "name": "blast",
+                "radius": 60,
+                "time": 0.4,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
             },
             "trigger": {
-                "enemynumber": 1,
-                "name": "psybolt",
-                "time": 0.715
-            },
-            "trigger": {
-                "enemynumber": 2,
-                "name": "psybolt",
-                "time": 0.73
-            },
-            "trigger": {
-                "enemynumber": 3,
-                "name": "psybolt",
-                "time": 0.745
-            },
-            "trigger": {
-                "enemynumber": 4,
-                "name": "psybolt",
-                "time": 0.76
-            },
-            "trigger": {
-                "enemynumber": 5,
-                "name": "psybolt",
-                "time": 0.775
-            },
-            "trigger": {
-                "enemynumber": 6,
-                "name": "psybolt",
-                "time": 0.79
-            },
-            "trigger": {
-                "enemynumber": 7,
-                "name": "psybolt",
-                "time": 0.805
-            },
-            "trigger": {
-                "enemynumber": 8,
-                "name": "psybolt",
-                "time": 0.82
-            },
-            "trigger": {
-                "enemynumber": 9,
-                "name": "psybolt",
-                "time": 0.835
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%psy_xtreme_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "maxrange": 400,
+                "name": "blast",
+                "radius": 60,
+                "time": 0.75,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
             },
             "chain": {
                 "action": "idle",
@@ -800,10 +735,6 @@
                     "effect": "char/psyloc/ability_eye",
                     "fxlevel": 2
                 },
-                "Functionevent": {
-                    "function": "deactivate",
-                    "triggertag": 12
-                },
                 "affecter": {
                     "affect_type": "scale",
                     "attribute": "defense_rating",
@@ -815,116 +746,8 @@
                     "level": "%psy_xtreme2_xp"
                 }
             },
-            "trigger": {
-                "combatnode": "idle2",
-                "forcerestart": true,
-                "name": "othernode",
-                "tag": 12,
-                "time": -1
-            },
             "chain": {
                 "action": "Idle",
-                "result": "idle"
-            }
-        },
-        "FightMove": {
-            "animenum": "ea_idle1",
-            "handler": "ch_idle",
-            "lockchaining": false,
-            "name": "idle2",
-            "noncombat": true,
-            "trigger": {
-                "boltslot": "ebolton_altweapon",
-                "name": "removebolton",
-                "removebolton": true,
-                "time": 0,
-                "type": "ce_bolton"
-            },
-            "trigger": {
-                "boltslot": "ebolton_clawright",
-                "name": "bolton",
-                "removebolton": true,
-                "time": 0
-            },
-            "trigger": {
-                "attachpoint": "Grab1",
-                "bolt": "Bip01 R Hand",
-                "boltslot": "ebolton_weapon",
-                "model": "models/bolton/psylocke_blade_01",
-                "name": "bolton",
-                "replacecurrent": true,
-                "time": 0
-            },
-            "trigger": {
-                "critical": true,
-                "name": "powerup",
-                "remove_tag": "psy_p10_link",
-                "time": 0
-            },
-            "chain": {
-                "action": "idle",
-                "result": "idle3"
-            }
-        },
-        "FightMove": {
-            "animenum": "ea_idle1",
-            "fallback": "idle",
-            "handler": "ch_idle",
-            "lockchaining": false,
-            "name": "idle3",
-            "noncombat": true,
-            "require": {
-                "cat": "skill",
-                "item": "psy_power",
-                "level": 1
-            },
-            "trigger": {
-                "inherit": "powerup",
-                "life": -1,
-                "name": "blade_02",
-                "tag_name": "blade_02",
-                "time": 0,
-                "bolton": {
-                    "bolt": "Bip01 R Hand",
-                    "model": "models/bolton/psylocke_blade_02"
-                }
-            },
-            "chain": {
-                "action": "idle",
-                "result": "idle4"
-            }
-        },
-        "FightMove": {
-            "animenum": "ea_idle1",
-            "fallback": "idle",
-            "handler": "ch_idle",
-            "lockchaining": false,
-            "name": "idle4",
-            "noncombat": true,
-            "require": {
-                "cat": "skill",
-                "item": "psy_power",
-                "level": 6
-            },
-            "trigger": {
-                "critical": true,
-                "name": "powerup",
-                "remove_tag": "blade_02",
-                "time": 0
-            },
-            "trigger": {
-                "inherit": "powerup",
-                "life": -1,
-                "name": "blade_03",
-                "tag_name": "blade_03",
-                "time": 0,
-                "bolton": {
-                    "bolt": "Bip01 R Hand",
-                    "model": "models/bolton/psylocke_blade_03"
-                }
-            },
-            "chain": {
-                "action": "idle",
                 "result": "idle"
             }
         },
@@ -938,6 +761,7 @@
             "lockangles": true,
             "name": "power9",
             "playspeed": 1.5,
+            "powerup_tag": "blade_power",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -960,7 +784,6 @@
                 "arc": 90,
                 "attacktype": "punch",
                 "damage": "%psy_whip_dmg",
-                "damagelevel": 2,
                 "damagescale": "none",
                 "damagetype": "dmg_telekinesis",
                 "height": 0,
@@ -968,7 +791,6 @@
                 "knockback": 370,
                 "maxrange": 120,
                 "name": "punch",
-                "powerattack": true,
                 "powerusage": "%psy_whip_pwr",
                 "time": 0.526,
                 "damageMod": {
@@ -976,7 +798,7 @@
                 }
             },
             "chain": {
-                "action": "idle",
+                "action": "Idle",
                 "result": "idle"
             }
         },
@@ -1032,7 +854,7 @@
                 "beameffect": "char/psyloc/p10_power",
                 "damage": "%psy_spea_dmg",
                 "damagescale": "none",
-                "damagetype": "dmg_physical",
+                "damagetype": "dmg_mental",
                 "hiteffect": "char/psyloc/p10_impact",
                 "maxrange": 800,
                 "name": "beam",
@@ -1047,7 +869,7 @@
                 "time": 0.6
             },
             "chain": {
-                "action": "idle",
+                "action": "Idle",
                 "result": "idle"
             }
         },
@@ -1061,6 +883,7 @@
             "icon": 8,
             "lockangles": true,
             "name": "power11",
+            "powerup_tag": "blade_power",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -1096,110 +919,34 @@
                 "arc": 0,
                 "attacktype": "punch",
                 "damage": "%psy_sword_dmg",
-                "damagelevel": 2,
                 "damagescale": "none",
                 "damagetype": "dmg_mental",
                 "knockback": 0,
                 "life": "%psy_sword_tim",
                 "maxrange": 60,
                 "name": "punch",
-                "powerattack": true,
                 "powerusage": "%psy_sword_pwr",
-                "tag": 1,
+                "selfeventtag": 1,
                 "targetable": true,
                 "time": 0.5,
                 "damageMod": {
                     "name": "dmgmod_immobilize"
-                },
-                "damageMod": {
-                    "name": "dmgmod_drain"
+                }
+            },
+            "trigger": {
+                "apply_self": true,
+                "life": 0.1,
+                "name": "powerup",
+                "tag": 1,
+                "time": -1,
+                "affecter": {
+                    "attribute": "health_regen_pct",
+                    "level": "%psy_sword_hp"
                 }
             },
             "chain": {
                 "action": "Idle",
-                "result": "power11_end"
-            }
-        },
-        "FightMove": {
-            "animenum": "ea_idle1",
-            "handler": "ch_idle",
-            "lockchaining": false,
-            "name": "power11_end",
-            "noncombat": true,
-            "trigger": {
-                "boltslot": "ebolton_clawright",
-                "name": "bolton",
-                "removebolton": true,
-                "time": 0
-            },
-            "trigger": {
-                "attachpoint": "Grab1",
-                "bolt": "Bip01 R Hand",
-                "boltslot": "ebolton_weapon",
-                "model": "models/bolton/psylocke_blade_01",
-                "name": "bolton",
-                "replacecurrent": true,
-                "time": 0
-            },
-            "chain": {
-                "action": "walk",
-                "result": "walk"
-            },
-            "chain": {
-                "action": "jog",
-                "result": "jog"
-            },
-            "chain": {
-                "action": "run",
-                "result": "run"
-            },
-            "chain": {
-                "action": "sprint",
-                "result": "sprint"
-            },
-            "chain": {
-                "action": "strafeleft",
-                "result": "strafeleft"
-            },
-            "chain": {
-                "action": "straferight",
-                "result": "straferight"
-            },
-            "chain": {
-                "action": "advance",
-                "result": "advance"
-            },
-            "chain": {
-                "action": "retreat",
-                "result": "retreat"
-            },
-            "chain": {
-                "action": "guard",
-                "result": "guarddecide"
-            },
-            "chain": {
-                "action": "attack",
-                "result": "attacklight1"
-            },
-            "chain": {
-                "action": "smash",
-                "result": "attackheavy1"
-            },
-            "chain": {
-                "action": "groundattack",
-                "result": "groundattack"
-            },
-            "chain": {
-                "action": "move",
-                "result": "jump"
-            },
-            "chain": {
-                "action": "special",
-                "result": "boredloop"
-            },
-            "chain": {
-                "action": "powers",
-                "result": "powers"
+                "result": "idle"
             }
         }
     }
