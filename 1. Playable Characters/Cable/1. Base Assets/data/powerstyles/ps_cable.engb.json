@@ -260,7 +260,7 @@
             "aireusetime": 10,
             "aitype": "projectile",
             "animenum": "ea_power3",
-            "combotextfinisher": "Spikes",
+            "combotextfinisher": "Spike",
             "combotextstarter": "Psionic",
             "icon": 1,
             "lockangles": true,
@@ -318,7 +318,7 @@
             "aireusetime": 30,
             "aitype": "aoe",
             "animenum": "ea_power2",
-            "combotextfinisher": "Swipe",
+            "combotextfinisher": "Sweep",
             "combotextstarter": "Sweeping",
             "icon": 2,
             "name": "power3",
@@ -350,7 +350,7 @@
         },
         "FightMove": {
             "animenum": "ea_power2_end",
-            "combotextfinisher": "Swipe",
+            "combotextfinisher": "Sweep",
             "combotextstarter": "Sweeping",
             "icon": 2,
             "name": "power3_release",
@@ -375,13 +375,19 @@
                 "inherit": "punch",
                 "maxrange": 120,
                 "name": "blender",
-                "victimeventtag": 100,
                 "damageMod": {
-                    "name": "dmgmod_auto_knockback"
+                    "name": "dmgmod_trip"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
                 },
                 "damageMod": {
                     "name": "dmgmod_environment"
                 }
+            },
+            "trigger": {
+                "name": "blender",
+                "time": 0.1
             },
             "trigger": {
                 "name": "blender",
@@ -748,7 +754,6 @@
                 "name": "psycho_slam",
                 "time": 0.3,
                 "type": "ce_atk",
-                "victimeventtag": 100,
                 "damageMod": {
                     "name": "dmgmod_popup"
                 },
