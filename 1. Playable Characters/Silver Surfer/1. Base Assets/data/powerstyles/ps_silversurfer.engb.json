@@ -1,0 +1,879 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/silversurfer_icons1.png",
+        "event": {
+            "bolt": "Bip01 R Toe0",
+            "boltslot": "ebolton_clawright",
+            "inherit": "bolton",
+            "model": "models/bolton/silver_surfer_surfboard",
+            "name": "board_on",
+            "replacecurrent": true
+        },
+        "event": {
+            "boltslot": "ebolton_clawright",
+            "inherit": "bolton",
+            "name": "board_off",
+            "removebolton": true
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle",
+            "noncombat": true,
+            "playspeed": 1,
+            "trigger": {
+                "name": "board_off",
+                "tag": 1,
+                "time": 0
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "strafeleft"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "straferight"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "advance"
+            },
+            "chain": {
+                "action": "retreat",
+                "result": "retreat"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "groundattack",
+                "result": "groundattack"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            },
+            "chain": {
+                "action": "special",
+                "result": "boredloop"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_fly_idle",
+            "energypersecond": "%flight_pwr",
+            "fallback": "jumploop",
+            "handler": "ch_flying",
+            "lockchaining": false,
+            "name": "flying",
+            "noncombat": true,
+            "powerup_tag": "flying",
+            "require": {
+                "cat": "skill",
+                "item": "flight",
+                "level": 1
+            },
+            "trigger": {
+                "name": "board_on",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "flying"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "flymelee1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "flycharge"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beam",
+            "animenum": "ea_power1_end",
+            "combotextfinisher": "Beam",
+            "combotextstarter": "Gravitational",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "powerup_tag": "cosmic_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "silver_p1",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/silver_m/p1_power",
+                "time": 0
+            },
+            "trigger": {
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "30 -3 35",
+                "attacktype": "beam",
+                "beambolt": "Bip01 R Hand",
+                "beameffect": "char/silver/p1_power",
+                "damage": "%silver_p1_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "fxlevel": 1,
+                "hiteffect": "char/silver/p1_impact",
+                "inherit": "beam",
+                "maxrange": 800,
+                "name": "p1_beam",
+                "pierce": true,
+                "powerusage": "%silver_p1_pwr",
+                "time": 0.5,
+                "victimeventtag": 13,
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                },
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/silver/p1_aura",
+                "life": "%silver_p1_lif",
+                "name": "powerup",
+                "tag": 13,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%silver_p1_spd"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 7,
+            "aitype": "projectilenear",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Crush",
+            "combotextstarter": "Silver",
+            "energypersecond": "%silver_p2_pwr",
+            "handler": "ch_skating",
+            "icon": 1,
+            "lockchaining": true,
+            "locktransitionangles": true,
+            "name": "power2",
+            "noautoaim": true,
+            "powerup_tag": "cosmic_power",
+            "priority": 5,
+            "turnrate": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "silver_p2",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/silver_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "kick",
+                "damage": "%silver_p2_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "index": 2,
+                "knockback": "%silver_p2_kb",
+                "maxrange": 64,
+                "name": "punch",
+                "tag": 1,
+                "time": -1,
+                "damagemod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "name": "board_on",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power2_loop"
+            },
+            "chain": {
+                "action": "touch",
+                "result": "fastballhit"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power2_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2_loop",
+            "blendtime": 0,
+            "combotextfinisher": "Crush",
+            "combotextstarter": "Silver",
+            "energypersecond": "%silver_p2_pwr",
+            "fallback": "jumploop",
+            "handler": "ch_skating",
+            "icon": 1,
+            "lockchaining": false,
+            "locktransitionangles": true,
+            "name": "power2_loop",
+            "noautoaim": true,
+            "powerup_tag": "cosmic_power",
+            "priority": 5,
+            "turnrate": 0.5,
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "effect": "char/silver/ability_fly",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "kick",
+                "damage": "%silver_p2_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "index": 2,
+                "knockback": "%silver_p2_kb",
+                "maxrange": 64,
+                "name": "punch",
+                "tag": 1,
+                "time": -1,
+                "damagemod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "loop_timeout": 1,
+                "loop_type": "start",
+                "name": "sound",
+                "sound": "char/silver_m/p2_loop",
+                "time": 0
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power2_loop"
+            },
+            "chain": {
+                "action": "touch",
+                "result": "fastballhit"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power2_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "name": "power2_end",
+            "trigger": {
+                "name": "board_off",
+                "time": -1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power2_end"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Burst",
+            "combotextstarter": "Cosmic",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "powerup_tag": "cosmic_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "silver_p3",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/silver/p3_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/silver/p3_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/silver_m/p3_charge",
+                "time": 0.15
+            },
+            "trigger": {
+                "effect": "char/silver/p3_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/silver_m/p3_power",
+                "time": 0.6
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%silver_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "maxrange": 150,
+                "name": "radial",
+                "powerusage": "%silver_p3_pwr",
+                "time": 0.6,
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                },
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                },
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                },
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "event": {
+            "entity": "silver_p4_energy",
+            "filename": "ents_silversurfer",
+            "inherit": "relative_spawn",
+            "name": "spawn_energy",
+            "relative": "target",
+            "type": "ce_atk_spawn_relative"
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "rangednolos",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Bolt",
+            "combotextstarter": "Streaming",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "playspeed": 3.5,
+            "powerup_tag": "cosmic_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "silver_p4",
+                "level": 1
+            },
+            "trigger": {
+                "name": "board_on",
+                "time": 0.12
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/silver_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/silver/p4_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/silver_m/p4_power",
+                "time": 0.2
+            },
+            "trigger": {
+                "attackerheight": false,
+                "attacktype": "direct",
+                "count": 1,
+                "damage": "%silver_p4_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "fxlevel": 1,
+                "maxrange": 120,
+                "name": "spawn_energy",
+                "powerusage": "%silver_p4_pwr",
+                "time": 0.15,
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                },
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                },
+                "damageMod": {
+                    "name": "dmgmod_immobilize"
+                }
+            },
+            "trigger": {
+                "name": "board_off",
+                "time": 0.945
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "beam",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Explosion",
+            "combotextstarter": "Universal",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power5",
+            "powerup_tag": "cosmic_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "silver_p5",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/silver_m/p5_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/silver/p5_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.15
+            },
+            "trigger": {
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "22 -4 39",
+                "attacktype": "beam",
+                "beambolt": "Bip01 R Hand",
+                "beameffect": "char/silver/p5_power",
+                "damage": "%silver_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "fxlevel": 1,
+                "hiteffect": "char/silver/p5_impact",
+                "inherit": "beam",
+                "maxrange": 500,
+                "name": "p5_beam",
+                "pierce": true,
+                "powerusage": "%silver_p5_pwr",
+                "time": 0.32,
+                "victimeventtag": 10,
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                },
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                },
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                }
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%silver_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_bleed",
+                "life": 2,
+                "name": "powerup",
+                "tag": 10,
+                "time": -1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/silver_m/p5_impact",
+                "time": 0.32
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buff",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Rejuvenation",
+            "combotextstarter": "Healing",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "powerup_tag": "cosmic_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "silver_p6",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/silver_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/silver/p6_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.23
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/silver/p6_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.23
+            },
+            "trigger": {
+                "apply_ally": "near",
+                "apply_self": false,
+                "life": 1,
+                "name": "powerup",
+                "powerusage": "%silver_p6_pwr",
+                "time": 0.66,
+                "special_fx": {
+                    "effect": "char/silver/p6_power",
+                    "fxlevel": 3,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "health_regen_pct",
+                    "level": "%silver_p6_pct"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power7",
+            "combotextfinisher": "Equinox",
+            "combotextstarter": "Chrono",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power7",
+            "powerup_tag": "cosmic_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "silver_p7",
+                "level": 1
+            },
+            "trigger": {
+                "name": "board_on",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/silver/p7_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/silver_m/p7_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/silver/p7_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/silver/p7_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/silver/p7_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.63
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "life": "%silver_p7_lif",
+                "name": "powerup",
+                "powerusage": "%silver_p7_pwr",
+                "time": 0.63,
+                "special_fx": {
+                    "effect": "char/silver/p7_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%silver_p7_speed"
+                }
+            },
+            "trigger": {
+                "failtag": 107,
+                "is_flying": true,
+                "name": "filter",
+                "time": 0.99
+            },
+            "trigger": {
+                "name": "board_off",
+                "tag": 107,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "combotextfinisher": "Smite",
+            "description": "GALACTIC MIGHT",
+            "icon": 8,
+            "lockangles": true,
+            "lockspeed": true,
+            "name": "power9",
+            "playspeed": 10,
+            "powerup_tag": "cosmic_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "silver_p9",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%silver_p9_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "maxrange": 240,
+                "name": "radial",
+                "time": 0.8,
+                "victimeventtag": 1,
+                "damagemod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "trigger": {
+                "failtag": 2,
+                "is_stunned": true,
+                "name": "filter",
+                "passtag": 10,
+                "tag": 1,
+                "time": -1
+            },
+            "trigger": {
+                "failtag": 3,
+                "is_frozen": true,
+                "name": "filter",
+                "passtag": 10,
+                "tag": 2,
+                "time": -1
+            },
+            "trigger": {
+                "is_slowed": true,
+                "name": "filter",
+                "passtag": 10,
+                "tag": 3,
+                "time": -1
+            },
+            "trigger": {
+                "damage": "%silver_p9_dmg2",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "index": 2,
+                "name": "hitme",
+                "tag": 10,
+                "time": -1,
+                "type": "ce_atk_self"
+            },
+            "trigger": {
+                "name": "board_on",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/silver/p9_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/silver_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/silver/p9_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "effect": "char/silver/p9_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/silver/p9_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.55
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/silver/p9_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.55
+            },
+            "trigger": {
+                "effect": "char/silver/p9_impact",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.65
+            },
+            "trigger": {
+                "effect": "char/silver/p9_impact",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/silver_m/p9_impact",
+                "time": 0.7
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power6",
+            "combotextfinisher": "Transmutation",
+            "description": "THE POWER COSMIC",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power10",
+            "powerup_tag": "cosmic_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "silver_p10",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": 2,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/silver_m/p10_charge",
+                "time": 0.13
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/silver/p10_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.23
+            },
+            "trigger": {
+                "center_bolt": true,
+                "life": "%silver_p10_life",
+                "name": "powerup",
+                "time": 0.5,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "extra_potions",
+                    "level": "%silver_p10_packs"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "extra_money",
+                    "level": "%silver_p10_tech"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Spine2",
+                    "effect": "char/silver/p10_aura"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
