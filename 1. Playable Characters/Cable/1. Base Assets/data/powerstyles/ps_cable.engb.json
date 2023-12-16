@@ -6,6 +6,7 @@
             "inherit": "powerup",
             "life": -1,
             "name": "gloweyeon",
+            "no_stack": true,
             "no_shadow": true,
             "tag_name": "eye_on",
             "special_fx": {
@@ -521,11 +522,6 @@
                 "level": 1
             },
             "trigger": {
-                "name": "powerusage",
-                "powerusage": "%cable_p5_pwr",
-                "time": 0
-            },
-            "trigger": {
                 "bolt": "Bip01 R Hand",
                 "effect": "char/cable/p5_charge",
                 "fxlevel": 1,
@@ -583,6 +579,7 @@
             "trigger": {
                 "maxrange": 80,
                 "name": "radial_punch",
+                "powerusage": "%cable_p5_pwr",
                 "time": 0.35
             },
             "trigger": {
@@ -848,11 +845,6 @@
                 "level": 1
             },
             "trigger": {
-                "name": "powerusage",
-                "powerusage": "%cable_p10_pwr",
-                "time": 0
-            },
-            "trigger": {
                 "name": "sound",
                 "sound": "char/cable_m/p10_power",
                 "time": 0
@@ -877,6 +869,8 @@
                 "class": "callevents",
                 "life": "%cable_p10_lif",
                 "name": "powerup",
+                "no_stack": true,
+                "powerusage": "%cable_p10_pwr",
                 "time": 0.35,
                 "Functionevent": {
                     "function": "activate",

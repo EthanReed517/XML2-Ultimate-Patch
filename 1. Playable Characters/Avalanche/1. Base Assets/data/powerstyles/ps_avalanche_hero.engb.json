@@ -218,6 +218,21 @@
             }
         },
         "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "skateend",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "skateend"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "FightMove": {
             "animenum": "ea_attack_knockback",
             "combotextfinisher": "Kick",
             "combotextstarter": "Sliding",
@@ -225,11 +240,6 @@
             "lockangles": true,
             "name": "skateend2",
             "playspeed": 1.2,
-            "trigger": {
-                "name": "powerusage",
-                "powerusage": "%rock_slide_pwr",
-                "time": 0
-            },
             "trigger": {
                 "effect": "char/avalan/p2_power",
                 "name": "effect",
@@ -262,21 +272,6 @@
             "chain": {
                 "action": "special",
                 "result": "idle"
-            }
-        },
-        "FightMove": {
-            "animenum": "ea_jump_loop",
-            "handler": "ch_jump",
-            "lockangles": true,
-            "name": "skateend",
-            "noncombat": true,
-            "chain": {
-                "action": "idle",
-                "result": "skateend"
-            },
-            "chain": {
-                "action": "special",
-                "result": "jumpland"
             }
         },
         "FightMove": {
@@ -639,6 +634,7 @@
                 "inherit": "punch",
                 "maxrange": 80,
                 "name": "radial_punch",
+                "powerusage": "%aval_robla_pwr",
                 "tiles": true,
                 "time": 0.28,
                 "victimeventtag": 100,
@@ -651,11 +647,6 @@
                 "damageMod": {
                     "name": "dmgmod_environment"
                 }
-            },
-            "trigger": {
-                "name": "powerusage",
-                "powerusage": "%aval_robla_pwr",
-                "time": 0
             },
             "trigger": {
                 "name": "stop",
