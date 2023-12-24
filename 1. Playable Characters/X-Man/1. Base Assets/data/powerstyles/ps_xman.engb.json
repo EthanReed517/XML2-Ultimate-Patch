@@ -7,6 +7,7 @@
             "life": -1,
             "name": "xmaneyeon",
             "no_stack": true,
+            "no_shadow": true,
             "tag_name": "xmaneye_on",
             "special_fx": {
                 "bolt": "Bip01 Head",
@@ -218,6 +219,7 @@
                 "damagetype": "dmg_telekinesis",
                 "maxrange": 300,
                 "name": "telekinesis_dmg",
+                "powerusage": "%xman_telek_pwr",
                 "tag": 2,
                 "time": -1,
                 "type": "ce_atk_self",
@@ -230,11 +232,6 @@
             },
             "trigger": {
                 "name": "stop",
-                "time": 0
-            },
-            "trigger": {
-                "name": "powerusage",
-                "powerusage": "%xman_telek_pwr",
                 "time": 0
             },
             "trigger": {
@@ -251,6 +248,7 @@
             },
             "trigger": {
                 "damage": "%xman_telek_dm1",
+                "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "heaviness": "%xman_telek_hvy",
                 "impactdamage": "%xman_telek_dm2",
@@ -740,11 +738,6 @@
                 "level": 1
             },
             "trigger": {
-                "name": "powerusage",
-                "powerusage": "%xman_heal_pwr",
-                "time": 0
-            },
-            "trigger": {
                 "name": "sound",
                 "sound": "char/xman_m/p8_charge",
                 "time": 0.4
@@ -754,6 +747,7 @@
                 "apply_self": true,
                 "life": "%xman_heal_life",
                 "name": "powerup",
+                "powerusage": "%xman_heal_pwr",
                 "time": 0.5,
                 "special_fx": {
                     "effect": "char/xman/p8_aura",
@@ -786,11 +780,6 @@
                 "level": 1
             },
             "trigger": {
-                "name": "powerusage",
-                "powerusage": "%xman_hive_pwr",
-                "time": 0
-            },
-            "trigger": {
                 "name": "sound",
                 "sound": "char/xman_m/p9_charge",
                 "time": 0.4
@@ -800,6 +789,7 @@
                 "apply_self": true,
                 "life": "%xman_hive_lif",
                 "name": "powerup",
+                "powerusage": "%xman_hive_pwr",
                 "time": 0.5,
                 "special_fx": {
                     "effect": "char/xman/p9_aura",
@@ -887,7 +877,6 @@
                 "life": "%xman_guard_lif",
                 "maxinstances": 1,
                 "name": "guardian",
-                "powerusage": 0,
                 "projectileent": "xman_projectile",
                 "speed": 300,
                 "time": 0.5,

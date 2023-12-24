@@ -51,7 +51,6 @@
                 "hiteffect": "char/omega_hero/p1_impact",
                 "maxrange": 90,
                 "name": "punch",
-                "powerattack": true,
                 "powerusage": "%omega_p1_pwr",
                 "tag": 1,
                 "time": 0.45,
@@ -125,7 +124,6 @@
                 "knockback": 370,
                 "maxrange": 120,
                 "name": "punch",
-                "powerattack": true,
                 "powerusage": "%omega_p2_pwr",
                 "time": 0.38,
                 "victimeventtag": 106,
@@ -298,11 +296,6 @@
                 "time": 0
             },
             "trigger": {
-                "name": "powerusage",
-                "powerusage": "%omega_p4_pwr",
-                "time": 0
-            },
-            "trigger": {
                 "effect": "char/omega_hero/p4_power",
                 "fxlevel": 1,
                 "name": "effect",
@@ -312,9 +305,11 @@
                 "allow_non_actors": true,
                 "class": "harming",
                 "damage": "%omega_p4_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_radiation",
                 "life": 3,
                 "name": "powerup",
+                "powerusage": "%omega_p4_pwr",
                 "share_life": 5,
                 "share_radius": 60,
                 "tag": 20,
@@ -323,7 +318,6 @@
             "trigger": {
                 "arc": 35,
                 "damage": 1,
-                "damagescale": "none",
                 "maxrange": 160,
                 "name": "radial",
                 "time": 0.5,
@@ -332,7 +326,6 @@
             "trigger": {
                 "arc": 35,
                 "damage": 1,
-                "damagescale": "none",
                 "maxrange": 160,
                 "name": "radial",
                 "time": 0.7,
@@ -364,11 +357,6 @@
                 "level": 1
             },
             "trigger": {
-                "name": "powerusage",
-                "powerusage": "%omega_p5_pwr",
-                "time": 0
-            },
-            "trigger": {
                 "actorbolt": "Bip01 R Hand",
                 "attack_bone_angles": "0 0 0",
                 "attack_bone_pos": "35 -4 47",
@@ -382,6 +370,7 @@
                 "filename": "ents_omegared",
                 "knockback": 245,
                 "name": "projectile",
+                "powerusage": "%omega_p5_pwr",
                 "speed": 650,
                 "time": 0.26,
                 "victimeventtag": 100,
@@ -603,6 +592,7 @@
             },
             "trigger": {
                 "apply_ally": "all",
+                "apply_self": true,
                 "life": "%omega_p8_life",
                 "name": "powerup",
                 "powerusage": "%omega_p8_pwr",
