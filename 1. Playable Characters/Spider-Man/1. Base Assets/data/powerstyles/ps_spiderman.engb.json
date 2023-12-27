@@ -155,7 +155,7 @@
             "trigger": {
                 "name": "powerusage",
                 "powerusage": "%spider_p1_pwr",
-                "time": -1
+                "time": 0
             },
             "chain": {
                 "action": "idle",
@@ -167,6 +167,7 @@
             "blendtime": 0,
             "combotextfinisher": "Bullets",
             "combotextstarter": "Web",
+            "energypersecond": "%spider_p1_pwr",
             "icon": 0,
             "lockangles": false,
             "locktransitionangles": true,
@@ -174,11 +175,6 @@
             "noautoaim": true,
             "powerup_tag": "spider_web",
             "turnrate": 0.2,
-            "trigger": {
-                "name": "powerusage",
-                "powerusage": "%spider_p1_pwr",
-                "time": 0
-            },
             "trigger": {
                 "effect": "char/spider/p1_power",
                 "fxlevel": 2,
@@ -333,11 +329,6 @@
                 "level": 1
             },
             "trigger": {
-                "name": "powerusage",
-                "powerusage": "%spider_p3_pwr",
-                "time": 0
-            },
-            "trigger": {
                 "name": "sound",
                 "sound": "char/spider_m/p3_power",
                 "time": 0
@@ -369,6 +360,7 @@
             },
             "trigger": {
                 "name": "blender",
+                "powerusage": "%spider_p3_pwr",
                 "time": 0.5
             },
             "trigger": {
@@ -460,23 +452,6 @@
                 "level": 1
             },
             "trigger": {
-                "name": "powerusage",
-                "powerusage": "%spider_p4_pwr",
-                "time": 0
-            },
-            "trigger": {
-                "critical": true,
-                "name": "powerup",
-                "remove_tag": "spider_sling1",
-                "time": -1
-            },
-            "trigger": {
-                "critical": true,
-                "name": "powerup",
-                "remove_tag": "spider_sling2",
-                "time": -1
-            },
-            "trigger": {
                 "name": "sound",
                 "sound": "char/spider_m/p4_charge",
                 "time": 0
@@ -489,6 +464,8 @@
             "trigger": {
                 "life": -1,
                 "name": "powerup",
+                "no_stack": true,
+                "powerusage": "%spider_p4_pwr",
                 "remove_on_node_end": true,
                 "time": 0.38,
                 "special_fx": {
@@ -537,18 +514,6 @@
                 "damageMod": {
                     "name": "dmgmod_auto_knockback"
                 }
-            },
-            "trigger": {
-                "critical": true,
-                "name": "powerup",
-                "remove_tag": "spider_sling1",
-                "time": 0.25
-            },
-            "trigger": {
-                "critical": true,
-                "name": "powerup",
-                "remove_tag": "spider_sling2",
-                "time": 0.25
             },
             "trigger": {
                 "name": "sound",
@@ -701,6 +666,7 @@
             "trigger": {
                 "life": -1,
                 "name": "powerup",
+                "no_stack": true,
                 "remove_on_node_end": true,
                 "time": 0.09,
                 "special_fx": {
@@ -899,6 +865,7 @@
                 "apply_self": true,
                 "life": "%spider_p8_lif",
                 "name": "powerup",
+                "no_stack": true,
                 "powerusage": "%spider_p8_pwr",
                 "remove_skin_on_exit": true,
                 "skin": 18800,
@@ -962,6 +929,7 @@
             "trigger": {
                 "life": -1,
                 "name": "powerup",
+                "no_stack": true,
                 "remove_on_node_end": true,
                 "time": 0.09,
                 "special_fx": {
@@ -1126,6 +1094,7 @@
                 "apply_self": true,
                 "life": "%spider_p10_lif",
                 "name": "powerup",
+                "no_stack": true,
                 "remove_skin_on_exit": true,
                 "skin": 18810,
                 "skin_swap": true,
