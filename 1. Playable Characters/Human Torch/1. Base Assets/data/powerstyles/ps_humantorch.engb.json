@@ -1,0 +1,1262 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/humantorch_icons1.png",
+        "event": {
+            "inherit": "powerup",
+            "life": -1,
+            "name": "FlameOn",
+            "no_stack": true,
+            "remove_skin_on_exit": true,
+            "skin": 17800,
+            "skin_swap": true,
+            "tag_name": "flame_on",
+            "special_fx": {
+                "bolt": "Bip01 Spine1",
+                "effect": "char/torch/special_flameon",
+                "fxlevel": 1,
+                "how_used": "primary"
+            },
+            "special_fx": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/torch/special_flameon",
+                "fxlevel": 2,
+                "how_used": "activation"
+            },
+            "special_fx": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/torch/special_flameon",
+                "fxlevel": 2,
+                "how_used": "deactivation"
+            }
+        },
+        "event": {
+            "inherit": "powerup",
+            "name": "FlameOff",
+            "no_stack": true,
+            "remove_tag": "flame_on"
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle",
+            "noncombat": true,
+            "trigger": {
+                "name": "FlameOff",
+                "time": 0
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "strafeleft"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "straferight"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "advance"
+            },
+            "chain": {
+                "action": "retreat",
+                "result": "retreat"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "groundattack",
+                "result": "groundattack"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            },
+            "chain": {
+                "action": "special",
+                "result": "boredloop"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_fly_idle",
+            "energypersecond": "%flight_pwr",
+            "fallback": "jumploop",
+            "handler": "ch_flying",
+            "lockchaining": false,
+            "name": "flying",
+            "noncombat": true,
+            "powerup_tag": "flying",
+            "require": {
+                "cat": "skill",
+                "item": "flight",
+                "level": 1
+            },
+            "trigger": {
+                "name": "FlameOn",
+                "tag": 100,
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "flying"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "flymelee1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "flycharge"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "blendtime": 0,
+            "endchaintime": 1,
+            "lockangles": true,
+            "name": "attacklight1",
+            "priority": 3,
+            "startchaintime": 0.5,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.17
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.2,
+                "name": "trail",
+                "time": 0.15
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.33
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight2"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attacktrip1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light2",
+            "blendtime": 0,
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight2",
+            "priority": 3,
+            "startchaintime": 0.64,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.18
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.3,
+                "name": "trail",
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.36
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight3"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "popupattack"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light3",
+            "blendtime": 0,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight3",
+            "priority": 3,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.23
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.3,
+                "name": "trail",
+                "time": 0.15
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.38
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_trip2",
+            "blendtime": 0.05,
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacktrip2",
+            "startchaintime": 1,
+            "event": {
+                "inherit": "kick",
+                "knockback": 0,
+                "name": "sweep",
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.13
+            },
+            "trigger": {
+                "movement": 10,
+                "name": "slide",
+                "time": 0.06
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.4,
+                "name": "trail",
+                "time": 0.2
+            },
+            "trigger": {
+                "angle": -30,
+                "height": -10,
+                "index": 1,
+                "name": "sweep",
+                "time": 0.28
+            },
+            "trigger": {
+                "angle": 0,
+                "height": -10,
+                "index": 1,
+                "name": "sweep",
+                "time": 0.3
+            },
+            "trigger": {
+                "angle": 30,
+                "height": -10,
+                "index": 1,
+                "name": "sweep",
+                "time": 0.33
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Sweep",
+            "combotextstarter": "Flaring",
+            "icon": 0,
+            "lockspeed": true,
+            "name": "power1",
+            "priority": 5,
+            "startchaintime": 0.7,
+            "turnrate": 0.15,
+            "require": {
+                "cat": "skill",
+                "item": "torch_p1",
+                "level": 1
+            },
+            "trigger": {
+                "name": "FlameOn",
+                "tag": 100,
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/torch_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%torch_p1_pwr",
+                "time": 0
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power1_loop"
+            }
+        },
+        "FightMove": {
+            "aitype": "projectile",
+            "animenum": "ea_power1_hold",
+            "combotextfinisher": "Sweep",
+            "combotextstarter": "Flaring",
+            "energypersecond": "%torch_p1_pwr",
+            "icon": 0,
+            "lockchaining": false,
+            "lockspeed": true,
+            "locktransitionangles": true,
+            "name": "power1_loop",
+            "noautoaim": true,
+            "priority": 5,
+            "turnrate": 0.25,
+            "event": {
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "19 0 56",
+                "beambolt": "Bip01 R Hand",
+                "damage": 0,
+                "damagetype": "dmg_fire",
+                "fxlevel": 1,
+                "inherit": "beam",
+                "maxrange": 150,
+                "name": "flameshot",
+                "pierce": true,
+                "radius": 24,
+                "spawneffect": "char/torch/p1_power",
+                "victimeventtag": 107,
+                "damagemod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%torch_p1_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "life": 1,
+                "name": "powerup",
+                "tag": 107,
+                "time": -1,
+                "damageMod": {
+                    "remove": "dmgmod_no_pain"
+                }
+            },
+            "trigger": {
+                "loop_timeout": 1,
+                "loop_type": "start",
+                "name": "sound",
+                "sound": "char/torch_m/p1_loop",
+                "time": 0
+            },
+            "trigger": {
+                "index": 1,
+                "name": "flameshot",
+                "time": 0.15
+            },
+            "trigger": {
+                "index": 2,
+                "name": "flameshot",
+                "time": 0.3
+            },
+            "trigger": {
+                "index": 3,
+                "name": "flameshot",
+                "time": 0.45
+            },
+            "trigger": {
+                "index": 4,
+                "name": "flameshot",
+                "time": 0.6
+            },
+            "trigger": {
+                "index": 5,
+                "name": "flameshot",
+                "time": 0.75
+            },
+            "trigger": {
+                "index": 6,
+                "name": "flameshot",
+                "time": 0.9
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power1_end"
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power1_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1_end",
+            "combotextfinisher": "Sweep",
+            "combotextstarter": "Flaring",
+            "icon": 0,
+            "lockspeed": true,
+            "locktransitionangles": true,
+            "name": "power1_end",
+            "noautoaim": true,
+            "priority": 5,
+            "turnrate": 0.2,
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "aoe",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Pyre",
+            "combotextstarter": "Scorching",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "priority": 5,
+            "startchaintime": 0.7,
+            "turnrate": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "torch_p2",
+                "level": 1
+            },
+            "trigger": {
+                "name": "FlameOn",
+                "tag": 100,
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/torch/p2_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/torch_m/p2_charge",
+                "time": 0
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power2_end"
+            }
+        },
+        "FightMove": {
+            "aitype": "projectile",
+            "animenum": "ea_power2_end",
+            "combotextfinisher": "Pyre",
+            "combotextstarter": "Fiery",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2_end",
+            "priority": 5,
+            "trigger": {
+                "entity": "humant_p2_fire",
+                "filename": "ents_humantorch",
+                "life": 5,
+                "maxinstances": 2,
+                "name": "spawn",
+                "tag": 50,
+                "time": -1,
+                "tracecheck": true,
+                "victimeventtag": 105,
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%torch_p2_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "life": 1,
+                "name": "powerup",
+                "tag": 105,
+                "time": -1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/torch/p2_power",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "24 -14 66",
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%torch_p2_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "entity": "humant_p2_proj",
+                "filename": "ents_humantorch",
+                "fulltargeting": true,
+                "maxrange": 800,
+                "name": "projectile",
+                "powerusage": "%torch_p2_pwr",
+                "speed": 600,
+                "targetable": true,
+                "time": 0.32,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "name": "FlameOff",
+                "tag": 200,
+                "time": 0.9
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Inferno",
+            "combotextstarter": "Searing",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "priority": 5,
+            "startchaintime": 0.75,
+            "require": {
+                "cat": "skill",
+                "item": "torch_p3",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/torch/p3_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.25
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/torch/p3_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.25
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/torch_m/p3_charge",
+                "time": 0.4
+            },
+            "trigger": {
+                "attacktype": "projectile",
+                "damage": "%torch_p3_dmg",
+                "damagetype": "dmg_fire",
+                "fxlevel": 2,
+                "hiteffect": "char/torch/p3_impact",
+                "name": "blast",
+                "numblasts": 1,
+                "powerusage": "%torch_p3_pwr",
+                "radius": 96,
+                "targetable": true,
+                "time": 0.4,
+                "victimeventtag": 102,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                },
+                "damagemod": {
+                    "name": "dmgmod_ground_only"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Missiles",
+            "combotextstarter": "Incendiary",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "torch_p4",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/torch_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/torch_m/p4_power",
+                "time": 0
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "7 11 31",
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%torch_p4_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "entity": "torch_p4_proj",
+                "filename": "ents_humantorch",
+                "fulltargeting": true,
+                "maxrange": 1000,
+                "name": "projectile",
+                "powerusage": "%torch_p4_pwr",
+                "speed": 800,
+                "targetable": true,
+                "time": 0.75,
+                "victimeventtag": 103
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "20 -5 37",
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%torch_p4_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "entity": "torch_p4_proj",
+                "filename": "ents_humantorch",
+                "fulltargeting": true,
+                "maxrange": 1000,
+                "name": "projectile",
+                "speed": 800,
+                "targetable": true,
+                "time": 0.75,
+                "victimeventtag": 103
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%torch_p4_dmg",
+                "damagetype": "dmg_fire",
+                "life": 0.5,
+                "name": "powerup",
+                "tag": 103,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Heat",
+            "combotextstarter": "Nova",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power5",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "torch_p5",
+                "level": 1
+            },
+            "trigger": {
+                "name": "FlameOn",
+                "tag": 100,
+                "time": 0.31
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/torch_m/p5_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/torch/p5_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/torch/p5_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "effect": "char/torch/p5_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.46
+            },
+            "trigger": {
+                "damage": "%torch_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "fxlevel": 1,
+                "maxrange": 120,
+                "name": "radial",
+                "powerusage": "%torch_p5_pwr",
+                "targetable": true,
+                "time": 0.5,
+                "victimeventtag": 102
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%torch_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "life": 1,
+                "name": "powerup",
+                "tag": 102,
+                "time": -1
+            },
+            "trigger": {
+                "name": "FlameOff",
+                "tag": 200,
+                "time": 0.8
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "projectilenear",
+            "animenum": "ea_power7",
+            "combotextfinisher": "Tornado",
+            "combotextstarter": "Burning",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "torch_p6",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/torch_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "FlameOn",
+                "tag": 100,
+                "time": 0
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%torch_p6_dmg",
+                "damagelevel": 2,
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "entity": "torch_tornado",
+                "filename": "ents_humantorch",
+                "life": "%torch_p6_lif",
+                "maxinstances": 2,
+                "maxrange": 800,
+                "name": "projectile",
+                "powerusage": "%torch_p6_pwr",
+                "speed": 90,
+                "tag": 1,
+                "targetable": false,
+                "time": 0,
+                "tracecheck": false,
+                "victimeventtag": 106,
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%torch_p6_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "life": 1,
+                "name": "powerup",
+                "tag": 106,
+                "time": -1
+            },
+            "trigger": {
+                "name": "FlameOff",
+                "tag": 200,
+                "time": 0.88
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Flames",
+            "combotextstarter": "Blazing",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "torch_p7",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/torch/p7_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/torch_m/p7_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/torch/p7_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "FlameOn",
+                "tag": 100,
+                "time": 0.1
+            },
+            "trigger": {
+                "effect": "char/torch/p7_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.6
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "center_bolt": true,
+                "class": "harming",
+                "damage": "%torch_p7_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "life": "%torch_p7_life",
+                "name": "powerup",
+                "powerusage": "%torch_p7_pwr",
+                "share_enemies": true,
+                "share_life": 1,
+                "share_radius": 120,
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/torch/p7_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary",
+                    "share_filter": "owner"
+                },
+                "special_fx": {
+                    "effect": "char/torch/p7_aura",
+                    "fxlevel": 2,
+                    "how_used": "deactivation",
+                    "share_filter": "owner"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%torch_p7_dr",
+                    "share_filter": "owner"
+                },
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "share_filter": "shared"
+                }
+            },
+            "trigger": {
+                "damage": 1,
+                "damagetype": "dmg_fire",
+                "index": 2,
+                "maxrange": 120,
+                "name": "radial",
+                "time": 0.5
+            },
+            "trigger": {
+                "name": "FlameOff",
+                "tag": 200,
+                "time": 0.8
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power7",
+            "combotextfinisher": "Vortex",
+            "combotextstarter": "Fiery",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "torch_p8",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/torch_m/p8_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "FlameOn",
+                "tag": 100,
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/torch/p8_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.15
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/torch/p8_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.15
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "class": "callevents",
+                "life": "%torch_p8_lif",
+                "name": "powerup",
+                "powerusage": "%torch_p8_pwr",
+                "time": 0.67,
+                "special_fx": {
+                    "effect": "char/torch/p8_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/torch/p8_aura",
+                    "fxlevel": 2,
+                    "how_used": "deactivation"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%torch_p8_ar"
+                }
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": false,
+                "class": "add_attack",
+                "damagepercent": "%torch_p8_dmg",
+                "damagetype": "dmg_fire",
+                "life": "%torch_p8_lif",
+                "name": "powerup",
+                "time": 0.67,
+                "victimeventtag": 104,
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    },
+                    "scope": {
+                        "scope_powers": true
+                    }
+                },
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/torch/p8_aura2",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/torch/p8_aura2",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%torch_p8_dmg2",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "life": 1,
+                "name": "powerup",
+                "tag": 104,
+                "time": -1
+            },
+            "trigger": {
+                "name": "FlameOff",
+                "tag": 200,
+                "time": 0.9
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power8",
+            "combotextfinisher": "Conflagration",
+            "description": "FANTASTIC FIRE",
+            "icon": 8,
+            "lockangles": true,
+            "lockspeed": true,
+            "name": "power9",
+            "playspeed": 10,
+            "priority": "uninterruptable",
+            "require": {
+                "cat": "skill",
+                "item": "torch_p9",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "only_non_looped": true,
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/torch_m/p9_charge",
+                "time": 0.1
+            },
+            "trigger": {
+                "name": "FlameOn",
+                "tag": 100,
+                "time": 0
+            },
+            "trigger": {
+                "center_bolt": true,
+                "class": "harming",
+                "damage": "%torch_p9_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "life": 1,
+                "name": "powerup",
+                "share_enemies": true,
+                "share_life": 1,
+                "share_radius": 200,
+                "time": 0,
+                "victimeventtag": 108,
+                "special_fx": {
+                    "bolt": "Bip01 L Toe0",
+                    "effect": "char/torch/ability_fly",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Toe0",
+                    "effect": "char/torch/ability_fly",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%torch_p9_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "life": 5,
+                "name": "powerup",
+                "tag": 108,
+                "time": -1
+            },
+            "trigger": {
+                "name": "FlameOff",
+                "tag": 200,
+                "time": 0.99
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power5",
+            "combotextfinisher": "Nova",
+            "description": "NOVA FLAME",
+            "icon": 10,
+            "lockangles": true,
+            "name": "power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "torch_p10",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": 2,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/torch_m/p10_charge",
+                "time": 0.35
+            },
+            "trigger": {
+                "name": "FlameOn",
+                "tag": 100,
+                "time": 0.35
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%torch_p10_lif",
+                "name": "powerup",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/torch/p10_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/torch/p10_aura",
+                    "fxlevel": 2,
+                    "how_used": "deactivation"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": 2
+                }
+            },
+            "trigger": {
+                "name": "FlameOff",
+                "tag": 200,
+                "time": 0.9
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
