@@ -11,7 +11,6 @@
             "icon": 0,
             "lockangles": true,
             "name": "power1",
-            "powerup_tag": "hav_power1",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -63,7 +62,6 @@
             "icon": 1,
             "lockangles": true,
             "name": "power2",
-            "powerup_tag": "hav_power2",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -159,18 +157,12 @@
             "locktransitionangles": true,
             "name": "power3",
             "noautoaim": true,
-            "powerup_tag": "hav_power3",
             "priority": 5,
             "turnrate": 0.5,
             "require": {
                 "cat": "skill",
                 "item": "havok_multi",
                 "level": 1
-            },
-            "trigger": {
-                "name": "powerusage",
-                "powerusage": "%hav_multi_pwr",
-                "time": -1
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
@@ -188,7 +180,7 @@
                 "actorbolt": "Bip01 L Hand",
                 "attack_bone_angles": "-123 -1 -1",
                 "attack_bone_pos": "56 -6 47",
-                "name": "EnergyBall",
+                "name": "energyball",
                 "powerusage": "%hav_multi_pwr",
                 "time": 0.25,
                 "victimeventtag": 20
@@ -223,7 +215,6 @@
             "icon": 3,
             "lockangles": true,
             "name": "power5",
-            "powerup_tag": "hav_power5",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -277,7 +268,6 @@
                 "damageLevel": 10,
                 "damagetype": "dmg_energy",
                 "name": "punch",
-                "powerattack": true,
                 "powerusage": "%hav_detonate_pwr",
                 "time": 0.75,
                 "victimeventtag": 5
@@ -297,7 +287,6 @@
             "lockangles": true,
             "lockchaining": false,
             "name": "power6",
-            "powerup_tag": "hav_power6",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -359,7 +348,6 @@
             "icon": 5,
             "lockangles": true,
             "name": "power7",
-            "powerup_tag": "hav_power7",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -372,6 +360,8 @@
                 "time": 0
             },
             "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
                 "life": "%hav_absorb_lif",
                 "name": "powerup",
                 "powerusage": "%hav_absorb_pwr",
@@ -405,7 +395,6 @@
             "icon": 6,
             "lockangles": true,
             "name": "power8",
-            "powerup_tag": "hav_power8",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -434,6 +423,7 @@
             },
             "trigger": {
                 "apply_ally": "all",
+                "apply_self": true,
                 "class": "add_attack",
                 "damagepercent": "%hav_fury_dmg",
                 "damagetype": "dmg_energy",
@@ -508,10 +498,11 @@
             },
             "trigger": {
                 "apply_ally": "all",
-                "life": "%hav_command_life",
+                "apply_self": true,
+                "life": "%havok_p9_life",
                 "name": "powerup",
                 "no_shadow": true,
-                "powerusage": "%hav_command_pwr",
+                "powerusage": "%havok_p9_pwr",
                 "time": 0.95,
                 "special_fx": {
                     "effect": "char/havok/p9_aura",
@@ -520,8 +511,8 @@
                 },
                 "affecter": {
                     "attribute": "all_talents",
-                    "level": "%hav_command_skills",
-                    "scope_talent": "hav_command"
+                    "level": "%havok_p9_skills",
+                    "scope_talent": "havok_p9"
                 }
             },
             "chain": {
