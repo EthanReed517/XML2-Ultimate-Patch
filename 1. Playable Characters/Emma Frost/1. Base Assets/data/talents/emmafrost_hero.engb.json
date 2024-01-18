@@ -16,7 +16,7 @@
         },
         "talent": {
             "descname": "Telepathic Illusions",
-            "description": "Projects terrifying images into the mind of enemies, causing them to flee in terror, become stunned or attack their comrades.",
+            "description": "Emma projects terrifying images into the mind of enemies, causing them to flee in terror, become stunned or attack their comrades.",
             "descshort": "Radial",
             "icon": 0,
             "icon_texture": "textures/ui/emmafrost_icons2.png",
@@ -26,32 +26,22 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "emma_fear_req",
-                    "value": 1
+                    "value": 14
                 },
                 "talentvalue": {
-                    "level": 20,
+                    "level": 16,
                     "name": "emma_fear_req",
                     "value": 58
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "emma_fear_pwr",
-                    "value": 24
-                },
-                "talentvalue": {
-                    "level": 20,
-                    "name": "emma_fear_pwr",
-                    "value": 175
-                },
-                "talentvalue": {
-                    "level": 1,
                     "name": "emma_fear_dmg",
-                    "value": "11 15"
+                    "value": "21 26"
                 },
                 "talentvalue": {
-                    "level": 20,
+                    "level": 16,
                     "name": "emma_fear_dmg",
-                    "value": "110 125"
+                    "value": "79 89"
                 },
                 "talentvalue": {
                     "level": 1,
@@ -59,13 +49,23 @@
                     "value": 5
                 },
                 "talentvalue": {
-                    "level": 20,
+                    "level": 16,
                     "name": "emma_fear_lif",
                     "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "emma_fear_pwr",
+                    "value": 46
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "emma_fear_pwr",
+                    "value": 175
                 }
             },
             "level": {
-                "count": 20,
+                "count": 16,
                 "description": "%emma_fear_dmg $DMG_MENTAL\\n%emma_fear_lif seconds\\n%emma_fear_pwr $EP",
                 "require": {
                     "cat": "level",
@@ -75,7 +75,7 @@
         },
         "talent": {
             "descname": "Mental Spheres",
-            "description": "Fires a sphere of Psychic Energy that pops her enemies up into the air. Levels up to increase the number of spheres.",
+            "description": "Emma fires a sphere of Psychic Energy that pops her enemies up into the air. Levels up to increase the number of spheres.",
             "descshort": "Projectile",
             "icon": 7,
             "icon_texture": "textures/ui/emmafrost_icons2.png",
@@ -104,6 +104,16 @@
                 },
                 "talentvalue": {
                     "level": 1,
+                    "name": "emma_bolt_num",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "emma_bolt_num",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 1,
                     "name": "emma_bolt_pwr",
                     "value": 24
                 },
@@ -111,21 +121,11 @@
                     "level": 18,
                     "name": "emma_bolt_pwr",
                     "value": 128
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "emma_bolt_num",
-                    "value": 1
-                },
-                "talentvalue": {
-                    "level": 18,
-                    "name": "emma_bolt_num",
-                    "value": 15
                 }
             },
             "level": {
                 "count": 18,
-                "description": "%emma_bolt_dmg $DMG_MENTAL\\n%emma_bolt_num spheres\\n%emma_bolt_pwr $EP",
+                "description": "%emma_bolt_dmg $DMG_MENTAL\\n%emma_bolt_num sphere(s)\\n%emma_bolt_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%emma_bolt_req"
@@ -134,7 +134,7 @@
         },
         "talent": {
             "descname": "Psionic Slam",
-            "description": "A radial Mental attack that knocks enemies back.",
+            "description": "Emma unleashes a radial Mental attack that knocks enemies back.",
             "descshort": "Radial",
             "icon": " 2",
             "icon_texture": "textures/ui/emmafrost_icons2.png",
@@ -144,10 +144,10 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "emma_burst_req",
-                    "value": 14
+                    "value": 1
                 },
                 "talentvalue": {
-                    "level": 16,
+                    "level": 18,
                     "name": "emma_burst_req",
                     "value": 58
                 },
@@ -157,23 +157,23 @@
                     "value": "11 15"
                 },
                 "talentvalue": {
-                    "level": 16,
+                    "level": 18,
                     "name": "emma_burst_dmg",
-                    "value": "195 217"
+                    "value": "69 79"
                 },
                 "talentvalue": {
                     "level": 1,
                     "name": "emma_burst_pwr",
-                    "value": 12
+                    "value": 24
                 },
                 "talentvalue": {
-                    "level": 16,
+                    "level": 18,
                     "name": "emma_burst_pwr",
-                    "value": 175
+                    "value": 170
                 }
             },
             "level": {
-                "count": 14,
+                "count": 18,
                 "description": "%emma_burst_dmg $DMG_MENTAL\\n%emma_burst_pwr $EP",
                 "require": {
                     "cat": "level",
@@ -183,7 +183,7 @@
         },
         "talent": {
             "descname": "Astral Projection",
-            "description": "Emma projects her astral form through a Psychic beam that causes head trauma to her foes with the chance to kill them with one shot.",
+            "description": "Emma projects her astral form through a Psychic beam that causes head trauma to her foes with a chance for a 'Deadly Strike' (33% instant $HP loss).",
             "descshort": "Beam",
             "icon": 3,
             "icon_texture": "textures/ui/emmafrost_icons2.png",
@@ -203,46 +203,56 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "emma_beam_dmg",
-                    "value": "31 37"
+                    "value": "101 114"
                 },
                 "talentvalue": {
                     "level": 14,
                     "name": "emma_beam_dmg",
-                    "value": "198 209"
+                    "value": "272 302"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "emma_beam_pct",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "emma_beam_pct",
+                    "value": 0.19
                 },
                 "talentvalue": {
                     "level": 1,
                     "name": "emma_beam_pwr",
-                    "value": 14
+                    "value": 46
                 },
                 "talentvalue": {
                     "level": 14,
                     "name": "emma_beam_pwr",
                     "value": 140
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "emma_beam_pct",
-                    "value": 0.08
-                },
-                "talentvalue": {
-                    "level": 14,
-                    "name": "emma_beam_pct",
-                    "value": 0.4
                 }
             },
             "level": {
-                "count": 12,
-                "description": "%emma_beam_dmg $DMG_MENTAL\\n%emma_beam_pct:p chance to kill her target\\n%emma_beam_pwr $EP",
+                "count": 14,
+                "description": "%emma_beam_dmg $DMG_MENTAL\\n%emma_beam_pct:p chance for Deadly Strike\\n%emma_beam_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%emma_beam_req"
+                },
+                "powerup": {
+                    "chance": "%emma_beam_pct",
+                    "class": "atk_instant_pct",
+                    "life": -1,
+                    "percent": 0.33,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope_node": "emma_power4"
+                    }
                 }
             }
         },
         "talent": {
             "descname": "Touch of Insanity ",
-            "description": "Emma unleashes a powerful Psychic blast that causes her enemies intense, continuous Mental pain.",
+            "description": "Emma releases a powerful Psychic blast that causes her enemies intense, continuous Mental pain.",
             "descshort": "Debuff",
             "icon": 4,
             "icon_texture": "textures/ui/emmafrost_icons2.png",
@@ -263,7 +273,7 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "emma_insanity_pwr",
-                    "value": 68
+                    "value": 80
                 },
                 "talentvalue": {
                     "level": 11,
@@ -288,7 +298,7 @@
                 "talentvalue": {
                     "level": 11,
                     "name": "emma_insanity_rad",
-                    "value": 164
+                    "value": 144
                 },
                 "talentvalue": {
                     "level": 1,
@@ -303,14 +313,14 @@
             },
             "level": {
                 "count": 11,
-                "description": "%emma_insanity_dmg $DMG_MENTAL\\n%emma_insanity_lif seconds\\n%emma_insanity_pwr $EP",
+                "description": "%emma_insanity_dmg $DMG_MENTAL per second\\n%emma_insanity_rad:r foot range\\n%emma_insanity_lif seconds\\n%emma_insanity_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%emma_insanity_req"
                 },
                 "require": {
                     "cat": "skill",
-                    "item": "emma_burst"
+                    "item": "emma_fear"
                 }
             }
         },
@@ -345,23 +355,13 @@
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "emma_blast_dmg2",
-                    "value": "34 56"
-                },
-                "talentvalue": {
-                    "level": 11,
-                    "name": "emma_blast_dmg2",
-                    "value": "247 268"
-                },
-                "talentvalue": {
-                    "level": 1,
                     "name": "emma_blast_pwr",
-                    "value": 11
+                    "value": 94
                 },
                 "talentvalue": {
                     "level": 11,
                     "name": "emma_blast_pwr",
-                    "value": 175
+                    "value": 155
                 },
                 "talentvalue": {
                     "level": 1,
@@ -389,7 +389,7 @@
         },
         "talent": {
             "descname": "PSYCHIC BEDLAM",
-            "description": "Xtreme radial attack that deals Mental damage with a chance to convert enemies for a time. Enemies explode at the end of conversion.",
+            "description": "Emma discharges a powerful radial attack that deals Mental damage with a chance to convert enemies for a time. Enemies explode at the end of conversion.",
             "descshort": "Radial",
             "icon": 9,
             "icon_texture": "textures/ui/emmafrost_icons2.png",
@@ -530,7 +530,7 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "emma_diam_form_lif",
-                    "value": 15
+                    "value": 13
                 },
                 "talentvalue": {
                     "level": 16,
@@ -550,7 +550,7 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "emma_diam_form_pwr",
-                    "value": 118
+                    "value": 88
                 },
                 "talentvalue": {
                     "level": 16,
@@ -569,7 +569,7 @@
         },
         "talent": {
             "descname": "Queen's Blessing",
-            "description": "Using her telepathy, Emma exerts absolute control over her individual brain functions and gains a healing factor for a limited time.",
+            "description": "Using her telepathy, Emma exerts absolute control over her individual brain functions, making her immune to stun and allowing her to regenerate $HP for a time.",
             "descshort": "Boost",
             "icon": 1,
             "icon_texture": "textures/ui/emmafrost_icons2.png",
@@ -590,12 +590,12 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "emma_heal_pwr",
-                    "value": 172
+                    "value": 88
                 },
                 "talentvalue": {
                     "level": 16,
                     "name": "emma_heal_pwr",
-                    "value": 512
+                    "value": 504
                 },
                 "talentvalue": {
                     "level": 1,
@@ -609,33 +609,18 @@
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "emma_heal_dmg",
-                    "value": 1.1
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "emma_heal_dmg",
-                    "value": 1.55
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "emma_heal_ar",
-                    "value": 1.2
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "emma_heal_ar",
-                    "value": 2.75
-                },
-                "talentvalue": {
-                    "level": 1,
                     "name": "emma_heal_pct",
-                    "value": 0.04
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "emma_heal_pct",
+                    "value": 0.05
                 }
             },
             "level": {
-                "count": 20,
-                "description": "%emma_heal_pct:p $HP per second\\n%emma_heal_dmg:s Dmg for all attacks\\n%emma_heal_ar:s $AR\\n%emma_heal_lif seconds\\n%emma_heal_pwr $EP\\n",
+                "count": 16,
+                "description": "%emma_heal_pct:p $HP per second\\n%emma_heal_lif seconds\\n%emma_heal_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%emma_heal_req"
@@ -658,7 +643,7 @@
                     "value": 1
                 },
                 "talentvalue": {
-                    "level": 20,
+                    "level": 18,
                     "name": "emma_ment_vort_req",
                     "value": 58
                 },
@@ -668,7 +653,7 @@
                     "value": 60
                 },
                 "talentvalue": {
-                    "level": 20,
+                    "level": 18,
                     "name": "emma_ment_vort_pwr",
                     "value": 512
                 },
@@ -678,13 +663,13 @@
                     "value": 13
                 },
                 "talentvalue": {
-                    "level": 20,
+                    "level": 18,
                     "name": "emma_ment_vort_lif",
                     "value": 55
                 }
             },
             "level": {
-                "count": 20,
+                "count": 18,
                 "description": "%emma_ment_vort_lif seconds\\n%emma_ment_vort_pwr $EP",
                 "require": {
                     "cat": "level",

@@ -190,7 +190,6 @@
             "icon": 7,
             "lockangles": true,
             "name": "power2",
-            "powerup_tag": "emma_power2",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -262,11 +261,6 @@
                 "level": 1
             },
             "trigger": {
-                "name": "powerusage",
-                "powerusage": "%emma_burst_pwr",
-                "time": 0
-            },
-            "trigger": {
                 "name": "sound",
                 "sound": "char/emmaf_m/p3_charge",
                 "time": 0
@@ -302,6 +296,7 @@
                 "damage": "%emma_burst_dmg",
                 "maxrange": 125,
                 "name": "p_radius",
+                "powerusage": "%emma_burst_pwr",
                 "tag": 2,
                 "time": 0.5
             },
@@ -373,51 +368,18 @@
             "trigger": {
                 "attack_bone_angles": "-105 -36 10",
                 "attack_bone_pos": "35 4 57",
+                "attacktype": "beam",
                 "beambolt": "Bip01 R Hand",
-                "damagelevel": 10,
+                "damage": "%emma_beam_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
                 "hiteffect": "char/emmaf/p4_impact",
+                "inherit": "beam",
+                "knockback": "%cyc_beam_kb",
+                "maxrange": 800,
                 "name": "beam_white",
                 "powerusage": "%emma_beam_pwr",
-                "time": 0.5,
-                "victimeventtag1": 99,
-                "victimeventtag2": 101,
-                "damageMod": {
-                    "name": "dmgmod_environment"
-                }
-            },
-            "trigger": {
-                "maxdangerrating": 10,
-                "name": "filter",
-                "noboss": true,
-                "passtag": 100,
-                "tag": 99,
-                "time": -1,
-                "type": "ce_filter_event"
-            },
-            "trigger": {
-                "chance": "%emma_beam_pct",
-                "name": "otherevent",
-                "othertag": 200,
-                "tag": 100,
-                "time": -1
-            },
-            "trigger": {
-                "fail_tag": 101,
-                "instantkillonly": true,
-                "name": "remove",
-                "nosponsor": false,
-                "success_tag": 201,
-                "tag": 200,
-                "time": -1
-            },
-            "trigger": {
-                "damage": "%emma_beam_dmg",
-                "damagetype": "dmg_mental",
-                "index": 1,
-                "name": "selfattack",
-                "tag": 101,
-                "time": -1,
-                "type": "ce_atk_self"
+                "time": 0.5
             },
             "chain": {
                 "action": "Idle",
@@ -433,7 +395,6 @@
             "icon": 4,
             "lockangles": true,
             "name": "power5",
-            "powerup_tag": "emma_power5",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -502,6 +463,7 @@
             "trigger": {
                 "class": "harming",
                 "damage": "%emma_insanity_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_mental",
                 "life": "%emma_insanity_lif",
                 "name": "powerup",
@@ -539,11 +501,6 @@
                 "level": 1
             },
             "trigger": {
-                "name": "powerusage",
-                "powerusage": "%emma_blast_pwr",
-                "time": 0
-            },
-            "trigger": {
                 "bolt": "Bip01 Head",
                 "effect": "char/emmaf/emma_head",
                 "fxlevel": 2,
@@ -560,12 +517,14 @@
                 "attack_bone_pos": "19 0 56",
                 "beambolt": "Bip01 R Hand",
                 "damage": "%emma_blast_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_mental",
                 "fxlevel": 1,
                 "inherit": "beam",
                 "knockback": 400,
                 "maxrange": 450,
                 "name": "blast_dmg",
+                "powerusage": "%emma_blast_pwr",
                 "pierce": true,
                 "radius": 24,
                 "spawneffect": "char/emmaf/p6_power",
@@ -897,7 +856,6 @@
             "icon": 1,
             "lockangles": true,
             "name": "power11",
-            "powerup_tag": "emma_power11",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -920,6 +878,11 @@
                     "attribute": "health_regen_pct",
                     "level": "%emma_heal_pct"
                 },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_stun",
+                    "level": 0
+                },
                 "special_fx": {
                     "bolt": "Bip01 Head",
                     "effect": "char/emmaf/emma_head",
@@ -941,17 +904,11 @@
             "lockangles": true,
             "name": "power12",
             "playspeed": 1.5,
-            "powerup_tag": "emma_power12",
             "priority": 5,
             "require": {
                 "cat": "skill",
                 "item": "emma_ment_vort",
                 "level": 1
-            },
-            "trigger": {
-                "name": "powerusage",
-                "powerusage": "%emma_ment_vort_pwr",
-                "time": 0
             },
             "trigger": {
                 "bolt": "Bip01 R Hand",
@@ -984,6 +941,7 @@
                 "inflicted": true,
                 "life": "%emma_ment_vort_lif",
                 "name": "powerup",
+                "powerusage": "%emma_ment_vort_pwr",
                 "time": 0.5,
                 "special_fx": {
                     "bolt": "Bip01 L Hand",
