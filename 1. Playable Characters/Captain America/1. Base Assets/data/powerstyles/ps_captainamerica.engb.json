@@ -250,6 +250,7 @@
             "trigger": {
                 "life": -1,
                 "name": "powerup",
+                "no_stack": true,
                 "remove_on_node_end": true,
                 "time": 0,
                 "affecter": {
@@ -526,11 +527,6 @@
                 "time": 0
             },
             "trigger": {
-                "name": "powerusage",
-                "powerusage": "%captam_p3_pwr",
-                "time": 0
-            },
-            "trigger": {
                 "name": "sound",
                 "sound": "char/captam_m/p3_power",
                 "time": 0.1
@@ -544,6 +540,7 @@
             "trigger": {
                 "angle": -45,
                 "name": "shield_slice",
+                "powerusage": "%captam_p3_pwr",
                 "time": 0.27
             },
             "trigger": {
@@ -608,6 +605,7 @@
             "trigger": {
                 "arc": 180,
                 "damage": "%captam_p4_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "knockback": "%captam_p4_kb",
                 "name": "punch",
@@ -624,6 +622,7 @@
             "trigger": {
                 "life": -1,
                 "name": "powerup",
+                "no_stack": true,
                 "remove_on_node_end": true,
                 "time": 0,
                 "special_fx": {
@@ -687,11 +686,6 @@
                 "time": 0
             },
             "trigger": {
-                "name": "powerusage",
-                "powerusage": "%captam_p5_pwr",
-                "time": 0
-            },
-            "trigger": {
                 "bolt": "Bip01 L Hand",
                 "effect": "char/captam/p5_power",
                 "fxlevel": 1,
@@ -711,6 +705,7 @@
                 "fxlevel": 1,
                 "hiteffect": "char/captam/p1_impact",
                 "name": "punch",
+                "powerusage": "%captam_p5_pwr",
                 "time": 0.4,
                 "damageMod": {
                     "name": "dmgmod_popup"
@@ -1021,6 +1016,11 @@
                     "how_used": "primary"
                 },
                 "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "xp",
+                    "level": "%captam_p11_xp"
+                },
+                "affecter": {
                     "attribute": "all_talents",
                     "level": "%captam_p11_skills",
                     "scope_talent": "captam_p11"
@@ -1034,19 +1034,6 @@
                     "affect_type": "scale",
                     "attribute": "def_popup",
                     "level": 0
-                }
-            },
-            "trigger": {
-                "apply_ally": "all",
-                "apply_self": true,
-                "class": "callevents",
-                "life": "%captam_p11_lif",
-                "name": "powerup",
-                "time": 0,
-                "affecter": {
-                    "affect_type": "scale",
-                    "attribute": "xp",
-                    "level": "%captam_p11_xp"
                 }
             },
             "chain": {
