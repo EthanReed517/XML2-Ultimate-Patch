@@ -289,11 +289,6 @@
                 "level": 1
             },
             "trigger": {
-                "name": "powerusage",
-                "powerusage": "%psy_blast_pwr",
-                "time": 0
-            },
-            "trigger": {
                 "bolt": "Bip01 L Hand",
                 "effect": "char/psyloc/p3_charge",
                 "fxlevel": 1,
@@ -345,6 +340,7 @@
                 "damage": "%psy_blast_dmg",
                 "maxrange": 144,
                 "name": "radial_punch",
+                "powerusage": "%psy_blast_pwr",
                 "time": 0.45
             },
             "chain": {
@@ -388,6 +384,7 @@
                     "level": "%psy_focus_ep"
                 },
                 "affecter": {
+                    "affect_type": "scale",
                     "attribute": "defense_rating",
                     "level": "%psy_focus_def"
                 },
@@ -468,12 +465,16 @@
                 "time": 0
             },
             "trigger": {
+                "name": "powerusage",
+                "powerusage": "%psy_wield_pwr",
+                "time": 0
+            },
+            "trigger": {
                 "apply_chance": "%psy_power_ca",
                 "apply_ally": "none",
                 "apply_self": true,
                 "life": "%psy_wield_lif",
                 "name": "powerup",
-                "powerusage": "%psy_wield_pwr",
                 "time": 0.7,
                 "affecter": {
                     "affect_type": "scale",
@@ -491,7 +492,8 @@
                 },
                 "bolton": {
                     "bolt": "Bip01 L Hand",
-                    "model": "models/bolton/psylocke_blade_01"
+                    "model": "models/bolton/psylocke_blade_01",
+                    "slot": "ebolton_altweapon"
                 }
             },
             "trigger": {
@@ -500,7 +502,6 @@
                 "apply_self": true,
                 "life": "%psy_wield_lif",
                 "name": "powerup",
-                "powerusage": "%psy_wield_pwr",
                 "time": 0.7,
                 "affecter": {
                     "affect_type": "scale",
@@ -518,7 +519,8 @@
                 },
                 "bolton": {
                     "bolt": "Bip01 L Hand",
-                    "model": "models/bolton/psylocke_blade_02"
+                    "model": "models/bolton/psylocke_blade_02",
+                    "slot": "ebolton_altweapon"
                 }
             },
             "trigger": {
@@ -527,7 +529,6 @@
                 "apply_self": true,
                 "life": "%psy_wield_lif",
                 "name": "powerup",
-                "powerusage": "%psy_wield_pwr",
                 "time": 0.7,
                 "affecter": {
                     "affect_type": "scale",
@@ -545,7 +546,8 @@
                 },
                 "bolton": {
                     "bolt": "Bip01 L Hand",
-                    "model": "models/bolton/psylocke_blade_03"
+                    "model": "models/bolton/psylocke_blade_03",
+                    "slot": "ebolton_altweapon"
                 }
             },
             "chain": {
@@ -720,7 +722,6 @@
             "trigger": {
                 "apply_ally": "none",
                 "apply_self": true,
-                "class": "callevents",
                 "life": "%psy_xtreme2_lif",
                 "name": "powerup",
                 "time": 0.35,
@@ -728,16 +729,6 @@
                     "bolt": "Bip01 Head",
                     "effect": "char/psyloc/ability_eye",
                     "fxlevel": 2
-                },
-                "affecter": {
-                    "affect_type": "scale",
-                    "attribute": "defense_rating",
-                    "level": "%psy_xtreme2_dr"
-                },
-                "affecter": {
-                    "affect_type": "scale",
-                    "attribute": "xp",
-                    "level": "%psy_xtreme2_xp"
                 }
             },
             "chain": {
@@ -814,6 +805,7 @@
             "trigger": {
                 "life": -1,
                 "name": "powerup",
+                "no_stack": true,
                 "remove_on_node_end": true,
                 "tag_name": "psy_p10_link",
                 "time": 0,
@@ -857,8 +849,8 @@
                 "time": 0.38
             },
             "trigger": {
-                "critical": true,
                 "name": "powerup",
+                "no_stack": true,
                 "remove_tag": "psy_p10_link",
                 "time": 0.6
             },
@@ -874,7 +866,7 @@
             "blendtime": 0.07,
             "combotextfinisher": "Lunge",
             "combotextstarter": "Slicing",
-            "icon": 8,
+            "icon": 13,
             "lockangles": true,
             "name": "power11",
             "powerup_tag": "blade_power",
