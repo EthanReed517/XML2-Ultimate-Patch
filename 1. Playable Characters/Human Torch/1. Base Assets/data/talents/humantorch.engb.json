@@ -167,7 +167,7 @@
         },
         "talent": {
             "descname": "Burning Barrage",
-            "description": "Human Torch launches 2 Fireballs that home in on enemies, burning them.",
+            "description": "Human Torch rapidly throws Fireballs at enemies, knocking them back and burning them.\\n(~41Press And Hold~~)",
             "descshort": "Projectile",
             "icon": 3,
             "icon_texture": "textures/ui/humantorch_icons2.png",
@@ -196,6 +196,16 @@
                 },
                 "talentvalue": {
                     "level": 1,
+                    "name": "torch_p4_kb",
+                    "value": 200
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "torch_p4_kb",
+                    "value": 400
+                },
+                "talentvalue": {
+                    "level": 1,
                     "name": "torch_p4_pwr",
                     "value": 36
                 },
@@ -207,7 +217,7 @@
             },
             "level": {
                 "count": 16,
-                "description": "%torch_p4_dmg $DMG_FIRE per fireball\\n%torch_p4_pwr $EP",
+                "description": "%torch_p4_dmg $DMG_FIRE per fireball\\n%torch_p4_kb $KB\\n%torch_p4_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%torch_p4_req"
@@ -399,7 +409,7 @@
         },
         "talent": {
             "descname": "Fired Up",
-            "description": "Human Torch fires up the party, increasing everyone's $AR and adding burning $DMG_FIRE to all other party members' non-powered Melee attacks for a time.",
+            "description": "Human Torch fires up the party, increasing everyone's $AR and adding $DMG_FIRE to all other party members' non-powered Melee attacks for a time.",
             "descshort": "Boost",
             "icon": 6,
             "icon_texture": "textures/ui/humantorch_icons2.png",
@@ -460,7 +470,7 @@
             },
             "level": {
                 "count": 16,
-                "description": "%torch_p8_dmg:p $DMG_FIRE\\n%torch_p8_dr:s $AR\\n%torch_p8_life seconds\\n%torch_p8_pwr $EP",
+                "description": "%torch_p8_dmg:p $DMG_FIRE\\n%torch_p8_ar:s $AR\\n%torch_p8_life seconds\\n%torch_p8_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%torch_p8_req"
@@ -645,7 +655,7 @@
         },
         "talent": {
             "descname": "Flaming Combat",
-            "description": "Adds $DMG_FIRE to all non-powered Melee attacks and adds a chance for them to burn enemies.",
+            "description": "Adds $DMG_FIRE to all non-powered Melee attacks.",
             "descshort": "Passive",
             "icon": 7,
             "icon_texture": "textures/ui/humantorch_icons2.png",
@@ -670,21 +680,11 @@
                     "level": 15,
                     "name": "torch_pass2_dmg",
                     "value": 2.6
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "humant_pass2_pct",
-                    "value": 0.05
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "humant_pass2_pct",
-                    "value": 0.15
                 }
             },
             "level": {
                 "count": 15,
-                "description": "%torch_pass2_dmg:p $DMG_FIRE\\n%humant_pass2_pct:p chance to burn enemies for %humant_pass2_lif seconds",
+                "description": "%torch_pass2_dmg:p $DMG_FIRE",
                 "require": {
                     "cat": "level",
                     "level": "%torch_pass2_req"
@@ -698,26 +698,6 @@
                         "effect": "char/torch/special_trail",
                         "how_used": "custom"
                     },
-                    "affecter": {
-                        "attribute": "powerup_scope",
-                        "scope": {
-                            "scope_attack": "punch"
-                        },
-                        "scope": {
-                            "scope_attack": "kick"
-                        },
-                        "scope": {
-                            "scope_non_powers": true
-                        }
-                    }
-                },
-                "powerup": {
-                    "chance": "%torch_pass2_pct",
-                    "class": "add_harming",
-                    "damage": "%torch_pass2_dmg",
-                    "harming_powerup_tag": "shared_burn",
-                    "life": -1,
-                    "time": "%torch_pass2_lif",
                     "affecter": {
                         "attribute": "powerup_scope",
                         "scope": {

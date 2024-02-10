@@ -415,7 +415,7 @@
                 "damage": "%torch_p1_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_fire",
-                "life": 1,
+                "life": 0.5,
                 "name": "powerup",
                 "tag": 107,
                 "time": -1,
@@ -553,7 +553,7 @@
                 "damage": "%torch_p2_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_fire",
-                "life": 1,
+                "life": 0.5,
                 "name": "powerup",
                 "tag": 105,
                 "time": -1
@@ -657,8 +657,27 @@
                 "result": "idle"
             }
         },
+        "event": {
+            "attacktype": "projectile",
+            "count": 1,
+            "damage": "%torch_p4_dmg",
+            "damagescale": "none",
+            "damagetype": "dmg_fire",
+            "entity": "torch_p4_proj",
+            "filename": "ents_humantorch",
+            "fulltargeting": true,
+            "inherit": "projectile",
+            "maxrange": 500,
+            "name": "FireBall",
+            "noautoaim": true,
+            "speed": 800,
+            "targetable": true,
+            "damagemod": {
+                "name": "dmgmod_no_pain"
+            }
+        },
         "FightMove": {
-            "aireusetime": 5,
+            "aireusetime": 6,
             "aitype": "projectile",
             "animenum": "ea_power4",
             "combotextfinisher": "Missiles",
@@ -673,53 +692,65 @@
                 "level": 1
             },
             "trigger": {
-                "name": "sound",
-                "sound": "char/torch_m/p4_power",
-                "time": 0
+                "name": "powerusage",
+                "powerusage": "%torch_p4_pwr",
+                "time": -1
             },
-            "trigger": {
-                "name": "sound",
-                "sound": "char/torch_m/p4_power",
-                "time": 0
-            },
+            "chain": {
+                "action": "Idle",
+                "result": "power4_looping"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4_loop",
+            "combotextfinisher": "Missiles",
+            "combotextstarter": "Incendiary",
+            "icon": 3,
+            "lockspeed": true,
+            "locktransitionangles": true,
+            "name": "power4_looping",
+            "priority": 5,
+            "turnrate": 0.5,
             "trigger": {
                 "actorbolt": "Bip01 L Hand",
                 "attack_bone_angles": "0 0 0",
                 "attack_bone_pos": "7 11 31",
-                "attacktype": "projectile",
-                "count": 1,
-                "damage": "%torch_p4_dmg",
-                "damagescale": "none",
-                "damagetype": "dmg_fire",
-                "entity": "torch_p4_proj",
-                "filename": "ents_humantorch",
-                "fulltargeting": true,
-                "maxrange": 1000,
-                "name": "projectile",
+                "knockback": "%torch_p4_kb",
+                "name": "FireBall",
                 "powerusage": "%torch_p4_pwr",
-                "speed": 800,
-                "targetable": true,
-                "time": 0.75,
-                "victimeventtag": 103
+                "time": 0.25,
+                "victimeventtag": 103,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/torch/p4_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/torch_m/p4_power",
+                "time": 0.25
             },
             "trigger": {
                 "actorbolt": "Bip01 R Hand",
                 "attack_bone_angles": "0 0 0",
                 "attack_bone_pos": "20 -5 37",
-                "attacktype": "projectile",
-                "count": 1,
-                "damage": "%torch_p4_dmg",
-                "damagescale": "none",
-                "damagetype": "dmg_fire",
-                "entity": "torch_p4_proj",
-                "filename": "ents_humantorch",
-                "fulltargeting": true,
-                "maxrange": 1000,
-                "name": "projectile",
-                "speed": 800,
-                "targetable": true,
+                "knockback": "%torch_p4_kb",
+                "name": "FireBall",
                 "time": 0.75,
-                "victimeventtag": 103
+                "victimeventtag": 103,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/torch/p4_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/torch_m/p4_power",
+                "time": 0.75
             },
             "trigger": {
                 "allow_non_actors": true,
@@ -731,6 +762,22 @@
                 "tag": 103,
                 "time": -1
             },
+            "chain": {
+                "action": "Idle",
+                "result": "power4_release"
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power4_looping"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4_end",
+            "icon": 3,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power4_release",
+            "priority": 5,
             "chain": {
                 "action": "Idle",
                 "result": "idle"
@@ -799,7 +846,7 @@
                 "damage": "%torch_p5_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_fire",
-                "life": 1,
+                "life": 0.5,
                 "name": "powerup",
                 "tag": 102,
                 "time": -1
@@ -870,7 +917,7 @@
                 "damage": "%torch_p6_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_fire",
-                "life": 1,
+                "life": 0.5,
                 "name": "powerup",
                 "tag": 106,
                 "time": -1
@@ -1054,7 +1101,6 @@
                 "life": "%torch_p8_lif",
                 "name": "powerup",
                 "time": 0.67,
-                "victimeventtag": 104,
                 "affecter": {
                     "attribute": "powerup_scope",
                     "scope": {
@@ -1079,17 +1125,6 @@
                     "fxlevel": 1,
                     "how_used": "primary"
                 }
-            },
-            "trigger": {
-                "allow_non_actors": true,
-                "class": "harming",
-                "damage": "%torch_p8_dmg2",
-                "damagescale": "none",
-                "damagetype": "dmg_fire",
-                "life": 1,
-                "name": "powerup",
-                "tag": 104,
-                "time": -1
             },
             "trigger": {
                 "name": "FlameOff",
