@@ -519,7 +519,7 @@
             },
             "trigger": {
                 "damage": 1,
-                "damagetype": "dmg_telekinesis",
+                "damagetype": "dmg_crushing",
                 "index": 2,
                 "maxrange": 156,
                 "name": "radial",
@@ -540,7 +540,8 @@
             "trigger": {
                 "attacks_per_second": 3,
                 "class": "harming",
-                "damage": "%xman_hold_dm2",
+                "damage": "%xman_hold_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_crushing",
                 "life": 2,
                 "name": "powerup",
@@ -554,11 +555,16 @@
             },
             "trigger": {
                 "damage": "%xman_hold_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_telekinesis",
+                "inherit": "punch",
                 "name": "attackself",
                 "tag": 20,
                 "time": -1,
-                "type": "ce_atk_self"
+                "type": "ce_atk_self",
+                "damagemod": {
+                    "name": "dmgmod_bounce"
+                }
             },
             "chain": {
                 "action": "Idle",
@@ -802,7 +808,7 @@
                     "level": "%xman_hive_scale"
                 },
                 "affecter": {
-                    "attribute": "critical",
+                    "attribute": "atk_critical",
                     "level": "%xman_hive_cri"
                 }
             },
