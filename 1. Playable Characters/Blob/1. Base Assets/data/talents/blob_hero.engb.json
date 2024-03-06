@@ -8,11 +8,6 @@
                 "powerup": {
                     "life": -1,
                     "affecter": {
-                        "affect_type": "scale",
-                        "attribute": "def_knockback",
-                        "level": 0
-                    },
-                    "affecter": {
                         "attribute": "resist_elemental",
                         "level": 0.05
                     },
@@ -29,7 +24,7 @@
         },
         "talent": {
             "descname": "Heavy Fist",
-            "description": "Blob throws a punch strong enough to do $KB.",
+            "description": "Blob throws a punch strong enough to knock back enemies.",
             "descshort": "Melee",
             "icon": 4,
             "icon_texture": "textures/ui/blob_icons2.png",
@@ -89,7 +84,7 @@
         "talent": {
             "descname": "Belly Bounce",
             "description": "Blob knocks back multiple enemies with a belly thrust.",
-            "descshort": "Special",
+            "descshort": "Melee",
             "icon": 3,
             "icon_texture": "textures/ui/blob_icons2.png",
             "name": "blob_slap",
@@ -286,7 +281,7 @@
         "talent": {
             "descname": "Stomp",
             "description": "Blob slams his foot down, sending out a stunning concussive blast.",
-            "descshort": "Melee",
+            "descshort": "Blast",
             "icon": 1,
             "icon_texture": "textures/ui/blob_icons2.png",
             "name": "blob_smash",
@@ -298,7 +293,7 @@
                     "value": 21
                 },
                 "talentvalue": {
-                    "level": 12,
+                    "level": 11,
                     "name": "blob_smash_req",
                     "value": 60
                 },
@@ -308,7 +303,7 @@
                     "value": "75 86"
                 },
                 "talentvalue": {
-                    "level": 12,
+                    "level": 11,
                     "name": "blob_smash_dmg",
                     "value": "201 224"
                 },
@@ -318,7 +313,7 @@
                     "value": 2
                 },
                 "talentvalue": {
-                    "level": 18,
+                    "level": 11,
                     "name": "blob_smash_life",
                     "value": 5
                 },
@@ -328,13 +323,13 @@
                     "value": 62
                 },
                 "talentvalue": {
-                    "level": 12,
+                    "level": 11,
                     "name": "blob_smash_pwr",
                     "value": 152
                 }
             },
             "level": {
-                "count": 12,
+                "count": 11,
                 "description": "%blob_smash_dmg $DMG_PHYSICAL\\n%blob_smash_life second stun\\n%blob_smash_pwr $EP",
                 "require": {
                     "cat": "level",
@@ -393,7 +388,7 @@
                 }
             },
             "level": {
-                "count": 10,
+                "count": 11,
                 "description": "%blob_butt_dmg:s max $DMG_PHYSICAL (%blob_butt_dmg:x)\\n%blob_butt_rng:r ft radius\\n-10% power every 5 ft\\n%blob_butt_pwr $EP",
                 "require": {
                     "cat": "level",
@@ -436,13 +431,13 @@
                     "value": 15
                 },
                 "talentvalue": {
-                    "level": 15,
+                    "level": 5,
                     "name": "blob_object_life",
                     "value": 45
                 }
             },
             "level": {
-                "count": 4,
+                "count": 5,
                 "description": "+100% Dmg\\n%blob_object_life seconds",
                 "require": {
                     "cat": "level",
@@ -452,7 +447,7 @@
         },
         "talent": {
             "descname": "GRAVITY BOMB",
-            "description": "Blob smashes the ground, dealing massive $DMG_PHYSICAL to all nearby enemies with a chance to slow them for a time.",
+            "description": "Blob smashes the ground, dealing massive $DMG_PHYSICAL to all nearby enemies and slowing any who survive for a time.",
             "descshort": "Radial",
             "icon": 5,
             "icon_texture": "textures/ui/blob_icons2.png",
@@ -482,28 +477,28 @@
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "blob_grav_chan",
-                    "value": 0.2
+                    "name": "blob_grav_slw",
+                    "value": 0.7
                 },
                 "talentvalue": {
-                    "level": 8,
-                    "name": "blob_grav_chan",
-                    "value": 0.34
+                    "level": 7,
+                    "name": "blob_grav_slw",
+                    "value": 0.25
                 },
                 "talentvalue": {
                     "level": 1,
                     "name": "blob_grav_lif",
-                    "value": 20
+                    "value": 5
                 },
                 "talentvalue": {
-                    "level": 8,
+                    "level": 7,
                     "name": "blob_grav_lif",
-                    "value": 55
+                    "value": 12
                 }
             },
             "level": {
-                "count": 5,
-                "description": "%blob_grav_dmg $DMG_PHYSICAL\\n%blob_grav_chan:p chance\\n%blob_grav_lif seconds",
+                "count": 7,
+                "description": "%blob_grav_dmg $DMG_PHYSICAL\\n%blob_grav_slw:p slow for %blob_grav_lif seconds",
                 "require": {
                     "cat": "level",
                     "level": "%blob_grav_req"
@@ -512,7 +507,7 @@
         },
         "talent": {
             "descname": "Rubberized Recoil",
-            "description": "Blob's rubbery skin reduces damage received and reflects some damage back at attackers.",
+            "description": "Blob's rubbery skin reflects a percentage of damage done by beam and projectile attacks back at enemies.",
             "descshort": "Boost",
             "icon": 10,
             "icon_texture": "textures/ui/blob_icons2.png",
@@ -552,18 +547,18 @@
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "blob_shield_dmg",
-                    "value": 0.9
+                    "name": "blob_shield_cnc",
+                    "value": 0.1
                 },
                 "talentvalue": {
                     "level": 16,
-                    "name": "blob_shield_dmg",
-                    "value": 0.7
+                    "name": "blob_shield_cnc",
+                    "value": 1
                 }
             },
             "level": {
                 "count": 16,
-                "description": "%blob_shield_dmg:s Dmg taken\\n%blob_shield_lif seconds\\n%blob_shield_pwr $EP",
+                "description": "+%blob_shield_cnc:p Dmg done by beams and projectiles reflected\\n%blob_shield_lif seconds\\n%blob_shield_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%blob_shield_req"
@@ -577,7 +572,7 @@
         },
         "talent": {
             "descname": "Big Bully",
-            "description": "Taunts enemies into close combat, reducing their $AR and $DR.",
+            "description": "Blob taunts enemies into close combat, reducing their $AR and $DR.",
             "descshort": "Boost",
             "icon": 11,
             "icon_texture": "textures/ui/blob_icons2.png",
@@ -647,7 +642,7 @@
         },
         "talent": {
             "descname": "Thick Skin",
-            "description": "Increases Blob's Elemental, Radiation, and Physical resistances.",
+            "description": "Blob's Thick Skin increases his Elemental, Radiation, and Physical resistances.",
             "descshort": "Passive",
             "icon": 9,
             "icon_texture": "textures/ui/blob_icons2.png",
@@ -700,7 +695,7 @@
         },
         "talent": {
             "descname": "Mass Shifting",
-            "description": "Gives Blob a natural $AR and $DR increase.",
+            "description": "Blob's physiology gives him a natural $AR and $DR increase.",
             "descshort": "Passive",
             "icon": 2,
             "icon_texture": "textures/ui/blob_icons2.png",
@@ -719,22 +714,22 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "blob_hardened_atr",
-                    "value": 1.07
+                    "value": 1.1
                 },
                 "talentvalue": {
                     "level": 15,
                     "name": "blob_hardened_atr",
-                    "value": 1.62
+                    "value": 1.8
                 },
                 "talentvalue": {
                     "level": 1,
                     "name": "blob_hardened_def",
-                    "value": 1.15
+                    "value": 1.05
                 },
                 "talentvalue": {
                     "level": 15,
                     "name": "blob_hardened_def",
-                    "value": 2.25
+                    "value": 1.75
                 }
             },
             "level": {
@@ -763,40 +758,40 @@
             }
         },
         "talent": {
-            "descname": "Projectile Redirection",
-            "description": "Gives Blob a chance to deflect incoming projectiles.",
+            "descname": "Gravity Field",
+            "description": "Blob's personal Gravity Field increases his resistance to knockback, trip, and pain.",
             "descshort": "Passive",
             "icon": 0,
             "icon_texture": "textures/ui/blob_icons2.png",
-            "name": "blo_defl_mis",
+            "name": "blo_pass3",
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
-                    "name": "blo_defl_mis_req",
+                    "name": "blo_pass3_req",
                     "value": 14
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "blo_defl_mis_req",
+                    "name": "blo_pass3_req",
                     "value": 28
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "blo_defl_mis_pct",
-                    "value": 0.08
+                    "name": "blo_pass3_pct",
+                    "value": 0.1
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "blo_defl_mis_pct",
-                    "value": 0.5
+                    "name": "blo_pass3_pct",
+                    "value": 1
                 }
             },
             "level": {
                 "count": 15,
-                "description": "%blo_defl_mis_pct:p chance to deflect",
+                "description": "+%blo_pass3_pct:p resistance to knockback, trip, and pain",
                 "require": {
                     "cat": "level",
-                    "level": "%blo_defl_mis_req"
+                    "level": "%blo_pass3_req"
                 },
                 "require": {
                     "cat": "skill",
@@ -806,9 +801,19 @@
                 "powerup": {
                     "life": -1,
                     "affecter": {
-                        "attribute": "def_dodge",
-                        "level": "%blo_defl_mis_pct",
-                        "scope_attack": "projectile"
+                        "affect_type": "scale",
+                        "attribute": "def_knockback",
+                        "level": "%blo_pass3_pct"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "def_trip",
+                        "level": "%blo_pass3_pct"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "def_pain",
+                        "level": "%blo_pass3_pct"
                     }
                 }
             }

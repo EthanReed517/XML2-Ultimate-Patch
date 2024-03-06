@@ -188,6 +188,7 @@
                 "attack_bone_pos": "40 -5 27",
                 "damage": "%spider_p1_dmg",
                 "damagescale": "none",
+                "damagetype": "dmg_physical",
                 "name": "webbing_bullet",
                 "time": 0,
                 "damageMod": {
@@ -207,6 +208,7 @@
                 "attack_bone_pos": "39 3 26",
                 "damage": "%spider_p1_dmg",
                 "damagescale": "none",
+                "damagetype": "dmg_physical",
                 "name": "webbing_bullet",
                 "time": 0.5,
                 "damageMod": {
@@ -250,6 +252,7 @@
                 "attack_bone_pos": "34 -4 17",
                 "beambolt": "Bip01 R Hand",
                 "damage": "%spider_p2_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "name": "webbing_shot",
                 "powerusage": "%spider_p2_pwr",
@@ -322,7 +325,7 @@
             "icon": 2,
             "name": "power3",
             "powerup_tag": "spider_web",
-            "priority": 5,
+            "priority": "uninterruptable",
             "require": {
                 "cat": "skill",
                 "item": "spider_p3",
@@ -380,7 +383,7 @@
             "icon": 2,
             "name": "power3_release",
             "powerup_tag": "spider_web",
-            "priority": 5,
+            "priority": "uninterruptable",
             "trigger": {
                 "name": "sound",
                 "sound": "char/spider_m/p3_power",
@@ -582,6 +585,7 @@
                 "arc": 180,
                 "damage": 0,
                 "damagescale": "none",
+                "damagetype": "dmg_physical",
                 "knockback": "%spider_p4_kb",
                 "maxrange": 72,
                 "name": "kick",
@@ -624,6 +628,7 @@
                 "arc": 180,
                 "damage": 0,
                 "damagescale": "none",
+                "damagetype": "dmg_physical",
                 "knockback": "%spider_p4_kb",
                 "maxrange": 72,
                 "name": "kick",
@@ -646,7 +651,7 @@
             "lockangles": false,
             "locktransitionangles": true,
             "name": "power5",
-            "playspeed": 0.8,
+            "playspeed": 0.65,
             "powerup_tag": "spider_web",
             "priority": 5,
             "startchaintime": 0.99,
@@ -708,7 +713,7 @@
             },
             "chain": {
                 "action": "Idle",
-                "result": "idle"
+                "result": "power5_end"
             },
             "chain": {
                 "action": "samepowerhold",
@@ -721,6 +726,37 @@
             "chain": {
                 "action": "special",
                 "result": "power5"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_start",
+            "handler": "ch_move_jump",
+            "lockangles": true,
+            "name": "power5_end",
+            "startchaintime": 0.3,
+            "chain": {
+                "action": "move",
+                "result": "power5"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
             }
         },
         "FightMove": {

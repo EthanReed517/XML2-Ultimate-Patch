@@ -976,7 +976,7 @@
                 "knockback": "%blob_belly_kb",
                 "maxrange": 120,
                 "name": "flop",
-                "tag": 1,
+                "tag": 101,
                 "tiles": true,
                 "time": 0.3,
                 "damageMod": {
@@ -1264,43 +1264,15 @@
                 "level": 1
             },
             "trigger": {
-                "name": "sound",
-                "sound": "char/theblob_m/p8_power",
-                "time": 0.2
-            },
-            "trigger": {
                 "life": -1,
                 "name": "xtreme_start",
                 "time": 0,
                 "worldspeed": 0.5
             },
             "trigger": {
-                "maxdangerrating": 10,
-                "name": "filter",
-                "noboss": true,
-                "passtag": 2,
-                "tag": 1,
-                "time": -1,
-                "type": "ce_filter_event"
-            },
-            "trigger": {
-                "chance": "%blob_grav_chan",
-                "name": "otherevent",
-                "othertag": 3,
-                "tag": 2,
-                "time": -1,
-                "type": "ce_otherevent"
-            },
-            "trigger": {
-                "life": "%blob_grav_lif",
-                "name": "powerup",
-                "tag": 3,
-                "time": -1,
-                "affecter": {
-                    "affect_type": "scale",
-                    "attribute": "move",
-                    "level": 0.25
-                }
+                "name": "sound",
+                "sound": "char/theblob_m/p8_power",
+                "time": 0.2
             },
             "trigger": {
                 "effect": "char/blob_hero/p8_impact",
@@ -1325,16 +1297,23 @@
                 "maxrange": 300,
                 "name": "punch",
                 "time": 0.23,
-                "victimeventtag": 1,
+                "victimeventtag": 102,
                 "damagemod": {
                     "name": "dmgmod_ground"
                 }
             },
             "trigger": {
-                "critical": true,
-                "end": true,
-                "name": "xtreme_start",
-                "time": 0.73
+                "bolt": "Bip01 Head",
+                "effect": "char/blob_hero/p8_aura",
+                "life": "%blob_grav_lif",
+                "name": "powerup",
+                "tag": 102,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%blob_grav_slw"
+                }
             },
             "chain": {
                 "action": "Idle",
@@ -1381,12 +1360,15 @@
                     "how_used": "primary"
                 },
                 "affecter": {
-                    "attribute": "reflect_damage"
-                },
-                "affecter": {
                     "affect_type": "scale",
-                    "attribute": "def_damage",
-                    "level": "%blob_shield_dmg"
+                    "attribute": "reflect_damage",
+                    "level": "%blob_shield_cnc",
+                    "scope": {
+                        "scope_attack": "projectile"
+                    },
+                    "scope": {
+                        "scope_attack": "beam"
+                    }
                 }
             },
             "chain": {
