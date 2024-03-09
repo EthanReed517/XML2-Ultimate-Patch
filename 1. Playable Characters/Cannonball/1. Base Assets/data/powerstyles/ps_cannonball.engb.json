@@ -222,16 +222,14 @@
             },
             "event": {
                 "attacktype": "punch",
-                "damage": "%can_rocket_pdmg",
+                "damage": "%can_rocket_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_fire",
                 "inherit": "punch",
+                "knockback": "%can_rocket_kb",
                 "name": "radial_punch",
                 "damageMod": {
-                    "name": "dmgmod_stun"
-                },
-                "damageMod": {
-                    "name": "dmgmod_environment"
+                    "name": "dmgmod_auto_knockback"
                 }
             },
             "trigger": {
@@ -397,15 +395,14 @@
             "trigger": {
                 "arc": 40,
                 "damage": "%can_blast_dmg",
-                "damagelevel": 1,
                 "damagescale": "none",
                 "damagetype": "dmg_fire",
                 "inherit": "punch_heavy",
                 "maxrange": 100,
-                "name": "charge",
+                "name": "punch",
                 "time": 0.24,
                 "damageMod": {
-                    "name": "dmgmod_environment"
+                    "name": "dmgmod_trip"
                 }
             },
             "chain": {
@@ -474,7 +471,6 @@
             "trigger": {
                 "arc": 60,
                 "damage": "%can_multi_dmg",
-                "damagelevel": 1,
                 "damagescale": "none",
                 "damagetype": "dmg_fire",
                 "inherit": "punch_heavy",
@@ -485,9 +481,6 @@
                 "time": 0.27,
                 "damageMod": {
                     "name": "dmgmod_stun"
-                },
-                "damageMod": {
-                    "name": "dmgmod_environment"
                 },
                 "damageMod": {
                     "reset": true
@@ -522,9 +515,6 @@
                     "name": "dmgmod_stun"
                 },
                 "damageMod": {
-                    "name": "dmgmod_environment"
-                },
-                "damageMod": {
                     "reset": true
                 }
             },
@@ -553,9 +543,6 @@
                 "time": 0.26,
                 "damageMod": {
                     "name": "dmgmod_stun"
-                },
-                "damageMod": {
-                    "name": "dmgmod_environment"
                 },
                 "damageMod": {
                     "reset": true
@@ -677,7 +664,7 @@
             "icon": 9,
             "lockangles": true,
             "name": "power7",
-            "priority": 5,
+            "priority": "uninterruptable",
             "require": {
                 "cat": "skill",
                 "item": "can_shock",
@@ -704,18 +691,6 @@
             "trigger": {
                 "name": "legs_show",
                 "time": 0.625
-            },
-            "trigger": {
-                "life": -1,
-                "name": "powerup",
-                "no_stack": true,
-                "remove_on_node_end": true,
-                "time": 0,
-                "affecter": {
-                    "affect_type": "scale",
-                    "attribute": "def_knockback",
-                    "level": 0
-                }
             },
             "trigger": {
                 "name": "sound",
@@ -749,17 +724,14 @@
                 "time": 0.525
             },
             "trigger": {
-                "arc": 180,
-                "attacktype": "blast",
                 "beameffect": "char/cannon/p7_impact",
                 "damage": "%can_shock_dmg",
-                "damagelevel": 1,
+                "damagescale": "none",
                 "damagetype": "dmg_fire",
-                "knockback": 190,
+                "knockback": 620,
                 "maxrange": 350,
-                "name": "shock_waves",
+                "name": "radial",
                 "time": 0.6,
-                "type": "ce_atk",
                 "special_fx": {
                     "bolt": "Bip01 Pelvis",
                     "effect": "char/cannon/p7_impact",
@@ -767,13 +739,10 @@
                     "how_used": "primary"
                 },
                 "damageMod": {
-                    "name": "dmgmod_popup"
+                    "name": "dmgmod_auto_knockback"
                 },
                 "damageMod": {
-                    "name": "dmgmod_stun"
-                },
-                "damageMod": {
-                    "name": "dmgmod_environment"
+                    "name": "dmgmod_immobilize"
                 }
             },
             "chain": {
@@ -984,16 +953,13 @@
                 "damage": "%can_p10_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_fire",
-                "knockback": 620,
+                "knockback": "%can_p10_kb",
                 "maxrange": 150,
                 "name": "radial",
                 "powerusage": "%can_p10_pwr",
                 "time": 0.7,
                 "damageMod": {
                     "name": "dmgmod_auto_knockback"
-                },
-                "damageMod": {
-                    "name": "dmgmod_environment"
                 }
             },
             "chain": {
@@ -1068,9 +1034,6 @@
                 "name": "radial_punch",
                 "damageMod": {
                     "name": "dmgmod_stun"
-                },
-                "damageMod": {
-                    "name": "dmgmod_environment"
                 }
             },
             "trigger": {

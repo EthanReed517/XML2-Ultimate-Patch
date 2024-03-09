@@ -24,8 +24,8 @@
         },
         "talent": {
             "descname": "Rocket Launch",
-            "description": "Cannonball launches forward towards the targeted enemy, damaging and stunning them.",
-            "descshort": "Melee",
+            "description": "Cannonball launches forward like a rocket, knocking back any nearby enemies.",
+            "descshort": "Charge",
             "icon": 0,
             "icon_texture": "textures/ui/cannonball_icons2.png",
             "name": "can_rocket",
@@ -43,13 +43,23 @@
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "can_rocket_pdmg",
+                    "name": "can_rocket_dmg",
                     "value": "11 15"
                 },
                 "talentvalue": {
                     "level": 20,
-                    "name": "can_rocket_pdmg",
+                    "name": "can_rocket_dmg",
                     "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "can_rocket_kb",
+                    "value": 200
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "can_rocket_kb",
+                    "value": 600
                 },
                 "talentvalue": {
                     "level": 1,
@@ -64,7 +74,7 @@
             },
             "level": {
                 "count": 20,
-                "description": "%can_rocket_pdmg $DMG_FIRE\\n%can_rocket_pwr $EP",
+                "description": "%can_rocket_dmg $DMG_FIRE\\n%can_rocket_kb $KB\\n%can_rocket_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%can_rocket_req"
@@ -151,7 +161,7 @@
         },
         "talent": {
             "descname": "Bio-Kinetic Blast",
-            "description": "Unleashes a two-handled Bio-Kinetic Blast that pierces through enemies and causes splash damage.",
+            "description": "Cannonball fires a two-handled Bio-Kinetic Blast that pierces through enemies and trips them.",
             "descshort": "Melee",
             "icon": 1,
             "icon_texture": "textures/ui/cannonball_icons2.png",
@@ -164,33 +174,33 @@
                     "value": 7
                 },
                 "talentvalue": {
-                    "level": 20,
+                    "level": 14,
                     "name": "can_blast_req",
                     "value": 58
                 },
                 "talentvalue": {
                     "level": 1,
                     "name": "can_blast_dmg",
-                    "value": "11 15"
+                    "value": "21 26"
                 },
                 "talentvalue": {
-                    "level": 20,
+                    "level": 14,
                     "name": "can_blast_dmg",
-                    "value": "195 217"
+                    "value": "198 220"
                 },
                 "talentvalue": {
                     "level": 1,
                     "name": "can_blast_pwr",
-                    "value": 12
+                    "value": 16
                 },
                 "talentvalue": {
-                    "level": 20,
+                    "level": 14,
                     "name": "can_blast_pwr",
-                    "value": 126
+                    "value": 84
                 }
             },
             "level": {
-                "count": 20,
+                "count": 14,
                 "description": "%can_blast_dmg $DMG_FIRE\\n%can_blast_pwr $EP",
                 "require": {
                     "cat": "level",
@@ -200,7 +210,7 @@
         },
         "talent": {
             "descname": "Bio-Kinetic Burst",
-            "description": "A flurry of Bio-Kinetic punches that damage and stun enemies.",
+            "description": "Cannonball unleashes a flurry of Bio-Kinetic punches that stun enemies.",
             "descshort": "Melee",
             "icon": 2,
             "icon_texture": "textures/ui/cannonball_icons2.png",
@@ -264,7 +274,7 @@
         },
         "talent": {
             "descname": "Explosive Blows",
-            "description": "Cannonball charges his body with Thermo-Chemical Energy and does more and more $DMG_FIRE with each attack.",
+            "description": "Cannonball charges his body with Thermo-Chemical Energy and does more and more damage with each attack.",
             "descshort": "Boost",
             "icon": 7,
             "icon_texture": "textures/ui/cannonball_icons2.png",
@@ -325,7 +335,7 @@
             },
             "level": {
                 "count": 16,
-                "description": "+%can_explosive_res:p $DMG_FIRE\\n%can_explosive_life seconds\\n%can_explosive_pwr $EP",
+                "description": "%can_explosive_res:p $AR\\n%can_explosive_life seconds\\n%can_explosive_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%can_explosive_req"
@@ -365,12 +375,12 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "cball_focus_speed",
-                    "value": 1.25
+                    "value": 1.1
                 },
                 "talentvalue": {
                     "level": 16,
                     "name": "cball_focus_speed",
-                    "value": 2.09
+                    "value": 1.85
                 },
                 "talentvalue": {
                     "level": 1,
@@ -414,7 +424,7 @@
         },
         "talent": {
             "descname": "SHOCKWAVES",
-            "description": "Cannonball launches into the air and slams into the ground, damaging and knocking down nearby enemies.",
+            "description": "Cannonball launches into the air and slams into the ground, knocking back and immobilizing any nearby enemies.",
             "descshort": "Radial",
             "icon": 9,
             "icon_texture": "textures/ui/cannonball_icons2.png",
@@ -509,7 +519,7 @@
         },
         "talent": {
             "descname": "Propulsive Uppercut",
-            "description": "A slow but powerful Bio-Kinetic uppercut that sends enemies flying.",
+            "description": "Cannonball releases a slow but powerful Bio-Kinetic uppercut that sends enemies flying.",
             "descshort": "Melee",
             "icon": 3,
             "icon_texture": "textures/ui/cannonball_icons2.png",
@@ -558,7 +568,7 @@
         },
         "talent": {
             "descname": "Blast Field Overload",
-            "description": "Cannonball charges up his Blast Field and expands it outwards, causing $DMG_FIRE to all enemies it touches.",
+            "description": "Cannonball charges up his Blast Field and expands it outwards, knocking back all enemies it touches.",
             "descshort": "Radial",
             "icon": 4,
             "icon_texture": "textures/ui/cannonball_icons2.png",
@@ -587,6 +597,16 @@
                 },
                 "talentvalue": {
                     "level": 1,
+                    "name": "can_p10_kb",
+                    "value": 200
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "can_p10_kb",
+                    "value": 620
+                },
+                "talentvalue": {
+                    "level": 1,
                     "name": "can_p10_pwr",
                     "value": 92
                 },
@@ -598,7 +618,7 @@
             },
             "level": {
                 "count": 11,
-                "description": "%can_p10_dmg $DMG_FIRE\\n%can_p10_pwr $EP",
+                "description": "%can_p10_dmg $DMG_FIRE\\n%can_p10_kb $KB\\n%can_p10_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%can_p10_req"
