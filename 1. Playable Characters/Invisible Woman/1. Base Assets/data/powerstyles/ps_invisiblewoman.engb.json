@@ -8,7 +8,6 @@
             "endchaintime": 1,
             "lockangles": true,
             "name": "attacklight1",
-            "priority": 3,
             "startchaintime": 0.61,
             "trigger": {
                 "name": "whoosh_light",
@@ -28,6 +27,10 @@
             "trigger": {
                 "name": "punch",
                 "time": 0.46
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
             },
             "chain": {
                 "action": "attack",
@@ -53,7 +56,6 @@
             "fallback": "attacklight1",
             "lockangles": true,
             "name": "attacklight2",
-            "priority": 3,
             "startchaintime": 0.57,
             "trigger": {
                 "name": "whoosh_light",
@@ -97,15 +99,13 @@
         },
         "FightMove": {
             "animenum": "ea_attack_light3",
-            "blendtime": 0,
-            "endchaintime": 1,
+            "endchaintime": 0,
             "fallback": "attacklight1",
             "lockangles": true,
             "name": "attacklight3",
-            "priority": 3,
             "trigger": {
                 "name": "whoosh_light",
-                "time": 0.21
+                "time": 0.27
             },
             "trigger": {
                 "movement": 20,
@@ -119,7 +119,7 @@
                 "time": 0.17
             },
             "trigger": {
-                "name": "kick",
+                "name": "kick_heavy",
                 "time": 0.29
             },
             "chain": {
@@ -143,17 +143,12 @@
             "name": "popupattack",
             "startchaintime": 0.73,
             "trigger": {
-                "movement": 0,
-                "name": "slide",
-                "time": 0
-            },
-            "trigger": {
                 "name": "whoosh_heavy",
                 "time": 0.13
             },
             "trigger": {
-                "charge": 1,
-                "name": "charge",
+                "movement": 0,
+                "name": "slide",
                 "time": 0
             },
             "trigger": {
