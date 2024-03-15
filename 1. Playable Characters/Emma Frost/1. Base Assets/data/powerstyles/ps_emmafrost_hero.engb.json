@@ -213,7 +213,8 @@
             "trigger": {
                 "bolt": "Bip01 L Hand",
                 "effect": "char/emmaf/effect_hand_d",
-                "name": "effect"
+                "name": "effect",
+                "time": 0.48
             },
             "trigger": {
                 "arc": 0,
@@ -324,6 +325,11 @@
             "name": "power4",
             "powerup_tag": "emma_power4",
             "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "emma_beam",
+                "level": 1
+            },
             "event": {
                 "arc": 0,
                 "attacktype": "beam",
@@ -334,11 +340,6 @@
                 "inherit": "beam",
                 "maxrange": 800,
                 "name": "beam_white"
-            },
-            "require": {
-                "cat": "skill",
-                "item": "emma_beam",
-                "level": 1
             },
             "trigger": {
                 "bolt": "Bip01 Head",
@@ -398,7 +399,7 @@
             "priority": 5,
             "require": {
                 "cat": "skill",
-                "item": "emma_insanity",
+                "item": "emma_p5",
                 "level": 1
             },
             "trigger": {
@@ -454,18 +455,18 @@
                 "damage": 1,
                 "damagetype": "dmg_mental",
                 "fxlevel": 1,
-                "maxrange": "%emma_insanity_rad",
+                "maxrange": "%emma_p5_rad",
                 "name": "radial",
-                "powerusage": "%emma_insanity_pwr",
+                "powerusage": "%emma_p5_pwr",
                 "time": 0.6,
                 "victimeventtag": 101
             },
             "trigger": {
                 "class": "harming",
-                "damage": "%emma_insanity_dmg",
+                "damage": "%emma_p5_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_mental",
-                "life": "%emma_insanity_lif",
+                "life": "%emma_p5_lif",
                 "name": "powerup",
                 "tag": 101,
                 "time": -1,

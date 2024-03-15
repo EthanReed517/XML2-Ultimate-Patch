@@ -1,0 +1,912 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/lukecage_icons1.png",
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "endchaintime": 1,
+            "lockangles": true,
+            "name": "attacklight1",
+            "startchaintime": 0.54,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.25
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.25,
+                "name": "trail",
+                "offsetend": 12,
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.45
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight2"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attacktrip1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light2",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight2",
+            "startchaintime": 0.5,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.25
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.3,
+                "name": "trail",
+                "offsetend": 12,
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight3"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "popupattack"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light3",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight3",
+            "startchaintime": 0.54,
+            "event": {
+                "inherit": "punch_heavy",
+                "maxrange": 50,
+                "name": "backhand"
+            },
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.2
+            },
+            "trigger": {
+                "life": 0.18,
+                "movement": 0,
+                "name": "slide",
+                "time": 0.09
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.4,
+                "name": "trail",
+                "offsetend": 12,
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "backhand",
+                "time": 0.33
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_trip2",
+            "blendtime": 0.05,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacktrip2",
+            "event": {
+                "arc": 67,
+                "inherit": "kick",
+                "knockback": 0,
+                "maxrange": 86,
+                "name": "sweep",
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "actorskin": 19000,
+                "anim": "attack_trip2",
+                "anim_set": "190_luke_cage_chain",
+                "blendtime": 0,
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_weapon",
+                "ignoreanimmap": true,
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.3
+            },
+            "trigger": {
+                "angle": -60,
+                "height": -10,
+                "index": 1,
+                "name": "sweep",
+                "time": 0.35
+            },
+            "trigger": {
+                "angle": 0,
+                "height": -10,
+                "index": 1,
+                "name": "sweep",
+                "time": 0.37
+            },
+            "trigger": {
+                "angle": 60,
+                "height": -10,
+                "index": 1,
+                "name": "sweep",
+                "time": 0.4
+            },
+            "trigger": {
+                "boltslot": "ebolton_weapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.944,
+                "type": "ce_bolton"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_popup",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "handler": "ch_popup_attack",
+            "lockangles": true,
+            "name": "popupattack",
+            "startchaintime": 0.52,
+            "event": {
+                "inherit": "punch_heavy",
+                "knockback": 0,
+                "maxrange": 50,
+                "name": "uppercut",
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                },
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.23
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 20,
+                "name": "slide",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.25,
+                "name": "trail",
+                "time": 0.25
+            },
+            "trigger": {
+                "name": "uppercut",
+                "time": 0.28
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.35
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "melee",
+            "animenum": "ea_power1_end",
+            "combotextfinisher": "Jab",
+            "combotextstarter": "Quick",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "lukec_p1",
+                "level": 1
+            },
+            "trigger": {
+                "life": 0.2,
+                "movement": 0,
+                "name": "slide",
+                "targetdistance": 90,
+                "targetradius": 50,
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/lukec/p1_power",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/lukec_m/p1_power",
+                "time": 0.14
+            },
+            "trigger": {
+                "arc": 65,
+                "attacktype": "punch",
+                "damage": "%lukec_p1_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "knockback": "%lukec_p1_kb",
+                "maxrange": 72,
+                "name": "punch",
+                "powerusage": "%lukec_p1_pwr",
+                "time": 0.21,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Slam",
+            "combotextstarter": "Drilling",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "lukec_p2",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/lukec_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/lukec/p2_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.13
+            },
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/lukec/p2_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.13
+            },
+            "trigger": {
+                "effect": "char/lukec/p2_power",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/lukec_m/p2_power",
+                "time": 0.38
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": "%lukec_p2_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "knockback": "%lukec_p2_kb",
+                "maxrange": 90,
+                "name": "radial",
+                "powerusage": "%lukec_p2_pwr",
+                "tiles": true,
+                "time": 0.38,
+                "damagemod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "effect": "char/lukec/p2_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.75
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "melee",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Sweep",
+            "combotextstarter": "Chain",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "lukec_p3",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/lukec_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "actorskin": 19000,
+                "anim": "power_2",
+                "anim_set": "190_luke_cage_chain",
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_weapon",
+                "ignoreanimmap": true,
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/lukec/p3_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.25
+            },
+            "trigger": {
+                "arc": 45,
+                "attacktype": "punch",
+                "damage": "%lukec_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "maxrange": 100,
+                "name": "punch",
+                "powerusage": "%lukec_p3_pwr",
+                "time": 0.28,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                },
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "trigger": {
+                "boltslot": "ebolton_weapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.85,
+                "type": "ce_bolton"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_attack_ground",
+            "combotextfinisher": "Assault",
+            "combotextstarter": "Catastrophic",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power4",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "lukec_p4",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/lukec_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/lukec/p4_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/lukec/p4_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/lukec_m/p4_power",
+                "time": 0.3
+            },
+            "trigger": {
+                "effect": "char/lukec/p4_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": "%lukec_p4_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "maxrange": 130,
+                "name": "radial",
+                "powerusage": "%lukec_p4_pwr",
+                "time": 0.3,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                },
+                "damageMod": {
+                    "name": "dmgmod_immobilize"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power9",
+            "combotextfinisher": "Whip",
+            "combotextstarter": "Whirling",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power5",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "lukec_p5",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/lukec_m/p5_power",
+                "time": 0
+            },
+            "trigger": {
+                "actorskin": 19000,
+                "anim": "power_9",
+                "anim_set": "190_luke_cage_chain",
+                "blendtime": 0,
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_weapon",
+                "ignoreanimmap": true,
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0
+            },
+            "event": {
+                "damage": "%lukec_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "maxrange": 100,
+                "name": "radial",
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                }
+            },
+            "trigger": {
+                "name": "radial",
+                "powerusage": "%lukec_p5_pwr",
+                "time": 0.28
+            },
+            "trigger": {
+                "name": "radial",
+                "time": 0.6
+            },
+            "trigger": {
+                "boltslot": "ebolton_weapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0.85,
+                "type": "ce_bolton"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Rebound",
+            "combotextstarter": "Rebounding",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "lukec_p6",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/lukec/p6_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/lukec_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/lukec/p6_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.36
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%lukec_p6_lif",
+                "name": "powerup",
+                "powerusage": "%lukec_p6_pwr",
+                "tag": 100,
+                "time": 0.36,
+                "special_fx": {
+                    "effect": "char/lukec/p6_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "reflect_damage",
+                    "level": "%lukec_p6_cnc",
+                    "scope": {
+                        "scope_attack": "projectile"
+                    }
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": "%lukec_p6_dmg"
+                }
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": 0,
+                "damagetype": "dmg_direct",
+                "maxrange": 144,
+                "life": "%lukec_p6_lif",
+                "name": "taunt",
+                "time": 0.36,
+                "victimeventtag": 100
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power7",
+            "combotextfinisher": "Strike",
+            "combotextstarter": "Striking",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "lukec_p7",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/lukec_m/p7_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/lukec/p7_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/lukec/p7_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "effect": "char/lukec/p7_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.45
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%lukec_p7_lif",
+                "name": "powerup",
+                "powerusage": "%lukec_p7_pwr",
+                "time": 0.45,
+                "special_fx": {
+                    "effect": "char/lukec/p7_power",
+                    "fxlevel": 3,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/lukec/p7_power",
+                    "fxlevel": 4,
+                    "how_used": "deactivation"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "maxhealth",
+                    "level": "%lukec_p7_hp"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "strength",
+                    "level": "%lukec_p7_str"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power8",
+            "combotextfinisher": "Drop",
+            "description": "SWEET CHRISTMAS",
+            "icon": 7,
+            "lockangles": true,
+            "lockspeed": true,
+            "name": "power8",
+            "playspeed": 10,
+            "powerup_tag": "lukec_power8",
+            "priority": "uninterruptable",
+            "require": {
+                "cat": "skill",
+                "item": "lukec_p8",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "only_non_looped": true,
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/lukec_m/p8_charge",
+                "time": 0.1
+            },
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/lukec/p8_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.18
+            },
+            "trigger": {
+                "bolt": "Bip01 Pelvis",
+                "effect": "char/lukec/p8_power",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/lukec_m/p8_power",
+                "time": 0.46
+            },
+            "trigger": {
+                "damage": "%lukec_p8_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "knockback": 620,
+                "maxrange": 300,
+                "name": "radial",
+                "time": 0.46,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                },
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/lukec_m/p8_charge",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power7",
+            "combotextfinisher": "Rush",
+            "description": "HERO FOR HIRE",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power9",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "lukec_p9",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": 2,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/lukec_m/p9_charge",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/lukec_m/p9_power",
+                "time": 0.4
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/lukec/p9_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/lukec/p9_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "effect": "char/lukec/p9_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.45
+            },
+            "trigger": {
+                "center_bolt": true,
+                "life": "%lukec_p9_lif",
+                "name": "powerup",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/lukec/p9_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "extra_potions",
+                    "level": "%lukec_p9_packs"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "extra_money",
+                    "level": "%lukec_p9_tech"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}

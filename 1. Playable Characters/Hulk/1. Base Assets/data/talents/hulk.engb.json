@@ -40,7 +40,7 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "hulk_p1_dmg",
-                    "value": "20 26"
+                    "value": "11 15"
                 },
                 "talentvalue": {
                     "level": 20,
@@ -49,18 +49,28 @@
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "hulk_p1_pwr",
-                    "value": 8
+                    "name": "hulk_p1_kb",
+                    "value": 50
                 },
                 "talentvalue": {
                     "level": 20,
                     "name": "hulk_p1_pwr",
-                    "value": 76
+                    "value": 600
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p1_pwr",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "hulk_p1_pwr",
+                    "value": 128
                 }
             },
             "level": {
                 "count": 20,
-                "description": "%hulk_p1_dmg $DMG_PHYSICAL\\n%hulk_p1_pwr $EP",
+                "description": "%hulk_p1_dmg $DMG_PHYSICAL\\n%hulk_p1_kb $KB\\n%hulk_p1_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%hulk_p1_req"
@@ -89,12 +99,12 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "hulk_p2_dmg",
-                    "value": "30 36"
+                    "value": "46 54"
                 },
                 "talentvalue": {
                     "level": 14,
                     "name": "hulk_p2_dmg",
-                    "value": "82 93"
+                    "value": "95 107"
                 },
                 "talentvalue": {
                     "level": 1,
@@ -131,19 +141,29 @@
                     "value": 7
                 },
                 "talentvalue": {
-                    "level": 16,
+                    "level": 18,
                     "name": "hulk_p3_req",
                     "value": 58
                 },
                 "talentvalue": {
                     "level": 1,
                     "name": "hulk_p3_dmg",
-                    "value": "11 15"
+                    "value": "21 26"
                 },
                 "talentvalue": {
-                    "level": 16,
+                    "level": 18,
                     "name": "hulk_p3_dmg",
                     "value": "78 89"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p3_kb",
+                    "value": 200
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "hulk_p3_kb",
+                    "value": 400
                 },
                 "talentvalue": {
                     "level": 1,
@@ -151,14 +171,14 @@
                     "value": 46
                 },
                 "talentvalue": {
-                    "level": 16,
+                    "level": 18,
                     "name": "hulk_p3_pwr",
                     "value": 170
                 }
             },
             "level": {
-                "count": 16,
-                "description": "%hulk_p3_dmg $DMG_PHYSICAL\\n%hulk_p3_pwr $EP",
+                "count": 18,
+                "description": "%hulk_p3_dmg $DMG_PHYSICAL\\n%hulk_p3_kb $KB\\n%hulk_p3_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%hulk_p3_req"
@@ -386,7 +406,7 @@
         },
         "talent": {
             "descname": "HULK SMASH",
-            "description": "Hulk leaps into the air and smashes back down, doing massive $DMG_PHYSICAL in a wide radius.",
+            "description": "Hulk leaps into the air and smashes back down, doing massive $DMG_PHYSICAL in a wide radius and knocking back and popping up enemies.",
             "descshort": "Radial",
             "icon": 8,
             "icon_texture": "textures/ui/hulk_icons2.png",

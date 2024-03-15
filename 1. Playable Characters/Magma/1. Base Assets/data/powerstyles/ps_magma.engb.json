@@ -106,6 +106,7 @@
                 "allow_non_actors": true,
                 "class": "harming",
                 "damage": "%mag_fireballs_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_fire",
                 "life": 0.5,
                 "name": "powerup",
@@ -123,7 +124,7 @@
             }
         },
         "event": {
-            "damageType": "dmg_fire",
+            "damagetype": "dmg_fire",
             "fxlevel": 1,
             "hiteffect": "char/magma/p2_power",
             "inherit": "blast",
@@ -171,7 +172,19 @@
                 "powerusage": "%mag_fire_pill_pwr",
                 "radius": 120,
                 "tag": 1,
-                "time": 0.4
+                "time": 0.4,
+                "victimeventtag": 109
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%mag_fire_pill_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "life": 0.5,
+                "name": "powerup",
+                "tag": 109,
+                "time": -1
             },
             "chain": {
                 "action": "Idle",
@@ -200,6 +213,7 @@
                 "time": 0.1
             },
             "trigger": {
+                "apply_ally": "none",
                 "apply_self": true,
                 "life": "%mag_form_life",
                 "name": "powerup",
@@ -208,6 +222,11 @@
                 "skin_swap": true,
                 "tag": 1,
                 "time": 0.3,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%mag_form_ar"
+                },
                 "affecter": {
                     "attribute": "might_heaviness",
                     "level": "%mag_form_mt"
@@ -222,19 +241,11 @@
                 }
             },
             "trigger": {
+                "apply_ally": "none",
                 "apply_self": true,
-                "center_bolt": true,
-                "class": "add_attack",
-                "damagepercent": "%mag_form_pdmg",
-                "damagetype": "dmg_fire",
-                "life": "%mag_form_life",
-                "name": "powerup",
-                "tag": 3,
-                "time": 0.3
-            },
-            "trigger": {
                 "class": "touch_damage",
                 "damage": "%mag_form_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_fire",
                 "life": "%mag_form_life",
                 "name": "powerup",
@@ -261,11 +272,6 @@
                 "cat": "skill",
                 "item": "magma_column",
                 "level": 1
-            },
-            "trigger": {
-                "name": "powerusage",
-                "powerusage": "%magma_column_pwr",
-                "time": 0
             },
             "trigger": {
                 "effect": "char/magma/p4_charge",
@@ -301,10 +307,23 @@
                 "knockback": "%magma_column_kb",
                 "maxrange": 250,
                 "name": "fire_column",
+                "powerusage": "%magma_column_pwr",
                 "time": 0.51,
+                "victimeventtag": 106,
                 "damageMod": {
                     "name": "dmgmod_auto_knockback"
                 }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%magma_column_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "life": 0.5,
+                "name": "powerup",
+                "tag": 106,
+                "time": -1
             },
             "chain": {
                 "action": "Idle",
@@ -333,7 +352,7 @@
                 "level": 1
             },
             "trigger": {
-                "loop_timeout": 1,
+                "loop_timeout": 2,
                 "loop_type": "start",
                 "name": "sound",
                 "sound": "char/magma_m/p5_loop",
@@ -354,6 +373,18 @@
                 "knockback": "%fire_slide_kb",
                 "name": "punch",
                 "tag": 1,
+                "time": -1,
+                "victimeventtag": 107
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%fire_slide_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "life": 0.5,
+                "name": "powerup",
+                "tag": 107,
                 "time": -1
             },
             "trigger": {
@@ -401,6 +432,12 @@
             "name": "skateend",
             "noncombat": true,
             "trigger": {
+                "loop_type": "stop",
+                "name": "sound",
+                "sound": "char/magma_m/p5_loop",
+                "time": 0
+            },
+            "trigger": {
                 "effect": "char/magma/p5_power3",
                 "name": "effect",
                 "time": 0
@@ -421,6 +458,7 @@
         },
         "event": {
             "damage": "%magma_xtreme_dmg",
+            "damagescale": "none",
             "damagetype": "dmg_fire",
             "hiteffect": "char/magma/p6_impact",
             "inherit": "blast",
@@ -482,32 +520,43 @@
                 "vibrate": 0.75
             },
             "trigger": {
-                "damage": "%magma_xtreme_dmg",
                 "name": "lava_impact",
                 "tag": 2,
                 "time": 0.175,
-                "timebased": true
+                "timebased": true,
+                "victimeventtag": 108
             },
             "trigger": {
-                "damage": "%magma_xtreme_dmg",
                 "name": "lava_impact",
                 "tag": 3,
                 "time": 0.2,
-                "timebased": true
+                "timebased": true,
+                "victimeventtag": 108
             },
             "trigger": {
-                "damage": "%magma_xtreme_dmg",
                 "name": "lava_impact",
                 "tag": 4,
                 "time": 0.225,
-                "timebased": true
+                "timebased": true,
+                "victimeventtag": 108
             },
             "trigger": {
-                "damage": "%magma_xtreme_dmg",
                 "name": "lava_impact",
                 "tag": 5,
                 "time": 0.25,
-                "timebased": true
+                "timebased": true,
+                "victimeventtag": 108
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "class": "harming",
+                "damage": "%magma_xtreme_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "life": 0.5,
+                "name": "powerup",
+                "tag": 108,
+                "time": -1
             },
             "chain": {
                 "action": "Idle",
@@ -532,11 +581,6 @@
                 "level": 1
             },
             "trigger": {
-                "name": "powerusage",
-                "powerusage": "%magma_ear_pwr",
-                "time": 0
-            },
-            "trigger": {
                 "name": "sound",
                 "sound": "char/magma_m/p7_power",
                 "time": 0.5
@@ -555,6 +599,7 @@
                 "knockback": "%magma_ear_kb",
                 "maxrange": 250,
                 "name": "punch",
+                "powerusage": "%magma_ear_pwr",
                 "tag": 1,
                 "time": 0.6,
                 "damageMod": {
@@ -596,6 +641,7 @@
             },
             "trigger": {
                 "apply_ally": "all",
+                "apply_self": true,
                 "life": "%magma_fired_life",
                 "name": "powerup",
                 "no_shadow": true,
@@ -669,6 +715,7 @@
                 "allow_non_actors": true,
                 "class": "harming",
                 "damage": "%magbeam_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_fire",
                 "life": 0.5,
                 "name": "powerup",
@@ -720,6 +767,7 @@
             },
             "trigger": {
                 "apply_ally": "all",
+                "apply_self": true,
                 "life": "%magma_focus_life",
                 "name": "powerup",
                 "no_shadow": true,
