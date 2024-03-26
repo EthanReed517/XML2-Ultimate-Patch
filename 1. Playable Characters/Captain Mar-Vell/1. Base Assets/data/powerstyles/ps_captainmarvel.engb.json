@@ -1,0 +1,661 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/captainmarvel_icons1.png",
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "projectile",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Bolt",
+            "combotextstarter": "Photon",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "captma_p1",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/captma/p1_charge",
+                "fxlevel": 6,
+                "name": "effect_sound",
+                "sound": "char/captma_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/captma/p1_charge",
+                "fxlevel": 6,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/captma_m/p1_power",
+                "time": 0.24
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "35 -4 47",
+                "attacktype": "projectile",
+                "damage": "%captma_p1_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "entity": "captma_p1_proj",
+                "explodedamage": "%captma_p1_dmg",
+                "filename": "ents_captmarvel",
+                "fulltargeting": true,
+                "maxrange": 800,
+                "name": "projectile",
+                "powerusage": "%captma_p1_pwr",
+                "speed": 700,
+                "targetable": true,
+                "time": 0.24
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Stars",
+            "combotextstarter": "Cosmic",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power2",
+            "playspeed": 1.3,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "captma_p2",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/captma/p2_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/captma/p2_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "effect": "char/captma/p2_charge",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/captma_m/p2_charge",
+                "time": 0.3
+            },
+            "trigger": {
+                "effect": "char/captma/p2_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "damage": "%captma_p2_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "maxrange": 120,
+                "name": "radial",
+                "powerusage": "%captma_p2_pwr",
+                "time": 0.5,
+                "damagemod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "trigger": {
+                "effect": "char/captma/p2_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/captma_m/p2_impact",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "beam",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Beam",
+            "combotextstarter": "Star",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "playspeed": 2,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "captma_p3",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/captma_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/captma_m/p3_power",
+                "time": 0.3
+            },
+            "trigger": {
+                "arc": 0,
+                "attack_bone_pos": "0 0 50",
+                "attacktype": "beam",
+                "beambolt": "Bip01 Spine2",
+                "beameffect": "char/captma/p3_beam",
+                "damage": "%captma_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "fxlevel": 2,
+                "hiteffect": "char/captma/p3_impact",
+                "knockback": "%captma_p3_kb",
+                "maxrange": 800,
+                "name": "beam",
+                "pierce": true,
+                "powerusage": "%captma_p3_pwr",
+                "time": 0.3,
+                "damagemod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Slam",
+            "combotextstarter": "Nega",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power4",
+            "powerup_tag": "captma_p4",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "captma_p4",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/captma/p4_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/captma_m/p4_power",
+                "time": 0.4
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/captma/p4_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "effect": "char/captma/p4_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "damage": "%captma_p4_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "knockback": "%captma_p4_kb",
+                "maxrange": 120,
+                "name": "radial",
+                "powerusage": "%captma_p4_pwr",
+                "time": 0.4,
+                "damagemod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "event": {
+            "damage": "%captma_p5_dmg",
+            "damagescale": "none",
+            "damagetype": "dmg_energy",
+            "enemynumber": 0,
+            "inherit": "blast",
+            "maxrange": 300,
+            "name": "hail_storm",
+            "radius": 60,
+            "random": true,
+            "victimeventtag": 102,
+            "victimeventtag2": 103
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_attack_jumpslam",
+            "combotextfinisher": "Impact",
+            "combotextstarter": "Meteor",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power5",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "captma_p5",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/captma/p5_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/captma_m/p5_power",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/captma_m/p5_charge",
+                "time": 0.2
+            },
+            "trigger": {
+                "life": "%captma_p5_stun",
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 102,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_stunned",
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "effect": "char/captma/p5_impact",
+                "fxlevel": 2,
+                "name": "effect",
+                "tag": 103,
+                "time": -1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/captma_m/p5_impact",
+                "time": 0.69
+            },
+            "trigger": {
+                "enemynumber": 0,
+                "name": "hail_storm",
+                "powerusage": "%captma_p4_pwr",
+                "time": 0.75
+            },
+            "trigger": {
+                "enemynumber": 1,
+                "name": "hail_storm",
+                "time": 0.69
+            },
+            "trigger": {
+                "enemynumber": 2,
+                "name": "hail_storm",
+                "time": 0.73
+            },
+            "trigger": {
+                "enemynumber": 3,
+                "name": "hail_storm",
+                "time": 0.66
+            },
+            "trigger": {
+                "enemynumber": 4,
+                "name": "hail_storm",
+                "time": 0.71
+            },
+            "trigger": {
+                "enemynumber": 5,
+                "name": "hail_storm",
+                "time": 0.74
+            },
+            "trigger": {
+                "enemynumber": 6,
+                "name": "hail_storm",
+                "time": 0.68
+            },
+            "trigger": {
+                "enemynumber": 7,
+                "name": "hail_storm",
+                "time": 0.71
+            },
+            "trigger": {
+                "enemynumber": 8,
+                "name": "hail_storm",
+                "time": 0.73
+            },
+            "trigger": {
+                "enemynumber": 9,
+                "name": "hail_storm",
+                "time": 0.67
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Empowerment",
+            "combotextstarter": "Cosmic",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "captma_p6",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/captma/p6_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/captma_m/p6_charge",
+                "time": 0.1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/captma_m/p6_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%captma_p6_lif",
+                "name": "powerup",
+                "powerusage": "%captma_p6_pwr",
+                "time": 0.5,
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/captma/p6_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/captma/p6_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%captma_p6_ar"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move_attack",
+                    "level": "%captma_p6_sd"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Phase",
+            "combotextstarter": "Vanishing",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "captma_p7",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/captma_m/p7_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/captma/p7_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 L Toe0",
+                "effect": "char/captma/p7_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "effect": "char/captma/p7_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/captma/p7_power",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/captma_m/p7_power",
+                "time": 0.4
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "class": "callevents",
+                "life": "%captma_p7_lif",
+                "name": "powerup",
+                "powerusage": "%captma_p7_pwr",
+                "time": 0.5,
+                "FunctionEvent": {
+                    "function": "activate",
+                    "triggertag": 10
+                },
+                "FunctionEvent": {
+                    "function": "deactivate",
+                    "triggertag": 11
+                },
+                "special_fx": {
+                    "effect": "char/captma/p7_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "invisible"
+                },
+                "affecter": {
+                    "attribute": "energy_per_kill",
+                    "level": "%captma_p7_epg"
+                }
+            },
+            "trigger": {
+                "effect": "char/captma/p7_power",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "add": "cloaked",
+                "name": "disapear",
+                "tag": 10,
+                "time": -1,
+                "type": "ce_renderfx"
+            },
+            "trigger": {
+                "name": "appear",
+                "remove": "cloaked",
+                "tag": 11,
+                "time": -1,
+                "type": "ce_renderfx"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_menu_action",
+            "combotextfinisher": "Decimation",
+            "description": "BIG BANG",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8",
+            "playspeed": 4,
+            "priority": "uninterruptable",
+            "require": {
+                "cat": "skill",
+                "item": "captma_p8",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "only_non_looped": true,
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Spine2",
+                "effect": "char/captma/p8_charge",
+                "how_used": "primary",
+                "name": "effect_sound",
+                "sound": "char/captma_m/p8_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Spine2",
+                "effect": "char/captma/p8_power",
+                "how_used": "primary",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.13,
+                "type": "ce_force_visibility",
+                "visible": false
+            },
+            "trigger": {
+                "damage": "%captma_p8_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "knockback": 620,
+                "maxrange": 300,
+                "name": "radial",
+                "time": 0.15,
+                "damagemod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/captma_m/p8_power",
+                "time": 0.13
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.8,
+                "type": "ce_force_visibility",
+                "visible": true
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power6",
+            "combotextfinisher": "Conduit",
+            "description": "ENERGY CONDUIT",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power9",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "captma_p9",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/captma/p9_charge",
+                "name": "effect_sound",
+                "sound": "char/captma_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "life": "%captma_p9_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/captma/p9_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "xp",
+                    "level": "%captma_p9_xp"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "power_cost",
+                    "level": 0
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}

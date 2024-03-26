@@ -1,0 +1,833 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "captma_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_all",
+                        "level": 0.05
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Photon Bolt",
+            "description": "Captain Mar-Vell throws a homing bolt of Photon Energy that explodes upon impact, damaging any nearby enemies.",
+            "descshort": "Projectile",
+            "icon": 0,
+            "icon_texture": "textures/ui/captainmarvel_icons2.png",
+            "name": "captma_p1",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p1_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "captma_p1_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p1_dmg",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "captma_p1_dmg",
+                    "value": "117 132"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p1_pwr",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "captma_p1_pwr",
+                    "value": 140
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%captma_p1_dmg initial $DMG_ENERGY\\n%captma_p1_dmg explosion $DMG_ENERGY\\n%captma_p1_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%captma_p1_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Shooting Stars",
+            "description": "Captain Mar-Vell releases a radial wave of Photon Energy that pops enemies up into the air.",
+            "descshort": "Radial",
+            "icon": 3,
+            "icon_texture": "textures/ui/captainmarvel_icons2.png",
+            "name": "captma_p2",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p2_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "captma_p2_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p2_dmg",
+                    "value": "21 26"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "captma_p2_dmg",
+                    "value": "79 89"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p2_pwr",
+                    "value": 46
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "captma_p2_pwr",
+                    "value": 170
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%captma_p2_dmg $DMG_ENERGY\\n%captma_p2_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%captma_p2_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Star Beam",
+            "description": "Captain Mar-Vell fires a piercing beam of Photon Energy that knocks back enemies.",
+            "descshort": "Beam",
+            "icon": 2,
+            "icon_texture": "textures/ui/captainmarvel_icons2.png",
+            "name": "captma_p3",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p3_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "captma_p3_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p3_dmg",
+                    "value": "36 42"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "captma_p3_dmg",
+                    "value": "194 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p3_pwr",
+                    "value": 36
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "captma_p3_pwr",
+                    "value": 142
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p3_kb",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "captma_p3_kb",
+                    "value": 620
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%captma_p3_dmg $DMG_ENERGY\\n%captma_p3_kb $KB\\n%captma_p3_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%captma_p3_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Nega Slam",
+            "description": "Captain Mar-Vell slams his Nega-Bands together, sending out a shockwave of $DMG_ENERGY that knocks back enemies with a chance for a 'Deadly Strike' (33% instant $HP loss).",
+            "descshort": "Radial",
+            "icon": 1,
+            "icon_texture": "textures/ui/captainmarvel_icons2.png",
+            "name": "captma_p4",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p4_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "captma_p4_req",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p4_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "captma_p4_dmg",
+                    "value": "82 93"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p4_pwr",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "captma_p4_pwr",
+                    "value": 170
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p4_cnc",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "captma_p4_cnc",
+                    "value": 0.19
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p4_kb",
+                    "value": 200
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "captma_p4_kb",
+                    "value": 600
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%captma_p4_dmg $DMG_ENERGY\\n%captma_p4_kb $KB\\n%captma_p4_cnc:p chance for Deadly Strike\\n%captma_p4_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%captma_p4_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "captma_p2",
+                    "level": 1
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "captma_pass2",
+                    "level": 1
+                },
+                "powerup": {
+                    "chance": "%captma_p4_cnc",
+                    "class": "atk_instant_pct",
+                    "life": -1,
+                    "percent": 0.33,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope_node": "captma_p4"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Meteor Shower",
+            "description": "Captain Mar-Vell rains down $DMG_ENERGY that rips through random nearby enemies, stunning them.",
+            "descshort": "Blast",
+            "icon": 8,
+            "icon_texture": "textures/ui/captainmarvel_icons2.png",
+            "name": "captma_p5",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p5_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "captma_p5_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p5_dmg",
+                    "value": "43 50"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "captma_p5_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p5_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "captma_p5_pwr",
+                    "value": 180
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p5_stun",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "captma_p5_stun",
+                    "value": 6
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%captma_p5_dmg $DMG_ENERGY\\n%captma_p5_stun seconds stunned\\n%captma_p5_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%captma_p5_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Cosmic Empowerment",
+            "description": "Captain Mar-Vell draws in power from the cosmos, increasing his Attack Speed and $AR for a time.",
+            "descshort": "Boost",
+            "icon": 5,
+            "icon_texture": "textures/ui/captainmarvel_icons2.png",
+            "name": "captma_p6",
+            "power": "power6",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p6_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "captma_p6_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p6_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "captma_p6_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p6_ar",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "captma_p6_ar",
+                    "value": 2.6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p6_sd",
+                    "value": 1.1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "captma_p6_sd",
+                    "value": 1.85
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p6_pwr",
+                    "value": 88
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "captma_p6_pwr",
+                    "value": 484
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%captma_p6_ar $AR\\n%captma_p6_sd:s Attack Speed\\n%captma_p6_lif seconds\\n%captma_p6_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%captma_p6_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Nega Phase",
+            "description": "Captain Mar-Vell uses the Nega-Bands to partially phase into the Negative Zone, regaining $EP for every enemy he defeats and becoming invisible for a time.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/captainmarvel_icons2.png",
+            "name": "captma_p7",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p7_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "captma_p7_req",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p7_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "captma_p7_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p7_epg",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "captma_p7_epg",
+                    "value": 50
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p7_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "captma_p7_pwr",
+                    "value": 504
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%captma_p7_epg $EP per defeated enemy\\n%captma_p7_lif seconds\\n%captma_p7_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%captma_p7_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "captma_pass2",
+                    "level": 1
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "captma_p8",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "BIG BANG",
+            "description": "Captain Mar-Vell pulls in and unleashes the power of the cosmos, causing a massive explosion that does massive damage to all enemies in range and knocks them back.",
+            "descshort": "Radial",
+            "icon": 7,
+            "icon_texture": "textures/ui/captainmarvel_icons2.png",
+            "name": "captma_p8",
+            "power": "power8",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p8_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "captma_p8_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p8_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "captma_p8_dmg",
+                    "value": "279 309"
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%captma_p8_dmg $DMG_ENERGY",
+                "require": {
+                    "cat": "level",
+                    "level": "%captma_p8_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "captma_p6",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "ENERGY CONDUIT",
+            "description": "Captain Mar-Vell absorbs and channels ambient Energy into the entire party, allowing everyone to use no $EP and increasing $XP gained for a time.",
+            "descshort": "Boost",
+            "icon": 4,
+            "icon_texture": "textures/ui/captainmarvel_icons2.png",
+            "name": "captma_p9",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p9_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "captma_p9_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p9_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "captma_p9_lif",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_p9_xp",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "captma_p9_xp",
+                    "value": 1.5
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%captma_p9_xp:s $XP\\n%captma_p9_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%captma_p9_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Regeneration",
+            "description": "Heals over time.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/captainmarvel_icons2.png",
+            "name": "captma_regen",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_regen_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "captma_regen_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_regen_hp",
+                    "value": 0.0017
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "captma_regen_hp",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_regen_hp_p",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "captma_regen_hp_p",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_regen_hp_t",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "captma_regen_hp_t",
+                    "value": 6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%captma_regen_hp_p:f% of max $HP every %captma_regen_hp_t seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%captma_regen_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "health_regen_pct",
+                        "level": "%captma_regen_hp"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Photon Mastery",
+            "description": "Increases damage and Critical chance with $DMG_ENERGY.",
+            "descshort": "Passive",
+            "icon": 12,
+            "icon_texture": "textures/ui/captainmarvel_icons2.png",
+            "name": "captma_pass1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_pass1_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "captma_pass1_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_pass1_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "captma_pass1_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_pass1_cri",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "captma_pass1_cri",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%captma_pass1_dmg:s $DMG_ENERGY\\n+%captma_pass1_cri:p Critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%captma_pass1_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "supermaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%captma_pass1_dmg",
+                        "scope_damage": "dmg_energy"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%captma_pass1_dmg",
+                        "scope_damage": "dmg_energy"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Nega-Bands",
+            "description": "The Nega-Bands increase Captain Mar-Vell's resistance to all types of damage and add $DMG_ENERGY to all non-powered Melee attacks.",
+            "descshort": "Passive",
+            "icon": 9,
+            "icon_texture": "textures/ui/captma_icons2.png",
+            "name": "captma_pass2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_pass2_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "captma_pass2_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_pass2_pct",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "captma_pass2_pct",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_pass2_dmg",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "captma_pass2_dmg",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%captma_pass2_pct:p all resistances\\n+%captma_pass2_dmg:p $DMG_ENERGY",
+                "require": {
+                    "cat": "level",
+                    "level": "%captma_pass2_req"
+                },
+                "powerup": {
+                    "class": "add_attack",
+                    "damagepercent": "%captma_pass2_dmg",
+                    "damagetype": "dmg_energy",
+                    "life": -1,
+                    "special_fx": {
+                        "effect": "char/captma/special_trail",
+                        "how_used": "custom"
+                    },
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        },
+                        "scope": {
+                            "scope_non_powers": true
+                        }
+                    }
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_all",
+                        "level": "%captma_pass2_pct"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Kree Physiology",
+            "description": "Captain Mar-Vell's Kree Physiology increases his $DR and gives him a chance to dodge beams and projectiles.",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/captainmarvel_icons2.png",
+            "name": "captma_pass3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_pass3_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "captma_pass3_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_pass3_dr",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "captma_pass3_dr",
+                    "value": 1.75
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "captma_pass3_cnc",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "captma_pass3_cnc",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%captma_pass3_dr:s $DR\\n%captma_pass3_cnc:p chance to dodge",
+                "require": {
+                    "cat": "level",
+                    "level": "%captma_pass3_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "captma_regen",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "defense_rating",
+                        "level": "%captma_pass3_dr"
+                    },
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%lukec_pass2_cnc"
+                    }
+                }
+            }
+        }
+    }
+}
