@@ -100,7 +100,6 @@
             "lockangles": true,
             "lockchaining": true,
             "name": "power1",
-            "powerup_tag": "pol_power1",
             "priority": 5,
             "startchaintime": 0.5,
             "trigger": {
@@ -373,11 +372,6 @@
                 "level": 1
             },
             "trigger": {
-                "name": "powerusage",
-                "powerusage": "%pol_p4_ep",
-                "time": 0
-            },
-            "trigger": {
                 "bolt": "Bip01 L Hand",
                 "effect": "char/polaris/p4_charge",
                 "fxlevel": 1,
@@ -402,6 +396,7 @@
                 "knockback": 370,
                 "maxrange": 250,
                 "name": "punch",
+                "powerusage": "%pol_p4_ep",
                 "time": 0.6,
                 "damageMod": {
                     "name": "dmgmod_auto_knockback"
@@ -466,7 +461,6 @@
             "icon": 4,
             "lockangles": true,
             "name": "power5",
-            "powerup_tag": "pol_power5",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -570,15 +564,11 @@
                 "time": 0.1
             },
             "trigger": {
-                "name": "powerusage",
-                "powerusage": "%pol_field_pwr",
-                "time": 0
-            },
-            "trigger": {
                 "apply_ally": "all",
                 "apply_self": true,
                 "life": "%pol_field_lif",
                 "name": "powerup",
+                "powerusage": "%pol_field_pwr",
                 "time": 0.45,
                 "special_fx": {
                     "effect": "char/polaris/p7_aura",
@@ -629,16 +619,13 @@
                 "time": 0
             },
             "trigger": {
-                "name": "powerusage",
-                "powerusage": "%pol_morph_pwr",
-                "time": 0
-            },
-            "trigger": {
                 "apply_ally": "none",
                 "apply_self": true,
                 "damagetype": "dmg_magnetic",
                 "life": "%pol_morph_lif",
                 "name": "powerup",
+                "no_stack": true,
+                "powerusage": "%pol_morph_pwr",
                 "remove_skin_on_exit": true,
                 "skin": 10300,
                 "skin_swap": true,
@@ -687,7 +674,6 @@
             "noautoaim": true,
             "name": "power10",
             "playspeed": 12,
-            "powerup_tag": "pol_power10",
             "priority": 10,
             "require": {
                 "cat": "skill",
