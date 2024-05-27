@@ -3,6 +3,88 @@
         "cansteal": true,
         "iconfile": "textures/ui/omegared_icons1.png",
         "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle",
+            "noncombat": true,
+            "playspeed": 1,
+            "trigger": {
+                "boltslot": "ebolton_weapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "boltslot": "ebolton_altweapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0,
+                "type": "ce_bolton"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "strafeleft"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "straferight"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "advance"
+            },
+            "chain": {
+                "action": "retreat",
+                "result": "retreat"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "groundattack",
+                "result": "groundattack"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            },
+            "chain": {
+                "action": "special",
+                "result": "boredloop"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
             "aireusetime": 5,
             "aitype": "melee",
             "animenum": "ea_power4",
@@ -12,7 +94,7 @@
             "icon": 0,
             "lockangles": true,
             "name": "power1",
-            "powerup_tag": "coil_power",
+            "powerup_tag": "death_power",
             "priority": 5,
             "startchaintime": 0.9,
             "require": {
@@ -84,7 +166,7 @@
             "icon": 3,
             "lockangles": true,
             "name": "power2",
-            "powerup_tag": "coil_power",
+            "powerup_tag": "death_power",
             "priority": 5,
             "startchaintime": 0.8,
             "require": {
@@ -165,7 +247,7 @@
             "icon": 11,
             "lockangles": true,
             "name": "power3",
-            "powerup_tag": "coil_power",
+            "powerup_tag": "death_power",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -411,7 +493,7 @@
             "lockangles": true,
             "locktransitionangles": true,
             "name": "power6",
-            "powerup_tag": "coil_power",
+            "powerup_tag": "death_power",
             "priority": 5,
             "startchaintime": 0.99,
             "require": {
@@ -494,6 +576,7 @@
                 }
             },
             "trigger": {
+                "apply_ally": "none",
                 "apply_self": true,
                 "life": "%omega_p6_life",
                 "name": "powerup",
@@ -606,11 +689,6 @@
                     "attribute": "all_talents",
                     "level": "%omega_p8_skills",
                     "scope_talent": "omega_p8"
-                },
-                "affecter": {
-                    "affect_type": "scale",
-                    "attribute": "power_cost",
-                    "level": "%omega_p8_scale"
                 }
             },
             "chain": {
@@ -627,7 +705,7 @@
             "noautoaim": true,
             "name": "power9",
             "playspeed": 2,
-            "powerup_tag": "coil_power",
+            "powerup_tag": "death_power",
             "priority": 10,
             "require": {
                 "cat": "skill",

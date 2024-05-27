@@ -303,6 +303,154 @@
             }
         },
         "FightMove": {
+            "animenum": "ea_attack_light1",
+            "blendtime": 0,
+            "endchaintime": 1,
+            "lockangles": true,
+            "name": "attacklight1",
+            "priority": 3,
+            "startchaintime": 0.64,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.27
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.36,
+                "name": "trail",
+                "time": 0.18
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.36
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight2"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attacktrip1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light2",
+            "blendtime": 0.05,
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight2",
+            "priority": 3,
+            "startchaintime": 0.69,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.3
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.38,
+                "name": "trail",
+                "time": 0.23
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.46
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight3"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "popupattack"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light3",
+            "blendtime": 0.05,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight3",
+            "priority": 3,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.21
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "life": 0.36,
+                "name": "trail",
+                "time": 0.21
+            },
+            "trigger": {
+                "name": "kick",
+                "time": 0.36
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
             "aireusetime": 6,
             "aitype": "projectile",
             "animenum": "ea_power1",
@@ -659,6 +807,12 @@
             "name": "power4_break",
             "noautoaim": true,
             "priority": 5,
+            "trigger": {
+                "loop_type": "stop",
+                "name": "sound",
+                "sound": "char/captam_m/p4_loop",
+                "time": 0
+            },
             "chain": {
                 "action": "idle",
                 "result": "idle"

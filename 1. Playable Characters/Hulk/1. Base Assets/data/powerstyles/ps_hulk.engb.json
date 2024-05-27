@@ -535,7 +535,7 @@
             },
             "chain": {
                 "action": "walk",
-                "result": "walk"
+                "result": "jog"
             },
             "chain": {
                 "action": "jog",
@@ -548,6 +548,352 @@
             "chain": {
                 "action": "sprint",
                 "result": "sprint"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_lunge_land",
+            "lockangles": true,
+            "lockspeed": true,
+            "locktransitionangles": true,
+            "name": "fastballland",
+            "startchaintime": 0.7,
+            "takeimpactdamage": false,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "job"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight1",
+            "startchaintime": 0.5,
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.27
+            },
+            "trigger": {
+                "effect": "char/hulk/special_attack",
+                "fxlevel": 1,
+                "name": "trail",
+                "time": 0.27
+            },
+            "trigger": {
+                "angle": -30,
+                "height": 15,
+                "name": "punch_heavy",
+                "time": 0.36
+            },
+            "trigger": {
+                "angle": 15,
+                "height": 10,
+                "name": "punch_heavy",
+                "time": 0.42
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight2"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attacktrip1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light2",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight2",
+            "playspeed": 1,
+            "startchaintime": 0.5,
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.22
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/hulk/special_attack",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.22
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.33
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight3"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "popupattack"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light3",
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight3",
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.27
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/hulk/special_attack",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.27
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/hulk/special_attack",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.27
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.36
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_stun3",
+            "blendtime": 0.05,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackstun3",
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.27
+            },
+            "trigger": {
+                "movement": 12,
+                "name": "slide",
+                "time": 0.3
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "life": 0.3,
+                "name": "trail",
+                "time": 0.17
+            },
+            "trigger": {
+                "knockback": 0,
+                "name": "kick_heavy",
+                "time": 0.35,
+                "damagemod": {
+                    "name": "dmgmod_stun"
+                },
+                "damagemod": {
+                    "name": "dmgmod_no_atk_roll"
+                }
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_popup",
+            "fallback": "attackheavy1",
+            "handler": "ch_popup_attack",
+            "lockangles": true,
+            "name": "popupattack",
+            "startchaintime": 0.81,
+            "trigger": {
+                "charge": 1,
+                "name": "charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.14
+            },
+            "trigger": {
+                "movement": 20,
+                "name": "slide",
+                "time": 0.14
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/hulk/special_attack",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.14
+            },
+            "trigger": {
+                "knockback": 0,
+                "maxrange": 50,
+                "name": "punch_heavy",
+                "time": 0.23,
+                "damagemod": {
+                    "name": "dmgmod_popup"
+                },
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.25
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_trip2",
+            "blendtime": 0.05,
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacktrip2",
+            "startchaintime": 1,
+            "event": {
+                "inherit": "kick",
+                "maxrange": 40,
+                "name": "sweep",
+                "victimeventtag": 1,
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                },
+                "damagemod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.27
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.6,
+                "name": "trail",
+                "time": 0.13
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/hulk/special_attack",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "angle": -30,
+                "height": -10,
+                "index": 1,
+                "name": "sweep",
+                "time": 0.4
+            },
+            "trigger": {
+                "angle": 0,
+                "height": -10,
+                "index": 1,
+                "name": "sweep",
+                "time": 0.42
+            },
+            "trigger": {
+                "angle": 30,
+                "height": -10,
+                "index": 1,
+                "name": "sweep",
+                "time": 0.45
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
             }
         },
         "FightMove": {
@@ -871,7 +1217,8 @@
             },
             "trigger": {
                 "arc": 180,
-                "damage": "3 5",
+                "damage": "%hulk_p4_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "knockback": "%hulk_p4_kb",
                 "name": "punch",
@@ -929,6 +1276,12 @@
             "noautoaim": true,
             "playspeed": 1,
             "priority": 5,
+            "trigger": {
+                "loop_type": "stop",
+                "name": "sound",
+                "sound": "char/hulk_m/p4_loop",
+                "time": 0
+            },
             "chain": {
                 "action": "idle",
                 "result": "idle"
@@ -1191,6 +1544,7 @@
                 "time": 0.58
             },
             "trigger": {
+                "arc": 180,
                 "damage": "%hulk_p9_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_physical",

@@ -212,10 +212,10 @@
             },
             "event": {
                 "arc": 180,
-                "attacktype": "blast",
-                "damagetype": "dmg_physical",
+                "attacktype": "punch",
                 "damage": "%ladyds_p2_dmg",
                 "damagescale": "none",
+                "damagetype": "dmg_physical",
                 "inherit": "punch",
                 "name": "p_radius"
             },
@@ -258,8 +258,6 @@
                 "time": 0.19
             },
             "trigger": {
-                "damagetype": "dmg_physical",
-                "damage": "%ladyds_p2_dmg",
                 "index": 1,
                 "knockback": 40,
                 "maxrange": 85,
@@ -268,8 +266,6 @@
                 "time": 0.25
             },
             "trigger": {
-                "damagetype": "dmg_physical",
-                "damage": "%ladyds_p2_dmg",
                 "index": 2,
                 "knockback": 305,
                 "maxrange": 105,
@@ -488,6 +484,8 @@
                 "time": 0
             },
             "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
                 "class": "add_harming",
                 "damage": "%ladyds_p6_dmg",
                 "damagescale": "normal",
@@ -509,6 +507,8 @@
                 }
             },
             "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
                 "class": "feral_rage",
                 "life": "%ladyds_p6_life",
                 "name": "powerup",
@@ -635,10 +635,9 @@
                 "time": 0
             },
             "trigger": {
-                "damage": "7 9",
-                "damagescale": "normal",
+                "damage": "%ladyds_p8_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_blade",
-                "isxtreme": true,
                 "maxrange": 250,
                 "name": "teleport_data_store",
                 "powerusage": 0,
@@ -699,8 +698,8 @@
                 "time": 0
             },
             "trigger": {
-                "damage": "7 9",
-                "damagescale": "normal",
+                "damage": "%ladyds_p8_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_blade",
                 "name": "teleport_punch",
                 "powerusage": 0,
@@ -738,18 +737,6 @@
                 "end": true,
                 "name": "xtreme_start",
                 "time": 0.4
-            },
-            "chain": {
-                "action": "walk",
-                "result": "walk"
-            },
-            "chain": {
-                "action": "jog",
-                "result": "jog"
-            },
-            "chain": {
-                "action": "run",
-                "result": "run"
             },
             "chain": {
                 "action": "Idle",
