@@ -442,31 +442,30 @@
                 "actorbolt": "Bip01 R Hand",
                 "attack_bone_angles": "0 0 0",
                 "attack_bone_pos": "35 -4 47",
-                "attacktype": "projectile",
-                "damage": "%omega_p5_dmg",
+                "attacktype": "blast",
+                "damage": 1,
                 "damagescale": "none",
                 "damagetype": "dmg_fire",
                 "entity": "omega_p5_proj",
                 "explodedamage": "%omega_p5_dmg",
-                "exploderadius": 36,
+                "explodedamagetype": "dmg_fire",
+                "explodevictimeventtag": 100,
                 "filename": "ents_omegared",
-                "knockback": 245,
+                "inherit": "projectile",
                 "name": "projectile",
                 "powerusage": "%omega_p5_pwr",
                 "speed": 650,
                 "time": 0.26,
                 "victimeventtag": 100,
                 "damageMod": {
-                    "name": "dmgmod_auto_knockback"
-                },
-                "damageMod": {
-                    "name": "dmgmod_environment"
+                    "name": "dmgmod_ground"
                 }
             },
             "trigger": {
                 "allow_non_actors": true,
                 "class": "harming",
                 "damage": "%omega_p5_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_fire",
                 "life": 0.5,
                 "name": "powerup",
