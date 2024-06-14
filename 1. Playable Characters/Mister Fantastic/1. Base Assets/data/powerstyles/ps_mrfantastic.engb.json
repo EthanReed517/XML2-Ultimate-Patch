@@ -1,0 +1,1357 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/mrfantastic_icons1.png",
+        "FightMove": {
+            "animenum": "ea_jump_start",
+            "handler": "ch_move_jump",
+            "lockangles": true,
+            "name": "jump",
+            "startchaintime": 0.3,
+            "chain": {
+                "action": "move",
+                "result": "airjump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "jumploop",
+            "noncombat": true,
+            "chain": {
+                "action": "move",
+                "result": "airjump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_double_jump_start",
+            "blendtime": 0.1,
+            "handler": "ch_move_jump",
+            "name": "airjump",
+            "startchaintime": 0.5,
+            "turnrate": 0.2,
+            "chain": {
+                "action": "special",
+                "result": "doublejumpland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_land",
+            "blendtime": 0.1,
+            "endchaintime": 0.7,
+            "handler": "ch_move_jump_land",
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "doublejumpland",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "blendtime": 0.05,
+            "endchaintime": 1,
+            "lockangles": true,
+            "name": "attacklight1",
+            "playspeed": 1,
+            "priority": 3,
+            "startchaintime": 0.61,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.31
+            },
+            "trigger": {
+                "maxrange": 84,
+                "name": "punch",
+                "time": 0.38
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight2"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attacktrip1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light2",
+            "blendtime": 0.05,
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight2",
+            "playspeed": 1,
+            "priority": 3,
+            "startchaintime": 0.64,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.28
+            },
+            "trigger": {
+                "maxrange": 84,
+                "name": "punch",
+                "time": 0.35
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight3"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "popupattack"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light3",
+            "blendtime": 0.05,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight3",
+            "playspeed": 1,
+            "priority": 3,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.31
+            },
+            "trigger": {
+                "effect": "char/mrfan/special_attack",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.25
+            },
+            "trigger": {
+                "angle": -50,
+                "maxrange": 75,
+                "name": "punch",
+                "radius": 35,
+                "time": 0.42
+            },
+            "trigger": {
+                "angle": -20,
+                "maxrange": 75,
+                "name": "punch",
+                "radius": 35,
+                "time": 0.42
+            },
+            "trigger": {
+                "angle": 20,
+                "maxrange": 75,
+                "name": "punch",
+                "radius": 35,
+                "time": 0.42
+            },
+            "trigger": {
+                "angle": 50,
+                "maxrange": 75,
+                "name": "punch",
+                "radius": 35,
+                "time": 0.42
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_trip2",
+            "blendtime": 0.05,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacktrip2",
+            "event": {
+                "arc": 67,
+                "inherit": "kick",
+                "knockback": 0,
+                "maxrange": 72,
+                "name": "sweep",
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "effect": "char/mrfan/attack_finisher",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.37
+            },
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.37
+            },
+            "trigger": {
+                "angle": 60,
+                "height": -10,
+                "index": 1,
+                "name": "sweep",
+                "time": 0.47
+            },
+            "trigger": {
+                "angle": 0,
+                "height": -10,
+                "index": 1,
+                "name": "sweep",
+                "time": 0.52
+            },
+            "trigger": {
+                "angle": -60,
+                "height": -10,
+                "index": 1,
+                "name": "sweep",
+                "time": 0.57
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_popup",
+            "blendtime": 0.05,
+            "fallback": "attackheavy1",
+            "handler": "ch_popup_attack",
+            "lockangles": true,
+            "name": "popupattack",
+            "playspeed": 1,
+            "priority": 5,
+            "startchaintime": 0.8,
+            "trigger": {
+                "charge": 1,
+                "name": "charge",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 20,
+                "name": "slide",
+                "time": 0.18
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.23
+            },
+            "trigger": {
+                "knockback": 0,
+                "maxrange": 50,
+                "name": "punch_heavy",
+                "time": 0.35,
+                "damagemod": {
+                    "name": "dmgmod_popup"
+                },
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_knockback",
+            "blendtime": 0,
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackknockback2",
+            "priority": 5,
+            "startchaintime": 0.8,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.08
+            },
+            "trigger": {
+                "movement": 20,
+                "name": "slide_kick",
+                "targetdistance": 50,
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Toe0",
+                "name": "trail",
+                "time": 0.08
+            },
+            "trigger": {
+                "inherit": "kick_heavy",
+                "knockback": 190,
+                "maxrange": 100,
+                "name": "thrust_kick",
+                "time": 0.22,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "melee",
+            "animenum": "ea_power1_start",
+            "combotextfinisher": "Pinball",
+            "combotextstarter": "Rolling",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "noautoaim": true,
+            "powerup_tag": "mrfan_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "mrfan_p1",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%mrfan_p1_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mrfan_m/p1_charge",
+                "time": 0.5
+            },
+            "trigger": {
+                "forward": 0,
+                "name": "velocity",
+                "time": 0.99,
+                "up": 150
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power1_loop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1_hold",
+            "blendtime": 0,
+            "combotextfinisher": "Pinball",
+            "combotextstarter": "Rolling",
+            "energypersecond": "%mrfan_p1_pwr",
+            "fallback": "jumploop",
+            "handler": "ch_charge_move",
+            "icon": 0,
+            "locktransitionangles": true,
+            "name": "power1_loop",
+            "noautoaim": true,
+            "powerup_tag": "mrfan_power",
+            "priority": 5,
+            "turnrate": 0.75,
+            "trigger": {
+                "loop_timeout": 1,
+                "loop_type": "start",
+                "name": "sound",
+                "sound": "char/mrfan_m/p1_loop",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 100,
+                "damage": "%mrfan_p1_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "hiteffect": "char/mrfan/p1_impact",
+                "knockback": 250,
+                "name": "punch",
+                "tag": 1,
+                "tiles": true,
+                "time": -1,
+                "victimeventtag": 2,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mrfan_m/p1_power",
+                "tag": 2,
+                "time": -1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "no_stack": true,
+                "only_non_looped": true,
+                "remove_on_node_end": true,
+                "time": 0,
+                "special_fx": {
+                    "bolt": "Bip01 Pelvis",
+                    "effect": "char/mrfan/p1_power",
+                    "fxlevel": 1,
+                    "how_used": "primary",
+                    "never_cycle": true
+                }
+            },
+            "chain": {
+                "action": "special",
+                "result": "power1_loop"
+            },
+            "chain": {
+                "action": "touch",
+                "result": "power1_end"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power1_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1_end",
+            "icon": 0,
+            "lockangles": true,
+            "lockspeed": true,
+            "locktransitionangles": true,
+            "name": "power1_end",
+            "playspeed": 1,
+            "priority": 5,
+            "trigger": {
+                "loop_type": "stop",
+                "name": "sound",
+                "sound": "char/mrfan_m/p1_loop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mrfan_m/p1_impact",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "melee",
+            "animenum": "ea_power2_loop",
+            "combotextfinisher": "Propeller",
+            "combotextstarter": "Whirling",
+            "energypersecond": "%mrfan_p2_pwr",
+            "icon": 1,
+            "lockchaining": false,
+            "locktransitionangles": true,
+            "name": "power2",
+            "powerup_tag": "mrfan_power",
+            "priority": 5,
+            "turnrate": 0.3,
+            "require": {
+                "cat": "skill",
+                "item": "mrfan_p2",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "only_non_looped": true,
+                "powerusage": "%mrfan_p2_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "only_non_looped": true,
+                "sound": "char/mrfan_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "loop_timeout": 1,
+                "loop_type": "start",
+                "name": "sound",
+                "sound": "char/mrfan_m/p2_loop",
+                "time": 0
+            },
+            "event": {
+                "arc": 90,
+                "damage": 0,
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "inherit": "radial",
+                "knockback": 190,
+                "maxrange": 64,
+                "name": "arm_arc",
+                "victimeventtag": 100,
+                "damagemod": {
+                    "name": "dmgmod_popup"
+                },
+                "damagemod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%mrfan_p2_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "life": 1,
+                "name": "powerup",
+                "tag": 100,
+                "time": -1,
+                "use_tint": false
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "no_stack": true,
+                "remove_on_node_end": true,
+                "tag": 6,
+                "time": 0,
+                "special_fx": {
+                    "effect": "char/mrfan/p2_power",
+                    "fxlevel": 1,
+                    "how_used": "primary",
+                    "never_cycle": true
+                }
+            },
+            "trigger": {
+                "name": "arm_arc",
+                "time": 0
+            },
+            "trigger": {
+                "name": "arm_arc",
+                "time": 0.15
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power2"
+            },
+            "chain": {
+                "action": "special",
+                "result": "power2"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power2_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_grab_break",
+            "lockangles": true,
+            "lockspeed": true,
+            "locktransitionangles": true,
+            "name": "power2_end",
+            "noautoaim": true,
+            "priority": 5,
+            "trigger": {
+                "loop_type": "stop",
+                "name": "sound",
+                "sound": "char/mrfan_m/p2_power",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mrfan_m/p2_charge",
+                "time": 0
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beam",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Crush",
+            "combotextstarter": "Elastic",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "powerup_tag": "mrfan_power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "mrfan_p3",
+                "level": 1
+            },
+            "event": {
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "16 0 46",
+                "damage": "%mrfan_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "hiteffect": "char/mrfan/p1_impact",
+                "inherit": "beam",
+                "knockback": "%mrfan_p3_kb",
+                "maxrange": 300,
+                "name": "p3_punch",
+                "pierce": true,
+                "radius": 24,
+                "time": 0.38,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "maxrange": 120,
+                "name": "p3_punch",
+                "powerusage": "%mrfan_p3_pwr",
+                "time": 0.28
+            },
+            "trigger": {
+                "maxrange": 300,
+                "name": "p3_punch",
+                "time": 0.38
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mrfan_m/p3_power",
+                "time": 0.28
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power4",
+            "blendtime": 0.05,
+            "combotextfinisher": "Stretch",
+            "combotextstarter": "Stretching",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "powerup_tag": "mrfan_power",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "mrfan_p4",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/mrfan/p4_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/mrfan/p4_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%mrfan_p4_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mrfan_m/p4_charge",
+                "time": 0.8
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power4_release"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power4_end",
+            "blendtime": 0,
+            "combotextfinisher": "Stretch",
+            "combotextstarter": "Stretching",
+            "icon": 3,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power4_release",
+            "powerup_tag": "mrfan_power",
+            "priority": 5,
+            "startchaintime": 0.85,
+            "event": {
+                "arc": 50,
+                "damage": "%mrfan_p4_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "inherit": "radial",
+                "maxrange": 120,
+                "name": "chain_slash",
+                "tiles": true,
+                "damagemod": {
+                    "name": "dmgmod_trip"
+                }
+            },
+            "trigger": {
+                "effect": "char/mrfan/p4_power",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/mrfan_m/p4_power",
+                "time": 0.37
+            },
+            "trigger": {
+                "angle": 0,
+                "name": "chain_slash",
+                "time": 0.37
+            },
+            "trigger": {
+                "angle": -90,
+                "name": "chain_slash",
+                "time": 0.43
+            },
+            "trigger": {
+                "angle": 180,
+                "name": "chain_slash",
+                "time": 0.5
+            },
+            "trigger": {
+                "angle": 45,
+                "name": "chain_slash",
+                "time": 0.58
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Crash",
+            "combotextstarter": "Leaping",
+            "icon": 4,
+            "name": "power5",
+            "playspeed": 0.9,
+            "priority": 5,
+            "startchaintime": 0.6,
+            "turnrate": 0.6,
+            "require": {
+                "cat": "skill",
+                "item": "mrfan_p5",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%mrfan_p5_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mrfan_m/p5_power",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/mrfan/p5_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "bolt": "Bip01 L Toe0",
+                "effect": "char/mrfan/p5_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "effect": "char/mrfan/p5_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power5_end"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power5_end",
+            "combotextfinisher": "Crash",
+            "combotextstarter": "Leaping",
+            "locktransitionangles": true,
+            "name": "power5_end",
+            "playspeed": 0.9,
+            "priority": 5,
+            "turnrate": 0.6,
+            "trigger": {
+                "name": "slide",
+                "targetdistance": 72,
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/mrfan/p5_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.33
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": "%mrfan_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "knockback": "%mrfan_p5_kb",
+                "maxrange": 144,
+                "name": "radial",
+                "time": 0.33,
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                },
+                "damagemod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Pummel",
+            "combotextstarter": "Pummeling",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "mrfan_p6",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mrfan_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/mrfan/p6_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/mrfan/p6_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%mrfan_p6_lif",
+                "name": "powerup",
+                "powerusage": "%mrfan_p6_pwr",
+                "time": 0.5,
+                "bolton": {
+                    "bolt": "Bip01 R Hand",
+                    "model": "models/bolton/mrfantastic_fist_right"
+                },
+                "bolton": {
+                    "bolt": "Bip01 L Hand",
+                    "model": "models/bolton/mrfantastic_fist_left"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%mrfan_p6_ar"
+                },
+                "affecter": {
+                    "attribute": "atk_critical",
+                    "level": "%mrfan_p6_pct",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    },
+                    "scope": {
+                        "scope_non_powers": true
+                    }
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power17",
+            "combotextfinisher": "Evasion",
+            "combotextstarter": "Evading",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "mrfan_p7",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mrfan_m/p7_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/mrfan/p7_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/mrfan/p7_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%mrfan_p7_lif",
+                "name": "powerup",
+                "powerusage": "%mrfan_p7_pwr",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/mrfan/p7_power",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/mrfan/p7_power",
+                    "fxlevel": 3,
+                    "how_used": "deactivation"
+                },
+                "affecter": {
+                    "attribute": "def_dodge",
+                    "level": 1,
+                    "scope": {
+                        "scope_attack": "projectile"
+                    },
+                    "scope": {
+                        "scope_attack": "beam"
+                    }
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "event": {
+            "damage": "%mrfan_p8_dmg",
+            "damagescale": "none",
+            "damagetype": "dmg_energy",
+            "enemynumber": 0,
+            "fxlevel": 1,
+            "hiteffect": "char/mrfan/p8_impact",
+            "inherit": "blast",
+            "maxrange": 225,
+            "name": "airstrike",
+            "radius": 60,
+            "random": true,
+            "damagemod": {
+                "name": "dmgmod_immobilize"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power8",
+            "combotextfinisher": "Barrage",
+            "combotextstarter": "Orbital",
+            "description": "ORBITAL ATTACK",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8",
+            "playspeed": 10,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "mrfan_p8",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "only_non_looped": true,
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/mrfan/p8_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mrfan_m/p8_charge",
+                "time": 0.1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/mrfan/p8_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.17
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/mrfan/p8_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.28
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/mrfan/p8_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.42
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mrfan_m/p8_power",
+                "time": 0.6
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/mrfan/p8_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.78
+            },
+            "trigger": {
+                "enemynumber": 0,
+                "name": "airstrike",
+                "time": 0.78
+            },
+            "trigger": {
+                "enemynumber": 1,
+                "name": "airstrike",
+                "time": 0.79
+            },
+            "trigger": {
+                "enemynumber": 2,
+                "name": "airstrike",
+                "time": 0.8
+            },
+            "trigger": {
+                "enemynumber": 3,
+                "name": "airstrike",
+                "time": 0.81
+            },
+            "trigger": {
+                "enemynumber": 4,
+                "name": "airstrike",
+                "time": 0.82
+            },
+            "trigger": {
+                "enemynumber": 5,
+                "name": "airstrike",
+                "time": 0.83
+            },
+            "trigger": {
+                "enemynumber": 6,
+                "name": "airstrike",
+                "time": 0.84
+            },
+            "trigger": {
+                "enemynumber": 7,
+                "name": "airstrike",
+                "time": 0.85
+            },
+            "trigger": {
+                "enemynumber": 8,
+                "name": "airstrike",
+                "time": 0.86
+            },
+            "trigger": {
+                "enemynumber": 9,
+                "name": "airstrike",
+                "time": 0.87
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power8",
+            "combotextfinisher": "H.E.R.B.I.E.",
+            "description": "H.E.R.B.I.E.",
+            "icon": 11,
+            "lockangles": true,
+            "name": "power9",
+            "playspeed": 5,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "mrfan_p9",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.3
+            },
+            "trigger": {
+                "effect": "char/mrfan/p8_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mrfan_m/p8_charge",
+                "time": 0.1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/mrfan/p8_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.17
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/mrfan/p8_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.28
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/mrfan/p8_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.42
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mrfan_m/p9_power",
+                "time": 0.6
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/mrfan/p8_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.78
+            },
+            "trigger": {
+                "healthpct": "%mrfan_p9_hlt",
+                "minioneventtag": 10,
+                "name": "spawnminion",
+                "skin": 18100,
+                "time": 0.6,
+                "type": "ce_spawn_minion"
+            },
+            "trigger": {
+                "class": "callevents",
+                "life": "%mrfan_p9_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "remove_on_death": true,
+                "tag": 10,
+                "time": -1,
+                "FunctionEvent": {
+                    "function": "deactivate",
+                    "triggertag": 20
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": "%mrfan_p9_dmg"
+                },
+                "special_fx": {
+                    "effect": "char/mrfan/p9_aura",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/mrfan/p9_aura",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "name": "remove",
+                "tag": 20,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_pickup_object_throw",
+            "combotextfinisher": "Zap",
+            "combotextstarter": "Electrifying",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "mrfan_p10",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mrfan_m/p10_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "damage": "%mrfan_p10_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_electricity",
+                "entity": "mrfan_pylon",
+                "filename": "ents_mrfantastic",
+                "health": "%mrfan_p10_hp",
+                "life": "%mrfan_p10lif",
+                "maxinstances": 1,
+                "name": "projectile",
+                "offset": "35 0 0",
+                "powerusage": "%mrfan_p10_pwr",
+                "speed": 0,
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}

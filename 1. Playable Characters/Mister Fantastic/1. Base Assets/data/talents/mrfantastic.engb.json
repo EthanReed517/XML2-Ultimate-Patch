@@ -1,0 +1,795 @@
+{
+    "talents": {
+        "talent": {
+            "descname": "Pinball",
+            "description": "Mister Fantastic curls up into a ball and rolls around, knocking back any enemies he hits.\\n(~41Press And Hold~~)",
+            "descshort": "Charge",
+            "icon": 0,
+            "icon_texture": "textures/ui/mrfantastic_icons2.png",
+            "name": "mrfan_p1",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p1_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "mrfan_p1_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p1_dmg",
+                    "value": "32 41"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "mrfan_p1_dmg",
+                    "value": "176 208"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p1_pwr",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "mrfan_p1_pwr",
+                    "value": 84
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%mrfan_p1_dmg $DMG_PHYSICAL\\n%mrfan_p1_pwr $EP per second",
+                "require": {
+                    "cat": "level",
+                    "level": "%mrfan_p1_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Propeller Arms",
+            "description": "Mister Fantastic walks forward, spinning his arms like propellers and popping up any enemies in his way.\\n(~41Press And Hold~~)",
+            "descshort": "Charge",
+            "icon": 1,
+            "icon_texture": "textures/ui/mrfantastic_icons2.png",
+            "name": "mrfan_p2",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p2_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "mrfan_p2_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p2_dmg",
+                    "value": "63 71"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "mrfan_p2_dmg",
+                    "value": "205 224"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p2_pwr",
+                    "value": 42
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "mrfan_p2_pwr",
+                    "value": 116
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%mrfan_p2_dmg $DMG_PHYSICAL\\n%mrfan_p2_pwr $EP per second",
+                "require": {
+                    "cat": "level",
+                    "level": "%mrfan_p2_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Elastic Crush",
+            "description": "Mister Fantastic stretches his arms forward, piercing through, knocking back, and stunning enemies with a chance for a 'Deadly Strike' (33% instant $HP loss).",
+            "descshort": "Melee",
+            "icon": 2,
+            "icon_texture": "textures/ui/mrfantastic_icons2.png",
+            "name": "mrfan_p3",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p3_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "mrfan_p3_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p3_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "mrfan_p3_dmg",
+                    "value": "200 220"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p3_pwr",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "mrfan_p3_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p3_cnc",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "mrfan_p3_cnc",
+                    "value": 0.19
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p3_kb",
+                    "value": 200
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "mrfan_p3_kb",
+                    "value": 400
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%mrfan_p3_dmg $DMG_PHYSICAL\\n%mrfan_p3_cnc:p chance for Deadly Strike\\n%mrfan_p3_kb $KB\\n%mrfan_p3_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%mrfan_p3_req"
+                },
+                "powerup": {
+                    "chance": "%mrfan_p3_cnc",
+                    "class": "atk_instant_pct",
+                    "life": -1,
+                    "percent": 0.33,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope_node": "mrfan_power3"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Drastic Elastic",
+            "description": "Mister Fantastic stretches his arms out and swings them around in a wide radius, tripping any enemies he hits.",
+            "descshort": "Radial",
+            "icon": 3,
+            "icon_texture": "textures/ui/mrfantastic_icons2.png",
+            "name": "mrfan_p4",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p4_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "mrfan_p4_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p4_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "mrfan_p4_dmg",
+                    "value": "82 93"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p4_pwr",
+                    "value": 46
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "mrfan_p4_pwr",
+                    "value": 170
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%mrfan_p4_dmg $DMG_PHYSICAL\\n%mrfan_p4_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%mrfan_p4_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mrfan_p3",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Rubberband Recoil",
+            "description": "Mister Fantastic leaps into the air and crashes back down, knocking back any nearby enemies.",
+            "descshort": "Radial",
+            "icon": 4,
+            "icon_texture": "textures/ui/mrfantastic_icons2.png",
+            "name": "mrfan_p5",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p5_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "mrfan_p5_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p5_dmg",
+                    "value": "57 66"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "mrfan_p5_dmg",
+                    "value": "108 119"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p5_kb",
+                    "value": 245
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "mrfan_p5_kb",
+                    "value": 620
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p5_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "mrfan_p5_pwr",
+                    "value": 190
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%mrfan_p5_dmg $DMG_PHYSICAL\\n%mrfan_p5_kb $KB\\n%mrfan_p5_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%mrfan_p5_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mrfan_p7",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Fantastic Fists",
+            "description": "Mister Fantastic increases the size of his fists, increasing his $AR and Critical chance with non-powered Melee attacks for a time.",
+            "descshort": "Boost",
+            "icon": 5,
+            "icon_texture": "textures/ui/mrfantastic_icons2.png",
+            "name": "mrfan_p6",
+            "power": "power6",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p6_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "mrfan_p6_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p6_ar",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "mrfan_p6_ar",
+                    "value": 2.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p6_pct",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "mrfan_p6_pct",
+                    "value": 0.15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p6_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "mrfan_p6_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p6_pwr",
+                    "value": 64
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "mrfan_p6_pwr",
+                    "value": 380
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%mrfan_p6_ar:s $AR\\n+%mrfan_p6_pct:p Critical chance\\n%mrfan_p6_lif seconds\\n%mrfan_p6_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%mrfan_p6_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Elastic Evasion",
+            "description": "Mister Fantastic temporarily increases the elasticity of skin, allowing him to deflect all projectile and beam attacks for a time.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/mrfantastic_icons2.png",
+            "name": "mrfan_p7",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p7_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "mrfan_p7_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p7_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "mrfan_p7_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p7_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "mrfan_p7_pwr",
+                    "value": 516
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%mrfan_p7_lif seconds\\n%mrfan_p7_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%mrfan_p7_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mrfan_pass1",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "ORBITAL ATTACK",
+            "description": "Mister Fantastic uses the Fantastic Four's satellite to unleash an orbital strike on enemies, immobilizing any who survive.",
+            "descshort": "Blast",
+            "icon": 7,
+            "icon_texture": "textures/ui/mrfantastic_icons2.png",
+            "name": "mrfan_p8",
+            "power": "power8",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p8_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "mrfan_p8_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p8_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "mrfan_p8_dmg",
+                    "value": "279 309"
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%mrfan_p8_dmg $DMG_ENERGY",
+                "require": {
+                    "cat": "level",
+                    "level": "%mrfan_p8_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "H.E.R.B.I.E.",
+            "description": "H.E.R.B.I.E. arrives to aid Mister Fantastic in battle for a time.",
+            "descshort": "Special",
+            "icon": 11,
+            "icon_texture": "textures/ui/mrfantastic_icons2.png",
+            "name": "mrfan_p9",
+            "power": "power9",
+            "skirmish_locked": true,
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p9_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "mrfan_p9_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p9_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "mrfan_p9_lif",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p9_hlt",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "mrfan_p9_hlt",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p9_dmg",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "mrfan_p9_dmg",
+                    "value": 1.25
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%mrfan_p9_lif seconds\\n%mrfan_p9_hlt:p of Mister Fantastic's max $HP\\n%mrfan_p9_dmg:p of Mister Fantastic's Melee Dmg",
+                "require": {
+                    "cat": "level",
+                    "level": "%mrfan_p9_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Fantastic Surprise",
+            "description": "Mister Fantastic sets a small trap that sends out a radial wave of Electricity damage that zaps nearby enemies.",
+            "descshort": "Trap",
+            "icon": 9,
+            "icon_texture": "textures/ui/mrfan_icons2.png",
+            "name": "mrfan_p10",
+            "power": "power10",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p10_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "mrfan_p10_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p10_dmg",
+                    "value": "42 50"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "mrfan_p10_dmg",
+                    "value": "148 166"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p10_hp",
+                    "value": 60
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "mrfan_p10_hp",
+                    "value": 100
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p10_lif",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "mrfan_p10_lif",
+                    "value": 26
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_p10_pwr",
+                    "value": 54
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "mrfan_p10_pwr",
+                    "value": 158
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%mrfan_p10_dmg $DMG_ELECTRICITY per second\\n%mrfan_p10_lif seconds\\n%mrfan_p10_hp trap $HP\\n%mrfan_p10_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%mrfan_p10_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Elastic Mastery",
+            "description": "Increases damage and Critical chance of all powered stretching attacks. Also increases his jumping range.",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/mrfantastic_icons2.png",
+            "name": "mrfan_pass1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_pass1_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "mrfan_pass1_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_pass1_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "mrfan_pass1_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_pass1_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "mrfan_pass1_crit",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_pass1_jmp",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "mrfan_pass1_jmp",
+                    "value": 2.0
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%mrfan_pass1_dmg:s Dmg\\n+%mrfan_pass1_crit:p Critical chance\\n+%mrfan_pass1_jmp:p jumping range",
+                "require": {
+                    "cat": "level",
+                    "level": "%mrfan_pass1_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "supermaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%mrfan_pass1_dmg",
+                        "scope_node": "mrfan_power"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%mrfan_pass1_crit",
+                        "scope_node": "mrfan_power"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%mrfan_pass1_dmg",
+                        "scope_node": "mrfan_power3"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%mrfan_pass1_crit",
+                        "scope_node": "mrfan_power3"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "jump",
+                        "level": "%mrfan_pass1_jmp"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Psychohistory",
+            "description": "Mister Fantastic mathematically predicts future trends, increasing the entire party's $XP and Combo Dmg.",
+            "descshort": "Passive",
+            "icon": 8,
+            "icon_texture": "textures/ui/mrfantastic_icons2.png",
+            "name": "mrfan_pass2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_pass2_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "mrfan_pass2_req",
+                    "value": 35
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_pass2_xp",
+                    "value": 1.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "mrfan_pass2_xp",
+                    "value": 1.1
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_pass2_com",
+                    "value": 1.15
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "mrfan_pass2_com",
+                    "value": 1.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%mrfan_pass2_xp:s $XP\\n%mrfan_pass2_com:s Combo Dmg",
+                "require": {
+                    "cat": "level",
+                    "level": "%mrfan_pass2_req"
+                },
+                "powerup": {
+                    "apply_ally": "all",
+                    "apply_self": true,
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "xp",
+                        "level": "%mrfan_pass2_xp"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "combo_damage",
+                        "level": "%mrfan_pass2_com"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Vitality Capture",
+            "description": "An invention of Mister Fantastic's allows him to capture a portion of the vitality of every enemy he defeats, restoring a portion of his $HP.",
+            "descshort": "Passive",
+            "icon": 13,
+            "icon_texture": "textures/ui/mrfantastic_icons2.png",
+            "name": "mrfan_pass3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_pass3_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "mrfan_pass3_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "mrfan_pass3_hp",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "mrfan_pass3_hp",
+                    "value": 50
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%mrfan_pass3_hp $HP per defeated enemy",
+                "require": {
+                    "cat": "level",
+                    "level": "%mrfan_pass3_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "health_per_kill",
+                        "level": "%mrfan_pass3_hp"
+                    }
+                }
+            }
+        }
+    }
+}
