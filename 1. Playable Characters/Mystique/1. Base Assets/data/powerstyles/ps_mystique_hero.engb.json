@@ -32,28 +32,28 @@
         },
         "event": {
             "boltonslot": "ebolton_weapon",
-            "boltselect": "Bip01 R Hand",
+            "bolt": "Bip01 R Hand",
             "inherit": "mystbolt",
             "name": "laser_gun",
             "offset": "35 4 57"
         },
         "event": {
             "boltonslot": "ebolton_altweapon",
-            "boltselect": "Bip01 L Hand",
+            "bolts": "Bip01 L Hand",
             "inherit": "mystproj",
             "name": "left_gun",
             "offset": "30 -4 37"
         },
         "event": {
             "boltonslot": "ebolton_weapon",
-            "boltselect": "Bip01 R Hand",
+            "bolt": "Bip01 R Hand",
             "inherit": "mystproj",
             "name": "right_gun",
             "offset": "30 4 37"
         },
         "event": {
             "boltonslot": "ebolton_weapon",
-            "boltselect": "Bip01 R Hand",
+            "bolt": "Bip01 R Hand",
             "inherit": "mystproj",
             "name": "right_gun_single",
             "offset": "35 4 57"
@@ -75,19 +75,18 @@
         },
         "event": {
             "animbased": true,
+            "attacktype": "blast",
             "center": true,
+            "damage": 1,
             "damagescale": "none",
             "damagetype": "dmg_fire",
             "entity": "mystgrenade",
             "filename": "ents_mystique_hero",
-            "fulltargetting": true,
             "explodedamage": "%myst_p10_dmg",
-            "exploderadius": 36,
+            "explodedamagetype": "dmg_fire",
             "inherit": "projectile",
-            "knockback": 245,
             "name": "p10_gun",
             "speed": 1000,
-            "targetable": true,
             "useboltangles": true
         },
         "FightMove": {
@@ -243,6 +242,7 @@
                 "allow_non_actors": true,
                 "class": "harming",
                 "damage": "%myst_p1_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_bleed",
                 "life": 0.5,
                 "name": "powerup",
@@ -409,8 +409,9 @@
                 "allow_non_actors": true,
                 "class": "harming",
                 "damage": "%myst_p2_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_bleed",
-                "life": 0.2,
+                "life": 0.5,
                 "name": "powerup",
                 "tag": 103,
                 "time": -1
@@ -623,6 +624,7 @@
                 "allow_non_actors": true,
                 "class": "harming",
                 "damage": "%myst_p3_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_bleed",
                 "life": 0.5,
                 "name": "powerup",
@@ -668,31 +670,30 @@
             "trigger": {
                 "actorbolt": "Bip01 L Hand",
                 "angoffset": "0 -15 0",
-                "attacktype": "projectile",
-                "damage": "%myst_p4_dmg",
+                "attacktype": "blast",
+                "damage": 1,
                 "damagescale": "none",
                 "damagetype": "dmg_fire",
                 "entity": "mystgrenade",
                 "explodedamage": "%myst_p4_dmg",
-                "exploderadius": 36,
+                "explodedamagetype": "dmg_fire",
+                "explodevictimeventtag": 100,
                 "filename": "ents_mystique_hero",
-                "knockback": 245,
+                "inherit": "projectile",
                 "name": "projectile",
                 "powerusage": "%myst_p4_pwr",
                 "speed": 650,
                 "time": 0.5,
                 "victimeventtag": 100,
                 "damageMod": {
-                    "name": "dmgmod_auto_knockback"
-                },
-                "damageMod": {
-                    "name": "dmgmod_environment"
+                    "name": "dmgmod_ground"
                 }
             },
             "trigger": {
                 "allow_non_actors": true,
                 "class": "harming",
                 "damage": "%myst_p4_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_fire",
                 "life": 0.5,
                 "name": "powerup",
@@ -837,10 +838,12 @@
                 }
             },
             "trigger": {
-                "name": "remove",
+                "attacktype": "projectile",
+                "entity": "revert",
+                "filename": "ents_mystique_hero",
+                "name": "projectile",
                 "tag": 12,
-                "time": -1,
-                "type": "ce_setskin"
+                "time": -1
             },
             "chain": {
                 "action": "Idle",
@@ -871,7 +874,7 @@
             "trigger": {
                 "class": "add_harming",
                 "damage": "%myst_p7_dmg",
-                "damagescale": "normal",
+                "damagescale": "none",
                 "damagetype": "dmg_bleed",
                 "life": "%myst_p7_life",
                 "name": "powerup",
@@ -1378,70 +1381,91 @@
                 "actorbolt": "Bip01 R Hand",
                 "angoffset": "-1 -1 0",
                 "attack_bone_pos": "27 0 55",
-                "damage": "%myst_p10_dmg",
+                "explodevictimeventtag": 101,
                 "name": "p10_gun",
                 "time": 0.21,
-                "victimeventtag": 101
+                "victimeventtag": 101,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
             },
             "trigger": {
                 "actorbolt": "Bip01 L Hand",
                 "angoffset": "-179 -3 1",
                 "attack_bone_pos": "27 6 55",
-                "damage": "%myst_p10_dmg",
+                "explodevictimeventtag": 101,
                 "name": "p10_gun",
                 "time": 0.24,
-                "victimeventtag": 101
+                "victimeventtag": 101,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
             },
             "trigger": {
                 "actorbolt": "Bip01 R Hand",
                 "angoffset": "-4 -10 -15",
                 "attack_bone_pos": "32 -8 56",
-                "damage": "%myst_p10_dmg",
+                "explodevictimeventtag": 101,
                 "name": "p10_gun",
                 "time": 0.27,
-                "victimeventtag": 101
+                "victimeventtag": 101,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
             },
             "trigger": {
                 "actorbolt": "Bip01 L Hand",
                 "angoffset": "-180 -6 25",
                 "attack_bone_pos": "30 12 56",
-                "damage": "%myst_p10_dmg",
+                "explodevictimeventtag": 101,
                 "name": "p10_gun",
                 "time": 0.3,
-                "victimeventtag": 101
+                "victimeventtag": 101,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
             },
             "trigger": {
                 "actorbolt": "Bip01 R Hand",
                 "angoffset": "-4 -15 -22",
                 "attack_bone_pos": "30 -15 56",
-                "damage": "%myst_p10_dmg",
+                "explodevictimeventtag": 101,
                 "name": "p10_gun",
                 "time": 0.33,
-                "victimeventtag": 101
+                "victimeventtag": 101,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
             },
             "trigger": {
                 "actorbolt": "Bip01 L Hand",
                 "angoffset": "-180 -12 40",
                 "attack_bone_pos": "24 24 56",
-                "damage": "%myst_p10_dmg",
+                "explodevictimeventtag": 101,
                 "name": "p10_gun",
                 "time": 0.36,
-                "victimeventtag": 101
+                "victimeventtag": 101,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
             },
             "trigger": {
                 "actorbolt": "Bip01 R Hand",
                 "angoffset": "-4 -19 -45",
                 "attack_bone_pos": "22 -27 56",
-                "damage": "%myst_p10_dmg",
+                "explodevictimeventtag": 101,
                 "name": "p10_gun",
                 "time": 0.39,
-                "victimeventtag": 101
+                "victimeventtag": 101,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
             },
             "trigger": {
                 "actorbolt": "Bip01 L Hand",
                 "angoffset": "-180 -12 60",
                 "attack_bone_pos": "4 27 56",
-                "damage": "%myst_p10_dmg",
+                "explodevictimeventtag": 101,
                 "name": "p10_gun",
                 "time": 0.42,
                 "victimeventtag": 101
@@ -1450,42 +1474,55 @@
                 "actorbolt": "Bip01 R Hand",
                 "angoffset": "-1 -12 -90",
                 "attack_bone_pos": "0 -32 55",
-                "damage": "%myst_p10_dmg",
+                "explodevictimeventtag": 101,
                 "name": "p10_gun",
                 "time": 0.45,
-                "victimeventtag": 101
+                "victimeventtag": 101,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
             },
             "trigger": {
                 "actorbolt": "Bip01 L Hand",
                 "angoffset": "179 -11 85",
                 "attack_bone_pos": "0 26 57",
-                "damage": "%myst_p10_dmg",
+                "explodevictimeventtag": 101,
                 "name": "p10_gun",
                 "time": 0.47,
-                "victimeventtag": 101
+                "victimeventtag": 101,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
             },
             "trigger": {
                 "actorbolt": "Bip01 R Hand",
                 "angoffset": "0 -5 -97",
                 "attack_bone_pos": "-7 -30 59",
-                "damage": "%myst_p10_dmg",
+                "explodevictimeventtag": 101,
                 "name": "p10_gun",
                 "time": 0.5,
-                "victimeventtag": 101
+                "victimeventtag": 101,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
             },
             "trigger": {
                 "actorbolt": "Bip01 L Hand",
                 "angoffset": "179 -5 107",
                 "attack_bone_pos": "-7 30 55",
-                "damage": "%myst_p10_dmg",
+                "explodevictimeventtag": 101,
                 "name": "p10_gun",
                 "time": 0.53,
-                "victimeventtag": 101
+                "victimeventtag": 101,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
             },
             "trigger": {
                 "allow_non_actors": true,
                 "class": "harming",
                 "damage": "%myst_p10_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_fire",
                 "life": 0.5,
                 "name": "powerup",

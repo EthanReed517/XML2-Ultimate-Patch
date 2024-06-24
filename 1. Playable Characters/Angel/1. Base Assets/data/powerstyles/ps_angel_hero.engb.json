@@ -637,7 +637,7 @@
         },
         "FightMove": {
             "aireusetime": 20,
-            "aitype": "buffself",
+            "aitype": "self",
             "animenum": "ea_fly_idle",
             "combotextfinisher": "Acrobatics",
             "combotextstarter": "Acrobatic",
@@ -717,17 +717,8 @@
                 "time": 0.8,
                 "affecter": {
                     "affect_type": "scale",
-                    "attribute": "attack_rating",
-                    "level": "%ang_arch_atk"
-                },
-                "affecter": {
-                    "affect_type": "scale",
                     "attribute": "move_attack",
                     "level": "%ang_arch_spe"
-                },
-                "affecter": {
-                    "attribute": "atk_critical",
-                    "level": "%ang_arch_crt"
                 },
                 "special_fx": {
                     "effect": "char/angel/p8_aura",
@@ -784,7 +775,7 @@
                 "damagetype": "dmg_wind",
                 "index": 2,
                 "inherit": "punch",
-                "knockback": 610,
+                "knockback": 620,
                 "name": "radial_punch",
                 "tiles": true,
                 "damageMod": {
@@ -907,18 +898,6 @@
             },
             "chain": {
                 "action": "idle",
-                "result": "idle"
-            }
-        },
-        "FightMove": {
-            "aitype": "null",
-            "animenum": "ea_block",
-            "blendtime": 0,
-            "lockangles": true,
-            "name": "blockattacks",
-            "priority": 5,
-            "chain": {
-                "action": "Idle",
                 "result": "idle"
             }
         }
