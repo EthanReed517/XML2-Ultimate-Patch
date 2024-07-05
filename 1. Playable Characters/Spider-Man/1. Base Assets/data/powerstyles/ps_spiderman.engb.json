@@ -8,13 +8,15 @@
             "type": "ce_atk_teleport_mark_start"
         },
         "event": {
+            "attacktype": "projectile",
             "count": 1,
             "entity": "web_bullet",
             "filename": "ents_spiderman",
-            "fulltargeting": true,
             "inherit": "projectile",
             "life": 0.75,
+            "maxrange": 500,
             "name": "webbing_bullet",
+            "noautoaim": true,
             "speed": 800,
             "targetable": true
         },
@@ -28,6 +30,81 @@
             "knockback": 0,
             "maxrange": 600,
             "name": "webbing_shot"
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle",
+            "noncombat": true,
+            "playspeed": 1,
+            "trigger": {
+                "boltslot": "ebolton_altweapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0,
+                "type": "ce_bolton"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "strafeleft"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "straferight"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "advance"
+            },
+            "chain": {
+                "action": "retreat",
+                "result": "retreat"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "groundattack",
+                "result": "groundattack"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            },
+            "chain": {
+                "action": "special",
+                "result": "boredloop"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
         },
         "FightMove": {
             "animenum": "ea_jump_start",
@@ -163,6 +240,8 @@
             }
         },
         "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
             "animenum": "ea_power1_hold",
             "blendtime": 0,
             "combotextfinisher": "Bullets",
@@ -651,6 +730,7 @@
             "lockangles": false,
             "locktransitionangles": true,
             "name": "power5",
+            "noautoaim": true,
             "playspeed": 0.65,
             "powerup_tag": "spider_web",
             "priority": 5,
@@ -733,6 +813,7 @@
             "handler": "ch_move_jump",
             "lockangles": true,
             "name": "power5_end",
+            "noautoaim": true,
             "startchaintime": 0.3,
             "chain": {
                 "action": "move",
@@ -785,6 +866,7 @@
                 "apply_self": true,
                 "class": "add_attack",
                 "damagepercent": "%spider_p6_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "life": "%spider_p6_lif",
                 "name": "powerup",
@@ -803,18 +885,22 @@
                         "scope_non_powers": true
                     }
                 },
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/spider/p6_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/spider/p6_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
                 "affecter": {
                     "affect_type": "scale",
                     "attribute": "attack_rating",
                     "level": "%spider_p6_ar"
-                },
-                "bolton": {
-                    "bolt": "Bip01 R Hand",
-                    "model": "models/bolton/webglove_right"
-                },
-                "bolton": {
-                    "bolt": "Bip01 L Hand",
-                    "model": "models/bolton/webglove_left"
                 }
             },
             "chain": {
@@ -935,7 +1021,6 @@
             "name": "power9",
             "noautoaim": true,
             "playspeed": 10,
-            "powerup_tag": "spider_power9",
             "priority": "uninterruptable",
             "startchaintime": 0.9,
             "turnrate": 0.5,
@@ -976,11 +1061,10 @@
                 }
             },
             "trigger": {
-                "damage": "7 9",
-                "damagescale": "normal",
+                "damage": "%spider_p9_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "forceretargeting": true,
-                "isxtreme": true,
                 "maxrange": 250,
                 "name": "teleport_data_store",
                 "nofailifnotarget": true,
@@ -1008,7 +1092,6 @@
             "name": "power9_loop",
             "noautoaim": true,
             "playspeed": 10,
-            "powerup_tag": "spider_power9",
             "priority": "uninterruptable",
             "startchaintime": 0.9,
             "require": {
@@ -1034,8 +1117,8 @@
                 "time": 0
             },
             "trigger": {
-                "damage": "7 9",
-                "damagescale": "normal",
+                "damage": "%spider_p9_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "name": "teleport_punch",
                 "powerusage": 0,
