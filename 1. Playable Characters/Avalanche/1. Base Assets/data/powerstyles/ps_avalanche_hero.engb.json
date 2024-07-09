@@ -113,7 +113,7 @@
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "entity": "quake_crack",
-                "filename": "ents_avalanche",
+                "filename": "ents_avalanche_hero",
                 "maxrange": 800,
                 "name": "projectile",
                 "offset": "0 -2 20",
@@ -177,7 +177,10 @@
                 "name": "punch",
                 "tag": 1,
                 "tiles": true,
-                "time": -1
+                "time": -1,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
             },
             "trigger": {
                 "count": "set",
@@ -347,7 +350,7 @@
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "entity": "rock_smash",
-                "filename": "ents_avalanche",
+                "filename": "ents_avalanche_hero",
                 "maxinstances": 1,
                 "name": "projectile",
                 "offset": "25 -5 -70",
@@ -495,7 +498,7 @@
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "entity": "earth_rumble",
-                "filename": "ents_avalanche",
+                "filename": "ents_avalanche_hero",
                 "life": "%aval_rubb_lif",
                 "maxinstances": 2,
                 "maxrange": 800,
@@ -520,7 +523,7 @@
         },
         "event": {
             "entity": "quick_sand",
-            "filename": "ents_avalanche",
+            "filename": "ents_avalanche_hero",
             "inherit": "relative_spawn",
             "name": "spawn_sand",
             "relative": "target",
@@ -564,7 +567,6 @@
             "trigger": {
                 "attacktype": "direct",
                 "damage": "%aval_sink_dmg",
-                "damagelevel": 1,
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "fxlevel": 1,
@@ -688,7 +690,7 @@
                 "absolute": false,
                 "attackerheight": false,
                 "entity": "avadebris",
-                "filename": "ents_avalanche",
+                "filename": "ents_avalanche_hero",
                 "name": "relative_spawn",
                 "offset": "5 5 40",
                 "time": 0

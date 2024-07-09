@@ -722,7 +722,6 @@
             "lockchaining": true,
             "name": "power7",
             "playspeed": 1.6,
-            "powerup_tag": "power7",
             "priority": 5,
             "startchaintime": 0.66,
             "require": {
@@ -736,23 +735,12 @@
                 "time": 0.3
             },
             "trigger": {
-                "life": 2,
-                "name": "powerup",
-                "time": 0,
-                "affecter": {
-                    "affect_type": "scale",
-                    "attribute": "def_knockback",
-                    "level": 0
-                }
-            },
-            "trigger": {
                 "arc": 50,
                 "attacktype": "punch",
                 "damage": "%beast_ravage_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "height": 20,
-                "knockback": 160,
                 "name": "punch",
                 "powerusage": "%beast_ravage_pwr",
                 "time": 0.3
@@ -776,7 +764,6 @@
             "lockchaining": true,
             "name": "power7a",
             "playspeed": 1.1,
-            "powerup_tag": "power7",
             "priority": 5,
             "startchaintime": 0.8,
             "require": {
@@ -835,7 +822,6 @@
             "lockchaining": true,
             "name": "power7b",
             "playspeed": 2.3,
-            "powerup_tag": "power7",
             "priority": 5,
             "startchaintime": 0.4,
             "require": {
@@ -916,7 +902,6 @@
             "lockchaining": true,
             "name": "power7c",
             "playspeed": 2,
-            "powerup_tag": "power7",
             "priority": 5,
             "turnrate": 0.5,
             "startchaintime": 0.4,
@@ -967,7 +952,6 @@
             "lockchaining": true,
             "name": "power7d",
             "playspeed": 1.7,
-            "powerup_tag": "power7",
             "priority": 5,
             "startchaintime": 0.4,
             "require": {
@@ -1016,7 +1000,6 @@
             "lockchaining": true,
             "name": "power7e",
             "playspeed": 1.4,
-            "powerup_tag": "power7",
             "priority": 5,
             "turnrate": 0.5,
             "startchaintime": 0.4,
@@ -1067,7 +1050,6 @@
             "name": "power8",
             "noautoaim": true,
             "playspeed": 10,
-            "powerup_tag": "beast_power8",
             "priority": 5,
             "startchaintime": 0.9,
             "turnrate": 0.5,
@@ -1095,13 +1077,11 @@
                 "time": 0
             },
             "trigger": {
-                "damage": "3 5",
-                "damagescale": "normal",
+                "damage": "%beast_xtreme_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_physical",
-                "isxtreme": true,
                 "maxrange": 250,
                 "name": "teleport_data_store",
-                "powerusage": 0,
                 "time": 0
             },
             "trigger": {
@@ -1130,7 +1110,6 @@
             "name": "power8_loop",
             "noautoaim": true,
             "playspeed": 10,
-            "powerup_tag": "beast_power8",
             "priority": 5,
             "startchaintime": 0.9,
             "require": {
@@ -1156,11 +1135,10 @@
                 "time": 0
             },
             "trigger": {
-                "damage": "3 5",
-                "damagescale": "normal",
+                "damage": "%beast_xtreme_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "name": "teleport_punch",
-                "powerusage": 0,
                 "time": 0.33
             },
             "chain": {
@@ -1183,7 +1161,6 @@
                 "attacktype": "direct",
                 "maxrange": 250,
                 "name": "teleport_return",
-                "powerusage": 0,
                 "time": 0
             },
             "trigger": {
@@ -1197,25 +1174,13 @@
                 "time": 0.4
             },
             "chain": {
-                "action": "walk",
-                "result": "walk"
-            },
-            "chain": {
-                "action": "jog",
-                "result": "jog"
-            },
-            "chain": {
-                "action": "run",
-                "result": "run"
-            },
-            "chain": {
                 "action": "Idle",
                 "result": "idle"
             }
         },
         "event": {
             "damage": "%beast_xtreme2_dmg",
-            "damagelevel": 5,
+            "damagescale": "none",
             "damagetype": "dmg_energy",
             "hiteffect": "char/beast_hero/p9_impact",
             "inherit": "blast",
@@ -1359,13 +1324,15 @@
                 "time": 0.1
             },
             "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
                 "class": "add_harming",
                 "damage": "%beast_soul_dmg",
-                "damagescale": "normal",
+                "damagescale": "none",
                 "damagetype": "dmg_bleed",
                 "life": "%beast_soul_life",
                 "name": "powerup",
-                "time": 0.5,
+                "time": 0.1,
                 "affecter": {
                     "attribute": "powerup_scope",
                     "scope": {
@@ -1380,13 +1347,15 @@
                 }
             },
             "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
                 "class": "feral_rage",
                 "life": "%beast_soul_life",
                 "name": "powerup",
                 "no_shadow": true,
                 "powerusage": "%beast_soul_pwr",
-                "tag": 1,
-                "time": 0.5,
+                "tag": 10,
+                "time": 0.1,
                 "special_fx": {
                     "bolt": "Bip01 L Hand",
                     "effect": "char/beast_hero/p10_charge",
@@ -1437,7 +1406,8 @@
             },
             "trigger": {
                 "apply_ally": "all",
-                "apply_self": "true :\r\n      life = %bea_command_life",
+                "apply_self": true,
+                "life": "%bea_command_life",
                 "name": "powerup",
                 "powerusage": "%bea_command_pwr",
                 "time": 0.9,
