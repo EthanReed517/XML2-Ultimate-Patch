@@ -89,17 +89,18 @@
             "aireusetime": 4,
             "aitype": "projectilenear",
             "animenum": "ea_power1",
-            "combotextfinisher": "Surge",
-            "combotextstarter": "Thundering",
+            "combotextfinisher": "Streak",
+            "combotextstarter": "Sprinting",
             "icon": 12,
             "lockangles": true,
             "name": "power1",
             "playspeed": 1.5,
-            "powerup_tag": "quick_power1",
             "priority": 5,
             "event": {
                 "attacktype": "punch",
-                "damage": "3 5",
+                "damage": "%quick_charge_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
                 "fxlevel": 1,
                 "hiteffect": "char/quickhero/p1_impact",
                 "inherit": "punch",
@@ -152,8 +153,8 @@
             "aireusetime": 20,
             "aitype": "buffself",
             "animenum": "ea_power4",
-            "combotextfinisher": "Slam",
-            "combotextstarter": "Charged",
+            "combotextfinisher": "Stream",
+            "combotextstarter": "Speeding",
             "icon": 7,
             "name": "power2",
             "priority": 5,
@@ -191,27 +192,9 @@
                 "powerusage": "%q_form_pwr",
                 "time": 0.5,
                 "affecter": {
-                    "attribute": "attack_rating",
-                    "level": "%q_form_atk_boost"
-                },
-                "affecter": {
-                    "attribute": "defense_rating",
-                    "level": "%q_form_def_boost"
-                },
-                "affecter": {
                     "affect_type": "scale",
                     "attribute": "move",
                     "level": "%q_form_move_scale"
-                },
-                "special_fx": {
-                    "bolt": "Bip01 L Hand",
-                    "effect": "char/quickhero/p7_aura",
-                    "fxlevel": 1
-                },
-                "special_fx": {
-                    "bolt": "Bip01 R Hand",
-                    "effect": "char/quickhero/p7_aura",
-                    "fxlevel": 1
                 },
                 "special_fx": {
                     "effect": "char/quickhero/p7_aura",
@@ -232,6 +215,8 @@
             "aireusetime": 5,
             "aitype": "buffself",
             "animenum": "ea_attack_stun3",
+            "combotextfinisher": "Shield",
+            "combotextstarter": "Wundagore",
             "icon": 6,
             "lockangles": true,
             "name": "power3",
@@ -457,6 +442,7 @@
         "FightMove": {
             "animenum": "ea_power11",
             "blendtime": 0,
+            "combotextfinisher": "Pickpocket",
             "description": "SPEEDY PICKPOCKET",
             "icon": 15,
             "lockangles": true,
@@ -535,40 +521,15 @@
             "aitype": "aoe",
             "animenum": "ea_power2",
             "combotextfinisher": "Clap",
-            "combotextstarter": "Booming",
+            "combotextstarter": "Accelerated",
             "icon": 5,
             "lockangles": true,
             "name": "power6",
-            "powerup_tag": "quick_power6",
             "priority": 5,
             "require": {
                 "cat": "skill",
                 "item": "quick_clap",
                 "level": 1
-            },
-            "event": {
-                "arc": 180,
-                "attacktype": "blast",
-                "damage": "3 5",
-                "inherit": "punch",
-                "name": "radial_punch",
-                "tiles": false
-            },
-            "event": {
-                "arc": 180,
-                "attacktype": "blast",
-                "damage": 0,
-                "damagetype": "dmg_wind",
-                "inherit": "punch",
-                "name": "radial_wind",
-                "tiles": false,
-                "damageMod": {
-                    "name": "dmgmod_extinguish"
-                }
-            },
-            "trigger": {
-                "name": "stop",
-                "time": 0
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
@@ -598,24 +559,22 @@
                 "time": 0.65
             },
             "trigger": {
-                "arc": 45,
-                "maxrange": "%quick_clap_ft",
-                "name": "radial_punch",
+                "arc": 180,
+                "damage": "%quick_clap_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_wind",
+                "knockback": "%quick_clap_kb",
+                "maxrange": 144,
+                "name": "radial",
                 "powerusage": "%quick_clap_pwr",
-                "time": 0.7
-            },
-            "trigger": {
-                "arc": 45,
-                "maxrange": "%quick_clap_ft",
-                "name": "radial_wind",
-                "time": 0.7
-            },
-            "trigger": {
-                "arc": 45,
-                "maxrange": "%quick_clap_ft",
-                "name": "radial_punch",
                 "tiles": true,
-                "time": 0.7
+                "time": 0.7,
+                "damageMod": {
+                    "name": "dmgmod_extinguish"
+                },
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
             },
             "chain": {
                 "action": "Idle",
@@ -626,12 +585,11 @@
             "aireusetime": 4,
             "aitype": "melee",
             "animenum": "ea_power3",
-            "combotextfinisher": "Punch",
-            "combotextstarter": "Lifting",
+            "combotextfinisher": "Uppercut",
+            "combotextstarter": "Supersonic",
             "icon": 14,
             "lockangles": true,
             "name": "power7",
-            "powerup_tag": "quick_power7",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -658,7 +616,9 @@
             },
             "trigger": {
                 "attacktype": "punch",
-                "damage": "3 5",
+                "damage": "%quick_uppercut_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
                 "fxlevel": 3,
                 "hiteffect": "char/quickhero/p1_impact",
                 "name": "punch",
@@ -676,7 +636,7 @@
         "FightMove": {
             "animenum": "ea_power5",
             "blendtime": 0,
-            "combotextfinisher": "Rampage",
+            "combotextfinisher": "Rush",
             "description": "QUICKSILVER RUSH",
             "handler": "ch_restore_visible_on_interrupt",
             "icon": 2,
@@ -726,8 +686,8 @@
             "trigger": {
                 "arc": 180,
                 "attacktype": "blast",
-                "damage": "3 5",
-                "damagescale": "normal",
+                "damage": "%quick_xtreme_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "knockback": 300,
                 "maxrange": 300,
@@ -864,8 +824,8 @@
                 "time": 0.38
             },
             "trigger": {
-                "damage": "3 5",
-                "damagescale": "normal",
+                "damage": "%qck_fnzy_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "forceretargeting": true,
                 "maxrange": 360,
@@ -927,9 +887,9 @@
                 "visible": true
             },
             "trigger": {
-                "damage": "3 5",
-                "damagescale": "normal",
-                "damagetype": "dmg_teleport",
+                "damage": "%qck_fnzy_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
                 "height": 18,
                 "name": "teleport_punch",
                 "time": 0.33
@@ -1055,9 +1015,9 @@
                 "time": 0
             },
             "trigger": {
-                "damage": "3 5",
-                "damagescale": "normal",
-                "damagetype": "dmg_teleport",
+                "damage": "%qck_fnzy_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
                 "height": -72,
                 "maxrange": 3,
                 "name": "teleport_punch",
