@@ -1,0 +1,903 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/arachne_icons1.png",
+        "FightMove": {
+            "animenum": "ea_jump_start",
+            "handler": "ch_move_jump",
+            "lockangles": true,
+            "name": "jump",
+            "startchaintime": 0.3,
+            "chain": {
+                "action": "move",
+                "result": "airjump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "jumploop",
+            "noncombat": true,
+            "chain": {
+                "action": "move",
+                "result": "airjump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_double_jump_start",
+            "blendtime": 0.1,
+            "handler": "ch_move_jump",
+            "name": "airjump",
+            "startchaintime": 0.5,
+            "turnrate": 0.2,
+            "chain": {
+                "action": "special",
+                "result": "doublejumpland"
+            },
+            "chain": {
+                "action": "move",
+                "result": "power4"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_land",
+            "blendtime": 0.1,
+            "endchaintime": 0.7,
+            "handler": "ch_move_jump_land",
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "doublejumpland",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_grab_throw_fwd",
+            "combotextfinisher": "Ball",
+            "combotextstarter": "Bouncing",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "arachne_p1",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/arachne/p1_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/arachne/p1_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/arachne_m/p1_power",
+                "time": 0.6
+            },
+            "trigger": {
+                "attacktype": "projectile",
+                "count": "%arachne_p1_num",
+                "damage": "%arachne_p1_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "entity": "p1_proj",
+                "filename": "ents_arachne",
+                "fulltargeting": true,
+                "inherit": "projectile",
+                "name": "SpawnBall",
+                "noautoaim": true,
+                "powerusage": "%arachne_p1_pwr",
+                "speed": 1000,
+                "targetable": true,
+                "time": 0.6,
+                "victimeventtag": 100
+            },
+            "trigger": {
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 100,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "projectile",
+            "animenum": "ea_power1_start",
+            "combotextfinisher": "Ensnarement",
+            "combotextstarter": "Binding",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "arachne_p2",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/arachne_m/p2_power",
+                "time": 0.6
+            },
+            "trigger": {
+                "attacktype": "projectile",
+                "center": true,
+                "count": "%arachne_p2_num",
+                "damage": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "entity": "p2_proj",
+                "filename": "ents_arachne",
+                "fulltargeting": true,
+                "inherit": "projectile",
+                "maxrange": 800,
+                "name": "projectile",
+                "powerusage": "%arachne_p2_pwr",
+                "randomvelocity": 255,
+                "speed": 600,
+                "spread": 15,
+                "targetable": true,
+                "time": 0.6,
+                "victimeventtag": 100,
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "trigger": {
+                "damage": 0,
+                "entity": "p2_snare",
+                "filename": "ents_arachne",
+                "life": 10,
+                "maxinstances": "%arachne_p2_num",
+                "name": "spawn",
+                "scale": 1,
+                "tag": 50,
+                "time": -1,
+                "tracecheck": true,
+                "victimeventtag": 100,
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "trigger": {
+                "maxdangerrating": 10,
+                "name": "no_bosses",
+                "noboss": true,
+                "passtag": 103,
+                "tag": 100,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "name": "otherevent",
+                "othertag": 101,
+                "othertag2": 102,
+                "tag": 103,
+                "time": -1
+            },
+            "trigger": {
+                "attacks_per_second": 1,
+                "class": "harming",
+                "damage": "%arachne_p2_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "life": "%arachne_p2_lif",
+                "name": "powerup",
+                "tag": 101,
+                "time": -1
+            },
+            "trigger": {
+                "life": "%arachne_p2_lif",
+                "name": "powerup",
+                "tag": 102,
+                "time": -1,
+                "affecter": {
+                    "attribute": "frozen",
+                    "level": 1
+                },
+                "special_fx": {
+                    "effect": "char/arachne/webbing_freeze",
+                    "fxlevel": 1,
+                    "how_used": "primary",
+                    "never_cycle": true
+                },
+                "special_fx": {
+                    "bolt": "Bip01 L Toe0",
+                    "effect": "char/arachne/webbing_freeze",
+                    "fxlevel": 1,
+                    "how_used": "primary",
+                    "never_cycle": true
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Toe0",
+                    "effect": "char/arachne/webbing_freeze",
+                    "fxlevel": 1,
+                    "how_used": "primary",
+                    "never_cycle": true
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_attack_trip2",
+            "combotextfinisher": "Sweep",
+            "combotextstarter": "Sweeping",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "arachne_p3",
+                "level": 1
+            },
+            "event": {
+                "damage": "%arachne_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "name": "radial",
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/arachne_m/p3_power",
+                "time": 0.28
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "effect": "char/arachne/special_trail",
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "angle": -60,
+                "height": -25,
+                "index": 1,
+                "name": "radial",
+                "powerusage": "%arachne_p3_pwr",
+                "time": 0.28
+            },
+            "trigger": {
+                "angle": 0,
+                "height": -25,
+                "index": 1,
+                "name": "radial",
+                "time": 0.34
+            },
+            "trigger": {
+                "angle": 45,
+                "height": -25,
+                "index": 1,
+                "name": "radial",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power16",
+            "blendtime": 0,
+            "combotextfinisher": "Swing",
+            "combotextstarter": "Swinging",
+            "energypersecond": "%arachne_p4_pwr",
+            "fallback": "jumploop",
+            "handler": "ch_skating",
+            "icon": 4,
+            "lockangles": false,
+            "locktransitionangles": true,
+            "name": "power4",
+            "noautoaim": true,
+            "playspeed": 0.65,
+            "priority": 5,
+            "startchaintime": 0.99,
+            "turnrate": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "arachne_p4",
+                "level": 1
+            },
+            "trigger": {
+                "loop_timeout": 1,
+                "loop_type": "start",
+                "name": "sound",
+                "sound": "char/arachne_m/p4_loop",
+                "time": 0
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "no_stack": true,
+                "remove_on_node_end": true,
+                "time": 0.09,
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/arachne/p4_power",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%arachne_p4_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "knockback": "%arachne_p4_kb",
+                "maxrange": 60,
+                "name": "punch",
+                "tag": 1,
+                "time": -1,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "count": "set",
+                "name": "count",
+                "only_non_looped": true,
+                "tag": 5,
+                "time": 0,
+                "value": 1
+            },
+            "trigger": {
+                "count": "add",
+                "name": "count",
+                "tag": 6,
+                "time": 0.5,
+                "value": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power4_end"
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power4"
+            },
+            "chain": {
+                "action": "touch",
+                "result": "power4"
+            },
+            "chain": {
+                "action": "special",
+                "result": "power4"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_start",
+            "handler": "ch_move_jump",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power4_end",
+            "noautoaim": true,
+            "startchaintime": 0.3,
+            "trigger": {
+                "loop_type": "stop",
+                "name": "sound",
+                "sound": "char/arachne_m/p4_loop",
+                "time": 0
+            },
+            "chain": {
+                "action": "move",
+                "result": "power4"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_grab_throw_fwd",
+            "combotextfinisher": "Wallop",
+            "combotextstarter": "Psi-Web",
+            "icon": 1,
+            "lockangles": true,
+            "lockchaining": false,
+            "name": "power5",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "arachne_p5",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/arachne/p1_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/arachne/p1_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/arachne_m/p5_power",
+                "time": 0.6
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "projectile",
+                "center": true,
+                "damage": "%arachne_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "entity": "p5_projectile",
+                "filename": "ents_arachne",
+                "fulltargeting": true,
+                "maxrange": 800,
+                "name": "projectile",
+                "offset": "25 0 0",
+                "powerusage": "%arachne_p5_pwr",
+                "speed": 450,
+                "spread": 12,
+                "tag": 1,
+                "targetable": true,
+                "time": 0.6,
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                },
+                "damageMod": {
+                    "name": "dmgmod_immobilize"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 10,
+            "aitype": "aoe",
+            "animenum": "ea_attack_stun2",
+            "cansteal": false,
+            "combotextfinisher": "Guardian",
+            "combotextstarter": "Psionic",
+            "icon": 5,
+            "lockangles": true,
+            "lockchaining": false,
+            "name": "power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "arachne_p6",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/arachne/p6_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/arachne_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/arachne/p6_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/arachne/p6_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "-71 -12 -177",
+                "attack_bone_pos": "6 -6 77",
+                "count": 1,
+                "damage": "%arachne_p6_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "entity": "p6_guardian",
+                "filename": "ents_arachne",
+                "firingrate": 1,
+                "health": "%arachne_p6_hp",
+                "life": "%arachne_p6_lif",
+                "maxinstances": 1,
+                "name": "guardian",
+                "powerusage": "%arachne_p6_pwr",
+                "projectileent": "p5_projectile",
+                "speed": 300,
+                "time": 0.3,
+                "type": "ce_atk_spawn_sentry"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power1_end",
+            "combotextfinisher": "Speed",
+            "combotextstarter": "Spider",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "arachne_p7",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/arachne_m/p7_power",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%arachne_p7_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%arachne_p7_pwr",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/arachne/p7_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%arachne_p7_spd"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Vibrations",
+            "combotextstarter": "Psionic",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "arachne_p8",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/arachne_m/p8_power",
+                "time": 0
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%arachne_p8_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%arachne_p8_pwr",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/arachne/p8_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/arachne/p8_aura",
+                    "fxlevel": 1,
+                    "how_used": "deactivation"
+                },
+                "affecter": {
+                    "attribute": "reflect_damage",
+                    "level": 1,
+                    "scope": {
+                        "scope_attack": "projectile"
+                    },
+                    "scope": {
+                        "scope_attack": "beam"
+                    }
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "event": {
+            "damage": "%arachne_p9_dmg",
+            "damagescale": "none",
+            "damagetype": "dmg_mental",
+            "hiteffect": "char/arachne/p9_impact",
+            "inherit": "blast",
+            "maxrange": 225,
+            "name": "psi_impact",
+            "numblasts": 4,
+            "radius": 60,
+            "random": true
+        },
+        "FightMove": {
+            "animenum": "ea_pickup_object_drop",
+            "blendtime": 0,
+            "combotextfinisher": "Barrage",
+            "description": "PSI-WEB BARRAGE",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power9",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "arachne_p9",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/arachne_m/p9_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/arachne_m/p9_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/arachne_m/p9_impact",
+                "time": 0.5
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/arachne/p9_power",
+                "name": "effect",
+                "time": 0,
+                "timebased": true
+            },
+            "trigger": {
+                "name": "psi_impact",
+                "tag": 61,
+                "time": 0.175,
+                "timebased": true
+            },
+            "trigger": {
+                "name": "psi_impact",
+                "tag": 62,
+                "time": 0.2,
+                "timebased": true
+            },
+            "trigger": {
+                "name": "psi_impact",
+                "tag": 63,
+                "time": 0.225,
+                "timebased": true
+            },
+            "trigger": {
+                "name": "psi_impact",
+                "tag": 64,
+                "time": 0.25,
+                "timebased": true
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_lunge_land",
+            "blendtime": 0,
+            "combotextfinisher": "Cloak",
+            "description": "PSIONIC CLOAK",
+            "icon": 6,
+            "lockchaining": false,
+            "lockangles": true,
+            "name": "power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "arachne_p10",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/arachne_m/p10_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "add": "cloaked",
+                "name": "disapear",
+                "tag": 10,
+                "time": -1,
+                "type": "ce_renderfx"
+            },
+            "trigger": {
+                "name": "appear",
+                "remove": "cloaked",
+                "tag": 11,
+                "time": -1,
+                "type": "ce_renderfx"
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "class": "callevents",
+                "life": "%arachne_p10_lif",
+                "name": "powerup",
+                "time": 0.3,
+                "Functionevent": {
+                    "function": "activate",
+                    "triggertag": 10
+                },
+                "Functionevent": {
+                    "function": "deactivate",
+                    "triggertag": 11
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Pelvis",
+                    "effect": "char/arachne/p10_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%arachne_p10_ar"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%arachne_p10_dr"
+                },
+                "affecter": {
+                    "attribute": "invisible"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
