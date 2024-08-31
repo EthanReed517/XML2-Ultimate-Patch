@@ -37,6 +37,7 @@
                 "knockback": "%hav_beam_knb",
                 "maxrange": 800,
                 "name": "beam",
+                "pierce": true,
                 "powerusage": "%hav_beam_pwr",
                 "spawneffect": "char/havok/p1_rings",
                 "time": 0.5,
@@ -102,7 +103,7 @@
                 "damagescale": "none",
                 "damagetype": "dmg_energy",
                 "knockback": "%hav_blast_knb",
-                "maxrange": "%hav_blast_rng",
+                "maxrange": 144,
                 "name": "fry",
                 "powerusage": "%hav_blast_pwr",
                 "time": 0.4,
@@ -232,8 +233,9 @@
                 "allow_non_actors": true,
                 "center_bolt": true,
                 "class": "time_bomb",
-                "damagetype": "dmg_energy",
                 "damage": "%hav_detonate_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
                 "knockback": "%hav_detonate_kb",
                 "radius": 144,
                 "func_deactivate": "timebomb_deactivate",
@@ -265,7 +267,6 @@
             },
             "trigger": {
                 "damage": 1,
-                "damageLevel": 10,
                 "damagetype": "dmg_energy",
                 "name": "punch",
                 "powerusage": "%hav_detonate_pwr",
@@ -290,7 +291,7 @@
             "priority": 5,
             "require": {
                 "cat": "skill",
-                "item": "havok_power6",
+                "item": "havok_p6",
                 "level": 1
             },
             "trigger": {
@@ -313,26 +314,23 @@
                 "time": 0.3
             },
             "trigger": {
-                "attacktype": "projectile",
+                "attacktype": "blast",
                 "center": true,
-                "count": 1,
-                "damage": "%havok_power6_dmg",
+                "damage": "%havok_p6_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_energy",
                 "entity": "p6_projectile",
-                "explodedamage": "%havok_power6_dmg2",
+                "explodedamage": "%havok_p6_dmg",
+                "explodedamagetype": "dmg_energy",
                 "filename": "ents_havok",
+                "inherit": "projectile",
                 "maxrange": 800,
                 "name": "projectile",
                 "offset": "25 0 0",
-                "powerusage": "%havok_power6_pwr",
+                "powerusage": "%havok_p6_pwr",
                 "speed": 650,
                 "tag": 2,
-                "time": 0.48,
-                "victimeventag": 100,
-                "damageMod": {
-                    "name": "dmgmod_auto_knockback"
-                }
+                "time": 0.48
             },
             "chain": {
                 "action": "idle",
@@ -511,7 +509,7 @@
                 },
                 "affecter": {
                     "attribute": "all_talents",
-                    "level": "%hav_p9_skill",
+                    "level": "%hav_p9_skills",
                     "scope_talent": "hav_p9"
                 }
             },
@@ -561,7 +559,7 @@
             "trigger": {
                 "arc": 180,
                 "damage": "%havok_p10_dmg",
-                "damagelevel": 1,
+                "damagescale": "none",
                 "damagetype": "dmg_energy",
                 "fxlevel": 1,
                 "inherit": "punch",

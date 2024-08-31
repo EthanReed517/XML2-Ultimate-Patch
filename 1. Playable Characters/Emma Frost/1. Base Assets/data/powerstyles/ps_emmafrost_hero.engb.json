@@ -330,17 +330,6 @@
                 "item": "emma_beam",
                 "level": 1
             },
-            "event": {
-                "arc": 0,
-                "attacktype": "beam",
-                "beameffect": "char/emmaf/p4_power",
-                "damagescale": "none",
-                "damagetype": "dmg_mental",
-                "fxlevel": 1,
-                "inherit": "beam",
-                "maxrange": 800,
-                "name": "beam_white"
-            },
             "trigger": {
                 "bolt": "Bip01 Head",
                 "effect": "char/emmaf/emma_head",
@@ -367,18 +356,21 @@
                 "time": 0.45
             },
             "trigger": {
+                "arc": 0,
                 "attack_bone_angles": "-105 -36 10",
                 "attack_bone_pos": "35 4 57",
                 "attacktype": "beam",
                 "beambolt": "Bip01 R Hand",
+                "beameffect": "char/emmaf/p4_power",
                 "damage": "%emma_beam_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_mental",
+                "fxlevel": 1,
                 "hiteffect": "char/emmaf/p4_impact",
                 "inherit": "beam",
-                "knockback": "%cyc_beam_kb",
                 "maxrange": 800,
                 "name": "beam_white",
+                "pierce": true,
                 "powerusage": "%emma_beam_pwr",
                 "time": 0.5
             },
@@ -487,7 +479,7 @@
         },
         "FightMove": {
             "aireusetime": 10,
-            "aitype": "aoe",
+            "aitype": "rangednolos",
             "animenum": "ea_resist_popup",
             "combotextfinisher": "Overload",
             "combotextstarter": "Psionic",
@@ -502,6 +494,11 @@
                 "level": 1
             },
             "trigger": {
+                "name": "sound",
+                "sound": "char/emmaf_m/p6_charge",
+                "time": 0
+            },
+            "trigger": {
                 "bolt": "Bip01 Head",
                 "effect": "char/emmaf/emma_head",
                 "fxlevel": 2,
@@ -509,26 +506,22 @@
                 "time": 0
             },
             "trigger": {
-                "name": "sound",
-                "sound": "char/emmaf_m/p6_charge",
-                "time": 0
+                "effect": "char/emmaf/p6_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.15
             },
             "trigger": {
-                "attack_bone_angles": "0 0 0",
-                "attack_bone_pos": "19 0 56",
-                "beambolt": "Bip01 R Hand",
+                "arc": 45,
                 "damage": "%emma_blast_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_mental",
-                "fxlevel": 1,
-                "inherit": "beam",
-                "knockback": 400,
-                "maxrange": 450,
+                "inherit": "punch",
+                "knockback": "%emma_blast_kb",
+                "maxrange": 200,
                 "name": "blast_dmg",
                 "powerusage": "%emma_blast_pwr",
-                "pierce": true,
                 "radius": 24,
-                "spawneffect": "char/emmaf/p6_power",
                 "time": 0.15,
                 "damagemod": {
                     "name": "dmgmod_auto_knockback"
@@ -595,7 +588,6 @@
             "trigger": {
                 "arc": 180,
                 "damage": 0,
-                "damagelevel": 1,
                 "index": 1,
                 "maxrange": 350,
                 "name": "convert",
@@ -614,7 +606,7 @@
                 "arc": 180,
                 "attacktype": "psionic",
                 "damage": "%emma_psy_bedlam_dmg",
-                "damagelevel": 1,
+                "damagescale": "none",
                 "damagetype": "dmg_mental",
                 "index": 2,
                 "knockback": 190,

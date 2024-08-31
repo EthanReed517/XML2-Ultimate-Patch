@@ -33,6 +33,13 @@
                 "replacecurrent": true,
                 "time": 0
             },
+            "trigger": {
+                "boltslot": "ebolton_altweapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0,
+                "type": "ce_bolton"
+            },
             "chain": {
                 "action": "walk",
                 "result": "walk"
@@ -101,7 +108,7 @@
             "lockangles": true,
             "locktransitionangles": true,
             "name": "attackknockback2",
-            "playspeed": 1,
+            "priority": "uninterruptable",
             "startchaintime": 0.4,
             "trigger": {
                 "bolt": "Bip01 R Hand",
@@ -123,7 +130,7 @@
             "lockangles": true,
             "locktransitionangles": true,
             "name": "attackknockback2_end",
-            "priority": 5,
+            "priority": "uninterruptable",
             "startchaintime": 0.8,
             "trigger": {
                 "arc": 72,
@@ -133,7 +140,6 @@
                 "beambolt": "Bip01 R Hand",
                 "beameffect": "char/cable/p2_power",
                 "damage": "%cable_p1_dmg",
-                "damagelevel": 2,
                 "damagescale": "none",
                 "damagetype": "dmg_energy",
                 "fxlevel": 1,
@@ -180,6 +186,7 @@
             "lockangles": true,
             "locktransitionangles": true,
             "name": "power1",
+            "priority": "uninterruptable",
             "startchaintime": 0.4,
             "require": {
                 "cat": "skill",
@@ -214,7 +221,7 @@
             "locktransitionangles": true,
             "name": "power1_end",
             "powerup_tag": "cable_gun",
-            "priority": 5,
+            "priority": "uninterruptable",
             "startchaintime": 0.8,
             "trigger": {
                 "arc": 0,
@@ -224,7 +231,6 @@
                 "beambolt": "Bip01 R Hand",
                 "beameffect": "char/cable/p1_power",
                 "damage": "%cable_p1_dmg",
-                "damagelevel": 2,
                 "damagescale": "none",
                 "damagetype": "dmg_energy",
                 "fxlevel": 1,
@@ -325,7 +331,7 @@
             "icon": 2,
             "name": "power3",
             "powerup_tag": "cable_gun",
-            "priority": 5,
+            "priority": "uninterruptable",
             "startchaintime": 0.41,
             "require": {
                 "cat": "skill",
@@ -357,7 +363,7 @@
             "icon": 2,
             "name": "power3_release",
             "powerup_tag": "cable_gun",
-            "priority": 5,
+            "priority": "uninterruptable",
             "trigger": {
                 "name": "sound",
                 "sound": "char/cable_m/p3_power",
@@ -427,6 +433,7 @@
             "locktransitionangles": true,
             "name": "power4",
             "powerup_tag": "cable_gun",
+            "priority": "uninterruptable",
             "startchaintime": 0.4,
             "require": {
                 "cat": "skill",
@@ -461,32 +468,30 @@
             "locktransitionangles": true,
             "name": "power4_end",
             "powerup_tag": "cable_gun",
-            "priority": 5,
+            "priority": "uninterruptable",
             "startchaintime": 0.8,
             "trigger": {
                 "actorbolt": "Bip01 R Hand",
                 "attack_bone_angles": "0 0 0",
                 "attack_bone_pos": "35 -4 47",
-                "attacktype": "projectile",
-                "damage": "%cable_p4_dmg",
+                "attacktype": "blast",
+                "damage": 1,
                 "damagescale": "none",
                 "damagetype": "dmg_energy",
                 "entity": "cable_p4_proj",
                 "explodedamage": "%cable_p4_dmg",
-                "exploderadius": 36,
+                "explodedamagetype": "dmg_energy",
                 "filename": "ents_cable",
-                "fulltargeting": true,
-                "knockback": 245,
+                "inherit": "projectile",
                 "name": "projectile",
                 "speed": 650,
                 "tag": 20,
-                "targetable": true,
                 "time": 0.21,
                 "damageMod": {
-                    "name": "dmgmod_auto_knockback"
+                    "name": "dmgmod_energize"
                 },
                 "damageMod": {
-                    "name": "dmgmod_energize"
+                    "name": "dmgmod_ground"
                 }
             },
             "trigger": {
@@ -745,7 +750,7 @@
                 "arc": 180,
                 "attacktype": "psionic",
                 "damage": "%cable_p8_dmg",
-                "damagelevel": 1,
+                "damagescale": "none",
                 "damagetype": "dmg_telekinesis",
                 "fxlevel": 1,
                 "maxrange": 350,

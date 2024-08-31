@@ -72,9 +72,7 @@
             "lockangles": true,
             "priority": 5,
             "icon": 0,
-            "lockangles": true,
             "name": "power1",
-            "priority": 5,
             "require": {
                 "cat": "skill",
                 "item": "daz_laser",
@@ -247,7 +245,10 @@
                 "name": "punch",
                 "tag": 1,
                 "time": -1,
-                "victimeventtag": 103
+                "victimeventtag": 103,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
             },
             "trigger": {
                 "life": 15,
@@ -306,6 +307,27 @@
             }
         },
         "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "skateend",
+            "noncombat": true,
+            "trigger": {
+                "loop_type": "stop",
+                "name": "sound",
+                "sound": "char/dazzler_m/p3_loop",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "skateend"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "FightMove": {
             "aireusetime": 5,
             "aitype": "projectile",
             "animenum": "ea_power2",
@@ -329,30 +351,22 @@
                 "time": 0
             },
             "trigger": {
-                "attacktype": "projectile",
+                "attacktype": "blast",
                 "count": 1,
+                "damage": "%daz_photon_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_energy",
                 "entity": "dazzler_p5_proj",
-                "explodedamage": "%daz_photon_dm1",
+                "explodedamage": "%daz_photon_dmg",
+                "explodedamagetype": "dmg_energy",
                 "filename": "ents_dazzler",
+                "inherit": "projectile",
+                "maxrange": 800,
                 "name": "projectile",
                 "offset": "25 0 50",
                 "powerusage": "%daz_photon_pwr",
-                "speed": 450,
-                "time": 0.48,
-                "victimeventtag": 50
-            },
-            "trigger": {
-                "damage": "%daz_photon_dm2",
-                "fxlevel": 6,
-                "hiteffect": "char/dazzler/p5_power",
-                "maxrange": 84,
-                "name": "explodeobjects",
-                "radius": 48,
-                "tag": 50,
-                "time": -1,
-                "type": "ce_atk_blast_objects"
+                "speed": 650,
+                "time": 0.48
             },
             "chain": {
                 "action": "idle",
@@ -514,6 +528,7 @@
                     "how_used": "deactivation"
                 },
                 "affecter": {
+                    "affect_type": "scale",
                     "attribute": "attack_rating",
                     "level": "%daz_myst_ar"
                 },
