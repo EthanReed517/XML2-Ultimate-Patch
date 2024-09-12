@@ -385,10 +385,15 @@
                 "type": "ce_otherevent"
             },
             "trigger": {
+                "class": "callevents",
                 "life": "%xman_wash_lif",
                 "name": "powerup",
                 "tag": 200,
                 "time": -1,
+                "FunctionEvent": {
+                    "function": "deactivate",
+                    "triggertag": 201
+                },
                 "affecter": {
                     "attribute": "team_switch",
                     "level": 1
@@ -396,7 +401,19 @@
                 "special_fx": {
                     "bolt": "Bip01 Head",
                     "effect": "base/powerup/pu_converted"
+                },
+                "special_fx": {
+                    "effect": "base/material/explode/exp_generic_med",
+                    "how_used": "deactivation"
                 }
+            },
+            "trigger": {
+                "instantkillonly": true,
+                "name": "remove_me",
+                "nosponsor": false,
+                "tag": 201,
+                "time": -1,
+                "type": "ce_remove"
             },
             "trigger": {
                 "maxrange": 80,
