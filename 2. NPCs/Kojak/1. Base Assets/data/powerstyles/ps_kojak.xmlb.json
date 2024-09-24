@@ -1,0 +1,353 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle",
+            "noncombat": true,
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_walk1",
+            "handler": "ch_move",
+            "lockchaining": false,
+            "name": "walk",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jog1",
+            "handler": "ch_move",
+            "lockchaining": false,
+            "name": "jog",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_run1",
+            "handler": "ch_move",
+            "lockchaining": false,
+            "name": "run",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_sprint1",
+            "handler": "ch_move",
+            "lockchaining": false,
+            "name": "sprint",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_move_jump",
+            "icon": 2,
+            "lockangles": true,
+            "name": "jump",
+            "startchaintime": 0.3,
+            "chain": {
+                "action": "move",
+                "result": "flying"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "flymelee1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "jumploop",
+            "noncombat": true,
+            "chain": {
+                "action": "move",
+                "result": "flying"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "flymelee1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_fly_idle",
+            "fallback": "jumploop",
+            "handler": "ch_flying",
+            "lockchaining": false,
+            "name": "flying",
+            "noncombat": true,
+            "powerup_tag": "flying",
+            "chain": {
+                "action": "idle",
+                "result": "flying"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_attack",
+            "priority": 5,
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/kojak/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/kojak/p1_charge",
+                "name": "effect_sound",
+                "sound": "char/nkojak_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/nkojak_m/p1_power",
+                "time": 0.4
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "damagetype": "dmg_energy",
+                "name": "punch",
+                "powerusage": 1,
+                "time": 0.4,
+                "damageMod": {
+                    "name": "dmgmod_drain"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 2.5,
+            "aitype": "projectileanyrange",
+            "animenum": "ea_power2",
+            "lockangles": true,
+            "name": "power_smash",
+            "priority": 5,
+            "event": {
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%mdmg_high",
+                "damagescale": "difficulty",
+                "damagetype": "dmg_energy",
+                "entity": "nrgdmn_projectile",
+                "filename": "ents_kojak",
+                "inherit": "projectile",
+                "name": "nrgdmn_proj",
+                "powerusage": 1,
+                "speed": 400,
+                "targetable": true
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/nkojak_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/kojak/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/kojak/p1_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "attack_bone_angles": "-97 -65 5",
+                "attack_bone_pos": "18 5 45",
+                "name": "nrgdmn_proj",
+                "time": 0.5,
+                "damageMod": {
+                    "name": "dmgmod_drain"
+                }
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "94 -57 179",
+                "attack_bone_pos": "9 -5 45",
+                "name": "nrgdmn_proj",
+                "time": 0.5,
+                "damageMod": {
+                    "name": "dmgmod_drain"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
