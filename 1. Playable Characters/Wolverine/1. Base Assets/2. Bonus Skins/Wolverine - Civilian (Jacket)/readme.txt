@@ -17,7 +17,7 @@ By BaconWizard17
 General Information
 - The file called 03XX (Skin).igb is the skin. It goes in the Actors folder.
 - The file called 03XX (Skin - No Cel).igb is the skin but without the cel shading (black outline). It goes in the Actors folder. It is an alternative to the main skin, so use one or the other. 
-- The file called hud_head_03XX.igb is the conversation portrait for this skin. It goes in the HUD folder.
+- The file called hud_head_03XX.igb is the conversation portrait for this skin. It goes in the HUD folder. (Hud is by Enigma)
 - The file called 03XX (3D Head).igb is the 3D head for this skin. It goes in the folder UI/hud/characters. 
 
 Hex editing info:
