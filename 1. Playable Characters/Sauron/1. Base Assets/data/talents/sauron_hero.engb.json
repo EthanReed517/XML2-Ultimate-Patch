@@ -1,0 +1,824 @@
+{
+    "talents": {
+        "talent": {
+            "descname": "Wings of Death",
+            "description": "Sauron soars into the air and fires 2 bolts of Psychic Energy from his wings that home in on enemies and explode upon contact with a chance for a 'Deadly Strike' (33% instant $HP loss).",
+            "descshort": "Projectile",
+            "icon": 3,
+            "icon_texture": "textures/ui/sauron_icons2.png",
+            "name": "sauron_p1",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p1_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "sauron_p1_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p1_dmg",
+                    "value": "6 9"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "sauron_p1_dmg",
+                    "value": "117 132"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p1_dmg2",
+                    "value": "6 9"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "sauron_p1_dmg2",
+                    "value": "117 132"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p1_pct",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "sauron_p1_pct",
+                    "value": 0.19
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p1_pwr",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "sauron_p1_pwr",
+                    "value": 128
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%sauron_p1_dmg initial $DMG_MENTAL\\n%sauron_p1_dmg2 explosion $DMG_MENTAL\\n%sauron_p1_pct:p chance for Deadly Strike\\n%sauron_p1_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%sauron_p1_req"
+                },
+                "powerup": {
+                    "chance": "%sauron_p1_pct",
+                    "class": "atk_instant_pct",
+                    "life": -1,
+                    "percent": 0.33,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope_node": "sauron_power1"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Reptilian Roar",
+            "description": "Sauron lets out a savage roar, stunning nearby enemies with a chance to convert them. Enemies explode at end of conversion.",
+            "descshort": "Radial",
+            "icon": 14,
+            "icon_texture": "textures/ui/sauron_icons2.png",
+            "name": "sauron_p2",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p2_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "sauron_p2_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p2_dmg",
+                    "value": "21 26"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "sauron_p2_dmg",
+                    "value": "78 89"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p2_lif",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "sauron_p2_lif",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p2_pct",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "sauron_p2_pct",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p2_pwr",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "sauron_p2_pwr",
+                    "value": 160
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%sauron_p2_dmg $DMG_MENTAL\\n%sauron_p2_pct:p chance to convert\\n%sauron_p2_lif second conversion duration\\n%sauron_p2_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%sauron_p2_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Triassic Crunch",
+            "description": "Sauron bites into a nearby enemy with his powerful jaws, causing $DMG_BLEED.",
+            "descshort": "Melee",
+            "icon": 0,
+            "icon_texture": "textures/ui/sauron_icons2.png",
+            "name": "sauron_p3",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p3_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "sauron_p3_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p3_dmg",
+                    "value": "42 46"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "sauron_p3_dmg",
+                    "value": "205 225"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p3_pwr",
+                    "value": 36
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "sauron_p3_pwr",
+                    "value": 142
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%sauron_p3_dmg $DMG_BLEED\\n%sauron_p3_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%sauron_p3_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Swooping Kick",
+            "description": "Sauron swoops up, tripping all nearby enemies with his wings, then kicking an enemy in front of him, knocking them back.",
+            "descshort": "Melee",
+            "icon": 5,
+            "icon_texture": "textures/ui/sauron_icons2.png",
+            "name": "sauron_p4",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p4_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "sauron_p4_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p4_dmg",
+                    "value": "52 56"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "sauron_p4_dmg",
+                    "value": "210 230"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p4_dmg2",
+                    "value": "52 56"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "sauron_p4_dmg2",
+                    "value": "210 230"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p4_kb",
+                    "value": 200
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "sauron_p4_kb",
+                    "value": 400
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p4_pwr",
+                    "value": 54
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "sauron_p4_pwr",
+                    "value": 146
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%sauron_p4_dmg initial $DMG_PHYSICAL\\n%sauron_p4_dmg2 kick $DMG_PHYSICAL\\n%sauron_p4_kb $KB\\n%sauron_p4_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%sauron_p4_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "sauron_p9",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Savage Flames",
+            "description": "Sauron breathes a scorching hot Fireball that Psychically homes in on and pierces through enemies, burning them.",
+            "descshort": "Projectile",
+            "icon": 2,
+            "icon_texture": "textures/ui/sauron_icons2.png",
+            "name": "sauron_p5",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p5_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "sauron_p5_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p5_dmg",
+                    "value": "54 63"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "sauron_p5_dmg",
+                    "value": "159 179"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p5_pwr",
+                    "value": 66
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "sauron_p5_pwr",
+                    "value": 164
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%sauron_p5_dmg $DMG_FIRE\\n%sauron_p5_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%sauron_p5_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "sauron_p3",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Savage Terror",
+            "description": "Sauron hypnotizes all nearby enemies into running away, increasing all the damage they take for a time.",
+            "descshort": "Debuff",
+            "icon": 7,
+            "icon_texture": "textures/ui/sauron_icons2.png",
+            "name": "sauron_p6",
+            "power": "power6",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p6_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "sauron_p6_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p6_dmg",
+                    "value": 1.75
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "sauron_p6_dmg",
+                    "value": 2.31
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p6_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "sauron_p6_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p6_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "sauron_p6_pwr",
+                    "value": 516
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%sauron_p6_dmg:s damage\\n%sauron_p6_lif seconds\\n%sauron_p6_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%sauron_p6_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "sauron_p8",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Lifeforce Revitalization",
+            "description": "Sauron uses the Life Energy he's drained from enemies to restore the $HP of himself and any other nearby party members.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/sauron_icons2.png",
+            "name": "sauron_p7",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p7_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "sauron_p7_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p7_pct",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "sauron_p7_pct",
+                    "value": 0.85
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p7_pwr",
+                    "value": 64
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "sauron_p7_pwr",
+                    "value": 380
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%sauron_p7_pct:p of max $HP restored\\n%sauron_p7_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%sauron_p7_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "sauron_pass3",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Hypnotic Waves",
+            "description": "Sauron creates Hypnotic Waves that reveal hidden enemies and reflect all projectile and beam attacks back at enemies for a time.",
+            "descshort": "Boost",
+            "icon": 12,
+            "icon_texture": "textures/ui/sauron_icons2.png",
+            "name": "sauron_p8",
+            "power": "power8",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p8_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "sauron_p8_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p8_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "sauron_p8_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p8_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "sauron_p8_pwr",
+                    "value": 458
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%sauron_p8_lif seconds\\n%sauron_p8_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%sauron_p8_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "MASS HYPNOSIS",
+            "description": "Sauron swoops into the air and fires a barrage of piercing Psychic Energy bolts, each of which has a chance to convert enemies for a time. Enemies explode at the end of conversion.",
+            "descshort": "Projectile",
+            "icon": 1,
+            "icon_texture": "textures/ui/sauron_icons2.png",
+            "name": "sauron_p9",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p9_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "sauron_p9_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p9_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "sauron_p9_dmg",
+                    "value": "279 309"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p9_pct",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "sauron_p9_pct",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p9_lif",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "sauron_p9_lif",
+                    "value": 34
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%sauron_p9_dmg $DMG_MENTAL\\n%sauron_p9_pct:p chance to convert\\n%sauron_p9_lif second conversion duration",
+                "require": {
+                    "cat": "level",
+                    "level": "%sauron_p9_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "HYPNOTIC CLOAK",
+            "description": "Sauron hypnotizes enemies into ignoring Sauron and his allies, making everyone invisible and increasing everyone's $DR and $XP for a time.",
+            "descshort": "Boost",
+            "icon": 4,
+            "icon_texture": "textures/ui/sauron_icons2.png",
+            "name": "sauron_p10",
+            "power": "power10",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p10_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "sauron_p10_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p10_dr",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "sauron_p10_dr",
+                    "value": 2.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p10_xp",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "sauron_p10_xp",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_p10_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "sauron_p10_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%sauron_p10_dr:s $DR\\n%sauron_p10_xp:s $XP\\n%sauron_p10_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%sauron_p10_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Hypnotic Interference",
+            "description": "Sauron's hypnotic powers interfere with enemies' concentration, giving him a chance to dodge all forms of attack and increasing his resistance to $DMG_MENTAL.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/sauron_icons2.png",
+            "name": "sauron_pass1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_pass1_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "sauron_pass1_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_pass1_pct",
+                    "value": 0.02
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "sauron_pass1_pct",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_pass1_res",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "sauron_pass1_res",
+                    "value": 1
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%sauron_pass1_pct:p chance to dodge\\n+%sauron_pass1_res:p Mental resistance",
+                "require": {
+                    "cat": "level",
+                    "level": "%sauron_pass1_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%sauron_pass1_pct"
+                    },
+                    "affecter": {
+                        "attribute": "resist_mental",
+                        "level": "%sauron_pass1_res"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Master of the Savage Land",
+            "description": "Increases damage and Critical chance of all powers.",
+            "descshort": "Passive",
+            "icon": 13,
+            "icon_texture": "textures/ui/pyro_icons2.png",
+            "name": "sauron_pass2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_pass2_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "sauron_pass2_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_pass2_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "sauron_pass2_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_pass2_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "sauron_pass2_crit",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%sauron_pass2_dmg:s Dmg\\n+%sauron_pass2_crit:p Critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%sauron_pass2_req"
+                },
+                "require": {
+                    "category": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%sauron_pass2_dmg",
+                        "scope_damage": "dmg_fire"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%sauron_pass2_crit",
+                        "scope_damage": "dmg_fire"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%sauron_pass2_dmg",
+                        "scope_damage": "dmg_mental"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%sauron_pass2_crit",
+                        "scope_damage": "dmg_mental"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%sauron_pass2_dmg",
+                        "scope_damage": "dmg_bleed"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%sauron_pass2_crit",
+                        "scope_damage": "dmg_bleed"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%sauron_pass2_dmg",
+                        "scope_node": "sauron_p4"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%sauron_pass2_crit",
+                        "scope_node": "sauron_p4"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Lifeforce Harvester",
+            "description": "Sauron regains $HP for every enemy he defeats.",
+            "descshort": "Passive",
+            "icon": 9,
+            "icon_texture": "textures/ui/sauron_icons.png",
+            "name": "sauron_pass3",
+            "type": "passive",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_pass3_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "sauron_pass3_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sauron_pass3_nrg",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "sauron_pass3_nrg",
+                    "value": 50
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%sauron_pass3_nrg $HP per defeated enemy",
+                "require": {
+                    "cat": "level",
+                    "level": "%sauron_pass3_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "health_per_kill",
+                        "level": "%sauron_pass3_nrg"
+                    }
+                }
+            }
+        }
+    }
+}

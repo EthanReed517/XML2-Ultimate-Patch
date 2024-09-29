@@ -1,0 +1,737 @@
+{
+    "PowerStyle": {
+        "cansteal": false,
+        "iconfile": "textures/ui/sauron_icons1.png",
+        "FightMove": {
+            "aireusetime": 6,
+            "aitype": "projectile",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Bolts",
+            "combotextstarter": "Soaring",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power1",
+            "powerup_tag": "sauron_power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "sauron_p1",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/sauro_m/p1_charge",
+                "time": 0
+            },
+            "event": {
+                "actorbolt": "Bip01 Pelvis",
+                "attack_bone_angles": "-65 -76 -11",
+                "attack_bone_pos": "5 0 87",
+                "attacktype": "projectile",
+                "damage": "%sauron_p1_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "explodedamage": "%sauron_p1_dmg2",
+                "entity": "laserbolt",
+                "filename": "ents_sauron_hero",
+                "fulltargeting": true,
+                "inherit": "projectile",
+                "maxrange": 800,
+                "name": "laserbolt",
+                "speed": 600,
+                "targetable": true,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "effect": "char/sauron_hero/p1_shot",
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "laserbolt",
+                "offset": "0 -48 10",
+                "powerusage": "%sauron_p1_pwr",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "laserbolt",
+                "offset": "0 48 10",
+                "time": 0.4
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/sauro_m/p1_power",
+                "time": 0.5
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Roar",
+            "combotextstarter": "Reptilian",
+            "icon": 14,
+            "lockangles": true,
+            "name": "power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "sauron_p2",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/sauro_m/p2_power",
+                "time": 0.19
+            },
+            "trigger": {
+                "effect": "char/sauron_hero/p2_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.32
+            },
+            "event": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%sauron_p2_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "inherit": "punch",
+                "name": "radial_punch",
+                "victimeventtag": 105,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "maxdangerrating": 10,
+                "name": "no_bosses",
+                "noboss": true,
+                "passtag": 104,
+                "tag": 105,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "chance": "%sauron_p2_pct",
+                "name": "do_chance",
+                "othertag": 200,
+                "tag": 104,
+                "time": -1,
+                "type": "ce_otherevent"
+            },
+            "trigger": {
+                "class": "callevents",
+                "life": "%sauron_p2_lif",
+                "name": "powerup",
+                "tag": 200,
+                "time": -1,
+                "FunctionEvent": {
+                    "function": "deactivate",
+                    "triggertag": 201
+                },
+                "affecter": {
+                    "attribute": "team_switch",
+                    "level": 1
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_converted"
+                },
+                "special_fx": {
+                    "effect": "base/material/explode/exp_generic_med",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "instantkillonly": true,
+                "name": "remove_me",
+                "nosponsor": false,
+                "tag": 201,
+                "time": -1,
+                "type": "ce_remove"
+            },
+            "trigger": {
+                "maxrange": 50,
+                "name": "radial_punch",
+                "powerusage": "%sauron_p2_pwr",
+                "time": 0.52
+            },
+            "trigger": {
+                "maxrange": 100,
+                "name": "radial_punch",
+                "time": 0.62
+            },
+            "trigger": {
+                "maxrange": 150,
+                "name": "radial_punch",
+                "time": 0.72
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Crunch",
+            "combotextstarter": "Triassic",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "sauron_p3",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/sauro_m/p3_power",
+                "time": 0.35
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%sauron_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_bleed",
+                "hiteffect": "char/sauron_hero/p1_impact",
+                "name": "punch",
+                "powerusage": "%sauron_p3_pwr",
+                "time": 0.45,
+                "victimeventtag": 101
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%sauron_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_bleed",
+                "life": 0.5,
+                "name": "powerup",
+                "tag": 101,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "melee",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Kick",
+            "combotextstarter": "Swooping",
+            "endchaintime": 0.1,
+            "icon": 5,
+            "lockangles": true,
+            "name": "power4",
+            "powerup_tag": "sauron_p4",
+            "priority": 5,
+            "startchaintime": 0.8,
+            "require": {
+                "cat": "skill",
+                "item": "sauron_p4",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/sauron_hero/p4_power",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/sauro_m/p4_power",
+                "time": 0.2
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%sauron_p4_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "index": 1,
+                "inherit": "punch",
+                "name": "radial_punch",
+                "powerusage": "%sauron_p4_pwr",
+                "time": 0.2,
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                }
+            },
+            "trigger": {
+                "attacktype": "kick",
+                "damage": "%sauron_p4_dmg2",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "index": 2,
+                "knockback": "%sauron_p4_kb",
+                "name": "punch",
+                "time": 0.4,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/sauro_m/p4_impact",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "projectile",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Flames",
+            "combotextstarter": "Savage",
+            "icon": 2,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power5",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "sauron_p5",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/sauro_m/p5_power",
+                "time": 0.2
+            },
+            "trigger": {
+                "actorbolt": "Bip01 Head",
+                "attack_bone_angles": "-119 -87 30",
+                "attack_bone_pos": "9 -3 50",
+                "count": 1,
+                "damage": "%sauron_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "entity": "p5_fireball",
+                "filename": "ents_sauron_hero",
+                "fulltargeting": true,
+                "inherit": "projectile",
+                "maxrange": 800,
+                "name": "p5_fireball",
+                "pierce": true,
+                "powerusage": "%sauron_p5_pwr",
+                "speed": 600,
+                "targetable": true,
+                "time": 0.24,
+                "victimeventtag": 102
+            },
+            "trigger": {
+                "class": "harming",
+                "damage": "%sauron_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
+                "life": 0.5,
+                "name": "powerup",
+                "tag": 102,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Terror",
+            "combotextstarter": "Terrifying",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "sauron_p6",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/sauro_m/p6_power",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/sauron_hero/p6_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.32
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "maxrange": 120,
+                "name": "fry",
+                "powerusage": "%sauron_p6_pwr",
+                "time": 0.35,
+                "victimeventtag": 2
+            },
+            "trigger": {
+                "life": "%sauron_p6_lif",
+                "name": "powerup",
+                "tag": 2,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": "%sauron_p6_dmg"
+                },
+                "affecter": {
+                    "attribute": "fear",
+                    "level": 1
+                },
+                "special_fx": {
+                    "effect": "base/powerup/pu_fear",
+                    "how_used": "primary"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buff",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Revitalization",
+            "combotextstarter": "Rejuvenating",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "sauron_p7",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/sauro_m/p7_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/sauron_hero/p7_aura",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.23
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/sauron_hero/p7_aura",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.23
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/sauron_hero/p7_aura",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.23
+            },
+            "trigger": {
+                "apply_ally": "near",
+                "apply_self": true,
+                "life": 1,
+                "name": "powerup",
+                "powerusage": "%sauron_p7_pwr",
+                "time": 0.66,
+                "special_fx": {
+                    "effect": "char/sauron_hero/p7_aura",
+                    "fxlevel": 3,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "health_regen_pct",
+                    "level": "%sauron_p7_pct"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Waves",
+            "combotextstarter": "Hypnotic",
+            "icon": 12,
+            "lockangles": true,
+            "name": "power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "sauron_p8",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/sauro_m/p8_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/sauron_hero/p8_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.45
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%sauron_p8_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%sauron_p8_pwr",
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/sauron_hero/p8_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "attribute": "reflect_damage",
+                    "level": 1,
+                    "scope": {
+                        "scope_attack": "projectile"
+                    },
+                    "scope": {
+                        "scope_attack": "beam"
+                    }
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power3",
+            "blendtime": 0,
+            "combotextfinisher": "Hypnosis",
+            "description": "MASS HYPNOSIS",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power9",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "sauron_p9",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "event": {
+                "actorbolt": "Bip01 Pelvis",
+                "attack_bone_angles": "-65 -76 -11",
+                "attack_bone_pos": "5 0 0",
+                "attacktype": "projectile",
+                "damage": "%sauron_p9_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "entity": "laserbolt2",
+                "filename": "ents_sauron_hero",
+                "inherit": "projectile",
+                "maxrange": 800,
+                "name": "laserbolt",
+                "pierce": true,
+                "speed": 600,
+                "targetable": true,
+                "victimeventtag": 88
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/sauro_m/p9_charge",
+                "time": 0.16
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/sauro_m/p9_power",
+                "time": 0.17
+            },
+            "trigger": {
+                "count": 5,
+                "name": "laserbolt",
+                "offset": "0 -48 10",
+                "time": 0.17
+            },
+            "trigger": {
+                "count": 5,
+                "name": "laserbolt",
+                "offset": "0 48 10",
+                "time": 0.17
+            },
+            "trigger": {
+                "maxdangerrating": 10,
+                "name": "no_bosses",
+                "noboss": true,
+                "passtag": 89,
+                "tag": 88,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "chance": "%sauron_p9_pct",
+                "name": "do_chance",
+                "othertag": 90,
+                "tag": 89,
+                "time": -1,
+                "type": "ce_otherevent"
+            },
+            "trigger": {
+                "class": "callevents",
+                "life": "%sauron_p9_lif",
+                "name": "powerup",
+                "tag": 90,
+                "time": -1,
+                "FunctionEvent": {
+                    "function": "deactivate",
+                    "triggertag": 91
+                },
+                "affecter": {
+                    "attribute": "team_switch",
+                    "level": 1
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_converted"
+                },
+                "special_fx": {
+                    "effect": "base/material/explode/exp_generic_med",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "instantkillonly": true,
+                "name": "remove_me",
+                "nosponsor": false,
+                "tag": 91,
+                "time": -1,
+                "type": "ce_remove"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4",
+            "blendtime": 0,
+            "combotextfinisher": "Cloak",
+            "description": "HYPNOTIC CLOAK",
+            "icon": 4,
+            "lockchaining": false,
+            "lockangles": true,
+            "name": "power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "sauron_p10",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/sauro_m/p10_power",
+                "time": 0.2
+            },
+            "trigger": {
+                "add": "cloaked",
+                "name": "disapear",
+                "tag": 10,
+                "time": -1,
+                "type": "ce_renderfx"
+            },
+            "trigger": {
+                "name": "appear",
+                "remove": "cloaked",
+                "tag": 11,
+                "time": -1,
+                "type": "ce_renderfx"
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "class": "callevents",
+                "life": "%sauron_p10_lif",
+                "name": "powerup",
+                "time": 0.35,
+                "Functionevent": {
+                    "function": "activate",
+                    "triggertag": 10
+                },
+                "Functionevent": {
+                    "function": "deactivate",
+                    "triggertag": 11
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Pelvis",
+                    "effect": "char/sauron_hero/p10_aura",
+                    "fxlevel": 3,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%sauron_p10_dr"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "xp",
+                    "level": "%sauron_p10_xp"
+                },
+                "affecter": {
+                    "attribute": "invisible"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
