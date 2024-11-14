@@ -1,0 +1,1 @@
+This is Blink's 3D head. Because she doesn't have any powers, she can't be played in the Danger Room, so her 3D head is never used. This file is included as a bonus to give you access to this head if you want to use it.
