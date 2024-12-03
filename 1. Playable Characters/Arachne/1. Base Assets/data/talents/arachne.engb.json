@@ -1,20 +1,6 @@
 {
     "talents": {
         "talent": {
-            "hidden": true,
-            "name": "arachne_resist",
-            "level": {
-                "count": 1,
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "attribute": "resist_mental",
-                        "level": 1
-                    }
-                }
-            }
-        },
-        "talent": {
             "descname": "Psi-Web Balls",
             "description": "Arachne throws Psi-Web balls that hit her target then bounce randomly around the area, stunning any enemies they hit. Levels up to increase the number of balls.",
             "descshort": "Projectile",
@@ -292,7 +278,7 @@
             },
             "level": {
                 "count": 16,
-                "description": "%arachne_p5_dmg $DMG_MENTAL\\n%arachne_p5_pwr $EP",
+                "description": "%arachne_p5_dmg Telekinetic Dmg\\n%arachne_p5_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%arachne_p5_req"
@@ -590,7 +576,7 @@
         },
         "talent": {
             "descname": "Psi-Web Mastery",
-            "description": "Increases damage and Critical chance of all Psi-Web powers.",
+            "description": "Increases damage and Critical chance of all Psi-Web powers and increases her resistance to $DMG_MENTAL.",
             "descshort": "Passive",
             "icon": 11,
             "icon_texture": "textures/ui/arachne_icons2.png",
@@ -625,18 +611,28 @@
                     "level": 15,
                     "name": "arachne_ps1_crit",
                     "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "arachne_ps1_res",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "arachne_ps1_res",
+                    "value": 1
                 }
             },
             "level": {
                 "count": 15,
-                "description": "%arachne_ps1_dmg:s Dmg\\n+%arachne_ps1_crit:p Critical chance",
+                "description": "%arachne_ps1_dmg:s Dmg\\n+%arachne_ps1_crit:p Critical chance\\n+%arachne_ps1_res:p Mental resistance",
                 "require": {
                     "cat": "level",
                     "level": "%arachne_ps1_req"
                 },
                 "require": {
                     "cat": "skill",
-                    "item": "supermaster",
+                    "item": "mutantmaster",
                     "level": 1
                 },
                 "powerup": {
@@ -651,6 +647,10 @@
                         "attribute": "atk_critical",
                         "level": "%arachne_ps1_crit",
                         "scope_damage": "dmg_mental"
+                    },
+                    "affecter": {
+                        "attribute": "resist_mental",
+                        "level": "%arachne_ps1_res"
                     }
                 }
             }
