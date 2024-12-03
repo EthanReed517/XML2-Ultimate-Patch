@@ -1,0 +1,874 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/spiderwoman_icons1.png",
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "lockangles": true,
+            "name": "attacklight1",
+            "playspeed": 1,
+            "startchaintime": 0.67,
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.25
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.41
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight2"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attacktrip1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light2",
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight2",
+            "startchaintime": 0.54,
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.39
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight3"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "popupattack"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light3",
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight3",
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.22
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.34
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_popup",
+            "fallback": "attacklight1",
+            "handler": "ch_popup_attack",
+            "lockangles": true,
+            "name": "popupattack",
+            "startchaintime": 0.73,
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "charge": 1,
+                "name": "charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.33
+            },
+            "trigger": {
+                "knockback": 0,
+                "maxrange": 50,
+                "name": "punch_heavy",
+                "time": 0.4,
+                "damagemod": {
+                    "name": "dmgmod_popup"
+                },
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beam",
+            "animenum": "ea_power1_end",
+            "combotextfinisher": "Blast",
+            "combotextstarter": "Venomous",
+            "icon": 0,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power1",
+            "playspeed": "0.8\r\n   priority = 5",
+            "require": {
+                "cat": "skill",
+                "item": "sw_p1",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spidwm_m/p1_power",
+                "time": 0.35
+            },
+            "trigger": {
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "30 -3 35",
+                "attacktype": "beam",
+                "beameffect": "char/spidwm/p1_power",
+                "damage": "%sw_p1_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_electricity",
+                "fxlevel": 1,
+                "hiteffect": "char/spidwm/p1_impact",
+                "inherit": "beam",
+                "maxrange": 800,
+                "name": "p1_beam",
+                "pierce": true,
+                "powerusage": "%sw_p1_pwr",
+                "time": 0.35,
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Surge",
+            "combotextstarter": "Bio-Electric",
+            "icon": 2,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "sw_p2",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/spidwm/p2_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/spidwm_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/spidwm/p2_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/spidwm_m/p2_power",
+                "time": 0.51
+            },
+            "trigger": {
+                "damage": "%sw_p2_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_electricity",
+                "inherit": "radial",
+                "knockback": "%sw_p2_kb",
+                "maxrange": 72,
+                "name": "radial",
+                "powerusage": "%sw_p2_pwr",
+                "time": 0.51,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "rangednolos",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Blitz",
+            "combotextstarter": "Bio-Electric",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "sw_p3",
+                "level": 1
+            },
+            "event": {
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%sw_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_electricity",
+                "entity": "ElectricSpider",
+                "explodedamage": "%sw_p3_dmg",
+                "explodedamagetype": "dmg_electricity",
+                "filename": "ents_spiderwoman",
+                "inherit": "projectile",
+                "maxrange": 800,
+                "name": "ElectricSpider",
+                "noautoaim": true,
+                "speed": 600,
+                "targetable": true,
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spidwm_m/p3_charge",
+                "time": 0.1
+            },
+            "trigger": {
+                "actorbolt": "Bip01 L Hand",
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "-5 15 28",
+                "index": 1,
+                "name": "ElectricSpider",
+                "powerusage": "%sw_p3_pwr",
+                "time": 0.2
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "-7 -16 28",
+                "index": 2,
+                "name": "ElectricSpider",
+                "time": 0.2
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "rangednolos",
+            "animenum": "ea_power1",
+            "cansteal": false,
+            "combotextfinisher": "Bio-Electricity",
+            "combotextstarter": "Chain",
+            "icon": 1,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power4",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "sw_p4",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%sw_p4_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spidwm_m/p4_charge",
+                "time": 0.75
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/spidwm/p4_charge",
+                "name": "effect",
+                "time": 0.75
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/spidwm/p4_charge",
+                "name": "effect",
+                "time": 0.75
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power4_loop"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power4_loop"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "rangednolos",
+            "animenum": "ea_power1_hold",
+            "blendtime": 0,
+            "combotextfinisher": "Bio-Electricity",
+            "combotextstarter": "Chain",
+            "energypersecond": "%sw_p4_pwr",
+            "handler": "ch_storm_chain_lightning",
+            "icon": 1,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power4_loop",
+            "priority": 5,
+            "trigger": {
+                "name": "lightning_data",
+                "numtargets": "%sw_p4_num",
+                "tag": 1,
+                "time": -1,
+                "type": "ce_lightning_data",
+                "usebothhands": true
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/spidwm/p4_charge",
+                "name": "effect_sound",
+                "sound": "char/spidwm_m/p4_loop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/spidwm/p4_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "damage": 0,
+                "name": "attackme",
+                "tag": 100,
+                "time": -1,
+                "type": "ce_atk_self",
+                "victimeventtag": 103,
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "attacks_per_second": 1,
+                "class": "harming",
+                "damage": "%sw_p4_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_electricity",
+                "life": 1,
+                "name": "powerup",
+                "tag": 103,
+                "time": -1,
+                "damageMod": {
+                    "remove": "dmgmod_no_pain"
+                },
+                "damageMod": {
+                    "name": "dmgmod_force_fx"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "attacks_per_second": 1,
+                "class": "harming",
+                "damage": "%sw_p4_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_electricity",
+                "life": 1,
+                "name": "powerup",
+                "tag": 101,
+                "time": -1,
+                "damageMod": {
+                    "remove": "dmgmod_no_pain"
+                },
+                "damageMod": {
+                    "name": "dmgmod_force_fx"
+                },
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                }
+            },
+            "trigger": {
+                "effect": "char/spidwm/p4_chain",
+                "name": "effect",
+                "tag": 102,
+                "time": -1
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power4_loop"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "aoe",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Repulsion",
+            "combotextstarter": "Repulsing",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power5",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "sw_p5",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spidwm_m/p5_power",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/spidwm/p5_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.13
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/spidwm/p5_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.13
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/spidwm/p5_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.13
+            },
+            "trigger": {
+                "effect": "char/spidwm/p5_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.59
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": 0,
+                "damagescale": "none",
+                "damagetype": "dmg_direct",
+                "maxrange": 144,
+                "name": "fry",
+                "powerusage": "%sw_p5_pwr",
+                "time": 0.6,
+                "victimeventtag": 2
+            },
+            "trigger": {
+                "life": "%sw_p5_lif",
+                "name": "powerup",
+                "tag": 2,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": "%sw_p5_dmg"
+                },
+                "affecter": {
+                    "attribute": "fear",
+                    "level": 1
+                },
+                "special_fx": {
+                    "effect": "base/powerup/pu_fear",
+                    "how_used": "primary"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "aoe",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Attraction",
+            "combotextstarter": "Attracting",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "sw_p6",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spidwm_m/p6_power",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/spidwm/p6_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.13
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/spidwm/p6_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.13
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/spidwm/p6_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.13
+            },
+            "trigger": {
+                "effect": "char/spidwm/p6_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.59
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": 0,
+                "damagescale": "none",
+                "damagetype": "dmg_direct",
+                "maxrange": 144,
+                "name": "taunt",
+                "powerusage": "%sw_p6_pwr",
+                "tag": 3,
+                "time": 0.6,
+                "victimeventtag": 4
+            },
+            "trigger": {
+                "name": "powerup",
+                "tag": 4,
+                "time": -1,
+                "affecter": {
+                    "attribute": "nullify",
+                    "level": 1
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_nullified"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Field",
+            "combotextstarter": "Bio-Electric",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "sw_p7",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spidwm_m/p7_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "life": "%sw_p7_lif",
+                "name": "powerup",
+                "powerusage": "%sw_p7_pwr",
+                "tag": 1,
+                "time": 0.3,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%sw_p7_dr"
+                },
+                "special_fx": {
+                    "effect": "char/spidwm/p7_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "class": "touch_damage",
+                "damage": "%sw_p7_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_electricity",
+                "life": "%sw_p7_lif",
+                "name": "powerup",
+                "tag": 2,
+                "time": 0.3
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buff",
+            "animenum": "ea_power7",
+            "combotextfinisher": "Reinvigoration",
+            "combotextstarter": "Metabolic",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "sw_p8",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spidwm_m/p8_charge",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/spidwm/p8_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/spidwm/p8_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.8
+            },
+            "trigger": {
+                "apply_ally": "near",
+                "apply_self": true,
+                "life": 1,
+                "name": "powerup",
+                "powerusage": "%sw_p8_pwr",
+                "time": 0.8,
+                "affecter": {
+                    "attribute": "health_regen_pct",
+                    "level": "%sw_p8_pct"
+                },
+                "special_fx": {
+                    "effect": "char/spidwm/p8_power",
+                    "fxlevel": 3,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/spidwm/p8_power",
+                    "fxlevel": 3,
+                    "how_used": "deactivation"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power4",
+            "combotextfinisher": "Cascade",
+            "description": "BIO-ELECTRIC CASCADE",
+            "icon": 13,
+            "lockangles": true,
+            "name": "power9",
+            "playspeed": 3,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "sw_p9",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spidwm_m/p9_power",
+                "time": 0.4
+            },
+            "trigger": {
+                "actorbolt": "Bip01 Pelvis",
+                "effect": "char/spidwm/p9_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": "%sw_p9_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_electricity",
+                "maxrange": 300,
+                "name": "radial",
+                "time": 0.6,
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                },
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                },
+                "damagemod": {
+                    "name": "dmgmod_trip"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power7",
+            "blendtime": 0,
+            "combotextfinisher": "Conduit",
+            "description": "BIO-ELECTRIC CONDUIT",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "sw_p10",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spidwm_m/p10_charge",
+                "time": 0.5
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "life": "%sw_p10_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "time": 0.5,
+                "special_fx": {
+                    "effect": "char/spidwm/p10_aura",
+                    "fxlevel": 1
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage_scope",
+                    "level": 0,
+                    "scope_damage": "dmg_electricity"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "power_cost",
+                    "level": 0
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
