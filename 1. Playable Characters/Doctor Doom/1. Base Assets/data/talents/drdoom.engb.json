@@ -1,0 +1,834 @@
+{
+    "talents": {
+        "talent": {
+            "descname": "Bolt of Doom",
+            "description": "Doctor Doom fires a beam of Electricity that pierces through his enemies and knocks them back. Drains batteries.",
+            "descshort": "Beam",
+            "icon": 14,
+            "icon_texture": "textures/ui/drdoom_icons2.png",
+            "name": "drdoom_p1",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p1_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "drdoom_p1_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p1_dmg",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "drdoom_p1_dmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p1_kb",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "drdoom_p1_kb",
+                    "value": 620
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p1_pwr",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "drdoom_p1_pwr",
+                    "value": 126
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%drdoom_p1_dmg $DMG_ELECTRICITY\\n%drdoom_p1_kb $KB\\n%drdoom_p1_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%drdoom_p1_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Arc of Doom",
+            "description": "Doctor Doom conjures up an arc of Energy that pops up any enemies in its path.",
+            "descshort": "Blast",
+            "icon": 0,
+            "icon_texture": "textures/ui/drdoom_icons2.png",
+            "name": "drdoom_p2",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p2_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "drdoom_p2_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p2_dmg",
+                    "value": "21 26"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "drdoom_p2_dmg",
+                    "value": "200 220"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p2_pwr",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "drdoom_p2_pwr",
+                    "value": 136
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%drdoom_p2_dmg $DMG_ENERGY\\n%drdoom_p2_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%drdoom_p2_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Chain of Doom",
+            "description": "Doctor Doom shoots Lightning from her hands that chains from enemy to enemy. Drains batteries.\\n(~41Press And Hold~~)",
+            "descshort": "Blast",
+            "icon": 1,
+            "icon_texture": "textures/ui/drdoom_icons2.png",
+            "name": "drdoom_p3",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p3_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "drdoom_p3_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p3_dmg",
+                    "value": "52 56"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "drdoom_p3_dmg",
+                    "value": "220 235"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p3_pwr",
+                    "value": 59
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "drdoom_p3_pwr",
+                    "value": 166
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p3_num",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "drdoom_p3_num",
+                    "value": 9
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%drdoom_p3_dmg $DMG_ELECTRICITY per second per chain\\n%drdoom_p3_num chains\\n%drdoom_p3_pwr $EP per second",
+                "require": {
+                    "cat": "level",
+                    "level": "%drdoom_p3_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "drdoom_p6",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Eruption of Doom",
+            "description": "Doctor Doom unleashes a wave of Energy that knocks enemies back.",
+            "descshort": "Radial",
+            "icon": 4,
+            "icon_texture": "textures/ui/drdoom_icons2.png",
+            "name": "drdoom_p4",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p4_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "drdoom_p4_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p4_dmg",
+                    "value": "30 36"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "drdoom_p4_dmg",
+                    "value": "82 93"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p4_kb",
+                    "value": 245
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "drdoom_p4_kb",
+                    "value": 620
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p4_pwr",
+                    "value": 46
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "drdoom_p4_pwr",
+                    "value": 170
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%drdoom_p4_dmg $DMG_ENERGY\\n%drdoom_p4_kb $KB\\n%drdoom_p4_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%drdoom_p4_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "drdoom_p2",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Teleportation of Doom",
+            "description": "Ability to teleport within a given range. Damages enemies at the destination following the end of the teleport. Levels up to allow carrying allies.",
+            "descshort": "Special",
+            "icon": 2,
+            "icon_texture": "textures/ui/drdoom_icons2.png",
+            "name": "drdoom_p5",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p5_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "drdoom_p5_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p5_dmg",
+                    "value": "11 15"
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "drdoom_p5_dmg",
+                    "value": "69 79"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p5_rng",
+                    "value": 240
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "drdoom_p5_rng",
+                    "value": 720
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p5_pwr",
+                    "value": 8
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "drdoom_p5_pwr",
+                    "value": 50
+                }
+            },
+            "level": {
+                "count": 2,
+                "description": "%drdoom_p5_rng:r ft teleport range\\n%drdoom_p5_dmg $DMG_ENERGY\\n%drdoom_p5_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%drdoom_p5_req"
+                }
+            },
+            "level": {
+                "count": 3,
+                "description": "%drdoom_p5_rng:r ft teleport range\\n%drdoom_p5_dmg $DMG_ENERGY\\nCarry allies\\n%drdoom_p5_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%drdoom_p5_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Rain of Doom",
+            "description": "Doctor Doom summons Lightning bolts that rain down upon his enemies. Drains batteries.\\n(~41Press And Hold~~)",
+            "descshort": "Blast",
+            "icon": 8,
+            "icon_texture": "textures/ui/drdoom_icons2.png",
+            "name": "drdoom_p6",
+            "power": "power6",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p6_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "drdoom_p6_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p6_dmg",
+                    "value": "42 46"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "drdoom_p6_dmg",
+                    "value": "210 230"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p6_pwr",
+                    "value": 48
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "drdoom_p6_pwr",
+                    "value": 156
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%drdoom_p6_dmg $DMG_ELECTRICITY\\n%drdoom_p6_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%drdoom_p6_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Aura of Doom",
+            "description": "Doctor Doom's commanding presence increases the effectiveness of all learned skills for the entire party for a time. Also sends nearby enemies running in fear upon activation.",
+            "descshort": "Boost/Debuff",
+            "icon": 3,
+            "icon_texture": "textures/ui/drdoom_icons2.png",
+            "name": "drdoom_p7",
+            "power": "power7",
+            "type": "boost",
+            "value_priority": 1,
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p7_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "drdoom_p7_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 1,
+                    "name": "drdoom_p7_sk",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 7,
+                    "name": "drdoom_p7_sk",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 8,
+                    "name": "drdoom_p7_sk",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 14,
+                    "name": "drdoom_p7_sk",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p7_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "drdoom_p7_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p7_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "drdoom_p7_pwr",
+                    "value": 458
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "+%drdoom_p7_sk all learned skills\\n%drdoom_p7_lif seconds\\n%drdoom_p7_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%drdoom_p7_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Barrier of Doom",
+            "description": "Doctor Doom creates a barrier of Electricity around each party member, increasing their $DR and damaging all enemies who touch them for a time.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/drdoom_icons2.png",
+            "name": "drdoom_p8",
+            "power": "power8",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p8_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "drdoom_p8_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p8_dmg",
+                    "value": "2 3"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "drdoom_p8_dmg",
+                    "value": "17 22"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p8_dr",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "drdoom_p8_dr",
+                    "value": 2.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p8_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "drdoom_p8_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p8_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "drdoom_p8_pwr",
+                    "value": 516
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%drdoom_p8_dr:s $DR\\n%drdoom_p8_dmg $DMG_ELECTRICITY upon contact\\n%drdoom_p8_lif seconds\\n%drdoom_p8_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%drdoom_p8_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "DOOMSDAY",
+            "description": "Doctor Doom creates gigantic radial waves that first stun all nearby enemies, then hit them with massive $DMG_ENERGY, draining $HP from every enemy they defeat with a chance for a 'Deadly Strike' (33% instant $HP loss).",
+            "descshort": "Radial",
+            "icon": 9,
+            "icon_texture": "textures/ui/drdoom_icons2.png",
+            "name": "drdoom_p9",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p9_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "drdoom_p9_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p9_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "drdoom_p9_dmg",
+                    "value": "279 309"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p9_cne",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "drdoom_p9_cne",
+                    "value": 0.19
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p9_hpg",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "drdoom_p9_hpg",
+                    "value": 50
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%drdoom_p9_dmg $DMG_ENERGY\\n%drdoom_p9_hpg $HP per defeated enemy\\n%drdoom_p9_cne:p chance for Deadly Strike",
+                "require": {
+                    "cat": "level",
+                    "level": "%drdoom_p9_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "drdoom_p4",
+                    "level": 1
+                },
+                "powerup": {
+                    "chance": "%drdoom_p9_cne",
+                    "class": "atk_instant_pct",
+                    "life": -1,
+                    "no_stack": true,
+                    "percent": 0.33,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope_node": "doom_power9"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "ARMY OF DOOM",
+            "description": "Doctor Doom summons either a Doombot, a Doomsman, a Doom Iron Man, or a Servo-Guard to fight alongside him for a time.",
+            "descshort": "Special",
+            "icon": 13,
+            "icon_texture": "textures/ui/drdoom_icons2.png",
+            "name": "drdoom_p10",
+            "power": "power10",
+            "skirmish_locked": true,
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p10_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "drdoom_p10_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p10_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "drdoom_p10_lif",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p10_hlt",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "drdoom_p10_hlt",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_p10_dmg",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "drdoom_p10_dmg",
+                    "value": 1.25
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%drdoom_p10_lif seconds\\n%drdoom_p10_hlt:p of Doctor Doom's max $HP\\n%drdoom_p10_dmg:p of Doctor Doom's Melee Dmg",
+                "require": {
+                    "cat": "level",
+                    "level": "%drdoom_p10_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Armor of Doom",
+            "description": "Doctor Doom's armor increases his resistance to all types of damage, increases his $EP regeneration rate, and allows him to see hidden enemies.",
+            "descshort": "Passive",
+            "icon": 10,
+            "icon_texture": "textures/ui/ladyds_icons2.png",
+            "name": "drdoom_ps1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_ps1_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "drdoom_ps1_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_ps1_ep",
+                    "value": 1.3
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "drdoom_ps1_ep",
+                    "value": 2.98
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_ps1_pct",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "drdoom_ps1_pct",
+                    "value": 0.5
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%drdoom_ps1_pct:p all resistances\\n%drdoom_ps1_ep:s $EP regeneration\\nReveals hidden enemies",
+                "require": {
+                    "cat": "level",
+                    "level": "%drdoom_ps1_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_all",
+                        "level": "%drdoom_ps1_pct"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "energy_regen",
+                        "level": "%drdoom_ps1_ep"
+                    },
+                    "affecter": {
+                        "attribute": "reveal_hidden"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Electricity Combat",
+            "description": "Adds $DMG_ELECTRICITY to all non-powered Melee attacks.",
+            "descshort": "Passive",
+            "icon": 12,
+            "icon_texture": "textures/ui/drdoom_icons2.png",
+            "name": "drdoom_ps2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_ps2_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "drdoom_ps2_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_ps2_dmg",
+                    "value": 0.5
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "drdoom_ps2_dmg",
+                    "value": 3.6
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "+%drdoom_ps2_dmg:p $DMG_ELECTRICITY",
+                "require": {
+                    "cat": "level",
+                    "level": "%drdoom_ps2_req"
+                },
+                "powerup": {
+                    "class": "add_attack",
+                    "damagepercent": "%drdoom_ps2_dmg",
+                    "damagetype": "dmg_electricity",
+                    "life": -1,
+                    "special_fx": {
+                        "effect": "char/drdoom/special_trail",
+                        "how_used": "custom"
+                    },
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope": {
+                            "scope_attack": "punch"
+                        },
+                        "scope": {
+                            "scope_attack": "kick"
+                        },
+                        "scope": {
+                            "scope_non_powers": true
+                        }
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Mastery of Doom",
+            "description": "Increases damage and Critical chance of all powers.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/drdoom_icons2.png",
+            "name": "drdoom_ps3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_ps3_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "drdoom_ps3_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_ps3_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "drdoom_ps3_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "drdoom_ps3_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "drdoom_ps3_crit",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%drdoom_ps3_dmg:s Dmg\\n+%drdoom_ps3_crit:p Critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%drdoom_ps3_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%drdoom_ps3_dmg",
+                        "scope_damage": "dmg_electricity"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%drdoom_ps3_crit",
+                        "scope_damage": "dmg_electricity"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%drdoom_ps3_dmg",
+                        "scope_damage": "dmg_energy"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%drdoom_ps3_crit",
+                        "scope_damage": "dmg_energy"
+                    }
+                }
+            }
+        }
+    }
+}

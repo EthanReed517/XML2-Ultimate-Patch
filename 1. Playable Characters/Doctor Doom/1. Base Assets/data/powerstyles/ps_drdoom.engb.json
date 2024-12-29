@@ -1,0 +1,1293 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/drdoom_icons1.png",
+        "event": {
+            "entity": "drdoom_p6_lightning",
+            "filename": "ents_drdoom",
+            "inherit": "relative_spawn",
+            "name": "spawn_lightning",
+            "relative": "target",
+            "type": "ce_atk_spawn_relative"
+        },
+        "event": {
+            "damagescale": "none",
+            "name": "teleport_data_store",
+            "type": "ce_atk_teleport_mark_start"
+        },
+        "event": {
+            "name": "set_visible",
+            "teleportation_caused": true,
+            "type": "ce_force_visibility"
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "endchaintime": 1,
+            "lockangles": true,
+            "name": "attacklight1",
+            "startchaintime": 0.63,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.31
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.3,
+                "name": "trail",
+                "time": 0.25
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.44
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight2"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attacktrip1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light2",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight2",
+            "startchaintime": 0.67,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.2
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.33,
+                "name": "trail",
+                "time": 0.13
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.33
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight3"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "popupattack"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_heavy1",
+            "endchaintime": 1,
+            "lockangles": true,
+            "name": "attackheavy1",
+            "startchaintime": 0.1,
+            "event": {
+                "inherit": "punch_heavy",
+                "maxrange": 56,
+                "name": "backhand1"
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.4,
+                "name": "trail",
+                "offsetend": 10,
+                "offsetstart": 5,
+                "time": 0.24
+            },
+            "trigger": {
+                "name": "backhand1",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attackstun1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy2"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beam",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Doom",
+            "combotextstarter": "Electrifying",
+            "icon": 14,
+            "lockangles": true,
+            "name": "power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "drdoom_p1",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/drdoom_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/drdoom/p8_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/drdoom/p8_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/drdoom_m/p1_power",
+                "time": 0.368
+            },
+            "trigger": {
+                "arc": 0,
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "19 7 53",
+                "attacktype": "beam",
+                "beameffect": "char/drdoom/p1_power",
+                "bolt": "Bip01 L Hand",
+                "damage": "%drdoom_p1_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_electricity",
+                "fxlevel": 1,
+                "hiteffect": "char/drdoom/p1_impact",
+                "inherit": "beam",
+                "knockback": "%drdoom_p1_kb",
+                "maxrange": 800,
+                "name": "beam",
+                "pierce": true,
+                "powerusage": "%drdoom_p1_pwr",
+                "time": 0.368,
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                },
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "arc": 0,
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "19 7 53",
+                "attacktype": "beam",
+                "beameffect": "char/drdoom/p1_power",
+                "bolt": "Bip01 R Hand",
+                "damage": 0,
+                "damagescale": "none",
+                "damagetype": "dmg_electricity",
+                "fxlevel": 1,
+                "inherit": "beam",
+                "maxrange": 800,
+                "name": "beam",
+                "pierce": true,
+                "time": 0.368,
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "rangednolos",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Doom",
+            "combotextstarter": "Arcing",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "drdoom_p2",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/drdoom/p2_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/drdoom_m/p2_power",
+                "time": 0.218
+            },
+            "trigger": {
+                "arc": 90,
+                "attacktype": "blast",
+                "damage": "%drdoom_p2_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "inherit": "punch",
+                "maxrange": 180,
+                "name": "punch",
+                "powerusage": "%drdoom_p2_pwr",
+                "time": 0.312,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                },
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                },
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "rangednolos",
+            "animenum": "ea_power2",
+            "cansteal": false,
+            "combotextfinisher": "Doom",
+            "combotextstarter": "Electrifying",
+            "icon": 1,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "drdoom_p3",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%drdoom_p3_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/drdoom_m/p3_charge",
+                "time": 0.75
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/drdoom/p3_charge",
+                "name": "effect",
+                "time": 0.75
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/drdoom/p3_charge",
+                "name": "effect",
+                "time": 0.75
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power3_loop"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power3_loop"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "rangednolos",
+            "animenum": "ea_power2_loop",
+            "blendtime": 0,
+            "combotextfinisher": "Doom",
+            "combotextstarter": "Electrifying",
+            "energypersecond": "%drdoom_p3_pwr",
+            "handler": "ch_storm_chain_lightning",
+            "icon": 1,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power3_loop",
+            "priority": 5,
+            "trigger": {
+                "name": "lightning_data",
+                "numtargets": "%drdoom_p3_num",
+                "tag": 1,
+                "time": -1,
+                "type": "ce_lightning_data",
+                "usebothhands": true
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/drdoom/p3_charge",
+                "loop_timeout": 0.5,
+                "loop_type": "start",
+                "name": "effect_sound",
+                "sound": "char/drdoom_m/p3_loop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/drdoom/p3_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "damage": 0,
+                "name": "attackme",
+                "tag": 100,
+                "time": -1,
+                "type": "ce_atk_self",
+                "victimeventtag": 103,
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "attacks_per_second": 1,
+                "class": "harming",
+                "damage": "%drdoom_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_electricity",
+                "life": 1,
+                "name": "powerup",
+                "tag": 103,
+                "time": -1,
+                "damageMod": {
+                    "remove": "dmgmod_no_pain"
+                },
+                "damageMod": {
+                    "name": "dmgmod_force_fx"
+                }
+            },
+            "trigger": {
+                "allow_non_actors": true,
+                "attacks_per_second": 1,
+                "class": "harming",
+                "damage": "%drdoom_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_electricity",
+                "life": 1,
+                "name": "powerup",
+                "tag": 101,
+                "time": -1,
+                "damageMod": {
+                    "remove": "dmgmod_no_pain"
+                },
+                "damageMod": {
+                    "name": "dmgmod_force_fx"
+                },
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                }
+            },
+            "trigger": {
+                "effect": "char/drdoom/p3_chain",
+                "name": "effect",
+                "tag": 102,
+                "time": -1
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power3_loop"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power3_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_fly_idle",
+            "lockangles": true,
+            "name": "power3_end",
+            "priority": 5,
+            "trigger": {
+                "loop_type": "stop",
+                "name": "sound",
+                "sound": "char/drdoom_m/p3_loop",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_attack_light1",
+            "combotextfinisher": "Doom",
+            "combotextstarter": "Erupting",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power4",
+            "playspeed": 0.8,
+            "startchaintime": 0.63,
+            "require": {
+                "cat": "skill",
+                "item": "drdoom_p4",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/drdoom_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/drdoom/p4_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/drdoom_m/p4_power",
+                "time": 0.3
+            },
+            "trigger": {
+                "effect": "char/drdoom/p4_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "punch",
+                "damage": "%drdoom_p4_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "inherit": "punch",
+                "knockback": "%drdoom_p4_kb",
+                "maxrange": 100,
+                "name": "radial_punch",
+                "powerusage": "%drdoom_p4_pwr",
+                "time": 0.3,
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                },
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1_start",
+            "blendtime": 10.5,
+            "combotextfinisher": "Doom",
+            "combotextstarter": "Teleporting",
+            "handler": "ch_nightcrawlerdecide",
+            "icon": 2,
+            "lockchaining": false,
+            "name": "power5",
+            "noautoaim": true,
+            "playspeed": 0,
+            "priority": 5,
+            "turnrate": 0.5,
+            "require": {
+                "cat": "skill",
+                "item": "drdoom_p5",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%drdoom_p5_pwr",
+                "time": -1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "special",
+                "result": "teleportally"
+            },
+            "chain": {
+                "action": "special2",
+                "result": "teleport"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1_start",
+            "blendtime": 0.5,
+            "combotextfinisher": "Doom",
+            "combotextstarter": "Teleporting",
+            "endchaintime": 0.99,
+            "handler": "ch_tele_jump",
+            "icon": 2,
+            "name": "teleport",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.95,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/drdoom_m/p5_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/drdoom/p5_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.6
+            },
+            "trigger": {
+                "maxrange": "%drdoom_p5_rng",
+                "name": "teleport_data_store",
+                "powerusage": "%drdoom_p5_pwr",
+                "set_visible": false,
+                "tag": 2,
+                "time": 0.8
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "teleport_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1_end",
+            "blendtime": 0,
+            "combotextfinisher": "Doom",
+            "combotextstarter": "Teleporting",
+            "endchaintime": 0.95,
+            "handler": "ch_move_tele_land",
+            "icon": 2,
+            "lockangles": true,
+            "name": "teleport_end",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.55,
+            "trigger": {
+                "maxrange": "%drdoom_p5_rng",
+                "name": "teleport",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/drdoom/p5_teleport",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/drdoom_m/p5_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "effect": "char/drdoom/p5_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.1
+            },
+            "trigger": {
+                "damage": "%drdoom_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "inherit": "radial",
+                "maxrange": 65,
+                "name": "tele_attk",
+                "time": 0.1
+            },
+            "trigger": {
+                "cleardata": true,
+                "name": "teleport_data_store",
+                "set_visible": true,
+                "time": 0.1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1_start",
+            "blendtime": 0.5,
+            "combotextfinisher": "Doom",
+            "combotextstarter": "Teleporting",
+            "endchaintime": 0.99,
+            "handler": "ch_tele_jump",
+            "icon": 2,
+            "name": "teleportally",
+            "noautoaim": true,
+            "priority": "uninterruptable",
+            "startchaintime": 0.95,
+            "require": {
+                "cat": "skill",
+                "item": "drdoom_p5",
+                "level": 3
+            },
+            "trigger": {
+                "allynodename": "teleportvictim",
+                "attackerface": true,
+                "name": "victim",
+                "nodename": "teleportvictim",
+                "targetdistance": 1,
+                "time": 0,
+                "usesponsornode": true,
+                "victimface": true
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/drdoom_m/p5_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/drdoom/p5_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.6
+            },
+            "trigger": {
+                "maxrange": "%drdoom_p5_rng",
+                "name": "teleport_data_store",
+                "nofailifnotarget": true,
+                "powerusage": "%drdoom_p5_pwr",
+                "set_visible": false,
+                "tag": 2,
+                "teleportwithvictim": true,
+                "time": 0.8
+            },
+            "chain": {
+                "action": "idle",
+                "result": "teleportallytransport"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_grab_start_v",
+            "handler": "ch_grab_victim",
+            "lockangles": true,
+            "lockspeed": true,
+            "name": "teleportvictim",
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.85,
+                "visible": false
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1_end",
+            "blendtime": 0,
+            "combotextfinisher": "Doom",
+            "combotextstarter": "Teleporting",
+            "endchaintime": 0.95,
+            "handler": "ch_move_tele_land",
+            "icon": 2,
+            "lockangles": true,
+            "name": "teleportallytransport",
+            "noautoaim": true,
+            "priority": 5,
+            "startchaintime": 0.55,
+            "trigger": {
+                "maxrange": "%drdoom_p5_rng",
+                "name": "teleport",
+                "nofailifnotarget": true,
+                "powerusage": "%drdoom_p5_pwr",
+                "teleportwithvictim": true,
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/drdoom/p5_teleport",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/drdoom_m/p5_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "effect": "char/drdoom/p5_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.1
+            },
+            "trigger": {
+                "name": "set_visible",
+                "time": 0.3,
+                "visible": true
+            },
+            "trigger": {
+                "life": 0.3,
+                "movement": -40,
+                "name": "slide",
+                "time": 0.3
+            },
+            "trigger": {
+                "name": "victim_release",
+                "ownertime": 0.5,
+                "time": 0.6
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "rangednolos",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Doom",
+            "combotextstarter": "Striking",
+            "icon": 8,
+            "name": "power6",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "drdoom_p6",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%drdoom_p6_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/drdoom_m/p6_charge",
+                "time": 0
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power6_loop"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power6_loop"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "rangednolos",
+            "animenum": "ea_power2_loop",
+            "combotextfinisher": "Doom",
+            "combotextstarter": "Striking",
+            "icon": 8,
+            "name": "power6_loop",
+            "priority": 5,
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/drdoom/p8_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/drdoom_m/p6_power",
+                "time": 0
+            },
+            "trigger": {
+                "attackerheight": false,
+                "attacktype": "direct",
+                "count": 1,
+                "damage": "%drdoom_p6_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_electricity",
+                "maxrange": 300,
+                "name": "spawn_lightning",
+                "powerusage": "%drdoom_p6_pwr",
+                "relative": "target",
+                "time": 0.6,
+                "victimeventtag": 10,
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power6_loop"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power6_end"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "rangednolos",
+            "animenum": "ea_fly_idle",
+            "combotextfinisher": "Doom",
+            "combotextstarter": "Striking",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power6_end",
+            "priority": 5,
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Doom",
+            "combotextstarter": "Daunting",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "drdoom_p7",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/drdoom_m/p7_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/drdoom/p7_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "effect": "char/drdoom/p7_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.3
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": 0,
+                "damagescale": "none",
+                "damagetype": "dmg_direct",
+                "maxrange": 144,
+                "name": "fry",
+                "time": 0.3,
+                "victimeventtag": 2
+            },
+            "trigger": {
+                "life": "%drdoom_p7_lif",
+                "name": "powerup",
+                "tag": 2,
+                "time": -1,
+                "affecter": {
+                    "attribute": "fear",
+                    "level": 1
+                },
+                "special_fx": {
+                    "effect": "base/powerup/pu_fear",
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "life": "%drdoom_p7_lif",
+                "name": "powerup",
+                "powerusage": "%drdoom_p7_pwr",
+                "time": 0.46,
+                "special_fx": {
+                    "effect": "char/drdoom/p7_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/drdoom/p7_aura",
+                    "fxlevel": 2,
+                    "how_used": "deactivate"
+                },
+                "affecter": {
+                    "attribute": "all_talents",
+                    "level": "%drdoom_p7_sk",
+                    "scope_talent": "drdoom_p7"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Doom",
+            "combotextstarter": "Impeding",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "drdoom_p8",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/drdoom/p8_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/drdoom/p8_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/drdoom_m/p8_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "life": "%drdoom_p8_lif",
+                "name": "powerup",
+                "powerusage": "%drdoom_p8_pwr",
+                "tag": 3,
+                "time": 0.3,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%drdoom_p8_dr"
+                },
+                "special_fx": {
+                    "effect": "char/drdoom/p8_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "class": "touch_damage",
+                "damage": "%drdoom_p8_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_electricity",
+                "life": "%drdoom_p8_lif",
+                "name": "powerup",
+                "tag": 4,
+                "time": 0.3
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "combotextfinisher": "Doomsday",
+            "description": "DOOMSDAY",
+            "icon": 9,
+            "lockangles": true,
+            "name": "power9",
+            "playspeed": 1,
+            "powerup_tag": "doom_power9",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "drdoom_p9",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/drdoom/p9_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/drdoom_m/p9_charge",
+                "time": 0.025
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": 2,
+                "name": "powerup",
+                "time": 0,
+                "affecter": {
+                    "attribute": "health_per_kill",
+                    "level": "%drdoom_p9_hpg"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/drdoom_m/p9_power",
+                "time": 0.2
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": 1,
+                "damagescale": "none",
+                "damagetype": "dmg_direct",
+                "index": 1,
+                "maxrange": 300,
+                "name": "radial",
+                "tag": 20,
+                "time": 0.2,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": "%drdoom_p9_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "index": 2,
+                "maxrange": 300,
+                "name": "radial",
+                "tag": 21,
+                "time": 0.6,
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power3",
+            "combotextfinisher": "Doom",
+            "description": "ARMY OF DOOM",
+            "icon": 13,
+            "lockangles": true,
+            "name": "power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "drdoom_p10",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/drdoom_m/p10_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/drdoom/p3_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/drdoom/p3_charge",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/drdoom_m/p10_power",
+                "time": 0.368
+            },
+            "trigger": {
+                "name": "randomattack",
+                "tag0": 10,
+                "tag1": 11,
+                "tag2": 12,
+                "tag3": 13,
+                "time": 0.368,
+                "type": "ce_random_event"
+            },
+            "trigger": {
+                "healthpct": "%drdoom_p10_hlt",
+                "minioneventtag": 14,
+                "name": "spawnminion",
+                "skin": 19110,
+                "tag": 10,
+                "time": -1,
+                "type": "ce_spawn_minion"
+            },
+            "trigger": {
+                "healthpct": "%drdoom_p10_hlt",
+                "minioneventtag": 14,
+                "name": "spawnminion",
+                "skin": 19111,
+                "tag": 11,
+                "time": -1,
+                "type": "ce_spawn_minion"
+            },
+            "trigger": {
+                "healthpct": "%drdoom_p10_hlt",
+                "minioneventtag": 14,
+                "name": "spawnminion",
+                "skin": 19112,
+                "tag": 12,
+                "time": -1,
+                "type": "ce_spawn_minion"
+            },
+            "trigger": {
+                "healthpct": "%drdoom_p10_hlt",
+                "minioneventtag": 14,
+                "name": "spawnminion",
+                "skin": 19113,
+                "tag": 13,
+                "time": -1,
+                "type": "ce_spawn_minion"
+            },
+            "trigger": {
+                "class": "callevents",
+                "life": "%drdoom_p10_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "remove_on_death": true,
+                "tag": 14,
+                "time": -1,
+                "FunctionEvent": {
+                    "function": "deactivate",
+                    "triggertag": 15
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": "%drdoom_p10_dmg"
+                },
+                "special_fx": {
+                    "effect": "char/drdoom/p10_aura",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/drdoom/p10_aura",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "name": "remove",
+                "tag": 15,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
