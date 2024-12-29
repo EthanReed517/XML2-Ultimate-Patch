@@ -242,7 +242,6 @@
                 "damage": "%hav_detonate_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_energy",
-                "knockback": "%hav_detonate_kb",
                 "radius": 144,
                 "func_deactivate": "timebomb_deactivate",
                 "life": 3,
@@ -549,6 +548,23 @@
                 "time": 0,
                 "worldspeed": 0.5
             },
+            "event": {
+                "arc": 180,
+                "damage": "%havok_p10_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "knockback": 620,
+                "name": "radial",
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
             "trigger": {
                 "bolt": "Bip01 L Hand",
                 "effect": "char/havok/p3_charge",
@@ -563,29 +579,9 @@
                 "time": 0
             },
             "trigger": {
-                "arc": 180,
-                "damage": "%havok_p10_dmg",
-                "damagescale": "none",
-                "damagetype": "dmg_energy",
-                "fxlevel": 1,
-                "inherit": "punch",
-                "knockback": 610,
                 "maxrange": 300,
-                "name": "pulse",
-                "time": 0.3,
-                "type": "ce_atk",
-                "damageMod": {
-                    "name": "dmgmod_auto_knockback"
-                },
-                "damageMod": {
-                    "name": "dmgmod_environment"
-                },
-                "damageMod": {
-                    "name": "dmgmod_energize"
-                },
-                "damageMod": {
-                    "name": "dmgmod_ground"
-                }
+                "name": "radial",
+                "time": 0.3
             },
             "trigger": {
                 "effect": "char/havok/p10_power",
@@ -594,7 +590,7 @@
             },
             "trigger": {
                 "maxrange": 400,
-                "name": "pulse",
+                "name": "radial",
                 "time": 0.5
             },
             "trigger": {
