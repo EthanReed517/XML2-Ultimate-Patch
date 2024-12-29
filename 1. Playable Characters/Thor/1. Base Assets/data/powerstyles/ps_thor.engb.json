@@ -200,7 +200,6 @@
                 "time": 0
             },
             "trigger": {
-                "critical": "on_exit",
                 "name": "hammer_to_back",
                 "time": -1
             },
@@ -240,12 +239,6 @@
                 "time": 0.28
             },
             "trigger": {
-                "bolt": "fx01",
-                "life": 0.37,
-                "name": "trail",
-                "time": 0.21
-            },
-            "trigger": {
                 "name": "punch",
                 "time": 0.36
             },
@@ -254,7 +247,6 @@
                 "time": 0.07
             },
             "trigger": {
-                "critical": "on_exit",
                 "name": "hammer_to_back",
                 "time": 0.86
             },
@@ -302,12 +294,6 @@
                 "time": 0.21
             },
             "trigger": {
-                "bolt": "fx01",
-                "life": 0.4,
-                "name": "trail",
-                "time": 0.25
-            },
-            "trigger": {
                 "name": "punch",
                 "time": 0.36
             },
@@ -316,7 +302,6 @@
                 "time": 0
             },
             "trigger": {
-                "critical": "on_exit",
                 "name": "hammer_to_back",
                 "time": 0.8
             },
@@ -362,12 +347,6 @@
                 "time": 0
             },
             "trigger": {
-                "bolt": "fx01",
-                "life": 0.35,
-                "name": "trail",
-                "time": 0.18
-            },
-            "trigger": {
                 "name": "punch",
                 "time": 0.31
             },
@@ -376,7 +355,6 @@
                 "time": 0
             },
             "trigger": {
-                "critical": "on_exit",
                 "name": "hammer_to_back",
                 "time": 0.87
             },
@@ -432,7 +410,6 @@
                 "time": 0
             },
             "trigger": {
-                "critical": "on_exit",
                 "name": "hammer_to_back",
                 "time": 0.8
             },
@@ -496,7 +473,6 @@
                 "time": 0
             },
             "trigger": {
-                "critical": "on_exit",
                 "name": "hammer_to_back",
                 "time": 0.87
             },
@@ -551,7 +527,6 @@
                 "time": 0
             },
             "trigger": {
-                "critical": "on_exit",
                 "name": "hammer_to_back",
                 "time": 0.8
             },
@@ -563,12 +538,6 @@
                 "movement": 20,
                 "name": "slide",
                 "time": 0.176
-            },
-            "trigger": {
-                "bolt": "fx01",
-                "life": 0.4,
-                "name": "trail",
-                "time": 0.3
             },
             "chain": {
                 "action": "idle",
@@ -618,7 +587,6 @@
                 "time": 0
             },
             "trigger": {
-                "critical": "on_exit",
                 "name": "hammer_to_back",
                 "time": 0.87
             },
@@ -667,7 +635,6 @@
                 "time": 0
             },
             "trigger": {
-                "critical": "on_exit",
                 "name": "hammer_to_back",
                 "time": 0.87
             },
@@ -679,12 +646,6 @@
                 "movement": 10,
                 "name": "slide",
                 "time": 0.06
-            },
-            "trigger": {
-                "bolt": "fx01",
-                "life": 0.4,
-                "name": "trail",
-                "time": 0.13
             },
             "trigger": {
                 "angle": -30,
@@ -787,7 +748,6 @@
                 "time": 0
             },
             "trigger": {
-                "critical": "on_exit",
                 "name": "hammer_to_back",
                 "time": 1
             },
@@ -799,12 +759,6 @@
                 "movement": 0,
                 "name": "slide",
                 "time": 0
-            },
-            "trigger": {
-                "bolt": "fx01",
-                "life": 0.4,
-                "name": "trail",
-                "time": 0.24
             },
             "trigger": {
                 "name": "backhand1",
@@ -881,7 +835,6 @@
                 "time": 0
             },
             "trigger": {
-                "critical": "on_exit",
                 "name": "hammer_to_back",
                 "time": 1
             },
@@ -892,6 +845,59 @@
             "chain": {
                 "action": "idle",
                 "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_heavy1",
+            "endchaintime": 0.85,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attackknockback1",
+            "playspeed": 1,
+            "startchaintime": 0.55,
+            "event": {
+                "inherit": "punch_veryheavy",
+                "knockback": 120,
+                "name": "bigpunch"
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.31
+            },
+            "trigger": {
+                "life": 0.1,
+                "movement": 0,
+                "name": "slide",
+                "time": 0.35
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.23,
+                "name": "trail",
+                "offsetend": 10,
+                "time": 0.36
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 5,
+                "name": "bigpunch",
+                "time": 0.49
+            },
+            "trigger": {
+                "name": "hammer_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "name": "hammer_to_back",
+                "time": 0.87
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight2"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackknockback2"
             }
         },
         "FightMove": {
@@ -934,18 +940,10 @@
                 "time": 0.1
             },
             "trigger": {
-                "bolt": "fx01",
-                "life": 0.35,
-                "name": "trail",
-                "offsetend": 12,
-                "time": 0.25
-            },
-            "trigger": {
                 "name": "hammer_knock",
                 "time": 0.4
             },
             "trigger": {
-                "critical": "on_exit",
                 "name": "hammer_to_back",
                 "time": 1
             },
@@ -1219,7 +1217,6 @@
                 "attacktype": "direct",
                 "count": 1,
                 "damage": "%thor_p3_dmg",
-                "damagelevel": 1,
                 "damagescale": "none",
                 "damagetype": "dmg_electricity",
                 "maxrange": 190,
@@ -1336,6 +1333,7 @@
             "trigger": {
                 "class": "touch_damage",
                 "damage": "%thor_p4_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_wind",
                 "life": "%thor_p4_life",
                 "name": "powerup",
@@ -1403,7 +1401,6 @@
                 "attacktype": "projectile",
                 "count": 1,
                 "damage": "%thor_p4_dmg",
-                "damagelevel": 2,
                 "damagescale": "none",
                 "damagetype": "dmg_wind",
                 "entity": "thor_tornado",
@@ -1416,7 +1413,6 @@
                 "tag": 1,
                 "targetable": false,
                 "time": 0,
-                "tracecheck": false,
                 "damageMod": {
                     "name": "dmgmod_extinguish"
                 },
@@ -1652,7 +1648,7 @@
                 "time": 0.5,
                 "affecter": {
                     "attribute": "all_talents",
-                    "level": "%thor_p7_ski",
+                    "level": "%thor_p7_skills",
                     "scope_talent": "thor_p7"
                 },
                 "special_fx": {
@@ -1723,6 +1719,7 @@
             },
             "trigger": {
                 "damage": "%thor_p8_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_electricity",
                 "knockback": 610,
                 "maxrange": 300,
