@@ -410,6 +410,20 @@
                 "item": "spider_p3",
                 "level": 1
             },
+            "event": {
+                "damage": "%spider_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "knockback": "%spider_p3_kb",
+                "maxrange": 100,
+                "name": "radial",
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
             "trigger": {
                 "name": "sound",
                 "sound": "char/spider_m/p3_power",
@@ -423,25 +437,8 @@
                 "replacecurrent": true,
                 "time": 0.4
             },
-            "event": {
-                "arc": 180,
-                "attacktype": "blast",
-                "damage": "%spider_p3_dmg",
-                "damagescale": "none",
-                "damagetype": "dmg_physical",
-                "inherit": "punch",
-                "maxrange": 120,
-                "name": "blender",
-                "victimeventtag": 100,
-                "damageMod": {
-                    "name": "dmgmod_auto_knockback"
-                },
-                "damageMod": {
-                    "name": "dmgmod_environment"
-                }
-            },
             "trigger": {
-                "name": "blender",
+                "name": "radial",
                 "powerusage": "%spider_p3_pwr",
                 "time": 0.5
             },
@@ -463,6 +460,20 @@
             "name": "power3_release",
             "powerup_tag": "spider_web",
             "priority": "uninterruptable",
+            "event": {
+                "damage": "%spider_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "knockback": "%spider_p3_kb",
+                "maxrange": 100,
+                "name": "radial",
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_environment"
+                }
+            },
             "trigger": {
                 "name": "sound",
                 "sound": "char/spider_m/p3_power",
@@ -473,34 +484,9 @@
                 "name": "effect",
                 "time": 0.1
             },
-            "event": {
-                "arc": 180,
-                "attacktype": "blast",
-                "damage": "%spider_p3_dmg",
-                "damagescale": "none",
-                "damagetype": "dmg_physical",
-                "inherit": "punch",
-                "maxrange": "%spider_p3_rad",
-                "name": "blender",
-                "victimeventtag": 100,
-                "damageMod": {
-                    "name": "dmgmod_auto_knockback"
-                },
-                "damageMod": {
-                    "name": "dmgmod_environment"
-                }
-            },
             "trigger": {
-                "name": "blender",
-                "time": 0.3
-            },
-            "trigger": {
-                "name": "blender",
+                "name": "radial",
                 "time": 0.5
-            },
-            "trigger": {
-                "name": "blender",
-                "time": 0.7
             },
             "trigger": {
                 "boltslot": "ebolton_altweapon",
