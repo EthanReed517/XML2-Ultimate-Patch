@@ -2,18 +2,6 @@
     "PowerStyle": {
         "cansteal": true,
         "iconfile": "textures/ui/quicksilver_icons1.png",
-        "event": {
-            "inherit": "powerup",
-            "life": -1,
-            "name": "quickspeed",
-            "no_stack": true,
-            "tag_name": "quick_speed",
-            "affecter": {
-                "affect_type": "scale",
-                "attribute": "move",
-                "level": 1.5
-            }
-        },
         "FightMove": {
             "animenum": "ea_idle1",
             "handler": "ch_idle",
@@ -87,7 +75,7 @@
         },
         "FightMove": {
             "aireusetime": 4,
-            "aitype": "projectilenear",
+            "aitype": "melee",
             "animenum": "ea_power1",
             "combotextfinisher": "Streak",
             "combotextstarter": "Sprinting",
@@ -154,7 +142,7 @@
             "aitype": "buffself",
             "animenum": "ea_power4",
             "combotextfinisher": "Stream",
-            "combotextstarter": "Speeding",
+            "combotextstarter": "Streaming",
             "icon": 7,
             "name": "power2",
             "priority": 5,
@@ -187,14 +175,37 @@
                 "apply_ally": "all",
                 "apply_self": false,
                 "center_bolt": true,
-                "life": "%q_form_time",
+                "life": "%q_form_lif",
                 "name": "powerup",
                 "powerusage": "%q_form_pwr",
+                "tag": 10,
                 "time": 0.5,
                 "affecter": {
                     "affect_type": "scale",
                     "attribute": "move",
-                    "level": "%q_form_move_scale"
+                    "level": "%q_form_move"
+                },
+                "special_fx": {
+                    "effect": "char/quickhero/p7_aura",
+                    "fxlevel": 2
+                }
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%q_form_lif",
+                "name": "powerup",
+                "tag": 11,
+                "time": 0.5,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_knockback",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_stun",
+                    "level": 0
                 },
                 "special_fx": {
                     "effect": "char/quickhero/p7_aura",
@@ -212,7 +223,7 @@
             }
         },
         "FightMove": {
-            "aireusetime": 5,
+            "aireusetime": 20,
             "aitype": "buffself",
             "animenum": "ea_attack_stun3",
             "combotextfinisher": "Shield",
@@ -296,10 +307,12 @@
             "type": "ce_atk_self"
         },
         "FightMove": {
-            "aireusetime": 12,
+            "aireusetime": 8,
             "aitype": "aoe",
             "animenum": "ea_power5",
             "blendtime": 0.49,
+            "combotextfinisher": "Whirlwind",
+            "combotextstarter": "Whirling",
             "icon": 4,
             "lockangles": true,
             "name": "power4",
@@ -713,6 +726,7 @@
             }
         },
         "FightMove": {
+            "aireusetime": 5,
             "aitype": "projectile",
             "animenum": "ea_spin_right",
             "combotextfinisher": "Shot",
@@ -797,8 +811,8 @@
             "type": "ce_force_visibility"
         },
         "FightMove": {
-            "aireusetime": 5,
-            "aitype": "aoe",
+            "aireusetime": 6,
+            "aitype": "projectilenear",
             "animenum": "ea_jump_atk_land",
             "cansteal": false,
             "combotextfinisher": "Frenzy",

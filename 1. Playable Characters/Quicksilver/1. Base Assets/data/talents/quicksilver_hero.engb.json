@@ -75,7 +75,7 @@
         },
         "talent": {
             "descname": "Slipstream",
-            "description": "Quicksilver generates a slipstream that increases his allies' Movement Speed for a time.",
+            "description": "Quicksilver generates a slipstream that makes him immune to knockback and stun and increases his allies' Movement Speed for a time.",
             "descshort": "Boost",
             "icon": 7,
             "icon_texture": "textures/ui/quicksilver_icons2.png",
@@ -95,22 +95,22 @@
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "q_form_move_scale",
+                    "name": "q_form_move",
                     "value": 1.1
                 },
                 "talentvalue": {
                     "level": 16,
-                    "name": "q_form_move_scale",
+                    "name": "q_form_move",
                     "value": 1.85
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "q_form_time",
+                    "name": "q_form_lif",
                     "value": 13
                 },
                 "talentvalue": {
                     "level": 16,
-                    "name": "q_form_time",
+                    "name": "q_form_lif",
                     "value": 55
                 },
                 "talentvalue": {
@@ -126,7 +126,7 @@
             },
             "level": {
                 "count": 16,
-                "description": "%q_form_move_scale:s Movement Speed\\n%q_form_time seconds\\n%q_form_pwr $EP",
+                "description": "%q_form_move:s Movement Speed\\n%q_form_lif seconds\\n%q_form_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%q_form_req"
@@ -452,7 +452,7 @@
         },
         "talent": {
             "descname": "Quick Shot",
-            "description": "Quicksilver creates charges of static Electricity with his hands and hurls them at an enemy.",
+            "description": "Quicksilver creates charges of static Electricity with his hands and hurls them at an enemy. Drains batteries.",
             "descshort": "Projectile",
             "icon": 13,
             "icon_texture": "textures/ui/quicksilver_icons2.png",
@@ -635,7 +635,7 @@
         },
         "talent": {
             "descname": "Enhanced Speed",
-            "description": "Quicksilver's physiology allows for a natural increase in Speed.",
+            "description": "Quicksilver's physiology allows for a natural increase in his Speed and Movement Speed.",
             "descshort": "Passive",
             "icon": 0,
             "icon_texture": "textures/ui/quicksilver_icons2.png",
@@ -644,12 +644,12 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "quick_senses_req",
-                    "value": 14
+                    "value": 1
                 },
                 "talentvalue": {
                     "level": 15,
                     "name": "quick_senses_req",
-                    "value": 28
+                    "value": 15
                 },
                 "talentvalue": {
                     "level": 1,
@@ -660,11 +660,21 @@
                     "level": 15,
                     "name": "quick_senses_sp",
                     "value": 2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "quick_senses_ms",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "quick_senses_ms",
+                    "value": 2
                 }
             },
             "level": {
                 "count": 15,
-                "description": "%quick_senses_sp:s Speed",
+                "description": "%quick_senses_sp:s Speed\\n%quick_senses_ms:s Movement Speed",
                 "require": {
                     "category": "level",
                     "level": "%quick_senses_req"
@@ -675,13 +685,18 @@
                         "affect_type": "scale",
                         "attribute": "speed",
                         "level": "%quick_senses_sp"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "move",
+                        "level": "%quick_senses_ms"
                     }
                 }
             }
         },
         "talent": {
             "descname": "Quick Reflexes",
-            "description": "Adds a chance to dodge all forms of attack.",
+            "description": "Quicksilver's superhuman speed gives him a chance to dodge all forms of attack.",
             "descshort": "Passive",
             "icon": 3,
             "icon_texture": "textures/ui/quicksilver_icons2.png",
