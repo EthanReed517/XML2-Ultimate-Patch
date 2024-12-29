@@ -16,7 +16,7 @@
         },
         "talent": {
             "descname": "Telepathic Illusions",
-            "description": "Emma projects terrifying images into the mind of enemies, causing them to flee in terror, become stunned or attack their comrades.",
+            "description": "Emma projects terrifying images into the mind of enemies, causing them to flee in terror, become stunned or attack their comrades. Enemies explode at the end of conversion.",
             "descshort": "Radial",
             "icon": 0,
             "icon_texture": "textures/ui/emmafrost_icons2.png",
@@ -134,7 +134,7 @@
         },
         "talent": {
             "descname": "Psionic Slam",
-            "description": "Emma unleashes a radial Mental attack that knocks enemies back.",
+            "description": "Emma unleashes a radial Telekinetic attack that knocks enemies back. Can build bridges.",
             "descshort": "Radial",
             "icon": " 2",
             "icon_texture": "textures/ui/emmafrost_icons2.png",
@@ -163,6 +163,16 @@
                 },
                 "talentvalue": {
                     "level": 1,
+                    "name": "emma_burst_kb",
+                    "value": 245
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "emma_burst_kb",
+                    "value": 620
+                },
+                "talentvalue": {
+                    "level": 1,
                     "name": "emma_burst_pwr",
                     "value": 12
                 },
@@ -174,7 +184,7 @@
             },
             "level": {
                 "count": 18,
-                "description": "%emma_burst_dmg $DMG_MENTAL\\n%emma_burst_pwr $EP",
+                "description": "%emma_burst_dmg Telekinetic Dmg\\n%emma_burst_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%emma_burst_req"
@@ -242,6 +252,7 @@
                     "chance": "%emma_beam_pct",
                     "class": "atk_instant_pct",
                     "life": -1,
+                    "no_stack": true,
                     "percent": 0.33,
                     "affecter": {
                         "attribute": "powerup_scope",
@@ -489,81 +500,101 @@
         },
         "talent": {
             "descname": "Diamond Form",
-            "description": "Emma's skin turns into diamond, giving her Might, increasing her $DR and $DMG_PHYSICAL, making her immune to $DMG_PHYSICAL, and increasing her resistance to $DMG_COLD and $DMG_FIRE.\\n(~41Cannot use powers while in Diamond Form.~~)",
+            "description": "Emma's skin turns into diamond, giving her Might, increasing her $DR, adding $DMG_PHYSICAL to all non-powered Melee attacks, making her immune to $DMG_PHYSICAL, and increasing her resistance to $DMG_COLD and $DMG_FIRE.\\n(~41Cannot use powers while in Diamond Form.~~)",
             "descshort": "Boost",
             "icon": 6,
             "icon_texture": "textures/ui/emmafrost_icons2.png",
-            "name": "emma_diam_form",
+            "name": "emma_p10",
             "power": "power10",
             "type": "boost",
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
-                    "name": "emma_diam_form_req",
+                    "name": "emma_p10_req",
                     "value": 14
                 },
                 "talentvalue": {
                     "level": 16,
-                    "name": "emma_diam_form_req",
+                    "name": "emma_p10_req",
                     "value": 58
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "emma_diam_form_def",
+                    "name": "emma_p10_def",
                     "value": 1.2
                 },
                 "talentvalue": {
                     "level": 16,
-                    "name": "emma_diam_form_def",
+                    "name": "emma_p10_def",
                     "value": 2.2
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "emma_diam_form_dma",
-                    "value": 1.1
+                    "name": "emma_p10_pct",
+                    "value": 0.15
                 },
                 "talentvalue": {
                     "level": 16,
-                    "name": "emma_diam_form_dma",
-                    "value": 1.2
+                    "name": "emma_p10_pct",
+                    "value": 1
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "emma_diam_form_lif",
+                    "name": "emma_p10_lif",
                     "value": 13
                 },
                 "talentvalue": {
                     "level": 16,
-                    "name": "emma_diam_form_lif",
+                    "name": "emma_p10_lif",
                     "value": 55
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "emma_diam_form_res",
+                    "name": "emma_p10_res",
                     "value": 0.1
                 },
                 "talentvalue": {
                     "level": 16,
-                    "name": "emma_diam_form_res",
+                    "name": "emma_p10_res",
                     "value": 0.5
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "emma_diam_form_pwr",
+                    "name": "emma_p10_pwr",
                     "value": 84
                 },
                 "talentvalue": {
                     "level": 16,
-                    "name": "emma_diam_form_pwr",
+                    "name": "emma_p10_pwr",
                     "value": 458
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "emma_p10_mt",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 8,
+                    "name": "emma_p10_mt",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 9,
+                    "name": "emma_p10_mt",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "emma_p10_mt",
+                    "value": 2
                 }
             },
             "level": {
                 "count": 16,
-                "description": "%emma_diam_form_def:s $DR\\n%emma_diam_form_dma:s $DMG_PHYSICAL\\n+%emma_diam_form_res:p resistance to $DMG_COLD and $DMG_FIRE\\n%emma_diam_form_lif seconds\\n%emma_diam_form_pwr $EP",
+                "description": "Might level %emma_p10_mt\\n%emma_p10_def:s $DR\\n+%emma_p10_pct:p $DMG_PHYSICAL\\n+%emma_p10_res:p resistance to $DMG_COLD and $DMG_FIRE\\n%emma_p10_lif seconds\\n%emma_p10_pwr $EP",
                 "require": {
                     "cat": "level",
-                    "level": "%emma_diam_form_req"
+                    "level": "%emma_p10_req"
                 }
             }
         },
@@ -629,7 +660,7 @@
         },
         "talent": {
             "descname": "Psychic Funnel",
-            "description": "20% of all damage all allies inflict funnels back into them as $EP.",
+            "description": "Emma's Psychically connects the minds of all party members, allowing 20% of all damage each of them inflicts to funnel back into them as $EP.",
             "descshort": "Boost",
             "icon": 13,
             "icon_texture": "textures/ui/emmafrost_icons2.png",
@@ -643,7 +674,7 @@
                     "value": 1
                 },
                 "talentvalue": {
-                    "level": 18,
+                    "level": 14,
                     "name": "emma_ment_vort_req",
                     "value": 58
                 },
@@ -653,7 +684,7 @@
                     "value": 32
                 },
                 "talentvalue": {
-                    "level": 18,
+                    "level": 14,
                     "name": "emma_ment_vort_pwr",
                     "value": 304
                 },
@@ -663,13 +694,13 @@
                     "value": 13
                 },
                 "talentvalue": {
-                    "level": 18,
+                    "level": 14,
                     "name": "emma_ment_vort_lif",
                     "value": 55
                 }
             },
             "level": {
-                "count": 18,
+                "count": 14,
                 "description": "%emma_ment_vort_lif seconds\\n%emma_ment_vort_pwr $EP",
                 "require": {
                     "cat": "level",
@@ -786,7 +817,7 @@
         },
         "talent": {
             "descname": "Mental Mastery",
-            "description": "Increases damage and chance of Criticals for all Mental attacks.",
+            "description": "Increases damage and Critical chance of all Mental attacks.",
             "descshort": "Passive",
             "icon": 8,
             "icon_texture": "textures/ui/emmafrost_icons2.png",
