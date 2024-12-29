@@ -79,7 +79,7 @@
         },
         "talent": {
             "descname": "Hulk Pound",
-            "description": "Hulk pounds the ground, knocking back his enemies with a radial wave of $DMG_PHYSICAL and creating a forward shockwave that pops up any enemies in its path.",
+            "description": "Hulk pounds the ground, tripping nearby enemies with a radial wave of $DMG_PHYSICAL and creating a piercing forward shockwave that pops up any enemies in its path.",
             "descshort": "Radial",
             "icon": 11,
             "icon_texture": "textures/ui/hulk_icons2.png",
@@ -217,12 +217,12 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "hulk_p4_kb",
-                    "value": 245
+                    "value": 40
                 },
                 "talentvalue": {
                     "level": 14,
                     "name": "hulk_p4_kb",
-                    "value": 620
+                    "value": 245
                 },
                 "talentvalue": {
                     "level": 1,
@@ -417,7 +417,7 @@
             },
             "level": {
                 "count": 16,
-                "description": "%hulk_p8_dmg:s $AR\\n%hulk_p8_lif seconds\\\\n%hulk_p8_pwr $EP",
+                "description": "%hulk_p8_ar:s $AR\\n%hulk_p8_lif seconds\\n%hulk_p8_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%hulk_p8_req"
@@ -426,7 +426,7 @@
         },
         "talent": {
             "descname": "HULK SMASH",
-            "description": "Hulk leaps into the air and smashes back down, doing massive $DMG_PHYSICAL in a wide radius and knocking back and popping up enemies.",
+            "description": "Hulk leaps into the air and smashes back down, doing massive $DMG_PHYSICAL in a wide radius and knocking back enemies with a chance for a 'Deadly Strike' (33% instant $HP loss).",
             "descshort": "Radial",
             "icon": 8,
             "icon_texture": "textures/ui/hulk_icons2.png",
@@ -453,14 +453,35 @@
                     "level": 7,
                     "name": "hulk_p9_dmg",
                     "value": "279 305"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "%hulk_p9_cne",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "%hulk_p9_cne",
+                    "value": 0.19
                 }
             },
             "level": {
-                "count": 5,
-                "description": "%hulk_p9_dmg $DMG_PHYSICAL",
+                "count": 7,
+                "description": "%hulk_p9_dmg $DMG_PHYSICAL/n%hulk_p9_cne:p chance for Deadly Strike",
                 "require": {
                     "cat": "level",
                     "level": "%hulk_p9_req"
+                },
+                "powerup": {
+                    "chance": "%hulk_p9_cne",
+                    "class": "atk_instant_pct",
+                    "life": -1,
+                    "no_stack": true,
+                    "percent": 0.33,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope_node": "hulk_power9"
+                    }
                 },
                 "require": {
                     "cat": "skill",
@@ -650,7 +671,7 @@
         },
         "talent": {
             "descname": "Hulk Incredible",
-            "description": "Increases Hulk's Critical chance with all powered and non-powered attacks and increases his jumping range.",
+            "description": "Increases Critical chance of all powered and non-powered attacks and increases his jumping range.",
             "descshort": "Passive",
             "icon": 1,
             "icon_texture": "textures/ui/hulk_icons2.png",
@@ -696,7 +717,7 @@
                 },
                 "require": {
                     "cat": "skill",
-                    "item": "supermaster",
+                    "item": "mutantmaster",
                     "level": 1
                 },
                 "powerup": {
