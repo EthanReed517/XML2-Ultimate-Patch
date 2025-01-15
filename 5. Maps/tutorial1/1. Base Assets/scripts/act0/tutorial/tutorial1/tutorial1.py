@@ -2,7 +2,7 @@
 # ( "remove oz_explosion since it is now precached" )
 remove ( "oz_explosion", "oz_explosion" )
 # ( "ensure the player can't use Blink's portal" )
-setRecallActive("FALSE" )
+setRecallActive("TRUE" )
 # ( "is door_trap open?" )
 status = getOpened("door_trap" )
 if status == 0

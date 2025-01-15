@@ -24,5 +24,4 @@ act("sp_mguard1", "sp_mguard1" )
 act("sp_mguard2", "sp_mguard2" )
 # ( "wait, then start conversation" )
 waittimed ( 1.000 )
-startConversation("act0/tutorial/tutorial1/1_introlevel_0030a" )
-
+startCharConversation("act0/tutorial/tutorial1/1_introlevel_0030a", "cyclops", "act0/tutorial/tutorial1/1_introlevel_0031a" )
