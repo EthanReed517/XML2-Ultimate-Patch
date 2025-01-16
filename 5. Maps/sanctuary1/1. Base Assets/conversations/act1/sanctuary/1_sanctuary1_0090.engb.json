@@ -1,0 +1,196 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever4",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/forge/1_sanctuary1_090_010",
+                    "soundtoplayb": "voice/forge/1_sanctuary1_090_020",
+                    "text": "%Forge%: Hi, X-Man. Since Beast has been kidnapped, Professor Xavier asked me to fill in for him in his absence.",
+                    "textb": "%Forge%: Hello, my name is Forge. I'll be filling in for Beast until we free him from Apocalypse.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: Hi, Forge. It's good to see you - I just wish it weren't under these circumstances.",
+                            "textb": "%PLAYER%: We already know who you are.",
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/forge/1_sanctuary1_090_030",
+                    "soundtoplayb": "voice/forge/1_sanctuary1_090_040",
+                    "text": "%Forge%: Hello again. Did you need something?",
+                    "textb": "%Forge%: Yeah? What do you want?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "chosenscriptfile": "common/shop",
+                        "conversationend": true,
+                        "text": "I'd like to see some equipment."
+                    },
+                    "response": {
+                        "text": "Are you the person we see for equipment?",
+                        "line": {
+                            "soundtoplay": "voice/forge/1_sanctuary1_090_061",
+                            "text": "%Forge%: Yes. I can buy and sell all kinds of equipment that'll help you on your missions.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: What about health and energy?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/forge/1_sanctuary1_090_063",
+                                            "text": "%Forge%: I've got medicines that will help you in both of those categories.",
+                                            "response": {
+                                                "chosenscriptfile": "setGameFlag('act1_visit', 18,1)",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'act1_visit', 18)",
+                        "text": "What brings you to the Sanctuary?",
+                        "line": {
+                            "soundtoplay": "voice/forge/1_sanctuary1_090_071",
+                            "text": "%Forge%: Since Beast has been kidnapped by Apocalypse, Professor Xavier asked me to fill in.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Will you be able to handle all of our technology?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/forge/1_SANCTUARY1_090_073",
+                                            "text": "%Forge%: Maybe you haven't heard, but my mutant power is the ability to create any type of machine.",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "text": "%PLAYER%: That's got to be the weirdest mutant power I've ever heard of.",
+                                                    "response": {
+                                                        "text": "%BLANK%",
+                                                        "line": {
+                                                            "soundtoplay": "voice/forge/1_SANCTUARY1_090_075",
+                                                            "text": "%Forge%: Yeah, I hear that a lot.",
+                                                            "response": {
+                                                                "tagjump": "autogen_tag_1",
+                                                                "text": "%BLANK%"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'act1_visit', 18)",
+                        "text": "What's a data disc?",
+                        "line": {
+                            "soundtoplay": "voice/forge/2_savage1_080_071",
+                            "text": "%Forge%: It holds very valuable technical information - but I need an entire set to be able to use them.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: So if we gathered an entire set, we bring them to you?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/forge/2_savage1_080_073",
+                                            "text": "%Forge%: Yes - and then I can unlock their secrets.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'act1_visit', 18)",
+                        "text": "What's a homing beacon?",
+                        "line": {
+                            "soundtoplay": "voice/forge/1_sanctuary1_090_081",
+                            "text": "%Forge%: It's very valuable. If I have enough of them, I can locate someone that Apocalypse has gone to extreme measures to hold captive.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: So who's this prisoner we'd be rescuing?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/forge/1_sanctuary1_090_083",
+                                            "text": "%Forge%: I don't know - but I've heard this person would be very useful to us.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Thanks, Forge.",
+                        "line": {
+                            "soundtoplay": "voice/forge/1_sanctuary1_090_091",
+                            "text": "%Forge%: Come back any time, X-Man.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "I'm done talking to you.",
+                        "line": {
+                            "soundtoplay": "voice/forge/1_sanctuary1_090_093",
+                            "soundtoplayb": "voice/forge/1_sanctuary1_090_093",
+                            "text": "%Forge%: Yeah, I'm gonna miss you too.",
+                            "textb": "%Forge%: Yeah, I'm gonna miss you too.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

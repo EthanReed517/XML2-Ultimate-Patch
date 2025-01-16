@@ -1,0 +1,286 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "act1/sanctuary/conv_sabretooth1",
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/sabretooth/1_sanctuary1_100_030",
+                    "soundtoplayb": "voice/sabretooth/1_sanctuary1_100_040",
+                    "text": "%Sabretooth%: Rrrrr, guess I gotta thank you bunch of whimps for savin' Blink.",
+                    "textb": "%Sabretooth%: Okay, well thanks for savin' Blink. Sounds like you got there just in time.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: What? You actually thanked the X-Men? Blink must be very special to you.",
+                            "textb": "%PLAYER%: What is it with you and Blink? You treat her like she's your little sister.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/sabretooth/1_sanctuary1_100_032",
+                                    "soundtoplayb": "voice/sabretooth/1_sanctuary1_100_042",
+                                    "text": "%Sabretooth%: You know better than that. Ain't nobody's special to me, dog breath. She's just a good kid and I don't wanna see her gett'n hurt.",
+                                    "textb": "%Sabretooth%: Nobody means nothin' ta me. I just don't like seein' Blink hurt, that's all.",
+                                    "response": {
+                                        "tagjump": "autogen_tag_1",
+                                        "text": "%BLANK%"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever5",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/sabretooth/1_sanctuary1_100_010",
+                    "soundtoplayb": "voice/sabretooth/1_sanctuary1_100_020",
+                    "text": "%Sabretooth%: Rrrrr, never thought I'd see the day the Brotherhood'd be working alongside you X-pukes.",
+                    "textb": "%Sabretooth%: What took you so long? Were ya busy talkin' with your new X-Buddies?",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: We're enjoying this as much as you, Sabretooth.",
+                            "textb": "%PLAYER%: If you're about to ask for help, Sabretooth, that's no way to start.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/sabretooth/1_sanctuary1_100_012",
+                                    "soundtoplayb": "voice/sabretooth/1_sanctuary1_100_022",
+                                    "text": "%Sabretooth%: Listen, much as I hate it, I need your help. A couple of hours ago, I went to Genosha to rescue a kid named Blink. But one thing led to another and we wound up fighting a bunch of guards.",
+                                    "textb": "%Sabretooth%: Yeah, yeah. Listen, a couple of hours ago, I went to Genosha to rescue Blink. But we kind of got caught up in a fight with guards",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "text": "%PLAYER%: You've never been known for working quietly.",
+                                            "textb": "%PLAYER%: That's exactly why you never get covert missions.",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "soundtoplay": "voice/sabretooth/1_sanctuary1_100_014",
+                                                    "soundtoplayb": "voice/sabretooth/1_sanctuary1_100_024",
+                                                    "text": "%Sabretooth%: Shut yer yap or I'll ... never mind. Anyway, during the fight, Blink was going to teleport us to the Dead Zone. But she got hit and disappeared without me. I wound up having to slug my way out of there alone.",
+                                                    "textb": "%Sabretooth%: You can take your covert missions and... Anyway, during the fight, Blink got hit just as she was gonna teleport us to the Dead Zone. She disappeared and I wound up havin' ta fight my way outta there on my own.",
+                                                    "response": {
+                                                        "text": "%BLANK%",
+                                                        "line": {
+                                                            "text": "%PLAYER%: And now you need us to find Blink somewhere in the Dead Zone.",
+                                                            "textb": "%PLAYER%: So you want us to search the Dead Zone for Blink?",
+                                                            "response": {
+                                                                "chosenscriptfile": "act1/sanctuary/show_blink_quest",
+                                                                "text": "%BLANK%",
+                                                                "line": {
+                                                                    "soundtoplay": "voice/sabretooth/1_sanctuary1_100_016",
+                                                                    "soundtoplayb": "voice/sabretooth/1_sanctuary1_100_026",
+                                                                    "text": "%Sabretooth%: Yeah, yeah I do. Go see that mission computer if you want a full briefing.",
+                                                                    "textb": "%Sabretooth%: Yeah, that's just what I want. Go use the mission computer if you want a full briefing.",
+                                                                    "response": {
+                                                                        "tagjump": "autogen_tag_1",
+                                                                        "text": "%BLANK%"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/sabretooth/1_sanctuary1_100_050",
+                    "soundtoplayb": "voice/sabretooth/1_sanctuary1_100_051",
+                    "text": "%Sabretooth%: Why don't you get out of my face?",
+                    "textb": "%Sabretooth%: Ain't you got somethin' better ta do?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "Why did you try to rescue Blink?",
+                        "line": {
+                            "soundtoplay": "voice/sabretooth/1_sanctuary1_100_061",
+                            "text": "%Sabretooth%: Whatdaya talkin' about?",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Let's face facts. Rescuing people really isn't your style.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/sabretooth/1_sanctuary1_100_063",
+                                            "text": "%Sabretooth%: Maybe it ain't, but I wasn't about to leave the kid unprotected. There's no tellin' what Apocalypse would do to her.",
+                                            "response": {
+                                                "chosenscriptfile": "setGameFlag('act1_visit', 19,1)",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'act1_visit', 19 )",
+                        "text": "How did Blink wind up in the Dead Zone?",
+                        "line": {
+                            "soundtoplay": "voice/sabretooth/1_sanctuary1_100_071",
+                            "text": "%Sabretooth%: When I was tryin' ta get her out of Genosha a bunch of Apocalypse's guards jumped us.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: And that's when Blink tried to teleport you to the Dead Zone?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/sabretooth/1_sanctuary1_100_073",
+                                            "text": "%Sabretooth%: Yeah. But she got clobbered by a guard. Next thing I know, she's gone and I'm left there on my own.",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "soundtoplay": "voice/sabretooth/1_sanctuary1_100_074",
+                                                    "text": "%Sabretooth%: And let me tell ya, the guard that hit Blink ain't ever gonna draw another breath without the help of a machine, if ya catch my drift.",
+                                                    "response": {
+                                                        "chosenscriptfile": "setGameFlag('act1_visit', 20,1)",
+                                                        "tagjump": "autogen_tag_1",
+                                                        "text": "%BLANK%"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'act1_visit', 20)",
+                        "text": "When did you first meet Blink?",
+                        "line": {
+                            "soundtoplay": "voice/sabretooth/1_sanctuary1_100_081",
+                            "text": "%Sabretooth%: I found her a couple of years back at some mutant testing facility. I was doing some recon work for Magneto. Poor kid was in a cell, all helpless and alone. So I busted her out of the joint.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: But weren't there other mutants at that testing facility? Why didn't you free them?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/sabretooth/1_sanctuary1_100_083",
+                                            "text": "%Sabretooth%: She was a defenseless kid - didn't have no one ta help her. Now shut up about it, yer givin' me a headache.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "What's the Dead Zone?",
+                        "line": {
+                            "soundtoplay": "voice/sabretooth/1_sanctuary1_100_091",
+                            "text": "%Sabretooth%: It's where the air fleets of Magneto and Apocalypse had their last big battle. The ground's covered with crashed ships.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Why is that?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/sabretooth/1_sanctuary1_100_093",
+                                            "text": "%Sabretooth%: Even though Magneto's aircraft weren't that high tech, his pilots put up a helluva fight. So Apocalypse fired off an EMP bomb that fried ships on both sides.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnObjective('act1_obj_5d', 'FALSE' )",
+                        "text": "Who's Lady Deathstrike?",
+                        "line": {
+                            "soundtoplay": "voice/sabretooth/1_sanctuary1_100_101",
+                            "text": "%Sabretooth%: Even I'd steer clear of that psycho. Her name is Yuriko Oyama and there's nothing more she wants than ta see Wolverine dead.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: What's she got against Wolverine?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/sabretooth/1_sanctuary1_100_103",
+                                            "text": "%Sabretooth%: Her father developed a process for bonding adamantium to human bone. She's convinced Wolverine stole that info and used it on himself.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "You're becoming a real softie, Sabretooth.",
+                        "line": {
+                            "soundtoplay": "voice/sabretooth/1_sanctuary1_100_111",
+                            "text": "%Sabretooth%: Rrrrr, don't make me hurt you.",
+                            "response": {
+                                "chosenscriptfile": "act1/sanctuary/show_blink_briefing",
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Talk to you later, Sabretooth.",
+                        "line": {
+                            "soundtoplay": "voice/sabretooth/1_sanctuary1_100_121",
+                            "soundtoplayb": "voice/sabretooth/1_sanctuary1_100_121",
+                            "text": "%Sabretooth%: Yeah, well, never would be too soon fer me.",
+                            "textb": "%Sabretooth%: Yeah, well, never would be too soon fer me.",
+                            "response": {
+                                "chosenscriptfile": "act1/sanctuary/show_blink_briefing",
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

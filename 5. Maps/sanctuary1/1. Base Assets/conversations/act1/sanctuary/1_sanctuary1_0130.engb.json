@@ -1,0 +1,240 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever7",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/mystique/1_sanctuary1_130_010",
+                    "soundtoplayb": "voice/mystique/1_sanctuary1_130_020",
+                    "text": "%Mystique%: Oh, it's an 'X-Man'. Shouldn't you be helping a little old lady cross a street or getting a cat out of a tree?",
+                    "textb": "%Mystique%: I wonder how long we're expected to work with the X-Men. They're so... moral. It's positively stifling.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: Ah, Mystique. A displeasure as always.",
+                            "textb": "%PLAYER%: I know. What's this world comin' too?",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/mystique/1_sanctuary1_130_012",
+                                    "soundtoplayb": "voice/mystique/1_sanctuary1_130_022",
+                                    "text": "%Mystique%: The displeasure's all mine. But now that Sabretooth's little pet, Blink, has been rescued, at least we can save Genosha.",
+                                    "textb": "%Mystique%: Now that Sabretooth's little friend, Blink, is safe, we can get down to business and save Genosha.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "text": "%PLAYER%: First we have to get into Genosha.",
+                                            "textb": "%PLAYER%: But the city doors are locked with a security code that changes daily. How are we going to get in?",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "soundtoplay": "voice/mystique/1_sanctuary1_130_014",
+                                                    "soundtoplayb": "voice/mystique/1_sanctuary1_130_024",
+                                                    "text": "%Mystique%: And that's why you must return to the Dead Zone. Computers in the downed Genoshan aircraft should contain the security code that will open the doors into the city.",
+                                                    "textb": "%Mystique%: That's why you have to search through the downed Genoshan aircraft in the Dead Zone. The onboard computers should contain the most recent code.",
+                                                    "response": {
+                                                        "text": "%BLANK%",
+                                                        "line": {
+                                                            "soundtoplay": "voice/mystique/1_sanctuary1_130_015",
+                                                            "soundtoplayb": "voice/mystique/1_sanctuary1_130_025",
+                                                            "text": "%Mystique%: Use the mission computer by Xavier if you want a full briefing on the security code.",
+                                                            "textb": "%Mystique%: If you want a full briefing on the security codes, go to the mission computer by Xavier.",
+                                                            "response": {
+                                                                "chosenscriptfile": "common/briefings/mark_briefing1_20",
+                                                                "tagjump": "autogen_tag_1",
+                                                                "text": "%BLANK%"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "conditionscriptfile": "act1/sanctuary/conv_mystique1",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/mystique/1_sanctuary1_130_030",
+                    "soundtoplayb": "voice/mystique/1_sanctuary1_130_040",
+                    "text": "%Mystique%: I didn't think you had it in you, X-Man. You managed to get the security code to Genosha. But why should I be surprised? You people have always been lucky. It's the only thing that's saved you every time you've faced me.",
+                    "textb": "%Mystique%: Congratulations, you got the security code to Genosha. I'm sure the X-Men were more of a hindrance than a help.",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/mystique/1_sanctuary1_130_050",
+                    "soundtoplayb": "voice/mystique/1_sanctuary1_130_060",
+                    "text": "%Mystique%: So you're still alive? Pity.",
+                    "textb": "%Mystique%: What can I do for you?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "What's Genosha?",
+                        "line": {
+                            "soundtoplay": "voice/mystique/1_sanctuary1_130_071",
+                            "text": "%Mystique%: It's a city Magneto founded to act as a haven for all mutants. The population numbers in the thousands even though it was started only a short time ago.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Why is most of the city underground?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/mystique/1_sanctuary1_130_073",
+                                            "text": "%Mystique%: To hide it from prying eyes. The humans would give us no end of grief if they knew where Genosha was located.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "What was the battle like for Genosha?",
+                        "line": {
+                            "soundtoplay": "voice/mystique/1_sanctuary1_130_081",
+                            "text": "%Mystique%: Apocalypse struck without warning. Hundreds of his jets attacked in the middle of the night. He should have overwhelmed us just by sheer numbers.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: But he didn't?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/mystique/1_sanctuary1_130_083",
+                                            "text": "%Mystique%: Oh, no. Magneto fought back like the masterful strategist he is. Despite having aging aircraft at his command, he slowly turned the tide of the battle.",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "text": "%PLAYER%: Then how did you lose?",
+                                                    "response": {
+                                                        "text": "%BLANK%",
+                                                        "line": {
+                                                            "soundtoplay": "voice/mystique/1_SANCTUARY1_130_085",
+                                                            "text": "%Mystique%:  Apocalypse was even more brutal than we had thought. He fired off an EMP bomb that caused all aircraft on both sides to drop out of the sky. We were left defenseless.",
+                                                            "response": {
+                                                                "tagjump": "autogen_tag_1",
+                                                                "text": "%BLANK%"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "How do you feel about teaming up with the X-Men?",
+                        "line": {
+                            "soundtoplay": "voice/mystique/1_sanctuary1_130_091",
+                            "text": "%Mystique%: I hate it just as much as the rest of the Brotherhood. But it shows just how great our leader is.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: What do you mean?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/mystique/1_sanctuary1_130_093",
+                                            "text": "%Mystique%: Magneto is willing to cast aside his hatred for the X-Men in order to save Genosha. I ask you, how many men would be brave enough to request help from their enemy?",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnObjective('act1_obj_3b', 'FALSE' )",
+                        "text": "Who was the man we fought in the Cerci tunnels?",
+                        "line": {
+                            "soundtoplay": "voice/mystique/1_sanctuary1_130_101",
+                            "text": "%Mystique%: Zealot? He was a member of the Genoshan ruling council.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Why would he join up with Apocalypse?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/mystique/1_sanctuary1_130_103",
+                                            "text": "%Mystique%: It's no surprise, really. The little creep is consumed with his jealousy of Magneto. He was always trying to convince people that Magneto was leading them to their doom.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "You've been more helpful than usual, Mystique.",
+                        "line": {
+                            "soundtoplay": "voice/mystique/1_sanctuary1_130_111",
+                            "text": "%Mystique%: Only because I have to be.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Thanks, Mystique.",
+                        "line": {
+                            "soundtoplay": "voice/mystique/1_sanctuary1_130_121",
+                            "soundtoplayb": "voice/mystique/1_sanctuary1_130_121",
+                            "text": "%Mystique%: You're quite welcome.",
+                            "textb": "%Mystique%: You're quite welcome.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

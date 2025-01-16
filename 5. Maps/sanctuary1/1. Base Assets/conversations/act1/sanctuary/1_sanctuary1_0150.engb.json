@@ -1,0 +1,152 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever10",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/cyclops/1_sanctuary1_150_010",
+                    "soundtoplayb": "voice/cyclops/1_sanctuary1_150_020",
+                    "text": "%CyclopsSimple%: Hi. How are you?",
+                    "textb": "%CyclopsSimple%: Hello. Did you need something?",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: I'd be doing better if we weren't stuck working with the Brotherhood.",
+                            "textb": "%PLAYER%: Yeah, to get you X-Men off Genosha.",
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/cyclops/1_sanctuary1_150_030",
+                    "soundtoplayb": "voice/cyclops/1_sanctuary1_150_040",
+                    "text": "%CyclopsSimple%: Did you need something else?",
+                    "textb": "%CyclopsSimple%: Yes?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "Why are the X-Men working with the Brotherhood?",
+                        "line": {
+                            "soundtoplay": "voice/cyclops/1_sanctuary1_150_051",
+                            "text": "%CyclopsSimple%: They agreed to help us free Professor Xavier if we helped them free Genosha.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: The X-Men couldn't have freed him on their own?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/cyclops/1_sanctuary1_150_053",
+                                            "text": "%CyclopsSimple%: No. We knew if Apocalypse was involved we were going to need help.",
+                                            "response": {
+                                                "scriptfile": "setGameFlag('act1_visit', 24,1)",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'act1_visit', 24)",
+                        "text": "What if Magneto had refused to save Xavier?",
+                        "line": {
+                            "soundtoplay": "voice/cyclops/1_sanctuary1_150_061",
+                            "text": "%CyclopsSimple%: What do you mean?",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Would you have helped Magneto free Genosha even if he refused to rescue Xavier?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/cyclops/1_sanctuary1_150_063",
+                                            "text": "%CyclopsSimple%: Well, fortunately it didn't come to that.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "How did you locate Xavier?",
+                        "line": {
+                            "soundtoplay": "voice/cyclops/1_sanctuary1_150_071",
+                            "text": "%CyclopsSimple%: Jean used Cerebro to pinpoint the Professor's exact location.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: It's surprising Apocalypse didn't destroy Cerebro to keep the prison a secret.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/cyclops/1_sanctuary1_150_073",
+                                            "text": "%CyclopsSimple%: There's no way Apocalypse could get to the subbasement with all the X-Men at the mansion.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "See you later, Cyclops.",
+                        "line": {
+                            "soundtoplay": "voice/cyclops/1_sanctuary1_150_081",
+                            "text": "%CyclopsSimple%: Glad to be of help.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Later, X-Man.",
+                        "line": {
+                            "soundtoplay": "voice/cyclops/1_sanctuary1_150_091",
+                            "soundtoplayb": "voice/cyclops/1_sanctuary1_150_091",
+                            "text": "%CyclopsSimple%: Yeah, it's been great talking to you too.",
+                            "textb": "%CyclopsSimple%: Yeah, it's been great talking to you too.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

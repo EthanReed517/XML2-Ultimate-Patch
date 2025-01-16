@@ -1,0 +1,161 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever8",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/magneto/1_sanctuary1_140_010",
+                    "soundtoplayb": "voice/magneto/1_sanctuary1_140_020",
+                    "text": "%MAGNETOSIMPLE%: Hello, X-Man. I suppose I should welcome you to The Sanctuary.",
+                    "textb": "%MAGNETOSIMPLE%: Greetings. I trust all is well?",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: Hello, Magneto.",
+                            "textb": "%PLAYER%: Everything's fine, other than having to work with the X-Men.",
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/magneto/1_sanctuary1_140_030",
+                    "soundtoplayb": "voice/magneto/1_sanctuary1_140_040",
+                    "text": "%MAGNETOSIMPLE%: What do you want?",
+                    "textb": "%MAGNETOSIMPLE%: Yes?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "Why did you go to the X-Men for help?",
+                        "line": {
+                            "soundtoplay": "voice/magneto/1_sanctuary1_140_051",
+                            "text": "%MAGNETOSIMPLE%: Believe me, it wasn't an easy decision. But after Apocalypse attacked Genosha, I realized my people were more important than my pride.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: But the X-Men go against everything you believe in.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/magneto/1_sanctuary1_140_053",
+                                            "text": "%MAGNETOSIMPLE%: Yes, but they can be trusted once they've given their word - unlike many of my other associates. Still, the X-Men aren't above blackmail.",
+                                            "response": {
+                                                "scriptfile": "setGameFlag('act1_visit', 23,1)",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'act1_visit', 23)",
+                        "text": "When did the X-Men blackmail you?",
+                        "line": {
+                            "soundtoplay": "voice/magneto/1_sanctuary1_140_061",
+                            "text": "%MAGNETOSIMPLE%: Why do you think I went with them on their mission to rescue Xavier?",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: I thought you did that out of friendship.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/magneto/1_sanctuary1_140_063",
+                                            "text": "%MAGNETOSIMPLE%: While Charles and I respect each other, we stopped being friends long ago.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "What's The Sanctuary?",
+                        "line": {
+                            "soundtoplay": "voice/magneto/1_sanctuary1_140_071",
+                            "text": "%MAGNETOSIMPLE%: It is my little getaway from the pressures of governing Genosha.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Looks like Apocalypse attacked it just like he did Genosha.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/magneto/1_sanctuary1_140_073",
+                                            "text": "%MAGNETOSIMPLE%: Yes, Apocalypse is annoyingly thorough. There's not a single structure on this island that is untouched.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Why did you found Genosha?",
+                        "line": {
+                            "soundtoplay": "voice/magneto/1_sanctuary1_140_081",
+                            "text": "%MAGNETOSIMPLE%: To give mutants a safe haven where they can learn and grow.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: So it's like Xavier's school.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/magneto/1_sanctuary1_140_083",
+                                            "text": "%MAGNETOSIMPLE%: No, not at all. I teach my people the truth - that they are superior to humans. And that one day they will rule the Earth.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Goodbye, Magneto.",
+                        "line": {
+                            "soundtoplay": "voice/magneto/1_sanctuary1_140_091",
+                            "text": "%MAGNETOSIMPLE%: Goodbye.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

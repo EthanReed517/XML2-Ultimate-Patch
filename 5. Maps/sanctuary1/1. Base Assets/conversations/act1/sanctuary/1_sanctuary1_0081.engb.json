@@ -1,0 +1,223 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever3",
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/beast/1_SANCTUARY1_081_010",
+                    "text": "%BEAST%: Storm, I have been quite anxious to hear your impressions of this rather bizarre pairing.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "soundtoplay": "voice/storm/1_SANCTUARY1_081_011",
+                            "text": "%STORM%: I certainly never would have predicted it, but we owe Magneto.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/beast/1_SANCTUARY1_081_012",
+                                    "text": "%BEAST%: But I would wager the X-Men would have aided the Genoshans even without the rescue of Charles.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/storm/1_SANCTUARY1_081_013",
+                                            "text": "%STORM%: But I wonder if our two teams will last very long together. Both sides are constantly on the verge of fighting.",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "soundtoplay": "voice/beast/1_SANCTUARY1_081_014",
+                                                    "text": "%BEAST%: This is a very tenuous alliance.",
+                                                    "response": {
+                                                        "text": "%BLANK%",
+                                                        "line": {
+                                                            "soundtoplay": "voice/storm/1_SANCTUARY1_081_015",
+                                                            "text": "%STORM%: You don't suppose this is all some sort of elaborate trap that Magneto has set for us, do you?",
+                                                            "response": {
+                                                                "text": "%BLANK%",
+                                                                "line": {
+                                                                    "soundtoplay": "voice/beast/1_SANCTUARY1_081_016",
+                                                                    "text": "%BEAST%: I've had that nagging suspicion, but I don't believe it's truly the case.",
+                                                                    "response": {
+                                                                        "text": "%BLANK%",
+                                                                        "line": {
+                                                                            "soundtoplay": "voice/storm/1_SANCTUARY1_081_017",
+                                                                            "text": "%STORM%: But that's not to say Magneto wouldn't take the opportunity to hurt the X-Men if presented the chance.",
+                                                                            "response": {
+                                                                                "text": "%BLANK%",
+                                                                                "line": {
+                                                                                    "soundtoplay": "voice/beast/1_SANCTUARY1_081_018",
+                                                                                    "text": "%BEAST%: Oh yes. There's always that possibility, Ororo. We'll just have to remain constantly vigilant.",
+                                                                                    "response": {
+                                                                                        "tagjump": "autogen_tag_1",
+                                                                                        "text": "%END%"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/beast/1_sanctuary1_080_030",
+                    "soundtoplayb": "voice/beast/1_sanctuary1_080_040",
+                    "text": "%Beast%: Greetings again, my friend. How may I be of assistance?",
+                    "textb": "%Beast%: Hello. Are you in need of help?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "chosenscriptfile": "common/shop",
+                        "conversationend": true,
+                        "text": "I'd like to see some equipment."
+                    },
+                    "response": {
+                        "text": "Are you the person we see for equipment?",
+                        "line": {
+                            "soundtoplay": "voice/beast/1_sanctuary1_080_061",
+                            "text": "%Beast%: Indeed I am. Through me you will be able to buy and sell all manner of devices that will aid you in your missions.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: What about health and energy?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/beast/1_sanctuary1_080_063",
+                                            "text": "%Beast%: I can acquire potions that will replenish both of those statistics.",
+                                            "response": {
+                                                "scriptfile": "setGameFlag('act1_visit', 16,1)",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'act1_visit', 16 )",
+                        "text": "You're the smartest X-Man, aren't you?",
+                        "line": {
+                            "soundtoplay": "voice/beast/1_sanctuary1_080_071",
+                            "text": "%Beast%: I do have a certain penchant for learning, but I don't know if I can really lay claim to that title.",
+                            "response": {
+                                "text": "But that's why you're in charge of equipment, isn't it?",
+                                "line": {
+                                    "soundtoplay": "voice/beast/1_sanctuary1_080_073",
+                                    "text": "%Beast%: Charles gave me these responsibilities because I have a knack for dealing with technical issues. But there are several other X-Men who could do that job as well, if not better than I. Forge is the first one who comes to mind.",
+                                    "response": {
+                                        "tagjump": "autogen_tag_1",
+                                        "text": "%BLANK%"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'act1_visit', 16 )",
+                        "text": "What's a data disc?",
+                        "line": {
+                            "soundtoplay": "voice/beast/1_sanctuary1_080_074",
+                            "text": "%Beast%: It is encoded information that I value quite highly. But for data to be of use to me, I need an entire set of them.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: So once I have enough data discs, I bring them to you?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/beast/1_sanctuary1_080_075",
+                                            "text": "%Beast%: Correct.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'act1_visit', 16 )",
+                        "text": "What's a homing beacon?",
+                        "line": {
+                            "soundtoplay": "voice/beast/1_sanctuary1_080_081",
+                            "text": "%Beast%: Homing beacons are extremely valuable. I can use them to locate an important individual that Apocalypse is holding prisoner. But I require several of them to pinpoint the location.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Who's this important prisoner?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/beast/1_sanctuary1_080_083",
+                                            "text": "%Beast%: I don't know - but from what I've heard, this person would be of immense aid to us.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Thanks for the info, Beast.",
+                        "line": {
+                            "soundtoplay": "voice/beast/1_sanctuary1_080_091",
+                            "text": "%Beast%: Anytime, my good friend.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "See ya around, furball.",
+                        "line": {
+                            "soundtoplay": "voice/beast/1_sanctuary1_080_101",
+                            "soundtoplayb": "voice/beast/1_sanctuary1_080_101",
+                            "text": "%Beast%: Yes, I shall be counting the seconds.",
+                            "textb": "%Beast%: Yes, I shall be counting the seconds.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

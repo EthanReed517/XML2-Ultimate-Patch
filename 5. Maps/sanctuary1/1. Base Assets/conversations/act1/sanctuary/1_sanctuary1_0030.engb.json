@@ -1,0 +1,90 @@
+{
+    "conversation": {
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/1_sanctuary1_030_010",
+                    "text": "%ProfX%: Which mission briefing would you like?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "Select Mission Briefings.",
+                        "line": {
+                            "text": "%PLAYER%",
+                            "response": {
+                                "chosenscriptfile": "loadZone( 'briefing/briefing1_10', 'NULL' ) ",
+                                "conversationend": true,
+                                "scriptfile": "disallowResponseOnObjective('act1_obj_1a_1', 'FALSE' )",
+                                "text": "Locating Blink."
+                            },
+                            "response": {
+                                "chosenscriptfile": "loadZone( 'briefing/briefing1_20', 'NULL' )",
+                                "conversationend": true,
+                                "scriptfile": "act1/sanctuary/check_briefing1_20",
+                                "text": "The Genoshan security code."
+                            },
+                            "response": {
+                                "chosenscriptfile": "act1/sanctuary/bug_briefing_called",
+                                "conversationend": true,
+                                "scriptfile": "act1/sanctuary/check_briefing1_30",
+                                "text": "The security door in the Cerci tunnel."
+                            },
+                            "response": {
+                                "chosenscriptfile": "loadZone( 'briefing/briefing1_40', 'NULL' )",
+                                "conversationend": true,
+                                "scriptfile": "act1/sanctuary/check_briefing1_40",
+                                "text": "Diffuse the seawall bombs."
+                            },
+                            "response": {
+                                "chosenscriptfile": "loadZone( 'briefing/briefing1_50', 'NULL' )",
+                                "conversationend": true,
+                                "scriptfile": "act1/sanctuary/check_briefing1_50",
+                                "text": "Freeing prisoners and battling Apocalypse."
+                            },
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "Nevermind"
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "View Character Bios.",
+                        "line": {
+                            "text": "%Menu%: What would you like to view?",
+                            "response": {
+                                "chosenscriptfile": "common/review_heroes",
+                                "conversationend": true,
+                                "text": "Hero Bios"
+                            },
+                            "response": {
+                                "chosenscriptfile": "common/review_enemies",
+                                "conversationend": true,
+                                "text": "Enemy Bios"
+                            },
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "Nevermind"
+                            }
+                        }
+                    },
+                    "response": {
+                        "conversationend": true,
+                        "text": "Nothing right now."
+                    }
+                }
+            }
+        }
+    }
+}

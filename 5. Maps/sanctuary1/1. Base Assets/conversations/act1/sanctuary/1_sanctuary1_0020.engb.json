@@ -1,0 +1,317 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "act1/sanctuary/conv_start_act2",
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/1_SANCTUARY1_020_058",
+                    "text": "%ProfX%: That was a most impressive victory over Abyss. He has a reputation as a vicious opponent.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "soundtoplay": "voice/profx/1_SANCTUARY1_020_059",
+                            "text": "%ProfX%: Now that Genosha has been freed we can return to the X-Mansion and formulate a plan to rescue Polaris from Apocalypse. Shall we go now?",
+                            "response": {
+                                "chosenscriptfile": "movies/act2",
+                                "conversationend": true,
+                                "text": "%YES%"
+                            },
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "%NO%"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "conditionscriptfile": "act1/sanctuary/sanctuary1_0020_script",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/1_sanctuary1_020_040",
+                    "soundtoplayb": "voice/profx/1_sanctuary1_020_050",
+                    "text": "%ProfX%: I know it's been a difficult battle getting into Genosha, but that is only the beginning of our troubles.",
+                    "textb": "%ProfX%: I realize it's been a struggle getting into Genosha, but the stakes are suddenly much higher than any of us could have guessed.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: What do you mean, Professor Xavier?",
+                            "textb": "%PLAYER%: Cut to the chase, Xavier.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/profx/1_sanctuary1_020_042",
+                                    "soundtoplayb": "voice/profx/1_sanctuary1_020_052",
+                                    "text": "%ProfX%: In the event someone should attempt to retake the city, Apocalypse will detonate explosives placed along the seawall.",
+                                    "textb": "%ProfX%: Apocalypse has placed explosives on the seawall as added insurance to keep the lower levels free from invaders.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "text": "%PLAYER%: He'd flood Genosha and drown all those helpless people?",
+                                            "textb": "%PLAYER%: But destroying that seawall would flood the entire city.",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "soundtoplay": "voice/profx/1_sanctuary1_020_044",
+                                                    "soundtoplayb": "voice/profx/1_sanctuary1_020_054",
+                                                    "text": "%ProfX%: Oh, yes. Apocalypse is capable of almost any act of barbarism. So to ensure the safety of everyone, you will have to locate and destroy the bombs.",
+                                                    "textb": "%ProfX%: Apocalypse will stop at nothing to achieve his goals. Therefore you must locate and destroy the bombs before they can be detonated.",
+                                                    "response": {
+                                                        "text": "%BLANK%",
+                                                        "line": {
+                                                            "soundtoplay": "voice/profx/1_sanctuary1_020_045",
+                                                            "soundtoplayb": "voice/profx/1_sanctuary1_020_045",
+                                                            "text": "%ProfX%: If you would like a full briefing on the seawall bombs, use the mission computer.",
+                                                            "textb": "%ProfX%: If you would like a full briefing on the seawall bombs, use the mission computer.",
+                                                            "response": {
+                                                                "chosenscriptfile": "common/briefings/mark_briefing1_40",
+                                                                "tagjump": "autogen_tag_1",
+                                                                "text": "%BLANK%"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever1",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/1_sanctuary1_020_010",
+                    "soundtoplayb": "voice/profx/1_sanctuary1_020_020",
+                    "text": "%ProfX%: It's good to see you. I trust we're finding common ground with the Brotherhood?",
+                    "textb": "%ProfX%: Greetings. I hope you'll find teaming up with the X-Men to be a rewarding experience.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: I'm not quite sure about that, Professor Xavier. The Brotherhood members can be a little difficult to deal with.",
+                            "textb": "%PLAYER%: Spare me your eternally positive attitude, Xavier. We're working with the X-Men only because we have to.",
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/1_sanctuary1_020_030",
+                    "text": "%ProfX%: Hello again. What can I do for you?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "How did Apocalypse take you prisoner?",
+                        "line": {
+                            "soundtoplay": "voice/profx/1_sanctuary1_020_061",
+                            "text": "%ProfX%: I had received a communiqué from Dr. Moira MacTaggert requesting Polaris and I meet her in Madrid. Only too late did I come to find out it was a trap.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Any idea why Apocalypse wanted you?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/profx/1_sanctuary1_020_063",
+                                            "text": "%ProfX%: His primary target was Polaris. I was merely an afterthought.",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "text": "%PLAYER%: Why would Apocalypse kidnap Polaris?",
+                                                    "response": {
+                                                        "text": "%BLANK%",
+                                                        "line": {
+                                                            "soundtoplay": "voice/profx/1_sanctuary1_020_065-alt",
+                                                            "text": "%ProfX%: I don't know. But he was adamant that she not be harmed. I'm almost certain she's in no immediate danger.",
+                                                            "response": {
+                                                                "chosenscriptfile": "setGameFlag('act1_visit', 15,1)",
+                                                                "tagjump": "autogen_tag_1",
+                                                                "text": "%BLANK%"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'act1_visit', 15 )",
+                        "text": "Why were you being tortured?",
+                        "line": {
+                            "soundtoplay": "voice/profx/1_sanctuary1_020_071",
+                            "text": "%ProfX%: Apocalypse was determined to obtain information on Cerebro and the Xavier Protocols. Two areas I am particularly secretive about.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Aren't the Xavier Protocols a list of all mutants in the world?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/profx/1_sanctuary1_020_074",
+                                            "text": "%ProfX%: Yes. And with it, Apocalypse would know every mutant's strengths and weaknesses.",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "text": "%PLAYER%: And their location.",
+                                                    "response": {
+                                                        "text": "%BLANK%",
+                                                        "line": {
+                                                            "soundtoplay": "voice/profx/1_sanctuary1_020_076",
+                                                            "text": "%ProfX%: Indeed. And that is perhaps the most sensitive information of all.",
+                                                            "response": {
+                                                                "tagjump": "autogen_tag_1",
+                                                                "text": "%BLANK%"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Who is Apocalypse?",
+                        "line": {
+                            "soundtoplay": "voice/profx/1_sanctuary1_020_081",
+                            "text": "%ProfX%: He was born over five thousand years ago in Egypt and is considered by many to be the first mutant ever born.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: He's five thousand years old? That's incredible!",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/profx/1_sanctuary1_020_083",
+                                            "text": "%ProfX%: Apocalypse could very well be immortal. He's a metamorph, capable of turning his body into a variety of weapons. But what's most dangerous is his ideology - Survival of the fittest",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "text": "%PLAYER%: Survival of the fittest?",
+                                                    "response": {
+                                                        "text": "%BLANK%",
+                                                        "line": {
+                                                            "soundtoplay": "voice/profx/1_sanctuary1_020_085",
+                                                            "text": "%ProfX%: Apocalypse believes the strong should destroy the weak. This, he feels, would create a powerful civilization worthy of him to rule over.",
+                                                            "response": {
+                                                                "tagjump": "autogen_tag_1",
+                                                                "text": "%BLANK%"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Why are the Brotherhood and X-Men working together?",
+                        "line": {
+                            "soundtoplay": "voice/profx/1_sanctuary1_020_091",
+                            "text": "%ProfX%: Magneto asked for the X-Men's assistance. He feels Apocalypse is too powerful for the Brotherhood to defeat alone.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Isn't there someone else Magneto could go to for help?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/profx/1_sanctuary1_020_093",
+                                            "text": "%ProfX%: Perhaps. But none he could depend on in the heat of battle. You see, even though we differ in ideology, Magneto knows he can trust my word... and I know that I can trust his.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnObjective('act1_obj_6a', 'FALSE' )",
+                        "text": "Can we go the X-Mansion and start our search for Polaris?",
+                        "line": {
+                            "soundtoplay": "voice/menu/1_sanctuary1_020_101",
+                            "text": "%Menu%: Are you sure you want to leave Genosha and travel to a new base camp?",
+                            "response": {
+                                "chosenscriptfile": "movies/act2",
+                                "conversationend": true,
+                                "text": "%YES%"
+                            },
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "%NO%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Thank you, Professor Xavier.",
+                        "line": {
+                            "soundtoplay": "voice/profx/1_sanctuary1_020_111",
+                            "text": "%ProfX%: You're quite welcome.",
+                            "response": {
+                                "chosenscriptfile": "act1/sanctuary/spoke_with_profx",
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Goodbye, Xavier.",
+                        "line": {
+                            "soundtoplay": "voice/profx/1_sanctuary1_020_121",
+                            "soundtoplayb": "voice/profx/1_sanctuary1_020_121",
+                            "text": "%ProfX%: Come back anytime.",
+                            "textb": "%ProfX%: Come back anytime.",
+                            "response": {
+                                "chosenscriptfile": "act1/sanctuary/spoke_with_profx",
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

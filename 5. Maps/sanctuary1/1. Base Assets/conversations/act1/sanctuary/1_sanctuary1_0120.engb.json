@@ -1,0 +1,246 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "act1/sanctuary/conv_blink2",
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/blink/1_sanctuary1_120_066_1",
+                    "text": "%BLINK%Hey, thanks for saving all those prisoners back in Genosha. Who knows what Apocalypse had in store for them. Things certainly weren't looking too good when I left.",
+                    "response": {
+                        "text": "%PLAYER%What do you mean?",
+                        "line": {
+                            "soundtoplay": "voice/blink/1_sanctuary1_120_066_3",
+                            "text": "%BLINK%They had started doing tests on us.",
+                            "response": {
+                                "text": "%PLAYER%Tests? What kind?",
+                                "line": {
+                                    "soundtoplay": "voice/blink/1_sanctuary1_120_066_5",
+                                    "text": "%BLINK%I don't know . . . medical stuff . . . something to do with DNA.",
+                                    "response": {
+                                        "text": "%PLAYER%Why would Apocalypse be running DNA tests on Genoshans?",
+                                        "line": {
+                                            "soundtoplay": "voice/blink/1_sanctuary1_120_066_7",
+                                            "text": "%BLINK%You got me. But at least we're all safe now - and we owe it all to you. Thanks again, guys.  You're the greatest.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "conditionscriptfile": "act1/sanctuary/conv_once_only120",
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/blink/1_sanctuary1_120_010",
+                    "soundtoplayb": "voice/blink/1_sanctuary1_120_020",
+                    "text": "%Blink%: Wow, an X-Man. I've heard a lot about you guys.",
+                    "textb": "%Blink%: Hi. It's sure good to see you.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: You're Blink, right? How are you doing?",
+                            "textb": "%PLAYER%: How are you, Blink?",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/blink/1_sanctuary1_120_012",
+                                    "soundtoplayb": "voice/blink/1_sanctuary1_120_022",
+                                    "text": "%Blink%: Other than a bump on my head, I'm fine. But I would've been in pretty sad shape if I hadn't been saved from the Dead Zone.",
+                                    "textb": "%Blink%: Other than a nasty bump on the head, I'm fine. I'm just glad to be out of the Dead Zone.",
+                                    "response": {
+                                        "tagjump": "autogen_tag_1",
+                                        "text": "%BLANK%"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/blink/1_sanctuary1_120_030",
+                    "soundtoplayb": "voice/blink/1_sanctuary1_120_040",
+                    "text": "%Blink%: Hello, X-Man. Did you want something?",
+                    "textb": "%Blink%: Hi. Did you want something?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "How did you wind up unconscious in the Dead Zone?",
+                        "line": {
+                            "soundtoplay": "voice/blink/1_sanctuary1_120_071",
+                            "text": "%Blink%: I sorta got hit on the head just as I was teleporting out of a big fight.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Who were you fighting?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/blink/1_sanctuary1_120_073",
+                                            "text": "%Blink%: Prison guards. But Mr. Creed was doing most of the fighting. I had meant to teleport him with me to the Dead Zone but then I was knocked out.",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "text": "%PLAYER%: Mr. Creed? Oh, you mean Sabretooth. What was he doing in Genosha?",
+                                                    "response": {
+                                                        "text": "%BLANK%",
+                                                        "line": {
+                                                            "soundtoplay": "voice/blink/1_sanctuary1_120_075",
+                                                            "text": "%Blink%: He had come to save me.",
+                                                            "response": {
+                                                                "chosenscriptfile": "setGameFlag('act1_visit', 22,1)",
+                                                                "tagjump": "autogen_tag_1",
+                                                                "text": "%BLANK%"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'act1_visit', 22 )",
+                        "text": "Why would Sabretooth save you?",
+                        "line": {
+                            "soundtoplay": "voice/blink/1_sanctuary1_120_081",
+                            "text": "%Blink%: I don't know... he's always doin' stuff like that.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: No, he isn't. Normally, he's trying to kill people.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/blink/1_sanctuary1_120_083",
+                                            "text": "%Blink%: That's not true. Sure, he's gruff on the outside, but deep down he's got a good heart.",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "text": "%PLAYER%: If he's got a good heart it's because he ripped it out of someone's chest.",
+                                                    "response": {
+                                                        "text": "%BLANK%",
+                                                        "line": {
+                                                            "soundtoplay": "voice/blink/1_sanctuary1_120_085",
+                                                            "text": "%Blink%: Oh, my gosh. You take that back. I know he's not the nicest person in the world. But he's a friend of mine.",
+                                                            "response": {
+                                                                "tagjump": "autogen_tag_1",
+                                                                "text": "%BLANK%"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'act1_visit', 22 )",
+                        "text": "You can teleport from Genosha to the Dead Zone?",
+                        "line": {
+                            "soundtoplay": "voice/blink/1_sanctuary1_120_091",
+                            "text": "%Blink%: Oh, I can go way further than that. I've been clear to the dark side of the moon and back.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: And you don't have to see where you're teleporting to?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/blink/1_sanctuary1_120_093",
+                                            "text": "%Blink%: No. I just have to picture the place in my mind.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "I'm glad you're feeling better.",
+                        "line": {
+                            "soundtoplay": "voice/blink/1_sanctuary1_120_101-ALT",
+                            "text": "%Blink%: Thanks. I'd hate to think where I'd be if it hadn't been for you guys. Hey, I tell you what, as payment for saving me, I'll 'port' the whole team whenever you want.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Thanks, that'd save us a lot of traveling time.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/blink/1_sanctuary1_120_103",
+                                            "text": "%Blink%: Glad to be of help.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Nice talking to you, Blink.",
+                        "line": {
+                            "soundtoplay": "voice/blink/1_sanctuary1_120_111",
+                            "text": "%Blink%: My pleasure, X-Man.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "See you later, Blink.",
+                        "line": {
+                            "soundtoplay": "voice/blink/1_sanctuary1_120_121",
+                            "soundtoplayb": "voice/blink/1_sanctuary1_120_121",
+                            "text": "%Blink%: Come back any time.",
+                            "textb": "%Blink%: Come back any time.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
