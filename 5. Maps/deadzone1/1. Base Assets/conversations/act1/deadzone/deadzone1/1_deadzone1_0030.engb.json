@@ -1,0 +1,311 @@
+{
+    "conversation": {
+        "startCondition": {
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "scriptfile": "act1/deadzone/deadzone1/blink_getup",
+                    "soundtoplay": "voice/blink/1_deadzone1_030_010",
+                    "soundtoplayb": "voice/blink/1_deadzone1_030_020",
+                    "text": "%Blink%: Ooo, my head. Who are you?",
+                    "textb": "%Blink%: Ooo, jeez does my head hurt. Oh, hi. What are you doing here?",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: I'm with the X-Men.",
+                            "textb": "%PLAYER%: We've been searching the Dead Zone for you, Blink. Even the X-Men were helping.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/blink/1_deadzone1_030_012",
+                                    "soundtoplayb": "voice/blink/1_deadzone1_030_022",
+                                    "text": "%Blink%: The X-Men? What are they doing here?",
+                                    "textb": "%Blink%: The X-Men? Why are they here?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "text": "%PLAYER%: It's a long story. For right now, let's just be happy we found you. Are you all right?",
+                                            "textb": "%PLAYER%: I'll explain later. Are you feeling all right?",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "soundtoplay": "voice/blink/1_deadzone1_030_014",
+                                                    "soundtoplayb": "voice/blink/1_deadzone1_030_024",
+                                                    "text": "%Blink%: Aaah, My head's a little sore but I'll be fine.",
+                                                    "textb": "%Blink%: Aaah, I'm a little dizzy but I'll be fine.",
+                                                    "response": {
+                                                        "tagjump": "autogen_tag_1",
+                                                        "text": "%BLANK%"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/blink/1_deadzone1_030_025",
+                    "text": "%Blink%: Hi. What can I do for you?",
+                    "response": {
+                        "tagjump": "autogen_tag_2",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "Why are you in the Dead Zone?",
+                        "line": {
+                            "soundtoplay": "voice/blink/1_deadzone1_030_031",
+                            "text": "%Blink%: Mr. Creed snuck into Genosha to rescue me. But one thing led to another and we were surrounded by guards. Just as I was about to teleport us to safety, I was hit on the head.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: So that's why you wound up here and Sabretooth was left in Genosha.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/blink/1_deadzone1_030_033",
+                                            "text": "%Blink%: Gosh, I didn't even think about that. Is Mr. Creed okay?",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "text": "%PLAYER%: He's fine. It'd take more than a couple dozen guards to slow Sabretooth down.",
+                                                    "response": {
+                                                        "tagjump": "autogen_tag_1",
+                                                        "text": "%BLANK%"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Why did Sabretooth go to Genosha?",
+                        "line": {
+                            "soundtoplay": "voice/blink/1_deadzone1_030_041",
+                            "text": "%Blink%: I told you, to rescue me.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Sabretooth's capable of a lot of things, but not an act of kindness.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/blink/1_deadzone1_030_043",
+                                            "text": "%Blink%: I'd appreciate you not talking like that about Mr. Creed. I know people say he's mean but he has a good heart.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Can you make it to The Sanctuary by yourself?",
+                        "line": {
+                            "soundtoplay": "voice/blink/1_deadzone1_030_051",
+                            "text": "%Blink%: That's a snap. I just need to wait a little bit for my head to clear.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Good, both the X-Men and the Brotherhood have set up camp there.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/blink/1_deadzone1_030_053",
+                                            "text": "%Blink%: They're working together? Wow, Apocalypse must be really powerful if Magneto went to the X-Men for help.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "See you back at The Sanctuary.",
+                        "line": {
+                            "soundtoplay": "voice/blink/1_deadzone1_030_070",
+                            "text": "%Blink%: You bet. And thanks for saving me.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/profx/1_deadzone1_050_012",
+                                    "text": "%ProfX%: You did an exemplary job of rescuing Blink. Your next objective is to locate the security codes needed to enter Genosha. It is believed the crashed airships in the dead zone will contain the desired codes.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/blink/1_deadzone1_030_081_1",
+                                            "text": "%Blink%: Say, if you're looking to get to the next island, you're gonna need my help.",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "soundtoplay": "voice/blink/1_deadzone1_030_081_2",
+                                                    "text": "%Blink%: Let me create two portals to get you there.",
+                                                    "response": {
+                                                        "text": "%BLANK%",
+                                                        "line": {
+                                                            "text": "%PLAYER%: Thanks, Blink.",
+                                                            "response": {
+                                                                "text": "%BLANK%",
+                                                                "line": {
+                                                                    "soundtoplay": "voice/blink/1_deadzone1_030_081_4",
+                                                                    "text": "%Blink%: It's no trouble. Tell you what - I'll even 'port the entire team to camp and back whenever you want.",
+                                                                    "response": {
+                                                                        "text": "%BLANK%",
+                                                                        "line": {
+                                                                            "text": "%PLAYER%: You'd be willing to do that?",
+                                                                            "response": {
+                                                                                "text": "%BLANK%",
+                                                                                "line": {
+                                                                                    "soundtoplay": "voice/blink/1_deadzone1_030_082",
+                                                                                    "text": "%Blink%: Sure. It's my mutant ability; why not use it to help defeat Apocalypse?",
+                                                                                    "response": {
+                                                                                        "chosenscriptfile": "act1/deadzone/deadzone1/enable_blink_portals",
+                                                                                        "conversationend": true,
+                                                                                        "text": "%BLANK%"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_2",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "Why are you in the Dead Zone?",
+                        "line": {
+                            "soundtoplay": "voice/blink/1_deadzone1_030_031",
+                            "text": "%Blink%: Mr. Creed snuck into Genosha to rescue me. But one thing led to another and we were surrounded by guards. Just as I was about to teleport us to safety, I was hit on the head.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: So that's why you wound up here and Sabretooth was left in Genosha.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/blink/1_deadzone1_030_033",
+                                            "text": "%Blink%: Gosh, I didn't even think about that. Is Mr. Creed okay?",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "text": "%PLAYER%: He's fine. It'd take more than a couple dozen guards to slow Sabretooth down.",
+                                                    "response": {
+                                                        "tagjump": "autogen_tag_2",
+                                                        "text": "%BLANK%"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Why did Sabretooth go to Genosha?",
+                        "line": {
+                            "soundtoplay": "voice/blink/1_deadzone1_030_041",
+                            "text": "%Blink%: I told you, to rescue me.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Sabretooth's capable of a lot of things, but not an act of kindness.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/blink/1_deadzone1_030_043",
+                                            "text": "%Blink%: I'd appreciate you not talking like that about Mr. Creed. I know people say he's mean but he has a good heart.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_2",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Can you make it to The Sanctuary by yourself?",
+                        "line": {
+                            "soundtoplay": "voice/blink/1_deadzone1_030_051",
+                            "text": "%Blink%: That's a snap. I just need to wait a little bit for my head to clear.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Good, both the X-Men and the Brotherhood have set up camp there.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/blink/1_deadzone1_030_053",
+                                            "text": "%Blink%: They're working together? Wow, Apocalypse must be really powerful if Magneto went to the X-Men for help.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_2",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "See you back at The Sanctuary.",
+                        "line": {
+                            "soundtoplay": "voice/blink/1_deadzone1_030_070",
+                            "text": "%Blink%: You bet. And thanks for saving me.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
