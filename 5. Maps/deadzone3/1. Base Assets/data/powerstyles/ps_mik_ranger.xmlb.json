@@ -1,0 +1,84 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "lockangles": true,
+            "name": "power_attack",
+            "priority": 5,
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/mikl_r/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/mikl_r/p1_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/mikl_r_m/p1_charge",
+                "time": 0.15
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%mdmg_low",
+                "damagescale": "difficulty",
+                "index": 1,
+                "knockback": 40,
+                "name": "punch",
+                "powerusage": 3,
+                "time": 0.2
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%mdmg_low",
+                "damagescale": "difficulty",
+                "index": 2,
+                "knockback": 40,
+                "name": "punch",
+                "powerusage": 3,
+                "time": 0.52
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "4 5",
+                "damagescale": "difficulty",
+                "index": 3,
+                "knockback": 245,
+                "name": "punch",
+                "powerusage": 3,
+                "time": 0.74,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_resurrect_v",
+            "lockangles": true,
+            "name": "resurrect_v",
+            "nodamage": true,
+            "playspeed": 1,
+            "trigger": {
+                "effect": "char/mikl_r/special_resurrect",
+                "name": "effect",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        }
+    }
+}
