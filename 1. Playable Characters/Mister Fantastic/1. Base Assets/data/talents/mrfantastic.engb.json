@@ -169,6 +169,7 @@
                     "chance": "%mrfan_p3_cnc",
                     "class": "atk_instant_pct",
                     "life": -1,
+                    "no_stack": true,
                     "percent": 0.33,
                     "affecter": {
                         "attribute": "powerup_scope",
@@ -592,7 +593,7 @@
         },
         "talent": {
             "descname": "Elastic Mastery",
-            "description": "Increases damage and Critical chance of all powered stretching attacks and increases his jumping range.",
+            "description": "Increases damage and Critical chance of all powered and non-powered stretching attacks and increases his jumping range.",
             "descshort": "Passive",
             "icon": 10,
             "icon_texture": "textures/ui/mrfantastic_icons2.png",
@@ -648,7 +649,7 @@
                 },
                 "require": {
                     "cat": "skill",
-                    "item": "supermaster",
+                    "item": "mutantmaster",
                     "level": 1
                 },
                 "powerup": {
@@ -660,9 +661,20 @@
                         "scope_node": "mrfan_power"
                     },
                     "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%mrfan_pass1_dmg",
+                        "scope_node": "mrfan_power"
+                    },
+                    "affecter": {
                         "attribute": "atk_critical",
                         "level": "%mrfan_pass1_crit",
-                        "scope_node": "mrfan_power"
+                        "scope_node": "mrfan_power2"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%mrfan_pass1_crit",
+                        "scope_node": "mrfan_power2"
                     },
                     "affecter": {
                         "affect_type": "scale",

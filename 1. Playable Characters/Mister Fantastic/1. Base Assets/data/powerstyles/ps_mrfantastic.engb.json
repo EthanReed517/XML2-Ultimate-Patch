@@ -3,6 +3,58 @@
         "cansteal": true,
         "iconfile": "textures/ui/mrfantastic_icons1.png",
         "FightMove": {
+            "animenum": "ea_blocking",
+            "handler": "ch_block",
+            "icon": 12,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "blocking",
+            "require": {
+                "cat": "skill",
+                "item": "block"
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": 1,
+                "time": -1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "remove_on_node_end": true,
+                "time": 0,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "damage_to_energy",
+                    "level": "%block_dmgasenrg"
+                },
+                "bolton": {
+                    "bolt": "Bip01 R Hand",
+                    "model": "models/bolton/mrfantastic_fist_right"
+                },
+                "bolton": {
+                    "bolt": "Bip01 L Hand",
+                    "model": "models/bolton/mrfantastic_fist_left"
+                }
+            },
+            "chain": {
+                "action": "special",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "rollforward"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "dodgeright"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "dodgeleft"
+            }
+        },
+        "FightMove": {
             "animenum": "ea_jump_start",
             "handler": "ch_move_jump",
             "lockangles": true,
@@ -112,7 +164,7 @@
             "endchaintime": 1,
             "lockangles": true,
             "name": "attacklight1",
-            "playspeed": 1,
+            "powerup_tag": "mrfan_power",
             "priority": 3,
             "startchaintime": 0.61,
             "trigger": {
@@ -156,7 +208,7 @@
             "fallback": "attacklight1",
             "lockangles": true,
             "name": "attacklight2",
-            "playspeed": 1,
+            "powerup_tag": "mrfan_power",
             "priority": 3,
             "startchaintime": 0.64,
             "trigger": {
@@ -199,7 +251,7 @@
             "fallback": "attacklight1",
             "lockangles": true,
             "name": "attacklight3",
-            "playspeed": 1,
+            "powerup_tag": "mrfan_power",
             "priority": 3,
             "trigger": {
                 "name": "whoosh_light",
@@ -254,6 +306,7 @@
             "fallback": "attacklight1",
             "lockangles": true,
             "name": "attacktrip2",
+            "powerup_tag": "mrfan_power",
             "event": {
                 "arc": 67,
                 "inherit": "kick",
@@ -314,7 +367,7 @@
             "handler": "ch_popup_attack",
             "lockangles": true,
             "name": "popupattack",
-            "playspeed": 1,
+            "powerup_tag": "mrfan_power",
             "priority": 5,
             "startchaintime": 0.8,
             "trigger": {
@@ -363,6 +416,7 @@
             "fallback": "attackheavy1",
             "lockangles": true,
             "name": "attackknockback2",
+            "powerup_tag": "mrfan_power",
             "priority": 5,
             "startchaintime": 0.8,
             "trigger": {
@@ -548,7 +602,7 @@
             "lockchaining": false,
             "locktransitionangles": true,
             "name": "power2",
-            "powerup_tag": "mrfan_power",
+            "powerup_tag": "mrfan_power2",
             "priority": 5,
             "turnrate": 0.3,
             "require": {
