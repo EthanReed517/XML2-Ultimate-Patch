@@ -506,6 +506,7 @@
                 "entity": "shield_shot",
                 "filename": "ents_captainamerica",
                 "fulltargeting": true,
+                "inherit": "projectile",
                 "knockback": 120,
                 "maxrange": 800,
                 "name": "projectile",
@@ -592,12 +593,6 @@
                 "time": 0
             },
             "trigger": {
-                "effect": "char/captam/p2_release",
-                "name": "effect",
-                "tag": 2,
-                "time": 0.16
-            },
-            "trigger": {
                 "life": 0.3,
                 "movement": 0,
                 "name": "slide",
@@ -606,28 +601,17 @@
                 "time": 0.16
             },
             "trigger": {
-                "effect": "char/captam/p2_release",
-                "fxlevel": 4,
-                "name": "effect",
-                "time": 0.2
-            },
-            "trigger": {
                 "attacktype": "punch",
                 "damage": "%captam_p2_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
+                "inherit": "punch",
                 "name": "punch",
                 "tag": 3,
                 "time": 0.2,
                 "damageMod": {
                     "name": "dmgmod_stun"
                 }
-            },
-            "trigger": {
-                "effect": "char/captam/p2_release",
-                "fxlevel": 5,
-                "name": "effect",
-                "time": 0.67
             },
             "chain": {
                 "action": "Idle",
@@ -658,10 +642,9 @@
                 "damage": "%captam_p3_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
-                "inherit": "radial",
+                "name": "shield_slice",
                 "knockback": "%captam_p3_kb",
                 "maxrange": 120,
-                "name": "shield_slice",
                 "tiles": true,
                 "damageMod": {
                     "name": "dmgmod_auto_knockback"
@@ -858,6 +841,7 @@
                 "damagetype": "dmg_physical",
                 "fxlevel": 1,
                 "hiteffect": "char/captam/p1_impact",
+                "inherit": "punch",
                 "name": "punch",
                 "powerusage": "%captam_p5_pwr",
                 "time": 0.4,
