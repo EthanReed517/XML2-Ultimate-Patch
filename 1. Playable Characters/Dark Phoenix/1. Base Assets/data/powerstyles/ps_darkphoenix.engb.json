@@ -76,8 +76,9 @@
             }
         },
         "FightMove": {
+            "aireusetime": 5,
             "aitype": "rangednolos",
-            "animenum": "ea_power2_end",
+            "animenum": "ea_power3",
             "combotextfinisher": "Inferno",
             "combotextstarter": "Burning",
             "icon": 0,
@@ -106,7 +107,6 @@
                 "attacktype": "direct",
                 "count": 1,
                 "damage": "%dark_inferno_dmg",
-                "damagelevel": 1,
                 "damagescale": "none",
                 "damagetype": "dmg_fire",
                 "maxrange": 110,
@@ -119,6 +119,7 @@
             "trigger": {
                 "class": "harming",
                 "damage": "%dark_inferno_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_fire",
                 "force_stack": false,
                 "life": 0.5,
@@ -134,7 +135,7 @@
         "FightMove": {
             "aireusetime": 5,
             "aitype": "projectilenear",
-            "animenum": "ea_power2",
+            "animenum": "ea_power4",
             "combotextfinisher": "Manipulation",
             "combotextstarter": "Telekinetic",
             "handler": "ch_telekinesis",
@@ -151,9 +152,13 @@
                 "level": 1
             },
             "trigger": {
+                "name": "powerusage",
+                "powerusage": "%dark_telek_pwr",
+                "time": 0
+            },
+            "trigger": {
                 "attacktype": "psionic",
                 "damage": 0,
-                "damagelevel": 1,
                 "damagescale": "none",
                 "damagetype": "dmg_fire",
                 "maxrange": 300,
@@ -203,7 +208,7 @@
             }
         },
         "FightMove": {
-            "animenum": "ea_power2",
+            "animenum": "ea_power4",
             "energypersecond": "%pho_telek_pwr",
             "handler": "ch_telekinesis",
             "icon": 1,
@@ -242,7 +247,7 @@
             }
         },
         "FightMove": {
-            "animenum": "ea_power2_end",
+            "animenum": "ea_power4_end",
             "lockangles": true,
             "name": "power2_release",
             "priority": "uninterruptable",
@@ -390,7 +395,6 @@
                 "attacktype": "direct",
                 "count": 1,
                 "damage": "%dark_matter_dmg",
-                "damagelevel": 1,
                 "damagescale": "none",
                 "damagetype": "dmg_telekinesis",
                 "maxrange": 150,
@@ -423,7 +427,7 @@
         "FightMove": {
             "aireusetime": 10,
             "aitype": "buffself",
-            "animenum": "ea_power1",
+            "animenum": "ea_power2",
             "combotextfinisher": "Drain",
             "combotextstarter": "Healing",
             "icon": 4,
@@ -437,47 +441,34 @@
                 "level": 1
             },
             "trigger": {
+                "name": "sound",
+                "sound": "char/darkp_m/p5_power",
+                "time": 0.1
+            },
+            "trigger": {
                 "bolt": "Bip01 R Hand",
                 "effect": "char/drkphoenx/p5_charge",
                 "name": "effect",
-                "time": 0
+                "time": 0.1
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
                 "effect": "char/drkphoenx/p5_charge",
                 "name": "effect",
-                "time": 0
-            },
-            "trigger": {
-                "bolt": "Bip01 Pelvis",
-                "effect": "char/drkphoenx/p5_power",
-                "name": "effect",
-                "time": 0.4
-            },
-            "trigger": {
-                "name": "sound",
-                "sound": "char/darkp_m/p5_power",
-                "time": 0.1
+                "time": 0.35
             },
             "trigger": {
                 "attackerheight": false,
                 "attacktype": "direct",
                 "count": 1,
                 "damage": "%dark_absorb_dmg",
-                "damagelevel": 1,
                 "damagescale": "none",
                 "damagetype": "dmg_fire",
                 "maxrange": 110,
                 "name": "who_to_hit",
                 "powerusage": "%dark_absorb_pwr",
                 "selfeventtag": 107,
-                "time": 0.485
-            },
-            "trigger": {
-                "bolt": "Bip01 Pelvis",
-                "effect": "char/drkphoenx/p5_charge",
-                "name": "effect",
-                "time": 0.775
+                "time": 0.5
             },
             "trigger": {
                 "apply_ally": "all",
@@ -485,7 +476,7 @@
                 "life": "%dark_absorb_life",
                 "name": "powerup",
                 "tag": 107,
-                "time": 0.5,
+                "time": -1,
                 "affecter": {
                     "attribute": "health_regen_pct",
                     "level": "%dark_absorb_regen"
@@ -586,6 +577,7 @@
             },
             "trigger": {
                 "damage": "%dark_shift_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_mental",
                 "index": 1,
                 "name": "selfattack",
@@ -688,13 +680,13 @@
         "FightMove": {
             "aireusetime": 20,
             "aitype": "buffself",
-            "animenum": "ea_power3",
+            "animenum": "ea_power9",
             "combotextfinisher": "Barrier",
             "combotextstarter": "Nullifying",
             "icon": 7,
             "lockangles": true,
             "name": "power8",
-            "playspeed": 1.5,
+            "playspeed": 1.25,
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -712,7 +704,7 @@
                 "life": "%dark_cosmic_life",
                 "name": "powerup",
                 "powerusage": "%dark_cosmic_pwr",
-                "time": 0.9,
+                "time": 0.75,
                 "special_fx": {
                     "effect": "char/drkphoenx/p8_aura",
                     "how_used": "primary"
@@ -735,7 +727,7 @@
             }
         },
         "FightMove": {
-            "animenum": "ea_power2",
+            "animenum": "ea_power4",
             "combotextfinisher": "Burn",
             "description": "BURN",
             "endchaintime": 0.95,
@@ -744,7 +736,6 @@
             "name": "power9",
             "noautoaim": true,
             "playspeed": 20,
-            "powerup_tag": "dark_power9",
             "priority": 5,
             "startchaintime": 0.9,
             "turnrate": 0.5,
@@ -779,13 +770,11 @@
                 "time": 0
             },
             "trigger": {
-                "damage": "3 5",
-                "damagescale": "normal",
+                "damage": "%dark_xtreme_dmg",
+                "damagescale": "none",
                 "damagetype": "dmg_fire",
-                "isxtreme": true,
                 "maxrange": 250,
                 "name": "teleport_data_store",
-                "powerusage": 0,
                 "time": 0
             },
             "trigger": {
@@ -805,7 +794,7 @@
             }
         },
         "FightMove": {
-            "animenum": "ea_power2_end",
+            "animenum": "ea_power4",
             "blendtime": 0,
             "endchaintime": 0.95,
             "fallback": "power9_end",
@@ -814,7 +803,6 @@
             "name": "power9_loop",
             "noautoaim": true,
             "playspeed": 10,
-            "powerup_tag": "dark_power9",
             "priority": 5,
             "startchaintime": 0.9,
             "require": {
@@ -843,16 +831,14 @@
                 "attacktype": "direct",
                 "maxrange": 240,
                 "name": "teleport_scaled_atk",
-                "powerusage": 0,
                 "time": 0
             },
             "trigger": {
-                "damage": "3 5",
-                "damagescale": "normal",
-                "damagetype": "dmg_teleport",
+                "damage": "%dark_xtreme_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_fire",
                 "height": 18,
                 "name": "teleport_punch",
-                "powerusage": 0,
                 "time": 0.33
             },
             "chain": {
@@ -861,7 +847,7 @@
             }
         },
         "FightMove": {
-            "animenum": "ea_power2_end",
+            "animenum": "ea_power4_end",
             "blendtime": 0.1,
             "endchaintime": 0.95,
             "handler": "ch_move_tele_land",
@@ -882,7 +868,6 @@
                 "attacktype": "direct",
                 "maxrange": 250,
                 "name": "teleport_return",
-                "powerusage": 0,
                 "time": 0
             },
             "trigger": {
@@ -896,24 +881,12 @@
                 "time": 0.4
             },
             "chain": {
-                "action": "walk",
-                "result": "walk"
-            },
-            "chain": {
-                "action": "jog",
-                "result": "jog"
-            },
-            "chain": {
-                "action": "run",
-                "result": "run"
-            },
-            "chain": {
                 "action": "Idle",
                 "result": "idle"
             }
         },
         "FightMove": {
-            "animenum": "ea_power9",
+            "animenum": "ea_power7",
             "blendtime": 0,
             "combotextfinisher": "Manipulation",
             "description": "TEMPORAL MANIPULATION",
