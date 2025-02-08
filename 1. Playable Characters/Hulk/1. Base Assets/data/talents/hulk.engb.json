@@ -79,7 +79,7 @@
         },
         "talent": {
             "descname": "Hulk Pound",
-            "description": "Hulk pounds the ground, tripping nearby enemies with a radial wave of $DMG_PHYSICAL and creating a piercing forward shockwave that pops up any enemies in its path.",
+            "description": "Hulk pounds the ground, tripping nearby enemies with a radial wave of $DMG_PHYSICAL and creating a piercing forward shockwave that pops up any enemies in its path.\\n(~41Press And Hold~~)",
             "descshort": "Radial",
             "icon": 11,
             "icon_texture": "textures/ui/hulk_icons2.png",
@@ -128,7 +128,7 @@
         },
         "talent": {
             "descname": "Hulk Crash",
-            "description": "Hulk jumps into the air then crashes back down, knocking back any nearby enemies.",
+            "description": "Hulk jumps into the air then crashes back down, knocking back and stunning any nearby enemies.",
             "descshort": "Radial",
             "icon": 2,
             "icon_texture": "textures/ui/hulk_icons2.png",
@@ -138,22 +138,22 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "hulk_p3_req",
-                    "value": 7
+                    "value": 14
                 },
                 "talentvalue": {
-                    "level": 18,
+                    "level": 16,
                     "name": "hulk_p3_req",
                     "value": 58
                 },
                 "talentvalue": {
                     "level": 1,
                     "name": "hulk_p3_dmg",
-                    "value": "21 26"
+                    "value": "30 36"
                 },
                 "talentvalue": {
-                    "level": 18,
+                    "level": 16,
                     "name": "hulk_p3_dmg",
-                    "value": "78 89"
+                    "value": "82 93"
                 },
                 "talentvalue": {
                     "level": 1,
@@ -161,27 +161,42 @@
                     "value": 245
                 },
                 "talentvalue": {
-                    "level": 18,
+                    "level": 16,
                     "name": "hulk_p3_kb",
                     "value": 620
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "hulk_p3_pwr",
-                    "value": 24
+                    "name": "hulk_p3_stn",
+                    "value": 2
                 },
                 "talentvalue": {
                     "level": 18,
+                    "name": "hulk_p3_stn",
+                    "value": 5
+                },
+                "talentvalue": {
+                    "level": 1,
                     "name": "hulk_p3_pwr",
-                    "value": 160
+                    "value": 46
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "hulk_p3_pwr",
+                    "value": 170
                 }
             },
             "level": {
-                "count": 18,
-                "description": "%hulk_p3_dmg $DMG_PHYSICAL\\n%hulk_p3_kb $KB\\n%hulk_p3_pwr $EP",
+                "count": 16,
+                "description": "%hulk_p3_dmg $DMG_PHYSICAL\\n%hulk_p3_kb $KB\\n%hulk_p3_stn second stun\\n%hulk_p3_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%hulk_p3_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "hulk_p5",
+                    "level": 1
                 }
             }
         },
@@ -245,6 +260,65 @@
             }
         },
         "talent": {
+            "descname": "Hulk Clap",
+            "description": "Hulk claps his hands, knocking back and immobilizing any enemies within range.",
+            "descshort": "Radial",
+            "icon": 12,
+            "icon_texture": "textures/ui/hulk_icons2.png",
+            "name": "hulk_p5",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p5_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "hulk_p5_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p5_dmg",
+                    "value": "21 26"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "hulk_p5_dmg",
+                    "value": "78 89"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p5_kb",
+                    "value": 250
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "hulk_p5_kb",
+                    "value": 450
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_p5_pwr",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "hulk_p5_pwr",
+                    "value": 160
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%hulk_p5_dmg $DMG_PHYSICAL\\n%hulk_p5_kb $KB\\n%hulk_p5_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%hulk_p5_req"
+                }
+            }
+        },
+        "talent": {
             "descname": "Hulk Roar",
             "description": "Hulk roars, causing enemies to run in fear with decreased $DR.",
             "descshort": "Debuff",
@@ -260,7 +334,7 @@
                     "value": 14
                 },
                 "talentvalue": {
-                    "level": 16,
+                    "level": 11,
                     "name": "hulk_p6_req",
                     "value": 58
                 },
@@ -270,7 +344,7 @@
                     "value": 2
                 },
                 "talentvalue": {
-                    "level": 16,
+                    "level": 11,
                     "name": "hulk_p6_life",
                     "value": 6
                 },
@@ -280,7 +354,7 @@
                     "value": 84
                 },
                 "talentvalue": {
-                    "level": 16,
+                    "level": 11,
                     "name": "hulk_p6_pwr",
                     "value": 458
                 },
@@ -290,13 +364,13 @@
                     "value": 0.8
                 },
                 "talentvalue": {
-                    "level": 16,
+                    "level": 11,
                     "name": "hulk_p6_dr",
                     "value": 0.38
                 }
             },
             "level": {
-                "count": 16,
+                "count": 11,
                 "description": "%hulk_p6_dr:s $DR\\n%hulk_p6_life seconds\\n%hulk_p6_pwr $EP",
                 "require": {
                     "cat": "level",
@@ -608,7 +682,7 @@
         },
         "talent": {
             "descname": "Gamma Battery",
-            "description": "Increases Hulk's resistance to $DMG_RADIATION and gives a chance to reflect $DMG_RADIATION back onto attackers.",
+            "description": "Increases Hulk's resistance to $DMG_RADIATION, gives a chance to reflect $DMG_RADIATION back onto the attacker, and increases his $EP regeneration rate.",
             "descshort": "Passive",
             "icon": 6,
             "icon_texture": "textures/ui/hulk_icons2.png",
@@ -617,12 +691,12 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "hulk_pass1_req",
-                    "value": 21
+                    "value": 1
                 },
                 "talentvalue": {
                     "level": 15,
                     "name": "hulk_pass1_req",
-                    "value": 35
+                    "value": 15
                 },
                 "talentvalue": {
                     "level": 1,
@@ -643,11 +717,21 @@
                     "level": 15,
                     "name": "hulk_pass1_chn",
                     "value": 1
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_pass1_ep",
+                    "value": 1.3
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "hulk_pass1_ep",
+                    "value": 2.98
                 }
             },
             "level": {
                 "count": 15,
-                "description": "+%hulk_pass1_resist:p Radiation resistance\\n+%hulk_pass1_chn:p chance to reflect $DMG_RADIATION",
+                "description": "+%hulk_pass1_resist:p Radiation resistance\\n+%hulk_pass1_chn:p chance to reflect $DMG_RADIATION\\n%hulk_pass1_ep:s $EP regeneration",
                 "require": {
                     "cat": "level",
                     "level": "%hulk_pass1_req"
@@ -657,6 +741,11 @@
                     "affecter": {
                         "attribute": "resist_radiation",
                         "level": "%hulk_pass1_resist"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "energy_regen",
+                        "level": "%hulk_pass1_ep"
                     },
                     "affecter": {
                         "affect_type": "scale",
@@ -717,7 +806,7 @@
                 },
                 "require": {
                     "cat": "skill",
-                    "item": "supermaster",
+                    "item": "mutantmaster",
                     "level": 1
                 },
                 "powerup": {

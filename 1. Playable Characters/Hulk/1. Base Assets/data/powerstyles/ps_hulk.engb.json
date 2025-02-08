@@ -10,7 +10,7 @@
             "noncombat": true,
             "chain": {
                 "action": "walk",
-                "result": "jog"
+                "result": "walk"
             },
             "chain": {
                 "action": "jog",
@@ -78,18 +78,32 @@
             }
         },
         "FightMove": {
-            "animenum": "ea_run1",
+            "animenum": "ea_walk1",
             "handler": "ch_move",
             "lockchaining": false,
             "name": "walk",
             "noncombat": true,
+            "trigger": {
+                "animbased": true,
+                "name": "footstep",
+                "sound": "char/hulk_m/step",
+                "time": 0.89,
+                "volume": 0.25
+            },
+            "trigger": {
+                "animbased": true,
+                "name": "footstep",
+                "sound": "char/hulk_m/step",
+                "time": 0.4,
+                "volume": 0.25
+            },
             "chain": {
                 "action": "idle",
                 "result": "idle"
             },
             "chain": {
                 "action": "walk",
-                "result": "jog"
+                "result": "walk"
             },
             "chain": {
                 "action": "jog",
@@ -178,7 +192,7 @@
             },
             "chain": {
                 "action": "walk",
-                "result": "jog"
+                "result": "walk"
             },
             "chain": {
                 "action": "jog",
@@ -263,7 +277,7 @@
             },
             "chain": {
                 "action": "walk",
-                "result": "jog"
+                "result": "walk"
             },
             "chain": {
                 "action": "jog",
@@ -348,7 +362,7 @@
             },
             "chain": {
                 "action": "walk",
-                "result": "jog"
+                "result": "walk"
             },
             "chain": {
                 "action": "jog",
@@ -425,7 +439,7 @@
             },
             "chain": {
                 "action": "walk",
-                "result": "jog"
+                "result": "walk"
             },
             "chain": {
                 "action": "jog",
@@ -535,7 +549,7 @@
             },
             "chain": {
                 "action": "walk",
-                "result": "jog"
+                "result": "walk"
             },
             "chain": {
                 "action": "jog",
@@ -564,7 +578,7 @@
             },
             "chain": {
                 "action": "walk",
-                "result": "job"
+                "result": "walk"
             },
             "chain": {
                 "action": "jog",
@@ -960,13 +974,14 @@
                 "time": 0.1
             },
             "trigger": {
+                "attacktype": "punch",
                 "damage": "%hulk_p1_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
+                "inherit": "punch",
                 "maxrange": 60,
                 "name": "punch",
                 "time": 0.14,
-                "victimeventtag": 20,
                 "damagemod": {
                     "name": "dmgmod_stun"
                 }
@@ -984,24 +999,19 @@
                 "time": 0.38
             },
             "trigger": {
+                "attacktype": "punch",
                 "damage": "%hulk_p1_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
+                "inherit": "punch",
                 "index": 2,
                 "knockback": "%hulk_p1_kb",
                 "maxrange": 60,
                 "name": "punch",
                 "time": 0.48,
-                "victimeventtag": 20,
                 "damagemod": {
                     "name": "dmgmod_auto_knockback"
                 }
-            },
-            "trigger": {
-                "effect": "char/hulk/p1_impact",
-                "fxlevel": 3,
-                "name": "effect",
-                "time": 0.48
             },
             "chain": {
                 "action": "Idle",
@@ -1011,18 +1021,23 @@
         "FightMove": {
             "aireusetime": 8,
             "aitype": "aoe",
-            "animenum": "ea_power2",
+            "animenum": "ea_power8",
             "combotextfinisher": "Pound",
             "combotextstarter": "Hulk",
             "icon": 11,
             "lockangles": true,
             "name": "power2",
-            "playspeed": 1.5,
             "priority": 5,
             "require": {
                 "cat": "skill",
                 "item": "hulk_p2",
                 "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "only_non_looped": true,
+                "powerusage": "%hulk_p2_pwr",
+                "time": 0
             },
             "trigger": {
                 "name": "sound",
@@ -1036,13 +1051,14 @@
                 "time": 0.59
             },
             "trigger": {
+                "attacktype": "punch",
                 "arc": 180,
                 "damage": "%hulk_p2_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
+                "inherit": "punch",
                 "maxrange": 144,
                 "name": "radial",
-                "powerusage": "%hulk_p2_pwr",
                 "time": 0.79,
                 "damageMod": {
                     "name": "dmgmod_trip"
@@ -1071,15 +1087,134 @@
                 "pierce": true,
                 "randomvelocity": 100,
                 "speed": 800,
+                "tag": 101,
                 "targetable": false,
                 "tiles": true,
                 "time": 0.75,
+                "victimeventtag": 102,
                 "damageMod": {
                     "name": "dmgmod_popup"
                 },
                 "damageMod": {
                     "name": "dmgmod_ground"
                 }
+            },
+            "trigger": {
+                "life": "%hulk_p2_stn",
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 102,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_stunned",
+                    "how_used": "primary"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power2_loop"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power8_loop",
+            "combotextfinisher": "Pound",
+            "combotextstarter": "Hulk",
+            "energypersecond": "%hulk_p2_pwr",
+            "icon": 11,
+            "lockangles": true,
+            "name": "power2_loop",
+            "priority": 5,
+            "trigger": {
+                "effect": "char/hulk/p1_impact",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.59
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "arc": 180,
+                "damage": "%hulk_p2_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "inherit": "punch",
+                "maxrange": 144,
+                "name": "radial",
+                "time": 0.79,
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "effect": "char/hulk/p2_power",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/hulk_m/p2_power",
+                "time": 0.79
+            },
+            "trigger": {
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%hulk_p2_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "entity": "hulk_shockwave",
+                "filename": "ents_hulk",
+                "maxrange": 800,
+                "name": "projectile",
+                "pierce": true,
+                "randomvelocity": 100,
+                "speed": 800,
+                "tag": 101,
+                "targetable": false,
+                "tiles": true,
+                "time": 0.75,
+                "victimeventtag": 102,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "life": "%hulk_p2_stn",
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 102,
+                "time": -1,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_stunned",
+                    "how_used": "primary"
+                }
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power2_loop"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power2_end"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power8_end",
+            "combotextfinisher": "Pound",
+            "combotextstarter": "Hulk",
+            "icon": 11,
+            "lockangles": true,
+            "name": "power2_end",
+            "trigger": {
+                "loop_type": "stop",
+                "name": "sound",
+                "sound": "char/hulk_m/p2_power",
+                "time": 0
             },
             "chain": {
                 "action": "Idle",
@@ -1166,7 +1301,8 @@
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "knockback": "%hulk_p3_kb",
-                "maxrange": 90,
+                "inherit": "radial",
+                "maxrange": 120,
                 "name": "radial",
                 "time": 0.21,
                 "damagemod": {
@@ -1217,10 +1353,12 @@
             },
             "trigger": {
                 "arc": 180,
+                "attacktype": "punch",
                 "damage": "%hulk_p4_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "knockback": "%hulk_p4_kb",
+                "inherit": "punch",
                 "name": "punch",
                 "tag": 1,
                 "tiles": true,
@@ -1257,22 +1395,22 @@
             },
             "chain": {
                 "action": "touch",
-                "result": "power4_break"
+                "result": "power4_end"
             },
             "chain": {
                 "action": "idle",
-                "result": "fastballland"
+                "result": "power4_end"
             }
         },
         "FightMove": {
-            "animenum": "ea_grab_break",
+            "animenum": "ea_power4_end",
             "combotextfinisher": "Charge",
             "combotextstarter": "Hulk",
             "icon": 3,
             "lockangles": true,
             "lockspeed": true,
             "locktransitionangles": true,
-            "name": "power4_break",
+            "name": "power4_end",
             "noautoaim": true,
             "playspeed": 1,
             "priority": 5,
@@ -1288,9 +1426,78 @@
             }
         },
         "FightMove": {
-            "aireusetime": 20,
+            "aireusetime": 8,
             "aitype": "aoe",
             "animenum": "ea_power7",
+            "combotextfinisher": "Clap",
+            "combotextstarter": "Hulk",
+            "icon": 12,
+            "lockangles": true,
+            "name": "power5",
+            "playspeed": 1.5,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "hulk_p5",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/hulk_m/jump",
+                "time": 0.1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/hulk_m/p5_power",
+                "time": 0.525
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/hulk/p5_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/hulk/p5_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.4
+            },
+            "trigger": {
+                "effect": "char/hulk/p5_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.525
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": "%hulk_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "knockback": "%hulk_p5_kb",
+                "inherit": "radial",
+                "maxrange": 144,
+                "name": "radial",
+                "powerusage": "%hulk_p5_pwr",
+                "time": 0.545,
+                "damagemod": {
+                    "name": "dmgmod_immobilize"
+                },
+                "damagemod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "aoe",
+            "animenum": "ea_power6",
             "combotextfinisher": "Roar",
             "combotextstarter": "Hulk",
             "icon": 5,
@@ -1338,7 +1545,7 @@
         "FightMove": {
             "aireusetime": 20,
             "aitype": "buffself",
-            "animenum": "ea_power6",
+            "animenum": "ea_power5",
             "combotextfinisher": "Tough",
             "combotextstarter": "Hulk",
             "icon": 9,
@@ -1411,7 +1618,7 @@
         "FightMove": {
             "aireusetime": 20,
             "aitype": "buffself",
-            "animenum": "ea_power6",
+            "animenum": "ea_power5",
             "combotextfinisher": "Strike",
             "combotextstarter": "Hulk",
             "icon": 10,
@@ -1490,7 +1697,7 @@
             "lockangles": true,
             "lockspeed": true,
             "name": "power9",
-            "playspeed": 9,
+            "playspeed": 10,
             "powerup_tag": "hulk_power9",
             "priority": "uninterruptable",
             "require": {
@@ -1542,7 +1749,7 @@
             "trigger": {
                 "name": "sound",
                 "sound": "char/hulk_m/p9_power",
-                "time": 0.58
+                "time": 0.6
             },
             "trigger": {
                 "arc": 180,
@@ -1550,9 +1757,10 @@
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "knockback": 620,
+                "inherit": "radial",
                 "maxrange": 300,
                 "name": "radial",
-                "time": 0.6,
+                "time": 0.63,
                 "damagemod": {
                     "name": "dmgmod_ground"
                 },
