@@ -760,7 +760,7 @@
         },
         "talent": {
             "descname": "Hulk Incredible",
-            "description": "Increases Critical chance of all powered and non-powered attacks and increases his jumping range.",
+            "description": "Increases damage and Critical chance of all powered and non-powered attacks.",
             "descshort": "Passive",
             "icon": 1,
             "icon_texture": "textures/ui/hulk_icons2.png",
@@ -778,13 +778,13 @@
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "hulk_pass2_jmp",
-                    "value": 1.5
+                    "name": "hulk_pass2_dmg",
+                    "value": 1.05
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "hulk_pass2_jmp",
-                    "value": 3.0
+                    "name": "hulk_pass2_dmg",
+                    "value": 1.5
                 },
                 "talentvalue": {
                     "level": 1,
@@ -799,22 +799,22 @@
             },
             "level": {
                 "count": 15,
-                "description": "+%hulk_pass2_crit:p Critical chance\\n+%hulk_pass2_jmp:p jumping range",
+                "description": "%hulk_pass2_dmg:s Dmg\\n+%hulk_pass2_crit:p Critical chance",
                 "require": {
                     "cat": "level",
                     "level": "%hulk_pass2_req"
                 },
                 "require": {
                     "cat": "skill",
-                    "item": "mutantmaster",
+                    "item": "hulk_pass1",
                     "level": 1
                 },
                 "powerup": {
                     "life": -1,
                     "affecter": {
                         "affect_type": "scale",
-                        "attribute": "jump",
-                        "level": "%hulk_pass2_jmp"
+                        "attribute": "damage",
+                        "level": "%hulk_pass2_dmg"
                     },
                     "affecter": {
                         "attribute": "atk_critical",

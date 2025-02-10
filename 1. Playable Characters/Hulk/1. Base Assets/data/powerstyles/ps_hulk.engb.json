@@ -432,6 +432,13 @@
             "noncombat": true,
             "startchaintime": 0.5,
             "trigger": {
+                "life": 0.5,
+                "movement": 50,
+                "name": "slide",
+                "targetdistance": 50,
+                "time": 0
+            },
+            "trigger": {
                 "name": "footstep",
                 "sound": "char/hulk_m/step",
                 "time": 0,
@@ -460,9 +467,12 @@
             "lockangles": true,
             "name": "jump",
             "startchaintime": 0.3,
-            "chain": {
-                "action": "move",
-                "result": "airjump"
+            "trigger": {
+                "life": 0.5,
+                "movement": 200,
+                "name": "slide",
+                "targetdistance": 200,
+                "time": 0
             },
             "chain": {
                 "action": "attack",
@@ -492,10 +502,6 @@
             "name": "jumploop",
             "noncombat": true,
             "chain": {
-                "action": "move",
-                "result": "airjump"
-            },
-            "chain": {
                 "action": "attack",
                 "result": "jumppunchright"
             },
@@ -514,83 +520,6 @@
             "chain": {
                 "action": "idle",
                 "result": "jumploop"
-            }
-        },
-        "FightMove": {
-            "animenum": "ea_double_jump_start",
-            "blendtime": 0.1,
-            "handler": "ch_move_jump",
-            "name": "airjump",
-            "startchaintime": 0.5,
-            "turnrate": 0.2,
-            "chain": {
-                "action": "special",
-                "result": "doublejumpland"
-            }
-        },
-        "FightMove": {
-            "animenum": "ea_jump_land",
-            "blendtime": 0.1,
-            "endchaintime": 0.7,
-            "handler": "ch_move_jump_land",
-            "lockangles": true,
-            "lockchaining": true,
-            "name": "doublejumpland",
-            "noncombat": true,
-            "trigger": {
-                "name": "footstep",
-                "sound": "char/hulk_m/step",
-                "time": 0,
-                "volume": 0.25
-            },
-            "chain": {
-                "action": "idle",
-                "result": "idle"
-            },
-            "chain": {
-                "action": "walk",
-                "result": "walk"
-            },
-            "chain": {
-                "action": "jog",
-                "result": "jog"
-            },
-            "chain": {
-                "action": "run",
-                "result": "run"
-            },
-            "chain": {
-                "action": "sprint",
-                "result": "sprint"
-            }
-        },
-        "FightMove": {
-            "animenum": "ea_lunge_land",
-            "lockangles": true,
-            "lockspeed": true,
-            "locktransitionangles": true,
-            "name": "fastballland",
-            "startchaintime": 0.7,
-            "takeimpactdamage": false,
-            "chain": {
-                "action": "idle",
-                "result": "idle"
-            },
-            "chain": {
-                "action": "walk",
-                "result": "walk"
-            },
-            "chain": {
-                "action": "jog",
-                "result": "jog"
-            },
-            "chain": {
-                "action": "run",
-                "result": "run"
-            },
-            "chain": {
-                "action": "sprint",
-                "result": "sprint"
             }
         },
         "FightMove": {
