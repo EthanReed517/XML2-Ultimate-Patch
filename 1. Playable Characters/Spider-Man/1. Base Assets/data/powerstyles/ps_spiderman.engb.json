@@ -114,7 +114,7 @@
             "startchaintime": 0.3,
             "chain": {
                 "action": "move",
-                "result": "airjump"
+                "result": "power5"
             },
             "chain": {
                 "action": "attack",
@@ -145,7 +145,7 @@
             "noncombat": true,
             "chain": {
                 "action": "move",
-                "result": "airjump"
+                "result": "power5"
             },
             "chain": {
                 "action": "attack",
@@ -169,49 +169,255 @@
             }
         },
         "FightMove": {
-            "animenum": "ea_double_jump_start",
-            "blendtime": 0.1,
-            "handler": "ch_move_jump",
-            "name": "airjump",
-            "startchaintime": 0.5,
-            "turnrate": 0.2,
-            "chain": {
-                "action": "special",
-                "result": "doublejumpland"
-            },
-            "chain": {
-                "action": "move",
-                "result": "power5"
-            }
-        },
-        "FightMove": {
-            "animenum": "ea_jump_land",
-            "blendtime": 0.1,
-            "endchaintime": 0.7,
-            "handler": "ch_move_jump_land",
+            "animenum": "ea_attack_light1",
+            "blendtime": 0,
+            "endchaintime": 1,
             "lockangles": true,
-            "lockchaining": true,
-            "name": "doublejumpland",
-            "noncombat": true,
+            "name": "attacklight1",
+            "playspeed": 1,
+            "startchaintime": 0.66,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.3
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Toe0",
+                "life": 0.17,
+                "name": "trail",
+                "time": 0.33
+            },
+            "trigger": {
+                "name": "kick",
+                "time": 0.41
+            },
             "chain": {
                 "action": "idle",
                 "result": "idle"
             },
             "chain": {
-                "action": "walk",
-                "result": "walk"
+                "action": "guard",
+                "result": "null"
             },
             "chain": {
-                "action": "jog",
-                "result": "jog"
+                "action": "attack",
+                "result": "attacklight2"
             },
             "chain": {
-                "action": "run",
-                "result": "run"
+                "action": "smash",
+                "result": "attacktrip1"
             },
             "chain": {
-                "action": "sprint",
-                "result": "sprint"
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light2",
+            "blendtime": 0,
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight2",
+            "playspeed": 1,
+            "startchaintime": 0.62,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.25
+            },
+            "trigger": {
+                "movement": 15,
+                "name": "slide",
+                "time": 0.38
+            },
+            "trigger": {
+                "bolt": "Bip01 L Forearm",
+                "life": 0.2,
+                "name": "trail",
+                "time": 0.27
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.38
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight3"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "popupattack"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light3",
+            "blendtime": 0,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight3",
+            "playspeed": 1,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.33
+            },
+            "trigger": {
+                "movement": 20,
+                "name": "slide",
+                "time": 0.31
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.3,
+                "name": "trail",
+                "time": 0.25
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.4
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_popup",
+            "blendtime": 0.05,
+            "fallback": "attacklight1",
+            "handler": "ch_popup_attack",
+            "lockangles": true,
+            "name": "popupattack",
+            "playspeed": 1,
+            "startchaintime": 0.67,
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.23
+            },
+            "trigger": {
+                "movement": 20,
+                "name": "slide",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 L Toe0",
+                "life": 0.3,
+                "name": "trail",
+                "time": 0.24
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "life": 0.3,
+                "name": "trail",
+                "time": 0.26
+            },
+            "trigger": {
+                "knockback": 0,
+                "maxrange": 50,
+                "name": "punch_heavy",
+                "time": 0.25,
+                "damagemod": {
+                    "name": "dmgmod_popup"
+                },
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.28
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_knockback",
+            "blendtime": 0.1,
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackknockback2",
+            "startchaintime": 0.8,
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.1
+            },
+            "trigger": {
+                "movement": 20,
+                "name": "slide",
+                "targetdistance": 50,
+                "time": 0.1
+            },
+            "trigger": {
+                "inherit": "kick_heavy",
+                "knockback": 190,
+                "name": "slide_kick",
+                "time": 0.2,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "life": 0.3,
+                "name": "trail",
+                "time": 0.25
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
             }
         },
         "FightMove": {
@@ -396,7 +602,7 @@
             }
         },
         "FightMove": {
-            "aireusetime": 4,
+            "aireusetime": 8,
             "aitype": "aoe",
             "animenum": "ea_power3",
             "combotextfinisher": "Mace",
@@ -411,17 +617,15 @@
                 "level": 1
             },
             "event": {
+                "arc": 180,
                 "damage": "%spider_p3_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
-                "knockback": "%spider_p3_kb",
+                "inherit": "radial",
                 "maxrange": 100,
                 "name": "radial",
                 "damageMod": {
-                    "name": "dmgmod_auto_knockback"
-                },
-                "damageMod": {
-                    "name": "dmgmod_environment"
+                    "name": "dmgmod_trip"
                 }
             },
             "trigger": {
@@ -440,7 +644,11 @@
             "trigger": {
                 "name": "radial",
                 "powerusage": "%spider_p3_pwr",
-                "time": 0.5
+                "time": 0.45
+            },
+            "trigger": {
+                "name": "radial",
+                "time": 0.55
             },
             "trigger": {
                 "effect": "char/spider/p3_power",
@@ -461,17 +669,15 @@
             "powerup_tag": "spider_web",
             "priority": "uninterruptable",
             "event": {
+                "arc": 180,
                 "damage": "%spider_p3_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
-                "knockback": "%spider_p3_kb",
+                "inherit": "radial",
                 "maxrange": 100,
                 "name": "radial",
                 "damageMod": {
-                    "name": "dmgmod_auto_knockback"
-                },
-                "damageMod": {
-                    "name": "dmgmod_environment"
+                    "name": "dmgmod_trip"
                 }
             },
             "trigger": {
@@ -486,7 +692,11 @@
             },
             "trigger": {
                 "name": "radial",
-                "time": 0.5
+                "time": 0.45
+            },
+            "trigger": {
+                "name": "radial",
+                "time": 0.55
             },
             "trigger": {
                 "boltslot": "ebolton_altweapon",
@@ -502,7 +712,7 @@
         },
         "FightMove": {
             "aireusetime": 6,
-            "aitype": "projectilenear",
+            "aitype": "projectile",
             "animenum": "ea_power4",
             "combotextfinisher": "Slingshot",
             "combotextstarter": "Flinging",
@@ -572,9 +782,11 @@
             "priority": 5,
             "trigger": {
                 "arc": 180,
+                "attacktype": "punch",
                 "damage": "%spider_p4_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
+                "inherit": "punch",
                 "knockback": "%spider_p4_kb",
                 "name": "punch",
                 "tag": 1,
@@ -648,9 +860,11 @@
             },
             "trigger": {
                 "arc": 180,
+                "attacktype": "kick",
                 "damage": 0,
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
+                "inherit": "kick",
                 "knockback": "%spider_p4_kb",
                 "maxrange": 72,
                 "name": "kick",
@@ -658,10 +872,12 @@
             },
             "trigger": {
                 "arc": 20,
+                "attacktype": "kick",
                 "damage": "%spider_p4_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "index": 2,
+                "inherit": "kick",
                 "name": "kick",
                 "time": 0.2,
                 "damageMod": {
@@ -684,16 +900,21 @@
             "priority": 5,
             "trigger": {
                 "arc": 20,
+                "attacktype": "kick",
                 "damage": "%spider_p4_dmg",
                 "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "inherit": "kick",
                 "name": "kick",
                 "time": 0
             },
             "trigger": {
                 "arc": 180,
+                "attacktype": "kick",
                 "damage": 0,
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
+                "inherit": "kick",
                 "knockback": "%spider_p4_kb",
                 "maxrange": 72,
                 "name": "kick",
@@ -753,6 +974,7 @@
                 "damage": "%spider_p5_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
+                "inherit": "punch",
                 "knockback": "%spider_p5_kb",
                 "maxrange": 60,
                 "name": "punch",
@@ -795,7 +1017,9 @@
             }
         },
         "FightMove": {
-            "animenum": "ea_jump_start",
+            "animenum": "ea_double_jump_start",
+            "combotextfinisher": "Swing",
+            "combotextstarter": "Swinging",
             "handler": "ch_move_jump",
             "lockangles": true,
             "name": "power5_end",
@@ -952,8 +1176,8 @@
         "FightMove": {
             "aireusetime": 20,
             "animenum": "ea_power6",
-            "combotextfinisher": "Nullifier",
-            "combotextstarter": "Nullifying",
+            "combotextfinisher": "Barrier",
+            "combotextstarter": "Protective",
             "icon": 8,
             "lockangles": true,
             "name": "power8",
@@ -1109,9 +1333,11 @@
                 "time": 0
             },
             "trigger": {
+                "attacktype": "punch",
                 "damage": "%spider_p9_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
+                "inherit": "punch",
                 "name": "teleport_punch",
                 "powerusage": 0,
                 "time": 0.33

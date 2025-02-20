@@ -422,6 +422,39 @@
             }
         },
         "FightMove": {
+            "animenum": "ea_jump_land",
+            "blendtime": 0.1,
+            "handler": "ch_move_jump_land",
+            "lockangles": true,
+            "lockchaining": false,
+            "lockspeed": true,
+            "name": "jumpland",
+            "noncombat": true,
+            "startchaintime": 0.5,
+            "trigger": {
+                "name": "footstep",
+                "sound": "char/thing_m/step",
+                "time": 0,
+                "volume": 0.25
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            }
+        },
+        "FightMove": {
             "animenum": "ea_jump_start",
             "handler": "ch_move_jump",
             "lockangles": true,
