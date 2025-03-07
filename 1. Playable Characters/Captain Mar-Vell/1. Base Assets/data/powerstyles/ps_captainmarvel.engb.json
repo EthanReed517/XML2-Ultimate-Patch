@@ -5,13 +5,15 @@
         "FightMove": {
             "aireusetime": 4,
             "aitype": "projectile",
-            "animenum": "ea_power2",
+            "animenum": "ea_power1",
             "combotextfinisher": "Bolt",
             "combotextstarter": "Photon",
             "icon": 0,
             "lockangles": true,
             "name": "power1",
+            "playspeed": 0.7,
             "priority": 5,
+            "turnrate": 0.5,
             "require": {
                 "cat": "skill",
                 "item": "captma_p1",
@@ -20,7 +22,7 @@
             "trigger": {
                 "bolt": "Bip01 L Hand",
                 "effect": "char/captma/p1_charge",
-                "fxlevel": 6,
+                "fxlevel": 1,
                 "name": "effect_sound",
                 "sound": "char/captma_m/p1_charge",
                 "time": 0
@@ -28,10 +30,25 @@
             "trigger": {
                 "bolt": "Bip01 R Hand",
                 "effect": "char/captma/p1_charge",
-                "fxlevel": 6,
+                "fxlevel": 1,
                 "name": "effect",
                 "time": 0
             },
+            "chain": {
+                "action": "Idle",
+                "result": "power1_end"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "projectile",
+            "animenum": "ea_power1_end",
+            "combotextfinisher": "Bolt",
+            "combotextstarter": "Photon",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1_end",
+            "priority": 5,
             "trigger": {
                 "name": "sound",
                 "sound": "char/captma_m/p1_power",
@@ -41,7 +58,7 @@
                 "actorbolt": "Bip01 R Hand",
                 "attack_bone_angles": "0 0 0",
                 "attack_bone_pos": "35 -4 47",
-                "attacktype": "blast",
+                "attacktype": "projectile",
                 "damage": "%captma_p1_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_energy",
@@ -69,14 +86,16 @@
         "FightMove": {
             "aireusetime": 8,
             "aitype": "aoe",
-            "animenum": "ea_power6",
+            "animenum": "ea_power4",
             "combotextfinisher": "Stars",
             "combotextstarter": "Cosmic",
+            "endchaintime": 0.8,
             "icon": 3,
             "lockangles": true,
             "name": "power2",
             "playspeed": 1.3,
             "priority": 5,
+            "startchaintime": 0.25,
             "require": {
                 "cat": "skill",
                 "item": "captma_p2",
@@ -87,27 +106,34 @@
                 "effect": "char/captma/p2_charge",
                 "fxlevel": 1,
                 "name": "effect",
-                "time": 0.3
+                "time": 0
             },
             "trigger": {
                 "bolt": "Bip01 R Hand",
                 "effect": "char/captma/p2_charge",
                 "fxlevel": 1,
                 "name": "effect",
-                "time": 0.3
+                "time": 0
             },
             "trigger": {
                 "effect": "char/captma/p2_charge",
                 "fxlevel": 2,
                 "name": "effect_sound",
                 "sound": "char/captma_m/p2_charge",
-                "time": 0.3
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/captma/p2_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/captma_m/p2_impact",
+                "time": 0
             },
             "trigger": {
                 "effect": "char/captma/p2_power",
                 "fxlevel": 1,
                 "name": "effect",
-                "time": 0.5
+                "time": 0.2
             },
             "trigger": {
                 "damage": "%captma_p2_dmg",
@@ -116,20 +142,13 @@
                 "maxrange": 120,
                 "name": "radial",
                 "powerusage": "%captma_p2_pwr",
-                "time": 0.5,
+                "time": 0.2,
                 "damagemod": {
                     "name": "dmgmod_popup"
                 },
                 "damagemod": {
                     "name": "dmgmod_drain_battery"
                 }
-            },
-            "trigger": {
-                "effect": "char/captma/p2_power",
-                "fxlevel": 2,
-                "name": "effect_sound",
-                "sound": "char/captma_m/p2_impact",
-                "time": 0.5
             },
             "chain": {
                 "action": "Idle",
@@ -139,7 +158,7 @@
         "FightMove": {
             "aireusetime": 5,
             "aitype": "beam",
-            "animenum": "ea_power6",
+            "animenum": "ea_power3",
             "combotextfinisher": "Beam",
             "combotextstarter": "Star",
             "icon": 2,
@@ -194,7 +213,7 @@
         "FightMove": {
             "aireusetime": 8,
             "aitype": "aoe",
-            "animenum": "ea_power3",
+            "animenum": "ea_power2",
             "combotextfinisher": "Slam",
             "combotextstarter": "Nega",
             "icon": 1,
@@ -206,6 +225,11 @@
                 "cat": "skill",
                 "item": "captma_p4",
                 "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/captma_m/p4_charge",
+                "time": 0.1
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
@@ -265,12 +289,13 @@
         "FightMove": {
             "aireusetime": 8,
             "aitype": "aoe",
-            "animenum": "ea_attack_jumpslam",
+            "animenum": "ea_power9",
             "combotextfinisher": "Impact",
             "combotextstarter": "Meteor",
             "icon": 8,
             "lockangles": true,
             "name": "power5",
+            "playspeed": 1.3,
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -304,14 +329,10 @@
             "trigger": {
                 "effect": "char/captma/p5_impact",
                 "fxlevel": 2,
-                "name": "effect",
+                "name": "effect_sound",
+                "sound": "char/captma_m/p5_impact",
                 "tag": 103,
                 "time": -1
-            },
-            "trigger": {
-                "name": "sound",
-                "sound": "char/captma_m/p5_impact",
-                "time": 0.69
             },
             "trigger": {
                 "enemynumber": 0,
@@ -372,7 +393,7 @@
         "FightMove": {
             "aireusetime": 20,
             "aitype": "buffself",
-            "animenum": "ea_power3",
+            "animenum": "ea_power6",
             "combotextfinisher": "Empowerment",
             "combotextstarter": "Cosmic",
             "icon": 5,
@@ -387,18 +408,14 @@
             "trigger": {
                 "effect": "char/captma/p6_charge",
                 "fxlevel": 1,
-                "name": "effect",
+                "name": "effect_sound",
+                "sound": "char/captma_m/p6_charge",
                 "time": 0
             },
             "trigger": {
                 "name": "sound",
-                "sound": "char/captma_m/p6_charge",
-                "time": 0.1
-            },
-            "trigger": {
-                "name": "sound",
                 "sound": "char/captma_m/p6_power",
-                "time": 0.5
+                "time": 0.54
             },
             "trigger": {
                 "apply_ally": "none",
@@ -406,7 +423,7 @@
                 "life": "%captma_p6_lif",
                 "name": "powerup",
                 "powerusage": "%captma_p6_pwr",
-                "time": 0.5,
+                "time": 0.54,
                 "special_fx": {
                     "bolt": "Bip01 L Hand",
                     "effect": "char/captma/p6_aura",
@@ -438,7 +455,7 @@
         "FightMove": {
             "aireusetime": 20,
             "aitype": "buffself",
-            "animenum": "ea_power4",
+            "animenum": "ea_power7",
             "combotextfinisher": "Phase",
             "combotextstarter": "Vanishing",
             "icon": 6,
@@ -483,6 +500,12 @@
                 "time": 0.4
             },
             "trigger": {
+                "effect": "char/captma/p7_power",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
                 "apply_ally": "none",
                 "apply_self": true,
                 "class": "callevents",
@@ -512,12 +535,6 @@
                 }
             },
             "trigger": {
-                "effect": "char/captma/p7_power",
-                "fxlevel": 4,
-                "name": "effect",
-                "time": 0.5
-            },
-            "trigger": {
                 "add": "cloaked",
                 "name": "disapear",
                 "tag": 10,
@@ -537,13 +554,13 @@
             }
         },
         "FightMove": {
-            "animenum": "ea_menu_action",
+            "animenum": "ea_power8",
             "combotextfinisher": "Decimation",
             "description": "BIG BANG",
             "icon": 7,
             "lockangles": true,
             "name": "power8",
-            "playspeed": 4,
+            "playspeed": 10,
             "priority": "uninterruptable",
             "require": {
                 "cat": "skill",
@@ -596,11 +613,11 @@
             "trigger": {
                 "name": "sound",
                 "sound": "char/captma_m/p8_power",
-                "time": 0.13
+                "time": 0.25
             },
             "trigger": {
                 "name": "set_visible",
-                "time": 0.8,
+                "time": 0.68,
                 "type": "ce_force_visibility",
                 "visible": true
             },
@@ -610,7 +627,7 @@
             }
         },
         "FightMove": {
-            "animenum": "ea_power6",
+            "animenum": "ea_power5",
             "combotextfinisher": "Conduit",
             "description": "ENERGY CONDUIT",
             "icon": 4,
