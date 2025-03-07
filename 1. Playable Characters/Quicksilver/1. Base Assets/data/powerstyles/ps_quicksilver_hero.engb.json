@@ -295,6 +295,8 @@
         "event": {
             "arc": 180,
             "damage": 1,
+            "damagescale": "none",
+            "damagetype": "dmg_physical",
             "inherit": "punch",
             "knockback": 245,
             "maxrange": 36,
@@ -306,6 +308,7 @@
         "event": {
             "attacktype": "punch",
             "damage": "%quick_whirl_dmg",
+            "damagescale": "none",
             "damagetype": "dmg_physical",
             "knockback": 245,
             "name": "self_vortex_punch",
@@ -776,29 +779,23 @@
                 "arc": 0,
                 "attacktype": "projectile",
                 "center": true,
-                "count": 1,
+                "count": "%quick_shuriken_num",
                 "damage": "%quick_p9_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_electricity",
                 "entity": "quick_blast",
                 "filename": "ents_quickhero",
-                "fulltargeting": true,
+                "inherit": "projectile",
                 "maxrange": 800,
                 "name": "projectile",
                 "offset": "25 0 10",
                 "powerusage": "%quick_p9_pwr",
                 "speed": 800,
-                "tag": 1,
                 "targetable": true,
                 "time": 0.49,
-                "victimeventtag": 100
-            },
-            "trigger": {
-                "life": "%quick_p9_stun",
-                "name": "powerup",
-                "shared_tag": "shared_stunned",
-                "tag": 100,
-                "time": -1
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
             },
             "chain": {
                 "action": "Idle",
