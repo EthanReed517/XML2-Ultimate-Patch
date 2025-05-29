@@ -412,7 +412,7 @@
         },
         "talent": {
             "descname": "Electro Proof",
-            "description": "Spider-Man wears his insulated Electro Proof suit, nullifying all $DMG_ELEMENTAL and $DMG_ENERGY for a time.",
+            "description": "Spider-Man wears his insulated Electro Proof suit, nullifying all $DMG_ELEMENTAL, $DMG_ELECTRICITY, and $DMG_ENERGY for a time.",
             "descshort": "Boost",
             "icon": 8,
             "icon_texture": "textures/ui/spiderman_icons2.png",
@@ -562,8 +562,8 @@
             }
         },
         "talent": {
-            "descname": "Spider Reflexes",
-            "description": "Spider-Man's superhuman reflexes give him a chance to dodge all forms of attack.",
+            "descname": "Spider Physiology",
+            "description": "Spider-Man's physiology allows him to heal over time and gives him a chance to dodge all forms of attack.",
             "descshort": "Passive",
             "icon": 12,
             "icon_texture": "textures/ui/spiderman_icons2.png",
@@ -572,41 +572,70 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "spider_pass1_req",
-                    "value": 21
+                    "value": 1
                 },
                 "talentvalue": {
                     "level": 15,
                     "name": "spider_pass1_req",
-                    "value": 35
+                    "value": 15
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "spider_pass1_chance",
+                    "name": "spider_pass1_cne",
                     "value": 0.02
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "spider_pass1_chance",
+                    "name": "spider_pass1_cne",
                     "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "spd_regen_hp",
+                    "value": 0.0017
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "spd_regen_hp",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "spd_regen_hp_p",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "spd_regen_hp_p",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "spd_regen_hp_t",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "spd_regen_hp_t",
+                    "value": 6
                 }
             },
             "level": {
                 "count": 15,
-                "description": "%spider_pass1_chance:p chance to dodge",
+                "description": "%spider_pass1_hp_p:f% of max $HP every %spider_pass1_hp_t seconds\\n%spider_pass1_cne:p chance to dodge",
                 "require": {
                     "cat": "level",
                     "level": "%spider_pass1_req"
-                },
-                "require": {
-                    "cat": "skill",
-                    "item": "spider_p7",
-                    "level": 1
                 },
                 "powerup": {
                     "life": -1,
                     "affecter": {
                         "attribute": "def_dodge",
-                        "level": "%spider_pass1_chance"
+                        "level": "%spider_pass1_cne"
+                    },
+                    "affecter": {
+                        "attribute": "health_regen_pct",
+                        "level": "%spider_pass1_hp"
                     }
                 }
             }
@@ -659,7 +688,7 @@
                 },
                 "require": {
                     "cat": "skill",
-                    "item": "mutantmaster",
+                    "item": "supermaster",
                     "level": 1
                 },
                 "powerup": {
@@ -685,71 +714,6 @@
                         "attribute": "atk_critical",
                         "level": "%spider_pass2_crit",
                         "scope_node": "spider_power9"
-                    }
-                }
-            }
-        },
-        "talent": {
-            "descname": "Regeneration",
-            "description": "Heals over time.",
-            "descshort": "Passive",
-            "icon": 14,
-            "icon_texture": "textures/ui/spiderman_icons2.png",
-            "name": "spd_regen",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "spd_regen_req",
-                    "value": 1
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "spd_regen_req",
-                    "value": 15
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "spd_regen_health",
-                    "value": 0.0017
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "spd_regen_health",
-                    "value": 0.01
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "spd_regen_health_p",
-                    "value": 1
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "spd_regen_health_p",
-                    "value": 6
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "spd_regen_health_t",
-                    "value": 6
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "spd_regen_health_t",
-                    "value": 6
-                }
-            },
-            "level": {
-                "count": 15,
-                "description": "%spd_regen_health_p:f% of max $HP every %spd_regen_health_t seconds",
-                "require": {
-                    "cat": "level",
-                    "level": "%spd_regen_req"
-                },
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "attribute": "health_regen_pct",
-                        "level": "%spd_regen_health"
                     }
                 }
             }

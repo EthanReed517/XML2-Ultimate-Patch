@@ -8,10 +8,6 @@
                 "powerup": {
                     "life": -1,
                     "affecter": {
-                        "attribute": "resist_radiation",
-                        "level": 0.05
-                    },
-                    "affecter": {
                         "attribute": "resist_mental",
                         "level": 0.1
                     }
@@ -260,7 +256,7 @@
             }
         },
         "talent": {
-            "descname": "Hulk Clap",
+            "descname": "Hulk Thunderclap",
             "description": "Hulk claps his hands, knocking back and immobilizing any enemies within range.",
             "descshort": "Radial",
             "icon": 12,
@@ -731,7 +727,7 @@
             },
             "level": {
                 "count": 15,
-                "description": "+%hulk_pass1_resist:p Radiation resistance\\n+%hulk_pass1_chn:p chance to reflect $DMG_RADIATION\\n%hulk_pass1_ep:s $EP regeneration",
+                "description": "%hulk_pass1_ep:s $EP regeneration\\n+%hulk_pass1_resist:p Radiation resistance\\n+%hulk_pass1_chn:p chance to reflect $DMG_RADIATION",
                 "require": {
                     "cat": "level",
                     "level": "%hulk_pass1_req"
@@ -739,13 +735,13 @@
                 "powerup": {
                     "life": -1,
                     "affecter": {
-                        "attribute": "resist_radiation",
-                        "level": "%hulk_pass1_resist"
-                    },
-                    "affecter": {
                         "affect_type": "scale",
                         "attribute": "energy_regen",
                         "level": "%hulk_pass1_ep"
+                    },
+                    "affecter": {
+                        "attribute": "resist_radiation",
+                        "level": "%hulk_pass1_resist"
                     },
                     "affecter": {
                         "affect_type": "scale",

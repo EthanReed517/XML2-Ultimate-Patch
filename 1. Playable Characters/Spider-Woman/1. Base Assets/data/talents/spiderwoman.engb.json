@@ -1,20 +1,6 @@
 {
     "talents": {
         "talent": {
-            "hidden": true,
-            "name": "sw_resist",
-            "level": {
-                "count": 1,
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "attribute": "resist_radiation",
-                        "level": 1
-                    }
-                }
-            }
-        },
-        "talent": {
             "descname": "Venom Blast",
             "description": "Spider-Woman fires a piercing beam of Bio-Electricity. Drains batteries.",
             "descshort": "Beam",
@@ -687,7 +673,7 @@
         },
         "talent": {
             "descname": "Bio-Electric Mastery",
-            "description": "Increases damage and Critical chance of all Bio-Electric powers.",
+            "description": "Increases damage and Critical chance of all Bio-Electric powers and increases her resistance to $DMG_RADIATION.",
             "descshort": "Passive",
             "icon": 11,
             "icon_texture": "textures/ui/spiderwoman_icons2.png",
@@ -722,18 +708,28 @@
                     "level": 15,
                     "name": "sw_ps3_crit",
                     "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "sw_ps3_resist",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "sw_ps3_resist",
+                    "value": 1
                 }
             },
             "level": {
                 "count": 15,
-                "description": "%sw_ps3_dmg:s $DMG_ELECTRICITY\\n+%sw_ps3_crit:p Critical chance",
+                "description": "%sw_ps3_dmg:s $DMG_ELECTRICITY\\n+%sw_ps3_crit:p Critical chance\\n+%sw_ps3_resist:p Radiation resistance",
                 "require": {
                     "cat": "level",
                     "level": "%sw_ps3_req"
                 },
                 "require": {
                     "cat": "skill",
-                    "item": "supermaster",
+                    "item": "mutantmaster",
                     "level": 1
                 },
                 "powerup": {
@@ -748,6 +744,10 @@
                         "attribute": "atk_critical",
                         "level": "%sw_ps3_crit",
                         "scope_damage": "dmg_electricity"
+                    },
+                    "affecter": {
+                        "attribute": "resist_radiation",
+                        "level": "%sw_ps3_resist"
                     }
                 }
             }

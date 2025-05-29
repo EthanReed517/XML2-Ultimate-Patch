@@ -39,7 +39,6 @@
                 "name": "beam",
                 "pierce": true,
                 "powerusage": "%hav_beam_pwr",
-                "spawneffect": "char/havok/p1_rings",
                 "time": 0.5,
                 "victimeventtag": 10,
                 "damageMod": {
@@ -73,18 +72,14 @@
                 "level": 1
             },
             "trigger": {
-                "name": "sound",
+                "bolt": "Bip01 R Hand",
+                "effect": "char/havok/p2_glow",
+                "name": "effect_sound",
                 "sound": "char/havok_m/p2_charge",
                 "time": 0
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
-                "effect": "char/havok/p2_glow",
-                "name": "effect",
-                "time": 0
-            },
-            "trigger": {
-                "bolt": "Bip01 R Hand",
                 "effect": "char/havok/p2_glow",
                 "name": "effect",
                 "time": 0
@@ -98,7 +93,12 @@
                 "effect": "char/havok/p2_power",
                 "fxlevel": 1,
                 "name": "effect",
-                "time": 0.4
+                "time": 0.5
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/havok_m/p2_power",
+                "time": 0.52
             },
             "trigger": {
                 "arc": 180,
@@ -106,10 +106,11 @@
                 "damagescale": "none",
                 "damagetype": "dmg_energy",
                 "knockback": "%hav_blast_knb",
-                "maxrange": 144,
+                "inherit": "radial",
+                "maxrange": 240,
                 "name": "fry",
                 "powerusage": "%hav_blast_pwr",
-                "time": 0.4,
+                "time": 0.7,
                 "damageMod": {
                     "name": "dmgmod_energize"
                 },
@@ -122,11 +123,6 @@
                 "damageMod": {
                     "name": "dmgmod_drain_battery"
                 }
-            },
-            "trigger": {
-                "name": "sound",
-                "sound": "char/havok_m/p2_power",
-                "time": 0.52
             },
             "chain": {
                 "action": "Idle",
@@ -173,15 +169,20 @@
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
-                "effect": "char/havok/p3_charge",
+                "effect": "char/havok/p2_glow",
                 "name": "effect",
                 "time": 0
             },
             "trigger": {
                 "bolt": "Bip01 R Hand",
-                "effect": "char/havok/p3_charge",
+                "effect": "char/havok/p2_glow",
                 "name": "effect",
                 "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/havok_m/p3_power",
+                "time": 0.25
             },
             "trigger": {
                 "actorbolt": "Bip01 L Hand",
@@ -191,13 +192,6 @@
                 "powerusage": "%hav_multi_pwr",
                 "time": 0.25,
                 "victimeventtag": 20
-            },
-            "trigger": {
-                "bolt": "Bip01 L Hand",
-                "effect": "char/havok/p3_charge",
-                "name": "effect_sound",
-                "sound": "char/havok_m/p3_power",
-                "time": 0.25
             },
             "trigger": {
                 "actorbolt": "Bip01 R Hand",
@@ -230,25 +224,52 @@
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
-                "effect": "char/havok/p3_charge",
+                "effect": "char/havok/p2_glow",
                 "name": "effect",
                 "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/havok_m/p5_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "damage": 0,
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "hiteffect": "char/havok/p1_impact",
+                "name": "punch",
+                "powerusage": "%hav_detonate_pwr",
+                "time": 0.75,
+                "victimeventtag": 5,
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                },
+                "damageMod": {
+                    "name": "dmgmod_no_atk_roll"
+                },
+                "damageMod": {
+                    "name": "dmgmod_unblockable"
+                }
             },
             "trigger": {
                 "allow_actors": true,
                 "allow_non_actors": true,
                 "center_bolt": true,
                 "class": "time_bomb",
-                "damage": "%hav_detonate_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_energy",
-                "radius": 144,
-                "func_deactivate": "timebomb_deactivate",
+                "explodedamagetype": "dmg_energy",
+                "explosion_damage": "%hav_detonate_dmg",
+                "explosion_knockback": "%hav_detonate_kb",
+                "explosion_radius": 144,
                 "life": 3,
                 "name": "powerup",
-                "powerup": "special",
                 "tag": 5,
                 "time": -1,
+                "damageMod": {
+                    "name": "dmgmod_energize"
+                },
                 "special_fx": {
                     "center_bolt": true,
                     "effect": "char/havok/p5_power",
@@ -264,19 +285,6 @@
                 "damageMod": {
                     "name": "dmgmod_popup"
                 }
-            },
-            "trigger": {
-                "name": "sound",
-                "sound": "char/havok_m/p5_power",
-                "time": 0.5
-            },
-            "trigger": {
-                "damage": 1,
-                "damagetype": "dmg_energy",
-                "name": "punch",
-                "powerusage": "%hav_detonate_pwr",
-                "time": 0.75,
-                "victimeventtag": 5
             },
             "chain": {
                 "action": "Idle",
@@ -345,12 +353,13 @@
         "FightMove": {
             "aireusetime": 20,
             "aitype": "buffself",
-            "animenum": "ea_power13",
+            "animenum": "ea_power4",
             "combotextfinisher": "Absorption",
             "combotextstarter": "Energetic",
             "icon": 5,
             "lockangles": true,
             "name": "power7",
+            "playspeed": 1.1,
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -361,6 +370,18 @@
                 "name": "sound",
                 "sound": "char/havok_m/p7_power",
                 "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/havok/p2_glow",
+                "name": "effect",
+                "time": 0.1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/havok/p2_glow",
+                "name": "effect",
+                "time": 0.1
             },
             "trigger": {
                 "apply_ally": "none",
@@ -392,7 +413,7 @@
         "FightMove": {
             "aireusetime": 20,
             "aitype": "buffself",
-            "animenum": "ea_power3",
+            "animenum": "ea_power2",
             "combotextfinisher": "Synergy",
             "combotextstarter": "Harmonic",
             "icon": 6,
@@ -430,7 +451,7 @@
                 "class": "add_attack",
                 "damagepercent": "%hav_fury_dmg",
                 "damagetype": "dmg_energy",
-                "life": "%hav_fury_life",
+                "life": "%hav_fury_lif",
                 "name": "powerup",
                 "no_shadow": true,
                 "powerusage": "%hav_fury_pwr",
@@ -473,13 +494,12 @@
         "FightMove": {
             "aireusetime": 20,
             "aitype": "buffself",
-            "animenum": "ea_power5",
+            "animenum": "ea_power7",
             "combotextfinisher": "Command",
             "combotextstarter": "Tactical",
             "icon": 7,
             "lockangles": true,
             "name": "power9",
-            "playspeed": 1.25,
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -487,14 +507,8 @@
                 "level": 1
             },
             "trigger": {
-                "bolt": "Bip01 L Hand",
-                "effect": "char/havok/p3_charge",
-                "name": "effect",
-                "time": 0
-            },
-            "trigger": {
                 "bolt": "Bip01 R Hand",
-                "effect": "char/havok/p3_charge",
+                "effect": "char/havok/p2_glow",
                 "name": "effect_sound",
                 "sound": "char/havok_m/p9_power",
                 "time": 0
@@ -502,11 +516,11 @@
             "trigger": {
                 "apply_ally": "all",
                 "apply_self": true,
-                "life": "%hav_p9_life",
+                "life": "%hav_p9_lif",
                 "name": "powerup",
                 "no_shadow": true,
                 "powerusage": "%hav_p9_pwr",
-                "time": 0.95,
+                "time": 0.5,
                 "special_fx": {
                     "effect": "char/havok/p9_aura",
                     "fxlevel": 2,
@@ -524,7 +538,7 @@
             }
         },
         "FightMove": {
-            "animenum": "ea_attack_ground",
+            "animenum": "ea_power9",
             "blendtime": 0,
             "combotextfinisher": "Pulse",
             "description": "PLASMA PULSE",
@@ -553,6 +567,7 @@
                 "damage": "%havok_p10_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_energy",
+                "inherit": "radial",
                 "knockback": 620,
                 "name": "radial",
                 "damageMod": {
@@ -567,14 +582,14 @@
             },
             "trigger": {
                 "bolt": "Bip01 L Hand",
-                "effect": "char/havok/p3_charge",
+                "effect": "char/havok/p2_glow",
                 "name": "effect_sound",
                 "sound": "char/havok_m/p10_power",
                 "time": 0
             },
             "trigger": {
                 "bolt": "Bip01 R Hand",
-                "effect": "char/havok/p3_charge",
+                "effect": "char/havok/p2_glow",
                 "name": "effect",
                 "time": 0
             },
@@ -604,7 +619,7 @@
             }
         },
         "FightMove": {
-            "animenum": "ea_power2",
+            "animenum": "ea_power8",
             "blendtime": 0,
             "combotextfinisher": "Charge",
             "description": "PLASMA CHARGE",

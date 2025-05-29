@@ -112,6 +112,101 @@
             }
         },
         "FightMove": {
+            "animenum": "ea_attack_light1",
+            "blendtime": 0.05,
+            "endchaintime": 1,
+            "lockangles": true,
+            "name": "attacklight1",
+            "playspeed": 1,
+            "startchaintime": 0.5,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.18,
+                "name": "trail",
+                "time": 0.15
+            },
+            "trigger": {
+                "damagetype": "dmg_blade",
+                "knockback": 0,
+                "name": "punch",
+                "time": 0.33
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight2"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attacktrip1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_stun2",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackstun2",
+            "playspeed": 1,
+            "startchaintime": 0.5,
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 20,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "life": 0.3,
+                "name": "trail",
+                "time": 0.15
+            },
+            "trigger": {
+                "damagetype": "dmg_blade",
+                "name": "kick",
+                "time": 0.34
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackstun3"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
             "aireusetime": 3,
             "aitype": "melee",
             "animenum": "ea_power1",
@@ -134,13 +229,13 @@
                 "time": 0.22
             },
             "trigger": {
+                "angle": 0,
                 "attacktype": "punch",
                 "damagetype": "dmg_blade",
                 "damage": "%ladyds_p1_dmg",
                 "damagescale": "none",
                 "index": 1,
                 "hiteffect": "char/ladyds/p4_impact",
-                "knockback": 190,
                 "maxrange": 95,
                 "name": "punch",
                 "time": 0.24
@@ -153,34 +248,25 @@
                 "time": 0.42
             },
             "trigger": {
+                "angle": 0,
                 "attacktype": "punch",
                 "damagetype": "dmg_blade",
                 "damage": "%ladyds_p1_dmg",
                 "damagescale": "none",
                 "hiteffect": "char/ladyds/p4_impact",
                 "index": 2,
-                "knockback": 305,
                 "maxrange": 105,
                 "name": "punch",
                 "powerusage": "%ladyds_p1_pwr",
                 "tag": 2,
-                "time": 0.5,
-                "damageMod": {
-                    "name": "dmgmod_auto_knockback"
-                }
-            },
-            "trigger": {
-                "effect": "char/ladyds/p1_charge",
-                "fxlevel": 3,
-                "name": "effect_sound",
-                "sound": "char/ladyds_m/p1_impact",
-                "time": 0.65
+                "time": 0.5
             },
             "trigger": {
                 "bolt": "Bip01 L Toe0",
                 "effect": "char/ladyds/p1_charge",
                 "fxlevel": 4,
-                "name": "effect",
+                "name": "effect_sound",
+                "sound": "char/ladyds_m/p1_impact",
                 "time": 0.65
             },
             "trigger": {
@@ -189,6 +275,22 @@
                 "fxlevel": 4,
                 "name": "effect",
                 "time": 0.65
+            },
+            "trigger": {
+                "angle": 0,
+                "attacktype": "kick",
+                "damage": "%ladyds_p1_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "height": 5,
+                "index": 3,
+                "inherit": "kick",
+                "knockback": "%ladyds_p1_kb",
+                "name": "kick",
+                "time": 0.67,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
             },
             "chain": {
                 "action": "Idle",

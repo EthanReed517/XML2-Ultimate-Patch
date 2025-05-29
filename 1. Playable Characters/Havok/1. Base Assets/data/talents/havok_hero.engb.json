@@ -1,28 +1,6 @@
 {
     "talents": {
         "talent": {
-            "hidden": true,
-            "name": "havok_resist",
-            "level": {
-                "count": 1,
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "attribute": "resist_energy",
-                        "level": 0.05
-                    },
-                    "affecter": {
-                        "attribute": "resist_radiation",
-                        "level": 0.05
-                    },
-                    "affecter": {
-                        "attribute": "resist_fire",
-                        "level": 0.05
-                    }
-                }
-            }
-        },
-        "talent": {
             "descname": "Plasma Beam",
             "description": "Havok absorbs ambient Energy and converts it into Plasma Energy, which he channels through his body and discharges it, knocking back enemies and piercing through them. Drains batteries.",
             "descshort": "Beam",
@@ -191,7 +169,7 @@
         },
         "talent": {
             "descname": "Plasma Detonation",
-            "description": "Havok fills the target with Plasma Energy, which explodes after a time, causing popup.",
+            "description": "Havok fills the target with Plasma Energy, which explodes after a time, popping them up and knocking back nearby enemies.",
             "descshort": "Special",
             "icon": 3,
             "icon_texture": "textures/ui/havok_icons2.png",
@@ -220,6 +198,16 @@
                 },
                 "talentvalue": {
                     "level": 1,
+                    "name": "hav_detonate_kb",
+                    "value": 240
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "hav_detonate_kb",
+                    "value": 450
+                },
+                "talentvalue": {
+                    "level": 1,
                     "name": "hav_detonate_pwr",
                     "value": 48
                 },
@@ -231,7 +219,7 @@
             },
             "level": {
                 "count": 11,
-                "description": "%hav_detonate_dmg $DMG_ENERGY\\n%hav_detonate_pwr $EP",
+                "description": "%hav_detonate_dmg $DMG_ENERGY\\n%hav_detonate_kb $KB\\n%hav_detonate_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%hav_detonate_req"
@@ -404,12 +392,12 @@
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "hav_fury_life",
+                    "name": "hav_fury_lif",
                     "value": 13
                 },
                 "talentvalue": {
                     "level": 16,
-                    "name": "hav_fury_life",
+                    "name": "hav_fury_lif",
                     "value": 55
                 },
                 "talentvalue": {
@@ -425,7 +413,7 @@
             },
             "level": {
                 "count": 16,
-                "description": "+%hav_fury_dmg:p $DMG_ENERGY\\n%hav_fury_ar:s $AR\\n%hav_fury_life seconds\\n%hav_fury_pwr $EP",
+                "description": "+%hav_fury_dmg:p $DMG_ENERGY\\n%hav_fury_ar:s $AR\\n%hav_fury_lif seconds\\n%hav_fury_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%hav_fury_req"
@@ -455,12 +443,12 @@
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "hav_p9_life",
+                    "name": "hav_p9_lif",
                     "value": 13
                 },
                 "talentvalue": {
                     "level": 16,
-                    "name": "hav_p9_life",
+                    "name": "hav_p9_lif",
                     "value": 55
                 },
                 "talentvalue": {
@@ -504,7 +492,7 @@
             },
             "level": {
                 "count": 16,
-                "description": "+%hav_p9_skill all learned skills\\n%hav_p9_life seconds\\n%hav_p9_pwr $EP",
+                "description": "+%hav_p9_skill all learned skills\\n%hav_p9_lif seconds\\n%hav_p9_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%hav_p9_req"
@@ -737,7 +725,7 @@
         },
         "talent": {
             "descname": "Plasma Immunity",
-            "description": "Increases resistances to $DMG_ENERGY, $DMG_RADIATION, and $DMG_FIRE.",
+            "description": "Increases Havok's resistances to $DMG_ENERGY, $DMG_FIRE, and $DMG_RADIATION.",
             "descshort": "Passive",
             "icon": 12,
             "icon_texture": "textures/ui/havok_icons2.png",
@@ -766,7 +754,7 @@
             },
             "level": {
                 "count": 15,
-                "description": "+%havok_ionize_resist:p Energy resistance\\n+%havok_ionize_resist:p Radiation resistance\\n+%havok_ionize_resist:p Fire resistance",
+                "description": "+%havok_ionize_resist:p Energy resistance\\n+%havok_ionize_resist:p Fire resistance\\n+%havok_ionize_resist:p Radiation resistance",
                 "require": {
                     "cat": "level",
                     "level": "%havok_ionize_req"
@@ -778,11 +766,11 @@
                         "level": "%havok_ionize_resist"
                     },
                     "affecter": {
-                        "attribute": "resist_radiation",
+                        "attribute": "resist_fire",
                         "level": "%havok_ionize_resist"
                     },
                     "affecter": {
-                        "attribute": "resist_fire",
+                        "attribute": "resist_radiation",
                         "level": "%havok_ionize_resist"
                     }
                 }
