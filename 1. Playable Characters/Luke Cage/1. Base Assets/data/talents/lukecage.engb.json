@@ -1,20 +1,6 @@
 {
     "talents": {
         "talent": {
-            "hidden": true,
-            "name": "lukec_resist",
-            "level": {
-                "count": 1,
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "attribute": "resist_all",
-                        "level": 0.05
-                    }
-                }
-            }
-        },
-        "talent": {
             "descname": "Jab",
             "description": "Luke Cage throws a powerful punch, knocking his enemy back.",
             "descshort": "Melee",
@@ -600,10 +586,10 @@
             }
         },
         "talent": {
-            "descname": "Unbreakable",
-            "description": "Increases Luke Cage's resistance to all types of damage.",
+            "descname": "Tough Skin",
+            "description": "Luke Cage's iron-like skin increases his chance to dodge all forms of attack and increases his resistance to all types of damage.",
             "descshort": "Passive",
-            "icon": 10,
+            "icon": 11,
             "icon_texture": "textures/ui/lukecage_icons2.png",
             "name": "lukec_pass1",
             "talentvalues": {
@@ -619,6 +605,16 @@
                 },
                 "talentvalue": {
                     "level": 1,
+                    "name": "lukec_pass1_cnc",
+                    "value": 0.02
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "lukec_pass1_cnc",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 1,
                     "name": "lukec_pass1_pct",
                     "value": 0.1
                 },
@@ -630,7 +626,7 @@
             },
             "level": {
                 "count": 15,
-                "description": "+%lukec_pass1_pct:p all resistances",
+                "description": "%lukec_pass1_cnc:p chance to dodge\\n+%lukec_pass1_pct:p all resistances",
                 "require": {
                     "cat": "level",
                     "level": "%lukec_pass1_req"
@@ -643,58 +639,12 @@
                 "powerup": {
                     "life": -1,
                     "affecter": {
+                        "attribute": "def_dodge",
+                        "level": "%lukec_pass1_cnc"
+                    },
+                    "affecter": {
                         "attribute": "resist_all",
                         "level": "%lukec_pass1_pct"
-                    }
-                }
-            }
-        },
-        "talent": {
-            "descname": "Tough Skin",
-            "description": "Luke Cage's iron-like skin increases his chance to dodge all forms of attack.",
-            "descshort": "Passive",
-            "icon": 11,
-            "icon_texture": "textures/ui/lukecage_icons2.png",
-            "name": "lukec_pass2",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "lukec_pass2_req",
-                    "value": 21
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "lukec_pass2_req",
-                    "value": 35
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "lukec_pass2_cnc",
-                    "value": 0.02
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "lukec_pass2_cnc",
-                    "value": 0.25
-                }
-            },
-            "level": {
-                "count": 15,
-                "description": "%lukec_pass2_cnc:p chance to dodge",
-                "require": {
-                    "cat": "level",
-                    "level": "%lukec_pass2_req"
-                },
-                "require": {
-                    "cat": "skill",
-                    "item": "lukec_pass1",
-                    "level": 1
-                },
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "attribute": "def_dodge",
-                        "level": "%lukec_pass2_cnc"
                     }
                 }
             }

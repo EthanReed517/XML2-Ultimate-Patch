@@ -436,7 +436,7 @@
         },
         "talent": {
             "descname": "Aftershocks",
-            "description": "Charging his body, Avalanche does more and more damage with each attack.",
+            "description": "Charging his body, Avalanche does more and more $DMG_PHYSICAL with each attack.",
             "descshort": "Boost",
             "icon": 12,
             "icon_texture": "textures/ui/avalanche_icons2.png",
@@ -567,7 +567,7 @@
             },
             "level": {
                 "count": 14,
-                "description": "%aval_vshie_def:s $DMG_ELEMENTAL taken\\n%aval_vshie_dmg $DMG_PHYSICAL\\n%aval_vshie_lif seconds\\n%aval_vshie_pwr $EP",
+                "description": "%aval_vshie_def:s $DMG_ELEMENTAL taken\\n%aval_vshie_dmg $DMG_PHYSICAL upon contact\\n%aval_vshie_lif seconds\\n%aval_vshie_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%aval_vshie_req"
@@ -595,7 +595,7 @@
                     "value": 7
                 },
                 "talentvalue": {
-                    "level": 18,
+                    "level": 14,
                     "name": "aval_shie_req",
                     "value": 58
                 },
@@ -605,7 +605,7 @@
                     "value": 64
                 },
                 "talentvalue": {
-                    "level": 18,
+                    "level": 14,
                     "name": "aval_shie_pwr",
                     "value": 380
                 },
@@ -615,7 +615,7 @@
                     "value": 0.45
                 },
                 "talentvalue": {
-                    "level": 18,
+                    "level": 14,
                     "name": "aval_shie_dmg",
                     "value": 0.87
                 },
@@ -625,7 +625,7 @@
                     "value": 1.1
                 },
                 "talentvalue": {
-                    "level": 18,
+                    "level": 14,
                     "name": "aval_shie_dma",
                     "value": 1.2
                 },
@@ -635,131 +635,17 @@
                     "value": 13
                 },
                 "talentvalue": {
-                    "level": 18,
+                    "level": 14,
                     "name": "aval_shie_lif",
                     "value": 55
                 }
             },
             "level": {
-                "count": 18,
+                "count": 14,
                 "description": "%aval_shie_dmg:p $DMG_ENERGY absorbed\\n%aval_shie_dma:s $DMG_PHYSICAL\\n%aval_shie_lif seconds\\n%aval_shie_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%aval_shie_req"
-                }
-            }
-        },
-        "talent": {
-            "descname": "Defensive Stance",
-            "description": "Avalanche's combat training increases his chance to dodge non-powered Melee attacks.",
-            "descshort": "Passive",
-            "icon": 8,
-            "icon_texture": "textures/ui/avalanche_icons2.png",
-            "name": "aval_resi",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "aval_resi_req",
-                    "value": 7
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "aval_resi_req",
-                    "value": 21
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "aval_resi_chance",
-                    "value": 0.08
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "aval_resi_chance",
-                    "value": 0.5
-                }
-            },
-            "level": {
-                "count": 15,
-                "description": "%aval_resi_chance:p chance to dodge",
-                "require": {
-                    "cat": "level",
-                    "level": "%aval_resi_req"
-                },
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "attribute": "def_dodge",
-                        "level": "%aval_resi_chance",
-                        "scope": {
-                            "scope_attack": "punch"
-                        },
-                        "scope": {
-                            "scope_attack": "kick"
-                        },
-                        "scope": {
-                            "scope_non_powers": true
-                        }
-                    }
-                }
-            }
-        },
-        "talent": {
-            "descname": "Seismic Combat",
-            "description": "Adds $DMG_PHYSICAL to all non-powered Melee attacks.",
-            "descshort": "Passive",
-            "icon": 9,
-            "icon_texture": "textures/ui/avalanche_icons2.png",
-            "name": "aval_fist",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "aval_fist_req",
-                    "value": 1
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "aval_fist_req",
-                    "value": 15
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "aval_fist_dscale",
-                    "value": 0.5
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "aval_fist_dscale",
-                    "value": 3.6
-                }
-            },
-            "level": {
-                "count": 15,
-                "description": "%aval_fist_dscale:p $DMG_PHYSICAL",
-                "require": {
-                    "cat": "level",
-                    "level": "%aval_fist_req"
-                },
-                "powerup": {
-                    "class": "add_attack",
-                    "damagepercent": "%aval_fist_dscale",
-                    "damagetype": "dmg_physical",
-                    "life": -1,
-                    "special_fx": {
-                        "effect": "char/avalan/special_trail",
-                        "how_used": "custom"
-                    },
-                    "affecter": {
-                        "attribute": "powerup_scope",
-                        "scope": {
-                            "scope_attack": "punch"
-                        },
-                        "scope": {
-                            "scope_attack": "kick"
-                        },
-                        "scope": {
-                            "scope_non_powers": true
-                        }
-                    }
                 }
             }
         },
@@ -825,7 +711,7 @@
         },
         "talent": {
             "descname": "Seismic Mastery",
-            "description": "Increases damage and Critical chance of all Seismic attacks.",
+            "description": "Increases damage and Critical chance of all powers.",
             "descshort": "Passive",
             "icon": 10,
             "icon_texture": "textures/ui/avalanche_icons2.png",
