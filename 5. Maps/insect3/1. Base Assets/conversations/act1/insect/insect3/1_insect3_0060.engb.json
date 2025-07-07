@@ -1,0 +1,51 @@
+{
+    "conversation": {
+        "startCondition": {
+            "noreturntogamecamatend": true,
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/femalegenoshaprisoner/1_insect3_060_010",
+                    "text": "%GenoshaPrisoner_b%: Quickly, get out of here! Apocalypse mined the seawall with bombs! If he detonates them, the entire city will flood!",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: Blink, can you teleport this woman to the Sanctuary?",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "scriptfile": "act1/insect/insect3/remove_prisoner",
+                                    "soundtoplay": "voice/blink/1_insect3_060_012",
+                                    "text": "%Blink%: You got it! Teleporting now.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "text": "%PLAYER%: Professor Xavier, we just had a report that Apocalypse has placed bombs on the seawall of Genosha.",
+                                            "textb": "%PLAYER%: Xavier, we just heard Apocalypse has placed bombs on the seawall of Genosha.",
+                                            "response": {
+                                                "chosenscriptfile": "common/briefings/mark_briefing1_50",
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "soundtoplay": "voice/profx/1_insect3_060_021",
+                                                    "soundtoplayb": "voice/profx/1_insect3_060_031",
+                                                    "text": "%ProfX%: When time permits, return to the Sanctuary and meet with me. We should discuss this in greater detail.",
+                                                    "textb": "%ProfX%: This is most distressing. Meet with me at the Sanctuary and we can discuss it in greater detail.",
+                                                    "response": {
+                                                        "chosenscriptfile": "act1/insect/insect3/1_insect3_0060_end",
+                                                        "conversationend": true,
+                                                        "text": "%BLANK%"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
