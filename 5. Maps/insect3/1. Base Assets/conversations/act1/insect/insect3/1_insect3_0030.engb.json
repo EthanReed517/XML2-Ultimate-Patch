@@ -1,0 +1,138 @@
+{
+    "conversation": {
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/zealot/1_insect3_030_010",
+                    "text": "%Zealot%: It appears my esteemed colleague, Magneto, is even more delusional than I had thought. Don't you people realize you're following a madman?",
+                    "response": {
+                        "tagjump": "autogen_tag_2",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_2",
+                    "text": "%PLAYER%",
+                    "textb": "%PLAYER%",
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Who are you?",
+                        "line": {
+                            "soundtoplay": "voice/zealot/1_insect3_030_021",
+                            "text": "%Zealot%: My name is Zealot. I used to be on the ruling council of Genosha.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: But now you're working for Apocalypse.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/zealot/1_insect3_030_023",
+                                            "text": "%Zealot%: I've always been an opponent of Magneto - his lies were poisoning all mutant kind. Now that Apocalypse is here, things will be set right.",
+                                            "response": {
+                                                "chosenscriptfile": "setGameFlag('tunnels', 26,1)",
+                                                "tagjump": "autogen_tag_2",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Zealot! You joined Apocalypse?",
+                        "line": {
+                            "soundtoplay": "voice/zealot/1_insect3_030_031",
+                            "soundtoplayb": "voice/zealot/1_insect3_030_031",
+                            "text": "%Zealot%: Why should it surprise you? I've always been a vocal opponent of Magneto.",
+                            "textb": "%Zealot%: Why should it surprise you? I've always been a vocal opponent of Magneto.",
+                            "response": {
+                                "text": "%PLAYER%: But you were on the ruling council for Genosha!",
+                                "line": {
+                                    "soundtoplay": "voice/zealot/1_insect3_030_033",
+                                    "text": "%Zealot%: I do what I must for the good of Genosha. Magneto has gone too far with his lies and deceit. Apocalypse is here to correct that.",
+                                    "response": {
+                                        "chosenscriptfile": "setGameFlag('tunnels', 26,1)",
+                                        "tagjump": "autogen_tag_2",
+                                        "text": "%BLANK%"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'tunnels', 26)",
+                        "text": "Magneto's not a liar.",
+                        "line": {
+                            "soundtoplay": "voice/zealot/1_insect3_030_041",
+                            "text": "%Zealot%: What fools. You've fallen under his spell too. Don't you realize he seeks to weaken all mutants, to bend them to his own evil purposes?",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: No. Magneto established Genosha to protect mutants.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/zealot/1_insect3_030_043",
+                                            "text": "%Zealot%: He seeks to make them depend on him - to look at him as some type of messiah. But I know the truth and I will stop Magneto.",
+                                            "response": {
+                                                "chosenscriptfile": "setGameFlag('tunnels', 27,1)",
+                                                "tagjump": "autogen_tag_2",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'tunnels', 27)",
+                        "text": "Apocalypse is worse than Magneto.",
+                        "line": {
+                            "soundtoplay": "voice/zealot/1_insect3_030_051",
+                            "text": "%Zealot%: Granted, Apocalypse is ruthless, but I've been assured once he's acquired what he seeks, he'll leave peacefully.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: And you'll be left in charge of Genosha?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/zealot/1_insect3_030_053",
+                                            "text": "%Zealot%: That was the agreement. So you see - in the end Genosha will benefit.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_2",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Stand aside; we're going through that door.",
+                        "line": {
+                            "soundtoplay": "voice/zealot/1_insect3_030_055",
+                            "text": "%Zealot%: Ha, ha, ha. A pity there's no discussing this matter rationally. I'm afraid I have to kill you all.",
+                            "response": {
+                                "chosenscriptfile": "act1/insect/insect3/chose_end_script",
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
