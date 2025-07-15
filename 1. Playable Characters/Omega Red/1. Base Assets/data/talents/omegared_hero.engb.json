@@ -258,7 +258,7 @@
         },
         "talent": {
             "descname": "Draining Tentacles",
-            "description": "Omega Red ensnares an enemy using his Carbonadium tentacles, immobilizing them and draining their $HP.",
+            "description": "Omega Red ensnares an enemy using his Carbonadium tentacles, stunning them and draining their $HP.",
             "descshort": "Trap",
             "icon": 1,
             "icon_texture": "textures/ui/omegared_icons2.png",
@@ -586,7 +586,7 @@
         },
         "talent": {
             "descname": "Red Armor",
-            "description": "Increases $DR and reduces incoming $DMG_PHYSICAL and Blade Dmg.",
+            "description": "Omega Red's Red Armor increases his $DR and reduces incoming $DMG_PHYSICAL and Blade Dmg.",
             "descshort": "Passive",
             "icon": 7,
             "icon_texture": "textures/ui/omegared_icons2.png",
@@ -700,7 +700,7 @@
                 },
                 "require": {
                     "cat": "skill",
-                    "item": "mutantmaster",
+                    "item": "or_regen",
                     "level": 1
                 },
                 "powerup": {
@@ -720,8 +720,8 @@
             }
         },
         "talent": {
-            "descname": "Alpha Regeneration",
-            "description": "Omega Red's healing factor slowly restores his $HP over time.",
+            "descname": "Alpha Healing Factor",
+            "description": "Omega Red's Healing Factor allows him to slowly regenerate $HP over time as well as increase his $EP regeneration rate.",
             "descshort": "Passive",
             "icon": 12,
             "icon_texture": "textures/ui/omegared_icons2.png",
@@ -739,38 +739,48 @@
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "or_regen_health",
+                    "name": "or_regen_hp",
                     "value": 0.0017
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "or_regen_health",
+                    "name": "or_regen_hp",
                     "value": 0.01
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "or_regen_health_p",
+                    "name": "or_regen_hp_p",
                     "value": 1
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "or_regen_health_p",
+                    "name": "or_regen_hp_p",
                     "value": 6
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "or_regen_health_t",
+                    "name": "or_regen_hp_t",
                     "value": 16
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "or_regen_health_t",
+                    "name": "or_regen_hp_t",
                     "value": 16
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "or_regen_ep",
+                    "value": 1.3
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "or_regen_ep",
+                    "value": 2.98
                 }
             },
             "level": {
                 "count": 15,
-                "description": "%or_regen_health_p:f% of max $HP every %or_regen_health_t seconds",
+                "description": "%or_regen_hp_p:f% of max $HP every %or_regen_hp_t seconds\\n%or_regen_ep:s $EP regeneration",
                 "require": {
                     "cat": "level",
                     "level": "%or_regen_req"
@@ -779,7 +789,12 @@
                     "life": -1,
                     "affecter": {
                         "attribute": "health_regen_pct",
-                        "level": "%or_regen_health"
+                        "level": "%or_regen_hp"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "energy_regen",
+                        "level": "%or_regen_ep"
                     }
                 }
             }

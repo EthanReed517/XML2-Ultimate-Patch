@@ -12,7 +12,8 @@
             "inherit": "projectile",
             "name": "mystproj",
             "pierce": true,
-            "speed": 600
+            "speed": 600,
+            "targetable": true
         },
         "event": {
             "attacktype": "projectile",
@@ -21,37 +22,43 @@
             "damagetype": "dmg_energy",
             "entity": "mystique_bolt",
             "filename": "ents_mystique_hero",
+            "fulltargeting": true,
             "inherit": "projectile",
             "name": "mystbolt",
-            "speed": 600
+            "speed": 600,
+            "targetable": true
         },
         "event": {
             "boltonslot": "ebolton_weapon",
             "bolt": "Bip01 R Hand",
             "inherit": "mystbolt",
             "name": "laser_gun",
-            "offset": "35 4 57"
+            "offset": "35 4 57",
+            "replacecurrent": true
         },
         "event": {
             "boltonslot": "ebolton_altweapon",
-            "bolts": "Bip01 L Hand",
+            "bolt": "Bip01 L Hand",
             "inherit": "mystproj",
             "name": "left_gun",
-            "offset": "30 -4 37"
+            "offset": "30 -4 37",
+            "replacecurrent": true
         },
         "event": {
             "boltonslot": "ebolton_weapon",
             "bolt": "Bip01 R Hand",
             "inherit": "mystproj",
             "name": "right_gun",
-            "offset": "30 4 37"
+            "offset": "30 4 37",
+            "replacecurrent": true
         },
         "event": {
             "boltonslot": "ebolton_weapon",
             "bolt": "Bip01 R Hand",
             "inherit": "mystproj",
             "name": "right_gun_single",
-            "offset": "35 4 57"
+            "offset": "35 4 57",
+            "replacecurrent": true
         },
         "event": {
             "animbased": true,
@@ -300,7 +307,6 @@
                 "damage": "%myst_p1_dmg",
                 "name": "right_gun_single",
                 "powerusage": "%myst_p1_pwr",
-                "targetable": true,
                 "time": 0.5,
                 "victimeventtag": 102,
                 "damageMod": {
@@ -416,7 +422,6 @@
                 "damage": "%myst_p2_dmg",
                 "name": "left_gun",
                 "powerusage": "%myst_p2_pwr",
-                "targetable": true,
                 "time": 0.54,
                 "victimeventtag": 103,
                 "damageMod": {
@@ -426,7 +431,6 @@
             "trigger": {
                 "damage": "%myst_p2_dmg",
                 "name": "right_gun",
-                "targetable": true,
                 "time": 0.58,
                 "victimeventtag": 103,
                 "damageMod": {
@@ -436,7 +440,6 @@
             "trigger": {
                 "damage": "%myst_p2_dmg",
                 "name": "left_gun",
-                "targetable": true,
                 "time": 0.62,
                 "victimeventtag": 103,
                 "damageMod": {
@@ -446,7 +449,6 @@
             "trigger": {
                 "damage": "%myst_p2_dmg",
                 "name": "right_gun",
-                "targetable": true,
                 "time": 0.66,
                 "victimeventtag": 103,
                 "damageMod": {
@@ -456,7 +458,6 @@
             "trigger": {
                 "damage": "%myst_p2_dmg",
                 "name": "left_gun",
-                "targetable": true,
                 "time": 0.7,
                 "victimeventtag": 103,
                 "damageMod": {
@@ -466,7 +467,6 @@
             "trigger": {
                 "damage": "%myst_p2_dmg",
                 "name": "right_gun",
-                "targetable": true,
                 "time": 0.74,
                 "victimeventtag": 103,
                 "damageMod": {
@@ -819,10 +819,8 @@
             },
             "trigger": {
                 "damage": "%myst_p5_dmg",
-                "fulltargeting": true,
                 "name": "laser_gun",
                 "powerusage": "%myst_p5_pwr",
-                "targetable": true,
                 "time": 0.5
             },
             "trigger": {

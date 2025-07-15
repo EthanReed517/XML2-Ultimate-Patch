@@ -35,16 +35,6 @@
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "cable_p1_pwr",
-                    "value": 12
-                },
-                "talentvalue": {
-                    "level": 20,
-                    "name": "cable_p1_pwr",
-                    "value": 126
-                },
-                "talentvalue": {
-                    "level": 1,
                     "name": "cable_p1_dmg",
                     "value": "11 15"
                 },
@@ -52,6 +42,16 @@
                     "level": 20,
                     "name": "cable_p1_dmg",
                     "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_p1_pwr",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "cable_p1_pwr",
+                    "value": 126
                 }
             },
             "level": {
@@ -64,10 +64,10 @@
             }
         },
         "talent": {
-            "descname": "Psionic Spike",
-            "description": "Cable throws a spike of Psychic Energy that homes in on its target and stuns them.",
-            "descshort": "Projectile",
-            "icon": 1,
+            "descname": "Psimitar Sweep",
+            "description": "Cable swings his Psimitar around and strikes all nearby enemies, tripping them and causing $DMG_MENTAL.",
+            "descshort": "Radial",
+            "icon": 2,
             "icon_texture": "textures/ui/cable_icons2.png",
             "name": "cable_p2",
             "power": "power2",
@@ -78,33 +78,33 @@
                     "value": 7
                 },
                 "talentvalue": {
-                    "level": 18,
+                    "level": 16,
                     "name": "cable_p2_req",
                     "value": 58
                 },
                 "talentvalue": {
                     "level": 1,
                     "name": "cable_p2_dmg",
-                    "value": "17 22"
+                    "value": "21 26"
                 },
                 "talentvalue": {
-                    "level": 18,
+                    "level": 16,
                     "name": "cable_p2_dmg",
-                    "value": "124 144"
+                    "value": "78 89"
                 },
                 "talentvalue": {
                     "level": 1,
                     "name": "cable_p2_pwr",
-                    "value": 36
+                    "value": 24
                 },
                 "talentvalue": {
-                    "level": 18,
+                    "level": 16,
                     "name": "cable_p2_pwr",
-                    "value": 135
+                    "value": 160
                 }
             },
             "level": {
-                "count": 18,
+                "count": 16,
                 "description": "%cable_p2_dmg $DMG_MENTAL\\n%cable_p2_pwr $EP",
                 "require": {
                     "cat": "level",
@@ -113,11 +113,11 @@
             }
         },
         "talent": {
-            "descname": "Psimitar Sweep",
-            "description": "Cable swings his Psimitar and strikes all nearby enemies, tripping them and causing $DMG_MENTAL.",
-            "descshort": "Radial",
-            "icon": 2,
-            "icon_texture": "textures/ui/cable_icons2.png",
+            "descname": "Twin Pistols",
+            "description": "Cable fires bullets from his Twin Pistols that pierce through enemies, doing $DMG_BLEED.\\n(~41Press And Hold~~)",
+            "descshort": "Projectile",
+            "icon": 1,
+            "icon_texture": "textures/ui/replace_icons2.png",
             "name": "cable_p3",
             "power": "power3",
             "talentvalues": {
@@ -134,37 +134,27 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "cable_p3_dmg",
-                    "value": "30 36"
+                    "value": "28 34"
                 },
                 "talentvalue": {
                     "level": 16,
                     "name": "cable_p3_dmg",
-                    "value": "82 93"
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cable_p3_kb",
-                    "value": 245
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "cable_p3_kb",
-                    "value": 620
+                    "value": "136 157"
                 },
                 "talentvalue": {
                     "level": 1,
                     "name": "cable_p3_pwr",
-                    "value": 46
+                    "value": 48
                 },
                 "talentvalue": {
                     "level": 16,
                     "name": "cable_p3_pwr",
-                    "value": 170
+                    "value": 146
                 }
             },
             "level": {
                 "count": 16,
-                "description": "%cable_p3_dmg $DMG_MENTAL\\n%cable_p3_pwr $EP",
+                "description": "%cable_p3_dmg $DMG_BLEED\\n%cable_p3_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%cable_p3_req"
@@ -172,13 +162,14 @@
             }
         },
         "talent": {
-            "descname": "Energy Grenade",
-            "description": "Cable launches a single grenade from his rifle that explodes and causes $DMG_ENERGY.",
-            "descshort": "Projectile",
-            "icon": 3,
+            "descname": "Confusion",
+            "description": "Cable creates a burst of Mental Energy that will randomly either make confuse enemies into turning on their comrades or make them run in fear. Enemies explode at the end of conversion.",
+            "descshort": "Debuff",
+            "icon": 11,
             "icon_texture": "textures/ui/cable_icons2.png",
             "name": "cable_p4",
             "power": "power4",
+            "type": "boost",
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
@@ -186,37 +177,91 @@
                     "value": 21
                 },
                 "talentvalue": {
-                    "level": 14,
+                    "level": 11,
                     "name": "cable_p4_req",
                     "value": 58
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "cable_p4_pwr",
-                    "value": 54
+                    "name": "cable_p4_lif",
+                    "value": 12
                 },
                 "talentvalue": {
-                    "level": 14,
-                    "name": "cable_p4_pwr",
-                    "value": 158
+                    "level": 11,
+                    "name": "cable_p4_lif",
+                    "value": 35
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "cable_p4_dmg",
+                    "name": "cable_p4_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "cable_p4_pwr",
+                    "value": 516
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%cable_p4_lif seconds\\n%cable_p4_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%cable_p4_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Energy Grenade",
+            "description": "Cable launches a single grenade from his rifle that explodes on impact, doing $DMG_ENERGY.",
+            "descshort": "Projectile",
+            "icon": 3,
+            "icon_texture": "textures/ui/cable_icons2.png",
+            "name": "cable_p5",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_p5_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "cable_p5_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_p5_dmg",
                     "value": "42 50"
                 },
                 "talentvalue": {
                     "level": 14,
-                    "name": "cable_p4_dmg",
+                    "name": "cable_p5_dmg",
                     "value": "148 166"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_p5_pwr",
+                    "value": 54
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "cable_p5_pwr",
+                    "value": 158
                 }
             },
             "level": {
                 "count": 14,
-                "description": "%cable_p4_dmg $DMG_ENERGY\\n%cable_p4_pwr $EP",
+                "description": "%cable_p5_dmg $DMG_ENERGY\\n%cable_p5_pwr $EP",
                 "require": {
                     "cat": "level",
-                    "level": "%cable_p4_req"
+                    "level": "%cable_p5_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "cable_p3",
+                    "level": 1
                 }
             }
         },
@@ -226,154 +271,83 @@
             "descshort": "Radial",
             "icon": 4,
             "icon_texture": "textures/ui/cable_icons2.png",
-            "name": "cable_p5",
-            "power": "power5",
+            "name": "cable_p6",
+            "power": "power6",
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
-                    "name": "cable_p5_req",
+                    "name": "cable_p6_req",
                     "value": 28
                 },
                 "talentvalue": {
                     "level": 11,
-                    "name": "cable_p5_req",
+                    "name": "cable_p6_req",
                     "value": 58
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "cable_p5_pwr",
-                    "value": 84
-                },
-                "talentvalue": {
-                    "level": 11,
-                    "name": "cable_p5_pwr",
-                    "value": 190
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cable_p5_dmg",
+                    "name": "cable_p6_dmg",
                     "value": "57 66"
                 },
                 "talentvalue": {
                     "level": 11,
-                    "name": "cable_p5_dmg",
+                    "name": "cable_p6_dmg",
                     "value": "108 119"
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "cable_p5_life",
+                    "name": "cable_p6_slw",
+                    "value": 0.75
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "cable_p6_slw",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_p6_lif",
                     "value": 4
                 },
                 "talentvalue": {
                     "level": 11,
-                    "name": "cable_p5_life",
-                    "value": 12
+                    "name": "cable_p6_lif",
+                    "value": 11
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "cable_p5_spd",
-                    "value": 0.7
+                    "name": "cable_p6_pwr",
+                    "value": 84
                 },
                 "talentvalue": {
                     "level": 11,
-                    "name": "cable_p5_spd",
-                    "value": 0.25
+                    "name": "cable_p6_pwr",
+                    "value": 190
                 }
             },
             "level": {
                 "count": 11,
-                "description": "%cable_p5_dmg $DMG_MENTAL\\n%cable_p5_spd:p slow\\n%cable_p5_life seconds\\n%cable_p5_pwr $EP",
+                "description": "%cable_p6_dmg $DMG_MENTAL\\n%cable_p6_slw:p slow for %cable_p5_lif seconds\\n%cable_p6_pwr $EP",
                 "require": {
                     "cat": "level",
-                    "level": "%cable_p5_req"
+                    "level": "%cable_p6_req"
                 },
                 "require": {
                     "cat": "skill",
-                    "item": "cable_p2",
+                    "item": "cable_p10",
                     "level": 1
                 }
             }
         },
         "talent": {
             "descname": "Cone of Silence",
-            "description": "Cable uses a prototype shield device to increase the party's $DR and convert $DMG_ENERGY taken into $HP.",
+            "description": "Cable uses a prototype shield device to increase the party's $DR and convert a percentage of $DMG_ENERGY taken into $HP.",
             "descshort": "Boost",
             "icon": 5,
-            "icon_texture": "textures/ui/cable_icons2.png",
-            "name": "cable_p6",
-            "power": "power6",
-            "type": "boost",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cable_p6_req",
-                    "value": 1
-                },
-                "talentvalue": {
-                    "level": 14,
-                    "name": "cable_p6_req",
-                    "value": 58
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cable_p6_pwr",
-                    "value": 32
-                },
-                "talentvalue": {
-                    "level": 14,
-                    "name": "cable_p6_pwr",
-                    "value": 304
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cable_p6_dmg",
-                    "value": 0.45
-                },
-                "talentvalue": {
-                    "level": 14,
-                    "name": "cable_p6_dmg",
-                    "value": 0.87
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cable_p6_def",
-                    "value": 1.2
-                },
-                "talentvalue": {
-                    "level": 14,
-                    "name": "cable_p6_def",
-                    "value": 2.2
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cable_p6_lif",
-                    "value": 13
-                },
-                "talentvalue": {
-                    "level": 14,
-                    "name": "cable_p6_lif",
-                    "value": 13
-                }
-            },
-            "level": {
-                "count": 14,
-                "description": "%cable_p6_dmg:p $DMG_ENERGY\\n%cable_p6_def:s $DR\\n%cable_p6_lif seconds\\n%cable_p6_pwr $EP",
-                "require": {
-                    "cat": "level",
-                    "level": "%cable_p6_req"
-                }
-            }
-        },
-        "talent": {
-            "descname": "Command",
-            "description": "Cable uses his natural leadership abilities to boost the effectiveness of all skills for the entire team for a time.",
-            "descshort": "Boost",
-            "icon": 6,
             "icon_texture": "textures/ui/cable_icons2.png",
             "name": "cable_p7",
             "power": "power7",
             "type": "boost",
-            "value_priority": 1,
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
@@ -381,47 +355,39 @@
                     "value": 7
                 },
                 "talentvalue": {
-                    "level": 16,
+                    "level": 14,
                     "name": "cable_p7_req",
                     "value": 58
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "cable_p7_life",
+                    "name": "cable_p7_dmg",
+                    "value": 0.45
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "cable_p7_dmg",
+                    "value": 0.87
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_p7_def",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "cable_p7_def",
+                    "value": 2.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_p7_lif",
                     "value": 13
                 },
                 "talentvalue": {
-                    "level": 16,
-                    "name": "cable_p7_life",
+                    "level": 14,
+                    "name": "cable_p7_lif",
                     "value": 55
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cable_p7_skills",
-                    "value": 1
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "cable_p7_skills",
-                    "value": 3
-                },
-                "talentvalue": {
-                    "interpolate": false,
-                    "level": 1,
-                    "name": "cable_p7_skill",
-                    "value": 1
-                },
-                "talentvalue": {
-                    "interpolate": false,
-                    "level": 5,
-                    "name": "cable_p7_skill",
-                    "value": 2
-                },
-                "talentvalue": {
-                    "interpolate": false,
-                    "level": 16,
-                    "name": "cable_p7_skill",
-                    "value": 3
                 },
                 "talentvalue": {
                     "level": 1,
@@ -429,14 +395,14 @@
                     "value": 64
                 },
                 "talentvalue": {
-                    "level": 16,
+                    "level": 14,
                     "name": "cable_p7_pwr",
                     "value": 380
                 }
             },
             "level": {
-                "count": 16,
-                "description": "+%cable_p7_skill all learned skills\\n%cable_p7_life seconds\\n%cable_p7_pwr $EP",
+                "count": 14,
+                "description": "%cable_p7_def:s $DR\\n%cable_p7_dmg:p $DMG_ENERGY\\n%cable_p7_lif seconds\\n%cable_p7_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%cable_p7_req"
@@ -444,82 +410,81 @@
             }
         },
         "talent": {
-            "descname": "PSYCHIC SLAM",
-            "description": "Cable hoists surrounding enemies into the air with his Telekinesis and slams them into the ground. Can build bridges.",
-            "descshort": "Radial",
-            "icon": 8,
+            "descname": "Command",
+            "description": "Cable uses his natural leadership abilities to boost the effectiveness of all learned skills for the entire team for a time.",
+            "descshort": "Boost",
+            "icon": 6,
             "icon_texture": "textures/ui/cable_icons2.png",
             "name": "cable_p8",
             "power": "power8",
-            "type": "xtreme",
+            "type": "boost",
+            "value_priority": 1,
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
                     "name": "cable_p8_req",
-                    "value": 15
+                    "value": 14
                 },
                 "talentvalue": {
-                    "level": 7,
+                    "level": 16,
                     "name": "cable_p8_req",
-                    "value": 45
+                    "value": 58
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "cable_p8_dmg",
-                    "value": "85 96"
+                    "name": "cable_p8_lif",
+                    "value": 13
                 },
                 "talentvalue": {
-                    "level": 7,
-                    "name": "cable_p8_dmg",
-                    "value": "279 309"
+                    "level": 16,
+                    "name": "cable_p8_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_p8_skills",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "cable_p8_skills",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 1,
+                    "name": "cable_p8_skill",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 5,
+                    "name": "cable_p8_skill",
+                    "value": 2
+                },
+                "talentvalue": {
+                    "interpolate": false,
+                    "level": 16,
+                    "name": "cable_p8_skill",
+                    "value": 3
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_p8_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "cable_p8_pwr",
+                    "value": 458
                 }
             },
             "level": {
-                "count": 7,
-                "description": "%cable_p8_dmg Telekinetic Dmg",
+                "count": 16,
+                "description": "+%cable_p8_skill all learned skills\\n%cable_p8_lif seconds\\n%cable_p8_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%cable_p8_req"
-                }
-            }
-        },
-        "talent": {
-            "descname": "CHANNEL RAGE",
-            "description": "Cable uses his Telekinesis to reflect all damage taken back onto enemies for a time.",
-            "descshort": "Boost",
-            "icon": 9,
-            "icon_texture": "textures/ui/cable_icons2.png",
-            "name": "cable_p9",
-            "power": "power9",
-            "type": "xtreme",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cable_p9_req",
-                    "value": 20
-                },
-                "talentvalue": {
-                    "level": 5,
-                    "name": "cable_p9_req",
-                    "value": 40
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cable_p9_life",
-                    "value": 15
-                },
-                "talentvalue": {
-                    "level": 5,
-                    "name": "cable_p9_life",
-                    "value": 45
-                }
-            },
-            "level": {
-                "count": 5,
-                "description": "%cable_p9_life seconds",
-                "require": {
-                    "cat": "level",
-                    "level": "%cable_p9_req"
                 }
             }
         },
@@ -529,57 +494,258 @@
             "descshort": "Boost",
             "icon": 7,
             "icon_texture": "textures/ui/cable_icons2.png",
-            "name": "cable_p10",
-            "power": "power10",
+            "name": "cable_p9",
+            "power": "power9",
             "type": "boost",
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
-                    "name": "cable_p10_req",
-                    "value": 14
+                    "name": "cable_p9_req",
+                    "value": 21
                 },
                 "talentvalue": {
-                    "level": 18,
-                    "name": "cable_p10_req",
+                    "level": 16,
+                    "name": "cable_p9_req",
                     "value": 58
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "cable_p10_cri",
-                    "value": 0.05
+                    "name": "cable_p9_cri",
+                    "value": 0.09
                 },
                 "talentvalue": {
-                    "level": 18,
-                    "name": "cable_p10_cri",
+                    "level": 16,
+                    "name": "cable_p9_cri",
                     "value": 0.15
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "cable_p10_pwr",
-                    "value": 84
-                },
-                "talentvalue": {
-                    "level": 18,
-                    "name": "cable_p10_pwr",
-                    "value": 458
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cable_p10_lif",
+                    "name": "cable_p9_lif",
                     "value": 13
                 },
                 "talentvalue": {
-                    "level": 18,
-                    "name": "cable_p10_lif",
+                    "level": 16,
+                    "name": "cable_p9_lif",
                     "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_p9_pwr",
+                    "value": 132
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "cable_p9_pwr",
+                    "value": 516
                 }
             },
             "level": {
-                "count": 18,
-                "description": "%cable_p10_lif seconds\\n%cable_p10_cri:p Critical chance\\n%cable_p10_pwr $EP",
+                "count": 16,
+                "description": "%cable_p9_cri:p Critical chance\\n%cable_p9_lif seconds\\n%cable_p9_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%cable_p9_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "cable_p7",
+                    "level": 1
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "cable_p8",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "PSYCHIC SLAM",
+            "description": "Slamming his fist into the ground, Cable uses his Telekinesis to pop enemies up into the air with a chance for a 'Deadly Strike' (33% instant $HP loss). Can build bridges.",
+            "descshort": "Radial",
+            "icon": 8,
+            "icon_texture": "textures/ui/cable_icons2.png",
+            "name": "cable_p10",
+            "power": "power10",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_p10_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "cable_p10_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_p10_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "cable_p10_dmg",
+                    "value": "279 309"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_p10_cne",
+                    "value": 0.05
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "cable_p10_cne",
+                    "value": 0.19
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%cable_p10_dmg Telekinetic Dmg\\n%cable_p10_cne:p chance for Deadly Strike",
                 "require": {
                     "cat": "level",
                     "level": "%cable_p10_req"
+                },
+                "powerup": {
+                    "chance": "%cable_p10_cne",
+                    "class": "atk_instant_pct",
+                    "life": -1,
+                    "no_stack": true,
+                    "percent": 0.33,
+                    "affecter": {
+                        "attribute": "powerup_scope",
+                        "scope_node": "cable_power10"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "CHANNEL RAGE",
+            "description": "Cable uses his Telekinesis to reflect all damage taken back onto enemies for a time.",
+            "descshort": "Boost",
+            "icon": 9,
+            "icon_texture": "textures/ui/cable_icons2.png",
+            "name": "cable_p11",
+            "power": "power11",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_p11_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "cable_p11_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_p11_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "cable_p11_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%cable_p11_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%cable_p11_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "cable_ps2",
+                    "level": 1
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "cable_ps3",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Cybernetic Restoration",
+            "description": "Cable's cybernetic enhancements allow him to regeneration $HP over time as well as increase his $EP regeneration rate.",
+            "descshort": "Passive",
+            "icon": 13,
+            "icon_texture": "textures/ui/cable_icons2.png",
+            "name": "cable_ps1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_ps1_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "cable_ps1_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_ps1_hp",
+                    "value": 0.0017
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "cable_ps1_hp",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_ps1_hp_p",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "cable_ps1_hp_p",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_ps1_hp_t",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "cable_ps1_hp_t",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cable_ps1_ep",
+                    "value": 1.3
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "cable_ps1_ep",
+                    "value": 2.98
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%cable_ps1_hp_p:f% of max $HP every %cable_ps1_hp_t seconds\\n%cable_ps1_ep:s $EP regeneration",
+                "require": {
+                    "category": "level",
+                    "level": "%cable_ps1_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "health_regen_pct",
+                        "level": "%cable_ps1_hp"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "energy_regen",
+                        "level": "%cable_ps1_ep"
+                    }
                 }
             }
         },
@@ -589,173 +755,95 @@
             "descshort": "Passive",
             "icon": 10,
             "icon_texture": "textures/ui/cable_icons2.png",
-            "name": "cable_grid",
+            "name": "cable_ps2",
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
-                    "name": "cable_grid_req",
-                    "value": 14
+                    "name": "cable_ps2_req",
+                    "value": 7
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "cable_grid_req",
-                    "value": 28
+                    "name": "cable_ps2_req",
+                    "value": 21
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "cable_grid_chance",
+                    "name": "cable_ps2_cne",
                     "value": 0.08
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "cable_grid_chance",
+                    "name": "cable_ps2_cne",
                     "value": 0.5
                 }
             },
             "level": {
                 "count": 15,
-                "description": "%cable_grid_chance:p chance to dodge",
+                "description": "%cable_ps2_cne:p chance to dodge",
                 "require": {
                     "cat": "level",
-                    "level": "%cable_grid_req"
+                    "level": "%cable_ps2_req"
                 },
                 "powerup": {
                     "life": -1,
                     "affecter": {
                         "attribute": "def_dodge",
-                        "level": "%cable_grid_chance",
+                        "level": "%cable_ps2_cne",
                         "scope_attack": "projectile"
                     }
                 }
             }
         },
         "talent": {
-            "descname": "Mental Mastery",
-            "description": "Increases damage and chance for Criticals with all Mental attacks.",
-            "descshort": "Passive",
-            "icon": 11,
-            "icon_texture": "textures/ui/cable_icons2.png",
-            "name": "cable_ment_mast",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cable_ment_mast_req",
-                    "value": 21
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "cable_ment_mast_req",
-                    "value": 35
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cable_ment_mast_dmg",
-                    "value": 1.05
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "cable_ment_mast_dmg",
-                    "value": 1.5
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cable_ment_mast_cri",
-                    "value": 0.01
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "cable_ment_mast_cri",
-                    "value": 0.08
-                }
-            },
-            "level": {
-                "count": 15,
-                "description": "%cable_ment_mast_dmg:s $DMG_MENTAL and Telekinetic Dmg\\n+%cable_ment_mast_cri:p Critical chance",
-                "require": {
-                    "cat": "level",
-                    "level": "%cable_ment_mast_req"
-                },
-                "require": {
-                    "cat": "skill",
-                    "item": "mutantmaster",
-                    "level": 1
-                },
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "affect_type": "scale",
-                        "attribute": "damage",
-                        "level": "%cable_ment_mast_dmg",
-                        "scope_damage": "dmg_mental"
-                    },
-                    "affecter": {
-                        "affect_type": "scale",
-                        "attribute": "damage",
-                        "level": "%cable_ment_mast_dmg",
-                        "scope_damage": "dmg_telekinesis"
-                    },
-                    "affecter": {
-                        "attribute": "atk_critical",
-                        "level": "%cable_ment_mast_dmg",
-                        "scope_damage": "dmg_mental"
-                    },
-                    "affecter": {
-                        "attribute": "atk_critical",
-                        "level": "%cable_ment_mast_dmg",
-                        "scope_damage": "dmg_telekinesis"
-                    }
-                }
-            }
-        },
-        "talent": {
             "descname": "Master of War",
-            "description": "Increases damage and chance for Criticals with rifle, grenade, and Psimitar attacks.",
+            "description": "Increases damage and Critical chance of all powers.",
             "descshort": "Passive",
             "icon": 12,
             "icon_texture": "textures/ui/cable_icons2.png",
-            "name": "cable_gun",
+            "name": "cable_ps3",
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
-                    "name": "cable_gun_req",
-                    "value": 21
+                    "name": "cable_ps3_req",
+                    "value": 14
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "cable_gun_req",
-                    "value": 35
+                    "name": "cable_ps3_req",
+                    "value": 28
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "cable_gun_dmg",
+                    "name": "cable_ps3_dmg",
                     "value": 1.05
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "cable_gun_dmg",
+                    "name": "cable_ps3_dmg",
                     "value": 1.5
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "cable_gun_crit",
+                    "name": "cable_ps3_crit",
                     "value": 0.01
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "cable_gun_crit",
+                    "name": "cable_ps3_crit",
                     "value": 0.08
                 }
             },
             "level": {
                 "count": 15,
-                "description": "%cable_gun_dmg:s weapon Dmg\\n+%cable_gun_crit:p weapon Critical chance",
+                "description": "%cable_ps3_dmg:s Dmg\\n+%cable_ps3_crit:p Critical chance",
                 "require": {
                     "cat": "level",
-                    "level": "%cable_gun_req"
+                    "level": "%cable_ps3_req"
                 },
                 "require": {
                     "cat": "skill",
-                    "item": "mutantmaster",
+                    "item": "cable_ps1",
                     "level": 1
                 },
                 "powerup": {
@@ -763,78 +851,46 @@
                     "affecter": {
                         "affect_type": "scale",
                         "attribute": "damage",
-                        "level": "%cable_gun_dmg",
-                        "scope_node": "cable_gun"
+                        "level": "%cable_ps3_dmg",
+                        "scope_damage": "dmg_mental"
                     },
                     "affecter": {
                         "attribute": "atk_critical",
-                        "level": "%cable_gun_crit",
-                        "scope_node": "cable_gun"
-                    }
-                }
-            }
-        },
-        "talent": {
-            "descname": "Cybernetic Restoration",
-            "description": "Cable uses his cybernetic enhancements to heal damage over time.",
-            "descshort": "Passive",
-            "icon": 13,
-            "icon_texture": "textures/ui/cable_icons2.png",
-            "name": "cab_regen",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cab_regen_req",
-                    "value": 1
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "cab_regen_req",
-                    "value": 15
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cab_regen_health",
-                    "value": 0.0017
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "cab_regen_health",
-                    "value": 0.01
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cab_regen_health_p",
-                    "value": 1
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "cab_regen_health_p",
-                    "value": 6
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cab_regen_health_t",
-                    "value": 6
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "cab_regen_health_t",
-                    "value": 6
-                }
-            },
-            "level": {
-                "count": 15,
-                "description": "%cab_regen_health_p:f% of max $HP every %cab_regen_health_t seconds",
-                "require": {
-                    "category": "level",
-                    "level": "%cab_regen_req"
-                },
-                "powerup": {
-                    "life": -1,
+                        "level": "%cable_ps3_crit",
+                        "scope_damage": "dmg_mental"
+                    },
                     "affecter": {
-                        "attribute": "health_regen_pct",
-                        "level": "%cab_regen_health"
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%cable_ps3_dmg",
+                        "scope_damage": "dmg_telekinesis"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%cable_ps3_crit",
+                        "scope_damage": "dmg_telekinesis"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%cable_ps3_dmg",
+                        "scope_damage": "dmg_energy"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%cable_ps3_crit",
+                        "scope_damage": "dmg_energy"
+                    },
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%cable_ps3_dmg",
+                        "scope_damage": "dmg_bleed"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%cable_ps3_crit",
+                        "scope_damage": "dmg_bleed"
                     }
                 }
             }
