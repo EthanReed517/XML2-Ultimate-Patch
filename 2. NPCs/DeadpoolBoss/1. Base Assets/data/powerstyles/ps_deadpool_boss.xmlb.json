@@ -12,6 +12,101 @@
             "type": "ce_force_visibility"
         },
         "FightMove": {
+            "animenum": "ea_attack_light1",
+            "blendtime": 0.07,
+            "endchaintime": 0.9,
+            "lockangles": true,
+            "name": "attacklight1",
+            "playspeed": 1.5,
+            "startchaintime": 0.5,
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.16
+            },
+            "trigger": {
+                "bolt": "Bip01 L Toe0",
+                "life": 0.13,
+                "name": "trail",
+                "time": 0.3
+            },
+            "trigger": {
+                "movement": 0.1,
+                "name": "slide_kick",
+                "time": 0.2
+            },
+            "trigger": {
+                "inherit": "kick_heavy",
+                "knockback": 40,
+                "name": "heavy_kick",
+                "time": 0.4,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_heavy1",
+            "endchaintime": 1,
+            "lockangles": true,
+            "name": "attackheavy1",
+            "playspeed": 2,
+            "startchaintime": 0.8,
+            "event": {
+                "inherit": "kick_heavy",
+                "knockback": 40,
+                "name": "thrust_kick",
+                "tag": 10,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide_kick",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Toe0",
+                "life": 0.41,
+                "name": "trail",
+                "time": 0.22
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 10,
+                "index": 1,
+                "name": "thrust_kick",
+                "time": 0.4
+            },
+            "trigger": {
+                "angle": 0,
+                "height": -20,
+                "index": 1,
+                "name": "thrust_kick",
+                "time": 0.45
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
             "animenum": "ea_power1_start",
             "endchaintime": 0.95,
             "handler": "ch_tele_jump",
