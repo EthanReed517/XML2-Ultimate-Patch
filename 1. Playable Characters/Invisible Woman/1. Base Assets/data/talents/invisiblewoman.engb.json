@@ -357,7 +357,7 @@
         },
         "talent": {
             "descname": "Invisibility",
-            "description": "Invisible Woman becomes invisible to enemies, raising her Critical chance with all powered and non-powered attacks.",
+            "description": "Invisible Woman becomes invisible to enemies, increasing her $DR and Critical chance with all powered and non-powered attacks for a time.",
             "descshort": "Boost",
             "icon": 6,
             "icon_texture": "textures/ui/invisiblewoman_icons2.png",
@@ -378,12 +378,22 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "iw_p7_cri",
-                    "value": 0.05
+                    "value": 0.09
                 },
                 "talentvalue": {
                     "level": 16,
                     "name": "iw_p7_cri",
                     "value": 0.15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "iw_p7_dr",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "iw_p7_dr",
+                    "value": 2.2
                 },
                 "talentvalue": {
                     "level": 1,
@@ -408,7 +418,7 @@
             },
             "level": {
                 "count": 16,
-                "description": "+%iw_p7_cri:p Critical chance\\n%iw_p7_lif seconds\\n%iw_p7_pwr $EP",
+                "description": "%iw_p7_dr:s $DR\\n+%iw_p7_cri:p Critical chance\\n%iw_p7_lif seconds\\n%iw_p7_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%iw_p7_req"
@@ -598,7 +608,7 @@
         },
         "talent": {
             "descname": "Concussive Mastery",
-            "description": "Increases damage and Critical chance of all Concussive Force attacks.",
+            "description": "Increases damage and Critical chance of all Crushing Dmg powers.",
             "descshort": "Passive",
             "icon": 10,
             "icon_texture": "textures/ui/invisiblewoman_icons2.png",

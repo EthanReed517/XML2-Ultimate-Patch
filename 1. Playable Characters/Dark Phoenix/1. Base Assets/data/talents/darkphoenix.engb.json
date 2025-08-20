@@ -10,22 +10,6 @@
                     "affecter": {
                         "attribute": "resist_mental",
                         "level": 1
-                    },
-                    "affecter": {
-                        "attribute": "resist_radiation",
-                        "level": 0.05
-                    },
-                    "affecter": {
-                        "attribute": "resist_energy",
-                        "level": 0.05
-                    },
-                    "affecter": {
-                        "attribute": "resist_fire",
-                        "level": 0.05
-                    },
-                    "affecter": {
-                        "attribute": "resist_elemental",
-                        "level": 0.05
                     }
                 }
             }
@@ -340,7 +324,7 @@
             },
             "level": {
                 "count": 18,
-                "description": "%dark_absorb_dmg $DMG_FIRE\\n%dark_absorb_regen:p $HP per second for 3 seconds\\n%dark_absorb_pwr $EP",
+                "description": "%dark_absorb_dmg $DMG_FIRE\\n%dark_absorb_regen:p $HP per second for %dark_absorb_life seconds\\n%dark_absorb_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%dark_absorb_req"
@@ -427,7 +411,7 @@
                     "value": 7
                 },
                 "talentvalue": {
-                    "level": 18,
+                    "level": 16,
                     "name": "dark_shield_req",
                     "value": 58
                 },
@@ -437,7 +421,7 @@
                     "value": 7
                 },
                 "talentvalue": {
-                    "level": 18,
+                    "level": 16,
                     "name": "dark_shield_lif",
                     "value": 40
                 },
@@ -447,7 +431,7 @@
                     "value": 64
                 },
                 "talentvalue": {
-                    "level": 17,
+                    "level": 16,
                     "name": "dark_shield_pwr",
                     "value": 380
                 },
@@ -467,7 +451,7 @@
                     "value": 1
                 },
                 "talentvalue": {
-                    "level": 18,
+                    "level": 16,
                     "name": "dark_shield_aon",
                     "value": 1
                 }
@@ -481,7 +465,7 @@
                 }
             },
             "level": {
-                "count": 8,
+                "count": 6,
                 "description": "%dark_shield_lif seconds\\n%dark_shield_pwr $EP\\nApplies to all allies",
                 "require": {
                     "cat": "level",
@@ -491,7 +475,7 @@
         },
         "talent": {
             "descname": "Cosmic Absorption",
-            "description": "Dark Phoenix's Cosmic powers allow her to nullify all $DMG_ENERGY and reduce her $EP consumption for a time.",
+            "description": "Dark Phoenix's cosmic powers allow her to nullify all $DMG_ENERGY, regain $EP for every enemy she defeats, and reduce her $EP consumption for a time.",
             "descshort": "Boost",
             "icon": 7,
             "icon_texture": "textures/ui/darkphoenix_icons2.png",
@@ -532,6 +516,16 @@
                 },
                 "talentvalue": {
                     "level": 1,
+                    "name": "dark_cosmic_hpg",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "dark_cosmic_hpg",
+                    "value": 50
+                },
+                "talentvalue": {
+                    "level": 1,
                     "name": "dark_cosmic_pwr",
                     "value": 84
                 },
@@ -543,7 +537,7 @@
             },
             "level": {
                 "count": 16,
-                "description": "%dark_cosmic_scale:s $EP cost\\n%dark_cosmic_life seconds\\n%dark_cosmic_pwr $EP",
+                "description": "%dark_cosmic_hpg $EP per defeated enemy\\n%dark_cosmic_scale:s $EP cost\\n%dark_cosmic_life seconds\\n%dark_cosmic_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%dark_cosmic_req"
@@ -713,7 +707,7 @@
         },
         "talent": {
             "descname": "Cosmic Mastery",
-            "description": "Increases damage and Critical chance of all powers.",
+            "description": "Increases damage and Critical chance of all powered and non-powered $DMG_FIRE, $DMG_MENTAL, Telekinetic Dmg attacks and increases her resistance to $DMG_FIRE.",
             "descshort": "Passive",
             "icon": 11,
             "icon_texture": "textures/ui/darkphoenix_icons2.png",
@@ -748,11 +742,21 @@
                     "level": 15,
                     "name": "dark_forcem_cri",
                     "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dark_forcem_resist",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dark_forcem_resist",
+                    "value": 1
                 }
             },
             "level": {
                 "count": 15,
-                "description": "%dark_forcem_dmg:s $DMG_MENTAL and Telekinetic Dmg\\n%dark_forcem_dmg:s $DMG_FIRE\\n+%dark_forcem_cri:p Critical chance",
+                "description": "%dark_forcem_dmg:s $DMG_FIRE, DMG_MENTAL, and Telekinetic Dmg\\n+%dark_forcem_cri:p Critical chance\\n+%dark_forcem_resist:p Fire resistance",
                 "require": {
                     "cat": "level",
                     "level": "%dark_forcem_req"
@@ -796,63 +800,10 @@
                         "attribute": "atk_critical",
                         "level": "%dark_forcem_cri",
                         "scope_damage": "dmg_fire"
-                    }
-                }
-            }
-        },
-        "talent": {
-            "descname": "Cosmic Resistance",
-            "description": "Increases Dark Phoenix's Energy, Radiation, Elemental, and Fire resistances.",
-            "descshort": "Passive",
-            "icon": 12,
-            "icon_texture": "textures/ui/phoenix_icons2.png",
-            "name": "dark_ionize",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "dark_ionize_req",
-                    "value": 21
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "dark_ionize_req",
-                    "value": 35
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "dark_ionize_resist",
-                    "value": 0.1
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "dark_ionize_resist",
-                    "value": 0.5
-                }
-            },
-            "level": {
-                "count": 15,
-                "description": "+%dark_ionize_resist:p Energy resistance\\n+%dark_ionize_resist:p Radiation resistance\\n+%dark_ionize_resist:p Elemental resistance\\n+%dark_ionize_resist:p Fire resistance",
-                "require": {
-                    "category": "level",
-                    "level": "%dark_ionize_req"
-                },
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "attribute": "resist_energy",
-                        "level": "%dark_ionize_resist"
-                    },
-                    "affecter": {
-                        "attribute": "resist_radiation",
-                        "level": "%dark_ionize_resist"
-                    },
-                    "affecter": {
-                        "attribute": "resist_elemental",
-                        "level": "%dark_ionize_resist"
                     },
                     "affecter": {
                         "attribute": "resist_fire",
-                        "level": "%dark_ionize_resist"
+                        "level": "%dark_forcem_resist"
                     }
                 }
             }
