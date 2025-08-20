@@ -1,0 +1,1066 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/msmarvel_icons1.png",
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "blendtime": 0.05,
+            "lockangles": true,
+            "name": "attacklight1",
+            "startchaintime": 0.5,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.21
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "name": "trail",
+                "time": 0.21
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.3
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight2"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attacktrip1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light2",
+            "blendtime": 0.05,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight2",
+            "startchaintime": 0.64,
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "name": "trail",
+                "time": 0.21
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "name": "trail",
+                "time": 0.21
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.36
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight3"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "popupattack"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light3",
+            "blendtime": 0.05,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight3",
+            "trigger": {
+                "name": "whoosh_light",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 L Toe0",
+                "name": "trail",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "name": "trail",
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "trail",
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.26
+            },
+            "trigger": {
+                "maxrange": 72,
+                "name": "punch",
+                "time": 0.33
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_trip2",
+            "blendtime": 0.05,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacktrip2",
+            "event": {
+                "inherit": "kick",
+                "knockback": 0,
+                "name": "sweep",
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                },
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "name": "trail",
+                "time": 0.1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Toe0",
+                "name": "trail",
+                "time": 0.15
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.31
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "name": "trail",
+                "time": 0.31
+            },
+            "trigger": {
+                "name": "trail",
+                "time": 0.42
+            },
+            "trigger": {
+                "angle": -30,
+                "height": -10,
+                "index": 1,
+                "name": "sweep",
+                "time": 0.42
+            },
+            "trigger": {
+                "angle": 0,
+                "height": -10,
+                "index": 1,
+                "name": "sweep",
+                "time": 0.42
+            },
+            "trigger": {
+                "angle": 30,
+                "height": -10,
+                "index": 1,
+                "name": "sweep",
+                "time": 0.42
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_stun2",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackstun2",
+            "event": {
+                "inherit": "punch_heavy",
+                "knockback": 0,
+                "maxrange": 56,
+                "name": "backhand1",
+                "damagemod": {
+                    "name": "dmgmod_stun"
+                },
+                "damagemod": {
+                    "name": "dmgmod_no_atk_roll"
+                }
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.25
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "name": "trail",
+                "time": 0.25
+            },
+            "trigger": {
+                "name": "backhand1",
+                "time": 0.37
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackstun3"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_popup",
+            "blendtime": 0.05,
+            "fallback": "attackheavy1",
+            "handler": "ch_popup_attack",
+            "lockangles": true,
+            "name": "popupattack",
+            "startchaintime": 0.66,
+            "trigger": {
+                "charge": 1,
+                "name": "charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.25
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "name": "trail",
+                "time": 0.25
+            },
+            "trigger": {
+                "movement": 20,
+                "name": "slide",
+                "time": 0.26
+            },
+            "trigger": {
+                "index": 1,
+                "knockback": 0,
+                "maxrange": 50,
+                "name": "punch_heavy",
+                "time": 0.3,
+                "damagemod": {
+                    "name": "dmgmod_popup"
+                },
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beam",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Beam",
+            "combotextstarter": "Splitting",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "msmarvel_p1",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/msmarvel/p1_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/msmarv_m/p1_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/msmarvel/p1_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "7 0 37",
+                "attacktype": "beam",
+                "beambolt": "Bip01 R Hand",
+                "beameffect": "char/msmarvel/p1_power",
+                "damage": "%msmarvel_p1_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "fxlevel": 1,
+                "hiteffect": "char/msmarvel/p1_impact",
+                "inherit": "beam",
+                "maxrange": 500,
+                "name": "prismbeam",
+                "pierce": true,
+                "powerusage": "%msmarvel_p1_pwr",
+                "radius": 0,
+                "spawneffect": "char/msmarvel/p1_spawn",
+                "split_count": 2,
+                "split_damage": "%msmarvel_p1_dmg",
+                "tag": 3,
+                "time": 0.55,
+                "damagemod": {
+                    "name": "dmgmod_drain_battery"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/msmarv_m/p1_impact",
+                "time": 0.55
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Discharge",
+            "combotextstarter": "Photon",
+            "icon": 4,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "msmarvel_p2",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%msmarvel_p2_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/msmarv_m/p2_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/msmarvel/p2_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.2
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power2_end"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power5_end",
+            "combotextfinisher": "Discharge",
+            "combotextstarter": "Photon",
+            "icon": 4,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power2_end",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/msmarv_m/p2_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/msmarvel/p2_power",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0.38
+            },
+            "trigger": {
+                "effect": "char/msmarvel/p2_power",
+                "fxlevel": 5,
+                "name": "effect",
+                "time": 0.38
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": "%msmarvel_p2_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "inherit": "radial",
+                "maxrange": 120,
+                "name": "radial",
+                "time": 0.38,
+                "victimeventtag": 20,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                },
+                "damagemod": {
+                    "name": "dmgmod_drain_battery"
+                }
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/msmarvel/p2_aura",
+                "life": "%msmarvel_p2_slw",
+                "name": "powerup",
+                "tag": 20,
+                "time": -1,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%msmarvel_p2_spd"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Comet",
+            "combotextstarter": "Photonic",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "msmarvel_p3",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/msmarv_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/msmarvel/p3_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.09
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/msmarvel/p3_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.18
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/msmarvel/p3_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.41
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/msmarvel/p3_charge",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.41
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/msmarv_m/p3_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "projectile",
+                "center": true,
+                "damage": "%msmarvel_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "entity": "p3_projectile",
+                "filename": "ents_msmarvel",
+                "fulltargeting": true,
+                "maxrange": 800,
+                "name": "projectile",
+                "offset": "25 0 0",
+                "powerusage": "%msmarvel_p3_pwr",
+                "speed": 450,
+                "spread": 12,
+                "tag": 1,
+                "targetable": true,
+                "time": 0.5,
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                },
+                "damagemod": {
+                    "name": "dmgmod_drain_battery"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Luminescence",
+            "combotextstarter": "Blinding",
+            "icon": 3,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power4",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "msmarvel_p4",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%msmarvel_p4_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/msmarv_m/p4_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/msmarvel/p4_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/msmarvel/p4_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.2
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power4_end"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power4_end",
+            "combotextfinisher": "Luminescence",
+            "combotextstarter": "Blinding",
+            "icon": 3,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power4_end",
+            "priority": 5,
+            "trigger": {
+                "effect": "char/msmarvel/p4_power",
+                "fxlevel": 3,
+                "name": "effect_sound",
+                "sound": "char/msmarv_m/p4_power",
+                "time": 0.24
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/msmarvel/p4_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.24
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/msmarvel/p4_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.24
+            },
+            "trigger": {
+                "arc": 30,
+                "attacktype": "blast",
+                "damage": "%msmarvel_p4_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "fxlevel": 1,
+                "hiteffect": "char/msmarvel/p3_impact",
+                "inherit": "punch",
+                "maxrange": 200,
+                "name": "blast",
+                "time": 0.24,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                },
+                "damagemod": {
+                    "name": "dmgmod_drain_battery"
+                }
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2",
+            "blendtime": 0.05,
+            "combotextfinisher": "Detonation",
+            "combotextstarter": "Exploding",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power5",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "msmarvel_p5",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/msmarvel/p5_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/msmarv_m/p5_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/msmarvel/p5_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "damage": 0,
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "hiteffect": "char/msmarvel/p1_impact",
+                "name": "punch",
+                "powerusage": "%msmarvel_p5_pwr",
+                "time": 0.75,
+                "victimeventtag": 5,
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                },
+                "damageMod": {
+                    "name": "dmgmod_no_atk_roll"
+                },
+                "damageMod": {
+                    "name": "dmgmod_unblockable"
+                }
+            },
+            "trigger": {
+                "allow_actors": true,
+                "allow_non_actors": true,
+                "center_bolt": true,
+                "class": "time_bomb",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "explodedamagetype": "dmg_energy",
+                "explosion_damage": "%msmarvel_p5_dmg",
+                "explosion_knockback": "%msmarvel_p5_kb",
+                "explosion_radius": 144,
+                "life": 3,
+                "name": "powerup",
+                "tag": 5,
+                "time": -1,
+                "special_fx": {
+                    "center_bolt": true,
+                    "effect": "char/msmarvel/special_chargedobj",
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/msmarvel/special_explosion",
+                    "how_used": "custom",
+                    "tag": 1,
+                    "name": "effect_sound",
+                    "sound": "char/msmarv_m/p5_impact"
+                },
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Dilation",
+            "combotextstarter": "Momentous",
+            "icon": 5,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "msmarvel_p7",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/msmarvel/p7_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/msmarv_m/p7_power",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/msmarvel/p7_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/msmarvel/p7_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.66
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "life": "%msmarvel_p7_lif",
+                "name": "powerup",
+                "powerusage": "%msmarvel_p7_pwr",
+                "time": 0.66,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move",
+                    "level": "%msmarvel_p7_sd"
+                },
+                "special_fx": {
+                    "effect": "char/msmarvel/p7_aura",
+                    "fxlevel": 4,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/msmarvel/p7_aura",
+                    "fxlevel": 5,
+                    "how_used": "deactivation"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power7",
+            "combotextfinisher": "Empowerment",
+            "combotextstarter": "Stellar",
+            "icon": 9,
+            "name": "power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "msmarvel_p8",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/msmarvel/p8_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/msmarv_m/p8_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/msmarvel/p8_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.25
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/msmarvel/p8_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.25
+            },
+            "trigger": {
+                "effect": "char/msmarvel/p8_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.53
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "life": "%msmarvel_p8_lif",
+                "name": "powerup",
+                "powerusage": "%msmarvel_p8_pwr",
+                "time": 0.53,
+                "special_fx": {
+                    "effect": "char/msmarvel/p8_aura",
+                    "fxlevel": 4,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/msmarvel/p8_aura",
+                    "fxlevel": 5,
+                    "how_used": "deactivation"
+                },
+                "affecter": {
+                    "attribute": "all_talents",
+                    "level": "%msmarvel_p8_sk",
+                    "scope_talent": "msmarvel_p8"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "blendtime": 0,
+            "combotextfinisher": "Star",
+            "description": "BINARY STAR",
+            "icon": 6,
+            "lockangles": true,
+            "lockspeed": true,
+            "name": "power9",
+            "playspeed": 10,
+            "priority": "uninterruptable",
+            "require": {
+                "cat": "skill",
+                "item": "msmarvel_p9",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/msmarvel/p9_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/msmarv_m/p9_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/msmarvel/p9_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/msmarvel/p9_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/msmarvel/p9_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.44
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": "%msmarvel_p9_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "inherit": "radial",
+                "maxrange": 300,
+                "name": "radial",
+                "time": 0.65,
+                "victimeventtag": 30,
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                },
+                "damagemod": {
+                    "name": "dmgmod_drain_battery"
+                }
+            },
+            "trigger": {
+                "life": "%msmarvel_p9_lif",
+                "name": "powerup",
+                "shared_tag": "shared_stunned",
+                "tag": 30,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "combotextfinisher": "Empowerment",
+            "description": "BINARY FORM",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power10",
+            "playspeed": 2,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "msmarvel_p10",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/msmarvel/ability_fly_hand",
+                "name": "effect_sound",
+                "sound": "char/msmarv_m/p10_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/msmarvel/ability_fly_hand",
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/msmarvel/p3_charge",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0.35
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%msmarvel_p10_lif",
+                "name": "powerup",
+                "remove_skin_on_exit": true,
+                "skin": 17200,
+                "skin_swap": true,
+                "time": 0.4,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage_scope",
+                    "level": 0,
+                    "scope_damage": "dmg_energy"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "power_cost",
+                    "level": 0
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
