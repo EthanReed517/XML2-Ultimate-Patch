@@ -12,4 +12,5 @@ else
      # ( "added by Sean 5/23/05. checked in genosha3" )
      setGameFlag("prisoners", 24, 1 )
 endif
-
+waittimed ( 0.5 )
+remove ( "abyss_codex", "abyss_codex" )

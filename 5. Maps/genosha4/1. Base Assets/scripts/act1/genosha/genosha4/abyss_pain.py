@@ -21,6 +21,7 @@ if hamt < hthresh
      # ( "-- do the stuff --" )
      if stage == 1
           # ( "abyss runs out of council chamber" )
+          sound (  "PLAY_SOUND", "voice/abyss/flee", "", "" )
           act("fleetime", "fleetime" )
           setInvulnerable("abyss", "TRUE" )
      endif
@@ -33,4 +34,3 @@ if hamt < hthresh
           act("last_stage", "last_stage" )
      endif
 endif
-

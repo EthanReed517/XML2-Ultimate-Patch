@@ -16,3 +16,14 @@ setallaiactive("TRUE" )
 lockControls(0.100 )
 cameraResetOldSchool( )
 
+deathstrike_unlocked = isCharacterUnlocked("ladyd")
+if deathstrike_unlocked == 0
+    # ( "Lady Deathstrike is not yet unlocked, unlock her" )
+    unlockCharacter("ladyd", " ")
+    deathstrike_unlocked = isCharacterUnlocked("ladyd")
+    if deathstrike_unlocked == 1
+        # ( "Lady Deathstrike was not previously unlocked but she is on the roster" )
+        # ( "She's been unlocked now, so show the dialog that confirms this" )
+        createPopupDialogXML("dialogs/act1/genosha/deathstrike_unlocked")
+    endif 
+endif 

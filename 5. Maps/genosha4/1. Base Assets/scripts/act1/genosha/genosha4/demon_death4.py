@@ -2,6 +2,7 @@
 # ( "demon destroyed" )
 setEnable("bomb4", "TRUE" )
 remove ( "shield4", "shield4" )
+sound (  "PLAY_SOUND", "voice/abyss/in_void", "", "" )
 sound (  "PLAY_SOUND", "boss_battles/abyss/bomb_disappear", "bomb4", "" )
 waittimed ( 120.000 )
 act("demon_spawner04", "demon_spawner04" )

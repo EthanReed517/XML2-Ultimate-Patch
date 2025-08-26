@@ -2,6 +2,7 @@
 # ( "comment" )
 hittername = getName("_ACTIVATOR_" )
 if hittername == "abyss_explosion"
+     sound (  "PLAY_SOUND", "voice/abyss/blimp_bomb", "", "" )
      sound (  "PLAY_SOUND", "boss_battles/abyss/metal_bend", "", "" )
 spawn("_ACTIVATOR_", "firefx", "firefx", " 0.000 0.000 0.000 ", " 0.000 0.000 0.000 " )
      playanim (  "EA_POWER15", "abyss", "NONE", "" )

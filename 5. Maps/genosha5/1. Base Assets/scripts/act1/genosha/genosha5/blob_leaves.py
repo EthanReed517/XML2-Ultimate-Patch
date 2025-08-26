@@ -14,3 +14,14 @@ waittimed ( 1.000 )
 lockControls(0.100 )
 setallaiactive("TRUE" )
 
+blob_unlocked = isCharacterUnlocked("Blob_hero")
+if blob_unlocked == 0
+    # ( "Blob is not yet unlocked, unlock him" )
+    unlockCharacter("Blob_hero", " ")
+    blob_unlocked = isCharacterUnlocked("Blob_hero")
+    if blob_unlocked == 1
+        # ( "Blob was not previously unlocked but he is on the roster" )
+        # ( "He's been unlocked now, so show the dialog that confirms this" )
+        createPopupDialogXML("dialogs/act1/genosha/genosha5/blob_unlocked")
+    endif 
+endif 
