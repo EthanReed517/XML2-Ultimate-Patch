@@ -1,0 +1,130 @@
+{
+    "conversation": {
+        "startCondition": {
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/ladydeathstrike/1_genosha1_040_030",
+                    "text": "%LadyDeathstrike%: You're not going any further in - as a matter of fact, you're not going anywhere at all. Consider this a dead end.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: Who are you?",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/ladydeathstrike/1_GENOSHA1_040_032",
+                                    "text": "%LadyDeathstrike%: My name is Lady Deathstrike. Of course, I already know who you are - everyone has heard of the Brotherhood of Mutants. But tell me, why are you working with the X-Men? It's just not right.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "text": "%PLAYER%: We're not particularly happy about the arrangement, but we're stuck with it.",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "soundtoplay": "voice/ladydeathstrike/1_GENOSHA1_040_034",
+                                                    "text": "%LadyDeathstrike%: Since you're in league with the X-Men, it makes killing you all that much more satisfying. Anyone who works with Wolverine deserves death.",
+                                                    "response": {
+                                                        "text": "%BLANK%",
+                                                        "line": {
+                                                            "text": "%PLAYER%: You may have claws just like Wolverine, but you aren't standing in our way!",
+                                                            "response": {
+                                                                "text": "%BLANK%",
+                                                                "line": {
+                                                                    "soundtoplay": "voice/ladydeathstrike/1_GENOSHA1_040_036",
+                                                                    "text": "%LadyDeathstrike%: Oh, but I have been paid quite well to not only stand in your way. I am to stand on your graves . . . after I have killed you, of course.",
+                                                                    "response": {
+                                                                        "text": "%BLANK%",
+                                                                        "line": {
+                                                                            "text": "%PLAYER%: You're a mercenary?",
+                                                                            "response": {
+                                                                                "text": "%BLANK%",
+                                                                                "line": {
+                                                                                    "soundtoplay": "voice/ladydeathstrike/1_GENOSHA1_040_038",
+                                                                                    "text": "%LadyDeathstrike%: Why do you ask? Would you prefer to buy your way out of this battle?",
+                                                                                    "response": {
+                                                                                        "tagjump": "autogen_tag_1",
+                                                                                        "text": "%BLANK%"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "Forget it. We'd rather fight than pay you.",
+                        "line": {
+                            "soundtoplay": "voice/ladydeathstrike/1_genosha1_040_051",
+                            "text": "%LadyDeathstrike%: Good. I was hoping it would come to this. Otherwise you would feel like 'unfinished business'.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Then let's see if you really know how to use those claws.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/ladydeathstrike/1_genosha1_040_053",
+                                            "text": "%LadyDeathstrike%: Come a little closer and I'll show you just how well I use my claws.",
+                                            "response": {
+                                                "chosenscriptfile": "act1/genosha/genosha1/death_strike_start_post",
+                                                "conversationend": true,
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "act1/genosha/genosha1/gotmoney",
+                        "text": "I'll pay you 2000 tech bits to let us pass.",
+                        "line": {
+                            "soundtoplay": "voice/ladydeathstrike/1_genosha1_040_041",
+                            "text": "%LadyDeathstrike%: That will do nicely. It has been a pleasure doing business with you. A shame though.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: What's a shame?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/ladydeathstrike/1_genosha1_040_043",
+                                            "text": "%LadyDeathstrike%: I would have enjoyed battling with you.",
+                                            "response": {
+                                                "chosenscriptfile": "act1/genosha/genosha1/deathstrike_leaves",
+                                                "conversationend": true,
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
