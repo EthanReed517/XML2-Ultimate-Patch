@@ -1,24 +1,6 @@
 {
     "talents": {
         "talent": {
-            "hidden": true,
-            "name": "jub_resist",
-            "level": {
-                "count": 1,
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "attribute": "resist_energy",
-                        "level": 0.05
-                    },
-                    "affecter": {
-                        "attribute": "resist_mental",
-                        "level": 0.05
-                    }
-                }
-            }
-        },
-        "talent": {
             "descname": "Fireworks Fling",
             "description": "Jubilee throws fireworks at enemies.",
             "descshort": "Projectile",
@@ -138,7 +120,7 @@
         },
         "talent": {
             "descname": "Molecular Detonation",
-            "description": "Jubilee manipulates Energy to detonate matter at an atomic level, causing enemies to popup and objects to explode.",
+            "description": "Jubilee manipulates Energy to detonate matter at an atomic level, popping up her target after a time and knocking back nearby enemies.",
             "descshort": "Special",
             "icon": 2,
             "icon_texture": "textures/ui/jubilee_icons2.png",
@@ -168,7 +150,7 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "detonate_kb",
-                    "value": 250
+                    "value": 240
                 },
                 "talentvalue": {
                     "level": 11,
@@ -188,7 +170,7 @@
             },
             "level": {
                 "count": 11,
-                "description": "%detonate_dmg $DMG_ENERGY\\n%detonate_kb popup\\n%detonate_pwr $EP",
+                "description": "%detonate_dmg $DMG_ENERGY\\n%detonate_kb $KB\\n%detonate_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%detonate_req"
@@ -347,6 +329,16 @@
                 },
                 "talentvalue": {
                     "level": 1,
+                    "name": "taunt_life",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "taunt_life",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
                     "name": "taunt_pwr",
                     "value": 32
                 },
@@ -354,16 +346,6 @@
                     "level": 16,
                     "name": "taunt_pwr",
                     "value": 304
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "taunt_life",
-                    "value": 7
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "taunt_life",
-                    "value": 21
                 }
             },
             "level": {
@@ -647,7 +629,7 @@
         },
         "talent": {
             "descname": "Lumikinetic Mastery",
-            "description": "Increases the damage and Critical chance of all of Jubilee's powers and increases her Energy and Mental resistances.",
+            "description": "Increases damage and Critical chance of all powered and non-powered $DMG_ENERGY and $DMG_FIRE attacks and increases her Energy and Mental resistances.",
             "descshort": "Passive",
             "icon": 11,
             "icon_texture": "textures/ui/jubilee_icons2.png",
@@ -696,7 +678,7 @@
             },
             "level": {
                 "count": 15,
-                "description": "%jub_ps_mast_dmg:s Dmg\\n+%jub_ps_mast_cri:p Critical chance\\n+%jub_ps_mast_res:p Energy resistance\\n+%jub_ps_mast_res:p Mental resistance",
+                "description": "%jub_ps_mast_dmg:s $DMG_ENERGY and $DMG_FIRE\\n+%jub_ps_mast_cri:p Critical chance\\n+%jub_ps_mast_res:p Energy resistance\\n+%jub_ps_mast_res:p Mental resistance",
                 "require": {
                     "cat": "level",
                     "level": "%jub_ps_mast_req"

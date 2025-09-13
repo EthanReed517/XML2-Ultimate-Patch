@@ -316,7 +316,7 @@
         },
         "talent": {
             "descname": "Hulk Roar",
-            "description": "Hulk roars, causing nearby enemies to run in fear with decreased $DR for a time.",
+            "description": "Hulk roars, causing nearby enemies to run in fear with decreased $AR and $DR for a time.",
             "descshort": "Debuff",
             "icon": 5,
             "icon_texture": "textures/ui/hulk_icons2.png",
@@ -337,12 +337,12 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "hulk_p6_life",
-                    "value": 2
+                    "value": 12
                 },
                 "talentvalue": {
                     "level": 11,
                     "name": "hulk_p6_life",
-                    "value": 6
+                    "value": 35
                 },
                 "talentvalue": {
                     "level": 1,
@@ -356,18 +356,28 @@
                 },
                 "talentvalue": {
                     "level": 1,
+                    "name": "hulk_p6_ar",
+                    "value": 0.9
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "hulk_p6_ar",
+                    "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 1,
                     "name": "hulk_p6_dr",
-                    "value": 0.8
+                    "value": 0.9
                 },
                 "talentvalue": {
                     "level": 11,
                     "name": "hulk_p6_dr",
-                    "value": 0.38
+                    "value": 0.25
                 }
             },
             "level": {
                 "count": 11,
-                "description": "%hulk_p6_dr:s $DR\\n%hulk_p6_life seconds\\n%hulk_p6_pwr $EP",
+                "description": "%hulk_p6_ar:s $AR\\n%hulk_p6_dr:s $DR\\n%hulk_p6_life seconds\\n%hulk_p6_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%hulk_p6_req"
@@ -756,7 +766,7 @@
         },
         "talent": {
             "descname": "Hulk Incredible",
-            "description": "Increases damage and Critical chance of all powered and non-powered attacks.",
+            "description": "Increases Hulk's resistance to $DMG_PHYSICAL. Also increases damage and Critical chance of all powered and non-powered attacks.",
             "descshort": "Passive",
             "icon": 1,
             "icon_texture": "textures/ui/hulk_icons2.png",
@@ -778,6 +788,16 @@
                     "value": 1.05
                 },
                 "talentvalue": {
+                    "level": 1,
+                    "name": "hulk_pass2_res",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "hulk_pass2_res",
+                    "value": 0.5
+                },
+                "talentvalue": {
                     "level": 15,
                     "name": "hulk_pass2_dmg",
                     "value": 1.5
@@ -795,7 +815,7 @@
             },
             "level": {
                 "count": 15,
-                "description": "%hulk_pass2_dmg:s Dmg\\n+%hulk_pass2_crit:p Critical chance",
+                "description": "+%hulk_pass2_res:p Physical resistance\\n%hulk_pass2_dmg:s Dmg\\n+%hulk_pass2_crit:p Critical chance",
                 "require": {
                     "cat": "level",
                     "level": "%hulk_pass2_req"
@@ -807,6 +827,10 @@
                 },
                 "powerup": {
                     "life": -1,
+                    "affecter": {
+                        "attribute": "resist_physical",
+                        "level": "%hulk_pass2_res"
+                    },
                     "affecter": {
                         "affect_type": "scale",
                         "attribute": "damage",

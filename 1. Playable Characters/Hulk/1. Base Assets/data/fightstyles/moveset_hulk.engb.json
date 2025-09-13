@@ -2,81 +2,6 @@
     "FightingStyle": {
         "cansteal": false,
         "FightMove": {
-            "animenum": "ea_idle1",
-            "handler": "ch_idle",
-            "lockchaining": false,
-            "name": "idle",
-            "noncombat": true,
-            "chain": {
-                "action": "walk",
-                "result": "walk"
-            },
-            "chain": {
-                "action": "jog",
-                "result": "jog"
-            },
-            "chain": {
-                "action": "run",
-                "result": "run"
-            },
-            "chain": {
-                "action": "sprint",
-                "result": "sprint"
-            },
-            "chain": {
-                "action": "guard",
-                "result": "guarddecide"
-            },
-            "chain": {
-                "action": "attack",
-                "result": "attacklight1"
-            },
-            "chain": {
-                "action": "smash",
-                "result": "attackheavy1"
-            },
-            "chain": {
-                "action": "groundattack",
-                "result": "groundattack"
-            },
-            "chain": {
-                "action": "move",
-                "result": "jump"
-            },
-            "chain": {
-                "action": "powers",
-                "result": "powers"
-            },
-            "chain": {
-                "action": "spinleft",
-                "result": "run"
-            },
-            "chain": {
-                "action": "spinright",
-                "result": "run"
-            },
-            "chain": {
-                "action": "strafeleft",
-                "result": "strafeleft"
-            },
-            "chain": {
-                "action": "straferight",
-                "result": "straferight"
-            },
-            "chain": {
-                "action": "advance",
-                "result": "advance"
-            },
-            "chain": {
-                "action": "retreat",
-                "result": "retreat"
-            },
-            "chain": {
-                "action": "special",
-                "result": "boredloop"
-            }
-        },
-        "FightMove": {
             "animenum": "ea_walk1",
             "handler": "ch_move",
             "lockchaining": false,
@@ -430,6 +355,13 @@
             "name": "jumpland",
             "noncombat": true,
             "startchaintime": 0.5,
+            "trigger": {
+                "life": 0.5,
+                "movement": 50,
+                "name": "slide",
+                "targetdistance": 50,
+                "time": 0
+            },
             "trigger": {
                 "name": "footstep",
                 "sound": "char/hulk_m/step",

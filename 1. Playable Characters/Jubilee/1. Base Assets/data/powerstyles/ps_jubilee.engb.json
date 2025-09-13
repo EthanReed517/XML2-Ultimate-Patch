@@ -8,7 +8,6 @@
             "animenum": "ea_power2",
             "combotextfinisher": "Fling",
             "combotextstarter": "Sparkling",
-            "fallback": "attacklight1",
             "icon": 0,
             "lockangles": true,
             "name": "power1",
@@ -154,38 +153,48 @@
                 "level": 1
             },
             "trigger": {
-                "name": "sound",
-                "sound": "char/jubilee_m/p3_charge",
-                "time": 0.5
-            },
-            "trigger": {
                 "effect": "char/jubilee/special_charge",
                 "name": "effect",
                 "time": 0
             },
             "trigger": {
-                "damage": 1,
+                "name": "sound",
+                "sound": "char/jubilee_m/p3_charge",
+                "time": 0.5
+            },
+            "trigger": {
+                "damage": 0,
+                "damagescale": "none",
                 "damagetype": "dmg_energy",
+                "hiteffect": "char/jubilee/special_cardhit",
                 "name": "punch",
                 "powerusage": "%detonate_pwr",
                 "time": 0.75,
-                "victimeventtag": 5
+                "victimeventtag": 10,
+                "damageMod": {
+                    "name": "dmgmod_no_damage"
+                },
+                "damageMod": {
+                    "name": "dmgmod_no_atk_roll"
+                },
+                "damageMod": {
+                    "name": "dmgmod_unblockable"
+                }
             },
             "trigger": {
                 "allow_actors": true,
                 "allow_non_actors": true,
                 "center_bolt": true,
                 "class": "time_bomb",
-                "damage": "%detonate_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_energy",
-                "knockback": "%detonate_kb",
-                "radius": 144,
-                "func_deactivate": "timebomb_deactivate",
+                "explodedamagetype": "dmg_energy",
+                "explosion_damage": "%detonate_dmg",
+                "explosion_knockback": "%detonate_kb",
+                "explosion_radius": 144,
                 "life": 3,
                 "name": "powerup",
-                "powerup": "special",
-                "tag": 5,
+                "tag": 10,
                 "time": -1,
                 "special_fx": {
                     "center_bolt": true,
@@ -195,7 +204,7 @@
                 "special_fx": {
                     "effect": "char/jubilee/special_explosion",
                     "how_used": "custom",
-                    "tag": 1,
+                    "tag": 11,
                     "name": "effect_sound",
                     "sound": "char/jubilee_m/p3_impact"
                 },
