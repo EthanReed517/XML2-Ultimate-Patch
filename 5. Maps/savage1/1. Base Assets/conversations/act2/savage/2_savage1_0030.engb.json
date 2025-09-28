@@ -1,0 +1,60 @@
+{
+    "conversation": {
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/2_savage1_030_010",
+                    "text": "%ProfX%: Which mission briefing would you like?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "chosenscriptfile": "loadZone('briefing/briefing2_10','NULL')",
+                        "conversationend": true,
+                        "scriptfile": "act2/savage/check_briefing2_10",
+                        "text": "Find Mystique."
+                    },
+                    "response": {
+                        "chosenscriptfile": "loadZone('briefing/briefing2_15','NULL')",
+                        "conversationend": true,
+                        "scriptfile": "act2/savage/check_briefing2_15",
+                        "text": "Save Atmospheric Processors"
+                    },
+                    "response": {
+                        "chosenscriptfile": "loadZone('briefing/briefing2_20','NULL')",
+                        "conversationend": true,
+                        "scriptfile": "act2/savage/check_briefing2_20",
+                        "text": "Find Jungle Passage."
+                    },
+                    "response": {
+                        "chosenscriptfile": "loadZone('briefing/briefing2_30','NULL')",
+                        "conversationend": true,
+                        "scriptfile": "act2/savage/check_briefing2_30",
+                        "text": "Recover Anti-Metal Idol."
+                    },
+                    "response": {
+                        "chosenscriptfile": "loadZone('briefing/briefing2_40','NULL')",
+                        "conversationend": true,
+                        "scriptfile": "act2/savage/check_briefing2_40",
+                        "text": "Rescue Beast."
+                    },
+                    "response": {
+                        "conversationend": true,
+                        "text": "Nothing right now."
+                    }
+                }
+            }
+        }
+    }
+}

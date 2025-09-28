@@ -1,0 +1,182 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever14",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/shanna/2_savage1_060_010",
+                    "soundtoplayb": "voice/shanna/2_savage1_060_020",
+                    "text": "%SHANNA%Welcome to the Savage Land, X-Man. I'm Shanna. I understand you're looking for the passage to the buried Nuwali Temple.",
+                    "textb": "%Shanna%: My name is Shanna. I suppose I should welcome even a member of the Brotherhood to the Savage Land. Professor Xavier informs me you are looking to reach the buried Nuwali Temple.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: Yes, but we were told there's no way for us to get there.",
+                            "textb": "%PLAYER%: From what we've heard, there's no way to get there on foot.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/shanna/2_savage1_060_012",
+                                    "soundtoplayb": "voice/shanna/2_savage1_060_022",
+                                    "text": "%Shanna%: I've done a fair amount of exploring in that part of the jungle. It's dangerous but there are several old passageways in the area. I'd be willing to bet one of them would lead to the Nuwali Temple.",
+                                    "textb": "%Shanna%: There just may be. I've explored that area before and it contains several old passageways. I would guess one of them would lead you to the Nuwali Temple. But watch yourselves - the area is very dangerous.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/shanna/2_savage1_060_013",
+                                            "soundtoplayb": "voice/shanna/2_savage1_060_023",
+                                            "text": "%Shanna%: If you need more information, see the mission briefing computer.",
+                                            "textb": "%Shanna%: If you'd like more information, use the mission briefing computer by Professor Xavier.",
+                                            "response": {
+                                                "chosenscriptfile": "act2/savage/give_monument_quest",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "Who are you?",
+                        "line": {
+                            "soundtoplay": "voice/shanna/2_savage1_060_031",
+                            "text": "%Shanna%: My full name is Shanna O'Hara. Before I came here, I was a zookeeper in New York City.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: What brought you to the Savage Land?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/shanna/2_savage1_060_033",
+                                            "text": "%Shanna%: During a visit here I realized Ka-zar couldn't protect this land all by himself. He needed me to help guard these jungles from outside influences.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Who are the Nuwali?",
+                        "line": {
+                            "soundtoplay": "voice/shanna/2_savage1_060_041",
+                            "text": "%Shanna%: What little we know about them has been gleaned from ancient Nuwali stone tablets. Apparently they came from another world. On the instructions of the Beyonders, the Nuwali collected all types of plant and animals from the Mesozoic era and put them here.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: How is this area kept in a tropical state? We're in the Antarctic.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/shanna/2_savage1_060_043",
+                                            "text": "%Shanna%: The Nuwali have some type of massive atmospheric processors hidden nearby.",
+                                            "response": {
+                                                "scriptfile": "setGameFlag('savage', 1,1)",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Has anyone ever seen Nuwali technology?",
+                        "line": {
+                            "soundtoplay": "voice/shanna/2_savage1_060_051",
+                            "text": "%Shanna%: No. And we try to make sure no one does.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Why is that?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/shanna/2_savage1_060_053",
+                                            "text": "%Shanna%: The Savage Land could be held for ransom by who ever controlled the atmospheric equipment.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'savage', 1 )",
+                        "text": "Do you speak Nuwali?",
+                        "line": {
+                            "soundtoplay": "voice/shanna/2_savage1_060_061",
+                            "text": "%Shanna%: Not really. But I am pretty good at reading it.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: How did you learn to read a dead language?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/shanna/2_savage1_060_063",
+                                            "text": "%Shanna%: Oh, it's not dead. Several of the tribes in the Savage Lands speak a form of Nuwali.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Thanks, Shanna.",
+                        "line": {
+                            "soundtoplay": "voice/shanna/2_savage1_060_071",
+                            "text": "%Shanna%: My pleasure, X-Man.",
+                            "response": {
+                                "chosenscriptfile": "common/briefings/mark_briefing2_20",
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Thanks for the info, Shanna.",
+                        "line": {
+                            "soundtoplay": "voice/shanna/2_savage1_060_082",
+                            "soundtoplayb": "voice/shanna/2_savage1_060_082",
+                            "text": "%Shanna%: You're welcome.",
+                            "textb": "%Shanna%: You're welcome.",
+                            "response": {
+                                "chosenscriptfile": "common/briefings/mark_briefing2_20",
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,196 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "act2/savage/check_destiny_quest",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/mystique/2_savage1_090_010",
+                    "soundtoplayb": "voice/mystique/2_savage1_090_020",
+                    "text": "%Mystique%: I suppose you've come to me looking for praise. So I'll just go ahead and get it over with. Thank you for saving Destiny, X-man. You're the greatest.",
+                    "textb": "%Mystique%: Hello, my friend. Thank you for saving Destiny. I can't imagine how it would have gone if the X-Men had been in charge.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: No, not at all, Mystique. I'm just glad you and Destiny are all right.",
+                            "textb": "%PLAYER%: Glad to be of help, Mystique. Is Destiny all right?",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/mystique/2_savage1_090_012",
+                                    "soundtoplayb": "voice/mystique/2_savage1_090_022",
+                                    "text": "%Mystique%: I know how you X-Men work. You love to bask in positive feelings. So there, you got your pat on the head, now leave me alone.",
+                                    "textb": "%Mystique%: Oh, yes. She's seen the doctor and she's quite all right now.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/mystique/2_savage1_090_013",
+                                            "soundtoplayb": "voice/mystique/2_savage1_090_023",
+                                            "text": "%Mystique%: A word of warning though, if you want to question Garokk you should do it soon. Because after I see him, he probably won't be able to speak.",
+                                            "textb": "%Mystique%: If you plan on visiting the prison to speak with Garokk, you should do it soon. Because once I'm done with him, he's going to have a hard enough time just drawing a breath.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever18",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/mystique/2_savage1_090_030",
+                    "soundtoplayb": "voice/mystique/2_savage1_090_040",
+                    "text": "%Mystique%: Oh, joy. I was so hoping to see an X-Man.",
+                    "textb": "%Mystique%: Can I help you?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/mystique/2_savage1_090_050",
+                    "soundtoplayb": "voice/mystique/2_savage1_090_060",
+                    "text": "%Mystique%: What is it?",
+                    "textb": "%Mystique%: Yes? Did you want something?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "Who's Destiny?",
+                        "line": {
+                            "soundtoplay": "voice/mystique/2_savage1_090_071",
+                            "text": "%Mystique%: She's a mutant with the power to foretell the future.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: You seemed pretty upset that Garokk was trying to find her.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/mystique/2_savage1_090_073",
+                                            "text": "%Mystique%: Destiny is a very dear friend of mine. And I don't like it when someone threatens my friends.",
+                                            "response": {
+                                                "chosenscriptfile": "setGameFlag('savage', 3,1)",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'savage', 3)",
+                        "text": "Why did Destiny come to the Savage Land?",
+                        "line": {
+                            "soundtoplay": "voice/mystique/2_savage1_090_081",
+                            "text": "%Mystique%: She foresaw the attack on Genosha and wanted to seek safety.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Didn't she warn Magneto?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/mystique/2_savage1_090_083",
+                                            "text": "%Mystique%: Yes, but Magneto refused to believe anyone could overcome his defenses.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Do you mind working with the X-Men?",
+                        "line": {
+                            "soundtoplay": "voice/mystique/2_savage1_090_091",
+                            "text": "%Mystique%: Of course I do. They're so... straight-laced.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Why do you put up with them?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/mystique/2_savage1_090_093",
+                                            "text": "%Mystique%: Magneto let the Brotherhood know that we have to get along with the X-Men as long as Quicksilver's safety is at stake.",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "soundtoplay": "voice/mystique/2_savage1_090_094",
+                                                    "text": "%Mystique%: Scarlet Witch seems to have taken that to heart - she's positively drooling over Colossus.",
+                                                    "response": {
+                                                        "tagjump": "autogen_tag_1",
+                                                        "text": "%BLANK%"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Always a pleasure, Mystique.",
+                        "line": {
+                            "soundtoplay": "voice/mystique/2_savage1_090_101",
+                            "text": "%Mystique%: The pleasure was all yours, X-Man.",
+                            "response": {
+                                "chosenscriptfile": "act2/savage/complete_obj1",
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Thanks, Mystique.",
+                        "line": {
+                            "soundtoplay": "voice/mystique/2_savage1_090_111",
+                            "soundtoplayb": "voice/mystique/2_savage1_090_111",
+                            "text": "%Mystique%: You're quite welcome.",
+                            "textb": "%Mystique%: You're quite welcome.",
+                            "response": {
+                                "chosenscriptfile": "act2/savage/complete_obj1",
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

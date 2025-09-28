@@ -1,0 +1,241 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "act2/savage/check_vibranium_quest",
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/kazar/2_savage1_050_010",
+                    "soundtoplayb": "voice/kazar/2_savage1_050_020",
+                    "text": "%kazaar%: Thank you, for returning the Anti-metal to me, my friend. I'll hide it in a place where it will never be found. My father's secret will once again be safe.",
+                    "textb": "%kazaar%: I never thought I'd be saying this to a member of the Brotherhood, but thank you. By returning the Anti-metal to me, you've kept my father's secret safe. I'll be sure to hide it where it will never be found.",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "conditionscriptfile": "act2/savage/give_vibranium_quest",
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/kazar/2_savage1_050_030",
+                    "soundtoplayb": "voice/kazar/2_savage1_050_040",
+                    "text": "%kazaar%: Hello, X-Man. I have some disturbing news. My father's cache of Anti-Metal has been stolen from where I'd hidden it.",
+                    "textb": "%kazaar%: I can't say I enjoy asking for your help, but I need you to locate my father's cache of Anti-Metal. It's been stolen from its hiding place.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: What's Anti-metal?",
+                            "textb": "%PLAYER%: What's Anti-metal?",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/kazar/2_savage1_050_032",
+                                    "soundtoplayb": "voice/kazar/2_savage1_050_042",
+                                    "text": "%kazaar%: It is a substance that's capable of cutting through any known metal. My father died trying to keep it a secret. I believe Mikhail has taken it, and has hidden it within the Nuwali temple.",
+                                    "textb": "%kazaar%: It is a substance that can cut through any known metal. My father died trying to keep it a secret. The horseman Mikhail took it and I believe he hid it in the Nuwali temple.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "text": "%PLAYER%: If that ever fell into Apocalypse's hands, Sinister would probably be able to replicate. Then no force on Earth would be able to stop them.",
+                                            "textb": "%PLAYER%: If Mister Sinister ever got hold of it, he'd find some way to replicate it. Then there'd be no defeating Apocalypse.",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "soundtoplay": "voice/kazar/2_savage1_050_034",
+                                                    "soundtoplayb": "voice/kazar/2_savage1_050_044",
+                                                    "text": "%kazaar%: My thoughts exactly. If you need more information, use the mission briefing computer.",
+                                                    "textb": "%kazaar%: I agree. If you want more information, use the  briefing computer by Professor Xavier.",
+                                                    "response": {
+                                                        "chosenscriptfile": "common/briefings/mark_briefing2_30",
+                                                        "tagjump": "autogen_tag_1",
+                                                        "text": "%BLANK%"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "conditionscriptfile": "act2/savage/conv_sanc_50_1",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/kazar/2_savage1_050_050",
+                    "soundtoplayb": "voice/kazar/2_savage1_050_060",
+                    "text": "%kazaar%: Welcome to the Savage Land. My name is Ka-zar. You couldn't have come at a better time - it's just too bad you had to bring someone like Magneto with you.",
+                    "textb": "%kazaar%: You're one of the Brotherhood. Do not think I have forgotten what you did the last time you visited the Savage Land. But, since Professor Xavier trusts you, I'm forced to as well.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: So you've had past experience with the Brotherhood?",
+                            "textb": "%PLAYER%: No one's really happy with the current working conditions. But we have no choice - we have to help you.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/kazar/2_savage1_050_052",
+                                    "text": "%kazaar%: Yes, Magneto and the Brotherhood visited us several years back.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "text": "%PLAYER%: Don't worry, they're here to help, not hurt this time around. We'll make sure of that.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/kazar/2_savage1_050_062",
+                    "soundtoplayb": "voice/kazar/2_savage1_050_063",
+                    "text": "%kazaar%: Hello, X-Man. What can I do for you?",
+                    "textb": "%kazaar%: Yes? Did you want something?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "Who are you?",
+                        "line": {
+                            "soundtoplay": "voice/kazar/2_savage1_050_071",
+                            "text": "%kazaar%: I'm Ka-zar, protector of The Savage Land. But in England I'm known as Kevin Plunder.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: You're from England?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/kazar/2_savage1_050_073",
+                                            "text": "%kazaar%: I was born there, but I was brought here as a child by my father. He was a scientist searching for a rare element that could destroy any known metal. Shortly after discovering the element, he was killed, leaving me an orphan.",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "text": "%PLAYER%: You grew up in the jungles by yourself?",
+                                                    "response": {
+                                                        "text": "%BLANK%",
+                                                        "line": {
+                                                            "soundtoplay": "voice/kazar/2_savage1_050_075",
+                                                            "text": "%kazaar%: I had quite a bit of help from various friends - this is no place to be without protection.",
+                                                            "response": {
+                                                                "tagjump": "autogen_tag_1",
+                                                                "text": "%BLANK%"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "What is the Savage Land?",
+                        "line": {
+                            "soundtoplay": "voice/kazar/2_savage1_050_081",
+                            "text": "%kazaar%: It is a wild life sanctuary created by an alien race known as the Nuwali. They built it under the guidance of a race from another dimension known as The Beyonders.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: So there must be some type of alien technology keeping the environment jungle-like.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/kazar/2_savage1_050_083",
+                                            "text": "%kazaar%: Yes. But where it is located, no one is sure.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Why are you so angry with the Brotherhood?",
+                        "line": {
+                            "soundtoplay": "voice/kazar/2_savage1_050_091",
+                            "text": "%kazaar%: Several years ago, Magneto came to the Savage Land and genetically altered some of the natives. He gave them super human powers.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Why did he do that?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/kazar/2_savage1_050_093",
+                                            "text": "%kazaar%: He sought to use them as an army to put all of the Savage Land under his control.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Thank you, Ka-zar.",
+                        "line": {
+                            "soundtoplay": "voice/kazar/2_savage1_050_101",
+                            "text": "%kazaar%: You are quite welcome, my friend.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Talk to you later.",
+                        "line": {
+                            "soundtoplay": "voice/kazar/2_savage1_050_111",
+                            "soundtoplayb": "voice/kazar/2_savage1_050_111",
+                            "text": "%kazaar%: Only if we must.",
+                            "textb": "%kazaar%: Only if we must.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
