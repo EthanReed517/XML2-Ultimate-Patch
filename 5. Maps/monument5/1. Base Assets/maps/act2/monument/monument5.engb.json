@@ -1,0 +1,4326 @@
+{
+    "world": {
+        "entity": {
+            "act": 2,
+            "killz": -245,
+            "level": 18,
+            "name": "world",
+            "partylight": "0.7 0.56 0",
+            "partylightradius": 170,
+            "soundfile": "ffmon",
+            "zonescript": "act2/monument/monument5/monument5"
+        },
+        "precache": {
+            "filename": "act2/monument/monument5/2_monument5_0010",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act2/monument/monument5/2_monument5_0020",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act2/monument/monument5/2_monument5_0030",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act2/monument/monument5/deadpool",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "hud/hud_head_2601",
+            "type": "model"
+        },
+        "precache": {
+            "filename": "hud/hud_head_2701",
+            "type": "model"
+        },
+        "precache": {
+            "filename": "act2/monument/monument5/remove_dead",
+            "type": "script"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "ClawBeast_b",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_smartent": true,
+            "name": "ss_clawbeast_b",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "waittimed(0.5)\\n\\rloadDangerRoomCourse('CHGAM')",
+            "actsound": "common/game/dangerdisc_pickup",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Danger Room Disc",
+            "fxlevel": 7,
+            "idnum": 27,
+            "ignoreactorsonmove": true,
+            "loopfx": "base/item/item_sparkle",
+            "loopfxstarton": true,
+            "model": "pickups/pickup_dangeroom_disk",
+            "name": "disc_gambit",
+            "nocollide": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "spinpossible": false,
+            "structure": 2,
+            "team": "hero",
+            "variablename": "r_dr_disc"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "homingBeaconReward('beaconact2',189)",
+            "actsound": "zone_shared/special/beacon",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Pick up Homing Beacon",
+            "material": "hollow_metal",
+            "model": "pickups/homing_beacon_act2",
+            "name": "homing_beacon_act2_",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "smartent": false,
+            "spawnscript": "common/beacons/beacon2",
+            "structure": 2,
+            "team": "hero",
+            "variablename": "beaconact2"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/misc/techstation_striking",
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "permanentStatBoost('_ACTIVATOR_','striking')",
+            "actsound": "zone_shared/object/techstation",
+            "actspawn": "tech_station_striking_off",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Tech Station Striking",
+            "material": "solid_metal",
+            "model": "common/tech_station_strike",
+            "name": "tech_station_striking",
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "spawnsoundloop": "zone_shared/object/techstation_loop",
+            "structure": 2,
+            "team": "hero",
+            "toggleonact": true,
+            "variablename": "r_t_station"
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfxstarton": true,
+            "name": "loop_effect",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "classname": "actionent",
+            "name": "loop_sound",
+            "nocollide": true,
+            "smartent": true,
+            "toggleonact": true
+        },
+        "entity": {
+            "classname": "ent",
+            "name": "null",
+            "nocollide": true
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "name": "player_start_all",
+            "nocollide": true
+        },
+        "entity": {
+            "classname": "actionent",
+            "name": "relay",
+            "nocollide": true
+        },
+        "entity": {
+            "actmatchteam": true,
+            "actontouch": true,
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "trigger_touch",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "trigger_use",
+            "nocollide": true,
+            "team": "none"
+        },
+        "entity": {
+            "alpha": 0.7,
+            "ambienteffect": "base/misc/misc_waterambient",
+            "classname": "waterent",
+            "density": 10,
+            "name": "water",
+            "nocollide": true,
+            "splasheffect": "base/misc/misc_watersplash",
+            "texture": "textures/water.png",
+            "wakeeffect": "base/misc/misc_waterwake"
+        },
+        "entity": {
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "common/extraction/exp_activate",
+            "actsound": "common/game/xtraction",
+            "acttogglesanim": true,
+            "acttogglesloopfx": true,
+            "animstarton": false,
+            "classname": "gameent",
+            "description": "Xtraction Point",
+            "fxlevel": 1,
+            "ignoretelekinesis": true,
+            "loopfx": "base/misc/extraction_loop",
+            "loopfxstarton": false,
+            "model": "puzzles/beacon_xtraction",
+            "name": "xtraction_point",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "resetstate": true,
+            "spawnscript": "common/extraction/exp_spawn",
+            "team": "hero"
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "zonelinkent",
+            "description": "Enter next area",
+            "name": "zone_link",
+            "nocollide": false,
+            "team": "hero"
+        },
+        "entity": {
+            "classname": "moverent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/altar_rising_01_mon_m",
+            "move": "0 0 0",
+            "moveduration": 1,
+            "name": "altar_rising_01_mon_m_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "classname": "moverent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/altar_rising_02_mon_m",
+            "move": "0 0 0",
+            "moveduration": 1,
+            "name": "altar_rising_02_mon_m_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "classname": "moverent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/altar_rising_03_mon_m",
+            "move": "0 0 0",
+            "moveduration": 1,
+            "name": "altar_rising_03_mon_m_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "classname": "moverent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/altar_rising_04_mon_m",
+            "move": "0 0 0",
+            "moveduration": 1,
+            "name": "altar_rising_04_mon_m_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/arch_curved_mon_e",
+            "name": "arch_curved_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "deathspawn": "avalanche_finger_cage_b_mo_d",
+            "fxlevel": 2,
+            "health": 200,
+            "material": "rock",
+            "model": "monument/avalanche_finger_cage_mon_b",
+            "name": "avalanche_finger_cage_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "Wood",
+            "model": "monument/beam_mon_e",
+            "name": "beam_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "block_01_mon_b_mo_d",
+            "fxlevel": 3,
+            "health": 300,
+            "material": "rock",
+            "model": "monument/block_01_mon_b",
+            "name": "block_01_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "block_02_mon_b_mo_d",
+            "fxlevel": 3,
+            "health": 300,
+            "material": "rock",
+            "model": "monument/block_02_mon_b",
+            "name": "block_02_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 150,
+            "heaviness": 1,
+            "material": "rock",
+            "model": "monument/block_02_mon_th",
+            "name": "block_02_mon_th_mo",
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 150,
+            "heaviness": 1,
+            "material": "rock",
+            "model": "monument/block_03_mon_th",
+            "name": "block_03_mon_th_mo",
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "deathspawn": "burner_mon_b_mo_d",
+            "fxlevel": 2,
+            "health": 200,
+            "material": "rock",
+            "model": "monument/burner_mon_b",
+            "name": "burner_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "monument/cage_mon_e",
+            "name": "cage_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/column_hall_str_mon_e",
+            "name": "column_hall_str_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "deathspawn": "icon_statue_02_mon_b_mo_d",
+            "fxlevel": 2,
+            "health": 150,
+            "material": "rock",
+            "model": "monument/icon_statue_02_mon_b",
+            "name": "icon_statue_02_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "moverent",
+            "health": 32000,
+            "material": "biometal",
+            "model": "monument/idol_vibranium_mon_m",
+            "move": "0 0 0",
+            "moveduration": 1,
+            "name": "idol_vibranium_mon_m_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "material": "energy",
+            "model": "monument/lava_mon_a",
+            "name": "lava_mon_a_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "material": "rock",
+            "model": "monument/pillar_10x20_mon_b",
+            "name": "pillar_10x20_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/pillar_1x30_mon_e",
+            "name": "pillar_1x30_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/pillar_5x30_mon_e",
+            "name": "pillar_5x30_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_s",
+            "fxlevel": 1,
+            "health": 5,
+            "heaviness": 0,
+            "material": "rock",
+            "model": "monument/pot_02_mon_th",
+            "name": "pot_02_mon_th_mo",
+            "randompickups": 3,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_s",
+            "fxlevel": 1,
+            "health": 5,
+            "heaviness": 0,
+            "material": "rock",
+            "model": "monument/pot_mon_th",
+            "name": "pot_mon_th_mo",
+            "randompickups": 3,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/skull_air_mon_e",
+            "name": "skull_air_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/skull_earth_mon_e",
+            "name": "skull_earth_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/skull_fire_mon_e",
+            "name": "skull_fire_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/skull_water_mon_e",
+            "name": "skull_water_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/snake_wall_mon_a",
+            "name": "snake_wall_mon_a_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "spawnsoundloop": "zone_shared/object/snake_wall",
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 200,
+            "heaviness": 1,
+            "material": "rock",
+            "model": "monument/statue_01_mon_th",
+            "name": "statue_01_mon_th_mo",
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 200,
+            "heaviness": 1,
+            "material": "rock",
+            "model": "monument/statue_02_mon_th",
+            "name": "statue_02_mon_th_mo",
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 200,
+            "heaviness": 1,
+            "material": "rock",
+            "model": "monument/statue_03_mon_th",
+            "name": "statue_03_mon_th_mo",
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "moverent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/statue_04_mon_m",
+            "move": "0 0 0",
+            "moveduration": 1,
+            "name": "statue_04_mon_m_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/statue_10ft_mon_e",
+            "name": "statue_10ft_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "statue_door_ent_mon_b_mo_d",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "rock",
+            "model": "monument/statue_door_ent_mon_b",
+            "name": "statue_door_ent_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "statue_lord_mon_b_mo_d",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "rock",
+            "model": "monument/statue_lord_mon_b",
+            "name": "statue_lord_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/statue_noble_mon_e",
+            "name": "statue_noble_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "statue_warrior_mon_b_mo_d",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "rock",
+            "model": "monument/statue_warrior_mon_b",
+            "name": "statue_warrior_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "deathspawn": "urn_mon_b_mo_d",
+            "fxlevel": 2,
+            "health": 50,
+            "material": "rock",
+            "model": "monument/urn_mon_b",
+            "name": "urn_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 2,
+            "structure": 0
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "acteffect": "base/misc/misc_treasure",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actsound": "common/game/treasure",
+            "animstarton": false,
+            "classname": "treasureent",
+            "count": 1000,
+            "description": "weapon cache",
+            "material": "solid_metal",
+            "model": "common/treasure_chest_a",
+            "name": "treasure_chest",
+            "nopickup": true,
+            "nopush": true,
+            "team": "hero",
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "classname": "powertriggerent",
+            "deathspawn": "icebridge30 magmabridge30 tkbridge30",
+            "description": "bridge power",
+            "health": 1,
+            "hinttype": "power",
+            "length": 30,
+            "material": "energy",
+            "model": "puzzles/bridge_icon",
+            "name": "bridge_trigger30",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "reactpower": "bridge",
+            "stopnothing": true,
+            "stopprojectile": true,
+            "structure": 0,
+            "targetlockable": true
+        },
+        "entity": {
+            "boxdamage": true,
+            "classname": "affectableharment",
+            "damage": "3 5",
+            "damagemods": "dmgmod_no_pain",
+            "damagetype": "dmg_fire",
+            "extent": "-60 -60 0 60 60 72",
+            "health": 1,
+            "knockback": 200,
+            "loopfx": "map/common/fire_large",
+            "loopfxstarton": true,
+            "name": "fire_large",
+            "radiusdamage": false,
+            "reactpower": "extinguish",
+            "smartfire": true,
+            "spawnsoundloop": "zone_shared/fx/fire_large"
+        },
+        "entity": {
+            "boxdamage": true,
+            "classname": "affectableharment",
+            "damage": "3 5",
+            "damagemods": "dmgmod_forcepain",
+            "damagetype": "dmg_fire",
+            "extent": "-120 -65 0 120 65 90",
+            "health": 1,
+            "knockback": 200,
+            "loopfx": "map/common/fire_wall",
+            "loopfxstarton": true,
+            "name": "fire_wall",
+            "radiusdamage": false,
+            "reactpower": "extinguish",
+            "smartfire": true,
+            "spawnsoundloop": "zone_shared/fx/fire_wall"
+        },
+        "entinst": {
+            "type": "ss_clawbeast_b",
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_clawbeast_b",
+                "pos": "-66.4647 2222.88 1.41752"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_clawbeast_b",
+                "pos": "4505.46 1913.43 13.3798"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_clawbeast_b",
+                "pos": "4491.58 2058.4 13.3798"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_clawbeast_b",
+                "pos": "4500.68 2217.09 13.3798"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_clawbeast_b",
+                "pos": "2520 3000 3.61549"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_clawbeast_b",
+                "pos": "1920 3000 7.86752"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_clawbeast_b",
+                "pos": "-53.4933 1860.82 1.41752"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 17.9999 84",
+                "name": "ss_clawbeast_b",
+                "pos": "-66.4648 2034.63 1.41752"
+            }
+        },
+        "entinst": {
+            "type": "beast5",
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "beast5",
+                "pos": "4020.55 1617.59 20.9984"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "beast6",
+                "orient": "0 0 3.14159",
+                "pos": "1051.68 772.64 95.5897"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30.0001 18 84",
+                "name": "beast7",
+                "orient": "0 0 -1.5708",
+                "pos": "427.107 1367.54 95.5897"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "beast8",
+                "orient": "0 0 1.5708",
+                "pos": "443.175 2458.09 95.5897"
+            },
+            "inst": {
+                "extents": "-18 -17.9999 0 30 18.0001 84",
+                "name": "beast9",
+                "orient": "0 0 3.14159",
+                "pos": "1233.01 3292.82 95.5897"
+            },
+            "inst": {
+                "extents": "-21.1257 -17.7265 0 33.1255 17.7266 84",
+                "name": "beast10",
+                "orient": "0 0 1.48353",
+                "pos": "1230.31 2566.8 95.5897"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "beast3",
+                "pos": "3189.49 1538.54 20.9984"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "beast2",
+                "pos": "3410.76 3283.69 86.0047"
+            },
+            "inst": {
+                "extents": "-17.9999 -18.0001 0 30.0001 17.9999 84",
+                "name": "beast1",
+                "orient": "0 0 1.5708",
+                "pos": "4021.94 2722.08 86.0047"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "beast4",
+                "pos": "3189.49 1203.57 12.6508"
+            }
+        },
+        "entinst": {
+            "type": "pitbeast3",
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "pitbeast3",
+                "orient": "0 0 1.5708",
+                "pos": "4022.19 423.585 -234"
+            },
+            "inst": {
+                "extents": "-17.9999 -17.9999 0 30.0001 18.0001 84",
+                "name": "pitbeast1",
+                "orient": "0 0 -1.5708",
+                "pos": "4047.06 3796.44 -234"
+            }
+        },
+        "entinst": {
+            "type": "pitbeast2",
+            "inst": {
+                "extents": "-18 -17.9999 0 30 18.0001 84",
+                "name": "pitbeast2",
+                "orient": "0 0 3.14159",
+                "pos": "4431.83 3266.05 -234"
+            }
+        },
+        "entinst": {
+            "type": "disc_gambit",
+            "inst": {
+                "name": "disc_gambit",
+                "pos": "948 3564 0"
+            }
+        },
+        "entinst": {
+            "type": "homing_beacon_act2_01",
+            "inst": {
+                "name": "homing_beacon_act2_01",
+                "pos": "1224 -36 0"
+            }
+        },
+        "entinst": {
+            "type": "tech_station_striking01",
+            "inst": {
+                "name": "tech_station_striking01",
+                "orient": "0 0 1.5708",
+                "pos": "2220 3420 -121"
+            }
+        },
+        "entinst": {
+            "type": "loop_effect25",
+            "inst": {
+                "extents": "-6.081e-005 -12.0 -6.0 3.35989e-005 12.0 6.0",
+                "name": "loop_effect25",
+                "orient": "0 0 -0.785398",
+                "pos": "599.798 1323.7 38.9911"
+            },
+            "inst": {
+                "extents": "-3.03625e-005 -11.9999 -6.0 3.03289e-005 12.0 6.0",
+                "name": "loop_effect25",
+                "orient": "0 0 -0.785398",
+                "pos": "1982.54 149.954 38.9911"
+            },
+            "inst": {
+                "extents": "-11.9999 -4.13605e-005 -6.0 12.0001 -2.24821e-006 6.0",
+                "name": "loop_effect25",
+                "orient": "0 0 -2.35619",
+                "pos": "1026.32 429.804 38.9911"
+            },
+            "inst": {
+                "extents": "-9.3811e-005 -12.0 -6.0 1.81311e-005 12.0001 6.0",
+                "name": "loop_effect25",
+                "orient": "0 0 -0.785398",
+                "pos": "2461.25 149.954 38.9911"
+            },
+            "inst": {
+                "extents": "-12.0 -2.58815e-005 -6.0 12.0001 6.85275e-005 6.0",
+                "name": "loop_effect25",
+                "orient": "0 0 0.785398",
+                "pos": "3478.08 481.318 38.9911"
+            },
+            "inst": {
+                "extents": "-4.99983e-005 -12.0 -6.0 4.23876e-005 12.0 6.0",
+                "name": "loop_effect25",
+                "orient": "0 0 2.35619",
+                "pos": "419.035 1743.53 38.9911"
+            },
+            "inst": {
+                "extents": "-4.17815e-006 -12.0 -6.0 1.89096e-006 11.9998 6.0",
+                "name": "loop_effect25",
+                "orient": "0 0 2.35619",
+                "pos": "1498.76 1415.41 38.9911"
+            },
+            "inst": {
+                "extents": "-12.0001 -9.46212e-005 -6.0 11.9999 7.19431e-005 6.0",
+                "name": "loop_effect25",
+                "orient": "0 0 0.785398",
+                "pos": "1395.95 3303.84 38.9911"
+            },
+            "inst": {
+                "extents": "-11.9999 -2.12053e-006 -6.0 12.0003 9.00633e-006 6.0",
+                "name": "loop_effect25",
+                "orient": "0 0 -2.35619",
+                "pos": "3017.5 3298.78 38.9911"
+            },
+            "inst": {
+                "extents": "-0.000101051 -12.0 -6.0 7.76519e-005 12.0001 6.0",
+                "name": "loop_effect25",
+                "orient": "0 0 2.35619",
+                "pos": "2939.89 1424.83 38.9911"
+            },
+            "inst": {
+                "extents": "-0.000113934 -12.0001 -6.0 6.47684e-005 11.9999 6.0",
+                "name": "loop_effect25",
+                "orient": "0 0 2.35619",
+                "pos": "4018.14 1743.53 38.9911"
+            }
+        },
+        "entinst": {
+            "type": "loop_effect23",
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect23",
+                "pos": "658.316 3748.66 -202.561"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect23",
+                "pos": "10.4574 3529.38 -202.561"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect23",
+                "pos": "911.847 3137 -202.561"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect23",
+                "pos": "353.433 3272.37 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect23",
+                "pos": "371.918 3422.23 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect23",
+                "pos": "535.47 3348.32 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect23",
+                "pos": "475.551 3155.05 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect23",
+                "pos": "601.153 2909.26 -202.561"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect23",
+                "pos": "88.1678 3020.32 -202.561"
+            }
+        },
+        "entinst": {
+            "type": "loop_effect27",
+            "inst": {
+                "extents": "-6.08407e-005 -12.0 -6.0 2.5476e-005 12.0 6.0",
+                "name": "loop_effect27",
+                "orient": "-4.76837e-007 0.0 2.35619",
+                "pos": "-419.513 1723.89 56.2065"
+            },
+            "inst": {
+                "extents": "-3.02314e-005 -12.0003 -6.0 -2.61852e-005 11.9999 6.0",
+                "name": "loop_effect27",
+                "orient": "0 0 -0.785398",
+                "pos": "3480.62 2359.48 62.9542"
+            },
+            "inst": {
+                "extents": "1.5969e-005 -12.0001 -6.0 2.00151e-005 12.0001 6.0",
+                "name": "loop_effect27",
+                "orient": "0 0 -0.785398",
+                "pos": "4741.04 2355.21 62.9542"
+            },
+            "inst": {
+                "extents": "-12.0002 -8.46972e-006 -6.0 12.0 9.73787e-006 6.0",
+                "name": "loop_effect27",
+                "orient": "0 0 0.785399",
+                "pos": "3038.52 2697.62 61.0313"
+            },
+            "inst": {
+                "extents": "-6 -5.99999 -6.00001 6 6 6.00001",
+                "name": "loop_effect27",
+                "pos": "1341.12 -141.119 56.2065"
+            },
+            "inst": {
+                "extents": "-8.09195e-005 -11.9999 -6.0 9.1714e-005 12.0001 6.0",
+                "name": "loop_effect27",
+                "orient": "0 0 2.35619",
+                "pos": "3239.31 1721.14 62.9542"
+            },
+            "inst": {
+                "extents": "-2.19465e-005 -12.0 -6.0 -6.77354e-006 12.0002 6.0",
+                "name": "loop_effect27",
+                "orient": "0 0 -0.785398",
+                "pos": "2220.36 2834.87 61.0313"
+            }
+        },
+        "entinst": {
+            "type": "loop_effect05",
+            "inst": {
+                "extents": "-5.99995 -5.99991 -6 6.00005 6.00009 6",
+                "name": "loop_effect05",
+                "orient": "0 0 1.5708",
+                "pos": "2237.82 1133.97 34.4716"
+            }
+        },
+        "entinst": {
+            "type": "loop_effect12",
+            "inst": {
+                "extents": "-5.99991 -6.00009 -6 6.00009 5.99991 6",
+                "name": "loop_effect12",
+                "orient": "0 0 3.14159",
+                "pos": "2220.53 2230 0"
+            }
+        },
+        "entinst": {
+            "type": "loop_sound11",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "loop_sound11",
+                "pos": "4584.46 1286.64 -295.72"
+            },
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "loop_sound11",
+                "pos": "3731.56 513.267 -295.72"
+            },
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "loop_sound11",
+                "pos": "4159.73 436.993 -295.72"
+            },
+            "inst": {
+                "extents": "-6.00003 -6.00022 0 5.99997 5.99978 12",
+                "name": "loop_sound11",
+                "orient": "0 0 -1.13446",
+                "pos": "4379.43 648.176 -295.72"
+            },
+            "inst": {
+                "extents": "-6.00001 -5.99999 0 5.99999 6.00001 12",
+                "name": "loop_sound11",
+                "orient": "0 0 -1.13446",
+                "pos": "4133.74 1192.2 -415.72"
+            },
+            "inst": {
+                "extents": "-5.99997 -6.00008 0 6.00003 5.99992 12",
+                "name": "loop_sound11",
+                "orient": "0 0 -1.13446",
+                "pos": "3586.1 915.712 -295.72"
+            },
+            "inst": {
+                "extents": "-5.99996 -6.00005 0 6.00004 5.99995 12",
+                "name": "loop_sound11",
+                "orient": "0 0 -1.13446",
+                "pos": "3950.86 638.28 -295.72"
+            },
+            "inst": {
+                "extents": "-6.00004 -5.99993 0 5.99996 6.00007 12",
+                "name": "loop_sound11",
+                "orient": "0 0 -1.13446",
+                "pos": "3496.54 201.2 -295.72"
+            },
+            "inst": {
+                "extents": "-6.00002 -5.99976 0 5.99998 6.00024 12",
+                "name": "loop_sound11",
+                "orient": "0 0 -1.13446",
+                "pos": "4492.1 201.2 -295.72"
+            },
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "loop_sound11",
+                "pos": "4309.3 1119.2 -295.72"
+            },
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "loop_sound11",
+                "pos": "3428.33 1308.2 -295.72"
+            },
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "loop_sound11",
+                "pos": "3637.21 1150.2 -295.72"
+            }
+        },
+        "entinst": {
+            "type": "earth_skull_null",
+            "inst": {
+                "extents": "-5.99994 -6.00011 -6 6.00006 5.99989 6",
+                "name": "earth_skull_null",
+                "orient": "0 0 -1.5708",
+                "pos": "2610.52 2160.81 -79.4668"
+            },
+            "inst": {
+                "extents": "-6.00008 -5.99998 -6 5.99992 6.00002 6",
+                "name": "fire_skull_null",
+                "orient": "0 0 1.5708",
+                "pos": "1831.95 2280.77 -78.902"
+            },
+            "inst": {
+                "extents": "-6.00011 -5.99991 -6 5.99989 6.00009 6",
+                "name": "camera_position",
+                "orient": "0 0 -3.14159",
+                "pos": "2220.02 2329.97 65.0845"
+            },
+            "inst": {
+                "extents": "-5.99994 -6.00004 -6 6.00006 5.99996 6",
+                "name": "air_skull_null",
+                "orient": "0 0 1.5708",
+                "pos": "1832.32 2160.69 -79.3656"
+            },
+            "inst": {
+                "extents": "-5.99994 -5.99988 -6 6.00006 6.00012 6",
+                "name": "water_skull_null",
+                "orient": "0 0 -1.5708",
+                "pos": "2609 2280.86 -78.9927"
+            }
+        },
+        "entinst": {
+            "type": "player_start_all01",
+            "inst": {
+                "extents": "-60.0786 -60 0 84 60 83.9544",
+                "name": "player_start_all01",
+                "orient": "0 0 1.5708",
+                "pos": "2220 270.741 0"
+            }
+        },
+        "entinst": {
+            "type": "skull_relay",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "skull_relay",
+                "pos": "2223.11 2483.73 180.445"
+            }
+        },
+        "entinst": {
+            "type": "trigger_touch02",
+            "inst": {
+                "extents": "-103.542 -103.542 0 103.542 103.542 245.672",
+                "name": "trigger_touch02",
+                "pos": "4022.46 803.285 -18"
+            }
+        },
+        "entinst": {
+            "type": "trigger_touch01",
+            "inst": {
+                "extents": "-99.3949 -44.8555 0 99.3949 44.8555 252",
+                "name": "trigger_touch01",
+                "pos": "2219.41 587.536 0"
+            }
+        },
+        "entinst": {
+            "type": "water_skull_placement_trigger",
+            "inst": {
+                "extents": "-40 -30 0 40 30 80",
+                "name": "water_skull_placement_trigger",
+                "pos": "2603.54 2280.67 -126.416"
+            }
+        },
+        "entinst": {
+            "type": "fire_skull_placement_trigger",
+            "inst": {
+                "extents": "-40 -30 0 40 30 80",
+                "name": "fire_skull_placement_trigger",
+                "pos": "1838.29 2280.95 -126.416"
+            }
+        },
+        "entinst": {
+            "type": "earth_skull_placement_trigger",
+            "inst": {
+                "extents": "-40 -30 0 40 30 80",
+                "name": "earth_skull_placement_trigger",
+                "pos": "2603.54 2160.94 -126.416"
+            }
+        },
+        "entinst": {
+            "type": "air_skull_placement_trigger",
+            "inst": {
+                "extents": "-40 -30 0 40 30 80",
+                "name": "air_skull_placement_trigger",
+                "pos": "1838.29 2161.21 -126.416"
+            }
+        },
+        "entinst": {
+            "type": "trigger_use01",
+            "inst": {
+                "extents": "-27.6 -34.7999 0 27.6 34.7999 32",
+                "name": "trigger_use01",
+                "pos": "2218.8 2436 0"
+            }
+        },
+        "entinst": {
+            "type": "idol_trigger",
+            "inst": {
+                "extents": "-37.5 -37.5 0 37.5 37.5 100",
+                "name": "idol_trigger",
+                "pos": "2220.04 2329.7 48.1088"
+            }
+        },
+        "entinst": {
+            "type": "water05",
+            "inst": {
+                "extents": "-305 -185 0 305 185 20",
+                "name": "water05",
+                "pos": "1735 2945 -37.8552"
+            },
+            "inst": {
+                "extents": "-304.969 -223.5 0 304.969 223.5 20",
+                "name": "water05",
+                "pos": "2700.04 2791.86 -37.8552"
+            }
+        },
+        "entinst": {
+            "type": "water02",
+            "inst": {
+                "extents": "-726.679 -719.515 0 726.679 719.515 200",
+                "name": "water02",
+                "pos": "388.695 3302.16 -403.188"
+            }
+        },
+        "entinst": {
+            "type": "xtraction_point",
+            "inst": {
+                "name": "xtraction_point",
+                "pos": "1019.6 2580.26 0"
+            }
+        },
+        "entinst": {
+            "type": "link_monument4",
+            "inst": {
+                "extents": "-45 -10 0 45 10 120",
+                "name": "link_monument4",
+                "pos": "2219.65 192.421 0"
+            }
+        },
+        "entinst": {
+            "type": "altar1_rise",
+            "inst": {
+                "name": "altar1_rise",
+                "pos": "2220 2330 -17.2134"
+            }
+        },
+        "entinst": {
+            "type": "altar2_rise",
+            "inst": {
+                "name": "altar2_rise",
+                "pos": "2220 2330 -18.2134"
+            }
+        },
+        "entinst": {
+            "type": "altar3_rise",
+            "inst": {
+                "name": "altar3_rise",
+                "pos": "2220 2330 -18.2134"
+            }
+        },
+        "entinst": {
+            "type": "altar4_rise",
+            "inst": {
+                "name": "altar4_rise",
+                "pos": "2219.92 2329.92 -83.0218"
+            }
+        },
+        "entinst": {
+            "type": "arch_curved_mon_e_mo03",
+            "inst": {
+                "name": "arch_curved_mon_e_mo03",
+                "orient": "0 0 -1.5708",
+                "pos": "2220 1456.31 0"
+            },
+            "inst": {
+                "name": "arch_curved_mon_e_mo03",
+                "orient": "0 0 1.5708",
+                "pos": "2220.25 478.687 0"
+            },
+            "inst": {
+                "name": "arch_curved_mon_e_mo03",
+                "orient": "0 0 -1.5708",
+                "pos": "4018.74 1752.96 0"
+            },
+            "inst": {
+                "name": "arch_curved_mon_e_mo03",
+                "orient": "0 0 -1.5708",
+                "pos": "4018.74 2320.75 0"
+            }
+        },
+        "entinst": {
+            "type": "avalanche_finger_cage_b_mo01",
+            "inst": {
+                "name": "avalanche_finger_cage_b_mo01",
+                "orient": "0 0 -0.610865",
+                "pos": "4014.97 3301.09 105.07"
+            }
+        },
+        "entinst": {
+            "type": "beam_mon_e_mo",
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2105.19 1879.75 150.778"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4379.67 1859.89 106.806"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "4621.88 1859.89 106.806"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "4621.88 2220.16 106.806"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4379.67 2220.16 106.806"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "1035.23 2698.91 131.684"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2184.99 1879.75 150.778"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "pos": "1794.04 3072.97 108.383"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "pos": "2446.91 3072.97 106.055"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "pos": "2646.91 3072.97 106.055"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "pos": "1290.47 60.4296 131.684"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1138.34 -88.1208 131.684"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "-392.374 1499.54 131.684"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "749.275 1536.37 131.684"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "1049.36 1536.37 131.684"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "2941.68 1121.57 106.083"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1138.09 2817.65 131.684"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "63.9977 1859.89 106.691"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "63.9976 2220.16 106.691"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "-178.22 2220.16 106.691"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "-178.22 1859.89 106.691"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2258.35 1879.75 150.778"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1141.02 2594.64 131.684"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "900.903 2594.64 131.684"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "1016.91 2459.9 131.684"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "898.688 1638.69 131.684"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2336.6 1879.75 150.778"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1678.94 1259.5 106.083"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "1499.63 1400.32 106.083"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "pos": "1499.63 1121.57 106.083"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "pos": "1860.69 1400.32 106.083"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "1860.69 1121.57 106.083"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "pos": "2941.68 1400.32 106.083"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "pos": "1994.04 3072.97 108.383"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "2580.62 1400.32 106.083"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "pos": "2580.62 1121.57 106.083"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2759.92 1259.5 106.083"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "1228.58 3660.29 131.684"
+            }
+        },
+        "entinst": {
+            "type": "block_01_mon_b_mo",
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 -0.174533",
+                "pos": "1310 1000 0"
+            }
+        },
+        "entinst": {
+            "type": "block_02_mon_b_mo",
+            "inst": {
+                "name": "block_02_mon_b_mo",
+                "orient": "0 0 -0.610865",
+                "pos": "1150 1270 0"
+            }
+        },
+        "entinst": {
+            "type": "block_02_mon_th_mo",
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -1.309",
+                "pos": "270 2670 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 0.872665",
+                "pos": "716.252 2790.98 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 1.22173",
+                "pos": "671.189 2724.29 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 1.5708",
+                "pos": "-138.74 1969.08 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 1.65806",
+                "pos": "80.0 2724.32 2.28882e-005"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -0.872665",
+                "pos": "2428.08 449.961 3.76445e-005"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "pos": "2550 1121.5 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2518.04 1189.32 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -0.349066",
+                "pos": "1072.86 958.323 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0.0087846 0.557656 -0.31866",
+                "pos": "1123.04 940.369 24.5317"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -0.523599",
+                "pos": "3317.47 1390 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 0.872665",
+                "pos": "-49.9846 2580.0 2.28881e-005"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "pos": "1861 1095.72 0"
+            }
+        },
+        "entinst": {
+            "type": "block_03_mon_th_mo",
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -1.309",
+                "pos": "11.0854 1955.12 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -1.0472",
+                "pos": "-150 2134.88 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0.610865 -0.785398",
+                "pos": "2447.2 427.134 19.8919"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -2.79253",
+                "pos": "8.49591 2640.9 3.63457e-005"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 3.05433",
+                "pos": "1419.2 2352.12 3.63457e-005"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 1.48353",
+                "pos": "1421.98 2454.75 3.63457e-005"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "3.57628e-007 -1.0472 -1.5708",
+                "pos": "1379.35 2253.3 27.5947"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -1.22173",
+                "pos": "1308.03 539.479 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 0.174533",
+                "pos": "1235.65 550.044 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -0.174533",
+                "pos": "1275.69 550.044 39.5843"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -1.22173",
+                "pos": "2610 1157.87 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -2.53073",
+                "pos": "2579.47 1138.5 40.1992"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "pos": "4229.97 1415.57 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "pos": "4091.98 1789.84 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -0.261799",
+                "pos": "4280.04 1415.57 37.8843"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 0.785398",
+                "pos": "4317.85 1415.79 3.30601e-005"
+            }
+        },
+        "entinst": {
+            "type": "burner_mon_b_mo",
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "3478.04 480.064 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1026.36 432.339 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "597.262 1323.75 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "pos": "4019.39 1743.49 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "pos": "2942.42 1424.78 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "3017.55 3300.04 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1395.9 3302.59 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "1499.63 1109.08 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "pos": "1501.29 1415.37 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "pos": "420.29 1743.49 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "1980 150 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "2460 150 0"
+            }
+        },
+        "entinst": {
+            "type": "cage_mon_e_mo",
+            "inst": {
+                "name": "cage_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "413.899 325.519 120"
+            },
+            "inst": {
+                "name": "cage_mon_e_mo",
+                "pos": "-3.95539 1066.34 120"
+            },
+            "inst": {
+                "name": "cage_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4420.07 1171.71 120"
+            },
+            "inst": {
+                "name": "cage_mon_e_mo",
+                "pos": "4422.17 2973.66 120"
+            },
+            "inst": {
+                "name": "cage_mon_e_mo",
+                "pos": "3684.05 396.878 120"
+            },
+            "inst": {
+                "name": "cage_mon_e_mo",
+                "pos": "293.982 3723.41 120"
+            },
+            "inst": {
+                "name": "cage_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4330.79 3680.85 120"
+            },
+            "inst": {
+                "name": "cage_mon_e_mo",
+                "pos": "3623.62 3560.53 120"
+            }
+        },
+        "entinst": {
+            "type": "column_hall_str_mon_e_mo01",
+            "inst": {
+                "name": "column_hall_str_mon_e_mo01",
+                "orient": "0 0 -1.5708",
+                "pos": "2220.88 1976.76 0"
+            },
+            "inst": {
+                "name": "column_hall_str_mon_e_mo01",
+                "orient": "0 0 -1.5708",
+                "pos": "2220.88 1781.64 0"
+            }
+        },
+        "entinst": {
+            "type": "icon_statue_02_mon_b_mo",
+            "inst": {
+                "name": "icon_statue_02_mon_b_mo",
+                "pos": "4677.88 1860 0"
+            },
+            "inst": {
+                "name": "icon_statue_02_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "-240 1860 0"
+            },
+            "inst": {
+                "name": "icon_statue_02_mon_b_mo",
+                "pos": "120 1860 0"
+            }
+        },
+        "entinst": {
+            "type": "jolly_rancher_monkey",
+            "inst": {
+                "name": "jolly_rancher_monkey",
+                "pos": "2219.92 2331.14 -73.1217"
+            }
+        },
+        "entinst": {
+            "type": "lava_mon_a_mo01",
+            "inst": {
+                "name": "lava_mon_a_mo01",
+                "pos": "429.349 797.597 -138.242"
+            }
+        },
+        "entinst": {
+            "type": "pillar_10x20_mon_b_mo02",
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo02",
+                "pos": "4019.79 858.437 -115.973"
+            }
+        },
+        "entinst": {
+            "type": "pillar_10x20_mon_b_mo",
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "4743.67 2941.2 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "899.639 1739.52 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "900.15 2459.56 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1140.26 2459.56 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "1379.06 3660.14 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "4980 2580 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "1378.94 779.49 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "1378.94 419.49 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "1378.94 59.49 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1138.94 -180.51 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo",
+                "pos": "-541.063 1499.49 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "1140.18 2700.93 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo",
+                "pos": "3300 1020 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "1078.29 3661.24 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "899.059 1537.32 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo",
+                "pos": "1140.77 59.4803 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "900.151 2699.67 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1139.04 2941.54 0"
+            }
+        },
+        "entinst": {
+            "type": "pillar_10x20_mon_b_mo65",
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo65",
+                "orient": "0 0 -3.14159",
+                "pos": "1199.06 1537.32 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo65",
+                "orient": "0 0 -3.14159",
+                "pos": "598.977 1537.32 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo65",
+                "orient": "0 0 -3.14159",
+                "pos": "-242.59 1500.49 0"
+            }
+        },
+        "entinst": {
+            "type": "pillar_1x30_mon_e_mo",
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "-0.261799 0 1.5708",
+                "pos": "1133.88 3405 0"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "-0.261799 0 1.5708",
+                "pos": "1133.88 3197.45 0"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "-0.261799 0 0",
+                "pos": "521.942 2585.92 0"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "pos": "1417 2760 0"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "-0.261799 0 0",
+                "pos": "3913.71 2583.77 0"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "-0.261799 0 0",
+                "pos": "4121.26 2583.77 0"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "-0.261799 0 -1.5708",
+                "pos": "3303.84 3403.67 0"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "-0.261799 0 -1.5708",
+                "pos": "3303.84 3196.11 0"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "-0.261799 0 -3.14159",
+                "pos": "4123.34 1496.73 0"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "-0.261799 0 -3.14159",
+                "pos": "3915.78 1496.73 0"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "-0.261799 0 1.5708",
+                "pos": "1133.2 676.836 0"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "pos": "1417 2880 0"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "-0.261799 0 0",
+                "pos": "314.387 2585.92 0"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1980.68 3333.9 -120.975"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1980.68 3259.9 -120.975"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1950.68 3296.9 -120.975"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2459.35 3337.04 -120.975"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2459.35 3263.04 -120.975"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2489.35 3300.04 -120.975"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "pos": "3697 1494 0"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "pos": "3660 1464 0"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "pos": "3623 1494 0"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "-0.261799 0 -3.14159",
+                "pos": "315.774 1496.73 0"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "-0.261799 0 -3.14159",
+                "pos": "523.329 1496.73 0"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo",
+                "orient": "-0.261799 0 1.5708",
+                "pos": "1133.2 884.391 0"
+            }
+        },
+        "entinst": {
+            "type": "pillar_1x30_mon_e_mo12",
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 3.14159",
+                "pos": "3916.1 3520.8 119.008"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 -1.5708",
+                "pos": "3799.56 3199.17 119.008"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 0",
+                "pos": "3915.29 3083.02 119.008"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 0",
+                "pos": "4122.85 3083.02 119.008"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 1.5708",
+                "pos": "4239.39 3197.1 119.008"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 -1.5708",
+                "pos": "3799.56 3406.73 119.008"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 1.5708",
+                "pos": "4239.39 3404.65 119.008"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 -3.14159",
+                "pos": "525.454 3518.03 -3.7074"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 -3.14159",
+                "pos": "317.899 3518.03 -3.7074"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 -1.5708",
+                "pos": "201.354 3403.95 -3.7074"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 -1.5708",
+                "pos": "201.354 3196.4 -3.7074"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 1.5708",
+                "pos": "641.186 3401.88 -3.7074"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 -1.5708",
+                "pos": "3802.89 756.285 -0.99208"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 1.5708",
+                "pos": "4242.72 961.765 -0.99208"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 0",
+                "pos": "524.641 3080.25 -3.7074"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 1.5708",
+                "pos": "641.186 3194.33 -3.7074"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 0",
+                "pos": "317.086 3080.25 -3.7074"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 3.14159",
+                "pos": "4123.66 3520.8 119.008"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 1.5708",
+                "pos": "4242.72 754.211 -0.99208"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 0",
+                "pos": "4126.17 640.137 -0.99208"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 0",
+                "pos": "3918.62 640.137 -0.99208"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 3.14159",
+                "pos": "3919.43 1077.91 -0.99208"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 3.14159",
+                "pos": "4126.99 1077.91 -0.99208"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 -1.5708",
+                "pos": "3802.89 963.839 -0.99208"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 -1.5708",
+                "pos": "199.627 885.205 116.293"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 0",
+                "pos": "313.7 561.104 116.293"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 -1.5708",
+                "pos": "199.627 677.65 116.293"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 0",
+                "pos": "521.254 561.104 116.293"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 -3.14159",
+                "pos": "315.774 1000.94 116.293"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 -3.14159",
+                "pos": "523.329 1000.94 116.293"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 1.5708",
+                "pos": "637.401 884.391 116.293"
+            },
+            "inst": {
+                "name": "pillar_1x30_mon_e_mo12",
+                "orient": "-0.174533 0 1.5708",
+                "pos": "637.401 676.836 116.293"
+            }
+        },
+        "entinst": {
+            "type": "pillar_5x30_mon_e_mo",
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1808.57 2220.65 -121"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "2410 3110 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "2030 3110 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "1810 3110 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "541.248 1740 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "301.539 1740 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2631.43 2100.68 -121"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2631.43 2220.68 -121"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2631.43 2340.68 -121"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1808.57 2100.65 -121"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1808.57 2340.65 -121"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "1500 2679.27 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "3600 1770 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "3360 1770 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "3120 1770 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "480 2270 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "3360 2310.19 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "2361.69 321.602 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "2078.35 320.708 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "360 2270 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "2630 3110 0"
+            }
+        },
+        "entinst": {
+            "type": "pillar_5x30_mon_e_mo20",
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo20",
+                "pos": "2220 990 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo20",
+                "orient": "0 -0.959931 0",
+                "pos": "2220 1130 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo20",
+                "orient": "0.0872664 0 3.14159",
+                "pos": "2220 1270 0"
+            }
+        },
+        "entinst": {
+            "type": "pot_02_mon_th_mo",
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "1975.36 1895.81 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 -1.48353",
+                "pos": "2029.78 97.8062 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 2.96706",
+                "pos": "2037.53 119.679 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 2.96706",
+                "pos": "1933.37 104.819 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "2410 140 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 1.8326",
+                "pos": "2413.83 162.886 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "2510 172.722 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "1330.17 -82.3738 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 1.74533",
+                "pos": "1844.35 1094.62 37.18"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 -2.87979",
+                "pos": "1939.8 1339.45 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 -1.13446",
+                "pos": "1932.62 1377.06 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "1222.8 -118.174 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 2.61799",
+                "pos": "1315.9 -102.981 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "1240.54 -129.303 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 2.61799",
+                "pos": "1345.89 -66.5965 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 -2.87979",
+                "pos": "1927.56 1426.93 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 -1.13446",
+                "pos": "1932.62 1453.13 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "1815.9 1452.03 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 -1.8326",
+                "pos": "2635.56 1425.73 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 -2.61799",
+                "pos": "2618.83 1402.51 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 2.53073",
+                "pos": "2540.4 1404.37 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 1.74533",
+                "pos": "1812.85 1424.06 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 1.74533",
+                "pos": "2524.3 1428.03 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "299.758 2340 29.4763"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "540.408 2340 29.4763"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "1955.62 1824.41 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "1630.03 2810.13 31.7709"
+            }
+        },
+        "entinst": {
+            "type": "pot_mon_th_mo",
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 -2.44346",
+                "pos": "1436.38 2390.46 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 -0.087266",
+                "pos": "1450.65 2407.25 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 2.79253",
+                "pos": "753.556 2809.22 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 -1.13446",
+                "pos": "775.225 2805.25 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 0.785398",
+                "pos": "2531.11 1384.68 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 1.91986",
+                "pos": "2632.75 1385.77 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 2.70526",
+                "pos": "2657.24 1423.73 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "2513.97 153.795 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "2530 170 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "2393.59 155.84 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 -1.48353",
+                "pos": "1464.8 2473.01 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 2.87979",
+                "pos": "1306.89 2263.22 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 -1.0472",
+                "pos": "1338.98 2261.76 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 -2.35619",
+                "pos": "772.783 2779.17 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 1.309",
+                "pos": "1884.85 1082.67 36.6987"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 1.309",
+                "pos": "1912.22 1080.59 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "2465.4 1821.8 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "1805.17 1106.25 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "1783.75 1449.76 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 -2.18166",
+                "pos": "2810.02 2790.71 30.206"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "2788.96 2811.95 30.206"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 2.96706",
+                "pos": "1914.14 110.972 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 2.96706",
+                "pos": "2050.94 101.229 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "2482.58 1894.41 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "2503.81 1420.67 0"
+            }
+        },
+        "entinst": {
+            "type": "air_skull",
+            "inst": {
+                "name": "air_skull",
+                "orient": "0 0 -2.35619",
+                "pos": "4017.67 858.024 178.711"
+            }
+        },
+        "entinst": {
+            "type": "air_skull_placement",
+            "inst": {
+                "name": "air_skull_placement",
+                "orient": "0 0 1.5708",
+                "pos": "1829.86 2160.69 -220.912"
+            }
+        },
+        "entinst": {
+            "type": "earth_skull_placement",
+            "inst": {
+                "name": "earth_skull_placement",
+                "orient": "0 0 -1.5708",
+                "pos": "2612.97 2160.81 -221.014"
+            }
+        },
+        "entinst": {
+            "type": "earth_skull",
+            "inst": {
+                "name": "earth_skull",
+                "orient": "0 0 -0.785398",
+                "pos": "4017.54 3301.69 152.91"
+            }
+        },
+        "entinst": {
+            "type": "fire_skull_placement",
+            "inst": {
+                "name": "fire_skull_placement",
+                "orient": "0 0 1.5708",
+                "pos": "1829.49 2280.77 -220.449"
+            }
+        },
+        "entinst": {
+            "type": "fire_skull",
+            "inst": {
+                "name": "fire_skull",
+                "orient": "0 0 2.35619",
+                "pos": "420.459 782.918 153.313"
+            }
+        },
+        "entinst": {
+            "type": "water_skull_placement",
+            "inst": {
+                "name": "water_skull_placement",
+                "orient": "0 0 -1.5708",
+                "pos": "2611.46 2280.86 -220.539"
+            }
+        },
+        "entinst": {
+            "type": "water_skull",
+            "inst": {
+                "name": "water_skull",
+                "orient": "0 0 0.785398",
+                "pos": "422.728 3298.28 30.598"
+            }
+        },
+        "entinst": {
+            "type": "snake_wall_mon_a_mo",
+            "inst": {
+                "name": "snake_wall_mon_a_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2334 780 0"
+            }
+        },
+        "entinst": {
+            "type": "statue_01_mon_th_mo",
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 -2.35619",
+                "pos": "1927.49 3351.85 -120"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 -0.785398",
+                "pos": "1926.88 3242.72 -120"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 2.35619",
+                "pos": "2032.46 3351.25 -120"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 0.785398",
+                "pos": "2032.46 3243.32 -120"
+            }
+        },
+        "entinst": {
+            "type": "statue_02_mon_th_mo",
+            "inst": {
+                "name": "statue_02_mon_th_mo",
+                "orient": "0 0 -0.785398",
+                "pos": "3620 1460 0"
+            },
+            "inst": {
+                "name": "statue_02_mon_th_mo",
+                "orient": "0 0 2.35619",
+                "pos": "3699.71 1527.66 0"
+            },
+            "inst": {
+                "name": "statue_02_mon_th_mo",
+                "orient": "0 0 -2.35619",
+                "pos": "3620 1527.66 0"
+            },
+            "inst": {
+                "name": "statue_02_mon_th_mo",
+                "orient": "0 0 0.785398",
+                "pos": "3699.71 1460 0"
+            }
+        },
+        "entinst": {
+            "type": "statue_03_mon_th_mo",
+            "inst": {
+                "name": "statue_03_mon_th_mo",
+                "orient": "0 0 0.610865",
+                "pos": "4290.87 2165.65 0"
+            },
+            "inst": {
+                "name": "statue_03_mon_th_mo",
+                "orient": "0 0 1.13446",
+                "pos": "2240 1227.53 0"
+            },
+            "inst": {
+                "name": "statue_03_mon_th_mo",
+                "orient": "0 0 2.35619",
+                "pos": "2240 1328.49 0"
+            },
+            "inst": {
+                "name": "statue_03_mon_th_mo",
+                "orient": "0 0 1.74533",
+                "pos": "2240 1074.39 0"
+            },
+            "inst": {
+                "name": "statue_03_mon_th_mo",
+                "orient": "0 0 -2.61799",
+                "pos": "2968.55 1104.76 0"
+            },
+            "inst": {
+                "name": "statue_03_mon_th_mo",
+                "orient": "0 0 2.70526",
+                "pos": "2870.53 1104.76 0"
+            },
+            "inst": {
+                "name": "statue_03_mon_th_mo",
+                "orient": "0 0 1.65806",
+                "pos": "4342.98 2139.17 0"
+            },
+            "inst": {
+                "name": "statue_03_mon_th_mo",
+                "orient": "0 0 2.35619",
+                "pos": "2485.76 3328.65 -120"
+            },
+            "inst": {
+                "name": "statue_03_mon_th_mo",
+                "orient": "0 0 0.959931",
+                "pos": "4342.98 2309.15 0"
+            },
+            "inst": {
+                "name": "statue_03_mon_th_mo",
+                "orient": "0 0 -2.79253",
+                "pos": "3775.62 3939.93 0"
+            },
+            "inst": {
+                "name": "statue_03_mon_th_mo",
+                "orient": "0 0 -0.785398",
+                "pos": "2433.41 3271.12 -120"
+            },
+            "inst": {
+                "name": "statue_03_mon_th_mo",
+                "orient": "0 0 0.785398",
+                "pos": "2485.48 3271.12 -120"
+            },
+            "inst": {
+                "name": "statue_03_mon_th_mo",
+                "orient": "0 0 -2.35619",
+                "pos": "2433.68 3328.65 -120"
+            }
+        },
+        "entinst": {
+            "type": "statue_04_mon_m_mo",
+            "inst": {
+                "name": "statue_04_mon_m_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1979.94 3297.27 -120"
+            }
+        },
+        "entinst": {
+            "type": "statue_10ft_mon_e_mo",
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4317.88 1858.96 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4317.88 2220 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "-240 2220 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2637.84 2400 -121"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2647.84 2040 -121"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1799.35 2400 -121"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1809.35 2040 -121"
+            }
+        },
+        "entinst": {
+            "type": "statue_door_ent_mon_b_mo",
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2021.21 1337.24 0"
+            },
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2021.21 1177.24 0"
+            },
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1339.78 1177.24 0"
+            },
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1339.78 1337.24 0"
+            },
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "3100.59 1337.24 0"
+            },
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "3100.59 1177.24 0"
+            },
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2419.15 1177.24 0"
+            },
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2419.15 1337.24 0"
+            },
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "pos": "-140.117 1698.57 0"
+            },
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "-140.117 2380 0"
+            },
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "4420 2380 0"
+            },
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "4580 2380 0"
+            },
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "pos": "4420 1698.57 0"
+            },
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "pos": "4580 1698.57 0"
+            },
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "19.883 2380 0"
+            },
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "3103.88 2901.43 0"
+            },
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "3103.88 2741.43 0"
+            },
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1332.83 2741.43 0"
+            },
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1332.83 2901.43 0"
+            },
+            "inst": {
+                "name": "statue_door_ent_mon_b_mo",
+                "pos": "19.883 1698.57 0"
+            }
+        },
+        "entinst": {
+            "type": "statue_lord_mon_b_mo",
+            "inst": {
+                "name": "statue_lord_mon_b_mo",
+                "pos": "2480 1860 0"
+            },
+            "inst": {
+                "name": "statue_lord_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2310 3390 -121"
+            },
+            "inst": {
+                "name": "statue_lord_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "1960 1860 0"
+            },
+            "inst": {
+                "name": "statue_lord_mon_b_mo",
+                "orient": "0 0 -2.35619",
+                "pos": "2770 2770 0"
+            },
+            "inst": {
+                "name": "statue_lord_mon_b_mo",
+                "pos": "4677.88 2220 0"
+            },
+            "inst": {
+                "name": "statue_lord_mon_b_mo",
+                "pos": "120 2220 0"
+            },
+            "inst": {
+                "name": "statue_lord_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "540 2260 0"
+            },
+            "inst": {
+                "name": "statue_lord_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "300 2260 0"
+            },
+            "inst": {
+                "name": "statue_lord_mon_b_mo",
+                "orient": "0 0 -0.785398",
+                "pos": "1670 2770 0"
+            }
+        },
+        "entinst": {
+            "type": "statue_noble_mon_e_mo",
+            "inst": {
+                "name": "statue_noble_mon_e_mo",
+                "pos": "2220 2524.25 0"
+            }
+        },
+        "entinst": {
+            "type": "statue_warrior_mon_b_mo",
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "3600.02 2320 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "4020 2320 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "pos": "2463.35 3300.04 -120.975"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "3660 1490 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "420 2260 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2130 3390 -121"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "3119.71 2320 0"
+            }
+        },
+        "entinst": {
+            "type": "urn_mon_b_mo",
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 2.00713",
+                "pos": "120.288 2282.65 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 1.13446",
+                "pos": "120.288 2155.66 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 -1.13446",
+                "pos": "-240.077 2156.23 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 2.00713",
+                "pos": "120.288 1922.65 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 1.13446",
+                "pos": "120.288 1795.66 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 -1.13446",
+                "pos": "-240.077 1796.23 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 -2.00713",
+                "pos": "-240.077 1923.21 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 -2.00713",
+                "pos": "-240.077 2283.21 0"
+            }
+        },
+        "entinst": {
+            "type": "treasure_chest",
+            "inst": {
+                "name": "treasure_chest",
+                "orient": "0 0 1.5708",
+                "pos": "3342.97 480 0"
+            }
+        },
+        "entinst": {
+            "type": "bridge_trigger01",
+            "inst": {
+                "name": "bridge_trigger01",
+                "orient": "0 0 -3.14159",
+                "pos": "1053.12 3300.62 1.48654"
+            }
+        },
+        "entinst": {
+            "type": "bridge_trigger02",
+            "inst": {
+                "name": "bridge_trigger02",
+                "orient": "0 0 1.5708",
+                "pos": "420.151 2668.18 1.48654"
+            }
+        },
+        "entinst": {
+            "type": "bridge_trigger03",
+            "inst": {
+                "name": "bridge_trigger03",
+                "orient": "0 0 -1.5708",
+                "pos": "420.151 2994.2 1.48654"
+            }
+        },
+        "entinst": {
+            "type": "bridge_trigger05",
+            "inst": {
+                "name": "bridge_trigger05",
+                "pos": "726.382 3300.62 1.48654"
+            }
+        },
+        "entinst": {
+            "type": "fire_large01",
+            "inst": {
+                "extents": "-60 -60 0 60 60 72",
+                "name": "fire_large01",
+                "orient": "0 0 3.14159",
+                "pos": "421.79 781.427 105.386"
+            }
+        },
+        "entinst": {
+            "type": "fire_wall01",
+            "inst": {
+                "extents": "-120 -65 0 120 65 90",
+                "name": "fire_wall01",
+                "orient": "0 0 1.5708",
+                "pos": "555.606 780 104.195"
+            },
+            "inst": {
+                "extents": "-120 -65 0 120 65 90",
+                "name": "fire_wall01",
+                "orient": "0 0 -3.14159",
+                "pos": "426.107 919.425 104.195"
+            }
+        },
+        "entinst": {
+            "type": "fire_wall",
+            "inst": {
+                "extents": "-120 -65 0 120 65 90",
+                "name": "fire_wall",
+                "orient": "0 0 1.5708",
+                "pos": "285.56 780 104.195"
+            }
+        },
+        "entinst": {
+            "type": "fire_wall04",
+            "inst": {
+                "extents": "-120 -65 0 120 65 90",
+                "name": "fire_wall04",
+                "orient": "0 0 -3.14159",
+                "pos": "426.107 646.515 104.195"
+            }
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "ClawBeast_b",
+            "classname": "monsterspawnerent",
+            "firstspawnscript": "act2/monument/monument5/pitbeast_firstspawnscript",
+            "instantspawn": false,
+            "monster_aggression": 5,
+            "monster_nomutate": true,
+            "monster_smartent": true,
+            "monster_spawnexactlocation": true,
+            "monster_spawnscript": "act2/monument/monument5/pitbeast_spawnscript",
+            "name": "pitbeast2",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "ClawBeast_b",
+            "classname": "monsterspawnerent",
+            "firstspawnscript": "act2/monument/monument5/pitbeast_firstspawnscript",
+            "instantspawn": false,
+            "monster_aggression": 5,
+            "monster_nomutate": true,
+            "monster_smartent": false,
+            "monster_spawnexactlocation": true,
+            "monster_spawnscript": "act2/monument/monument5/pitbeast_spawnscript",
+            "name": "pitbeast3",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "ClawBeast_b",
+            "classname": "monsterspawnerent",
+            "instantspawn": false,
+            "monster_aggression": 5,
+            "monster_nomutate": true,
+            "monster_smartent": true,
+            "name": "beast5",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "homingBeaconReward('beaconact2',189)",
+            "actsound": "zone_shared/special/beacon",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Pick up Homing Beacon",
+            "idnum": 12,
+            "material": "hollow_metal",
+            "model": "pickups/homing_beacon_act2",
+            "name": "homing_beacon_act2_01",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "smartent": false,
+            "spawnscript": "common/beacons/beacon2",
+            "structure": 2,
+            "team": "hero",
+            "variablename": "beaconact2"
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actleader": true,
+            "actonuse": true,
+            "actscript": "common/beacons/treasureact2",
+            "actsound": "common/game/pickup_power",
+            "animstarton": true,
+            "classname": "physent",
+            "description": "Experience Points",
+            "fxlevel": 7,
+            "model": "pickups/experience_point",
+            "name": "beacon_chest2",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "persistent": false,
+            "quickuse": true,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/misc/techstation_striking",
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "permanentStatBoost('_ACTIVATOR_','striking')",
+            "actsound": "zone_shared/object/techstation",
+            "actspawn": "tech_station_striking_off",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Tech Station Striking",
+            "idnum": 7,
+            "material": "solid_metal",
+            "model": "common/tech_station_strike",
+            "name": "tech_station_striking01",
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "spawnsoundloop": "zone_shared/object/techstation_loop",
+            "structure": 2,
+            "team": "hero",
+            "toggleonact": true,
+            "variablename": "r_t_station"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/misc/techstation_striking",
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "animstarton": true,
+            "classname": "gameent",
+            "material": "solid_metal",
+            "model": "common/tech_station_strike_off",
+            "name": "tech_station_striking_off",
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "startenabled": false,
+            "structure": 2,
+            "team": "hero",
+            "toggleonact": true,
+            "variablename": "r_t_station"
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "fxlevel": 2,
+            "loopfx": "map/egypt/light_beam_small",
+            "loopfxstarton": true,
+            "name": "loop_effect12",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "fxlevel": 4,
+            "loopfx": "map/egypt/light_beam_small",
+            "loopfxstarton": true,
+            "name": "loop_effect05",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/common/fire_torch",
+            "loopfxstarton": true,
+            "name": "loop_effect27",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/common/drip20ft",
+            "loopfxstarton": true,
+            "name": "loop_effect23",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/common/fire_small",
+            "loopfxstarton": true,
+            "name": "loop_effect25",
+            "nocollide": true,
+            "smartent": true,
+            "spawnsoundloop": "zone_shared/fx/fire_sm"
+        },
+        "entity": {
+            "acteffect": "map/monument/wind_updraft",
+            "actrescheduledelay": 10,
+            "actrescheduledelaymin": 3.5,
+            "actsound": "zone_shared/special/wind",
+            "classname": "actionent",
+            "firstact": 1,
+            "loopfxstarton": true,
+            "name": "loop_sound11",
+            "nocollide": true,
+            "smartent": true,
+            "toggleonact": false
+        },
+        "entity": {
+            "classname": "ent",
+            "name": "earth_skull_null",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "name": "player_start_all01",
+            "nocollide": true,
+            "prevzone": "act2/monument/monument4"
+        },
+        "entity": {
+            "actscript": "act2/monument/monument5/check_returned_skulls",
+            "classname": "actionent",
+            "name": "skull_relay",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "act2/monument/monument5/walk_temp",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "trigger_touch01",
+            "nocollide": true,
+            "smartent": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actmatchteam": true,
+            "actontouch": true,
+            "acttargets": "pitbeast3 pitbeast4 beast3 beast4 beast 5",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "trigger_touch02",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actonuse": true,
+            "actscript": "act2/monument/monument5/idol_pickup",
+            "boxcollision": true,
+            "classname": "gameent",
+            "description": "Pickup Vibranium Idol",
+            "name": "idol_trigger",
+            "nocollide": true,
+            "quickuse": true,
+            "smartent": false,
+            "startenabled": false,
+            "team": "hero",
+            "toggleonact": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actonuse": true,
+            "actscript": "act2/monument/monument5/stone_tab",
+            "boxcollision": true,
+            "classname": "gameent",
+            "description": "Read Stone Tablet",
+            "hinttype": "objective",
+            "name": "trigger_use01",
+            "nocollide": true,
+            "quickuse": true,
+            "smartent": false,
+            "team": "none"
+        },
+        "entity": {
+            "actonuse": true,
+            "actscript": "act2/monument/monument5/air_skull_dropoff",
+            "boxcollision": true,
+            "classname": "gameent",
+            "description": "Place Air Elemental Skull",
+            "hinttype": "objective",
+            "name": "air_skull_placement_trigger",
+            "nocollide": true,
+            "quickuse": true,
+            "smartent": false,
+            "startenabled": false,
+            "team": "none"
+        },
+        "entity": {
+            "actonuse": true,
+            "actscript": "act2/monument/monument5/earth_skull_dropoff",
+            "boxcollision": true,
+            "classname": "gameent",
+            "description": "Place Earth Elemental Skull",
+            "hinttype": "objective",
+            "name": "earth_skull_placement_trigger",
+            "nocollide": true,
+            "quickuse": true,
+            "smartent": false,
+            "startenabled": false,
+            "team": "none"
+        },
+        "entity": {
+            "actonuse": true,
+            "actscript": "act2/monument/monument5/fire_skull_dropoff",
+            "boxcollision": true,
+            "classname": "gameent",
+            "description": "Place Fire Elemental Skull",
+            "hinttype": "objective",
+            "name": "fire_skull_placement_trigger",
+            "nocollide": true,
+            "quickuse": true,
+            "smartent": false,
+            "startenabled": false,
+            "team": "none"
+        },
+        "entity": {
+            "actonuse": true,
+            "actscript": "act2/monument/monument5/water_skull_dropoff",
+            "boxcollision": true,
+            "classname": "gameent",
+            "description": "Place Water Elemental Skull",
+            "hinttype": "objective",
+            "name": "water_skull_placement_trigger",
+            "nocollide": true,
+            "quickuse": true,
+            "smartent": false,
+            "startenabled": false,
+            "team": "none"
+        },
+        "entity": {
+            "alpha": 0.2,
+            "ambienteffect": "base/misc/misc_waterambient",
+            "classname": "waterent",
+            "density": 10,
+            "material": "liquid",
+            "name": "water02",
+            "nocollide": true,
+            "nokillz": true,
+            "splasheffect": "base/misc/misc_watersplash",
+            "texture": "textures/water_monument",
+            "wakeeffect": "base/misc/misc_waterwake"
+        },
+        "entity": {
+            "alpha": 0.7,
+            "ambienteffect": "base/misc/misc_waterambient",
+            "classname": "waterent",
+            "density": 10,
+            "name": "water05",
+            "nocollide": true,
+            "splasheffect": "base/misc/misc_watersplash",
+            "texture": "textures/water_monument",
+            "wakeeffect": "base/misc/misc_waterwake"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/misc/extraction_burst",
+            "actleader": true,
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "common/extraction/exp_trig",
+            "actsound": "common/game/extraction",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "extent": "-120 -120 0 120 120 72",
+            "fxlevel": 1,
+            "name": "expt_trig",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "persistent": false,
+            "resetstate": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "zonelinkent",
+            "description": "Nuwali Corridors",
+            "name": "link_monument4",
+            "nextzone": "act2/monument/monument4",
+            "nocollide": false,
+            "smartent": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actsound": "zone_shared/mover/egypt_force_field",
+            "classname": "moverent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/altar_rising_01_mon_m",
+            "move": "0 0 12",
+            "moveduration": 1,
+            "name": "altar1_rise",
+            "noclip": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actsound": "zone_shared/mover/egypt_force_field",
+            "classname": "moverent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/altar_rising_02_mon_m",
+            "move": "0 0 25",
+            "moveduration": 1,
+            "name": "altar2_rise",
+            "noclip": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actsound": "zone_shared/mover/egypt_force_field",
+            "classname": "moverent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/altar_rising_03_mon_m",
+            "move": "0 0 37",
+            "moveduration": 1,
+            "name": "altar3_rise",
+            "noclip": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actsound": "zone_shared/mover/egypt_force_field",
+            "classname": "moverent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/altar_rising_04_mon_m",
+            "move": "0 0 120",
+            "moveduration": 1,
+            "name": "altar4_rise",
+            "noclip": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/arch_curved_mon_e",
+            "name": "arch_curved_mon_e_mo03",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "deathspawn": "avalanche_finger_cage_b_mo_d",
+            "deathtargets": "pitbeast1 pitbeast2 beast1 beast2",
+            "fxlevel": 2,
+            "health": 200,
+            "material": "rock",
+            "model": "monument/avalanche_finger_cage_mon_b",
+            "name": "avalanche_finger_cage_b_mo01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 0
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 200,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/avalanche_finger_cage_stump_mon_b",
+            "name": "avalanche_finger_cage_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "fxlevel": 3,
+            "health": 300,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/block_01_stump_mon_b",
+            "name": "block_01_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "fxlevel": 3,
+            "health": 300,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/block_02_stump_mon_b",
+            "name": "block_02_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 200,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/burner_stump_mon_b",
+            "name": "burner_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/column_hall_str_mon_e",
+            "name": "column_hall_str_mon_e_mo01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 150,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/icon_statue_02_stump_mon_b",
+            "name": "icon_statue_02_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "actmustface": false,
+            "actonuse": false,
+            "classname": "moverent",
+            "description": "Pickup Vibranium Idol",
+            "health": 32000,
+            "material": "biometal",
+            "model": "monument/idol_vibranium_mon_m",
+            "move": "0 0 120",
+            "moveduration": 1,
+            "name": "jolly_rancher_monkey",
+            "noclip": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": true,
+            "randompickups": 0,
+            "smartent": false,
+            "startenabled": true,
+            "structure": 2,
+            "toggleonact": false,
+            "togglestarton": false
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "material": "energy",
+            "model": "monument/lava_mon_a",
+            "name": "lava_mon_a_mo01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "scale": 1.25,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "material": "rock",
+            "model": "monument/pillar_10x20_mon_b",
+            "name": "pillar_10x20_mon_b_mo65",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": false,
+            "classname": "physent",
+            "material": "rock",
+            "model": "monument/pillar_10x20_mon_b",
+            "name": "pillar_10x20_mon_b_mo02",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/pillar_1x30_mon_e",
+            "name": "pillar_1x30_mon_e_mo12",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/pillar_5x30_mon_e",
+            "name": "pillar_5x30_mon_e_mo20",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/skull_air_mon_e",
+            "name": "air_skull_placement",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "actdistance": 60,
+            "actonuse": true,
+            "actscript": "act2/monument/monument5/air_skull_pickup",
+            "classname": "physent",
+            "description": "Pickup Air Elemental Skull",
+            "health": 32000,
+            "hinttype": "none",
+            "material": "rock",
+            "model": "monument/skull_air_mon_e",
+            "name": "air_skull",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "actdistance": 60,
+            "actonuse": true,
+            "actscript": "act2/monument/monument5/earth_skull_pickup",
+            "classname": "physent",
+            "description": "Pickup Earth Elemental Skull",
+            "health": 32000,
+            "hinttype": "none",
+            "material": "rock",
+            "model": "monument/skull_earth_mon_e",
+            "name": "earth_skull",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/skull_earth_mon_e",
+            "name": "earth_skull_placement",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "actdistance": 60,
+            "actonuse": true,
+            "actscript": "act2/monument/monument5/fire_skull_pickup",
+            "acttargets": "beast6 beast7",
+            "classname": "physent",
+            "description": "Pickup Fire Elemental Skull",
+            "health": 32000,
+            "hinttype": "none",
+            "material": "rock",
+            "model": "monument/skull_fire_mon_e",
+            "name": "fire_skull",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/skull_fire_mon_e",
+            "name": "fire_skull_placement",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "actdistance": 60,
+            "actonuse": true,
+            "actscript": "act2/monument/monument5/water_skull_pickup",
+            "acttargets": "beast8 beast9 beast10",
+            "classname": "physent",
+            "description": "Pickup Water Elemental Skull",
+            "health": 32000,
+            "hinttype": "none",
+            "material": "rock",
+            "model": "monument/skull_water_mon_e",
+            "name": "water_skull",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/skull_water_mon_e",
+            "name": "water_skull_placement",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "fxlevel": 3,
+            "health": 200,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/statue_door_ent_stump_mon_b",
+            "name": "statue_door_ent_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "fxlevel": 3,
+            "health": 200,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/statue_lord_stump_mon_b",
+            "name": "statue_lord_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "fxlevel": 3,
+            "health": 200,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/statue_warrior_stump_mon_b",
+            "name": "statue_warrior_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 50,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/urn_stump_mon_b",
+            "name": "urn_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 2,
+            "structure": 2
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actscript": "act2/monument/monument5/bridge5",
+            "classname": "powertriggerent",
+            "deathspawn": "icebridge30 magmabridge30 tkbridge30",
+            "description": "bridge power",
+            "health": 1,
+            "hinttype": "power",
+            "length": 30,
+            "material": "energy",
+            "model": "puzzles/bridge_icon",
+            "name": "bridge_trigger05",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "reactpower": "bridge",
+            "smartent": false,
+            "stopnothing": true,
+            "stopprojectile": true,
+            "structure": 0,
+            "targetlockable": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actscript": "act2/monument/monument5/bridge3",
+            "classname": "powertriggerent",
+            "deathspawn": "icebridge30 magmabridge30 tkbridge30",
+            "description": "bridge power",
+            "health": 1,
+            "hinttype": "power",
+            "length": 30,
+            "material": "energy",
+            "model": "puzzles/bridge_icon",
+            "name": "bridge_trigger03",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "reactpower": "bridge",
+            "smartent": false,
+            "stopnothing": true,
+            "stopprojectile": true,
+            "structure": 0,
+            "targetlockable": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actscript": "act2/monument/monument5/bridge2",
+            "classname": "powertriggerent",
+            "deathspawn": "icebridge30 magmabridge30 tkbridge30",
+            "description": "bridge power",
+            "health": 1,
+            "hinttype": "power",
+            "length": 30,
+            "material": "energy",
+            "model": "puzzles/bridge_icon",
+            "name": "bridge_trigger02",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "reactpower": "bridge",
+            "smartent": false,
+            "stopnothing": true,
+            "stopprojectile": true,
+            "structure": 0,
+            "targetlockable": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actscript": "act2/monument/monument5/bridge1",
+            "classname": "powertriggerent",
+            "deathspawn": "icebridge30 magmabridge30 tkbridge30",
+            "description": "bridge power",
+            "health": 1,
+            "hinttype": "power",
+            "length": 30,
+            "material": "energy",
+            "model": "puzzles/bridge_icon",
+            "name": "bridge_trigger01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "reactpower": "bridge",
+            "smartent": false,
+            "stopnothing": true,
+            "stopprojectile": true,
+            "structure": 0,
+            "targetlockable": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "animstarton": true,
+            "cameracollide": true,
+            "camerafadeout": true,
+            "classname": "physent",
+            "description": "bridge power",
+            "health": 32000,
+            "length": 30,
+            "model": "effects/bridge_metal30",
+            "name": "metalbridge30",
+            "navzadjustment": -36,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": true,
+            "reactpower": "bridge",
+            "spawnsound": "zone_shared/objects/metal_bridge",
+            "stopprojectile": true,
+            "structure": 2
+        },
+        "entity": {
+            "actcountremove": 1,
+            "animstarton": true,
+            "cameracollide": true,
+            "classname": "gameent",
+            "description": "bridge power",
+            "health": 32000,
+            "length": 30,
+            "model": "effects/bridge_telekinetic30",
+            "name": "tkbridge30",
+            "navzadjustment": -36,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": true,
+            "reactpower": "bridge",
+            "spawnsound": "zone_shared/objects/jean_bridge",
+            "stopprojectile": true,
+            "structure": 2
+        },
+        "entity": {
+            "actcountremove": 1,
+            "animstarton": true,
+            "cameracollide": true,
+            "camerafadeout": true,
+            "classname": "physent",
+            "description": "bridge power",
+            "health": 32000,
+            "length": 30,
+            "model": "effects/bridge_ice30",
+            "name": "icebridge30",
+            "navzadjustment": -36,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": true,
+            "reactpower": "bridge",
+            "spawnsound": "zone_shared/objects/iceman_bridge",
+            "stopprojectile": true,
+            "structure": 2
+        },
+        "entity": {
+            "boxdamage": true,
+            "classname": "affectableharment",
+            "damage": "3 5",
+            "damagemods": "dmgmod_forcepain",
+            "damagetype": "dmg_fire",
+            "extent": "-60 -60 0 60 60 72",
+            "health": 1,
+            "knockback": 200,
+            "loopfx": "map/common/fire_large",
+            "loopfxstarton": true,
+            "name": "fire_large01",
+            "radiusdamage": false,
+            "reactpower": "extinguish",
+            "smartent": false,
+            "smartfire": true,
+            "spawnsoundloop": "zone_shared/fx/fire_large"
+        },
+        "entity": {
+            "boxdamage": true,
+            "classname": "affectableharment",
+            "damage": "3 5",
+            "damagemods": "dmgmod_forcepain",
+            "damagetype": "dmg_fire",
+            "extent": "-120 -65 0 120 65 90",
+            "health": 1,
+            "knockback": 200,
+            "loopfx": "map/common/fire_wall",
+            "loopfxstarton": true,
+            "name": "fire_wall04",
+            "radiusdamage": false,
+            "reactpower": "extinguish",
+            "smartfire": true
+        },
+        "entity": {
+            "boxdamage": true,
+            "classname": "affectableharment",
+            "damage": "3 5",
+            "damagemods": "dmgmod_forcepain",
+            "damagetype": "dmg_fire",
+            "extent": "-120 -65 0 120 65 90",
+            "health": 1,
+            "knockback": 200,
+            "loopfx": "map/common/fire_wall",
+            "loopfxstarton": true,
+            "name": "fire_wall01",
+            "radiusdamage": false,
+            "reactpower": "extinguish",
+            "smartfire": true,
+            "spawnsoundloop": "zone_shared/fx/fire_sm"
+        }
+    }
+}

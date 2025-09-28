@@ -1,0 +1,44 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "act2/monument/check_key_order",
+            "participant": {
+                "name": "default",
+                "line": {
+                    "text": "%PLAYER%: Shanna, we just found something covered in Nuwali symbols. Could this be one of the keys to the Gateway?",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "soundtoplay": "voice/shanna/2_sometime_020_011",
+                            "text": "%Shanna%: The writing is in an older dialect I'm not familiar with, but it definitely looks to be a key.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Good. Now we just have to find the other one.",
+                                    "response": {
+                                        "chosenscriptfile": "act2/monument/monument4/switch_check",
+                                        "conversationend": true,
+                                        "text": "%BLANK%"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "text": "%PLAYER%: That's the final Nuwali key. Let's take it back to the gateway and see if we can get it open.",
+                    "response": {
+                        "chosenscriptfile": "act2/monument/monument4/switch_check",
+                        "conversationend": true,
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        }
+    }
+}
