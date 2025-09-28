@@ -38,10 +38,12 @@ if pryo_obj == 0
 else
      remove ( "trigger_pyro", "trigger_pyro" )
 endif
-# ( "Pyro is always in the town center" )
-spawn_pyro = getObjective("act2_visit", "COMPLETE" )
-if spawn_pyro == 0
+# ( "Pyro spawns in the town center" )
+check_pyro = isActorOnTeam("pyro_hero" )
+if check_pyro == 0
      act("sp_pyro01", "sp_pyro01" )
+else
+     remove("pyro", "pyro" )
 endif
 # ( "Angel appears only after Destiny is saved" )
 spawn_angel = getObjective("act2_obj_1b", "COMPLETE" )

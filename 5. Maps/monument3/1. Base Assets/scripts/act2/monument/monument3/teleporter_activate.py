@@ -24,3 +24,14 @@ waittimed ( 1.000 )
 lockControls(0.100 )
 setallaiactive("TRUE" )
 
+omegared_unlocked = isCharacterUnlocked("omegared_hero")
+if omegared_unlocked == 0
+    # ( "Omega Red is not yet unlocked, unlock him" )
+    unlockCharacter("omegared_hero", " ")
+    omegared_unlocked = isCharacterUnlocked("omegared_hero")
+    if omegared_unlocked == 1
+        # ( "Omega Red was not previously unlocked but he is on the roster" )
+        # ( "He's been unlocked now, so show the dialog that confirms this" )
+        createPopupDialogXML("dialogs/act2/monument/omegared_unlocked")
+    endif 
+endif 
