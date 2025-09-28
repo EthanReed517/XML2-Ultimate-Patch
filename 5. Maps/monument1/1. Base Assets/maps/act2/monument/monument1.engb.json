@@ -1,0 +1,4413 @@
+{
+    "world": {
+        "entity": {
+            "act": 2,
+            "automap_offset": "0.43 0.34 0",
+            "bigconvmap": true,
+            "extent_max": "4560 1683 921",
+            "extent_min": "-781 -3119 -391",
+            "killz": -360,
+            "level": 17,
+            "name": "world",
+            "partylight": "0.71 0.57 0",
+            "partylightradius": 170,
+            "soundfile": "dmon",
+            "zonescript": "act2/monument/monument1/monument1"
+        },
+        "precache": {
+            "filename": "act2/monument/2_sometime2_0020",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act2/monument/2_sometime2_0030",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act2/monument/monument1/2_monument1_0020",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act2/monument/monument1/2_monument1_0030",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act2/monument/monument1/2_monument1_0040",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act2/monument/monument1/2_monument1_0050",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act2/monument/monument1/butt_conv",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act2/monument/monument1/mon1_opening",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act2/monument/monument1/question_stone",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "hud/hud_head_2701",
+            "type": "model"
+        },
+        "precache": {
+            "filename": "act2/monument/check_key_order",
+            "type": "script"
+        },
+        "precache": {
+            "filename": "act2/monument/monument1/guardian_stone",
+            "type": "script"
+        },
+        "entity": {
+            "classname": "tileent",
+            "deatheffect": "base/material/tile/tile_rock",
+            "deathsound": "death_style/t_rock",
+            "deathspawn": "tile_breakablemon",
+            "fxlevel": 3,
+            "health": 300,
+            "material": "rock",
+            "name": "tile_breakablemon",
+            "structure": 1,
+            "tilemodelfolder": "tiles/monument/"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Infinite_a",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_smartent": true,
+            "name": "ss_infinite_a",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Infinite_a",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_leader": true,
+            "monster_leaderpowerup": "random_no_invuln",
+            "monster_smartent": true,
+            "name": "ss_infinite_a_leader",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Shifter_a",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_smartent": true,
+            "name": "ss_shifter_a",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "waittimed(0.5)\\n\\rimageViewer('textures/comic/sunfire_cov.png')",
+            "actsound": "common/game/comic_book_pickup",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Comic Book",
+            "fxlevel": 7,
+            "idnum": 13,
+            "ignoreactorsonmove": true,
+            "loopfx": "base/item/item_sparkle",
+            "loopfxstarton": true,
+            "model": "pickups/pickup_comicbook",
+            "name": "comic_sunfire",
+            "nocollide": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "spinpossible": false,
+            "structure": 2,
+            "team": "hero",
+            "variablename": "r_comic"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "waittimed(0.5)\\n\\rloadDangerRoomCourse('SO203')",
+            "actsound": "common/game/dangerdisc_pickup",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Danger Room Disc",
+            "fxlevel": 7,
+            "idnum": 4,
+            "ignoreactorsonmove": true,
+            "loopfx": "base/item/item_sparkle",
+            "loopfxstarton": true,
+            "model": "pickups/pickup_dangeroom_disk",
+            "name": "disc_so203",
+            "nocollide": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "spinpossible": false,
+            "stucture": 2,
+            "team": "hero",
+            "variablename": "r_dr_disc"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "homingBeaconReward('beaconact2',189)",
+            "actsound": "zone_shared/special/beacon",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Pick up Homing Beacon",
+            "material": "hollow_metal",
+            "model": "pickups/homing_beacon_act2",
+            "name": "homing_beacon_act2_",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "smartent": false,
+            "spawnscript": "common/beacons/beacon2",
+            "structure": 2,
+            "team": "hero",
+            "variablename": "beaconact2"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/misc/techstation_body",
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "permanentStatBoost('_ACTIVATOR_','body')",
+            "actsound": "zone_shared/object/techstation",
+            "actspawn": "tech_station_body_off",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Tech Station Body",
+            "material": "solid_metal",
+            "model": "common/tech_station_body",
+            "name": "tech_station_body",
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "spawnsoundloop": "zone_shared/object/techstation_loop",
+            "structure": 2,
+            "team": "hero",
+            "toggleonact": true,
+            "variablename": "r_t_station"
+        },
+        "entity": {
+            "actleader": true,
+            "actmatchteam": true,
+            "boxcollision": true,
+            "cameramagtype": 0,
+            "classname": "cameramagnetent",
+            "name": "camera_magnet",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "classname": "enabletargetent",
+            "enable": true,
+            "name": "enable_target",
+            "nocollide": true
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfxstarton": true,
+            "name": "loop_effect",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "classname": "ent",
+            "name": "null",
+            "nocollide": true
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "name": "player_start_all",
+            "nocollide": true
+        },
+        "entity": {
+            "classname": "actionent",
+            "name": "relay",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "classname": "powertriggerent",
+            "hinttype": "power",
+            "name": "trigger_power",
+            "nocollide": false,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "stopfly": false,
+            "stopteleport": false,
+            "stopwalk": false,
+            "targetlockable": true,
+            "toggleonact": true
+        },
+        "entity": {
+            "actmatchteam": true,
+            "actontouch": true,
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "trigger_touch",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "alpha": 0.7,
+            "ambienteffect": "base/misc/misc_waterambient",
+            "classname": "waterent",
+            "density": 10,
+            "name": "water",
+            "nocollide": true,
+            "splasheffect": "base/misc/misc_watersplash",
+            "texture": "textures/water.png",
+            "wakeeffect": "base/misc/misc_waterwake"
+        },
+        "entity": {
+            "classname": "waypointent",
+            "name": "waypoint",
+            "nocollide": true
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "zonelinkent",
+            "description": "Enter next area",
+            "name": "zone_link",
+            "nocollide": false,
+            "team": "hero"
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/arch_curved_mon_e",
+            "name": "arch_curved_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "Wood",
+            "model": "monument/beam_mon_e",
+            "name": "beam_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "block_01_mon_b_mo_d",
+            "fxlevel": 3,
+            "health": 300,
+            "material": "rock",
+            "model": "monument/block_01_mon_b",
+            "name": "block_01_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "block_02_mon_b_mo_d",
+            "fxlevel": 3,
+            "health": 300,
+            "material": "rock",
+            "model": "monument/block_02_mon_b",
+            "name": "block_02_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 150,
+            "heaviness": 1,
+            "material": "rock",
+            "model": "monument/block_02_mon_th",
+            "name": "block_02_mon_th_mo",
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 150,
+            "heaviness": 1,
+            "material": "rock",
+            "model": "monument/block_03_mon_th",
+            "name": "block_03_mon_th_mo",
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "deathspawn": "burner_mon_b_mo_d",
+            "fxlevel": 2,
+            "health": 200,
+            "material": "rock",
+            "model": "monument/burner_mon_b",
+            "name": "burner_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "material": "energy",
+            "model": "monument/caustic_corner_in_mon_a",
+            "name": "caustic_corner_in_mon_a_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "material": "energy",
+            "model": "monument/caustic_corner_out_mon_a",
+            "name": "caustic_corner_out_mon_a_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "material": "energy",
+            "model": "monument/caustic_steps_mon_a",
+            "name": "caustic_steps_mon_a_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "material": "energy",
+            "model": "monument/caustic_straight_mon_a",
+            "name": "caustic_straight_mon_a_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "actsound": "zone_shared/mover/door_entrance_mon",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 3200,
+            "material": "rock",
+            "model": "monument/door_entrance_doors_mon_a",
+            "name": "door_entrance_doors_mon_a_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "actsound": "zone_shared/mover/door_mon",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "health": 100,
+            "material": "rock",
+            "model": "monument/door_inv_mon_a",
+            "name": "door_inv_mon_a_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actonuse": true,
+            "actsound": "zone_shared/mover/floor_button",
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/floor_button_mon_a",
+            "name": "floor_button_mon_a_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/guardian_pedestal_stone_mon_e",
+            "name": "guardian_pedestal_stone_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deathspawn": "guardian_statue_mon_e_mo_d",
+            "material": "rock",
+            "model": "monument/guardian_statue_mon_e",
+            "name": "guardian_statue_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "pillar_10x10_mon_b_mo_d",
+            "fxlevel": 3,
+            "health": 300,
+            "material": "rock",
+            "model": "monument/pillar_10x10_mon_b",
+            "name": "pillar_10x10_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/pillar_5x30_mon_e",
+            "name": "pillar_5x30_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_s",
+            "fxlevel": 1,
+            "health": 5,
+            "heaviness": 0,
+            "material": "rock",
+            "model": "monument/pot_02_mon_th",
+            "name": "pot_02_mon_th_mo",
+            "randompickups": 3,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_s",
+            "fxlevel": 1,
+            "health": 5,
+            "heaviness": 0,
+            "material": "rock",
+            "model": "monument/pot_mon_th",
+            "name": "pot_mon_th_mo",
+            "randompickups": 3,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 200,
+            "heaviness": 1,
+            "material": "rock",
+            "model": "monument/statue_01_mon_th",
+            "name": "statue_01_mon_th_mo",
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "moverent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/statue_04_mon_m",
+            "move": "0 0 0",
+            "moveduration": 1,
+            "name": "statue_04_mon_m_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "statue_10ft_mon_b_mo_d",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "rock",
+            "model": "monument/statue_10ft_mon_b",
+            "name": "statue_10ft_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "statue_lord_02_mon_b_mo_d",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "rock",
+            "model": "monument/statue_lord_02_mon_b",
+            "name": "statue_lord_02_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/statue_noble_mon_e",
+            "name": "statue_noble_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 100,
+            "heaviness": 1,
+            "material": "rock",
+            "model": "monument/table_examination_mon_b",
+            "name": "table_examination_mon_b_mo",
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "deathspawn": "urn_mon_b_mo_d",
+            "fxlevel": 2,
+            "health": 50,
+            "material": "rock",
+            "model": "monument/urn_mon_b",
+            "name": "urn_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 2,
+            "structure": 0
+        },
+        "entinst": {
+            "type": "ss_infinite_a",
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "pos": "420 -1260 0"
+            },
+            "inst": {
+                "extents": "-24.1564 -16.9144 0 36.1564 16.9147 84",
+                "name": "ss_infinite_a",
+                "orient": "0 0 -1.74533",
+                "pos": "3243.46 658.864 0"
+            },
+            "inst": {
+                "extents": "-24.1564 -16.9146 0 36.1564 16.9144 84",
+                "name": "ss_infinite_a",
+                "orient": "0 0 -1.74533",
+                "pos": "3325.61 782.344 0"
+            },
+            "inst": {
+                "extents": "-17.6354 -22.1675 0 29.6354 22.1675 84",
+                "name": "ss_infinite_a",
+                "orient": "0 0 1.65806",
+                "pos": "3900 288.521 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "pos": "1080 -2700 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "pos": "1068 -2484 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "pos": "601.474 -2673.08 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "pos": "610.702 -2479.84 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "orient": "0 0 3.14159",
+                "pos": "984.595 -664.55 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "pos": "3708 -1752 0"
+            },
+            "inst": {
+                "extents": "-33.5884 -8.99991 0 45.5884 9.00013 84",
+                "name": "ss_infinite_a",
+                "orient": "0 0 1.0472",
+                "pos": "2055.93 -2701.57 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "orient": "0 0 -3.14159",
+                "pos": "660 -1260 0"
+            }
+        },
+        "entinst": {
+            "type": "ss_infinite_a22",
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a22",
+                "pos": "964.536 101.417 0"
+            },
+            "inst": {
+                "extents": "1.83258 -41.6353 0 10.1676 41.6354 84",
+                "name": "ss_infinite_a22",
+                "orient": "0 0 2.26893",
+                "pos": "2701.96 -2698.52 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a22",
+                "pos": "3717.74 -1531.01 0"
+            },
+            "inst": {
+                "extents": "-16.5526 -26.2085 0 28.5527 26.2085 84",
+                "name": "ss_infinite_a22",
+                "orient": "0 0 2.96706",
+                "pos": "1497.48 -777.024 0"
+            },
+            "inst": {
+                "extents": "-16.5525 -26.2085 0 28.5527 26.2085 84",
+                "name": "ss_infinite_a22",
+                "orient": "0 0 2.96706",
+                "pos": "1510.66 -672.19 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a22",
+                "orient": "0 0 1.5708",
+                "pos": "2413.28 -419.252 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a22",
+                "orient": "0 0 1.5708",
+                "pos": "2268.07 -419.252 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a22",
+                "pos": "976.76 538.129 0"
+            }
+        },
+        "entinst": {
+            "type": "ss_infinite_a_leader01",
+            "inst": {
+                "extents": "-18.0001 -17.9999 0 29.9999 18.0001 84",
+                "name": "ss_infinite_a_leader01",
+                "orient": "0 0 1.5708",
+                "pos": "4140 -1200 0"
+            }
+        },
+        "entinst": {
+            "type": "ss_shifter_a",
+            "inst": {
+                "extents": "-18.0001 -18 0 29.9999 18 84",
+                "name": "ss_shifter_a",
+                "orient": "0 0 -1.5708",
+                "pos": "540 -2269.66 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_shifter_a",
+                "orient": "0 0 -1.5708",
+                "pos": "540 -1020 0"
+            },
+            "inst": {
+                "extents": "-18.0001 -17.9999 0 29.9999 18.0001 84",
+                "name": "ss_shifter_a",
+                "orient": "0 0 1.5708",
+                "pos": "2342.51 -2508.25 13.9126"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_shifter_a",
+                "orient": "0 0 1.5708",
+                "pos": "1929.59 92.1154 13.9126"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_shifter_a",
+                "orient": "0 0 1.5708",
+                "pos": "2342.19 43.2692 13.9126"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_shifter_a",
+                "pos": "4039.82 -1695.7 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_shifter_a",
+                "pos": "3192 -1536 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_shifter_a",
+                "pos": "3192 -1716 0"
+            },
+            "inst": {
+                "extents": "-14.7845 -29.9999 0 26.7846 30.0002 84",
+                "name": "ss_shifter_a",
+                "orient": "0 0 1.8326",
+                "pos": "4267.02 -1734.04 0"
+            },
+            "inst": {
+                "extents": "-16.5527 -26.2085 0 28.5527 26.2085 84",
+                "name": "ss_shifter_a",
+                "orient": "0 0 2.96706",
+                "pos": "4039.66 -402.363 0"
+            },
+            "inst": {
+                "extents": "-24.1564 -16.9145 0 36.1564 16.9145 84",
+                "name": "ss_shifter_a",
+                "orient": "0 0 -2.96706",
+                "pos": "4039.66 -200.163 0"
+            },
+            "inst": {
+                "extents": "-24.1563 -16.9144 0 36.1565 16.9145 84",
+                "name": "ss_shifter_a",
+                "orient": "0 0 -2.96706",
+                "pos": "3755.04 -200.163 0"
+            },
+            "inst": {
+                "extents": "-16.5527 -26.2085 0 28.5527 26.2085 84",
+                "name": "ss_shifter_a",
+                "orient": "0 0 2.96706",
+                "pos": "3755.04 -402.363 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_shifter_a",
+                "pos": "716.929 554.66 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_shifter_a",
+                "pos": "737.899 48.8352 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_shifter_a",
+                "orient": "0 0 1.5708",
+                "pos": "2747.06 92.1154 13.9126"
+            }
+        },
+        "entinst": {
+            "type": "ss_shifter_a25",
+            "inst": {
+                "extents": "-24.1564 -16.9147 0 36.1564 16.9144 84",
+                "name": "ss_shifter_a25",
+                "orient": "0 0 1.39626",
+                "pos": "4054.36 -1071.03 0"
+            },
+            "inst": {
+                "extents": "-6.00007 -38.7845 0 18 38.7846 84",
+                "name": "ss_shifter_a25",
+                "orient": "0 0 -1.0472",
+                "pos": "3222.35 769.249 0"
+            },
+            "inst": {
+                "extents": "-31.7889 -11.5702 0 43.7887 11.5702 84",
+                "name": "ss_shifter_a25",
+                "orient": "0 0 0.436332",
+                "pos": "3646.56 197.997 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_shifter_a25",
+                "pos": "445.751 303.218 0"
+            },
+            "inst": {
+                "extents": "-17.6353 -22.1676 0 29.6354 22.1676 84",
+                "name": "ss_shifter_a25",
+                "orient": "0 0 3.05433",
+                "pos": "2876.69 -305.124 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_shifter_a25",
+                "pos": "399.194 -1854.3 0"
+            },
+            "inst": {
+                "extents": "-6.00003 -38.7846 0 18 38.7846 84",
+                "name": "ss_shifter_a25",
+                "orient": "0 0 -1.0472",
+                "pos": "444.933 -668.881 0"
+            },
+            "inst": {
+                "extents": "-35.7265 -3.12566 0 47.7266 3.12568 84",
+                "name": "ss_shifter_a25",
+                "orient": "0 0 -2.44346",
+                "pos": "638.694 -665.556 0"
+            },
+            "inst": {
+                "extents": "-16.5526 -26.2082 0 28.5526 26.2086 84",
+                "name": "ss_shifter_a25",
+                "orient": "0 0 1.74533",
+                "pos": "4250.56 -1043.36 0"
+            }
+        },
+        "entinst": {
+            "type": "guardian_spawn",
+            "inst": {
+                "extents": "-18 -17.9999 0 30 18.0001 84",
+                "name": "guardian_spawn",
+                "orient": "0 0 1.5708",
+                "pos": "2338.89 -1465.25 -34.0426"
+            }
+        },
+        "entinst": {
+            "type": "comic_sunfire",
+            "inst": {
+                "name": "comic_sunfire",
+                "pos": "3479.77 181.613 0"
+            }
+        },
+        "entinst": {
+            "type": "disc_so203",
+            "inst": {
+                "name": "disc_so203",
+                "pos": "4290 -150 0"
+            }
+        },
+        "entinst": {
+            "type": "homing_beacon_act2_01",
+            "inst": {
+                "name": "homing_beacon_act2_01",
+                "pos": "356.983 -1146.12 0"
+            }
+        },
+        "entinst": {
+            "type": "tech_station_body01",
+            "inst": {
+                "name": "tech_station_body01",
+                "orient": "0 0 1.5708",
+                "pos": "-422.312 -1856.22 0"
+            }
+        },
+        "entinst": {
+            "type": "camera_magnet01",
+            "inst": {
+                "extents": "-80 -180 0 80 180 240",
+                "name": "camera_magnet01",
+                "pos": "2335.45 1462.46 -120.539"
+            }
+        },
+        "entinst": {
+            "type": "enable_push3",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "enable_push3",
+                "pos": "-424.463 -657.383 135.231"
+            }
+        },
+        "entinst": {
+            "type": "loop_effect20",
+            "inst": {
+                "extents": "4.80109e-005 -11.9999 -6.0 5.2057e-005 11.9999 6.0",
+                "name": "loop_effect20",
+                "orient": "0 0 -0.785398",
+                "pos": "1397.39 -1206.24 0"
+            },
+            "inst": {
+                "extents": "1.55378e-005 -12.0001 -6.0 0.000188171 12.0 6.0",
+                "name": "loop_effect20",
+                "orient": "0 0 2.35619",
+                "pos": "3243.34 -1081.21 0"
+            },
+            "inst": {
+                "extents": "-2.8456e-005 -12.0001 -6.0 4.97685e-005 12.0 6.0",
+                "name": "loop_effect20",
+                "orient": "0 0 -0.785398",
+                "pos": "3476.94 -383.79 0"
+            },
+            "inst": {
+                "extents": "-6.00002 -5.99987 -6 5.99998 6.00013 6",
+                "name": "loop_effect20",
+                "orient": "0 0 -1.5708",
+                "pos": "4266.09 -815.809 0"
+            },
+            "inst": {
+                "extents": "-5.99995 -6.00002 -6 6.00004 5.99999 6",
+                "name": "loop_effect20",
+                "orient": "0 0 3.14159",
+                "pos": "3332.14 300.974 0"
+            },
+            "inst": {
+                "extents": "-0.000140668 -12.0001 -6.0 -5.43516e-005 12.0 6.0",
+                "name": "loop_effect20",
+                "orient": "0 0 2.35619",
+                "pos": "3901.86 741.21 0"
+            },
+            "inst": {
+                "extents": "-6.00001 -6.00009 -6 6 5.99991 6",
+                "name": "loop_effect20",
+                "orient": "0 0 -1.5708",
+                "pos": "2652.66 540.458 0"
+            },
+            "inst": {
+                "extents": "-12.0 -5.67432e-006 -6.0 12.0 -5.67432e-006 6.0",
+                "name": "loop_effect20",
+                "orient": "0 0 -2.35619",
+                "pos": "463.224 -609.245 0"
+            },
+            "inst": {
+                "extents": "-0.000156809 -12.0001 -6.0 -7.45381e-005 12.0 6.0",
+                "name": "loop_effect20",
+                "orient": "0 0 -0.785398",
+                "pos": "516.437 -2558.18 0"
+            },
+            "inst": {
+                "extents": "-12.0001 8.00657e-006 -6.0 12.0001 1.00296e-005 6.0",
+                "name": "loop_effect20",
+                "orient": "0 0 0.785398",
+                "pos": "2396.95 -2505.26 0"
+            },
+            "inst": {
+                "extents": "-1.68917e-006 -12.0 -6.0 2.35693e-006 12.0 6.0",
+                "name": "loop_effect20",
+                "orient": "0 0 -0.785398",
+                "pos": "-546.665 -477.489 0"
+            },
+            "inst": {
+                "extents": "-5.99998 -5.99999 -6 6.00002 6.00001 6",
+                "name": "loop_effect20",
+                "orient": "0 0 1.5708",
+                "pos": "-355.582 -881.07 0"
+            },
+            "inst": {
+                "extents": "2.26756e-005 -12.0 -6.0 3.34652e-005 12.0 6.0",
+                "name": "loop_effect20",
+                "orient": "0 0 2.35619",
+                "pos": "895.313 127.062 0"
+            },
+            "inst": {
+                "extents": "-6 -5.99994 -6 6 6.00006 6",
+                "name": "loop_effect20",
+                "orient": "0 0 -1.5708",
+                "pos": "1502.34 388.475 0"
+            },
+            "inst": {
+                "extents": "-12.0 -2.17878e-005 -6.0 12.0 0.000152869 6.0",
+                "name": "loop_effect20",
+                "orient": "0 0 0.785398",
+                "pos": "2450.52 -1756.19 0"
+            }
+        },
+        "entinst": {
+            "type": "loop_effect27",
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect27",
+                "pos": "2520 -1080 -120"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect27",
+                "pos": "2101.03 -1290.29 -120"
+            }
+        },
+        "entinst": {
+            "type": "loop_effect16",
+            "inst": {
+                "extents": "-6 -6 -6.00001 6 6 6",
+                "name": "loop_effect16",
+                "pos": "4359.63 -285.611 63.3695"
+            },
+            "inst": {
+                "extents": "-5.99997 -5.99991 -6 6.00003 6.00008 6",
+                "name": "loop_effect16",
+                "orient": "0 0 -1.5708",
+                "pos": "3293.49 -520.168 63.3695"
+            },
+            "inst": {
+                "extents": "-6.00009 -6.00004 -6 5.99992 5.99996 6",
+                "name": "loop_effect16",
+                "orient": "0 0 -1.5708",
+                "pos": "1275.42 -2800.3 63.3695"
+            },
+            "inst": {
+                "extents": "-6.00001 -5.99996 -6 5.99998 6.00005 6",
+                "name": "loop_effect16",
+                "orient": "0 0 3.14159",
+                "pos": "318.409 -2260.11 63.3695"
+            },
+            "inst": {
+                "extents": "-6 -5.99996 -6 5.99999 6.00005 6",
+                "name": "loop_effect16",
+                "orient": "0 0 3.14159",
+                "pos": "320.728 -1271.85 63.3695"
+            },
+            "inst": {
+                "extents": "-6.00001 -5.99997 -6 6.00001 6.00002 6",
+                "name": "loop_effect16",
+                "orient": "0 0 -1.5708",
+                "pos": "1137.43 -40.3851 63.3695"
+            },
+            "inst": {
+                "extents": "-6 -6.00001 -6 6 5.99999 6",
+                "name": "loop_effect16",
+                "orient": "0 0 1.5708",
+                "pos": "748.799 639.423 63.3695"
+            },
+            "inst": {
+                "extents": "-5.99992 -6.00001 -6 6.00008 5.99999 6",
+                "name": "loop_effect16",
+                "orient": "0 0 3.14159",
+                "pos": "3682.11 539.962 64.6875"
+            },
+            "inst": {
+                "extents": "-6.00005 -6.00001 -6 5.99995 5.99999 6",
+                "name": "loop_effect16",
+                "orient": "0 0 3.14159",
+                "pos": "1880 483.111 63.3695"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect16",
+                "pos": "2798.88 479.724 64.6875"
+            },
+            "inst": {
+                "extents": "-6 -6.00003 -6.00001 6 5.99997 6",
+                "name": "loop_effect16",
+                "pos": "4355.13 -966.886 63.3695"
+            }
+        },
+        "entinst": {
+            "type": "torchfire_02",
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "torchfire_02",
+                "pos": "2010.14 -1136.37 43.4312"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "torchfire_01",
+                "pos": "2673.15 -1136.37 43.4312"
+            }
+        },
+        "entinst": {
+            "type": "loop_effect09",
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect09",
+                "pos": "2251.36 -2753.03 18.7976"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect09",
+                "pos": "2433.11 -2753.03 18.7976"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect09",
+                "pos": "2201.08 1196.73 -84.8866"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect09",
+                "pos": "2482.07 1196.73 -84.8866"
+            }
+        },
+        "entinst": {
+            "type": "first_visit",
+            "inst": {
+                "extents": "-5.99998 -6.00006 -6 6.00002 5.99993 6",
+                "name": "first_visit",
+                "orient": "0 0 -1.5708",
+                "pos": "2340.46 1490.64 -92.7614"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "cam_mag_target",
+                "pos": "2189.87 980.69 198.868"
+            }
+        },
+        "entinst": {
+            "type": "player_start_all03",
+            "inst": {
+                "extents": "-60.0786 -60 0 84 60 83.9544",
+                "name": "player_start_all03",
+                "orient": "0 0 1.5708",
+                "pos": "2344.26 -2722.18 0"
+            }
+        },
+        "entinst": {
+            "type": "player_start_all02",
+            "inst": {
+                "extents": "-60.0786 -60 0 84 60 83.9544",
+                "name": "player_start_all02",
+                "orient": "0 0 3.14159",
+                "pos": "3925.3 542.801 0"
+            }
+        },
+        "entinst": {
+            "type": "player_start_all01",
+            "inst": {
+                "extents": "-60.0785 -60 0 84.0001 60 83.9544",
+                "name": "player_start_all01",
+                "orient": "0 0 -1.5708",
+                "pos": "2340.46 1077.77 -92.6311"
+            }
+        },
+        "entinst": {
+            "type": "stone_relay",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "stone_relay",
+                "pos": "2331.09 -1331.07 171.756"
+            }
+        },
+        "entinst": {
+            "type": "trigger_power01",
+            "inst": {
+                "extents": "-20 -30 0 20 30 120",
+                "name": "trigger_power01",
+                "pos": "-350.206 -627.094 0"
+            }
+        },
+        "entinst": {
+            "type": "trigger_power04",
+            "inst": {
+                "extents": "-10 -10 0 10 10 20",
+                "name": "trigger_power04",
+                "pos": "-424.049 -652.919 64.1313"
+            }
+        },
+        "entinst": {
+            "type": "trigger_power02",
+            "inst": {
+                "extents": "-20 -30 0 20 30 120",
+                "name": "trigger_power02",
+                "pos": "-497.125 -627.546 0"
+            }
+        },
+        "entinst": {
+            "type": "trigger_power03",
+            "inst": {
+                "extents": "-30 -20 0 30 20 120",
+                "name": "trigger_power03",
+                "pos": "-455.634 -660.528 0"
+            }
+        },
+        "entinst": {
+            "type": "butt_trig02",
+            "inst": {
+                "extents": "-22.5 -22.5 0 22.5 22.5 120",
+                "name": "butt_trig02",
+                "pos": "1500.25 -1139.62 0"
+            }
+        },
+        "entinst": {
+            "type": "butt_trig01",
+            "inst": {
+                "extents": "-22.5 -22.5 0 22.5 22.5 120",
+                "name": "butt_trig01",
+                "pos": "3180.6 -1139.62 0"
+            }
+        },
+        "entinst": {
+            "type": "water02",
+            "inst": {
+                "extents": "-480 -540 0 480 540 32",
+                "name": "water02",
+                "pos": "2357.31 -1074.47 -122"
+            }
+        },
+        "entinst": {
+            "type": "wp_heroc01",
+            "inst": {
+                "extents": "-6.00001 -5.99995 -6 5.99999 6.00005 6",
+                "name": "wp_heroc01",
+                "orient": "0 0 -1.5708",
+                "pos": "2305.55 1172.16 -110.968"
+            },
+            "inst": {
+                "extents": "-6.00001 -5.99993 -6 5.99999 6.00006 6",
+                "name": "wp_herod01",
+                "orient": "0 0 -1.5708",
+                "pos": "2296.61 1098.05 -111.576"
+            }
+        },
+        "entinst": {
+            "type": "wp_herob01",
+            "inst": {
+                "extents": "-6.00002 -5.99995 -6 5.99998 6.00005 6",
+                "name": "wp_herob01",
+                "orient": "0 0 -1.5708",
+                "pos": "2377.67 1169.87 -107.753"
+            },
+            "inst": {
+                "extents": "-6.00002 -5.99993 -6 5.99998 6.00006 6",
+                "name": "wp_heroa01",
+                "orient": "0 0 -1.5708",
+                "pos": "2378.46 1096.51 -120"
+            }
+        },
+        "entinst": {
+            "type": "link_monument2",
+            "inst": {
+                "extents": "-90 -90 0 90 90 120",
+                "name": "link_monument2",
+                "pos": "2340 -2908.42 0"
+            }
+        },
+        "entinst": {
+            "type": "link_monument4",
+            "inst": {
+                "extents": "-90 -90 0 90 90 120",
+                "name": "link_monument4",
+                "pos": "4127.06 545.074 0"
+            }
+        },
+        "entinst": {
+            "type": "link_jungle5",
+            "inst": {
+                "extents": "-80 -80 0 80 80 240",
+                "name": "link_jungle5",
+                "pos": "2347.61 1602.83 -102"
+            }
+        },
+        "entinst": {
+            "type": "arch_curved_mon_e_mo03",
+            "inst": {
+                "name": "arch_curved_mon_e_mo03",
+                "orient": "0 0 1.5708",
+                "pos": "2341.05 -1658.15 0"
+            },
+            "inst": {
+                "name": "arch_curved_mon_e_mo03",
+                "orient": "0 0 1.5708",
+                "pos": "2341.05 -2407.74 0"
+            },
+            "inst": {
+                "name": "arch_curved_mon_e_mo03",
+                "orient": "0 0 1.5708",
+                "pos": "2341.05 644.375 0"
+            },
+            "inst": {
+                "name": "arch_curved_mon_e_mo03",
+                "orient": "0 0 1.5708",
+                "pos": "2341.05 -439.162 0"
+            }
+        },
+        "entinst": {
+            "type": "beam_mon_e_mo",
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "pos": "2335.47 -753.378 107.457"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "3476.28 899.377 105.666"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2994.52 -1142 106.648"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1684.52 -1142 105.336"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "-422 -1506.12 106.345"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "3476.28 181.209 105.666"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "-422 -1133 105.548"
+            }
+        },
+        "entinst": {
+            "type": "block_01_mon_b_mo",
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 1.74533",
+                "pos": "2105.51 -134.373 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 2.35619",
+                "pos": "2739.33 -1018.06 -120"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 0.261799",
+                "pos": "2750.22 -2485.25 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 -1.48353",
+                "pos": "-662.294 -394.448 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 1.39626",
+                "pos": "2253.24 -1919.38 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 -0.261799",
+                "pos": "3140.21 631.71 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 0.349066",
+                "pos": "4136.3 -181.51 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 0.174533",
+                "pos": "3960 -960 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "pos": "-155.444 -951.904 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 -0.436332",
+                "pos": "3410.08 155.374 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 0.261799",
+                "pos": "1262.81 -2580.72 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 -2.87979",
+                "pos": "1912.02 -2679.19 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 0.261799",
+                "pos": "387.772 -2677.82 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 1.65806",
+                "pos": "-328.115 -2038.24 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 0.698132",
+                "pos": "2179.56 407.44 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 2.00713",
+                "pos": "749.623 -798.191 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 0.872665",
+                "pos": "705.885 -979.958 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 0.872665",
+                "pos": "661.719 -1377.54 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 1.309",
+                "pos": "-611.917 -567.282 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 1.309",
+                "pos": "-184.97 -734.697 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 -0.523599",
+                "pos": "1424.41 16.3967 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "pos": "2084.88 1275.13 -120"
+            }
+        },
+        "entinst": {
+            "type": "block_02_mon_b_mo",
+            "inst": {
+                "name": "block_02_mon_b_mo",
+                "orient": "0 0 1.0472",
+                "pos": "3550.27 -1506.99 0"
+            },
+            "inst": {
+                "name": "block_02_mon_b_mo",
+                "orient": "0 0 1.309",
+                "pos": "-685.079 -756.198 0"
+            },
+            "inst": {
+                "name": "block_02_mon_b_mo",
+                "orient": "0 0 0.959931",
+                "pos": "428.275 -1137.79 0"
+            },
+            "inst": {
+                "name": "block_02_mon_b_mo",
+                "orient": "0 0 -0.959931",
+                "pos": "805.733 -2414.52 0"
+            },
+            "inst": {
+                "name": "block_02_mon_b_mo",
+                "orient": "0 0 -0.436332",
+                "pos": "2755.64 -1848.39 0"
+            },
+            "inst": {
+                "name": "block_02_mon_b_mo",
+                "orient": "0 0 -0.349066",
+                "pos": "3535.58 220.49 0"
+            },
+            "inst": {
+                "name": "block_02_mon_b_mo",
+                "orient": "0 0 0.174533",
+                "pos": "4320 -1140 0"
+            },
+            "inst": {
+                "name": "block_02_mon_b_mo",
+                "orient": "0 0 -0.610865",
+                "pos": "3133.1 -137.011 0"
+            },
+            "inst": {
+                "name": "block_02_mon_b_mo",
+                "orient": "0 0 1.309",
+                "pos": "-240 -600 0"
+            }
+        },
+        "entinst": {
+            "type": "block_02_mon_th_mo43",
+            "inst": {
+                "name": "block_02_mon_th_mo43",
+                "pos": "2756.71 -1775.53 0"
+            }
+        },
+        "entinst": {
+            "type": "block_02_mon_th_mo",
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 1.13446",
+                "pos": "2115.73 -1390.92 -120"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -0.0872664",
+                "pos": "1795.61 -2503.15 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 1.13446",
+                "pos": "2031.11 -196.044 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -0.698132",
+                "pos": "3534.71 127.601 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -1.8326",
+                "pos": "4329.32 -1053.12 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 1.39626",
+                "pos": "3963.77 -961.271 93.0745"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "pos": "4037.28 -124.543 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "pos": "3133.33 -216.188 5.76833"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 1.22173",
+                "pos": "3121.7 722.614 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -2.70526",
+                "pos": "3412.76 155.028 94.4018"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -1.74533",
+                "pos": "2752.15 -1850.27 131.797"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -2.61799",
+                "pos": "2740.8 12.1768 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 0.349066",
+                "pos": "1918.36 -918.135 -120"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "pos": "2562.21 -837.762 -120"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 1.39626",
+                "pos": "2250.13 -2639.35 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -1.74533",
+                "pos": "2765.92 -2597.33 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -0.610866",
+                "pos": "1180.6 -2597.19 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 0.698131",
+                "pos": "1958.24 -2750.09 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 1.13446",
+                "pos": "1916.31 -2679.38 93.3232"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 1.5708",
+                "pos": "360 -2280 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -0.610866",
+                "pos": "755.035 -2466.82 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 2.87979",
+                "pos": "476.258 -2702.3 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 1.48353",
+                "pos": "2186.18 413.178 93.2125"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -2.61799",
+                "pos": "2118.01 470.809 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 2.35619",
+                "pos": "836.982 -835.143 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -1.22173",
+                "pos": "653.764 -1041.25 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -1.91986",
+                "pos": "716.151 -1545.12 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 1.91986",
+                "pos": "711.925 -1314.93 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 1.91986",
+                "pos": "361.155 -1077.89 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 1.91986",
+                "pos": "362.771 -1551.26 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 2.35619",
+                "pos": "359.659 -844.37 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 0.785398",
+                "pos": "-710.577 -831.349 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "pos": "-182.902 -736.991 93.4717"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "-1.5708 0 0",
+                "pos": "-238.761 -523.619 46.7194"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "pos": "-607.558 -575.009 93.1257"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -1.39626",
+                "pos": "-269.476 -739.271 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 2.00713",
+                "pos": "-701.937 -544.713 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 3.05433",
+                "pos": "960 0 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 1.39626",
+                "pos": "1911.83 -2482.65 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "3360 -1200 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -1.0472",
+                "pos": "3477.64 -1537.33 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 1.91986",
+                "pos": "3599.89 -1438.66 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -0.785398",
+                "pos": "4320 -1440 0"
+            }
+        },
+        "entinst": {
+            "type": "block_03_mon_th_mo",
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 0.174533",
+                "pos": "1530.8 -2752.35 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 1.309",
+                "pos": "1354.28 -2596.66 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "pos": "2569.34 -1493.97 -120"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "pos": "2247.46 -1055.9 -120"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 0.174533",
+                "pos": "2283.91 -1708.7 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 1.48353",
+                "pos": "1910.94 -1840.99 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 0.610865",
+                "pos": "2639.68 -410.461 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "pos": "3409.09 238.786 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 1.309",
+                "pos": "3206.18 -122.857 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -0.523599",
+                "pos": "4136.89 -184.193 93.337"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "pos": "4217.91 -151.96 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 1.5708",
+                "pos": "3946.62 -877.512 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -0.261799",
+                "pos": "3957.6 -1042.04 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -0.261799",
+                "pos": "4307.02 -1226.41 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 1.48353",
+                "pos": "3120 532.978 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 1.48353",
+                "pos": "3360.48 677.221 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "pos": "3822.34 846.191 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 3.05433",
+                "pos": "4080 -1800 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 2.61799",
+                "pos": "3460.87 -1445.29 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 0.959931",
+                "pos": "3613.03 -1551.5 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 1.309",
+                "pos": "2640 1080 -120"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 0.174533",
+                "pos": "1200 600 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 0.872665",
+                "pos": "-147.243 -560.09 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "pos": "-597.491 -739.241 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 2.87979",
+                "pos": "-198.05 -805.244 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -0.0872669",
+                "pos": "599.659 -484.37 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -1.309",
+                "pos": "1079.53 -652.624 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 1.65806",
+                "pos": "725.662 -1072.63 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 1.65806",
+                "pos": "661.957 -1376.23 93.1236"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 0.610865",
+                "pos": "372.632 -1202.1 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 1.5708",
+                "pos": "626.369 -964.78 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -0.0872669",
+                "pos": "664.762 -848.823 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -0.349066",
+                "pos": "2129.76 350.564 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 1.65806",
+                "pos": "2262.37 400.843 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -0.0872669",
+                "pos": "1443.39 -474.538 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -1.309",
+                "pos": "1186.36 -556.365 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -0.0872669",
+                "pos": "880.117 -466.652 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 1.48353",
+                "pos": "-605.207 -1873.86 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -1.74533",
+                "pos": "390.749 -2679.13 94.0378"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "714.107 -2319.18 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 0.174533",
+                "pos": "895.212 -2402.24 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 0.174533",
+                "pos": "696.724 -2708.25 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -1.309",
+                "pos": "1979.66 -2655.24 0"
+            }
+        },
+        "entinst": {
+            "type": "burner_mon_b_mo",
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "pos": "2482.07 1201.64 -121"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "2431.02 -2756.61 -18.3788"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "2249.27 -2756.61 -18.3788"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "pos": "2200.45 1201.64 -121"
+            }
+        },
+        "entinst": {
+            "type": "caustic_corner_in_mon_a_mo",
+            "inst": {
+                "name": "caustic_corner_in_mon_a_mo",
+                "pos": "2426.21 -572.764 -120"
+            },
+            "inst": {
+                "name": "caustic_corner_in_mon_a_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2253.47 -573.5 -120"
+            },
+            "inst": {
+                "name": "caustic_corner_in_mon_a_mo",
+                "orient": "0 0 3.14159",
+                "pos": "1894.5 -1587.53 -120"
+            },
+            "inst": {
+                "name": "caustic_corner_in_mon_a_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2782.24 -1585.79 -120"
+            },
+            "inst": {
+                "name": "caustic_corner_in_mon_a_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1893.47 -813.5 -120"
+            },
+            "inst": {
+                "name": "caustic_corner_in_mon_a_mo",
+                "pos": "2787.21 -811.764 -120"
+            }
+        },
+        "entinst": {
+            "type": "caustic_corner_out_mon_a_mo",
+            "inst": {
+                "name": "caustic_corner_out_mon_a_mo",
+                "pos": "2477.71 -762.293 -120"
+            },
+            "inst": {
+                "name": "caustic_corner_out_mon_a_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2203 -762 -120"
+            }
+        },
+        "entinst": {
+            "type": "caustic_steps_mon_a_mo",
+            "inst": {
+                "name": "caustic_steps_mon_a_mo",
+                "pos": "2339.28 -653.104 -121"
+            },
+            "inst": {
+                "name": "caustic_steps_mon_a_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "2707.11 -1506.9 -121"
+            },
+            "inst": {
+                "name": "caustic_steps_mon_a_mo",
+                "orient": "0 0 3.14159",
+                "pos": "1972.89 -1506.9 -121"
+            }
+        },
+        "entinst": {
+            "type": "caustic_straight_mon_a_mo",
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1876.5 -1500 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1876.5 -1380 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1876.5 -1260 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "orient": "0 0 3.14159",
+                "pos": "2460 -1604.5 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1876.5 -1020 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1876.5 -900 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "orient": "0 0 3.14159",
+                "pos": "2340 -1604.5 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "pos": "1981 -795.5 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "pos": "2101 -795.5 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2800.21 -1499.29 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2236.5 -660 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2800.21 -1379.29 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2801.21 -1259.29 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2445.21 -660.293 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "orient": "0 0 3.14159",
+                "pos": "2100 -1604.5 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "orient": "0 0 3.14159",
+                "pos": "2580 -1605.5 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "orient": "0 0 3.14159",
+                "pos": "2220 -1604.5 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2803.21 -1019.29 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "pos": "2580.71 -795.793 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "pos": "2700.71 -794.793 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2802.21 -1139.29 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1876.5 -1140 -120"
+            },
+            "inst": {
+                "name": "caustic_straight_mon_a_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2804.21 -899.293 -120"
+            }
+        },
+        "entinst": {
+            "type": "entry_door",
+            "inst": {
+                "name": "entry_door",
+                "orient": "0 0 -1.5708",
+                "pos": "2344.26 1382.14 -129.17"
+            }
+        },
+        "entinst": {
+            "type": "kojakdoor",
+            "inst": {
+                "name": "kojakdoor",
+                "orient": "0 0 1.5708",
+                "pos": "2343.85 -538.08 0"
+            },
+            "inst": {
+                "name": "kojakdoor",
+                "orient": "0 0 1.5708",
+                "pos": "2099.88 -1981.64 0"
+            },
+            "inst": {
+                "name": "kojakdoor",
+                "orient": "0 0 1.5708",
+                "pos": "2584.41 -1981.64 0"
+            }
+        },
+        "entinst": {
+            "type": "door_tech",
+            "inst": {
+                "name": "door_tech",
+                "pos": "300.079 -1860.56 0"
+            },
+            "inst": {
+                "name": "door_tech01",
+                "pos": "-181.383 -1860.56 0"
+            }
+        },
+        "entinst": {
+            "type": "butt_01",
+            "inst": {
+                "name": "butt_01",
+                "orient": "0 0 1.5708",
+                "pos": "3180 -1140 0"
+            },
+            "inst": {
+                "name": "butt_02",
+                "orient": "0 0 1.5708",
+                "pos": "1500 -1140 0"
+            }
+        },
+        "entinst": {
+            "type": "mystic_stone",
+            "inst": {
+                "name": "mystic_stone",
+                "pos": "2342.11 -1416.24 5.71116"
+            }
+        },
+        "entinst": {
+            "type": "guardian_statue",
+            "inst": {
+                "name": "guardian_statue",
+                "orient": "0 0 3.14159",
+                "pos": "2341.42 -1460.44 -37.0343"
+            }
+        },
+        "entinst": {
+            "type": "pillar_10x10_mon_b_mo01",
+            "inst": {
+                "name": "pillar_10x10_mon_b_mo01",
+                "pos": "2746.45 -1138.93 -120"
+            },
+            "inst": {
+                "name": "pillar_10x10_mon_b_mo01",
+                "orient": "0 0 3.14159",
+                "pos": "1933.41 -1136.83 -120"
+            }
+        },
+        "entinst": {
+            "type": "pillar_5x30_mon_e_mo",
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "orient": "-0.174533 0 0",
+                "pos": "1920 -861.044 -121"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "2760 -840 -121"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "2520 -1560 -121"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "2160 -1560 -121"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "1260 180 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "1260 420 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "-600 -1320 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "660 180 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "3960 -480 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "3480 -480 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "3960 -120 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "3480 -120 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "2040 960 -120"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "2640 960 -120"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "2040 120 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "2640 120 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "2760 -2400 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "1920 -2400 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "2520 -2760 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "2160 -2760 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "orient": "0 1.39626 0",
+                "pos": "341.32 -2760 14.8256"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "-240 -1320 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "660 420 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "360 -2400 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "orient": "0.174533 0 0",
+                "pos": "720 -2760 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "orient": "-0.17717 0.171855 -0.0306091",
+                "pos": "720 -2400 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "1200 -2760 0"
+            },
+            "inst": {
+                "name": "pillar_5x30_mon_e_mo",
+                "pos": "1200 -2400 0"
+            }
+        },
+        "entinst": {
+            "type": "pot_02_mon_th_mo",
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "4339.34 -615.497 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "960 420 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "3376.67 380.663 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "3102.74 911.718 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "3977.44 404.563 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "960 180 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "4335 -433.369 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "-260.955 -1667.12 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "-616.826 -1946.15 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 3.14159",
+                "pos": "1015.43 -467.668 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 3.14159",
+                "pos": "945.619 -852.645 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 3.14159",
+                "pos": "1568.15 -852.425 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "461.304 -465.27 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "345.734 -1306.53 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "641.215 -1576.47 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "447.305 -948.316 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "734.741 -1134.36 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "459.525 -1936.99 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "2699.25 -2774.95 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "2384.07 -2409.38 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "4185.5 -104.363 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "2307.9 -2409.38 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "2026.31 -2386.11 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "2100.42 -1637.16 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "2266.35 -1637.16 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "2413.69 -1637.16 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "3102 -1425.03 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "3734.09 -1816.7 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "3849.2 -1429.08 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "3945.21 -1096.51 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "2581.56 -1637.16 0"
+            }
+        },
+        "entinst": {
+            "type": "pot_mon_th_mo",
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 3.14159",
+                "pos": "1093.37 -590.913 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "-612.341 -1813.88 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 -1.309 -0.436332",
+                "pos": "1079.57 -18.9314 12.6413"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 -1.309 0",
+                "pos": "837.831 616.015 12.6413"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "1.39626 0 0",
+                "pos": "3705.47 600 11.9574"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0.610865 0 0",
+                "pos": "4140.83 -255.226 6.75278"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "4140.83 -342.923 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "3264.37 -1815.21 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "-258.924 -2050.58 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "3184.08 -1426.67 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "3850.35 -1569 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 3.14159",
+                "pos": "829.312 -715.372 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "3707.45 538.59 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 3.14159",
+                "pos": "1252.15 -469.161 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "orient": "0 0 3.14159",
+                "pos": "1495.58 -857.703 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "3586.29 -1693.46 0"
+            }
+        },
+        "entinst": {
+            "type": "statue_01_mon_th_mo",
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 3.14159",
+                "pos": "2139.09 -8.91161 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 3.14159",
+                "pos": "2537.84 -8.91161 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 3.14159",
+                "pos": "2654.65 -1930.68 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "pos": "-496.837 -354.797 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "pos": "615.841 -2155.21 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1560.66 -2655.1 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1560.66 -2505.58 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "3962.71 445.294 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "pos": "463.905 -2154.34 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 3.14159",
+                "pos": "4214.28 -1325.81 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "3962.71 634.388 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 3.14159",
+                "pos": "2506.74 -1930.68 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 3.14159",
+                "pos": "2025.91 -1930.68 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 3.14159",
+                "pos": "2173.82 -1930.68 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "-495.841 114.132 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "-342.959 114.132 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "pos": "-342.853 -354.797 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 3.14159",
+                "pos": "4065.11 -1325.81 0"
+            }
+        },
+        "entinst": {
+            "type": "statue_butt2",
+            "inst": {
+                "name": "statue_butt2",
+                "pos": "1798.04 -1092.24 0"
+            },
+            "inst": {
+                "name": "statue_butt1",
+                "pos": "2877.18 -1092.24 0"
+            },
+            "inst": {
+                "name": "statue_butt2",
+                "pos": "1798.04 -1182.53 0"
+            },
+            "inst": {
+                "name": "statue_butt1",
+                "pos": "2877.18 -1182.53 0"
+            }
+        },
+        "entinst": {
+            "type": "pushable2",
+            "inst": {
+                "name": "pushable2",
+                "orient": "0 0 1.5708",
+                "pos": "-495.988 -660.032 0"
+            },
+            "inst": {
+                "name": "pushable1",
+                "orient": "0 0 1.5708",
+                "pos": "-349.908 -660.032 0"
+            }
+        },
+        "entinst": {
+            "type": "pushable3",
+            "inst": {
+                "name": "pushable3",
+                "orient": "0 0 1.5708",
+                "pos": "-423.724 -660.032 0"
+            }
+        },
+        "entinst": {
+            "type": "statue_04_mon_m_mo03",
+            "inst": {
+                "name": "statue_04_mon_m_mo03",
+                "orient": "0 0 1.5708",
+                "pos": "-276.976 -660.032 0"
+            },
+            "inst": {
+                "name": "statue_04_mon_m_mo03",
+                "orient": "0 0 1.5708",
+                "pos": "-129.091 -660.032 0"
+            },
+            "inst": {
+                "name": "statue_04_mon_m_mo03",
+                "orient": "0 0 1.5708",
+                "pos": "-722.12 -660.032 0"
+            },
+            "inst": {
+                "name": "statue_04_mon_m_mo03",
+                "orient": "0 0 1.5708",
+                "pos": "-203.374 -660.032 0"
+            },
+            "inst": {
+                "name": "statue_04_mon_m_mo03",
+                "orient": "0 0 1.5708",
+                "pos": "-644.118 -660.032 0"
+            },
+            "inst": {
+                "name": "statue_04_mon_m_mo03",
+                "orient": "0 0 1.5708",
+                "pos": "-566.992 -660.032 0"
+            }
+        },
+        "entinst": {
+            "type": "statue_10ft_mon_b_mo",
+            "inst": {
+                "name": "statue_10ft_mon_b_mo",
+                "pos": "2700.82 802.145 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_b_mo",
+                "orient": "0 0 -0.785398",
+                "pos": "1530.38 -509.629 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "3595.88 760.996 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_b_mo",
+                "orient": "2.5397e-007 0.0 1.5708",
+                "pos": "3595.97 320.131 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_b_mo",
+                "pos": "-418.409 478.548 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "2526.24 893.937 -121"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "2148.07 893.937 -121"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "3120 -1280.83 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "3120 -1002.02 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1561.15 -999.808 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1561.15 -1278.12 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "4140 -960 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "-421.719 -2038.94 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_b_mo",
+                "pos": "1980.98 803.115 0"
+            }
+        },
+        "entinst": {
+            "type": "statue_lord_02_mon_b_mo",
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1378.2 -2397.47 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1377.82 -2760 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4440 675.736 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "4440 405.297 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "pos": "4142.42 -298.106 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "-554.324 -1320.2 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "pos": "-283.885 -1320.2 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "3302.41 -300.607 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 -2.35619",
+                "pos": "3139.12 -1780.66 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0.275092 0.342489 -1.51517",
+                "pos": "2344.13 -1921.98 -4.88003"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2344.32 -2398.45 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1020 -2760 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1020.38 -2397.47 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0.319459 0.321068 -3.07191",
+                "pos": "356.112 -1026.61 0.837805"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "-0.28746 0.420501 -0.120109",
+                "pos": "714.495 -1438.17 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "359.448 -1438.17 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "pos": "646.77 304.066 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "1269.29 304.066 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2041.35 -2760 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2640 -2760 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "3719.76 -134.961 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "3719.76 -465.842 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "-502.048 -978.693 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "-337.596 -978.693 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "341.409 216.383 0"
+            },
+            "inst": {
+                "name": "statue_lord_02_mon_b_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "341.409 382.899 0"
+            }
+        },
+        "entinst": {
+            "type": "statue_noble_mon_e_mo",
+            "inst": {
+                "name": "statue_noble_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "4030.92 311.253 0"
+            },
+            "inst": {
+                "name": "statue_noble_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "4030.92 782.933 0"
+            },
+            "inst": {
+                "name": "statue_noble_mon_e_mo",
+                "orient": "0 0 3.14159",
+                "pos": "2104.15 -667.187 0"
+            },
+            "inst": {
+                "name": "statue_noble_mon_e_mo",
+                "orient": "0 0 3.14159",
+                "pos": "2575.83 -667.187 0"
+            }
+        },
+        "entinst": {
+            "type": "table_examination_mon_b_mo",
+            "inst": {
+                "name": "table_examination_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "3713.76 -1620.69 0"
+            }
+        },
+        "entinst": {
+            "type": "urn_mon_b_mo",
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "1321.32 -476.607 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1565.13 -724.139 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "360 480 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "pos": "360 120 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "-314.901 -1668.98 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "-521.976 -1668.98 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "3114.53 -1560.23 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "pos": "784.084 394.555 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4325.97 -720 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "3960 -1199.83 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "3960 -720 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "3840.82 -120 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "3600 -120 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "pos": "3600 -480 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "pos": "3840 -480 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "3597.61 960 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "3360 960 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "pos": "3358.34 -1807.76 0"
+            },
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "1134.97 207.324 0"
+            }
+        },
+        "entinst": {
+            "type": "urn_mon_b_mo03",
+            "inst": {
+                "name": "urn_mon_b_mo03",
+                "pos": "3178.4 120 0"
+            }
+        },
+        "entinst": {
+            "type": "tile_breakablemon",
+            "inst": {
+                "name": "T_monument_ECC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "780 -540 0"
+            },
+            "inst": {
+                "name": "T_monument_ECC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1140 -780 0"
+            },
+            "inst": {
+                "name": "T_monument_ECC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1140 -780 0"
+            },
+            "inst": {
+                "name": "T_monument_ECC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3900 -1740 0"
+            },
+            "inst": {
+                "name": "T_monument_ECC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "3900 -1740 0"
+            },
+            "inst": {
+                "name": "T_monument_ECC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "4140 -1380 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1620 -780 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1620 -540 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 1.5708",
+                "pos": "1620 -420 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1500 -420 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1260 -420 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 -3.14159",
+                "pos": "1140 -420 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 1.5708",
+                "pos": "1140 -420 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1020 -420 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "900 -420 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 1.5708",
+                "pos": "780 -420 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 -3.14159",
+                "pos": "780 -420 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "660 -420 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "420 -420 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 -3.14159",
+                "pos": "300 -420 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 1.5708",
+                "pos": "3540 -1380 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 -3.14159",
+                "pos": "3540 -1380 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 1.5708",
+                "pos": "3900 -1380 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 -3.14159",
+                "pos": "3900 -1380 0"
+            },
+            "inst": {
+                "name": "T_monument_ECC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "780 -540 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "3060 -1500 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "3060 -1740 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 -1.5708",
+                "pos": "3060 -1860 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "pos": "1620 -900 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3420 -1380 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 -3.14159",
+                "pos": "3060 -1380 0"
+            },
+            "inst": {
+                "name": "T_monument_ECC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3300 -1380 0"
+            },
+            "inst": {
+                "name": "T_monument_ECC_W_A0",
+                "pos": "1380 -900 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "4020 -1380 0"
+            },
+            "inst": {
+                "name": "T_monument_EFC_W_A0",
+                "pos": "4140 -1860 0"
+            },
+            "inst": {
+                "name": "T_monument_EHC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3900 -1620 0"
+            },
+            "inst": {
+                "name": "T_monument_EHC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "3900 -1620 0"
+            },
+            "inst": {
+                "name": "T_monument_EFC_W_A0",
+                "pos": "3780 -1860 0"
+            },
+            "inst": {
+                "name": "T_monument_EFC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3660 -1380 0"
+            },
+            "inst": {
+                "name": "T_monument_EIC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3540 -1620 0"
+            },
+            "inst": {
+                "name": "T_monument_EIC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "3540 -1620 0"
+            },
+            "inst": {
+                "name": "T_monument_EGC_W_A0",
+                "pos": "3300 -1860 0"
+            },
+            "inst": {
+                "name": "T_monument_EFC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "3060 -1620 0"
+            },
+            "inst": {
+                "name": "T_monument_EBC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3540 -1500 0"
+            },
+            "inst": {
+                "name": "T_monument_EBC_W_B0",
+                "orient": "0 0 1.5708",
+                "pos": "3540 -1500 0"
+            },
+            "inst": {
+                "name": "T_monument_EBC_W_C0",
+                "orient": "0 0 1.5708",
+                "pos": "3540 -1500 0"
+            },
+            "inst": {
+                "name": "T_monument_EBC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "3540 -1500 0"
+            },
+            "inst": {
+                "name": "T_monument_EBC_W_B0",
+                "orient": "0 0 -1.5708",
+                "pos": "3540 -1500 0"
+            },
+            "inst": {
+                "name": "T_monument_EBC_W_C0",
+                "orient": "0 0 -1.5708",
+                "pos": "3540 -1500 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3180 -1380 0"
+            },
+            "inst": {
+                "name": "T_monument_EFC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "300 -660 0"
+            },
+            "inst": {
+                "name": "T_monument_EFC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "540 -420 0"
+            },
+            "inst": {
+                "name": "T_monument_EFC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1380 -420 0"
+            },
+            "inst": {
+                "name": "T_monument_EFC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1620 -660 0"
+            },
+            "inst": {
+                "name": "T_monument_EIC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "780 -660 0"
+            },
+            "inst": {
+                "name": "T_monument_EIC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "780 -660 0"
+            },
+            "inst": {
+                "name": "T_monument_EHC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1140 -660 0"
+            },
+            "inst": {
+                "name": "T_monument_EHC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1140 -660 0"
+            },
+            "inst": {
+                "name": "T_monument_EGC_W_A0",
+                "pos": "1260 -900 0"
+            },
+            "inst": {
+                "name": "T_monument_EFC_W_A0",
+                "pos": "1020 -900 0"
+            },
+            "inst": {
+                "name": "T_monument_EBC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "780 -780 0"
+            },
+            "inst": {
+                "name": "T_monument_EBC_W_B0",
+                "orient": "0 0 1.5708",
+                "pos": "780 -780 0"
+            },
+            "inst": {
+                "name": "T_monument_EBC_W_C0",
+                "orient": "0 0 1.5708",
+                "pos": "780 -780 0"
+            },
+            "inst": {
+                "name": "T_monument_EBC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "780 -780 0"
+            },
+            "inst": {
+                "name": "T_monument_EBC_W_B0",
+                "orient": "0 0 -1.5708",
+                "pos": "780 -780 0"
+            },
+            "inst": {
+                "name": "T_monument_EBC_W_C0",
+                "orient": "0 0 -1.5708",
+                "pos": "780 -780 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "pos": "1500 -900 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 1.5708",
+                "pos": "4380 -1380 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "4380 -1500 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "4380 -1620 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "4380 -1740 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "pos": "4380 -1860 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 -1.5708",
+                "pos": "300 -900 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "pos": "780 -900 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 -1.5708",
+                "pos": "780 -900 0"
+            },
+            "inst": {
+                "name": "T_monument_ECC_W_A0",
+                "pos": "540 -900 0"
+            },
+            "inst": {
+                "name": "T_monument_EGC_W_A0",
+                "pos": "420 -900 0"
+            },
+            "inst": {
+                "name": "T_monument_EFC_W_A0",
+                "pos": "660 -900 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "4260 -1380 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "pos": "4260 -1860 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "pos": "4020 -1860 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "3900 -1500 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3900 -1500 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 -1.5708",
+                "pos": "3900 -1860 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "pos": "3900 -1860 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "pos": "3660 -1860 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "3540 -1740 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3540 -1740 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 -1.5708",
+                "pos": "3540 -1860 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "pos": "3540 -1860 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "pos": "3420 -1860 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "pos": "3180 -1860 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "pos": "900 -900 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "300 -780 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "300 -540 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1140 -540 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1140 -540 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "pos": "1140 -900 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 -1.5708",
+                "pos": "1140 -900 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3780 -1380 0"
+            }
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Infinite_a",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_smartent": true,
+            "name": "ss_infinite_a22",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Infinite_a",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_leader": true,
+            "monster_leaderpowerup": "random_no_invuln",
+            "monster_smartent": true,
+            "name": "ss_infinite_a_leader01",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Kojak",
+            "classname": "monsterspawnerent",
+            "instantspawn": false,
+            "monster_aggression": 5,
+            "monster_deathscript": "act2/monument/monument1/guardian_death",
+            "monster_name": "kojak",
+            "monster_painscript": "act2/monument/kojakpain",
+            "monster_smartent": true,
+            "monster_spawnexactlocation": true,
+            "name": "guardian_spawn",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Shifter_a",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_smartent": true,
+            "name": "ss_shifter_a25",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "homingBeaconReward('beaconact2',189)",
+            "actsound": "zone_shared/special/beacon",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Pick up Homing Beacon",
+            "idnum": 11,
+            "material": "hollow_metal",
+            "model": "pickups/homing_beacon_act2",
+            "name": "homing_beacon_act2_01",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "smartent": false,
+            "spawnscript": "common/beacons/beacon2",
+            "structure": 2,
+            "team": "hero",
+            "variablename": "beaconact2"
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actleader": true,
+            "actonuse": true,
+            "actscript": "common/beacons/treasureact2",
+            "actsound": "common/game/pickup_power",
+            "animstarton": true,
+            "classname": "physent",
+            "description": "Experience Points",
+            "fxlevel": 7,
+            "model": "pickups/experience_point",
+            "name": "beacon_chest2",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "persistent": false,
+            "quickuse": true,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/misc/techstation_body",
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "permanentStatBoost('_ACTIVATOR_','body')",
+            "actsound": "zone_shared/object/techstation",
+            "actspawn": "tech_station_body_off",
+            "acttargets": "door_tech door_tech01",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Tech Station Body",
+            "idnum": 9,
+            "material": "solid_metal",
+            "model": "common/tech_station_body",
+            "name": "tech_station_body01",
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "spawnsoundloop": "zone_shared/object/techstation_loop",
+            "structure": 2,
+            "team": "hero",
+            "toggleonact": true,
+            "variablename": "r_t_station"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/misc/techstation_body",
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "animstarton": true,
+            "classname": "gameent",
+            "material": "solid_metal",
+            "model": "common/tech_station_body_off",
+            "name": "tech_station_body_off",
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "startenabled": false,
+            "structure": 2,
+            "team": "hero",
+            "toggleonact": true,
+            "variablename": "r_t_station"
+        },
+        "entity": {
+            "actleader": true,
+            "actmatchteam": true,
+            "boxcollision": true,
+            "cameramagtype": 1,
+            "cameratarget": "cam_mag_target",
+            "classname": "cameramagnetent",
+            "name": "camera_magnet01",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountact": 2,
+            "acttargets": "trigger_power03",
+            "classname": "enabletargetent",
+            "enable": true,
+            "name": "enable_push3",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/common/fire_small",
+            "loopfxstarton": true,
+            "name": "loop_effect09",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actsound": "zone_shared/fx/fire_burst",
+            "actsoundloop": "zone_shared/fx/fire_sm",
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/common/fire_torch",
+            "loopfxstarton": false,
+            "name": "torchfire_02",
+            "nocollide": true,
+            "smartent": false,
+            "toggleonact": true,
+            "togglestarton": false
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/common/fire_torch",
+            "loopfxstarton": true,
+            "name": "loop_effect16",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/common/drip30ft",
+            "loopfxstarton": true,
+            "name": "loop_effect27",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "fxlevel": 2,
+            "loopfx": "map/monument/light_beam_large",
+            "loopfxstarton": true,
+            "name": "loop_effect20",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "classname": "ent",
+            "name": "first_visit",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "default": true,
+            "name": "player_start_all01",
+            "nocollide": true,
+            "prevlink": "link1_monument1",
+            "prevzone": "act2/jungle/jungle5"
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "name": "player_start_all02",
+            "nocollide": true,
+            "prevlink": "link_monument1",
+            "prevzone": "act2/monument/monument4"
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "name": "player_start_all03",
+            "nocollide": true,
+            "prevlink": "link_monument1",
+            "prevzone": "act2/monument/monument2"
+        },
+        "entity": {
+            "actscript": "act2/monument/remember_gate",
+            "classname": "actionent",
+            "name": "stone_relay",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actonuse": true,
+            "acttargets": "trigger_power04",
+            "classname": "powertriggerent",
+            "description": "Push Statue",
+            "hinttype": "power",
+            "name": "trigger_power03",
+            "nocollide": false,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": false,
+            "reactpower": "push",
+            "smartent": false,
+            "startenabled": false,
+            "stopfly": false,
+            "stopteleport": false,
+            "stopwalk": false,
+            "targetlockable": false,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actonuse": true,
+            "acttargets": "enable_push3 pushable2",
+            "classname": "powertriggerent",
+            "description": "Push Statue",
+            "hinttype": "power",
+            "name": "trigger_power02",
+            "nocollide": false,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": false,
+            "reactpower": "push",
+            "smartent": false,
+            "stopfly": false,
+            "stopteleport": false,
+            "stopwalk": false,
+            "targetlockable": false,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actscript": "act2/monument/monument1/power_triggers",
+            "acttargets": "pushable1 pushable2 pushable3",
+            "classname": "powertriggerent",
+            "hinttype": "none",
+            "name": "trigger_power04",
+            "nocollide": false,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "reactpower": "move",
+            "smartent": false,
+            "stopfly": false,
+            "stopteleport": false,
+            "stopwalk": false,
+            "targetlockable": true,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actonuse": true,
+            "acttargets": "enable_push3 pushable1",
+            "classname": "powertriggerent",
+            "description": "Push Statue",
+            "hinttype": "power",
+            "name": "trigger_power01",
+            "nocollide": false,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": false,
+            "reactpower": "push",
+            "smartent": false,
+            "stopfly": false,
+            "stopteleport": false,
+            "stopwalk": false,
+            "targetlockable": false,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "act2/monument/monument1/butt_1",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "butt_trig01",
+            "nocollide": true,
+            "smartent": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "act2/monument/monument1/butt_2",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "butt_trig02",
+            "nocollide": true,
+            "smartent": false,
+            "team": "hero"
+        },
+        "entity": {
+            "alpha": 0.4,
+            "ambienteffect": "base/misc/misc_waterambient",
+            "classname": "waterent",
+            "density": 10,
+            "material": "liquid",
+            "name": "water02",
+            "nocollide": true,
+            "splasheffect": "base/misc/misc_watersplash",
+            "texture": "textures/water_monument",
+            "wakeeffect": "base/misc/misc_waterwake"
+        },
+        "entity": {
+            "beeline": true,
+            "classname": "waypointent",
+            "name": "wp_herob01",
+            "nocollide": true,
+            "smartent": false,
+            "speed": 1
+        },
+        "entity": {
+            "beeline": true,
+            "classname": "waypointent",
+            "name": "wp_heroc01",
+            "nocollide": true,
+            "smartent": false,
+            "speed": 0.75
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actmustface": true,
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "zonelinkent",
+            "description": "Jungle Pass",
+            "name": "link_jungle5",
+            "nextzone": "act2/jungle/jungle5",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "zonelinkent",
+            "description": "Nuwali Corridors",
+            "name": "link_monument4",
+            "nextzone": "monument4",
+            "nocollide": false,
+            "smartent": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "zonelinkent",
+            "description": "Nuwali Gateway",
+            "name": "link_monument2",
+            "nextzone": "monument2",
+            "nocollide": false,
+            "smartent": false,
+            "team": "hero"
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/arch_curved_mon_e",
+            "name": "arch_curved_mon_e_mo03",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "fxlevel": 3,
+            "health": 300,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/block_01_stump_mon_b",
+            "name": "block_01_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "fxlevel": 3,
+            "health": 300,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/block_02_stump_mon_b",
+            "name": "block_02_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 150,
+            "heaviness": 1,
+            "material": "rock",
+            "model": "monument/block_02_mon_th",
+            "name": "block_02_mon_th_mo43",
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 200,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/burner_stump_mon_b",
+            "name": "burner_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": false,
+            "actsound": "zone_shared/mover/door_entrance_mon",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 3200,
+            "material": "rock",
+            "model": "monument/door_entrance_doors_mon_a",
+            "name": "entry_door",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": false,
+            "actsound": "zone_shared/mover/door_mon",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "health": 100,
+            "material": "rock",
+            "model": "monument/door_inv_mon_a",
+            "name": "door_tech",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 0,
+            "actonuse": false,
+            "actsound": "zone_shared/mover/door_mon",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "health": 100,
+            "material": "rock",
+            "model": "monument/door_inv_mon_a",
+            "name": "kojakdoor",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actonuse": false,
+            "actsound": "zone_shared/mover/floor_button",
+            "classname": "physent",
+            "health": 32000,
+            "hinttype": "objective",
+            "material": "rock",
+            "model": "monument/floor_button_mon_a",
+            "name": "butt_01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "actdistance": 60.1,
+            "actonuse": true,
+            "actscript": "act2/monument/monument1/grab_stone",
+            "classname": "physent",
+            "description": "Take the Mystic Stone",
+            "health": 32000,
+            "hinttype": "objective",
+            "material": "rock",
+            "model": "monument/guardian_pedestal_stone_mon_e",
+            "name": "mystic_stone",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "deathspawn": "guardian_statue_mon_e_mo_d",
+            "fxlevel": 2,
+            "material": "rock",
+            "model": "monument/guardian_statue_mon_e",
+            "name": "guardian_statue",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/guardian_statue_stump_mon_e",
+            "name": "guardian_statue_mon_e_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "pillar_10x10_mon_b_mo_d",
+            "fxlevel": 3,
+            "health": 300,
+            "material": "rock",
+            "model": "monument/pillar_10x10_mon_b",
+            "name": "pillar_10x10_mon_b_mo01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "fxlevel": 3,
+            "health": 300,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/pillar_10x10_stump_mon_b",
+            "name": "pillar_10x10_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "moverent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/statue_04_mon_m",
+            "move": "0 0 0",
+            "moveduration": 1,
+            "name": "statue_04_mon_m_mo03",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actsound": "zone_shared/mover/push_statue",
+            "classname": "moverent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/statue_04_mon_m",
+            "move": "73 0 0",
+            "moveduration": 1,
+            "name": "pushable3",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actsound": "zone_shared/mover/push_statue",
+            "classname": "moverent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/statue_04_mon_m",
+            "move": "0 -80 0",
+            "moveduration": 1,
+            "name": "pushable2",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "classname": "moverent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/statue_04_mon_m",
+            "move": "0 0 -118",
+            "moveduration": 1.5,
+            "name": "statue_butt2",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "animstarton": false,
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "fxlevel": 3,
+            "health": 200,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/statue_10ft_stump_mon_b",
+            "name": "statue_10ft_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "fxlevel": 3,
+            "health": 200,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/statue_lord_02_stump_mon_b",
+            "name": "statue_lord_02_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "deathspawn": "urn_mon_b_mo_d",
+            "fxlevel": 2,
+            "health": 50,
+            "material": "rock",
+            "model": "monument/urn_mon_b",
+            "name": "urn_mon_b_mo03",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 2,
+            "structure": 0
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 50,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/urn_stump_mon_b",
+            "name": "urn_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 2,
+            "structure": 2
+        }
+    }
+}
