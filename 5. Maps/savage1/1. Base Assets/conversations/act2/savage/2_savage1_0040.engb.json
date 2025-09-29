@@ -1,0 +1,163 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "act2/savage/conv_sanc_40_1",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/pyro/2_savage1_040_010",
+                    "soundtoplayb": "voice/pyro/2_savage1_040_020",
+                    "text": "%Pyro%: Hey, X-Man - I don't know if you saw, but as soon as we landed in the Savage Land, Mystique spoke to Ka-zar and then headed into the jungle.",
+                    "textb": "%Pyro%: Hello, mate. Maybe you didn't notice, but right after we landed in the Savage Land, Mystique spoke to Ka-zar and then snuck off into the jungle.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: Were you spying on Mystique?",
+                            "textb": "%PLAYER%: Spying on Mystique again, Pyro?",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/pyro/2_savage1_040_012",
+                                    "soundtoplayb": "voice/pyro/2_savage1_040_022",
+                                    "text": "%Pyro%: Obviously you ain't part of the Brotherhood. If anyone in our little group needs watchin' it's her. Mystique's a great one for switchin' sides. But anyway, she's been gone a long time. I was thinkin' someone oughta go into the jungle canal and track her down.",
+                                    "textb": "%Pyro%: Hey, I consider it being prudent. Ya can never tell what Mystique's planning next. So I was thinkin' since she's been gone so long that maybe someone should search the jungle canal and track her down.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "text": "%PLAYER%: Do you think Mystique might be hurt?",
+                                            "textb": "%PLAYER%: Pyro, are you worried about Mystique?",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "soundtoplay": "voice/pyro/2_savage1_040_014",
+                                                    "soundtoplayb": "voice/pyro/2_savage1_040_024",
+                                                    "text": "%Pyro%: Oh, heck no. I just want to know what she's planning.",
+                                                    "textb": "%Pyro%: Of course not. I want to know what she's got up her sleeve.",
+                                                    "response": {
+                                                        "text": "%BLANK%",
+                                                        "line": {
+                                                            "soundtoplay": "voice/pyro/2_savage1_040_015",
+                                                            "soundtoplayb": "voice/pyro/2_savage1_040_025",
+                                                            "text": "%Pyro%: You should use that computer by Xavier if you want a full mission briefing.",
+                                                            "textb": "%Pyro%: If you want a full briefing, try using that mission computer by Xavier.",
+                                                            "response": {
+                                                                "chosenscriptfile": "act2/savage/show_rescue_mystique",
+                                                                "tagjump": "autogen_tag_1",
+                                                                "text": "%BLANK%"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/pyro/2_savage1_040_026",
+                    "soundtoplayb": "voice/pyro/2_savage1_040_027",
+                    "text": "%Pyro%: Oy, if it ain't one of my favorite new X-Men teammates. How ya doin' there?",
+                    "textb": "%Pyro%: So, uh, no hard feeling's about me working for Apocalypse, right?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "Did you meet Apocalypse at Genosha?",
+                        "line": {
+                            "soundtoplay": "voice/pyro/2_savage1_040_031",
+                            "text": "%Pyro%: Oh, yeah. I met him all right. One of the creepiest blokes I've ever laid eyes on.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Why do you say that?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/pyro/2_savage1_040_033",
+                                            "text": "%Pyro%: Oh, he's always carrying on about how only the strong should survive. It's like a bleeding religion to him.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Any trouble getting back into the Brotherhood?",
+                        "line": {
+                            "soundtoplay": "voice/pyro/2_savage1_040_041",
+                            "text": "%Pyro%: Oh, you mean since everyone found out about my working for Apocalypse? Nah, it's all been forgiven... for the most part.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Why did they let you back so easily?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/pyro/2_savage1_040_043",
+                                            "text": "%Pyro%: Oh, it wasn't that easy, and they'll be keepin' an eye on me. But hey, look at the crew I'm running with. There's not a one of 'em that wouldn't switch sides if the price was right.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Thanks, Pyro.",
+                        "line": {
+                            "soundtoplay": "voice/pyro/2_savage1_040_051",
+                            "text": "%Pyro%: Yeah, whatever.",
+                            "response": {
+                                "chosenscriptfile": "common/briefings/mark_briefing2_10",
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Talk to you later, Pyro.",
+                        "line": {
+                            "soundtoplay": "voice/pyro/2_savage1_040_061",
+                            "soundtoplayb": "voice/pyro/2_savage1_040_061",
+                            "text": "%Pyro%: Come talk to me anytime you like.",
+                            "textb": "%Pyro%: Come talk to me anytime you like.",
+                            "response": {
+                                "chosenscriptfile": "common/briefings/mark_briefing2_10",
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

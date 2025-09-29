@@ -1,0 +1,158 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever17",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/forge/2_savage1_080_010",
+                    "soundtoplayb": "voice/forge/2_savage1_080_020",
+                    "text": "%Forge%: Hello, my friends. I wish we were meeting under happier circumstances.",
+                    "textb": "%Forge%: So, we really are working with the Brotherhood.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: Don't worry, Forge, we'll find Beast.",
+                            "textb": "%PLAYER%: Get used to it, Forge. Who knows, you might even want to join us when this is over.",
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/forge/2_savage1_080_030",
+                    "soundtoplayb": "voice/forge/2_savage1_080_040",
+                    "text": "%Forge%: It's good to see you again. Did you need something?",
+                    "textb": "%Forge%: What do you want?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "chosenscriptfile": "common/shop",
+                        "conversationend": true,
+                        "text": "I'd like to see some equipment."
+                    },
+                    "response": {
+                        "text": "Are you the person we see for equipment?",
+                        "line": {
+                            "soundtoplay": "voice/forge/2_savage1_080_061",
+                            "text": "%Forge%: Yes. Just like Beast, I can buy and sell all kinds of equipment that'll help you on your missions.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: What about health and energy?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/forge/2_savage1_080_063",
+                                            "text": "%Forge%: I've got medicines that will help you in both of those categories.",
+                                            "response": {
+                                                "scriptfile": "setGameFlag('savage', 2,1)",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'savage', 2)",
+                        "text": "What's a data disc?",
+                        "line": {
+                            "soundtoplay": "voice/forge/2_savage1_080_071",
+                            "text": "%Forge%: It holds very valuable technical information - but I need an entire set to be able to use them.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: So if we gathered an entire set, we bring them to you?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/forge/2_savage1_080_073",
+                                            "text": "%Forge%: Yes - and then I can unlock their secrets.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'savage', 2)",
+                        "text": "What's a homing beacon?",
+                        "line": {
+                            "soundtoplay": "voice/forge/2_savage1_080_081",
+                            "text": "%Forge%: It's very valuable. If I have enough of them, I can locate someone that Apocalypse has gone to extreme measures to hold captive.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: So who's this prisoner we'd be rescuing?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/forge/2_savage1_080_083",
+                                            "text": "%Forge%: I don't know - but I've heard this person would be very useful to us.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Thanks, Forge.",
+                        "line": {
+                            "soundtoplay": "voice/forge/2_savage1_080_091",
+                            "text": "%Forge%: For you, anything.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "It's been a slice.",
+                        "line": {
+                            "soundtoplay": "voice/forge/2_savage1_080_101",
+                            "soundtoplayb": "voice/forge/2_savage1_080_101",
+                            "text": "%Forge%: Yeah. I was just thinking that.",
+                            "textb": "%Forge%: Yeah. I was just thinking that.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

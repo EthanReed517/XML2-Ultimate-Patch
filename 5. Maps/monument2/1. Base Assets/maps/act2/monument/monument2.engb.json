@@ -1,0 +1,5651 @@
+{
+    "world": {
+        "entity": {
+            "act": 2,
+            "killz": -330,
+            "level": 19,
+            "name": "world",
+            "partylight": "0.7 0.56 0",
+            "partylightradius": 170,
+            "soundfile": "ffmon",
+            "zonescript": "act2/monument/monument2/monument2"
+        },
+        "precache": {
+            "filename": "act2/monument/monument2/2_monument2_0010",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act2/monument/monument2/2_monument2_0030",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "hud/hud_head_1101",
+            "type": "model"
+        },
+        "precache": {
+            "filename": "hud/hud_head_2701",
+            "type": "model"
+        },
+        "precache": {
+            "filename": "act2/monument/monument2/monument2",
+            "type": "script"
+        },
+        "entity": {
+            "classname": "tileent",
+            "deatheffect": "base/material/tile/tile_rock",
+            "deathsound": "death_style/t_rock",
+            "deathspawn": "tile_breakablemon",
+            "fxlevel": 3,
+            "health": 300,
+            "material": "rock",
+            "name": "tile_breakablemon",
+            "structure": 1,
+            "tilemodelfolder": "tiles/monument/"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Infinite_a",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_smartent": true,
+            "name": "ss_infinite_a",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Infinite_a",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_leader": true,
+            "monster_leaderpowerup": "random_no_invuln",
+            "monster_smartent": true,
+            "name": "ss_infinite_a_leader",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Mercenary_b",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_smartent": true,
+            "name": "ss_mercenary_b",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Mercenary_b",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_leader": true,
+            "monster_leaderpowerup": "random_no_invuln",
+            "monster_smartent": true,
+            "name": "ss_mercenary_b_leader",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Shifter_b",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_smartent": true,
+            "name": "ss_shifter_b",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Shifter_b",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_leader": true,
+            "monster_leaderpowerup": "random_no_invuln",
+            "monster_smartent": true,
+            "name": "ss_shifter_b_leader",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actonuse": true,
+            "actscript": "dataDiscReward('r_d_disc')",
+            "actsound": "zone_shared/special/data",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Pick Up Data Disc",
+            "material": "solid_metal",
+            "model": "pickups/data_disk_act1",
+            "name": "data_disc",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "structure": 2,
+            "variablename": "r_d_disc"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "waittimed(0.5)\\n\\rloadDangerRoomCourse('SO204')",
+            "actsound": "common/game/dangerdisc_pickup",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Danger Room Disc",
+            "fxlevel": 7,
+            "idnum": 5,
+            "ignoreactorsonmove": true,
+            "loopfx": "base/item/item_sparkle",
+            "loopfxstarton": true,
+            "model": "pickups/pickup_dangeroom_disk",
+            "name": "disc_so204",
+            "nocollide": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "spinpossible": false,
+            "stucture": 2,
+            "team": "hero",
+            "variablename": "r_dr_disc"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "homingBeaconReward('beaconact2',189)",
+            "actsound": "zone_shared/special/beacon",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Pick up Homing Beacon",
+            "material": "hollow_metal",
+            "model": "pickups/homing_beacon_act2",
+            "name": "homing_beacon_act2_",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "smartent": false,
+            "spawnscript": "common/beacons/beacon2",
+            "structure": 2,
+            "team": "hero",
+            "variablename": "beaconact2"
+        },
+        "entity": {
+            "classname": "enabletargetent",
+            "enable": true,
+            "name": "enable_target",
+            "nocollide": true
+        },
+        "entity": {
+            "actrescheduledelay": 1,
+            "actrescheduledelaymin": 0.5,
+            "boxcollision": true,
+            "classname": "affectableharment",
+            "damage": 10,
+            "damagetype": "dmg_physical",
+            "firstact": 1,
+            "knockback": 0,
+            "name": "harm_target",
+            "nocollide": true,
+            "radiusdamage": true,
+            "smartent": false
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfxstarton": true,
+            "name": "loop_effect",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "name": "player_start_all",
+            "nocollide": true
+        },
+        "entity": {
+            "classname": "actionent",
+            "name": "relay",
+            "nocollide": true
+        },
+        "entity": {
+            "actmatchteam": true,
+            "actontouch": true,
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "trigger_touch",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "trigger_use",
+            "nocollide": true,
+            "team": "none"
+        },
+        "entity": {
+            "alpha": 0.7,
+            "ambienteffect": "base/misc/misc_waterambient",
+            "classname": "waterent",
+            "density": 10,
+            "name": "water",
+            "nocollide": true,
+            "splasheffect": "base/misc/misc_watersplash",
+            "texture": "textures/water.png",
+            "wakeeffect": "base/misc/misc_waterwake"
+        },
+        "entity": {
+            "alpha": 0.2,
+            "ambienteffect": "base/misc/misc_waterambient",
+            "classname": "waterent",
+            "density": 10,
+            "gridsize": 120,
+            "name": "water_sewer",
+            "nocollide": true,
+            "splasheffect": "base/misc/misc_watersplash",
+            "texture": "textures/water_sewers6.png",
+            "wakeeffect": "base/misc/misc_waterwake"
+        },
+        "entity": {
+            "classname": "waypointent",
+            "name": "waypoint",
+            "nocollide": true
+        },
+        "entity": {
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "common/extraction/exp_activate",
+            "actsound": "common/game/xtraction",
+            "acttogglesanim": true,
+            "acttogglesloopfx": true,
+            "animstarton": false,
+            "classname": "gameent",
+            "description": "Xtraction Point",
+            "fxlevel": 1,
+            "ignoretelekinesis": true,
+            "loopfx": "base/misc/extraction_loop",
+            "loopfxstarton": false,
+            "model": "puzzles/beacon_xtraction",
+            "name": "xtraction_point",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "resetstate": true,
+            "spawnscript": "common/extraction/exp_spawn",
+            "team": "hero"
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "zonelinkent",
+            "description": "Enter next area",
+            "name": "zone_link",
+            "nocollide": false,
+            "team": "hero"
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/arch_curved_mon_e",
+            "name": "arch_curved_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "Wood",
+            "model": "monument/beam_mon_e",
+            "name": "beam_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "block_01_mon_b_mo_d",
+            "fxlevel": 3,
+            "health": 300,
+            "material": "rock",
+            "model": "monument/block_01_mon_b",
+            "name": "block_01_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 150,
+            "heaviness": 1,
+            "material": "rock",
+            "model": "monument/block_02_mon_th",
+            "name": "block_02_mon_th_mo",
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 150,
+            "heaviness": 1,
+            "material": "rock",
+            "model": "monument/block_03_mon_th",
+            "name": "block_03_mon_th_mo",
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "deathspawn": "burner_mon_b_mo_d",
+            "fxlevel": 2,
+            "health": 200,
+            "material": "rock",
+            "model": "monument/burner_mon_b",
+            "name": "burner_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/column_hall_str_mon_e",
+            "name": "column_hall_str_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "actsound": "zone_shared/mover/door_mon",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 100,
+            "material": "rock",
+            "model": "monument/door_mon_a",
+            "name": "door_mon_a_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "actsound": "zone_shared/mover/door_large_round",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/doors_large_round_mon_a",
+            "name": "doors_large_round_mon_a_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actonuse": true,
+            "actsound": "zone_shared/mover/floor_switch",
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/floor_switch_mon_a",
+            "name": "floor_switch_mon_a_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "material": "rock",
+            "model": "monument/pillar_10x20_mon_b",
+            "name": "pillar_10x20_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/pillar_10x30_mon_e",
+            "name": "pillar_10x30_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/pillar_lightring_mon_a",
+            "name": "pillar_lightring_mon_a_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "spawnsoundloop": "zone_shared/object/pillar_lightning",
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/pillar_skinny_30ft_mon_e",
+            "name": "pillar_skinny_30ft_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_s",
+            "fxlevel": 1,
+            "health": 5,
+            "heaviness": 0,
+            "material": "rock",
+            "model": "monument/pot_02_mon_th",
+            "name": "pot_02_mon_th_mo",
+            "randompickups": 3,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_s",
+            "fxlevel": 1,
+            "health": 5,
+            "heaviness": 0,
+            "material": "rock",
+            "model": "monument/pot_mon_th",
+            "name": "pot_mon_th_mo",
+            "randompickups": 3,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "deathspawn": "secret_wall_02_mon_b_mo_d",
+            "fxlevel": 2,
+            "health": 200,
+            "material": "rock",
+            "model": "monument/secret_wall_02_mon_b",
+            "name": "secret_wall_02_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 200,
+            "heaviness": 1,
+            "material": "rock",
+            "model": "monument/statue_01_mon_th",
+            "name": "statue_01_mon_th_mo",
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/statue_10ft_mon_e",
+            "name": "statue_10ft_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/statue_jewelpuz_jewel_mon_e",
+            "name": "statue_jewelpuz_jewel_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/statue_jewelpuz_nojewel_mon_e",
+            "name": "statue_jewelpuz_nojewel_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/statue_noble_mon_e",
+            "name": "statue_noble_mon_e_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "statue_warrior_mon_b_mo_d",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "rock",
+            "model": "monument/statue_warrior_mon_b",
+            "name": "statue_warrior_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "moverent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "stonewall_mon_m_b_mo_d",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "rock",
+            "model": "monument/stonewall_mon_m_b",
+            "move": "0 0 0",
+            "moveduration": 1,
+            "name": "stonewall_mon_m_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 0,
+            "toggleonact": true
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 100,
+            "heaviness": 1,
+            "material": "rock",
+            "model": "monument/table_examination_mon_b",
+            "name": "table_examination_mon_b_mo",
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "deathspawn": "urn_mon_b_mo_d",
+            "fxlevel": 2,
+            "health": 50,
+            "material": "rock",
+            "model": "monument/urn_mon_b",
+            "name": "urn_mon_b_mo",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 2,
+            "structure": 0
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actontouch": true,
+            "actsound": "common/game/pickup_item",
+            "animstarton": true,
+            "classname": "inventoryent",
+            "count": 1,
+            "desctext": "small energy pack",
+            "extents": "-18 -18 0 18 18 36",
+            "fxlevel": 2,
+            "inventoryitem": "energy_item",
+            "name": "item_energy_small",
+            "nocollide": true,
+            "nogravity": false,
+            "pos": "0 0 6",
+            "randompickups": false,
+            "spinpossible": false,
+            "structure": 2,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actontouch": true,
+            "actsound": "common/game/pickup_item",
+            "animstarton": true,
+            "classname": "inventoryent",
+            "count": 1,
+            "desctext": "small health pack",
+            "extents": "-18 -18 0 18 18 36",
+            "fxlevel": 1,
+            "inventoryitem": "health_item",
+            "name": "item_health_small",
+            "nocollide": true,
+            "nogravity": false,
+            "pos": "0 0 6",
+            "randompickups": false,
+            "spinpossible": false,
+            "structure": 2,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actsound": "common/game/pickup_item",
+            "actspawn": "empty_stash",
+            "animstarton": true,
+            "classname": "inventoryent",
+            "count": 1000,
+            "description": "Techbit Stash",
+            "fxlevel": 3,
+            "hinttype": "objective",
+            "inventoryitem": "money1",
+            "material": "solid_metal",
+            "model": "new_york_ruins/techbitcase_open",
+            "name": "techbit_stash",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "team": "hero",
+            "type": "money"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "classname": "powertriggerent",
+            "deathspawn": "icebridge30 magmabridge30 tkbridge30",
+            "description": "bridge power",
+            "health": 1,
+            "hinttype": "power",
+            "length": 30,
+            "material": "energy",
+            "model": "puzzles/bridge_icon",
+            "name": "bridge_trigger30",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "reactpower": "bridge",
+            "stopnothing": true,
+            "stopprojectile": true,
+            "structure": 0,
+            "targetlockable": true
+        },
+        "entinst": {
+            "type": "ss_infinite_a",
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "pos": "2720 4150 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "pos": "2910 5820 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "pos": "2630 5530 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "pos": "3770 5570 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "pos": "2320 2230 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "pos": "2010 3280 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "pos": "1870 3050 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "pos": "2480 3990 0"
+            },
+            "inst": {
+                "extents": "-31.7889 -11.5702 0 43.7889 11.5701 84",
+                "name": "ss_infinite_a",
+                "orient": "0 0 -2.00713",
+                "pos": "1080 5290 0"
+            },
+            "inst": {
+                "extents": "-35.7265 -3.12569 0 47.7263 3.12585 84",
+                "name": "ss_infinite_a",
+                "orient": "0 0 -2.26893",
+                "pos": "1120 5430 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "pos": "3010 4010 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "pos": "4810 5750 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "pos": "4540 5740 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a",
+                "pos": "2860 5660 0"
+            },
+            "inst": {
+                "extents": "-26.9998 -15.5884 0 39.0004 15.5886 84",
+                "name": "ss_infinite_a",
+                "orient": "0 0 -2.87979",
+                "pos": "4310 4200 0"
+            },
+            "inst": {
+                "extents": "-9.42713 -36.3853 0 21.4268 36.3852 84",
+                "name": "ss_infinite_a",
+                "orient": "0 0 2.70526",
+                "pos": "4600 4230 0"
+            }
+        },
+        "entinst": {
+            "type": "ss_infinite_a_leader",
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a_leader",
+                "pos": "5810 5570 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_a_leader",
+                "pos": "2640 5870 0"
+            }
+        },
+        "entinst": {
+            "type": "ss_mercenary_b",
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_mercenary_b",
+                "pos": "3380 5850 0"
+            },
+            "inst": {
+                "extents": "-2.2084 -40.5526 0 14.2084 40.5529 84",
+                "name": "ss_mercenary_b",
+                "orient": "0 0 -0.610865",
+                "pos": "970 5370 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_mercenary_b",
+                "pos": "4370 5600 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_mercenary_b",
+                "pos": "980 4990 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_mercenary_b",
+                "pos": "1780.0 3000.0 4.09475e-005"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_mercenary_b",
+                "pos": "1920 3380 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_mercenary_b",
+                "pos": "1618.97 3940.17 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_mercenary_b",
+                "pos": "4400 4010 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_mercenary_b",
+                "pos": "4990 5250 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_mercenary_b",
+                "pos": "4940 5140 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_mercenary_b",
+                "pos": "5040 5050 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_mercenary_b",
+                "pos": "2310 2370 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_mercenary_b",
+                "pos": "4590 5830 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_mercenary_b",
+                "pos": "3670 5780 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_mercenary_b",
+                "pos": "3520 5630 0"
+            },
+            "inst": {
+                "extents": "-34.9147 -6.1565 0 46.9144 6.15652 84",
+                "name": "ss_mercenary_b",
+                "orient": "0 0 0.959931",
+                "pos": "4280 3880 0"
+            }
+        },
+        "entinst": {
+            "type": "ss_mercenary_b_leader",
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_mercenary_b_leader",
+                "pos": "1577.63 3860.21 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_mercenary_b_leader",
+                "pos": "5833.58 5814.27 0"
+            },
+            "inst": {
+                "extents": "1.83258 -41.6354 0 10.1676 41.6353 84",
+                "name": "ss_mercenary_b_leader",
+                "orient": "0 0 2.26893",
+                "pos": "2444.83 2284.66 0"
+            },
+            "inst": {
+                "extents": "1.83252 -41.6353 0 10.1674 41.6352 84",
+                "name": "ss_mercenary_b_leader",
+                "orient": "0 0 2.26893",
+                "pos": "1114.83 4904.66 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_mercenary_b_leader",
+                "pos": "2700 4050 0"
+            }
+        },
+        "entinst": {
+            "type": "ss_shifter_b",
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_shifter_b",
+                "pos": "1680 5760 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_shifter_b",
+                "pos": "1820 5680 0"
+            },
+            "inst": {
+                "extents": "-2.20859 -40.5527 0 14.2084 40.553 84",
+                "name": "ss_shifter_b",
+                "orient": "0 0 2.53073",
+                "pos": "6280 5830 0"
+            },
+            "inst": {
+                "extents": "-17.6356 -22.1679 0 29.6352 22.1676 84",
+                "name": "ss_shifter_b",
+                "orient": "0 0 -1.48353",
+                "pos": "5110 7372 -111.258"
+            },
+            "inst": {
+                "extents": "-33.5883 -8.99982 0 45.5887 8.99998 84",
+                "name": "ss_shifter_b",
+                "orient": "0 0 -2.0944",
+                "pos": "4910 7332 -111.258"
+            },
+            "inst": {
+                "extents": "-34.9152 -6.15647 0 46.9141 6.15641 84",
+                "name": "ss_shifter_b",
+                "orient": "0 0 0.959931",
+                "pos": "4390 7152 -103.84"
+            },
+            "inst": {
+                "extents": "-2.2086 -40.5527 0 14.2083 40.5529 84",
+                "name": "ss_shifter_b",
+                "orient": "0 0 2.53073",
+                "pos": "5570 5580 0"
+            },
+            "inst": {
+                "extents": "-2.20866 -40.5526 0 14.2083 40.553 84",
+                "name": "ss_shifter_b",
+                "orient": "0 0 2.53073",
+                "pos": "4890 4270 0"
+            },
+            "inst": {
+                "extents": "-2.20854 -40.553 0 14.2085 40.5524 84",
+                "name": "ss_shifter_b",
+                "orient": "0 0 2.53073",
+                "pos": "5016.18 4116.52 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_shifter_b",
+                "pos": "2070 5700 0"
+            },
+            "inst": {
+                "extents": "5.99975 -41.9997 0 5.99976 42.0003 84",
+                "name": "ss_shifter_b",
+                "orient": "0 0 -0.785398",
+                "pos": "5260 7372 -111.258"
+            },
+            "inst": {
+                "extents": "-2.20862 -40.5528 0 14.2083 40.5528 84",
+                "name": "ss_shifter_b",
+                "orient": "0 0 2.53073",
+                "pos": "5580 5810 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_shifter_b",
+                "pos": "1330.0 5780.0 3.79376e-005"
+            },
+            "inst": {
+                "extents": "-2.20861 -40.553 0 14.2083 40.5526 84",
+                "name": "ss_shifter_b",
+                "orient": "0 0 2.53073",
+                "pos": "4996.18 4446.52 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_shifter_b",
+                "pos": "1430 5710 0"
+            },
+            "inst": {
+                "extents": "-21.1257 -17.7268 0 33.1258 17.7267 84",
+                "name": "ss_shifter_b",
+                "orient": "0 0 -3.05433",
+                "pos": "5544.26 7918.37 -105.151"
+            },
+            "inst": {
+                "extents": "-33.5885 -9.00016 0 45.5884 8.99964 84",
+                "name": "ss_shifter_b",
+                "orient": "0 0 -2.61799",
+                "pos": "5470 7972 -105.151"
+            },
+            "inst": {
+                "extents": "1.8324 -41.6351 0 10.1674 41.6352 84",
+                "name": "ss_shifter_b",
+                "orient": "0 0 -0.698132",
+                "pos": "4470 7942 -114.174"
+            },
+            "inst": {
+                "extents": "-9.42716 -36.3851 0 21.4267 36.3854 84",
+                "name": "ss_shifter_b",
+                "orient": "0 0 -1.13446",
+                "pos": "4620 7982 -114.174"
+            },
+            "inst": {
+                "extents": "5.99971 -42.0002 0 5.99973 41.9998 84",
+                "name": "ss_shifter_b",
+                "orient": "0 0 -0.785398",
+                "pos": "4410 7052 -103.84"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_shifter_b",
+                "pos": "4490 7112 -103.84"
+            },
+            "inst": {
+                "extents": "-29.5699 -13.7888 0 41.5705 13.789 84",
+                "name": "ss_shifter_b",
+                "orient": "0 0 -2.79253",
+                "pos": "7230 5670 -121"
+            }
+        },
+        "entinst": {
+            "type": "ss_shifter_b_leader",
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_shifter_b_leader",
+                "pos": "1290 5670 0"
+            },
+            "inst": {
+                "extents": "-17.6354 -22.1679 0 29.6355 22.1676 84",
+                "name": "ss_shifter_b_leader",
+                "orient": "0 0 3.05433",
+                "pos": "6320 5680 0"
+            },
+            "inst": {
+                "extents": "-2.20862 -40.5528 0 14.2083 40.5528 84",
+                "name": "ss_shifter_b_leader",
+                "orient": "0 0 -0.610865",
+                "pos": "4760 7402 -111.258"
+            },
+            "inst": {
+                "extents": "-14.7848 -30.0002 0 26.7846 29.9999 84",
+                "name": "ss_shifter_b_leader",
+                "orient": "0 0 2.87979",
+                "pos": "7230 5750 -121"
+            }
+        },
+        "entinst": {
+            "type": "data_disc01",
+            "inst": {
+                "name": "data_disc01",
+                "pos": "4028.58 2697.26 1"
+            }
+        },
+        "entinst": {
+            "type": "disc_so01",
+            "inst": {
+                "name": "disc_so01",
+                "pos": "1499.69 5101.42 34.7543"
+            }
+        },
+        "entinst": {
+            "type": "homing_beacon_act2_01",
+            "inst": {
+                "name": "homing_beacon_act2_01",
+                "pos": "4624.48 8256.64 -120"
+            }
+        },
+        "entinst": {
+            "type": "mon1_obj",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "mon1_obj",
+                "pos": "8430.03 5880.54 27.5961"
+            },
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "mon4_obj",
+                "pos": "8430.03 5521.54 27.5961"
+            }
+        },
+        "entinst": {
+            "type": "monkey_harm02",
+            "inst": {
+                "extents": "-50 -50 0 50 50 100",
+                "name": "monkey_harm02",
+                "pos": "3420 5580 0"
+            },
+            "inst": {
+                "extents": "-50 -50 0 50 50 100",
+                "name": "monkey_harm04",
+                "pos": "4020 5580 0"
+            },
+            "inst": {
+                "extents": "-50 -50 0 50 50 100",
+                "name": "monkey_harm05",
+                "pos": "4380 5820 0"
+            },
+            "inst": {
+                "extents": "-50 -50 0 50 50 100",
+                "name": "monkey_harm07",
+                "pos": "3180 5820 0"
+            },
+            "inst": {
+                "extents": "-50 -50 0 50 50 100",
+                "name": "monkey_harm06",
+                "pos": "4620 5580 0"
+            },
+            "inst": {
+                "extents": "-50 -50 0 50 50 100",
+                "name": "monkey_harm03",
+                "pos": "3780 5820 0"
+            }
+        },
+        "entinst": {
+            "type": "loop_effect01",
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect01",
+                "pos": "2511.92 1403.77 101.529"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect01",
+                "pos": "2729.82 2241.44 36"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect01",
+                "pos": "2729.82 2441.44 36"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect01",
+                "pos": "5157.74 7137.66 -57.2372"
+            },
+            "inst": {
+                "extents": "-6.00021 -5.99985 -6 5.99979 6.00015 6",
+                "name": "loop_effect01",
+                "orient": "0 0 1.5708",
+                "pos": "4863.61 7805.55 -151.593"
+            },
+            "inst": {
+                "extents": "-6.00021 -5.99987 -6 5.99979 6.00013 6",
+                "name": "loop_effect01",
+                "orient": "0 0 1.5708",
+                "pos": "4898.86 8159.84 -57.2372"
+            },
+            "inst": {
+                "extents": "-6.00018 -5.99991 -6 5.99983 6.00008 6",
+                "name": "loop_effect01",
+                "orient": "0 0 -1.5708",
+                "pos": "4530.13 6923.26 -57.2372"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect01",
+                "pos": "2217.92 1286.77 101.529"
+            },
+            "inst": {
+                "extents": "-6.00009 -6.0001 -6 5.99991 5.9999 6",
+                "name": "loop_effect01",
+                "orient": "0 0 1.5708",
+                "pos": "2068.56 2197.7 36"
+            },
+            "inst": {
+                "extents": "-5.99997 -6.00009 -6 6.00003 5.99991 6",
+                "name": "loop_effect01",
+                "orient": "0 0 1.5708",
+                "pos": "2068.56 2004.35 36"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect01",
+                "pos": "4527.39 8347.85 61.9908"
+            },
+            "inst": {
+                "extents": "-6.00021 -6.00021 -6 5.99979 5.99979 6",
+                "name": "loop_effect01",
+                "orient": "0 0 1.5708",
+                "pos": "4893.92 4803.76 36"
+            },
+            "inst": {
+                "extents": "-6.00021 -6.00022 -6 5.99979 5.99978 6",
+                "name": "loop_effect01",
+                "orient": "0 0 1.5708",
+                "pos": "4893.92 5043.76 36"
+            },
+            "inst": {
+                "extents": "-5.99987 -5.99984 -6 6.00013 6.00015 6",
+                "name": "loop_effect01",
+                "orient": "0 0 -1.5708",
+                "pos": "5172.97 5041.95 36"
+            },
+            "inst": {
+                "extents": "-5.99987 -5.9998 -6 6.00013 6.00019 6",
+                "name": "loop_effect01",
+                "orient": "0 0 -1.5708",
+                "pos": "5172.97 4801.95 36"
+            },
+            "inst": {
+                "extents": "-5.9998 -6.00026 -6 6.00021 5.99973 6",
+                "name": "loop_effect01",
+                "orient": "0 0 -3.14159",
+                "pos": "4712.07 8347.26 61.9908"
+            },
+            "inst": {
+                "extents": "-6 -6.00001 -6.00001 6 5.99998 6.00001",
+                "name": "loop_effect01",
+                "pos": "5058.05 6374.97 35.9999"
+            },
+            "inst": {
+                "extents": "-6 -6.00001 -6.00001 6 5.99998 6.00001",
+                "name": "loop_effect01",
+                "pos": "4908.05 6374.97 35.9999"
+            },
+            "inst": {
+                "extents": "-5.99989 -5.99994 -6 6.00012 6.00006 6",
+                "name": "loop_effect01",
+                "orient": "0 0 -1.5708",
+                "pos": "2288.72 5623.17 36"
+            },
+            "inst": {
+                "extents": "-5.99989 -5.99996 -6 6.00012 6.00003 6",
+                "name": "loop_effect01",
+                "orient": "0 0 -1.5708",
+                "pos": "2288.72 5773.17 36"
+            },
+            "inst": {
+                "extents": "-6 -6.00001 -6.00001 6 5.99998 6.00001",
+                "name": "loop_effect01",
+                "pos": "1119.62 5522.97 36"
+            },
+            "inst": {
+                "extents": "-6 -6.00001 -6.00001 6 5.99998 6.00001",
+                "name": "loop_effect01",
+                "pos": "923.827 5522.97 36"
+            },
+            "inst": {
+                "extents": "-6.00008 -5.99994 -6 5.99992 6.00007 6",
+                "name": "loop_effect01",
+                "orient": "0 0 -1.5708",
+                "pos": "2080.5 3319.72 36"
+            },
+            "inst": {
+                "extents": "-6.00008 -6.00012 -6 5.99992 5.99988 6",
+                "name": "loop_effect01",
+                "orient": "0 0 -1.5708",
+                "pos": "2076.51 3511.66 36"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect01",
+                "pos": "7144.12 5402.3 -165.16"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect01",
+                "pos": "7142.05 6002.21 -165.16"
+            }
+        },
+        "entinst": {
+            "type": "loop_effect09",
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect09",
+                "pos": "7321.28 6208.98 56.23"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect09",
+                "pos": "6961.28 6208.98 56.23"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect09",
+                "pos": "6951.28 5188.98 56.23"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect09",
+                "pos": "7321.28 5188.98 56.23"
+            }
+        },
+        "entinst": {
+            "type": "monkey_fire06",
+            "inst": {
+                "extents": "-2.5206 -7.94462 -12.349 2.5204 7.94445 12.349",
+                "name": "monkey_fire06",
+                "orient": "0.194577 0.393066 1.87145",
+                "pos": "4668.32 5415.22 106.245"
+            },
+            "inst": {
+                "extents": "-8.02237 -12.5388 -3.85684 8.02229 12.5388 3.85662",
+                "name": "monkey_fire05",
+                "orient": "0.194577 0.393066 -1.09561",
+                "pos": "4322.69 5994.7 106.245"
+            },
+            "inst": {
+                "extents": "-2.52055 -7.94454 -12.3489 2.52039 7.94476 12.3491",
+                "name": "monkey_fire04",
+                "orient": "0.194577 0.393066 1.87145",
+                "pos": "4068.32 5415.22 106.245"
+            },
+            "inst": {
+                "extents": "-8.02229 -12.539 -3.85663 8.02236 12.5386 3.85682",
+                "name": "monkey_fire03",
+                "orient": "0.194577 0.393066 -1.09561",
+                "pos": "3741.83 5994.88 106.245"
+            },
+            "inst": {
+                "extents": "-2.52049 -7.94472 -12.349 2.52045 7.94458 12.3489",
+                "name": "monkey_fire02",
+                "orient": "0.194577 0.393066 1.87145",
+                "pos": "3468.32 5415.22 106.245"
+            },
+            "inst": {
+                "extents": "-8.02225 -12.5387 -3.85672 8.02241 12.5389 3.85673",
+                "name": "monkey_fire07",
+                "orient": "0.194577 0.393066 -1.09561",
+                "pos": "3131.83 5984.88 106.245"
+            }
+        },
+        "entinst": {
+            "type": "door_flame",
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "door_flame",
+                "pos": "8515.66 5598.33 101.791"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "door_flame",
+                "pos": "8515.66 5801.69 101.791"
+            }
+        },
+        "entinst": {
+            "type": "portal_pure_start01",
+            "inst": {
+                "extents": "-6.00019 -6.00003 -6 5.99981 5.99996 6",
+                "name": "portal_pure_start01",
+                "orient": "0 0 -1.5708",
+                "pos": "7140.77 6213.91 -239"
+            },
+            "inst": {
+                "extents": "-6.00004 -6.00003 -6 5.99995 5.99998 6",
+                "name": "portal_pure_start02",
+                "orient": "0 0 1.5708",
+                "pos": "7140.57 5176.43 -239"
+            }
+        },
+        "entinst": {
+            "type": "mon4_flame",
+            "inst": {
+                "extents": "-5.99986 -6.00019 -6 6.00014 5.99981 6",
+                "name": "mon4_flame",
+                "orient": "0 0 -3.14159",
+                "pos": "8428.98 5521.7 33.5065"
+            },
+            "inst": {
+                "extents": "-5.99991 -6.00019 -6 6.00009 5.99981 6",
+                "name": "mon1_flame",
+                "orient": "0 0 -3.14159",
+                "pos": "8428.98 5881.07 33.5065"
+            }
+        },
+        "entinst": {
+            "type": "portal_pure_start03",
+            "inst": {
+                "extents": "-5.99999 -6.00004 -6 5.99999 5.99998 6",
+                "name": "portal_pure_start03",
+                "orient": "0 0 -1.5708",
+                "pos": "4622.31 8449.74 -120"
+            }
+        },
+        "entinst": {
+            "type": "flash",
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "flash",
+                "pos": "8515.66 5700.09 101.791"
+            }
+        },
+        "entinst": {
+            "type": "player_start_all02",
+            "inst": {
+                "extents": "-60.0786 -60 0 84 60 83.9544",
+                "name": "player_start_all02",
+                "orient": "0 0 -1.5708",
+                "pos": "1020 5720 0"
+            }
+        },
+        "entinst": {
+            "type": "player_start_all01",
+            "inst": {
+                "extents": "-43.2245 -106.306 0 67.1461 106.306 83.9544",
+                "name": "player_start_all01",
+                "orient": "0 0 1.91986",
+                "pos": "2460 1530 0"
+            }
+        },
+        "entinst": {
+            "type": "player_start_all03",
+            "inst": {
+                "extents": "-60.078 -60.0002 0 84.0001 59.9998 83.9544",
+                "name": "player_start_all03",
+                "orient": "0 0 -3.14159",
+                "pos": "8460 5710 0"
+            }
+        },
+        "entinst": {
+            "type": "relay01",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "relay01",
+                "pos": "8350 5620 0"
+            }
+        },
+        "entinst": {
+            "type": "portal_loop_pure03",
+            "inst": {
+                "extents": "-5.99983 -6.00004 0 6.00017 5.99996 12",
+                "name": "portal_loop_pure03",
+                "orient": "0 0 -1.5708",
+                "pos": "4622.12 8452.25 -120"
+            }
+        },
+        "entinst": {
+            "type": "portal_loop_pure02",
+            "inst": {
+                "extents": "-5.9999 -5.99996 0 6.0001 6.00004 12",
+                "name": "portal_loop_pure02",
+                "orient": "0 0 1.5708",
+                "pos": "7140.77 5173.91 -239"
+            },
+            "inst": {
+                "extents": "-6.00007 -5.99977 0 5.99993 6.00023 12",
+                "name": "portal_loop_pure01",
+                "orient": "0 0 -1.5708",
+                "pos": "7140.57 6216.43 -239"
+            }
+        },
+        "entinst": {
+            "type": "Portal_trig01",
+            "inst": {
+                "extents": "-131.912 -10.2948 0 131.912 10.2948 132",
+                "name": "Portal_trig01",
+                "pos": "7165 6220 -239"
+            }
+        },
+        "entinst": {
+            "type": "Portal_trig04",
+            "inst": {
+                "extents": "-131.912 -10.2948 0 131.912 10.2948 132",
+                "name": "Portal_trig04",
+                "pos": "4605 8462 -120"
+            }
+        },
+        "entinst": {
+            "type": "trigger_touch08",
+            "inst": {
+                "extents": "-75 -30 0 75 30 130",
+                "name": "trigger_touch08",
+                "pos": "4981.48 6472.08 -0.00012207"
+            }
+        },
+        "entinst": {
+            "type": "door_talk",
+            "inst": {
+                "extents": "-60 -660 0 60 660 120",
+                "name": "door_talk",
+                "pos": "7980 5700 0"
+            }
+        },
+        "entinst": {
+            "type": "Portal_trig02",
+            "inst": {
+                "extents": "-131.912 -10.2948 0 131.912 10.2948 132",
+                "name": "Portal_trig02",
+                "pos": "7155 5170 -239"
+            }
+        },
+        "entinst": {
+            "type": "trigger_touch06",
+            "inst": {
+                "extents": "-60 -60 0 60 60 20",
+                "name": "trigger_touch06",
+                "pos": "4619.07 5579.53 0"
+            }
+        },
+        "entinst": {
+            "type": "trigger_touch05",
+            "inst": {
+                "extents": "-60 -60 0 60 60 20",
+                "name": "trigger_touch05",
+                "pos": "4380 5822.02 0"
+            }
+        },
+        "entinst": {
+            "type": "trigger_touch09",
+            "inst": {
+                "extents": "-124.34 -12.2132 0 124.34 12.2132 240",
+                "name": "trigger_touch09",
+                "pos": "4625 8202 -120"
+            }
+        },
+        "entinst": {
+            "type": "trigger_touch04",
+            "inst": {
+                "extents": "-60 -60 0 60 60 20",
+                "name": "trigger_touch04",
+                "pos": "4020 5579.92 0"
+            }
+        },
+        "entinst": {
+            "type": "trigger_touch02",
+            "inst": {
+                "extents": "-60 -60 0 60 60 20",
+                "name": "trigger_touch02",
+                "pos": "3420 5580.31 0"
+            }
+        },
+        "entinst": {
+            "type": "trigger_touch03",
+            "inst": {
+                "extents": "-60 -60 0 60 60 20",
+                "name": "trigger_touch03",
+                "pos": "3780 5821.48 0"
+            }
+        },
+        "entinst": {
+            "type": "trigger_touch10",
+            "inst": {
+                "extents": "-124.34 -12.213 0 124.339 12.2133 240",
+                "name": "trigger_touch10",
+                "orient": "0 0 -1.5708",
+                "pos": "4703.65 8277.49 -120"
+            },
+            "inst": {
+                "extents": "-124.34 -12.213 0 124.339 12.2133 240",
+                "name": "trigger_touch11",
+                "orient": "0 0 -1.5708",
+                "pos": "4545.51 8272.26 -120"
+            }
+        },
+        "entinst": {
+            "type": "trigger_touch12",
+            "inst": {
+                "extents": "-60 -60 0 60 60 20",
+                "name": "trigger_touch12",
+                "pos": "3180 5820.63 0"
+            }
+        },
+        "entinst": {
+            "type": "trigger_use01",
+            "inst": {
+                "extents": "-6 -20.2719 0 6 20.2719 60",
+                "name": "trigger_use01",
+                "pos": "7156.51 5400.09 -239"
+            }
+        },
+        "entinst": {
+            "type": "trigger_use02",
+            "inst": {
+                "extents": "-6 -20.2719 0 6 20.2719 60",
+                "name": "trigger_use02",
+                "pos": "7155.44 6000 -239"
+            }
+        },
+        "entinst": {
+            "type": "water01",
+            "inst": {
+                "extents": "-1400 -600 0 1400 600 12",
+                "name": "water01",
+                "pos": "3800 5700 -22.1925"
+            }
+        },
+        "entinst": {
+            "type": "water_sewer01",
+            "inst": {
+                "extents": "-1500 -1500 0 1500 1500 20.8492",
+                "name": "water_sewer01",
+                "pos": "2200 3000 -348"
+            }
+        },
+        "entinst": {
+            "type": "playerA24",
+            "inst": {
+                "extents": "-5.90882 -7.04192 -6 5.90868 7.04165 6",
+                "name": "playerA24",
+                "orient": "0 0 1.65806",
+                "pos": "7139.58 5338.37 -239"
+            },
+            "inst": {
+                "extents": "-5.90899 -7.04196 -6 5.90851 7.0416 6",
+                "name": "playerA27",
+                "orient": "0 0 1.65806",
+                "pos": "7101.64 5286.79 -239"
+            },
+            "inst": {
+                "extents": "-5.90868 -7.04162 -6 5.90881 7.04194 6",
+                "name": "playerA26",
+                "orient": "0 0 1.65806",
+                "pos": "7160.29 5261.09 -239"
+            },
+            "inst": {
+                "extents": "-5.9086 -7.04202 -6 5.9089 7.04155 6",
+                "name": "playerA25",
+                "orient": "0 0 1.65806",
+                "pos": "7198.23 5312.67 -239"
+            },
+            "inst": {
+                "extents": "-7.04135 -5.90876 -6 7.0422 5.90875 6",
+                "name": "playerA23",
+                "orient": "0 0 -1.65806",
+                "pos": "4619.77 8393.84 -120"
+            },
+            "inst": {
+                "extents": "-7.04147 -5.90867 -6 7.04208 5.90885 6",
+                "name": "playerA22",
+                "orient": "0 0 -1.65806",
+                "pos": "4573.45 8349.63 -120"
+            },
+            "inst": {
+                "extents": "-7.04221 -5.90879 -6 7.04134 5.90872 6",
+                "name": "playerA21",
+                "orient": "0 0 -1.65806",
+                "pos": "4673.06 8358.35 -120"
+            },
+            "inst": {
+                "extents": "-7.04217 -5.90868 -6 7.04138 5.90883 6",
+                "name": "playerA20",
+                "orient": "0 0 -1.65806",
+                "pos": "4626.74 8314.14 -120"
+            },
+            "inst": {
+                "extents": "-4.59639 -9.85668 -6 4.59633 9.85716 6",
+                "name": "playerA19",
+                "orient": "0 0 -1.22173",
+                "pos": "7165.65 6122.76 -242"
+            },
+            "inst": {
+                "extents": "-4.59624 -9.85705 -6 4.59648 9.85679 6",
+                "name": "playerA18",
+                "orient": "0 0 -1.22173",
+                "pos": "7142.34 6063.12 -242"
+            },
+            "inst": {
+                "extents": "-4.59648 -9.85704 -6 4.59624 9.85681 6",
+                "name": "playerA17",
+                "orient": "0 0 -1.22173",
+                "pos": "7228.95 6113.12 -242"
+            },
+            "inst": {
+                "extents": "-4.59644 -9.85712 -6 4.59628 9.85673 6",
+                "name": "playerA16",
+                "orient": "0 0 -1.22173",
+                "pos": "7205.65 6053.48 -242"
+            },
+            "inst": {
+                "extents": "-7.04216 -5.90873 -6 7.0414 5.90878 6",
+                "name": "look_here01",
+                "orient": "0 0 1.48353",
+                "pos": "4780 7982 49.6653"
+            }
+        },
+        "entinst": {
+            "type": "waypoint",
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "Great_Door02",
+                "pos": "7900.64 5702.62 125.727"
+            }
+        },
+        "entinst": {
+            "type": "xtraction_point",
+            "inst": {
+                "name": "xtraction_point",
+                "pos": "7140 5700.68 -121"
+            }
+        },
+        "entinst": {
+            "type": "link_monument4",
+            "inst": {
+                "extents": "-50 -10 0 50 10 90",
+                "name": "link_monument4",
+                "pos": "1020 5840 0"
+            }
+        },
+        "entinst": {
+            "type": "link_monument1",
+            "inst": {
+                "extents": "-50 -15 0 50 15 110",
+                "name": "link_monument1",
+                "pos": "2580 1355 0"
+            }
+        },
+        "entinst": {
+            "type": "link_monument3",
+            "inst": {
+                "extents": "-30 -140 0 30 140 170",
+                "name": "link_monument3",
+                "pos": "8650.87 5710 0"
+            }
+        },
+        "entinst": {
+            "type": "arch_curved_mon_e_mo02",
+            "inst": {
+                "name": "arch_curved_mon_e_mo02",
+                "pos": "5210 5700 0"
+            },
+            "inst": {
+                "name": "arch_curved_mon_e_mo02",
+                "pos": "3060 5700 0"
+            },
+            "inst": {
+                "name": "arch_curved_mon_e_mo02",
+                "pos": "5700 5700 0"
+            }
+        },
+        "entinst": {
+            "type": "beam_mon_e_mo",
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4703.22 5290 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4198 5290 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2533.9 5320 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4703.22 5490 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "4198 6090 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "4703.22 6090 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "3590.74 5290 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2533.9 5920 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4703.22 5690 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "3590.74 6090 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2533.9 5120 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2533.9 6120 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2533.9 6320 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "3590.74 5490 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "4198 5890 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "3590.74 5690 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "3590.74 5890 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4198 5490 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4198 5690 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2533.9 5720 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "4703.22 5890 167"
+            },
+            "inst": {
+                "name": "beam_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2533.9 5520 167"
+            }
+        },
+        "entinst": {
+            "type": "block_01_mon_b_mo",
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 1.91986",
+                "pos": "4850 3990 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 -2.53073",
+                "pos": "5050 4350 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1188.57 4687.88 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 1.91986",
+                "pos": "4510 3680 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 0.959931",
+                "pos": "2620 3184.68 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 -2.87979",
+                "pos": "3706.12 3097.99 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 0.959931",
+                "pos": "3420 2980 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 -2.35619",
+                "pos": "1838.15 3237.88 3.49277e-005"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 0.959931",
+                "pos": "1791.99 3136.41 3.49277e-005"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 2.00713",
+                "pos": "1145.94 2138.76 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 -0.349066",
+                "pos": "1790 1480 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 1.8326",
+                "pos": "1680 1470 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 -0.523599",
+                "pos": "2910 1470 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 0.959931",
+                "pos": "2080 1380 0"
+            },
+            "inst": {
+                "name": "block_01_mon_b_mo",
+                "orient": "0 0 -0.872665",
+                "pos": "2700 1460 0"
+            }
+        },
+        "entinst": {
+            "type": "block_02_mon_th_mo",
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -1.91986",
+                "pos": "870 5020 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -1.91986",
+                "pos": "4370 3720 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -0.261799",
+                "pos": "3662.09 2838.05 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 0.349066",
+                "pos": "1320 2262.5 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 2.18166",
+                "pos": "2810 1470 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -0.523599",
+                "pos": "2030 1490 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 0.698132",
+                "pos": "5118.8 4215.57 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 0.698132",
+                "pos": "828.803 4725.57 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 0.698132",
+                "pos": "4328.8 3785.57 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 0.872665",
+                "pos": "3670 2580 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -0.872665",
+                "pos": "1691.42 3312.74 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -0.436332",
+                "pos": "4610 7062 -121"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 0.872665",
+                "pos": "2600 3270.58 0"
+            },
+            "inst": {
+                "name": "block_02_mon_th_mo",
+                "orient": "0 0 -0.610865",
+                "pos": "1717.32 3382.81 0"
+            }
+        },
+        "entinst": {
+            "type": "block_03_mon_th_mo",
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 0.785398",
+                "pos": "2250 1400 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "pos": "1772.34 3317.02 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -0.523599",
+                "pos": "4428.29 3795.25 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -0.523599",
+                "pos": "902.478 4900.4 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 -0.523599",
+                "pos": "5118.29 4485.25 0"
+            },
+            "inst": {
+                "name": "block_03_mon_th_mo",
+                "orient": "0 0 0.436332",
+                "pos": "4530 7022 -121"
+            }
+        },
+        "entinst": {
+            "type": "burner_mon_b_mo",
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "pos": "922.011 5526.53 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2292.28 5624.99 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2292.28 5774.99 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "pos": "1117.8 5526.53 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "pos": "5056.24 6378.53 -0.00012207"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2065 2195.89 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "2728 2235 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "pos": "2728 2445 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2080.07 3513.48 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2084.06 3321.54 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4890.36 4801.95 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4890.36 5041.95 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "pos": "4906.24 6378.53 -0.00012207"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "5176.53 5043.76 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2065 2002.53 0"
+            },
+            "inst": {
+                "name": "burner_mon_b_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "5176.53 4803.76 0"
+            }
+        },
+        "entinst": {
+            "type": "column_hall_str_mon_e_mo02",
+            "inst": {
+                "name": "column_hall_str_mon_e_mo02",
+                "pos": "4200 5700 0"
+            },
+            "inst": {
+                "name": "column_hall_str_mon_e_mo02",
+                "orient": "0 0 -1.5708",
+                "pos": "4980 4440 0"
+            },
+            "inst": {
+                "name": "column_hall_str_mon_e_mo02",
+                "pos": "2810 3420 0"
+            },
+            "inst": {
+                "name": "column_hall_str_mon_e_mo02",
+                "pos": "3590 5700 0"
+            },
+            "inst": {
+                "name": "column_hall_str_mon_e_mo02",
+                "pos": "4700 5700 0"
+            },
+            "inst": {
+                "name": "column_hall_str_mon_e_mo02",
+                "pos": "2531.31 5700 0"
+            },
+            "inst": {
+                "name": "column_hall_str_mon_e_mo02",
+                "orient": "0 0 -1.5708",
+                "pos": "4970 4080 0"
+            }
+        },
+        "entinst": {
+            "type": "door_mon_a_mo",
+            "inst": {
+                "name": "door_mon_a_mo",
+                "pos": "6060.25 5700.67 0"
+            },
+            "inst": {
+                "name": "door_mon_a_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "4980 5460 0"
+            },
+            "inst": {
+                "name": "door_mon_a_mo",
+                "pos": "4140 4020 0"
+            },
+            "inst": {
+                "name": "door_mon_a_mo",
+                "pos": "3780 4020 0"
+            },
+            "inst": {
+                "name": "door_mon_a_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1020 5100 0"
+            },
+            "inst": {
+                "name": "door_mon_a_mo",
+                "pos": "5340 5700 0"
+            },
+            "inst": {
+                "name": "door_mon_a_mo",
+                "pos": "2340 5700 0"
+            },
+            "inst": {
+                "name": "door_mon_a_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "4980 6412 -0.00012207"
+            },
+            "inst": {
+                "name": "door_mon_a_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1020 5580 0"
+            }
+        },
+        "entinst": {
+            "type": "Great_Door",
+            "inst": {
+                "name": "Great_Door",
+                "orient": "0 0 3.14159",
+                "pos": "8583.4 5701.55 0"
+            }
+        },
+        "entinst": {
+            "type": "floor_switch_01",
+            "inst": {
+                "name": "floor_switch_01",
+                "orient": "1.5708 0 1.5708",
+                "pos": "7120.98 6000.08 -205.155"
+            }
+        },
+        "entinst": {
+            "type": "floor_switch_mon_a_mo01",
+            "inst": {
+                "name": "floor_switch_mon_a_mo01",
+                "orient": "1.5708 0 1.5708",
+                "pos": "7121.15 5399.66 -206.331"
+            }
+        },
+        "entinst": {
+            "type": "pillar_10x20_mon_b_mo44",
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "1486.47 1474.08 1.68684e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "7860 6300 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "3690.0 1474.0 3.19178e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "6540 5100 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "6300 5340 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "6300 6060 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "6540 6300 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "orient": "0 0 1.8326",
+                "pos": "6780 6360 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "1054.88 1474.08 1.68684e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "orient": "0 0 0.261799",
+                "pos": "4730 6532 -0.00012207"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "orient": "0 0 1.8326",
+                "pos": "7140.97 6350 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "orient": "0 0 1.8326",
+                "pos": "7501.28 6340 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "620.0 1982.58 1.68684e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "orient": "0 0 -1.309",
+                "pos": "6779.66 5039.62 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "orient": "0 0 0.261799",
+                "pos": "5230 6532 -0.00012207"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "3223.71 1454.0 3.19178e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "620.0 2943.68 1.68684e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "orient": "0 0 -1.309",
+                "pos": "7139.61 5039.62 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "3700.0 1964.0 3.19178e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "3700.0 2464.0 3.19178e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "8100 5100 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "8100 6300 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "620.0 1474.08 1.68684e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "618.092 3428.39 1.68684e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "610.0 3867.31 1.68684e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "610.0 4320.0 1.68684e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "890.0 4540.0 1.68684e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "1270.0 4550.0 1.68684e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "1550.0 4540.0 1.68684e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "2050.0 4540.0 1.68684e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "620.0 2456.81 1.68684e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "2550.0 4540.0 1.68684e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "3050.0 4540.0 1.68684e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "3550.0 4540.0 1.68684e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "3700.0 4200.0 1.68684e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "3700.0 3850.0 1.68684e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "3700.0 3420.0 1.68684e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "orient": "0 0 -1.309",
+                "pos": "7502.31 5039.62 0"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "3700.0 2940.95 3.19178e-005"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo44",
+                "pos": "7860 5100 0"
+            }
+        },
+        "entinst": {
+            "type": "pillar_10x20_mon_b_mo05",
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo05",
+                "pos": "4900 8222 -121"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo05",
+                "orient": "0 0 -0.174533",
+                "pos": "5620 7617.29 -121"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo05",
+                "pos": "4340.94 7762.47 -121"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo05",
+                "orient": "0 0 -0.174533",
+                "pos": "5220 7139.57 -121"
+            },
+            "inst": {
+                "name": "pillar_10x20_mon_b_mo05",
+                "pos": "4338.87 7477.59 -121"
+            }
+        },
+        "entinst": {
+            "type": "pillar_10x30_mon_e_mo35",
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo35",
+                "orient": "-0.193619 0.167358 0.760806",
+                "parent": "pillar_10x30_mon_e_mo34",
+                "pos": "1425.26 3149.07 -482.515"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo34",
+                "orient": "-0.193619 0.167357 0.760806",
+                "pos": "1420.14 3239.47 -135.51"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo33",
+                "orient": "-0.0924354 0.0194939 0.703321",
+                "parent": "pillar_10x30_mon_e_mo32",
+                "pos": "3166.26 3439.84 -492.555"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo50",
+                "orient": "0.382141 0.434571 1.58447",
+                "parent": "pillar_10x30_mon_e_mo49",
+                "pos": "943.822 1796.78 -507.507"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo51",
+                "orient": "0.0444437 0.231628 0.923456",
+                "pos": "2480 3209.54 -135.513"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo52",
+                "orient": "0.0444437 0.231628 0.923456",
+                "parent": "pillar_10x30_mon_e_mo51",
+                "pos": "2417.69 3153.54 -484.214"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo54",
+                "orient": "-0.168655 0.119929 0.669603",
+                "pos": "2650.14 3789.5 -135.518"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo53",
+                "orient": "-0.168655 0.119929 0.669603",
+                "parent": "pillar_10x30_mon_e_mo54",
+                "pos": "2654.34 3716.05 -486.513"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo56",
+                "orient": "0.0308728 0.0994237 0.867016",
+                "pos": "3430.07 3749.61 -135.53"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo55",
+                "orient": "0.0308728 0.0994237 0.867016",
+                "parent": "pillar_10x30_mon_e_mo56",
+                "pos": "3398.6 3729.65 -492.212"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo58",
+                "orient": "-0.20597 0.025994 0.611751",
+                "pos": "3280.2 4419.52 -271.792"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo57",
+                "orient": "-0.20597 0.0259941 0.611751",
+                "parent": "pillar_10x30_mon_e_mo58",
+                "pos": "3314.85 4354.24 -622.717"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo60",
+                "orient": "-0.0900378 0.141302 0.783007",
+                "pos": "2990.1 2159.53 -135.523"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo36",
+                "orient": "-0.345756 -0.0468655 1.31767",
+                "pos": "1380.38 3929.62 -177.324"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo37",
+                "orient": "-0.345756 -0.0468655 1.31767",
+                "parent": "pillar_10x30_mon_e_mo36",
+                "pos": "1502 3914.49 -514.353"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo38",
+                "orient": "0.143703 0.0318341 2.30041",
+                "pos": "2030.07 4329.56 -135.526"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo39",
+                "orient": "0.143703 0.0318341 2.30041",
+                "parent": "pillar_10x30_mon_e_mo38",
+                "pos": "1999.31 4286.91 -490.273"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo48",
+                "orient": "-0.0415802 -0.0179353 2.27864",
+                "parent": "pillar_10x30_mon_e_mo47",
+                "pos": "1083.06 2465.84 -493.789"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo41",
+                "orient": "-0.193619 0.167357 2.24434",
+                "pos": "1084.66 2916.01 -135.51"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo40",
+                "orient": "-0.193619 0.167357 2.24434",
+                "parent": "pillar_10x30_mon_e_mo41",
+                "pos": "1175.16 2913.24 -482.515"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo35",
+                "orient": "-0.436063 0.295214 1.34656",
+                "pos": "1820.16 3179.59 -148.043"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo44",
+                "orient": "0.000951905 -0.106248 -1.01556",
+                "pos": "2755.51 2759.59 -135.529"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo43",
+                "orient": "0.000951961 -0.106248 -1.01556",
+                "parent": "pillar_10x30_mon_e_mo44",
+                "pos": "2775.85 2727.45 -492.13"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo46",
+                "orient": "0.000951905 -0.106248 -1.01556",
+                "pos": "1045.51 3649.59 -135.529"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo45",
+                "orient": "0.000951961 -0.106248 -1.01556",
+                "parent": "pillar_10x30_mon_e_mo46",
+                "pos": "1065.85 3617.45 -492.13"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo47",
+                "orient": "-0.0415802 -0.0179353 2.27864",
+                "pos": "1075.91 2451.27 -135.533"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo59",
+                "orient": "-0.0900378 0.141302 0.783007",
+                "parent": "pillar_10x30_mon_e_mo60",
+                "pos": "2977.2 2101.19 -489.134"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo49",
+                "orient": "0.382141 0.434571 1.58447",
+                "pos": "1075.63 1938.7 -205.682"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo31",
+                "orient": "-0.0122805 -0.659517 0.282682",
+                "parent": "pillar_10x30_mon_e_mo30",
+                "pos": "2260.72 3726.83 -418.774"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo30",
+                "orient": "-0.0122805 -0.659517 0.282682",
+                "pos": "2048.49 3669.77 -135.38"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo29",
+                "orient": "-0.0924354 0.0194939 0.703321",
+                "parent": "pillar_10x30_mon_e_mo28",
+                "pos": "2346.26 2959.84 -492.555"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo28",
+                "orient": "-0.0924354 0.0194939 0.703321",
+                "pos": "2330.16 2989.59 -135.53"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo27",
+                "orient": "-0.0924354 0.0194939 -0.867475",
+                "parent": "pillar_10x30_mon_e_mo26",
+                "pos": "3160.32 2773.52 -492.555"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo26",
+                "orient": "-0.0924354 0.0194939 -0.867475",
+                "pos": "3190.07 2789.62 -135.53"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo25",
+                "orient": "-0.0924354 0.0194939 0.703321",
+                "parent": "pillar_10x30_mon_e_mo24",
+                "pos": "3576.26 2179.84 -492.555"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo24",
+                "orient": "-0.0924354 0.0194939 0.703321",
+                "pos": "3560.16 2209.59 -135.53"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo23",
+                "orient": "-0.0924354 0.0194939 0.703321",
+                "parent": "pillar_10x30_mon_e_mo22",
+                "pos": "2596.26 2034.31 -492.555"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo22",
+                "orient": "-0.0924354 0.0194939 0.703321",
+                "pos": "2580.16 2064.05 -135.53"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo21",
+                "orient": "-0.0924354 0.0194939 -0.343877",
+                "parent": "pillar_10x30_mon_e_mo20",
+                "pos": "1812.38 1940.78 -492.555"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo20",
+                "orient": "-0.0924354 0.0194939 -0.343877",
+                "pos": "1830.09 1969.59 -135.53"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo19",
+                "orient": "0 0.436332 -0.436332",
+                "parent": "pillar_10x30_mon_e_mo18",
+                "pos": "1932.49 2373.83 -460.488"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo18",
+                "orient": "0 0.436332 -0.436332",
+                "pos": "2069.85 2309.78 -135.465"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo17",
+                "orient": "2.95949e-007 0.436332 1.13446",
+                "parent": "pillar_10x30_mon_e_mo01",
+                "pos": "1685.95 2552.01 -460.488"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo01",
+                "orient": "0 0.436332 1.13446",
+                "pos": "1750 2689.37 -135.465"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo32",
+                "orient": "-0.0924354 0.0194939 0.703321",
+                "pos": "3150.16 3469.59 -135.53"
+            }
+        },
+        "entinst": {
+            "type": "pillar_10x30_mon_e_mo06",
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo06",
+                "pos": "7078.51 5400.09 -242"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo06",
+                "pos": "7078.51 5400.09 121"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo06",
+                "pos": "7560.69 5398.73 -242"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo06",
+                "pos": "7560.69 5398.73 121"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo06",
+                "pos": "7560.31 6000.59 -242"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo06",
+                "pos": "7560.31 6000.59 121"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo06",
+                "pos": "7078.44 6000 -242"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo06",
+                "pos": "7078.44 6000 121"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo06",
+                "pos": "6521.74 6000 -242"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo06",
+                "pos": "6521.74 6000 121"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo06",
+                "pos": "6523.25 5399.42 -242"
+            },
+            "inst": {
+                "name": "pillar_10x30_mon_e_mo06",
+                "pos": "6523.25 5399.42 121"
+            }
+        },
+        "entinst": {
+            "type": "pillar_lightring_mon_a_mo",
+            "inst": {
+                "name": "pillar_lightring_mon_a_mo",
+                "orient": "0 0 1.5708",
+                "pos": "7863 5460 0"
+            },
+            "inst": {
+                "name": "pillar_lightring_mon_a_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "6500 5540 0"
+            },
+            "inst": {
+                "name": "pillar_lightring_mon_a_mo",
+                "orient": "0 0 1.5708",
+                "pos": "7863 5943 0"
+            },
+            "inst": {
+                "name": "pillar_lightring_mon_a_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "6500.0 5860.0 3.19178e-005"
+            }
+        },
+        "entinst": {
+            "type": "pillar_skinny_30ft_mon_e_mo",
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "5700 5498.67 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "5386.59 7733.16 -120"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "5532.54 7733.16 -120"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "5532.54 7501.66 -120"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "5386.59 7501.66 -120"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "4180 3700 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "4700 3700 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "4440 4340 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "4180 4340 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "4700 4340 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "4777.69 5098.56 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "4777.69 4978.56 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "4777.69 4858.56 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "4777.69 4738.56 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "5181.25 4980 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "5181.25 4870 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "8343 6060 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "8223 6060 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "8103 6060 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "7983 6060 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "7863 6060 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "7863 5340 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "7983 5340 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "8103 5340 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "8223 5340 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "8343 5340 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "8463 5340 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "5940 5900 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "5820 5900 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "5700 5900 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "5580 5900 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "5460 5900 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "1620.57 4981.59 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "1620 5220 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "8340 5460 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "8340 5940 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "8100 5940 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "8100 5460 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "5460 5498.67 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "5580 5498.67 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "5820 5498.67 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "5940 5498.67 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "4880 5910 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "5070 5910 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "4880 5497.75 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "8463 6060 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "5070 5497.75 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "4260 5900 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "4140 5900 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "3659.3 5900 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "3938.48 2620 4.4516"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "4100.25 2618.68 4.4516"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "4099.17 2779.65 4.4516"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "3938.27 2780.16 4.4516"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "4260.38 5500 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "4140.07 5500 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "3659.21 5500 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "3538.04 5500 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "2860 5500 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "2859.48 5900 0"
+            },
+            "inst": {
+                "name": "pillar_skinny_30ft_mon_e_mo",
+                "pos": "3540 5900 0"
+            }
+        },
+        "entinst": {
+            "type": "pot_02_mon_th_mo",
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "4760 7092 -121"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "2382.13 1414.39 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "2780 3310 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "2859.29 3539.27 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "5616.34 7222 -120"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "5626.34 7362 -120"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "2775.79 3536.61 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "-1.72498 0.0560522 2.26705",
+                "pos": "2514.55 2392.88 11.8244"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 1.13446",
+                "pos": "2050 3070 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "orient": "0 0 1.0472",
+                "pos": "1619.71 3741.9 3.19179e-005"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "1777.3 3895.42 1.38585e-005"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "1260 2270 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "3320 2400 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "3580.35 2982.92 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "2700.0 3500.0 3.49277e-005"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "2704.61 3180 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "2900.0 4210.0 3.49278e-005"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo",
+                "pos": "2530 4220 0"
+            }
+        },
+        "entinst": {
+            "type": "pot_02_mon_th_mo09",
+            "inst": {
+                "name": "pot_02_mon_th_mo09",
+                "pos": "1610.83 5156.68 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo09",
+                "pos": "1580.23 5017.28 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo09",
+                "pos": "1780.6 5796.9 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo09",
+                "pos": "1583.09 5788.76 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo09",
+                "pos": "1776.6 5598.76 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo09",
+                "pos": "1373.09 5828.76 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo09",
+                "pos": "1221.16 5798.76 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo09",
+                "pos": "1413.09 5598.76 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo09",
+                "pos": "2094.27 5813.92 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo09",
+                "pos": "2093.09 5578.76 0"
+            },
+            "inst": {
+                "name": "pot_02_mon_th_mo09",
+                "pos": "1543.09 5218.76 0"
+            }
+        },
+        "entinst": {
+            "type": "pot_mon_th_mo31",
+            "inst": {
+                "name": "pot_mon_th_mo31",
+                "pos": "1989.3 5818.7 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo31",
+                "pos": "1419.3 5778.7 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo31",
+                "pos": "1749.3 5818.7 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo31",
+                "pos": "1561.94 5199.49 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo31",
+                "pos": "1582.3 4940.57 0"
+            }
+        },
+        "entinst": {
+            "type": "pot_mon_th_mo",
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "4810 7032 -121"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "2370 1380 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "4952.39 8017.45 -120"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "5066.15 7997.87 -120"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "2360 1410 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "2650 1420 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "2830 3280 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "2775.97 3458.58 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "1639.22 5039.04 0"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "5067.64 8068.24 -120"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo",
+                "pos": "4958.8 7956.94 -120"
+            },
+            "inst": {
+                "name": "pot_mon_th_mo02",
+                "parent": "table_examination_mon_b_mo01",
+                "pos": "2351.01 2303.98 36"
+            }
+        },
+        "entinst": {
+            "type": "secret_wall_02_mon_b_mo01",
+            "inst": {
+                "name": "secret_wall_02_mon_b_mo01",
+                "pos": "4980 5928 0"
+            },
+            "inst": {
+                "name": "secret_wall_02_mon_b_mo01",
+                "pos": "1020 4608 0"
+            },
+            "inst": {
+                "name": "secret_wall_02_mon_b_mo01",
+                "orient": "0 0 1.5708",
+                "pos": "3780 2700 0"
+            }
+        },
+        "entinst": {
+            "type": "secret_wall_02_mon_b_mo06",
+            "inst": {
+                "name": "secret_wall_02_mon_b_mo06",
+                "orient": "0 0 1.5708",
+                "pos": "3792 2700 0"
+            }
+        },
+        "entinst": {
+            "type": "statue_01_mon_th_mo",
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "pos": "2770 5640 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "2770 5760 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2615.97 5619.98 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "2615.97 5779.98 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1680.33 2819.45 3.19178e-005"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "pos": "2778.63 4234.28 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "pos": "2619.33 4237.38 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 3.14159",
+                "pos": "1100.06 3917.08 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1684.73 3020.76 3.79376e-005"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "pos": "2540 1799.84 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "4791.87 5619.88 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 1.5708",
+                "pos": "1524.01 3818.88 0"
+            },
+            "inst": {
+                "name": "statue_01_mon_th_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "4791.87 5779.88 0"
+            }
+        },
+        "entinst": {
+            "type": "statue_10ft_mon_e_mo",
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 2.35619",
+                "pos": "3740 5420 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 -2.35619",
+                "pos": "4660 5420 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1620 5100 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 -0.785398",
+                "pos": "2760 6000 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 -2.35619",
+                "pos": "2760 5400 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 -0.785398",
+                "pos": "3470 5990 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 -0.785398",
+                "pos": "4060 5980 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 -0.785398",
+                "pos": "4660 5980 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 0.785398",
+                "pos": "4330 5990 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 -1.5708",
+                "pos": "1200 5340 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 1.5708",
+                "pos": "840 5340 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 0.785398",
+                "pos": "3750 5990 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 0.785398",
+                "pos": "3140 5980 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 -2.35619",
+                "pos": "3460 5420 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 2.35619",
+                "pos": "3140 5420 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 2.35619",
+                "pos": "4340 5420 0"
+            },
+            "inst": {
+                "name": "statue_10ft_mon_e_mo",
+                "orient": "0 0 -2.35619",
+                "pos": "4060 5420 0"
+            }
+        },
+        "entinst": {
+            "type": "mon1_statue_comp",
+            "inst": {
+                "name": "mon1_statue_comp",
+                "pos": "8260 5830 960"
+            },
+            "inst": {
+                "name": "mon4_statue_comp",
+                "pos": "8230 5600 960"
+            }
+        },
+        "entinst": {
+            "type": "monument4_statue",
+            "inst": {
+                "name": "monument4_statue",
+                "orient": "0 0 1.5708",
+                "pos": "8440 5520 0"
+            }
+        },
+        "entinst": {
+            "type": "monument1_statue",
+            "inst": {
+                "name": "monument1_statue",
+                "orient": "0 0 1.5708",
+                "pos": "8440 5880 0"
+            }
+        },
+        "entinst": {
+            "type": "statue_noble_mon_e_mo",
+            "inst": {
+                "name": "statue_noble_mon_e_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "1680 5500 0"
+            },
+            "inst": {
+                "name": "statue_noble_mon_e_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "2040 5490 0"
+            },
+            "inst": {
+                "name": "statue_noble_mon_e_mo",
+                "pos": "6960 6240 0"
+            },
+            "inst": {
+                "name": "statue_noble_mon_e_mo",
+                "pos": "7320 6240 0"
+            },
+            "inst": {
+                "name": "statue_noble_mon_e_mo",
+                "pos": "1680 5900 0"
+            },
+            "inst": {
+                "name": "statue_noble_mon_e_mo",
+                "pos": "2040 5890 0"
+            },
+            "inst": {
+                "name": "statue_noble_mon_e_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "7320 5160 0"
+            },
+            "inst": {
+                "name": "statue_noble_mon_e_mo",
+                "orient": "0 0 2.35619",
+                "pos": "4428 3588 0"
+            },
+            "inst": {
+                "name": "statue_noble_mon_e_mo",
+                "orient": "0 0 -2.44346",
+                "pos": "4568 3588 0"
+            },
+            "inst": {
+                "name": "statue_noble_mon_e_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "6950 5160 0"
+            },
+            "inst": {
+                "name": "statue_noble_mon_e_mo",
+                "pos": "1320 5900 0"
+            },
+            "inst": {
+                "name": "statue_noble_mon_e_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "1320 5500 0"
+            },
+            "inst": {
+                "name": "statue_noble_mon_e_mo",
+                "orient": "0 0 0.610865",
+                "pos": "4550 8522 -121"
+            },
+            "inst": {
+                "name": "statue_noble_mon_e_mo",
+                "orient": "0 0 -0.610865",
+                "pos": "4690 8522 -121"
+            }
+        },
+        "entinst": {
+            "type": "statue_noble_mon_e_mo12",
+            "inst": {
+                "name": "statue_noble_mon_e_mo12",
+                "orient": "0 0 -1.5708",
+                "pos": "5138.34 4920.45 0"
+            }
+        },
+        "entinst": {
+            "type": "statue_warrior_mon_b_mo",
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4380 3900 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "4890 6442 -0.00012207"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "5070 6442 -0.00012207"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "4861.04 4860.3 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 3.14159",
+                "pos": "4861.74 5100.03 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "pos": "7868 5459 99.1936"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "pos": "7868 5942 99.1936"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "pos": "6504 5540 99.1936"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "pos": "6504 5860 99.1936"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4500 3780 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "pos": "3740 4100 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4260 4010 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4620 4140 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4260 4260 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "-2.0061 1.42932 2.45775",
+                "pos": "4620.63 3890 12.8717"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "4860 4740 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4253.63 3769.26 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4503.63 4009.26 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4383.63 4139.26 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4503.63 4259.26 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 -3.14159",
+                "pos": "4863.63 4979.26 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "pos": "6022.21 5798.72 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "pos": "6021.71 5600.56 0"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "4800 6722 -0.00012207"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "5160 6722 -0.00012207"
+            },
+            "inst": {
+                "name": "statue_warrior_mon_b_mo",
+                "pos": "3740 3940 0"
+            }
+        },
+        "entinst": {
+            "type": "statue_warrior_mon_b_mo21",
+            "inst": {
+                "name": "statue_warrior_mon_b_mo21",
+                "orient": "0 0 1.5708",
+                "pos": "5020 8062 -120"
+            }
+        },
+        "entinst": {
+            "type": "w1",
+            "inst": {
+                "name": "w1",
+                "orient": "0 0 3.14159",
+                "pos": "5260 6952 -239"
+            }
+        },
+        "entinst": {
+            "type": "w4",
+            "inst": {
+                "name": "w4",
+                "pos": "5160 7442 -239"
+            }
+        },
+        "entinst": {
+            "type": "w5",
+            "inst": {
+                "name": "w5",
+                "pos": "5280.33 7774.35 -239"
+            }
+        },
+        "entinst": {
+            "type": "w7",
+            "inst": {
+                "name": "w7",
+                "orient": "0 0 -1.5708",
+                "pos": "4701 7392 -239"
+            },
+            "inst": {
+                "name": "w17",
+                "orient": "0 0 -1.5708",
+                "pos": "4425 7390 -239"
+            }
+        },
+        "entinst": {
+            "type": "w8",
+            "inst": {
+                "name": "w8",
+                "pos": "4562 7252 -239"
+            }
+        },
+        "entinst": {
+            "type": "w6",
+            "inst": {
+                "name": "w6",
+                "orient": "0 0 1.5708",
+                "pos": "4701 7070 -239"
+            },
+            "inst": {
+                "name": "w14",
+                "orient": "0 0 3.14159",
+                "pos": "4803 7252 -239"
+            },
+            "inst": {
+                "name": "w15",
+                "orient": "0 0 1.5708",
+                "pos": "5400 7051 -239"
+            },
+            "inst": {
+                "name": "w18",
+                "orient": "0 0 3.14159",
+                "pos": "5044 7252 -239"
+            },
+            "inst": {
+                "name": "w19",
+                "orient": "0 0 1.5708",
+                "pos": "5400 7302 -239"
+            },
+            "inst": {
+                "name": "w3",
+                "orient": "0 0 -1.5708",
+                "pos": "5020 7392 -239"
+            }
+        },
+        "entinst": {
+            "type": "w12",
+            "inst": {
+                "name": "w12",
+                "orient": "0 0 1.5708",
+                "pos": "4900 8032 -239"
+            }
+        },
+        "entinst": {
+            "type": "w13",
+            "inst": {
+                "name": "w13",
+                "orient": "0 0 1.5708",
+                "pos": "4480 8172 -239"
+            },
+            "inst": {
+                "name": "w21",
+                "orient": "0 0 1.5708",
+                "pos": "4540 7912 -239"
+            }
+        },
+        "entinst": {
+            "type": "w9",
+            "inst": {
+                "name": "w9",
+                "orient": "0 0 1.5708",
+                "pos": "5300 7912 -239"
+            },
+            "inst": {
+                "name": "w10",
+                "orient": "0 0 -3.14159",
+                "pos": "5039 7932 -239"
+            },
+            "inst": {
+                "name": "w11",
+                "orient": "0 0 -1.5708",
+                "pos": "4763 8172 -239"
+            },
+            "inst": {
+                "name": "w16",
+                "pos": "4622 8072 -239"
+            },
+            "inst": {
+                "name": "w20",
+                "orient": "0 0 -3.14159",
+                "pos": "5520.33 7774.35 -239"
+            }
+        },
+        "entinst": {
+            "type": "w2",
+            "inst": {
+                "name": "w2",
+                "orient": "0 0 3.14159",
+                "pos": "5539 7176 -239"
+            }
+        },
+        "entinst": {
+            "type": "table_examination_mon_b_mo",
+            "inst": {
+                "name": "table_examination_mon_b_mo",
+                "pos": "1254.25 2172.46 0"
+            },
+            "inst": {
+                "name": "table_examination_mon_b_mo",
+                "orient": "0 0 1.5708",
+                "pos": "2817.08 3425.91 0"
+            },
+            "inst": {
+                "name": "table_examination_mon_b_mo01",
+                "orient": "0 0 -0.261799",
+                "pos": "2361.27 2299.81 0"
+            }
+        },
+        "entinst": {
+            "type": "table_examination_mon_b_mo04",
+            "inst": {
+                "name": "table_examination_mon_b_mo04",
+                "orient": "0 0 -1.5708",
+                "pos": "1500 5100 0"
+            }
+        },
+        "entinst": {
+            "type": "urn_mon_b_mo",
+            "inst": {
+                "name": "urn_mon_b_mo",
+                "orient": "0 0 2.70526",
+                "pos": "2519.33 2450.57 0"
+            }
+        },
+        "entinst": {
+            "type": "item_energy_small",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "item_energy_small",
+                "pos": "2701.97 3304.51 0"
+            },
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "item_energy_small",
+                "pos": "2700.97 3374.74 0"
+            },
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "item_energy_small",
+                "pos": "3560.97 2744.74 0"
+            }
+        },
+        "entinst": {
+            "type": "item_health_small",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "item_health_small",
+                "pos": "3610 2710 0"
+            },
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "item_health_small",
+                "pos": "2750 3340 0"
+            },
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "item_health_small",
+                "pos": "2743.74 3366.7 0"
+            }
+        },
+        "entinst": {
+            "type": "techbit_stash02",
+            "inst": {
+                "name": "techbit_stash02",
+                "pos": "2730 3420 0"
+            }
+        },
+        "entinst": {
+            "type": "techbit_stash01",
+            "inst": {
+                "name": "techbit_stash01",
+                "orient": "0 0 0.610865",
+                "pos": "1290.0 2120.0 2.8908e-005"
+            }
+        },
+        "entinst": {
+            "type": "bridge_trigger30",
+            "inst": {
+                "name": "bridge_trigger30",
+                "orient": "0 0 3.14159",
+                "pos": "2007.39 2102.4 0"
+            }
+        },
+        "entinst": {
+            "type": "bridge_trigger06",
+            "inst": {
+                "name": "bridge_trigger06",
+                "orient": "0 0 -0.523599",
+                "pos": "2925.54 3257.19 0"
+            }
+        },
+        "entinst": {
+            "type": "bridge_trigger05",
+            "inst": {
+                "name": "bridge_trigger05",
+                "orient": "0 0 3.14159",
+                "pos": "2372.03 3418.72 0"
+            }
+        },
+        "entinst": {
+            "type": "bridge_trigger04",
+            "inst": {
+                "name": "bridge_trigger04",
+                "pos": "2070.89 3421.15 0"
+            }
+        },
+        "entinst": {
+            "type": "bridge_trigger01",
+            "inst": {
+                "name": "bridge_trigger01",
+                "pos": "2789.18 2333.22 0"
+            }
+        },
+        "entinst": {
+            "type": "bridge_trigger07",
+            "inst": {
+                "name": "bridge_trigger07",
+                "orient": "0 0 2.61799",
+                "pos": "3200 3110 0"
+            }
+        },
+        "entinst": {
+            "type": "bridge_trigger08",
+            "inst": {
+                "name": "bridge_trigger08",
+                "orient": "0 0 3.14159",
+                "pos": "3094.31 2330 0"
+            }
+        },
+        "entinst": {
+            "type": "tile_breakablemon",
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "780 4860 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "780 4980 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "pos": "1380 4860 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1260 4860 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 -1.5708",
+                "pos": "1260 4860 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1260 4980 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1260 4980 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1620 5340 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1740 5220 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1740 5100 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1740 4980 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 1.5708",
+                "pos": "1260 5100 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1260 5100 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1140 5100 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "900 5100 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 -3.14159",
+                "pos": "780 5100 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "780 4740 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1500 5340 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1380 5340 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 -3.14159",
+                "pos": "1260 5340 0"
+            },
+            "inst": {
+                "name": "T_monument_ECC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1020 5100 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 1.5708",
+                "pos": "1740 5340 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "pos": "1500 4860 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "pos": "1620 4860 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "pos": "1740 4860 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 -3.14159",
+                "pos": "4860 6420 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 1.5708",
+                "pos": "5100 6420 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "5100 6300 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "4860 6300 0"
+            },
+            "inst": {
+                "name": "T_monument_ECC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "4980 6420 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "pos": "1140 4620 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "pos": "900 4620 0"
+            },
+            "inst": {
+                "name": "T_monument_EBC_W_A0",
+                "pos": "1020 4620 0"
+            },
+            "inst": {
+                "name": "T_monument_EBC_W_B0",
+                "pos": "1020 4620 0"
+            },
+            "inst": {
+                "name": "T_monument_EBC_W_C0",
+                "pos": "1020 4620 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "4860 6180 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "5100 6180 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "5100 6060 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "pos": "5100 5940 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 -1.5708",
+                "pos": "4860 5940 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "4860 6060 0"
+            },
+            "inst": {
+                "name": "T_monument_EBC_W_A0",
+                "pos": "4980 5940 0"
+            },
+            "inst": {
+                "name": "T_monument_EBC_W_B0",
+                "pos": "4980 5940 0"
+            },
+            "inst": {
+                "name": "T_monument_EBC_W_C0",
+                "pos": "4980 5940 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "orient": "-1.74846e-007 0.0 -1.5708",
+                "pos": "780 4620 0"
+            },
+            "inst": {
+                "name": "T_monument_EAA_W_A0",
+                "pos": "1260 4620 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1260 4740 0"
+            },
+            "inst": {
+                "name": "T_monument_EAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1260 5220 0"
+            }
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actdistance": 65,
+            "actonuse": true,
+            "actscript": "dataDiscReward('r_d_disc')",
+            "actsound": "zone_shared/special/data",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Pick Up Data Disc",
+            "idnum": 7,
+            "material": "solid_metal",
+            "model": "pickups/data_disk_act1",
+            "name": "data_disc01",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "structure": 2,
+            "variablename": "r_d_disc"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actdistance": 60,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "waittimed(0.5)\\n\\rloadDangerRoomCourse('SO204')",
+            "actsound": "common/game/dangerdisc_pickup",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Danger Room Disc",
+            "fxlevel": 7,
+            "idnum": 5,
+            "ignoreactorsonmove": true,
+            "loopfx": "base/item/item_sparkle",
+            "loopfxstarton": true,
+            "model": "pickups/pickup_dangeroom_disk",
+            "name": "disc_so01",
+            "nocollide": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "spinpossible": false,
+            "stucture": 2,
+            "team": "hero",
+            "variablename": "r_dr_disc"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "homingBeaconReward('beaconact2',189)",
+            "actsound": "zone_shared/special/beacon",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Pick up Homing Beacon",
+            "idnum": 9,
+            "material": "hollow_metal",
+            "model": "pickups/homing_beacon_act2",
+            "name": "homing_beacon_act2_01",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "smartent": false,
+            "spawnscript": "common/beacons/beacon2",
+            "structure": 2,
+            "team": "hero",
+            "variablename": "beaconact2"
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actleader": true,
+            "actonuse": true,
+            "actscript": "common/beacons/treasureact2",
+            "actsound": "common/game/pickup_power",
+            "animstarton": true,
+            "classname": "physent",
+            "description": "Experience Points",
+            "fxlevel": 7,
+            "model": "pickups/experience_point",
+            "name": "beacon_chest2",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "persistent": false,
+            "quickuse": true,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "enabletargetent",
+            "enable": true,
+            "name": "mon1_obj",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actrescheduledelay": 0.5,
+            "actrescheduledelaymin": 0.25,
+            "acttogglesloopfx": false,
+            "boxcollision": true,
+            "classname": "affectableharment",
+            "damage": 10,
+            "damagetype": "dmg_fire",
+            "firstact": 0.5,
+            "knockback": 100,
+            "name": "monkey_harm02",
+            "nocollide": true,
+            "radiusdamage": false,
+            "smartent": false,
+            "smartfire": true,
+            "startenabled": false,
+            "toggleonact": false,
+            "togglestarton": true
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/egypt/scr_light_beam_flash",
+            "loopfxstarton": false,
+            "name": "flash",
+            "nocollide": true,
+            "smartent": false,
+            "toggleonact": true,
+            "togglestarton": false
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actsoundloop": "zone_shared/special/blink_portal",
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/madri_temple/portal",
+            "loopfxstarton": false,
+            "name": "portal_pure_start03",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/madri/fire_bluetorch",
+            "loopfxstarton": true,
+            "name": "mon4_flame",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actsoundloop": "zone_shared/special/blink_portal",
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/madri_temple/portal",
+            "loopfxstarton": false,
+            "name": "portal_pure_start01",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/common/fire_torch",
+            "loopfxstarton": true,
+            "name": "door_flame",
+            "nocollide": true,
+            "smartent": false,
+            "toggleonact": true,
+            "togglestarton": true
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/common/fire_jet_horiz",
+            "loopfxstarton": false,
+            "name": "monkey_fire06",
+            "nocollide": true,
+            "smartent": false,
+            "toggleonact": true,
+            "togglestarton": false
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "fxlevel": 2,
+            "loopfx": "map/common/fire_torch",
+            "loopfxstarton": true,
+            "name": "loop_effect09",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/common/fire_torch",
+            "loopfxstarton": true,
+            "name": "loop_effect01",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "name": "player_start_all03",
+            "nocollide": true,
+            "prevlink": "link_monument2",
+            "prevzone": "monument3"
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "default": true,
+            "name": "player_start_all01",
+            "nocollide": true,
+            "prevlink": "link_monument2",
+            "prevzone": "monument1"
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "name": "player_start_all02",
+            "nocollide": true,
+            "prevlink": "link_monument2",
+            "prevzone": "monument4"
+        },
+        "entity": {
+            "acteffect": "map/madri_temple/portal_s",
+            "actsound": "zone_shared/special/blink_spawn",
+            "classname": "actionent",
+            "name": "portal_loop_pure02",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "acteffect": "map/madri_temple/portal_s",
+            "actsound": "zone_shared/special/blink_spawn",
+            "classname": "actionent",
+            "name": "portal_loop_pure03",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actscript": "act2/monument/monument2/relay01",
+            "classname": "actionent",
+            "name": "relay01",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actinactivedelay": 5,
+            "actleader": true,
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "act2/monument/monument2/monkey_fire",
+            "actsound": "zone_shared/fx/flame_jet",
+            "acttargets": "monkey_fire07",
+            "actteamplayer": true,
+            "boxcollision": false,
+            "classname": "gameent",
+            "name": "trigger_touch12",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actdelay": 0.25,
+            "actmatchteam": true,
+            "actontouch": true,
+            "acttargets": "trigger_touch09",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "trigger_touch10",
+            "nocollide": true,
+            "smartent": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actinactivedelay": 5,
+            "actleader": true,
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "act2/monument/monument2/monkey_fire3",
+            "actsound": "zone_shared/fx/flame_jet",
+            "acttargets": "monkey_fire03 ",
+            "actteamplayer": true,
+            "boxcollision": false,
+            "classname": "gameent",
+            "name": "trigger_touch03",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actinactivedelay": 5,
+            "actleader": true,
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "act2/monument/monument2/monkey_fire2",
+            "actsound": "zone_shared/fx/flame_jet",
+            "acttargets": "monkey_fire02",
+            "actteamplayer": true,
+            "boxcollision": false,
+            "classname": "gameent",
+            "name": "trigger_touch02",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actinactivedelay": 5,
+            "actleader": true,
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "act2/monument/monument2/monkey_fire4",
+            "actsound": "zone_shared/fx/flame_jet",
+            "acttargets": "monkey_fire04",
+            "actteamplayer": true,
+            "boxcollision": false,
+            "classname": "gameent",
+            "name": "trigger_touch04",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actdelay": 0.25,
+            "actmatchteam": true,
+            "actontouch": true,
+            "acttargets": "trigger_touch08",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "trigger_touch09",
+            "nocollide": true,
+            "smartent": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actinactivedelay": 5,
+            "actleader": true,
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "act2/monument/monument2/monkey_fire5",
+            "actsound": "zone_shared/fx/flame_jet",
+            "acttargets": "monkey_fire05",
+            "actteamplayer": true,
+            "boxcollision": false,
+            "classname": "gameent",
+            "name": "trigger_touch05",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actinactivedelay": 5,
+            "actleader": true,
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "act2/monument/monument2/monkey_fire6",
+            "actsound": "zone_shared/fx/flame_jet",
+            "acttargets": "monkey_fire06",
+            "actteamplayer": true,
+            "boxcollision": false,
+            "classname": "gameent",
+            "name": "trigger_touch06",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "act2/monument/monument2/uground_3_exit",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "Portal_trig02",
+            "nocollide": true,
+            "startenabled": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "act2/monument/monument2/great_door_conv",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "door_talk",
+            "nocollide": true,
+            "smartent": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "act2/monument/monument2/enable_maze",
+            "acttargets": "w6 w8 w7 w14 w3 w4 w5 w15 w2 w1 w9 w10 w11 w16 w12 w13 w17 w18 w19 w20 w21",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "trigger_touch08",
+            "nocollide": true,
+            "smartent": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "act2/monument/monument2/uground_4_exit",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "Portal_trig04",
+            "nocollide": false,
+            "startenabled": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "act2/monument/monument2/uground_3_exit",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "Portal_trig01",
+            "nocollide": true,
+            "smartent": false,
+            "startenabled": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "acttargets": "floor_switch_01",
+            "boxcollision": true,
+            "classname": "gameent",
+            "description": "Switch",
+            "hinttype": "use",
+            "name": "trigger_use02",
+            "nocollide": true,
+            "team": "none"
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "acttargets": "floor_switch_mon_a_mo01",
+            "boxcollision": true,
+            "classname": "gameent",
+            "description": "Switch",
+            "hinttype": "use",
+            "name": "trigger_use01",
+            "nocollide": true,
+            "team": "none"
+        },
+        "entity": {
+            "alpha": 0.7,
+            "ambienteffect": "base/misc/misc_waterambient",
+            "classname": "waterent",
+            "density": 10,
+            "material": "liquid",
+            "name": "water01",
+            "nocollide": true,
+            "splasheffect": "base/misc/misc_watersplash",
+            "texture": "textures/water_monument",
+            "wakeeffect": "base/misc/misc_waterwake"
+        },
+        "entity": {
+            "alpha": 0.2,
+            "ambienteffect": "base/misc/misc_waterambient",
+            "classname": "waterent",
+            "density": 10,
+            "gridsize": 128,
+            "material": "liquid",
+            "name": "water_sewer01",
+            "nocollide": true,
+            "nokillz": true,
+            "splasheffect": "base/misc/misc_watersplash",
+            "texture": "textures/water_monument",
+            "wakeeffect": "base/misc/misc_waterwake"
+        },
+        "entity": {
+            "classname": "waypointent",
+            "name": "playerA24",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/misc/extraction_burst",
+            "actleader": true,
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "common/extraction/exp_trig",
+            "actsound": "common/game/extraction",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "extent": "-120 -120 0 120 120 72",
+            "fxlevel": 1,
+            "name": "expt_trig",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "persistent": false,
+            "resetstate": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "zonelinkent",
+            "description": "Beyonders Sanctum",
+            "name": "link_monument3",
+            "nextzone": "monument3",
+            "nocollide": false,
+            "startenabled": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "zonelinkent",
+            "description": "Nuwali Shrine",
+            "name": "link_monument1",
+            "nextzone": "monument1",
+            "nocollide": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "zonelinkent",
+            "description": "Nuwali Corridors",
+            "name": "link_monument4",
+            "nextzone": "monument4",
+            "nocollide": false,
+            "team": "hero"
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/arch_curved_mon_e",
+            "name": "arch_curved_mon_e_mo02",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "fxlevel": 3,
+            "health": 300,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/block_01_stump_mon_b",
+            "name": "block_01_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 200,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/burner_stump_mon_b",
+            "name": "burner_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/column_hall_str_mon_e",
+            "name": "column_hall_str_mon_e_mo02",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": false,
+            "actsound": "zone_shared/mover/door_large_round",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "health": 32000,
+            "hinttype": "exit",
+            "material": "rock",
+            "model": "monument/doors_large_round_mon_a",
+            "name": "Great_Door",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "openduration": 7,
+            "randompickups": 0,
+            "smartent": false,
+            "startenabled": true,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": false,
+            "actscript": "act2/monument/monument2/portal02",
+            "actsound": "zone_shared/mover/floor_switch",
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/floor_switch_mon_a",
+            "name": "floor_switch_mon_a_mo01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": false,
+            "actscript": "act2/monument/monument2/portal01",
+            "actsound": "zone_shared/mover/floor_switch",
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/floor_switch_mon_a",
+            "name": "floor_switch_01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/pillar_10x20_mon_b",
+            "name": "pillar_10x20_mon_b_mo05",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "material": "rock",
+            "model": "monument/pillar_10x20_mon_b",
+            "name": "pillar_10x20_mon_b_mo44",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/pillar_10x30_mon_e",
+            "name": "pillar_10x30_mon_e_mo06",
+            "nogravity": true,
+            "nokillz": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/pillar_10x30_mon_e",
+            "name": "pillar_10x30_mon_e_mo35",
+            "nogravity": true,
+            "nokillz": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_s",
+            "fxlevel": 1,
+            "health": 5,
+            "heaviness": 0,
+            "material": "rock",
+            "model": "monument/pot_02_mon_th",
+            "name": "pot_02_mon_th_mo09",
+            "randompickups": 5,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_s",
+            "fxlevel": 1,
+            "health": 5,
+            "heaviness": 0,
+            "material": "rock",
+            "model": "monument/pot_mon_th",
+            "name": "pot_mon_th_mo31",
+            "randompickups": 5,
+            "structure": 0
+        },
+        "entity": {
+            "actscript": "act2/monument/monument2/killowner",
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathscript": "act2/monument/monument2/pathignorewalls",
+            "deathsound": "death_style/ds_stone_m",
+            "deathspawn": "secret_wall_02_mon_b_mo_d",
+            "firstact": 0.1,
+            "fxlevel": 2,
+            "health": 200,
+            "material": "rock",
+            "model": "monument/secret_wall_02_mon_b",
+            "name": "secret_wall_02_mon_b_mo06",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathscript": "act2/monument/monument2/pathignorewalls",
+            "deathsound": "death_style/ds_stone_m",
+            "deathspawn": "secret_wall_02_mon_b_mo_d",
+            "fxlevel": 2,
+            "health": 200,
+            "material": "rock",
+            "model": "monument/secret_wall_02_mon_b",
+            "name": "secret_wall_02_mon_b_mo01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 200,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/secret_wall_02_stump_mon_b",
+            "name": "secret_wall_02_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/statue_jewelpuz_jewel_mon_e",
+            "name": "mon1_statue_comp",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actonuse": true,
+            "actscript": "act2/monument/monument2/monument1_statue",
+            "classname": "physent",
+            "description": "Place Nuwali Stone",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/statue_jewelpuz_nojewel_mon_e",
+            "name": "monument1_statue",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "smartent": false,
+            "startenabled": false,
+            "structure": 2
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actonuse": true,
+            "actscript": "act2/monument/monument2/monument2_statue",
+            "classname": "physent",
+            "description": "Place Nuwali Stone",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/statue_jewelpuz_nojewel_mon_e",
+            "name": "monument4_statue",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "smartent": false,
+            "startenabled": false,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "rock",
+            "model": "monument/statue_noble_mon_e",
+            "name": "statue_noble_mon_e_mo12",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "statue_warrior_mon_b_mo_d",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "rock",
+            "model": "monument/statue_warrior_mon_b",
+            "name": "statue_warrior_mon_b_mo21",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 5,
+            "structure": 0
+        },
+        "entity": {
+            "animstarton": false,
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "fxlevel": 3,
+            "health": 200,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/statue_warrior_stump_mon_b",
+            "name": "statue_warrior_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actdelay": 3,
+            "actsound": "zone_shared/mover/wall_mover",
+            "classname": "moverent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathscript": "act2/monument/monument2/pathignorewalls",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "stonewall_mon_m_b_mo_d",
+            "fxlevel": 3,
+            "health": 150,
+            "material": "rock",
+            "model": "monument/stonewall_mon_m_b",
+            "move": "0 0 119",
+            "moveduration": 1,
+            "name": "w2",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": true,
+            "pathignore": false,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 0,
+            "toggleonact": true
+        },
+        "entity": {
+            "actdelay": 5,
+            "actsound": "zone_shared/mover/wall_mover",
+            "classname": "moverent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathscript": "act2/monument/monument2/pathignorewalls",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "stonewall_mon_m_b_mo_d",
+            "fxlevel": 3,
+            "health": 150,
+            "material": "rock",
+            "model": "monument/stonewall_mon_m_b",
+            "move": "0 0 119",
+            "moveduration": 1,
+            "name": "w9",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": true,
+            "pathignore": false,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 0,
+            "toggleonact": true
+        },
+        "entity": {
+            "actdelay": 5.5,
+            "actsound": "zone_shared/mover/wall_mover",
+            "classname": "moverent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathscript": "act2/monument/monument2/pathignorewalls",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "stonewall_mon_m_b_mo_d",
+            "fxlevel": 3,
+            "health": 150,
+            "material": "rock",
+            "model": "monument/stonewall_mon_m_b",
+            "move": "0 0 119",
+            "moveduration": 1,
+            "name": "w13",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": true,
+            "pathignore": false,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 0,
+            "toggleonact": true
+        },
+        "entity": {
+            "actdelay": 5.25,
+            "actsound": "zone_shared/mover/wall_mover",
+            "classname": "moverent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathscript": "act2/monument/monument2/pathignorewalls",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "stonewall_mon_m_b_mo_d",
+            "fxlevel": 3,
+            "health": 150,
+            "material": "rock",
+            "model": "monument/stonewall_mon_m_b",
+            "move": "0 0 119",
+            "moveduration": 1,
+            "name": "w12",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": true,
+            "pathignore": false,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 0,
+            "toggleonact": true
+        },
+        "entity": {
+            "actdelay": 3.5,
+            "actsound": "zone_shared/mover/wall_mover",
+            "classname": "moverent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathscript": "act2/monument/monument2/pathignorewalls",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "stonewall_mon_m_b_mo_d",
+            "fxlevel": 3,
+            "health": 150,
+            "material": "rock",
+            "model": "monument/stonewall_mon_m_b",
+            "move": "0 0 119",
+            "moveduration": 1,
+            "name": "w6",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": true,
+            "pathignore": false,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 0,
+            "toggleonact": true
+        },
+        "entity": {
+            "actdelay": 4.25,
+            "actsound": "zone_shared/mover/wall_mover",
+            "acttargets": "dynamic_clip01",
+            "classname": "moverent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathscript": "act2/monument/monument2/pathignorewalls",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "stonewall_mon_m_b_mo_d",
+            "fxlevel": 3,
+            "health": 150,
+            "material": "rock",
+            "model": "monument/stonewall_mon_m_b",
+            "move": "0 0 119",
+            "moveduration": 1,
+            "name": "w8",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": true,
+            "pathignore": false,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 0,
+            "toggleonact": true
+        },
+        "entity": {
+            "actdelay": 3,
+            "actsound": "zone_shared/mover/wall_mover",
+            "classname": "moverent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathscript": "act2/monument/monument2/pathignorewalls",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "stonewall_mon_m_b_mo_d",
+            "fxlevel": 3,
+            "health": 150,
+            "material": "rock",
+            "model": "monument/stonewall_mon_m_b",
+            "move": "0 0 119",
+            "moveduration": 1,
+            "name": "w7",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": true,
+            "pathignore": false,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 0,
+            "toggleonact": true
+        },
+        "entity": {
+            "actdelay": 4.25,
+            "actsound": "zone_shared/mover/wall_mover",
+            "classname": "moverent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathscript": "act2/monument/monument2/pathignorewalls",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "stonewall_mon_m_b_mo_d",
+            "fxlevel": 3,
+            "health": 150,
+            "material": "rock",
+            "model": "monument/stonewall_mon_m_b",
+            "move": "0 0 119",
+            "moveduration": 1,
+            "name": "w5",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": true,
+            "pathignore": false,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 0,
+            "toggleonact": true
+        },
+        "entity": {
+            "actdelay": 4,
+            "actsound": "zone_shared/mover/wall_mover",
+            "classname": "moverent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathscript": "act2/monument/monument2/pathignorewalls",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "stonewall_mon_m_b_mo_d",
+            "fxlevel": 3,
+            "health": 150,
+            "material": "rock",
+            "model": "monument/stonewall_mon_m_b",
+            "move": "0 0 119",
+            "moveduration": 1,
+            "name": "w4",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": true,
+            "pathignore": false,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 0,
+            "toggleonact": true
+        },
+        "entity": {
+            "actdelay": 3,
+            "actsound": "zone_shared/mover/wall_mover",
+            "classname": "moverent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathscript": "act2/monument/monument2/pathignorewalls",
+            "deathsound": "death_style/ds_stone_l",
+            "deathspawn": "stonewall_mon_m_b_mo_d",
+            "fxlevel": 3,
+            "health": 150,
+            "material": "rock",
+            "model": "monument/stonewall_mon_m_b",
+            "move": "0 0 119",
+            "moveduration": 1,
+            "name": "w1",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": true,
+            "pathignore": false,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 0,
+            "toggleonact": true
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "moverent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_l",
+            "fxlevel": 3,
+            "health": 200,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/stonewall_stump_mon_m_b",
+            "move": "0 0 0",
+            "moveduration": 1,
+            "name": "stonewall_mon_m_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": false,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 100,
+            "heaviness": 2,
+            "material": "rock",
+            "model": "monument/table_examination_mon_b",
+            "name": "table_examination_mon_b_mo04",
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_stone",
+            "deathsound": "death_style/ds_stone_m",
+            "fxlevel": 2,
+            "health": 50,
+            "mass": 0,
+            "material": "rock",
+            "model": "monument/urn_stump_mon_b",
+            "name": "urn_mon_b_mo_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 2,
+            "structure": 2
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actsound": "common/game/pickup_item",
+            "actspawn": "empty_stash",
+            "acttogglesloopfx": true,
+            "animstarton": true,
+            "classname": "inventoryent",
+            "count": 1000,
+            "description": "Techbit Stash",
+            "fxlevel": 3,
+            "hinttype": "use",
+            "inventoryitem": "money1",
+            "material": "solid_metal",
+            "model": "new_york_ruins/techbitcase_open",
+            "name": "techbit_stash01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "team": "hero",
+            "toggleonact": true,
+            "togglestarton": false,
+            "type": "money"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actsound": "common/game/pickup_item",
+            "actspawn": "empty_stash",
+            "acttogglesloopfx": true,
+            "animstarton": true,
+            "classname": "inventoryent",
+            "count": 1000,
+            "description": "Techbit Stash",
+            "fxlevel": 3,
+            "hinttype": "use",
+            "inventoryitem": "money1",
+            "material": "solid_metal",
+            "model": "new_york_ruins/techbitcase_open",
+            "name": "techbit_stash02",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "startenabled": true,
+            "team": "hero",
+            "toggleonact": true,
+            "togglestarton": false,
+            "type": "money"
+        },
+        "entity": {
+            "actmatchteam": true,
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_m",
+            "fxlevel": 2,
+            "health": 32000,
+            "inventoryitem": "money1",
+            "material": "solid_metal",
+            "model": "new_york_ruins/techbitcase_closed",
+            "name": "empty_stash",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2,
+            "team": "hero",
+            "type": "money"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actscript": "act2/monument/monument2/rem_trig1",
+            "classname": "powertriggerent",
+            "deathspawn": "icebridge30 magmabridge30 tkbridge30",
+            "description": "bridge power",
+            "health": 1,
+            "hinttype": "power",
+            "length": 30,
+            "material": "energy",
+            "model": "puzzles/bridge_icon",
+            "name": "bridge_trigger08",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "reactpower": "bridge",
+            "smartent": false,
+            "stopnothing": true,
+            "stopprojectile": true,
+            "structure": 0,
+            "targetlockable": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actscript": "act2/monument/monument2/remove_trig01",
+            "classname": "powertriggerent",
+            "deathspawn": "icebridge30 magmabridge30 tkbridge30",
+            "description": "bridge power",
+            "health": 1,
+            "hinttype": "power",
+            "length": 30,
+            "material": "energy",
+            "model": "puzzles/bridge_icon",
+            "name": "bridge_trigger07",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "reactpower": "bridge",
+            "smartent": false,
+            "stopnothing": true,
+            "stopprojectile": true,
+            "structure": 0,
+            "targetlockable": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actscript": "act2/monument/monument2/rem_trig8",
+            "classname": "powertriggerent",
+            "deathspawn": "icebridge30 magmabridge30 tkbridge30",
+            "description": "bridge power",
+            "health": 1,
+            "hinttype": "power",
+            "length": 30,
+            "material": "energy",
+            "model": "puzzles/bridge_icon",
+            "name": "bridge_trigger01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "reactpower": "bridge",
+            "smartent": false,
+            "stopnothing": true,
+            "stopprojectile": true,
+            "structure": 0,
+            "targetlockable": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actscript": "act2/monument/monument2/rem_trig5",
+            "classname": "powertriggerent",
+            "deathspawn": "icebridge30 magmabridge30 tkbridge30",
+            "description": "bridge power",
+            "health": 1,
+            "hinttype": "power",
+            "length": 30,
+            "material": "energy",
+            "model": "puzzles/bridge_icon",
+            "name": "bridge_trigger04",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "reactpower": "bridge",
+            "smartent": false,
+            "stopnothing": true,
+            "stopprojectile": true,
+            "structure": 0,
+            "targetlockable": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actscript": "act2/monument/monument2/rem_trig4",
+            "classname": "powertriggerent",
+            "deathspawn": "icebridge30 magmabridge30 tkbridge30",
+            "description": "bridge power",
+            "health": 1,
+            "hinttype": "power",
+            "length": 30,
+            "material": "energy",
+            "model": "puzzles/bridge_icon",
+            "name": "bridge_trigger05",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "reactpower": "bridge",
+            "smartent": false,
+            "stopnothing": true,
+            "stopprojectile": true,
+            "structure": 0,
+            "targetlockable": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actscript": "act2/monument/monument2/remove_trig02",
+            "classname": "powertriggerent",
+            "deathspawn": "icebridge30 magmabridge30 tkbridge30",
+            "description": "bridge power",
+            "health": 1,
+            "hinttype": "power",
+            "length": 30,
+            "material": "energy",
+            "model": "puzzles/bridge_icon",
+            "name": "bridge_trigger06",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "reactpower": "bridge",
+            "smartent": false,
+            "stopnothing": true,
+            "stopprojectile": true,
+            "structure": 0,
+            "targetlockable": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "animstarton": true,
+            "cameracollide": true,
+            "camerafadeout": true,
+            "classname": "physent",
+            "description": "bridge power",
+            "health": 32000,
+            "length": 30,
+            "model": "effects/bridge_metal30",
+            "name": "metalbridge30",
+            "navzadjustment": -36,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": true,
+            "reactpower": "bridge",
+            "spawnsound": "zone_shared/objects/metal_bridge",
+            "stopprojectile": true,
+            "structure": 2
+        },
+        "entity": {
+            "actcountremove": 1,
+            "animstarton": true,
+            "cameracollide": true,
+            "classname": "gameent",
+            "description": "bridge power",
+            "health": 32000,
+            "length": 30,
+            "model": "effects/bridge_telekinetic30",
+            "name": "tkbridge30",
+            "navzadjustment": -36,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": true,
+            "reactpower": "bridge",
+            "spawnsound": "zone_shared/objects/jean_bridge",
+            "stopprojectile": true,
+            "structure": 2
+        },
+        "entity": {
+            "actcountremove": 1,
+            "animstarton": true,
+            "cameracollide": true,
+            "camerafadeout": true,
+            "classname": "physent",
+            "description": "bridge power",
+            "health": 32000,
+            "length": 30,
+            "model": "effects/bridge_ice30",
+            "name": "icebridge30",
+            "navzadjustment": -36,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "nostep": false,
+            "pathignore": true,
+            "reactpower": "bridge",
+            "spawnsound": "zone_shared/objects/iceman_bridge",
+            "stopprojectile": true,
+            "structure": 2
+        }
+    }
+}

@@ -1,0 +1,202 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "act2/savage/conv_start_act3",
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/2_savage1_020_025",
+                    "text": "%PROFX%: Thanks to your having defeated Apocalypse's Horseman, Mikhail, the threat to Avalon has been removed and this untamed wilderness known as the Savage Land is once again safe.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "soundtoplay": "voice/profx/2_savage1_020_026",
+                            "text": "%PROFX%: Now we can set our sights on stopping the army of Apocalypse from endangering anyone else. To do this, we will have to travel to the old Weapon X facility and set up a base camp there. Would you like to go now?",
+                            "response": {
+                                "chosenscriptfile": "movies/act3",
+                                "conversationend": true,
+                                "text": "%YES%"
+                            },
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "%NO%"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever13",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/2_savage1_020_010",
+                    "soundtoplayb": "voice/profx/2_savage1_020_020",
+                    "text": "%ProfX%: Hello. I want it understood that the X-Men are to set the example for the team. You must not give in to your animosity towards the Brotherhood.",
+                    "textb": "%ProfX%: Greetings. I realize you don't enjoy working with the X-Men. But keep in mind you need them if Quicksilver is ever to be freed from Apocalypse.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: But Professor, it's hard to ignore the fact that we've been bitter enemies for years.",
+                            "textb": "%PLAYER%: It's already been explained to the Brotherhood, Xavier. We'll play nice so long as the X-Men do.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/profx/2_savage1_020_012",
+                                    "soundtoplayb": "voice/profx/2_savage1_020_022",
+                                    "text": "%ProfX%: I realize that. But it appears our fates are intertwined for the moment. So for the sake of Beast, please learn to work with the Brotherhood.",
+                                    "textb": "%ProfX%: That is all I ask. If we are to continue this working arrangement, there must be restraint on both sides.",
+                                    "response": {
+                                        "tagjump": "autogen_tag_1",
+                                        "text": "%BLANK%"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/2_savage1_020_023",
+                    "soundtoplayb": "voice/profx/2_savage1_020_024",
+                    "text": "%ProfX%: Hello, my friend. What can I do for you?",
+                    "textb": "%ProfX%: Greetings. How can I be of assistance?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "Why did Apocalypse destroy the X-Mansion?",
+                        "line": {
+                            "soundtoplay": "voice/profx/2_savage1_020_031",
+                            "text": "%ProfX%: Partly out of spite I would guess. I'm certain our victory at Genosha has him smarting. But he also did it to remove our equipment for detecting his primary base of operations.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Is Cerebro completely destroyed?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/profx/2_savage1_020_033",
+                                            "text": "%ProfX%: I'm afraid so. Like all machines, it can be rebuilt, but that will take time - time we cannot afford to spend right now.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Why did Apocalypse kidnap Beast?",
+                        "line": {
+                            "soundtoplay": "voice/profx/2_savage1_020_041",
+                            "text": "%ProfX%: I don't know - but I'm sure he has his ulterior motives. Apocalypse is not one to take action without a good reason.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Could Polaris and Quicksilver be here in the Savage Land along with Beast?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/profx/2_savage1_020_043",
+                                            "text": "%ProfX%: I doubt it. Polaris and Quicksilver were taken on purpose whereas Beast was taken because he was at the wrong place at the wrong time. I get the feeling they're being held in an entirely different location.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Why is the Brotherhood here in the Savage Land?",
+                        "line": {
+                            "soundtoplay": "voice/profx/2_savage1_020_051",
+                            "text": "%ProfX%: Magneto would much rather be searching for his son, Quicksilver. But he has no idea where Apocalypse took him.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: So you invited him along?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/profx/2_savage1_020_053",
+                                            "text": "%ProfX%: Yes. Hopefully as we search for Beast, clues will be uncovered that will give us the location of Apocalypse's base.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnObjective('act2_obj_6d', 'FALSE' )",
+                        "text": "We're done here in the Savage Land. Can we move on?",
+                        "line": {
+                            "soundtoplay": "voice/menu/2_savage1_020_061",
+                            "text": "%Menu%: Are you sure you want to leave The Savage Land and travel to the new base camp at the Weapon X Facility?",
+                            "response": {
+                                "chosenscriptfile": "movies/act3",
+                                "conversationend": true,
+                                "text": "%YES%"
+                            },
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "%NO%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Thank you, Professor.",
+                        "line": {
+                            "soundtoplay": "voice/profx/2_savage1_020_071",
+                            "text": "%ProfX%: I hope to see you soon.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Thanks, Xavier.",
+                        "line": {
+                            "soundtoplay": "voice/profx/2_savage1_020_081",
+                            "soundtoplayb": "voice/profx/2_savage1_020_081",
+                            "text": "%ProfX%: You're quite welcome.",
+                            "textb": "%ProfX%: You're quite welcome.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,162 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever20",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/garokk/2_savage1_110_010",
+                    "soundtoplayb": "voice/garokk/2_savage1_110_020",
+                    "text": "%Garokk%: Come to boast about defeating me, X-man? Savor this moment because it will never happen again.",
+                    "textb": "%Garokk%: The Brotherhood is indeed fickle. It wasn't so long ago that we had worked together. Now you hold me in a jail.",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/garokk/2_savage1_110_030",
+                    "soundtoplayb": "voice/garokk/2_savage1_110_040",
+                    "text": "%Garokk%: Let me go X-Man and I'll spare your life later.",
+                    "textb": "%Garokk%: Let me out of this prison and I'll see to it you share in the new reign of Apocalypse.",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "Who are you?",
+                        "line": {
+                            "soundtoplay": "voice/garokk/2_savage1_110_051",
+                            "text": "%Garokk%: My name is Garokk. And you would do well to fear me. For I am centuries old and worshipped as a Sun God.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: How did you originally come to the Savage Land?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/garokk/2_savage1_110_053",
+                                            "text": "%Garokk%: Long ago I was a British sailor trapped here after a shipwreck. I wandered the Savage Land until I found a temple and drank a potion that slowly converted me to this rocklike form.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Why were you after Destiny?",
+                        "line": {
+                            "soundtoplay": "voice/garokk/2_savage1_110_061",
+                            "text": "%Garokk%: I have no use for her, but I had made a deal with a Horseman of Apocalypse.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: What was the deal?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/garokk/2_savage1_110_063",
+                                            "text": "%Garokk%: We agreed if I handed Destiny over to him, he would aid me in conquering the Savage Land.",
+                                            "response": {
+                                                "chosenscriptfile": "setGameFlag('savage', 4,1)",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'savage', 4 )",
+                        "text": "Who was the Horseman you spoke to?",
+                        "line": {
+                            "soundtoplay": "voice/garokk/2_savage1_110_071",
+                            "text": "%Garokk%: His name is Mikhail Rasputin.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: But he's the older brother of Colossus!",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/garokk/2_savage1_110_073",
+                                            "text": "%Garokk%: Yes, I know. Intriguing, isn't it?",
+                                            "response": {
+                                                "chosenscriptfile": "setGameFlag('savage', 5,1)",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'savage', 5)",
+                        "text": "You better watch out for Mystique.",
+                        "line": {
+                            "soundtoplay": "voice/garokk/2_savage1_110_081",
+                            "text": "%Garokk%: Why should I be concerned with her?",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Because you tried to hurt Destiny. And Mystique isn't taking that lightly.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/garokk/2_savage1_110_083",
+                                            "text": "%Garokk%: Humph, she doesn't frighten me.",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "text": "%PLAYER%: She should. And you better get used to sleeping with one eye open.",
+                                                    "response": {
+                                                        "tagjump": "autogen_tag_1",
+                                                        "text": "%BLANK%"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Good luck surviving the night, Garokk.",
+                        "line": {
+                            "soundtoplay": "voice/garokk/2_savage1_110_100",
+                            "text": "%Garokk%: Humph. Mystique doesn't frighten me in the least.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
