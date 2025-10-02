@@ -1,0 +1,4173 @@
+{
+    "world": {
+        "entity": {
+            "act": 3,
+            "extent_max": "4200 6720 1406",
+            "extent_min": "-153 1080 -599",
+            "killz": -512,
+            "level": 24,
+            "name": "world",
+            "nosave": false,
+            "partylight": "0.87 0.7 0.5",
+            "partylightradius": 185,
+            "soundfile": "acore",
+            "zonescript": "act3/corein/corein1/corein1"
+        },
+        "precache": {
+            "filename": "act3/corein/corein1/3_corein1_0010",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act3/corein/corein1/3_corein1_0020",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act3/corein/corein1/3_corein1_0030",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act3/corein/combo_hint",
+            "type": "dialog"
+        },
+        "precache": {
+            "filename": "hud/hud_head_1901",
+            "type": "model"
+        },
+        "precache": {
+            "filename": "hud/hud_head_2201",
+            "type": "model"
+        },
+        "precache": {
+            "filename": "act3/corein/corein1/corein1",
+            "type": "script"
+        },
+        "precache": {
+            "filename": "act3/corein/corein1/goto_military1",
+            "type": "script"
+        },
+        "entity": {
+            "classname": "tileent",
+            "deatheffect": "base/material/tile/tile_core",
+            "deathsound": "death_style/t_core",
+            "deathspawn": "tile_tilebreakable",
+            "fxlevel": 3,
+            "health": 300,
+            "material": "tile",
+            "name": "tile_tilebreakable",
+            "structure": 1,
+            "tilemodelfolder": "tiles/ontariocore/"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "CoreGuard_b",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_smartent": true,
+            "name": "ss_coreguard_b",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "CoreGuard_b",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_leader": true,
+            "monster_smartent": true,
+            "name": "ss_coreguard_b_leader",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Infinite_b",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_smartent": true,
+            "name": "ss_infinite_b",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Infinite_b",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_leader": true,
+            "monster_smartent": true,
+            "name": "ss_infinite_b_leader",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Undercloak_a",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_aitype": 4,
+            "monster_smartent": true,
+            "name": "ss_undercloak_a",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Undercloak_b",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_aitype": 4,
+            "monster_smartent": true,
+            "name": "ss_undercloak_b",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Undercloak_b",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_aitype": 4,
+            "monster_leader": true,
+            "monster_smartent": true,
+            "name": "ss_undercloak_b_leader",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actonuse": true,
+            "actscript": "dataDiscReward('r_d_disc')",
+            "actsound": "zone_shared/special/data",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Pick Up Data Disc",
+            "material": "solid_metal",
+            "model": "pickups/data_disk_act1",
+            "name": "data_disc",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "structure": 2,
+            "variablename": "r_d_disc"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "waittimed(0.5)\\n\\rloadDangerRoomCourse('CHICE')",
+            "actsound": "common/game/dangerdisc_pickup",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Danger Room Disc",
+            "fxlevel": 7,
+            "idnum": 24,
+            "ignoreactorsonmove": true,
+            "loopfx": "base/item/item_sparkle",
+            "loopfxstarton": true,
+            "model": "pickups/pickup_dangeroom_disk",
+            "name": "disc_iceman",
+            "nocollide": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "spinpossible": false,
+            "structure": 2,
+            "team": "hero",
+            "variablename": "r_dr_disc"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "homingBeaconReward('beaconact3',190)",
+            "actsound": "zone_shared/special/beacon",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Pick up Homing Beacon",
+            "material": "hollow_metal",
+            "model": "pickups/homing_beacon_act3",
+            "name": "homing_beacon_act3_",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "smartent": false,
+            "spawnscript": "common/beacons/beacon3",
+            "structure": 2,
+            "team": "hero",
+            "variablename": "beaconact3"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/misc/techstation_agility",
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "permanentStatBoost('_ACTIVATOR_','agility')",
+            "actsound": "zone_shared/object/techstation",
+            "actspawn": "tech_station_agility_off",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Tech Station Speed",
+            "material": "solid_metal",
+            "model": "common/tech_station_agility",
+            "name": "tech_station_agility",
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "spawnsoundloop": "zone_shared/object/techstation_loop",
+            "structure": 2,
+            "team": "hero",
+            "toggleonact": true,
+            "variablename": "r_t_station"
+        },
+        "entity": {
+            "actontouch": true,
+            "boxcollision": true,
+            "classname": "affectableharment",
+            "damage": 32000,
+            "damagemods": "dmgmod_kill dmgmod_no_protection",
+            "damagetype": "dmg_direct",
+            "name": "kill_target",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfxstarton": true,
+            "name": "loop_effect",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "name": "player_start_all",
+            "nocollide": true
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "health": 32000,
+            "hinttype": "usetoggle",
+            "material": "solid_metal",
+            "model": "misc/recall_beacon_misc_a",
+            "name": "recall_beacon",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "actinactivedelay": 1,
+            "actonuse": true,
+            "actsound": "zone_shared/special/question_mark",
+            "acttogglesanim": false,
+            "animstarton": true,
+            "classname": "gameent",
+            "description": "Game Tip",
+            "ignoretelekinesis": true,
+            "model": "icons/hint_prompter",
+            "name": "trigger_hint",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "quickuse": true
+        },
+        "entity": {
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "trigger_use",
+            "nocollide": true,
+            "team": "none"
+        },
+        "entity": {
+            "alpha": 0.7,
+            "ambienteffect": "base/misc/misc_waterambient",
+            "classname": "waterent",
+            "density": 10,
+            "name": "water",
+            "nocollide": true,
+            "splasheffect": "base/misc/misc_watersplash",
+            "texture": "textures/water.png",
+            "wakeeffect": "base/misc/misc_waterwake"
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "zonelinkent",
+            "description": "Enter next area",
+            "name": "zone_link",
+            "nocollide": false,
+            "team": "hero"
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_m",
+            "fxlevel": 2,
+            "health": 5,
+            "heaviness": 0,
+            "material": "hollow_metal",
+            "model": "core/55galdrum_core_th",
+            "name": "55galdrum_core_th_oc",
+            "randompickups": 2,
+            "structure": 0
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathsound": "death_style/ds_electrical_m",
+            "fxlevel": 2,
+            "health": 32000,
+            "material": "electronics",
+            "model": "core/alarmlight_fixture_core_a",
+            "name": "alarmlight_fixture_core_a_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "spawnsoundloop": "zone_shared/object/alarmlight",
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_m",
+            "fxlevel": 2,
+            "health": 50,
+            "heaviness": 0,
+            "material": "hollow_metal",
+            "model": "core/cabinet_short_core_b",
+            "name": "cabinet_short_core_b_oc",
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_m",
+            "fxlevel": 2,
+            "health": 75,
+            "heaviness": 1,
+            "material": "hollow_metal",
+            "model": "core/cabinet_tall_core_b",
+            "name": "cabinet_tall_core_b_oc",
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_m",
+            "fxlevel": 2,
+            "health": 25,
+            "heaviness": 0,
+            "material": "solid_metal",
+            "model": "core/chair_core_th",
+            "name": "chair_core_th_oc",
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathsound": "death_style/ds_electrical_l",
+            "deathspawn": "console02_core_b_oc_d",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "electronics",
+            "model": "core/console02_core_b",
+            "name": "console02_core_b_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathsound": "death_style/ds_electrical_l",
+            "deathspawn": "console_4way_core_b_oc_d",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "electronics",
+            "model": "core/console_4way_core_b",
+            "name": "console_4way_core_b_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathsound": "death_style/ds_electrical_l",
+            "deathspawn": "console_core_b_oc_d",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "electronics",
+            "model": "core/console_core_b",
+            "name": "console_core_b_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathsound": "death_style/ds_electrical_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "electronics",
+            "model": "core/control_panel_core_a",
+            "name": "control_panel_core_a_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_l",
+            "deathspawn": "cool_tank_core_b_oc_d",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "hollow_metal",
+            "model": "core/cool_tank_core_b",
+            "name": "cool_tank_core_b_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_m",
+            "fxlevel": 2,
+            "health": 5,
+            "heaviness": 0,
+            "material": "hollow_metal",
+            "model": "core/crate_core_th",
+            "name": "crate_core_th_oc",
+            "randompickups": 2,
+            "stackphysics": true,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_m",
+            "fxlevel": 2,
+            "health": 200,
+            "material": "hollow_metal",
+            "model": "core/crate_cylinders_core_b",
+            "name": "crate_cylinders_core_b_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_m",
+            "fxlevel": 2,
+            "health": 5,
+            "heaviness": 0,
+            "material": "hollow_metal",
+            "model": "core/cratebox_core_th",
+            "name": "cratebox_core_th_oc",
+            "randompickups": 2,
+            "stackphysics": true,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 100,
+            "material": "solid_metal",
+            "model": "core/cubicle_core_b",
+            "name": "cubicle_core_b_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_paper",
+            "deathsound": "death_style/ds_cardboard_s",
+            "fxlevel": 1,
+            "health": 5,
+            "material": "carpet",
+            "model": "core/dec_poster_car_core_b",
+            "name": "dec_poster_car_core_b_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_paper",
+            "deathsound": "death_style/ds_cardboard_s",
+            "fxlevel": 1,
+            "health": 5,
+            "material": "carpet",
+            "model": "core/dec_poster_girl2_core_b",
+            "name": "dec_poster_girl2_core_b_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_paper",
+            "deathsound": "death_style/ds_cardboard_s",
+            "fxlevel": 1,
+            "health": 5,
+            "material": "carpet",
+            "model": "core/dec_poster_girl_core_b",
+            "name": "dec_poster_girl_core_b_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_paper",
+            "deathsound": "death_style/ds_cardboard_s",
+            "fxlevel": 1,
+            "health": 5,
+            "material": "carpet",
+            "model": "core/dec_poster_plane_core_b",
+            "name": "dec_poster_plane_core_b_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "actsound": "zone_shared/mover/door_core",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "core/door_double_core_a",
+            "name": "door_double_core_a_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "openposition": 0.9,
+            "openupdown": true,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "actsound": "zone_shared/mover/door_magnetic",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_m",
+            "fxlevel": 2,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "core/door_magnetic_core_a",
+            "name": "door_magnetic_core_a_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_m",
+            "fxlevel": 2,
+            "health": 50,
+            "material": "hollow_metal",
+            "model": "core/extinguisher_wall_core_b",
+            "name": "extinguisher_wall_core_b_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/hit/hit_energy",
+            "deathsound": "death_style/ds_energy_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "energy",
+            "model": "core/force_field_core_a",
+            "name": "force_field_core_a_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "spawnsoundloop": "zone_shared/object/forcefield_plane",
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathsound": "death_style/ds_electrical_m",
+            "fxlevel": 2,
+            "health": 32000,
+            "material": "electronics",
+            "model": "core/light_hang_base_core_e",
+            "name": "light_hang_base_core_e_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_l",
+            "deathspawn": "lockers_core_b_oc_d",
+            "fxlevel": 3,
+            "health": 100,
+            "material": "hollow_metal",
+            "model": "core/lockers_core_b",
+            "name": "lockers_core_b_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathsound": "death_style/ds_electrical_m",
+            "fxlevel": 2,
+            "health": 200,
+            "heaviness": 1,
+            "material": "electronics",
+            "model": "core/mainframe_core_th",
+            "name": "mainframe_core_th_oc",
+            "randompickups": 0,
+            "spawnsoundloop": "zone_shared/object/mainframe",
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_glass",
+            "deathsound": "death_style/ds_glass_l",
+            "deathspawn": "partition_glass_core_b_oc_d",
+            "fxlevel": 3,
+            "health": 100,
+            "heaviness": 1,
+            "material": "glass",
+            "model": "core/partition_glass_core_b",
+            "name": "partition_glass_core_b_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "deathspawn": "pillar_10ft_core_b_oc_d",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "solid_metal",
+            "model": "core/pillar_10ft_core_b",
+            "name": "pillar_10ft_core_b_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_l",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "hollow_metal",
+            "model": "core/pipe_10ft_core_b",
+            "name": "pipe_10ft_core_b_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_m",
+            "fxlevel": 2,
+            "health": 100,
+            "material": "solid_metal",
+            "model": "core/railing_core_b",
+            "name": "railing_core_b_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_l",
+            "deathspawn": "tank_wall_core_b_oc_d",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "hollow_metal",
+            "model": "core/tank_wall_core_b",
+            "name": "tank_wall_core_b_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_glass",
+            "deathsound": "death_style/ds_glass_l",
+            "fxlevel": 3,
+            "health": 100,
+            "material": "glass",
+            "model": "core/window_railing_corner_in_core_b",
+            "name": "windoow_railing_corner_in_b_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_glass",
+            "deathsound": "death_style/ds_glass_l",
+            "deathspawn": "window_railing_straight_b_oc_d",
+            "fxlevel": 3,
+            "health": 100,
+            "material": "glass",
+            "model": "core/window_railing_straight_core_b",
+            "name": "window_railing_straight_b_oc",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "acteffect": "base/misc/misc_treasure",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actsound": "common/game/treasure",
+            "animstarton": false,
+            "classname": "treasureent",
+            "count": 1000,
+            "description": "weapon cache",
+            "material": "solid_metal",
+            "model": "common/treasure_chest_a",
+            "name": "treasure_chest",
+            "nopickup": true,
+            "nopush": true,
+            "team": "hero",
+            "toggleonact": true
+        },
+        "entity": {
+            "boxdamage": true,
+            "classname": "affectableharment",
+            "damage": "2 3",
+            "damagemods": "dmgmod_no_pain",
+            "damagetype": "dmg_fire",
+            "extent": "-30 -30 0 30 30 36",
+            "health": 1,
+            "knockback": 200,
+            "loopfx": "map/common/fire_medium",
+            "loopfxstarton": true,
+            "name": "fire_med",
+            "radiusdamage": false,
+            "reactpower": "extinguish",
+            "smartfire": true,
+            "spawnsoundloop": "zone_shared/fx/fire_med"
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actscript": "spawn('_OWNER_','knocker_trigger','knocker','0 0 0','0 0 0')\\n\\rsetNoCollide('_OWNER_','true')",
+            "actsound": "zone_shared/pylon/pylon_retract",
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathsound": "death_style/ds_electrical_l",
+            "deathspawn": "pylon_a3_knockback_d",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "electronics",
+            "model": "puzzles/pylon_act4_knockback",
+            "name": "pylon_a3_knockback_puz",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "spawnscript": "id=spawn('_OWNER_','touchy_feely','touchme','0 0 0','0 0 0')\\n\\rsetParent(id,'_OWNER_')",
+            "structure": 0,
+            "targetlockable": true,
+            "team": "none",
+            "toggleonact": true
+        },
+        "entinst": {
+            "type": "ss_coreguard_b",
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_coreguard_b",
+                "pos": "406.626 5306.53 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 -3.14159",
+                "pos": "1553.5 3899.26 0"
+            },
+            "inst": {
+                "extents": "-2.20854 -40.5527 0 14.2084 40.5526 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 2.18166",
+                "pos": "712.258 3995.96 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_coreguard_b",
+                "pos": "406.626 5407.03 0"
+            },
+            "inst": {
+                "extents": "-21.1258 -17.7265 0 33.1256 17.7265 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 1.48353",
+                "pos": "551.35 4595.66 0"
+            },
+            "inst": {
+                "extents": "-21.126 -17.7265 0 33.1255 17.7265 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 1.48353",
+                "pos": "638.511 4479.94 0"
+            },
+            "inst": {
+                "extents": "-21.1257 -17.7265 0 33.1257 17.7265 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 1.48353",
+                "pos": "644.321 4587.53 0"
+            },
+            "inst": {
+                "extents": "-18.0001 -18.0001 0 29.9999 17.9999 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 1.5708",
+                "pos": "2806.41 5241.44 0"
+            },
+            "inst": {
+                "extents": "-18.0001 -18.0001 0 29.9999 17.9999 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 1.5708",
+                "pos": "2705.9 5241.44 0"
+            },
+            "inst": {
+                "extents": "-2.20854 -40.5525 0 14.2084 40.5527 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 2.18166",
+                "pos": "788.707 4049.49 0"
+            },
+            "inst": {
+                "extents": "-2.20834 -40.5525 0 14.2086 40.5527 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 2.18166",
+                "pos": "697.477 4117.63 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 -3.14159",
+                "pos": "1445.82 3902.85 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 -3.14159",
+                "pos": "1553.5 3999.76 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 -3.14159",
+                "pos": "1445.82 3996.17 0"
+            },
+            "inst": {
+                "extents": "6.00003 -41.9999 0 6.00005 42.0001 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 2.35619",
+                "pos": "2304.28 3636.4 0"
+            },
+            "inst": {
+                "extents": "6.00005 -42.0002 0 6.00007 41.9998 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 2.35619",
+                "pos": "2238.29 3570.4 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_coreguard_b",
+                "pos": "1213.05 5616.33 0"
+            },
+            "inst": {
+                "extents": "-35.7266 -3.12565 0 47.7263 3.12552 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 -2.44346",
+                "pos": "2241.64 4313.82 0"
+            },
+            "inst": {
+                "extents": "-35.7265 -3.12568 0 47.7263 3.12549 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 -2.44346",
+                "pos": "2301.63 4242.32 0"
+            },
+            "inst": {
+                "extents": "-17.9999 -18 0 30.0001 18 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 -1.5708",
+                "pos": "2651.97 4490.35 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 -1.5708",
+                "pos": "2745.3 4490.35 0"
+            },
+            "inst": {
+                "extents": "-17.9999 -18 0 30.0001 18 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 -1.5708",
+                "pos": "2648.38 4598.03 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 -1.5708",
+                "pos": "2748.89 4598.03 0"
+            },
+            "inst": {
+                "extents": "-35.7265 -3.12562 0 47.7263 3.12555 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 -2.44346",
+                "pos": "3149.2 4566.3 0"
+            },
+            "inst": {
+                "extents": "-12.385 -33.4272 0 24.3851 33.4268 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 -0.349065",
+                "pos": "3076.77 4563.37 0"
+            },
+            "inst": {
+                "extents": "-12.385 -33.4268 0 24.3851 33.4269 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 2.79253",
+                "pos": "3177.92 2841.54 0"
+            },
+            "inst": {
+                "extents": "-12.385 -33.4269 0 24.3852 33.4268 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 2.79253",
+                "pos": "3209.84 2929.24 0"
+            },
+            "inst": {
+                "extents": "-34.9145 -6.15639 0 46.9144 6.15638 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 0.959932",
+                "pos": "1503.64 2520.52 0"
+            },
+            "inst": {
+                "extents": "-12.3851 -33.4269 0 24.3851 33.4268 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 2.79253",
+                "pos": "3277.88 2801.33 0"
+            },
+            "inst": {
+                "extents": "-12.3852 -33.4269 0 24.385 33.4269 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 2.79253",
+                "pos": "3312.26 2895.78 0"
+            },
+            "inst": {
+                "extents": "-34.9145 -6.15639 0 46.9144 6.15638 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 0.959932",
+                "pos": "1457.49 2556.57 0"
+            },
+            "inst": {
+                "extents": "-18.0001 -17.9999 0 29.9999 18.0001 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 1.5708",
+                "pos": "2650.3 3356.24 0"
+            },
+            "inst": {
+                "extents": "-18.0001 -17.9999 0 29.9999 18.0001 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 1.5708",
+                "pos": "2743.62 3356.24 0"
+            },
+            "inst": {
+                "extents": "-18.0001 -17.9999 0 29.9999 18.0001 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 1.5708",
+                "pos": "2747.21 3248.55 0"
+            },
+            "inst": {
+                "extents": "-18.0001 -17.9999 0 29.9999 18.0001 84",
+                "name": "ss_coreguard_b",
+                "orient": "0 0 1.5708",
+                "pos": "2646.71 3248.55 0"
+            }
+        },
+        "entinst": {
+            "type": "ss_coreguard_b_leader",
+            "inst": {
+                "extents": "-18.0001 -17.9999 0 29.9999 18.0001 84",
+                "name": "ss_coreguard_b_leader",
+                "orient": "0 0 1.5708",
+                "pos": "2701.15 3171.26 0"
+            },
+            "inst": {
+                "extents": "-18.0001 -18.0001 0 29.9999 17.9999 84",
+                "name": "ss_coreguard_b_leader",
+                "orient": "0 0 1.5708",
+                "pos": "2760.34 5164.14 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30.0001 18 84",
+                "name": "ss_coreguard_b_leader",
+                "orient": "0 0 -1.5708",
+                "pos": "2694.45 4675.32 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_coreguard_b_leader",
+                "orient": "0 0 -3.14159",
+                "pos": "1630.79 3953.7 0"
+            },
+            "inst": {
+                "extents": "-12.3849 -33.427 0 24.3852 33.4268 84",
+                "name": "ss_coreguard_b_leader",
+                "orient": "0 0 2.79253",
+                "pos": "3369.13 2826.06 0"
+            }
+        },
+        "entinst": {
+            "type": "ss_coreguard_b_leader01",
+            "inst": {
+                "extents": "-21.1259 -17.7265 0 33.1256 17.7265 84",
+                "name": "ss_coreguard_b_leader01",
+                "orient": "0 0 1.48353",
+                "pos": "585.885 4406.96 0"
+            }
+        },
+        "entinst": {
+            "type": "ss_infinite_b",
+            "inst": {
+                "extents": "-17.9999 -18.0001 0 30.0001 17.9999 84",
+                "name": "ss_infinite_b",
+                "orient": "0 0 1.5708",
+                "pos": "3025 2201.11 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_b",
+                "pos": "2465.21 2974.01 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_b",
+                "pos": "2253 2638.59 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_b",
+                "pos": "2467.75 2905.48 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_b",
+                "pos": "2250.46 2707.12 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_b",
+                "pos": "2348.98 2707.12 0"
+            },
+            "inst": {
+                "extents": "-17.9999 -18.0001 0 30.0001 17.9999 84",
+                "name": "ss_infinite_b",
+                "orient": "0 0 1.5708",
+                "pos": "3093.53 2203.65 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_b",
+                "pos": "2351.52 2638.59 0"
+            }
+        },
+        "entinst": {
+            "type": "ss_infinite_b_leader",
+            "inst": {
+                "extents": "-17.9999 -18.0001 0 30.0001 17.9999 84",
+                "name": "ss_infinite_b_leader",
+                "orient": "0 0 1.5708",
+                "pos": "3061.68 2116.12 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_b_leader",
+                "pos": "2150.49 2677.75 0"
+            }
+        },
+        "entinst": {
+            "type": "ss_undercloak_a",
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_undercloak_a",
+                "pos": "1324.32 5627.1 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_undercloak_a",
+                "pos": "1317.14 5727.61 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_undercloak_a",
+                "pos": "483.084 5481.58 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_undercloak_a",
+                "pos": "490.263 5381.07 0"
+            }
+        },
+        "entinst": {
+            "type": "ss_undercloak_b",
+            "inst": {
+                "extents": "-17.9999 -18 0 30.0002 18 84",
+                "name": "ss_undercloak_b",
+                "orient": "0 0 1.5708",
+                "pos": "1454.65 2039.33 0"
+            },
+            "inst": {
+                "extents": "-17.9999 -18 0 30.0001 18 84",
+                "name": "ss_undercloak_b",
+                "orient": "0 0 -3.14159",
+                "pos": "3243.27 4360.92 0"
+            },
+            "inst": {
+                "extents": "-17.9999 -18 0 30.0001 18 84",
+                "name": "ss_undercloak_b",
+                "orient": "0 0 -3.14159",
+                "pos": "3243.27 4410.92 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_undercloak_b",
+                "pos": "1307.71 2204.56 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_undercloak_b",
+                "pos": "1380.17 2843.52 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_undercloak_b",
+                "pos": "1380.17 2793.52 0"
+            }
+        },
+        "entinst": {
+            "type": "ss_undercloak_b_leader",
+            "inst": {
+                "extents": "-36.0 8.56545e-006 0.0 48.0 1.21058e-005 84.0",
+                "name": "ss_undercloak_b_leader",
+                "orient": "0 0 0.785398",
+                "pos": "1359.55 2040 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_undercloak_b_leader",
+                "pos": "1317.57 2817.23 0"
+            },
+            "inst": {
+                "extents": "-35.7266 -3.12557 0 47.7265 3.12574 84",
+                "name": "ss_undercloak_b_leader",
+                "orient": "0 0 0.698132",
+                "pos": "1315.72 2088.5 0"
+            }
+        },
+        "entinst": {
+            "type": "data_disc01",
+            "inst": {
+                "name": "data_disc01",
+                "pos": "1175.28 4940.78 2.75373"
+            }
+        },
+        "entinst": {
+            "type": "disc_iceman",
+            "inst": {
+                "name": "disc_iceman",
+                "pos": "3168.5 4258.67 0"
+            }
+        },
+        "entinst": {
+            "type": "homing_beacon_act3_01",
+            "inst": {
+                "name": "homing_beacon_act3_01",
+                "pos": "2759.89 5069.57 2.53618e-005"
+            }
+        },
+        "entinst": {
+            "type": "tech_station_agility01",
+            "inst": {
+                "name": "tech_station_agility01",
+                "pos": "3780 2340 0"
+            }
+        },
+        "entinst": {
+            "type": "kill_target",
+            "inst": {
+                "extents": "-312 -294 0 312 294 146.564",
+                "name": "kill_target",
+                "pos": "835.201 5285.53 -274.322"
+            },
+            "inst": {
+                "extents": "-312 -294 0 312 294 146.564",
+                "name": "kill_target",
+                "pos": "1923.57 3955.31 -274.322"
+            }
+        },
+        "entinst": {
+            "type": "fx_waterloop01",
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "fx_waterloop01",
+                "pos": "840 5286 -146.564"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "fx_waterloop01",
+                "pos": "1923.57 3955.31 -146.564"
+            }
+        },
+        "entinst": {
+            "type": "player_start_all02",
+            "inst": {
+                "extents": "-60.0785 -60 0 84 60 83.9544",
+                "name": "player_start_all02",
+                "orient": "0 0 1.5708",
+                "pos": "1859.81 1860.26 0"
+            }
+        },
+        "entinst": {
+            "type": "player_start_all01",
+            "inst": {
+                "extents": "-60.0786 -60 0 84 60 83.9544",
+                "name": "player_start_all01",
+                "orient": "0 0 -1.5708",
+                "pos": "2040 5859.84 0"
+            }
+        },
+        "entinst": {
+            "type": "recall_beacon01",
+            "inst": {
+                "name": "recall_beacon01",
+                "pos": "2039.62 5990.38 0"
+            }
+        },
+        "entinst": {
+            "type": "trigger_hint01",
+            "inst": {
+                "name": "trigger_hint01",
+                "pos": "436.018 4923.3 0"
+            }
+        },
+        "entinst": {
+            "type": "trigger_use01",
+            "inst": {
+                "extents": "-72 -34.7607 -3.34853 72 61.2393 128.651",
+                "name": "trigger_use01",
+                "pos": "2040 5976.61 3.34853"
+            }
+        },
+        "entinst": {
+            "type": "water02",
+            "inst": {
+                "extents": "-312 -294 0 312 294 360",
+                "name": "water02",
+                "pos": "835.201 5285.53 -505.758"
+            },
+            "inst": {
+                "extents": "-312 -294 0 312 294 360",
+                "name": "water02",
+                "pos": "1923.57 3955.31 -505.758"
+            }
+        },
+        "entinst": {
+            "type": "link_corein2",
+            "inst": {
+                "extents": "-20 -60 0 20 60 120",
+                "name": "link_corein2",
+                "orient": "0 0 -1.5708",
+                "pos": "1859.81 1700.26 0"
+            }
+        },
+        "entinst": {
+            "type": "55galdrum_core_th_oc",
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -2.61799",
+                "pos": "471.016 4583.89 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -2.61799",
+                "pos": "1426.62 3693.03 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 0.0872665",
+                "pos": "1454.62 3662.07 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 0.0872665",
+                "pos": "499.02 4552.93 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "pos": "1832.13 4453 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 2.0944",
+                "pos": "1889.14 4455.92 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -1.48353",
+                "pos": "1858.17 4427.91 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 1.5708",
+                "pos": "473.933 4526.88 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -1.74533",
+                "pos": "1700.82 5345.16 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 1.5708",
+                "pos": "1429.54 3636.02 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "1.5708 0 0.698132",
+                "pos": "2375.68 5785.76 18.7166"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "-1.5708 0 -2.79253",
+                "pos": "2397.71 5641.59 16.9342"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "pos": "1309.2 4948.05 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "pos": "1173.39 4840.75 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "pos": "2804.36 5054.34 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "pos": "2713.17 5028.15 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "pos": "1134.81 4821.56 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "pos": "1343.85 5324.81 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "pos": "1303.85 5314.81 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "pos": "1336.82 5237.99 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 3.14159",
+                "pos": "515.664 5741.32 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 3.14159",
+                "pos": "554.249 5743.66 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 3.14159",
+                "pos": "380.054 5613.77 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 0.698132",
+                "pos": "633.545 3701.35 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 3.14159",
+                "pos": "1626.87 4450.48 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 3.14159",
+                "pos": "1450.9 4288.79 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 3.14159",
+                "pos": "1588.28 4431.28 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 3.14159",
+                "pos": "1547.54 3517.28 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 3.14159",
+                "pos": "1581.7 3493.74 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 3.14159",
+                "pos": "2419.87 3755.71 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 1.5708",
+                "pos": "2419.41 3710.86 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "2381.87 3735.36 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "pos": "3260 4180 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "pos": "2980 4580 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 1.5708",
+                "pos": "1656.09 3112.41 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 0.174533",
+                "pos": "1686.09 3142.41 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 2.26893",
+                "pos": "1337.3 2510.45 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -1.309",
+                "pos": "1307.3 2540.45 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "pos": "2910 3130 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "pos": "2950 3140 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -1.0472",
+                "pos": "2904.33 2378.18 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -1.0472",
+                "pos": "2851.67 2383.82 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 1.5708",
+                "pos": "2773.06 2777.4 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -2.35619",
+                "pos": "1297.44 2581.49 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "1778.75 3116.65 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 1.8326",
+                "pos": "2659.15 4807.9 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 2.0944",
+                "pos": "2620.56 4788.71 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 1.74533",
+                "pos": "2698.92 4818.76 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -2.61799",
+                "pos": "2736.28 4818.76 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 2.35619",
+                "pos": "2718.25 4786.08 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 1.13446",
+                "pos": "2778.21 4823.47 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -0.872665",
+                "pos": "1862.29 3460.16 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "1879.33 3497.67 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -2.18166",
+                "pos": "1859.96 3525.67 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -2.87979",
+                "pos": "1943.49 3613.11 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -2.26893",
+                "pos": "1940.33 3579.2 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 2.0944",
+                "pos": "1467.82 5763.91 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -1.48353",
+                "pos": "1436.85 5735.9 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "pos": "1410.81 5760.99 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 1.48353",
+                "pos": "377.591 3941.26 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -0.436332",
+                "pos": "404.545 3915.13 3.01119e-005"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 1.91986",
+                "pos": "430.496 3886.21 3.01119e-005"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 0.610865",
+                "pos": "2885.34 3925.2 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -1.0472",
+                "pos": "2875.34 3965.2 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -0.872665",
+                "pos": "2852.22 3889.45 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 0.785398",
+                "pos": "2842.22 3929.45 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -1.0472",
+                "pos": "2849.12 3498.04 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -0.872665",
+                "pos": "2852.22 3330.05 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -1.39626",
+                "pos": "1915.25 2761.16 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -0.0872664",
+                "pos": "1889.99 2798.95 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -0.872665",
+                "pos": "1789.29 2748.06 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -0.436332",
+                "pos": "1782.5 2798.95 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 1.65806",
+                "pos": "1811.61 2778.75 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -1.48353",
+                "pos": "1904.64 2384.93 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 2.70526",
+                "pos": "1933.75 2364.73 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 2.26893",
+                "pos": "1926.96 2415.62 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 3.05433",
+                "pos": "1796.58 2409.99 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 0.523599",
+                "pos": "1835.35 2409.99 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 2.0944",
+                "pos": "2403.46 5329.48 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 -1.48353",
+                "pos": "2372.49 5301.48 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "pos": "2346.45 5326.56 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 0.349066",
+                "pos": "1693.79 5288.51 0"
+            },
+            "inst": {
+                "name": "55galdrum_core_th_oc",
+                "orient": "0 0 3.05433",
+                "pos": "1671.59 5323.86 0"
+            }
+        },
+        "entinst": {
+            "type": "alarmlight_fixture_core_a_oc",
+            "inst": {
+                "name": "alarmlight_fixture_core_a_oc",
+                "pos": "3373.38 2339.8 171.298"
+            }
+        },
+        "entinst": {
+            "type": "cabinet_short_core_b_oc",
+            "inst": {
+                "name": "cabinet_short_core_b_oc",
+                "pos": "1350 2904.29 0"
+            },
+            "inst": {
+                "name": "cabinet_short_core_b_oc",
+                "orient": "0 0 1.5708",
+                "pos": "2019.7 2667.59 0"
+            },
+            "inst": {
+                "name": "cabinet_short_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "3260.68 4292.33 0"
+            }
+        },
+        "entinst": {
+            "type": "cabinet_tall_core_b_oc",
+            "inst": {
+                "name": "cabinet_tall_core_b_oc",
+                "orient": "0 0 3.14159",
+                "pos": "3500.68 2784.65 0"
+            },
+            "inst": {
+                "name": "cabinet_tall_core_b_oc",
+                "pos": "2019.7 2726.17 0"
+            },
+            "inst": {
+                "name": "cabinet_tall_core_b_oc",
+                "orient": "0 0 3.14159",
+                "pos": "3500.68 2850.18 0"
+            },
+            "inst": {
+                "name": "cabinet_tall_core_b_oc",
+                "pos": "1418.72 3031.56 0"
+            },
+            "inst": {
+                "name": "cabinet_tall_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "2919.89 4580 0"
+            },
+            "inst": {
+                "name": "cabinet_tall_core_b_oc",
+                "pos": "2858.98 4519.93 0"
+            },
+            "inst": {
+                "name": "cabinet_tall_core_b_oc",
+                "orient": "0 0 3.14159",
+                "pos": "3260.68 4233.75 0"
+            },
+            "inst": {
+                "name": "cabinet_tall_core_b_oc",
+                "pos": "1418.72 3088.18 0"
+            }
+        },
+        "entinst": {
+            "type": "chair_core_th_oc",
+            "inst": {
+                "name": "chair_core_th_oc",
+                "orient": "0 0 -2.87979",
+                "pos": "533.008 3986.01 0"
+            },
+            "inst": {
+                "name": "chair_core_th_oc",
+                "orient": "0 0 0.698132",
+                "pos": "624.12 3894.9 0"
+            }
+        },
+        "entinst": {
+            "type": "console02_core_b_oc",
+            "inst": {
+                "name": "console02_core_b_oc",
+                "orient": "0 0 1.5708",
+                "pos": "2874.31 4244.36 0"
+            },
+            "inst": {
+                "name": "console02_core_b_oc",
+                "orient": "0 0 1.5708",
+                "pos": "2916 2472 0"
+            },
+            "inst": {
+                "name": "console02_core_b_oc",
+                "orient": "0 0 -3.14159",
+                "pos": "2478.91 2528.7 0"
+            },
+            "inst": {
+                "name": "console02_core_b_oc",
+                "pos": "3120.51 3110.78 0"
+            },
+            "inst": {
+                "name": "console02_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "3244.89 4514.67 0"
+            }
+        },
+        "entinst": {
+            "type": "console_4way_core_b_oc",
+            "inst": {
+                "name": "console_4way_core_b_oc",
+                "pos": "1579.84 2859.32 0"
+            },
+            "inst": {
+                "name": "console_4way_core_b_oc",
+                "orient": "0 0 -0.785398",
+                "pos": "579.892 3938.75 0"
+            },
+            "inst": {
+                "name": "console_4way_core_b_oc",
+                "pos": "1440 2700 0"
+            },
+            "inst": {
+                "name": "console_4way_core_b_oc",
+                "pos": "3060 4380 0"
+            }
+        },
+        "entinst": {
+            "type": "console_core_b_oc",
+            "inst": {
+                "name": "console_core_b_oc",
+                "orient": "0 0 -3.14159",
+                "pos": "1533.01 3109.12 0"
+            },
+            "inst": {
+                "name": "console_core_b_oc",
+                "orient": "0 0 3.14159",
+                "pos": "3257.2 3100 0"
+            },
+            "inst": {
+                "name": "console_core_b_oc",
+                "pos": "2342.22 2539.48 0"
+            },
+            "inst": {
+                "name": "console_core_b_oc",
+                "orient": "0 0 1.5708",
+                "pos": "1669.34 2583.45 0"
+            }
+        },
+        "entinst": {
+            "type": "control_panel_core_a_oc",
+            "inst": {
+                "name": "control_panel_core_a_oc",
+                "pos": "3153.73 2215.01 0"
+            },
+            "inst": {
+                "name": "control_panel_core_a_oc",
+                "pos": "3153.73 2450.33 0"
+            },
+            "inst": {
+                "name": "control_panel_core_a_oc",
+                "orient": "0 0 3.14159",
+                "pos": "2904 2616 0"
+            },
+            "inst": {
+                "name": "control_panel_core_a_oc",
+                "orient": "0 0 3.14159",
+                "pos": "2904 2556 0"
+            }
+        },
+        "entinst": {
+            "type": "Control Panel",
+            "inst": {
+                "name": "Control Panel",
+                "pos": "2351.58 2991.75 0"
+            }
+        },
+        "entinst": {
+            "type": "Security_Panel",
+            "inst": {
+                "name": "Security_Panel",
+                "pos": "2500.87 3845.29 0"
+            }
+        },
+        "entinst": {
+            "type": "cool_tank_core_b_oc",
+            "inst": {
+                "name": "cool_tank_core_b_oc",
+                "pos": "3447.21 2988.87 0"
+            },
+            "inst": {
+                "name": "cool_tank_core_b_oc",
+                "pos": "3444.71 3081.36 0"
+            }
+        },
+        "entinst": {
+            "type": "crate_core_th_oc",
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 0.610865",
+                "pos": "1536.99 5760 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "1438.1 5498.17 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "2869.13 2914.51 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "2153.21 3478.28 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "2081.75 3480.03 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "2116.85 3478.28 36"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 3.14159",
+                "pos": "2102.99 4435.6 4.18741e-007"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -0.785398",
+                "pos": "2276.1 4417.64 4.18741e-007"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0.785398 -1.5708",
+                "pos": "722.971 4603.83 21.3118"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "724.728 4648.51 4.18741e-007"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -0.872665",
+                "pos": "587.799 3753.55 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 2.70526",
+                "pos": "1246.63 5187.92 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -0.785398",
+                "pos": "564.425 3781.41 36"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 0.0872664",
+                "pos": "2667.31 2775.91 36"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "2700.42 5067.37 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "1581.15 5727.17 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -1.74533",
+                "pos": "2763.2 5590.66 36"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -2.18166",
+                "pos": "2772.18 5618.7 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -0.174533",
+                "pos": "1958.33 4407.14 36"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "1998.22 4402.82 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -0.610865",
+                "pos": "1930.29 4416.12 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 2.26893",
+                "pos": "1492.61 3701.45 36"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0.785398 0",
+                "pos": "2547.22 2775.91 21.3118"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "2703.67 2775.91 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "862.022 4802.91 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -2.96706",
+                "pos": "1177.42 5189.23 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "756.219 5779.54 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "827.678 5777.78 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "775.602 5777.78 36"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "933.481 4801.15 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "897.118 4801.15 36"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "-1.97686e-007 0.0 -1.5708",
+                "pos": "2758.88 5550.77 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "2814.36 5098.51 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "2502.55 2777.66 4.18741e-007"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 0.349066",
+                "pos": "2632.21 2767.44 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 2.70526",
+                "pos": "3000.21 2040.18 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 3.14159",
+                "pos": "3071.12 2025.17 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "2867.37 2879.41 36"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -0.523599",
+                "pos": "535.381 3802.85 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "2867.37 2843.05 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "1560.97 5509.83 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "1324.6 5157.71 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "1324.6 5082.79 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -2.79253",
+                "pos": "1919.6 3126.61 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 3.14159",
+                "pos": "1848.14 3118.14 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -3.05433",
+                "pos": "1884.5 3118.14 36"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 1.39626",
+                "pos": "1864.28 3626.9 36"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 0.959931",
+                "pos": "1855.3 3598.87 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 1.5708",
+                "pos": "1868.6 3666.8 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 0.959931",
+                "pos": "1950.37 3720.71 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "-1.93141e-007 0.0 -0.0872665",
+                "pos": "1442.05 5549.04 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "-1.93141e-007 0.0 0.174533",
+                "pos": "1442.05 5522.81 38.1678"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 2.44346",
+                "pos": "1464.83 3730.41 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -2.00713",
+                "pos": "2888.96 3854.07 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -2.00713",
+                "pos": "2888.96 3372.92 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -1.39626",
+                "pos": "2888.96 3455.31 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -2.96706",
+                "pos": "1854.3 2743.79 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 0.174533",
+                "pos": "1861.95 2332.41 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "pos": "1796.35 2332.41 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "-1.51963e-007 0.0 1.5708",
+                "pos": "507.753 4639.79 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 1.8326",
+                "pos": "1508.31 3676.55 0"
+            },
+            "inst": {
+                "name": "crate_core_th_oc",
+                "orient": "0 0 -3.14159",
+                "pos": "1217.46 5191.9 36"
+            }
+        },
+        "entinst": {
+            "type": "crate_cylinders_core_b_oc",
+            "inst": {
+                "name": "crate_cylinders_core_b_oc",
+                "orient": "0 0 -2.35619",
+                "pos": "1101.21 5857.5 0"
+            },
+            "inst": {
+                "name": "crate_cylinders_core_b_oc",
+                "orient": "0 0 -0.785398",
+                "pos": "820 5860 0"
+            }
+        },
+        "entinst": {
+            "type": "cratebox_core_th_oc01",
+            "inst": {
+                "name": "cratebox_core_th_oc01",
+                "pos": "3597.2 2616 -120"
+            },
+            "inst": {
+                "name": "cratebox_core_th_oc01",
+                "pos": "3597.2 2544 -120"
+            },
+            "inst": {
+                "name": "cratebox_core_th_oc01",
+                "pos": "3597.2 2063.57 -120"
+            },
+            "inst": {
+                "name": "cratebox_core_th_oc01",
+                "pos": "3597.2 2135.57 -120"
+            }
+        },
+        "entinst": {
+            "type": "cubicle_core_b_oc",
+            "inst": {
+                "name": "cubicle_core_b_oc02",
+                "orient": "0 0 1.5708",
+                "pos": "2940 2580 0"
+            },
+            "inst": {
+                "name": "cubicle_core_b_oc01",
+                "orient": "0 0 1.5708",
+                "pos": "2940 2460 0"
+            }
+        },
+        "entinst": {
+            "type": "dec_poster_car_core_b_oc",
+            "inst": {
+                "name": "dec_poster_car_core_b_oc01",
+                "orient": "0 0 3.14159",
+                "parent": "cubicle_core_b_oc01",
+                "pos": "2966.68 2403.63 20.2938"
+            }
+        },
+        "entinst": {
+            "type": "dec_poster_girl2_core_b_oc",
+            "inst": {
+                "name": "dec_poster_girl2_core_b_oc01",
+                "parent": "cubicle_core_b_oc01",
+                "pos": "2976.16 2517.29 0"
+            }
+        },
+        "entinst": {
+            "type": "dec_poster_girl_core_b_oc",
+            "inst": {
+                "name": "dec_poster_girl_core_b_oc01",
+                "parent": "cubicle_core_b_oc02",
+                "pos": "2964 2637.24 0"
+            }
+        },
+        "entinst": {
+            "type": "dec_poster_plane_core_b_oc",
+            "inst": {
+                "name": "dec_poster_plane_core_b_oc",
+                "orient": "0 -0.0872665 -1.5708",
+                "pos": "3177.95 3084.75 51.0857"
+            },
+            "inst": {
+                "name": "dec_poster_plane_core_b_oc02",
+                "orient": "0 0 3.14159",
+                "parent": "cubicle_core_b_oc02",
+                "pos": "2976 2522.66 20.6604"
+            }
+        },
+        "entinst": {
+            "type": "door_double",
+            "inst": {
+                "name": "door_double",
+                "pos": "2580 3960 0"
+            }
+        },
+        "entinst": {
+            "type": "door_double_core_a_oc03",
+            "inst": {
+                "name": "door_double_core_a_oc03",
+                "orient": "0 0 -1.5708",
+                "pos": "2040 6060 0"
+            }
+        },
+        "entinst": {
+            "type": "door_magnetic_core_a_oc",
+            "inst": {
+                "name": "door_magnetic_core_a_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "2220 2820.79 0"
+            },
+            "inst": {
+                "name": "door_magnetic_core_a_oc",
+                "pos": "2819.06 4380 0"
+            },
+            "inst": {
+                "name": "door_magnetic_core_a_oc",
+                "pos": "1740 2940 0"
+            },
+            "inst": {
+                "name": "door_magnetic_core_a_oc",
+                "pos": "1740 2220 0"
+            },
+            "inst": {
+                "name": "door_magnetic_core_a_oc",
+                "pos": "2820 3060 0"
+            },
+            "inst": {
+                "name": "door_magnetic_core_a_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "1860 1740.28 0"
+            }
+        },
+        "entinst": {
+            "type": "extinguisher_wall_core_b_oc",
+            "inst": {
+                "name": "extinguisher_wall_core_b_oc",
+                "orient": "0 0 3.14159",
+                "pos": "2586.75 5808.62 51.0877"
+            }
+        },
+        "entinst": {
+            "type": "forcefield01",
+            "inst": {
+                "name": "forcefield01",
+                "pos": "2400.86 2940 0"
+            }
+        },
+        "entinst": {
+            "type": "light_hang_base_core_e_oc",
+            "inst": {
+                "name": "light_hang_base_core_e_oc",
+                "orient": "0 0 3.14159",
+                "pos": "3235.32 2888.53 141.629"
+            },
+            "inst": {
+                "name": "light_hang_base_core_e_oc",
+                "orient": "0 0 3.14159",
+                "pos": "2400.37 2648.53 141.629"
+            },
+            "inst": {
+                "name": "light_hang_base_core_e_oc",
+                "orient": "0 0 2.35619",
+                "pos": "666.451 4019.33 141.629"
+            },
+            "inst": {
+                "name": "light_hang_base_core_e_oc",
+                "orient": "0 0 3.14159",
+                "pos": "3165.18 4379.73 140.593"
+            },
+            "inst": {
+                "name": "light_hang_base_core_e_oc",
+                "orient": "0 0 3.14159",
+                "pos": "1502.87 2220.1 140.593"
+            },
+            "inst": {
+                "name": "light_hang_base_core_e_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "1552.73 2741.89 140.593"
+            },
+            "inst": {
+                "name": "light_hang_base_core_e_oc",
+                "pos": "1297.45 3958.19 182.91"
+            },
+            "inst": {
+                "name": "light_hang_base_core_e_oc",
+                "pos": "2001.02 3547.53 182.91"
+            },
+            "inst": {
+                "name": "light_hang_base_core_e_oc",
+                "orient": "0 0 3.14159",
+                "pos": "2039.11 5532.59 183.527"
+            },
+            "inst": {
+                "name": "light_hang_base_core_e_oc",
+                "pos": "611.756 4697.66 182.91"
+            }
+        },
+        "entinst": {
+            "type": "lockers_core_b_oc",
+            "inst": {
+                "name": "lockers_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "1704 2827.13 0"
+            },
+            "inst": {
+                "name": "lockers_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "1704 2731.13 0"
+            }
+        },
+        "entinst": {
+            "type": "mainframe_core_th_oc",
+            "inst": {
+                "name": "mainframe_core_th_oc",
+                "pos": "1379.46 2310.98 0"
+            },
+            "inst": {
+                "name": "mainframe_core_th_oc",
+                "pos": "1619.46 2128.68 0"
+            },
+            "inst": {
+                "name": "mainframe_core_th_oc",
+                "pos": "1499.46 2310.98 0"
+            },
+            "inst": {
+                "name": "mainframe_core_th_oc",
+                "pos": "1379.46 2128.68 0"
+            },
+            "inst": {
+                "name": "mainframe_core_th_oc",
+                "pos": "1619.46 2310.98 0"
+            },
+            "inst": {
+                "name": "mainframe_core_th_oc",
+                "pos": "1499.46 2128.68 0"
+            }
+        },
+        "entinst": {
+            "type": "partition_glass_core_b_oc",
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "pos": "1200 5267.4 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "pos": "1310 5267.4 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "pos": "1672.33 2660.15 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "pos": "1090 5267.4 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "1014.99 4809.31 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "773.419 4809.31 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "1800.21 4432.9 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "2039.83 4432.9 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "pos": "1449.63 3604.1 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "pos": "3232.33 4460.15 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "pos": "494.029 4679.1 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "pos": "494.029 4494.96 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 3.14159",
+                "pos": "1913.14 2285.43 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 3.14159",
+                "pos": "1803.14 2285.43 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "pos": "1803.11 3049.13 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "pos": "1913.11 3049.13 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "pos": "1803.11 2828.92 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "pos": "1913.11 2828.92 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 1.5708",
+                "pos": "2815.6 3309 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 1.5708",
+                "pos": "2815.6 3419 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 1.5708",
+                "pos": "2815.6 3529 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 1.5708",
+                "pos": "2815.6 3790.15 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 1.5708",
+                "pos": "2815.6 4010.15 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 1.5708",
+                "pos": "2815.6 3900.15 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 1.5708",
+                "pos": "2419.42 2559.24 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 1.5708",
+                "pos": "1620.99 3112.11 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "pos": "2888.63 4300.15 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "2864.95 5073.77 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "1139.35 4058.81 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "1378.89 5740.9 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "1620.45 5740.9 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "1906.83 3493.95 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "1906.83 3603.95 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "1906.83 3713.95 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "1620.45 5532 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "1378.89 5532 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "pos": "1449.63 3788.24 0"
+            },
+            "inst": {
+                "name": "partition_glass_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "2653.89 5073.77 0"
+            }
+        },
+        "entinst": {
+            "type": "pillar_10ft_core_b_oc",
+            "inst": {
+                "name": "pillar_10ft_core_b_oc",
+                "pos": "3019.5 2861 0"
+            },
+            "inst": {
+                "name": "pillar_10ft_core_b_oc",
+                "pos": "2641.33 5162.17 0"
+            },
+            "inst": {
+                "name": "pillar_10ft_core_b_oc",
+                "pos": "2881.02 5161.04 0"
+            },
+            "inst": {
+                "name": "pillar_10ft_core_b_oc",
+                "pos": "3019.5 2978.11 0"
+            }
+        },
+        "entinst": {
+            "type": "pipe_10ft_core_b_oc",
+            "inst": {
+                "name": "pipe_10ft_core_b_oc",
+                "orient": "0 0 1.5708",
+                "pos": "1204.06 4088.49 1.7264e-005"
+            },
+            "inst": {
+                "name": "pipe_10ft_core_b_oc",
+                "pos": "2459.77 4064.43 3.04772e-005"
+            },
+            "inst": {
+                "name": "pipe_10ft_core_b_oc",
+                "orient": "0 0 1.5708",
+                "pos": "1264.03 4088.49 1.7264e-005"
+            },
+            "inst": {
+                "name": "pipe_10ft_core_b_oc",
+                "pos": "1320 2400 0"
+            },
+            "inst": {
+                "name": "pipe_10ft_core_b_oc",
+                "pos": "1320 2040 0"
+            },
+            "inst": {
+                "name": "pipe_10ft_core_b_oc",
+                "orient": "0 0 1.5708",
+                "pos": "1084.03 4088.49 1.7264e-005"
+            },
+            "inst": {
+                "name": "pipe_10ft_core_b_oc",
+                "orient": "0 0 1.5708",
+                "pos": "1024.06 4088.49 1.7264e-005"
+            },
+            "inst": {
+                "name": "pipe_10ft_core_b_oc",
+                "pos": "375.386 4815.74 1.7264e-005"
+            },
+            "inst": {
+                "name": "pipe_10ft_core_b_oc",
+                "pos": "405.768 4785.05 3.04772e-005"
+            }
+        },
+        "entinst": {
+            "type": "railing_core_b_oc",
+            "inst": {
+                "name": "railing_core_b_oc",
+                "pos": "1140.0 5804.93 2.28882e-005"
+            },
+            "inst": {
+                "name": "railing_core_b_oc",
+                "pos": "3454.24 2925.6 0"
+            },
+            "inst": {
+                "name": "railing_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "3388.62 3104.6 0"
+            },
+            "inst": {
+                "name": "railing_core_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "3388.62 2983.4 0"
+            },
+            "inst": {
+                "name": "railing_core_b_oc",
+                "pos": "3456 2400 -120"
+            },
+            "inst": {
+                "name": "railing_core_b_oc",
+                "pos": "3333.56 2400 -120"
+            },
+            "inst": {
+                "name": "railing_core_b_oc",
+                "pos": "3333.56 2279.63 -120"
+            },
+            "inst": {
+                "name": "railing_core_b_oc",
+                "pos": "3456 2279.63 -120"
+            },
+            "inst": {
+                "name": "railing_core_b_oc",
+                "pos": "780.0 5804.93 3.19179e-005"
+            }
+        },
+        "entinst": {
+            "type": "tank_wall_core_b_oc",
+            "inst": {
+                "name": "tank_wall_core_b_oc",
+                "orient": "0 0 -0.785398",
+                "pos": "2220 5832 0"
+            },
+            "inst": {
+                "name": "tank_wall_core_b_oc",
+                "orient": "0 0 1.5708",
+                "pos": "327.927 5339.56 0"
+            },
+            "inst": {
+                "name": "tank_wall_core_b_oc",
+                "orient": "0 0 -0.785398",
+                "pos": "2345.58 4387.37 0"
+            },
+            "inst": {
+                "name": "tank_wall_core_b_oc",
+                "orient": "0 0 -2.35619",
+                "pos": "2347.63 3532.77 0"
+            },
+            "inst": {
+                "name": "tank_wall_core_b_oc",
+                "orient": "0 0 -0.785399",
+                "pos": "788.693 4149.25 0"
+            },
+            "inst": {
+                "name": "tank_wall_core_b_oc",
+                "orient": "0 0 2.35619",
+                "pos": "467.954 3828.18 0"
+            },
+            "inst": {
+                "name": "tank_wall_core_b_oc",
+                "orient": "0 0 0.785398",
+                "pos": "1853.04 5829.38 0"
+            },
+            "inst": {
+                "name": "tank_wall_core_b_oc",
+                "orient": "0 0 1.5708",
+                "pos": "327.927 5220 0"
+            }
+        },
+        "entinst": {
+            "type": "windoow_railing_corner_in_b_oc",
+            "inst": {
+                "name": "windoow_railing_corner_in_b_oc",
+                "orient": "0 0 -3.14159",
+                "pos": "3180 2700 0"
+            }
+        },
+        "entinst": {
+            "type": "window_railing_straight_b_oc",
+            "inst": {
+                "name": "window_railing_straight_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "3180 2220 0"
+            },
+            "inst": {
+                "name": "window_railing_straight_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "3180 2340 0"
+            },
+            "inst": {
+                "name": "window_railing_straight_b_oc",
+                "orient": "0 0 3.14159",
+                "pos": "3300 2700 0"
+            },
+            "inst": {
+                "name": "window_railing_straight_b_oc",
+                "orient": "0 0 -1.5708",
+                "pos": "3180 2460 0"
+            },
+            "inst": {
+                "name": "window_railing_straight_b_oc",
+                "orient": "0 0 3.14159",
+                "pos": "3420 2700 0"
+            }
+        },
+        "entinst": {
+            "type": "treasure_chest",
+            "inst": {
+                "name": "treasure_chest",
+                "orient": "0 0 3.14159",
+                "pos": "1859.26 2370.04 0"
+            }
+        },
+        "entinst": {
+            "type": "fire_med01",
+            "inst": {
+                "extents": "-30.0001 -29.9999 0 29.9999 30.0001 36",
+                "name": "fire_med01",
+                "orient": "0 0 3.14159",
+                "pos": "2424.42 5699.24 0"
+            }
+        },
+        "entinst": {
+            "type": "pylon_a3_knockback_puz",
+            "inst": {
+                "name": "pylon_a3_knockback_puz",
+                "pos": "1200 5340 0"
+            },
+            "inst": {
+                "name": "pylon_a3_knockback_puz",
+                "pos": "3588 2340 0"
+            }
+        },
+        "entinst": {
+            "type": "tile_tilebreakable",
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3180 3180 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3540 3180 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3540 3060 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3540 2940 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "pos": "3180 1980 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2820 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2820 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAG_W_A0",
+                "pos": "2220 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "pos": "2220 2340 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "pos": "2460 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAG_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2580 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2580 2340 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2820 2340 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "pos": "2820 2340 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAG_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2940 2340 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2940 2100 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2940 1980 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3420 3180 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DFC_W_A0",
+                "pos": "2940 4140 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DFC_W_A0",
+                "pos": "3180 4140 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DFC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3180 4620 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DFC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2940 4620 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DGC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3540 2820 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DGC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3300 3180 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DGC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3060 3180 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DFC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2820 2580 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DFC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2820 2580 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DFC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2940 2220 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DGC_W_A0",
+                "pos": "3060 1980 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DFC_W_A0",
+                "pos": "2700 2340 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DFC_W_A0",
+                "pos": "2100 2340 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DGC_W_A0",
+                "pos": "2340 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "pos": "3300 1980 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "pos": "3420 1980 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAG_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3540 2220 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3660 2220 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3660 2100 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "pos": "3660 1980 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "pos": "3540 1980 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAG_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3540 2700 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3660 2700 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3660 2580 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "pos": "3660 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAG_W_A0",
+                "pos": "3540 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3540 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "3540 2220 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3660 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3780 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3900 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3900 2340 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "pos": "3900 2220 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "pos": "3780 2220 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2940 3180 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3540 2340 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "3540 2340 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DHC_W_A0",
+                "pos": "3060 4140 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DHC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3060 4620 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3300 4620 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3300 4500 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DHC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3300 4380 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3300 4260 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "pos": "3300 4140 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1980 2580 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1980 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "pos": "1620 1980 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "pos": "1500 1980 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "pos": "1380 1980 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1260 1980 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1260 2100 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1260 2220 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1260 2340 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1740 2580 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1740 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "pos": "1740 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1620 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "pos": "1620 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1500 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "pos": "1500 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1380 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "pos": "1380 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1260 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1260 2460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1260 2580 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1260 2940 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1260 2700 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1260 2820 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1380 3180 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1500 3180 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1620 3180 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAG_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1380 2940 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1380 3060 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DCC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1740 2220 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1740 2340 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1980 2340 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "pos": "1740 1980 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1740 2100 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2820 2820 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2820 2820 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1740 3180 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1980 2820 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1980 2700 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1740 2700 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DCC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2820 4380 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DCC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2820 3060 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DCC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1740 2940 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DCC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2820 2700 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DCC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2820 2700 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DCC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2220 2820 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1740 3060 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2820 4620 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "1740 2820 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2580 2820 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2820 2940 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2700 2820 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2820 3180 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2820 4140 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2460 2820 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2820 4260 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2340 2820 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2820 4500 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2100 2820 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2460 5820 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2580 5820 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAA_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2460 5580 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_D2A_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2820 5700 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2820 5580 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2580 5460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_D2A_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2940 5340 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2580 5340 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_D2G_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2820 5340 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2580 5100 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2940 5100 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_D2G_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2700 5700 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_D2A_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2700 5820 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_D2G_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2580 5580 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DCC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2460 5700 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_D2A_W_A0",
+                "pos": "2940 4980 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_D2A_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2580 4980 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DFC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2820 5460 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DFC_W_A0",
+                "pos": "2820 4980 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DFC_W_A0",
+                "pos": "2700 4980 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DFC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2580 5220 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DHC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2940 5220 0"
+            },
+            "inst": {
+                "name": "T_ontariocore_DAC_W_A0",
+                "pos": "3660 2220 0"
+            }
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "CoreGuard_b",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_leader": true,
+            "monster_leaderpowerup": "ldr_need_popup",
+            "monster_smartent": true,
+            "name": "ss_coreguard_b_leader01",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actonuse": true,
+            "actscript": "dataDiscReward('r_d_disc')",
+            "actsound": "zone_shared/special/data",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Pick Up Data Disc",
+            "idnum": 10,
+            "material": "solid_metal",
+            "model": "pickups/data_disk_act1",
+            "name": "data_disc01",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "structure": 2,
+            "variablename": "r_d_disc"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "homingBeaconReward('beaconact3',190)",
+            "actsound": "zone_shared/special/beacon",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Pick up Homing Beacon",
+            "idnum": 13,
+            "material": "hollow_metal",
+            "model": "pickups/homing_beacon_act3",
+            "name": "homing_beacon_act3_01",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "smartent": false,
+            "spawnscript": "common/beacons/beacon3",
+            "structure": 2,
+            "team": "hero",
+            "variablename": "beaconact3"
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actleader": true,
+            "actonuse": true,
+            "actscript": "common/beacons/treasureact3",
+            "actsound": "common/game/pickup_power",
+            "animstarton": true,
+            "classname": "physent",
+            "description": "Experience Points",
+            "fxlevel": 7,
+            "model": "pickups/experience_point",
+            "name": "beacon_chest3",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "persistent": false,
+            "quickuse": true,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/misc/techstation_agility",
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "permanentStatBoost('_ACTIVATOR_','agility')",
+            "actsound": "zone_shared/object/techstation",
+            "actspawn": "tech_station_agility_off",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Tech Station Speed",
+            "idnum": 14,
+            "material": "solid_metal",
+            "model": "common/tech_station_agility",
+            "name": "tech_station_agility01",
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "spawnsoundloop": "zone_shared/object/techstation_loop",
+            "structure": 2,
+            "team": "hero",
+            "toggleonact": true,
+            "variablename": "r_t_station"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/misc/techstation_agility",
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "animstarton": true,
+            "classname": "gameent",
+            "material": "solid_metal",
+            "model": "common/tech_station_agility_off",
+            "name": "tech_station_agility_off",
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "startenabled": false,
+            "structure": 2,
+            "team": "hero",
+            "toggleonact": true,
+            "variablename": "r_t_station"
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/corein/waterpool_loop",
+            "loopfxstarton": true,
+            "name": "fx_waterloop01",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "default": true,
+            "name": "player_start_all01",
+            "nocollide": true,
+            "prevlink": "link_corein1",
+            "prevzone": "act3/military/military1"
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "name": "player_start_all02",
+            "nocollide": true,
+            "prevlink": "link_corein1",
+            "prevzone": "act3/corein/corein2"
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "health": 32000,
+            "hinttype": "usetoggle",
+            "loopfx": "map/objects/recall_beacon",
+            "loopfxstarton": true,
+            "material": "solid_metal",
+            "model": "misc/recall_beacon_misc_a",
+            "name": "recall_beacon01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "actinactivedelay": 1,
+            "actonuse": true,
+            "actscript": "act3/corein/corein1/combohint",
+            "actsound": "zone_shared/special/question_mark",
+            "acttogglesanim": false,
+            "animstarton": true,
+            "classname": "gameent",
+            "description": "Game Tip",
+            "ignoretelekinesis": true,
+            "model": "icons/hint_prompter",
+            "name": "trigger_hint01",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "quickuse": true
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actonuse": true,
+            "actscript": "startConversation('act3/corein/corein1/3_corein1_0020')",
+            "boxcollision": true,
+            "classname": "gameent",
+            "description": "Recall Beacon",
+            "name": "trigger_use01",
+            "nocollide": true,
+            "team": "none"
+        },
+        "entity": {
+            "alpha": 0.55,
+            "ambienteffect": "base/misc/misc_waterambient",
+            "classname": "waterent",
+            "density": 10,
+            "name": "water02",
+            "nocollide": true,
+            "splasheffect": "base/misc/misc_watersplash",
+            "texture": "textures/water_core",
+            "wakeeffect": "base/misc/misc_waterwake"
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "zonelinkent",
+            "description": "Core Security",
+            "name": "link_corein2",
+            "nextzone": "act3/corein/corein2",
+            "nocollide": false,
+            "smartent": false,
+            "team": "hero"
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathsound": "death_style/ds_electrical_l",
+            "fxlevel": 3,
+            "health": 200,
+            "mass": 0,
+            "material": "electronics",
+            "model": "core/console02_stump_core_b",
+            "name": "console02_core_b_oc_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathsound": "death_style/ds_electrical_l",
+            "fxlevel": 3,
+            "health": 200,
+            "mass": 0,
+            "material": "electronics",
+            "model": "core/console_4way_stump_core_b",
+            "name": "console_4way_core_b_oc_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathsound": "death_style/ds_electrical_l",
+            "fxlevel": 3,
+            "health": 200,
+            "mass": 0,
+            "material": "electronics",
+            "model": "core/console_stump_core_b",
+            "name": "console_core_b_oc_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "actonuse": true,
+            "actscript": "act3/corein/corein1/conversation2",
+            "actsoundloop": "zone_shared/object/beep",
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathsound": "death_style/ds_electrical_l",
+            "description": "Security Panel",
+            "fxlevel": 3,
+            "health": 32000,
+            "hinttype": "objective",
+            "ignoretelekinesis": true,
+            "material": "electronics",
+            "model": "core/control_panel_core_a",
+            "name": "Security_Panel",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "actscript": "act3/corein/corein1/forcefield",
+            "actsoundloop": "zone_shared/object/beep",
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathsound": "death_style/ds_electrical_l",
+            "description": "Control Panel",
+            "fxlevel": 3,
+            "health": 32000,
+            "hinttype": "use",
+            "material": "electronics",
+            "model": "core/control_panel_core_a",
+            "name": "Control Panel",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_l",
+            "fxlevel": 3,
+            "health": 200,
+            "mass": 0,
+            "material": "hollow_metal",
+            "model": "core/cool_tank_stump_core_b",
+            "name": "cool_tank_core_b_oc_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_m",
+            "fxlevel": 2,
+            "health": 5,
+            "heaviness": 0,
+            "material": "hollow_metal",
+            "model": "core/cratebox_core_th",
+            "name": "cratebox_core_th_oc01",
+            "randompickups": 3,
+            "stackphysics": true,
+            "structure": 0
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": false,
+            "actsound": "zone_shared/mover/door_core",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "core/door_double_core_a",
+            "name": "door_double_core_a_oc03",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "openposition": 0.9,
+            "openupdown": true,
+            "randompickups": 0,
+            "startenabled": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": false,
+            "actsound": "zone_shared/mover/door_core",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "core/door_double_core_a",
+            "name": "door_double",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "openposition": 0.9,
+            "openupdown": true,
+            "randompickups": 0,
+            "smartent": false,
+            "startenabled": true,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/hit/hit_energy",
+            "deathsound": "death_style/ds_energy_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "energy",
+            "model": "core/force_field_core_a",
+            "name": "forcefield01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "spawnsoundloop": "zone_shared/object/forcefield_plane",
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_l",
+            "fxlevel": 3,
+            "health": 100,
+            "mass": 0,
+            "material": "hollow_metal",
+            "model": "core/lockers_stump_core_b",
+            "name": "lockers_core_b_oc_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_glass",
+            "deathsound": "death_style/ds_glass_l",
+            "fxlevel": 3,
+            "health": 100,
+            "heaviness": 1,
+            "mass": 0,
+            "material": "glass",
+            "model": "core/partition_glass_stump_core_b",
+            "name": "partition_glass_core_b_oc_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 200,
+            "mass": 0,
+            "material": "solid_metal",
+            "model": "core/pillar_10ft_stump_core_b",
+            "name": "pillar_10ft_core_b_oc_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_l",
+            "fxlevel": 3,
+            "health": 200,
+            "mass": 0,
+            "material": "hollow_metal",
+            "model": "core/tank_wall_stump_core_b",
+            "name": "tank_wall_core_b_oc_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_glass",
+            "deathsound": "death_style/ds_glass_l",
+            "fxlevel": 3,
+            "health": 100,
+            "mass": 0,
+            "material": "glass",
+            "model": "core/window_railing_straight_stump_core_b",
+            "name": "window_railing_straight_b_oc_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "boxdamage": true,
+            "classname": "affectableharment",
+            "damage": "2 3",
+            "damagemods": "dmgmod_forcepain",
+            "damagetype": "dmg_fire",
+            "extent": "-30 -30 0 30 30 36",
+            "health": 1,
+            "knockback": 200,
+            "loopfx": "map/common/fire_medium",
+            "loopfxstarton": true,
+            "name": "fire_med01",
+            "radiusdamage": false,
+            "reactpower": "extinguish",
+            "smartfire": true,
+            "spawnsoundloop": "zone_shared/fx/fire_med"
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "classname": "physent",
+            "health": 200,
+            "material": "solid_metal",
+            "model": "puzzles/pylon_act4_knockback_stump",
+            "name": "pylon_a3_knockback_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2,
+            "targetlockable": false,
+            "team": "none",
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actcountremove": 1,
+            "acteffect": "base/misc/turret_knockback_burst",
+            "actmatchteam": true,
+            "actsound": "zone_shared\\pylon\\pylon",
+            "boxdamage": true,
+            "classname": "affectableharment",
+            "conversationoff": true,
+            "damage": 5,
+            "damagemods": "dmgmod_auto_knockback dmgmod_popup",
+            "damagetype": "dmg_direct",
+            "extent": "-90 -90 0 90 90 100",
+            "firstact": 0.1,
+            "knockback": 1000,
+            "name": "knocker_trigger",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "persistent": false,
+            "radiusdamage": false,
+            "smartent": false,
+            "team": "hero",
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actcountremove": 1,
+            "actleader": true,
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "pid=getParentID('_OWNER_')\\n\\ract(pid,pid)",
+            "boxcollision": true,
+            "classname": "gameent",
+            "extent": "-70 -70 0 70 70 140",
+            "name": "touchy_feely",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "persistent": false,
+            "randompickups": 0,
+            "smartent": false,
+            "team": "hero",
+            "toggleonact": true
+        }
+    }
+}
