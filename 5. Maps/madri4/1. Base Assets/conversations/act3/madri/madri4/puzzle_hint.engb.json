@@ -1,0 +1,46 @@
+{
+    "conversation": {
+        "startCondition": {
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "text": "UT: To reach the heart artifact we need to open the doors in theses areas.",
+                    "response": {
+                        "chosenscriptfile": "act3/madri/madri4/show_puzzle",
+                        "conversationend": true,
+                        "text": "%END%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "text": "UT: It looks like these switches control the doors to the inner chamber!",
+                    "response": {
+                        "chosenscriptfile": "act3/madri/madri4/show_switch_function",
+                        "conversationend": true,
+                        "text": "%MORE%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "scriptfile": "act3/madri/madri4/show_switch_function2",
+                    "text": "UT: However only one switch in each area can be on at a time",
+                    "response": {
+                        "conversationend": true,
+                        "text": "%END%"
+                    }
+                }
+            }
+        }
+    }
+}
