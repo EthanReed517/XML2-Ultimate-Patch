@@ -1,0 +1,76 @@
+{
+    "conversation": {
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%MENU%",
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar('act3_que', 1)",
+                        "text": "Take us to the Core.",
+                        "line": {
+                            "text": "%MENU%: Are you sure you want to go to the Core?",
+                            "response": {
+                                "chosenscriptfile": "act3/military/go_to_core",
+                                "conversationend": true,
+                                "text": "%YES%"
+                            },
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "%NO%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar('act3_que', 3)",
+                        "text": "Take us to the Infinite factory.",
+                        "line": {
+                            "text": "%MENU%: Are you sure you want to go to the Infinite factory?",
+                            "response": {
+                                "chosenscriptfile": "act3/military/go_to_inf",
+                                "conversationend": true,
+                                "text": "%YES%"
+                            },
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "%NO%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "chosenscriptfile": "#disallowResponseOnVar('act3_que', 2)",
+                        "scriptfile": "disallowResponseOnObjective('act3_obj_6a_1', 'FALSE' )",
+                        "text": "Take us to the Madri Temple.",
+                        "line": {
+                            "text": "%MENU%: Are you sure you want to go to the Madri Temple?",
+                            "response": {
+                                "chosenscriptfile": "act3/military/go_to_madri",
+                                "conversationend": true,
+                                "text": "%YES%"
+                            },
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "%NO%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "conversationend": true,
+                        "scriptfile": "disallowResponseOnObjective('act3_obj_3a_1', 'TRUE' )",
+                        "text": "To unlock this quest talk to Heather Hudson"
+                    },
+                    "response": {
+                        "conversationend": true,
+                        "scriptfile": "disallowResponseOnObjective('act3_obj_2a_1', 'TRUE' )",
+                        "text": "To unlock this quest talk to Angel"
+                    },
+                    "response": {
+                        "conversationend": true,
+                        "text": "Never mind"
+                    }
+                }
+            }
+        }
+    }
+}

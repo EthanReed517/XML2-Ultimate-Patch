@@ -1,0 +1,159 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever24",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/havok/3_military1_070_010",
+                    "soundtoplayb": "voice/havok/3_military1_070_020",
+                    "text": "%Havok%: Hey, it's been a while, hasn't it?",
+                    "textb": "%Havok%: Oh, it's one of you... the X-Men standards are really dropping.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: Hi, Alex. You're certainly a welcome addition to the team. Are you our pilot?",
+                            "textb": "%PLAYER%: Put a lid on it, Summers. Not so long ago, you were one of us. Are you our pilot?",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/havok/3_military1_070_012",
+                                    "soundtoplayb": "voice/havok/3_military1_070_022",
+                                    "text": "%Havok%: Yeah, I'll be using the X-Jet to take you to any of the distant missions. Just use the X-Jet to pick a location.",
+                                    "textb": "%Havok%: Yeah. For any of the more distant missions, just use the X-Jet and pick a location.",
+                                    "response": {
+                                        "tagjump": "autogen_tag_1",
+                                        "text": "%BLANK%"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/havok/3_military1_070_030",
+                    "soundtoplayb": "voice/havok/3_military1_070_031",
+                    "text": "%Havok%: Hey. You lookin' to go somewhere?",
+                    "textb": "%Havok%: So... did you want something?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "Who are you?",
+                        "line": {
+                            "soundtoplay": "voice/havok/3_military1_070_041",
+                            "text": "%Havok%: My name's Alex Summers; I'm the brother of Scott Summers. You might know him as Cyclops.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: And you're a mutant?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/havok/3_military1_070_043",
+                                            "text": "%Havok%: Yeah, I can discharge waves of force from my hands. But, unlike Scott, I have full control of my ability.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Why aren't you going on missions with us?",
+                        "line": {
+                            "soundtoplay": "voice/havok/3_military1_070_051",
+                            "text": "%Havok%: I'd like to, but uh... there's a little concern about trust.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Why aren't you trusted?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/havok/3_military1_070_053",
+                                            "text": "%Havok%: You know perfectly well why.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "That's right. You worked against the X-Men.",
+                        "line": {
+                            "soundtoplay": "voice/havok/3_military1_070_061",
+                            "text": "%Havok%: Okay, so maybe I helped the Brotherhood for a little while. But I thought it was for the good of mutant-kind.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Asteroid M, the Brotherhood's base, almost smashed into New York city because of that little scheme.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/havok/3_military1_070_063",
+                                            "text": "%Havok%: Hey, if you remember, I tried to stop them. Anyway, I think it's going to be quite a while before I'm allowed to be a full member of the team again.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "We'll talk later, Havok.",
+                        "line": {
+                            "soundtoplay": "voice/havok/3_military1_070_071",
+                            "text": "%Havok%: Come back anytime you want me to fly you somewhere.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "See you around, Havok.",
+                        "line": {
+                            "soundtoplay": "voice/havok/3_military1_070_081",
+                            "soundtoplayb": "voice/havok/3_military1_070_081",
+                            "text": "%Havok%: Not if I see you first.",
+                            "textb": "%Havok%: Not if I see you first.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

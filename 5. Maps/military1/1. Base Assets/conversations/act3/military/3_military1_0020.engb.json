@@ -1,0 +1,167 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "act3/military/madri_done",
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/3_military1_020_020",
+                    "text": "%ProfX%: Good job at the Madri Temple. It has been completely disbanded. But I have some bad news. While on a reconnaissance mission of Apocalypse's tower in New York City, Angel was captured. I do not know his fate, but I can only imagine the worst.",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "conditionscriptfile": "act3/military/profx_talks_madri",
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/3_military1_020_010",
+                    "text": "%ProfX%: I just received news from Emma Frost. You recall when Apocalypse attacked New York City, a number of top leaders fell into comas?",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: Yes, it left the armed forces paralyzed. They still haven't fully recovered.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/profx/3_military1_020_012",
+                                    "text": "%ProfX%: Emma's discovered a temple that's housing former students of hers who are responsible for those comas. If we can disband this group, their victims should be released from their unnatural slumber.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/profx/3_military1_020_013",
+                                            "text": "%ProfX%: To reach that location, use the X-Jet. If you'd like additional information, activate the mission computer for a full briefing.",
+                                            "response": {
+                                                "chosenscriptfile": "common/briefings/mark_briefing3_30",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/3_military1_020_030",
+                    "soundtoplayb": "voice/profx/3_military1_020_031",
+                    "text": "%ProfX%: Welcome, my friend. What can I do for you?",
+                    "textb": "%ProfX%: Hello. How can I be of assistance?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "How did Apocalypse create such a large army?",
+                        "line": {
+                            "soundtoplay": "voice/profx/3_military1_020_041",
+                            "text": "%ProfX%: We have Mister Sinister to thank for that. Their military is comprised entirely of clones known as Infinites. Thousands are manufactured every day.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Clones?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/profx/3_military1_020_043",
+                                            "text": "%ProfX%: Yes, they're aided by cybernetic implants and an impeccable genetic structure. Infinites are not to be taken lightly.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Why aren't we freeing New York City?",
+                        "line": {
+                            "soundtoplay": "voice/profx/3_military1_020_051",
+                            "text": "%ProfX%: Magneto and I felt it most important to stop Apocalypse from attacking other cities.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: But as we speak, he's digging in, creating better defense around New York.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/profx/3_military1_020_053",
+                                            "text": "%ProfX%: I understand your concern, but we cannot allow Apocalypse to acquire additional territories. Were he successful, he would command an almost unending supply of resources from which to create his army.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnObjective('act3_obj_6f', 'FALSE' )",
+                        "text": "We're done here in Canada. Can we move on?",
+                        "line": {
+                            "text": "%Menu%: Are you sure you want to leave Canada?",
+                            "response": {
+                                "chosenscriptfile": "movies/act4",
+                                "conversationend": true,
+                                "text": "%YES%"
+                            },
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "%NO%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Thank you, Professor Xavier",
+                        "line": {
+                            "soundtoplay": "voice/profx/3_military1_020_071",
+                            "text": "%ProfX%: I look forward to seeing you again.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Goodbye, Xavier.",
+                        "line": {
+                            "soundtoplay": "voice/profx/3_military1_020_073",
+                            "soundtoplayb": "voice/profx/3_military1_020_073",
+                            "text": "%ProfX%: You're quite welcome.",
+                            "textb": "%ProfX%: You're quite welcome.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

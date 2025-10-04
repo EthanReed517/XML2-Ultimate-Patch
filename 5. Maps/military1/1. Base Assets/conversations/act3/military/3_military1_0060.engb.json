@@ -1,0 +1,125 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever23",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/forge/3_military1_060_010",
+                    "soundtoplayb": "voice/forge/3_military1_060_020",
+                    "text": "%FORGE%  Well, if you aren't a sight for sore eyes.",
+                    "textb": "%FORGE%  Humph, so you guys are still hanging around.",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/forge/3_military1_060_030",
+                    "soundtoplayb": "voice/forge/3_military1_060_031",
+                    "text": "%FORGE%  Hi again. What can I get you?",
+                    "textb": "%FORGE%  Did you want something?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "chosenscriptfile": "act4/mansion/forge_shop",
+                        "conversationend": true,
+                        "text": "I'd like to see some equipment."
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnObjective('act3_obj_2', 'FALSE' )",
+                        "text": "Thanks for helping us at the Core.",
+                        "line": {
+                            "soundtoplay": "voice/forge/3_military1_060_051",
+                            "text": "%FORGE%  It was my pleasure. With that power plant out of commission, Apocalypse's military is going to grind to a halt in a matter of days.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Permanently?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/forge/3_military1_060_053",
+                                            "text": "%FORGE%  I'm sure in a few weeks he'll come up with alternative energy sources, but it's going to be a struggle.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "How's Beast doing?",
+                        "line": {
+                            "soundtoplay": "voice/forge/3_military1_060_061",
+                            "text": "%FORGE%  He was pretty banged up after his little adventure in the Savage Land. It's going to be a day or two before he's back on his feet again.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: But he'll be all right, won't he?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/forge/3_military1_060_063",
+                                            "text": "%FORGE%  Oh, yeah, he'll be fine. It'd take a lot more than five minutes in poisonous gas to hurt that big blue ape.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Thanks, Forge.",
+                        "line": {
+                            "soundtoplay": "voice/forge/3_military1_060_071",
+                            "text": "%FORGE%  For you, anything.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "It's been real.",
+                        "line": {
+                            "soundtoplay": "voice/forge/3_military1_060_081",
+                            "soundtoplayb": "voice/forge/3_military1_060_081",
+                            "text": "%FORGE%  Yeah. I was just thinking that.",
+                            "textb": "%FORGE%  Yeah. I was just thinking that.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "conversation": {
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/3_military1_030_001",
+                    "text": "%ProfX%: Which mission briefing would you like?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "chosenscriptfile": "loadZone('briefing/briefing3_10', 'NULL')",
+                        "conversationend": true,
+                        "scriptfile": "disallowResponseOnObjective('act3_obj_2a_1', 'FALSE' )",
+                        "text": "The Core."
+                    },
+                    "response": {
+                        "chosenscriptfile": "loadZone('briefing/briefing3_20', 'NULL')",
+                        "conversationend": true,
+                        "scriptfile": "disallowResponseOnObjective('act3_obj_3a_1', 'FALSE' )",
+                        "text": "The Infinite factory."
+                    },
+                    "response": {
+                        "chosenscriptfile": "loadZone('briefing/briefing3_30', 'NULL')",
+                        "conversationend": true,
+                        "scriptfile": "disallowResponseOnObjective('act3_obj_6a_1', 'FALSE' )",
+                        "text": "The Madri Temple."
+                    },
+                    "response": {
+                        "conversationend": true,
+                        "text": "Never mind."
+                    }
+                }
+            }
+        }
+    }
+}
