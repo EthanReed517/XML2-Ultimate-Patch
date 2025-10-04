@@ -1,0 +1,41 @@
+{
+    "conversation": {
+        "startCondition": {
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/console/beep",
+                    "text": "%CONSOLE%DNA processors activated.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%We activated the DNA processors, now what, Guardian?",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "scriptfile": "cameraFocusToEntity('conduit_swap_inf', 512.000, 45.000, 290.000, 1.000 )",
+                                    "soundtoplay": "voice/guardian/3_INFINITE3_015_012",
+                                    "text": "%JAMESHUDSON%You can purge the DNA tanks by aligning the nearby conduits.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "scriptfile": "cameraFocusToEntity('cool_tank_falling02', 1040.000, 30.000, 250.000, 1.000 )",
+                                            "soundtoplay": "voice/guardian/3_INFINITE3_015_013",
+                                            "text": "%JAMESHUDSON%Or you'll have to figure out someway to simply destroy the tanks.",
+                                            "response": {
+                                                "chosenscriptfile": "act3/infinite/infinite3/enable_power_puzzles",
+                                                "conversationend": true,
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

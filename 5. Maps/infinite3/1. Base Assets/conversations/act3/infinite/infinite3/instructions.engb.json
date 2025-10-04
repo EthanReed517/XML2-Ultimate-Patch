@@ -1,0 +1,31 @@
+{
+    "conversation": {
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "text": "UT: %CONSOLE%  DNA machinery now activated.",
+                    "response": {
+                        "text": "%MORE%",
+                        "line": {
+                            "scriptfile": "cameraFocusToEntity('conduit_swap_inf', 512.000, 45.000, 290.000, 1.000 )",
+                            "text": "UT: %JamesHudson%  You can purge the DNA by either re-aligning these conduits,",
+                            "response": {
+                                "chosenscriptfile": "act3/infinite/infinite3/enable_power_puzzles",
+                                "text": "%MORE%",
+                                "line": {
+                                    "scriptfile": "cameraFocusToEntity('cool_tank_falling02', 1040.000, 30.000, 250.000, 1.000 )",
+                                    "text": "UT: %JamesHudson%  or by somehow destroying these storage tanks.",
+                                    "response": {
+                                        "conversationend": true,
+                                        "text": "%BLANK%"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
