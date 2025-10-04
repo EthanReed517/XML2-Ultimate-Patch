@@ -1,0 +1,79 @@
+{
+    "conversation": {
+        "startCondition": {
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/havok/3_infinite1_010_001",
+                    "text": "%Havok%: Watch yourselves. This place gives me the creeps just seeing it from the outside. And be sure to use that recall transmitter beside you if you want me to pick you up. Havok, out.",
+                    "response": {
+                        "chosenscriptfile": "act3/infinite/infinite1/hudson_start",
+                        "conversationend": true,
+                        "text": "%END%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "noreturntogamecamatend": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "text": "%PLAYER%: Guardian, we heard you might be here. What happened?",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "soundtoplay": "voice/guardian/3_infinite1_010_003",
+                            "text": "%JamesHudson%: I was sent to destroy this factory, but they captured me shortly after I arrived. Luckily a spy for Department H is here - he just set me free.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: You're hurt. Go to the Weapon X facility - it's where we've set up camp.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/guardian/3_infinite1_010_005",
+                                            "text": "%JamesHudson%: No. I'm staying until this factory is shut down. I can't go with you, so give me a radio and I'll help you out as you go. I've had a thorough briefing on this facility.",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "text": "%PLAYER%: So how should we start?",
+                                                    "response": {
+                                                        "text": "%BLANK%",
+                                                        "line": {
+                                                            "soundtoplay": "voice/guardian/3_infinite1_010_007",
+                                                            "text": "%JamesHudson%: You'll have to destroy three sections of this plant : fusion core, engineering and genetic processing.",
+                                                            "response": {
+                                                                "text": "%MORE%",
+                                                                "line": {
+                                                                    "soundtoplay": "voice/guardian/3_infinite1_010_008",
+                                                                    "text": "%JamesHudson%: Also, keep an eye out for a security card Department H gave me. I hid it just before I was captured. That card could unlock a number of devices for you.",
+                                                                    "response": {
+                                                                        "text": "%BLANK%",
+                                                                        "line": {
+                                                                            "text": "%PLAYER%: Okay. Thanks, Guardian.",
+                                                                            "response": {
+                                                                                "chosenscriptfile": "act3/infinite/infinite1/cam_fade_reset",
+                                                                                "conversationend": true,
+                                                                                "text": "%BLANK%"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
