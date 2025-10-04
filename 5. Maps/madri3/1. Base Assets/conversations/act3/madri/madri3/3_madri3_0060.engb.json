@@ -1,0 +1,35 @@
+{
+    "conversation": {
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/altar/3_madri3_060_010",
+                    "text": "%Menu%: Altar: Do you wish make a tech bit offering for wisdom and salvation?",
+                    "response": {
+                        "chosenscriptfile": "act3/madri/madri3/artifact_door",
+                        "scriptfile": "act3/madri/madri3/disallowmoney",
+                        "text": "Yes.",
+                        "line": {
+                            "soundtoplay": "voice/altar/3_madri3_060_020",
+                            "text": "%Menu%: Altar: A new doorway now lies open. Walk through so that you might fully take control of your rage.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%END%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "conversationend": true,
+                        "scriptfile": "act3/madri/madri3/allowmoney",
+                        "text": "You need 100 tech bits to make an offering."
+                    },
+                    "response": {
+                        "conversationend": true,
+                        "text": "No."
+                    }
+                }
+            }
+        }
+    }
+}
