@@ -1,0 +1,3676 @@
+{
+    "world": {
+        "entity": {
+            "act": 3,
+            "level": 45,
+            "name": "world",
+            "partylight": "0.7 0.41 0.34",
+            "soundfile": "dinf",
+            "zonescript": "act3/infinite/infinite4/infinite4"
+        },
+        "precache": {
+            "filename": "act3/infinite/infinite4/3_infinite4_0010",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act3/infinite/infinite4/3_infinite4_0020",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act3/infinite/infinite4/back_up",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act3/infinite/infinite4/not_yet",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "hud/hud_head_3101",
+            "type": "model"
+        },
+        "precache": {
+            "filename": "act3/infinite/infinite4/conv_not_ yet",
+            "type": "script"
+        },
+        "precache": {
+            "filename": "zone_shared/mover/inf_door_lock",
+            "type": "sound"
+        },
+        "precache": {
+            "filename": "zone_shared/object/beep2",
+            "type": "sound"
+        },
+        "entity": {
+            "classname": "tileent",
+            "deatheffect": "base/material/tile/tile_infinite",
+            "deathsound": "death_style/t_infinite",
+            "deathspawn": "tile_organic",
+            "fxlevel": 3,
+            "health": 300,
+            "material": "holowmetal",
+            "name": "tile_organic",
+            "structure": 1,
+            "tilemodelfolder": "tiles/infiniteplant/"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Infinite_d",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_smartent": true,
+            "name": "ss_infinite_d",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "InfiniteCaptain_b",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_smartent": true,
+            "name": "ss_infinitecaptain_b",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "InfiniteSoldier_b",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_smartent": true,
+            "name": "ss_infinitesoldier_b",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "waittimed(0.5)\\n\\rloadDangerRoomCourse('CHSUN')",
+            "actsound": "common/game/dangerdisc_pickup",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Danger Room Disc",
+            "fxlevel": 7,
+            "idnum": 30,
+            "ignoreactorsonmove": true,
+            "loopfx": "base/item/item_sparkle",
+            "loopfxstarton": true,
+            "model": "pickups/pickup_dangeroom_disk",
+            "name": "disc_sunfire",
+            "nocollide": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "spinpossible": false,
+            "structure": 2,
+            "team": "hero",
+            "variablename": "r_dr_disc"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "homingBeaconReward('beaconact3',190)",
+            "actsound": "zone_shared/special/beacon",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Pick up Homing Beacon",
+            "material": "hollow_metal",
+            "model": "pickups/homing_beacon_act3",
+            "name": "homing_beacon_act3_",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "smartent": false,
+            "spawnscript": "common/beacons/beacon3",
+            "structure": 2,
+            "team": "hero",
+            "variablename": "beaconact3"
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_m",
+            "fxlevel": 2,
+            "health": 5,
+            "heaviness": 0,
+            "material": "hollow_metal",
+            "model": "infinite_plant/barrel_inf_th",
+            "name": "barrel_inf_th_ip",
+            "randompickups": 2,
+            "stackphysics": true,
+            "structure": 0
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathsound": "death_style/ds_electrical_m",
+            "fxlevel": 2,
+            "health": 200,
+            "material": "electronics",
+            "model": "infinite_plant/comp_console_01_inf_a",
+            "name": "comp_console_01_inf_a_ip",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "spawnsoundloop": "zone_shared/object/comp_console",
+            "structure": 1
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathsound": "death_style/ds_electrical_l",
+            "deathspawn": "comp_console_02_inf_b_ip_d",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "electronics",
+            "model": "infinite_plant/comp_console_02_inf_b",
+            "name": "comp_console_02_inf_b_ip",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "infinite_plant/cool_conduit_spare_inf_e",
+            "name": "cool_conduit_spare_inf_e_ip",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_m",
+            "fxlevel": 2,
+            "health": 10,
+            "heaviness": 0,
+            "material": "hollow_metal",
+            "model": "infinite_plant/cool_tank_inf_th",
+            "name": "cool_tank_inf_th_ip",
+            "randompickups": 2,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_m",
+            "fxlevel": 2,
+            "health": 10,
+            "heaviness": 0,
+            "material": "hollow_metal",
+            "model": "infinite_plant/crate_inf_th",
+            "name": "crate_inf_th_ip",
+            "randompickups": 2,
+            "stackphysics": true,
+            "structure": 0
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "deathspawn": "cryo_contain_door_inf_a_ip_d",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "infinite_plant/cryo_contain_door_inf_a",
+            "name": "cryo_contain_door_inf_a_ip",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "actsound": "zone_shared/mover/door_01_inf",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 100,
+            "material": "solid_metal",
+            "model": "infinite_plant/door_01_inf_a",
+            "name": "door_01_inf_a_ip",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0,
+            "toggleonact": true
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "infinite_plant/jet_flame_inf_a",
+            "name": "jet_flame_inf_a_ip",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "spawnsoundloop": "zone_shared/object/jet_flame",
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_m",
+            "deathspawn": "lesser_machine_inf_a_b_ip_d",
+            "fxlevel": 2,
+            "health": 200,
+            "material": "solid_metal",
+            "model": "infinite_plant/lesser_machine_inf_a_b",
+            "name": "lesser_machine_inf_a_b_ip",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "spawnsoundloop": "zone_shared/object/lesser_machine",
+            "structure": 1
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "infinite_plant/pipe_cluster_inf_e",
+            "name": "pipe_cluster_inf_e_ip",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_l",
+            "deathspawn": "wall_pipe_inf_b_ip_d",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "hollow_metal",
+            "model": "infinite_plant/wall_pipe_inf_b",
+            "name": "wall_pipe_inf_b_ip",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathsound": "death_style/ds_electrical_l",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "electronics",
+            "model": "infinite_plant/zap_inf_a",
+            "name": "zap_inf_a_ip",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "enabletargetent",
+            "enable": true,
+            "name": "enable_target",
+            "nocollide": true
+        },
+        "entity": {
+            "actrescheduledelay": 1,
+            "actrescheduledelaymin": 0.5,
+            "boxcollision": true,
+            "classname": "affectableharment",
+            "damage": 10,
+            "damagetype": "dmg_physical",
+            "firstact": 1,
+            "knockback": 0,
+            "name": "harm_target",
+            "nocollide": true,
+            "radiusdamage": true,
+            "smartent": false
+        },
+        "entity": {
+            "classname": "lightent",
+            "lightcolor": "1 1 1",
+            "lightradius": 200,
+            "name": "lightent",
+            "nocollide": true,
+            "startoff": false
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfxstarton": true,
+            "name": "loop_effect",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "classname": "ent",
+            "name": "null",
+            "nocollide": true
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "name": "player_start_all",
+            "nocollide": true
+        },
+        "entity": {
+            "classname": "actionent",
+            "name": "relay",
+            "nocollide": true
+        },
+        "entity": {
+            "actleader": true,
+            "actmatchteam": true,
+            "boxcollision": true,
+            "classname": "scripttriggerent",
+            "name": "trigger_area",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actmatchteam": true,
+            "actontouch": true,
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "trigger_touch",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "classname": "waypointent",
+            "name": "waypoint",
+            "nocollide": true
+        },
+        "entity": {
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "common/extraction/exp_activate",
+            "actsound": "common/game/xtraction",
+            "acttogglesanim": true,
+            "acttogglesloopfx": true,
+            "animstarton": false,
+            "classname": "gameent",
+            "description": "Xtraction Point",
+            "fxlevel": 1,
+            "ignoretelekinesis": true,
+            "loopfx": "base/misc/extraction_loop",
+            "loopfxstarton": false,
+            "model": "puzzles/beacon_xtraction",
+            "name": "xtraction_point",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "resetstate": true,
+            "spawnscript": "common/extraction/exp_spawn",
+            "team": "hero"
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "zonelinkent",
+            "description": "Enter next area",
+            "name": "zone_link",
+            "nocollide": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actontouch": true,
+            "actsound": "common/game/pickup_item",
+            "animstarton": true,
+            "classname": "inventoryent",
+            "count": 1,
+            "desctext": "xlarge energy pack",
+            "extents": "-18 -18 0 18 18 36",
+            "fxlevel": 2,
+            "inventoryitem": "energy_item",
+            "name": "item_energy_xtreme",
+            "nocollide": true,
+            "nogravity": false,
+            "pos": "0 0 6",
+            "randompickups": false,
+            "spinpossible": false,
+            "structure": 2,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actontouch": true,
+            "actsound": "common/game/pickup_item",
+            "animstarton": true,
+            "classname": "inventoryent",
+            "count": 1,
+            "desctext": "xlarge health pack",
+            "extents": "-18 -18 0 18 18 36",
+            "fxlevel": 1,
+            "inventoryitem": "health_item",
+            "name": "item_health_xtreme",
+            "nocollide": true,
+            "nogravity": false,
+            "pos": "0 0 6",
+            "randompickups": false,
+            "spinpossible": false,
+            "structure": 2,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actsound": "common/game/pickup_item",
+            "animstarton": true,
+            "classname": "inventoryent",
+            "count": 1,
+            "fxlevel": 7,
+            "inventoryitem": "keycard1",
+            "name": "item_keycard1",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "acteffect": "base/misc/misc_treasure",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actsound": "common/game/treasure",
+            "animstarton": false,
+            "classname": "treasureent",
+            "count": 1000,
+            "description": "weapon cache",
+            "material": "solid_metal",
+            "model": "common/treasure_chest_a",
+            "name": "treasure_chest",
+            "nopickup": true,
+            "nopush": true,
+            "team": "hero",
+            "toggleonact": true
+        },
+        "entity": {
+            "actrescheduledelay": 4,
+            "actscript": "common/pylons/a3_ice_cannon",
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathsound": "death_style/ds_electrical_l",
+            "deathspawn": "pylon_a3_ice_cannon_puz_d",
+            "firstact": 0.1,
+            "fxlevel": 3,
+            "health": 200,
+            "material": "electronics",
+            "model": "puzzles/pylon_act3_icecannon",
+            "name": "pylon_a3_ice_cannon_puz",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "spawnsoundloop": "zone_shared/pylon/pylon_a3_ice_cannon_loop",
+            "structure": 0,
+            "targetlockable": true,
+            "team": "none"
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathsound": "death_style/ds_electrical_m",
+            "deathspawn": "pylon_a3_nullify_puz_d",
+            "fxlevel": 2,
+            "health": 200,
+            "material": "electronics",
+            "model": "puzzles/null_hover_puz_a",
+            "name": "pylon_a3_nullify_puz",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "spawnscript": "id=spawn('_OWNER_','p_nul_on_trig','p_nul_on_trig','0 0 0','0 0 0')\\n\\rsetParent(id,'_OWNER_')",
+            "structure": 0,
+            "targetlockable": true,
+            "team": "none",
+            "toggleonact": true
+        },
+        "entinst": {
+            "type": "am_sp13",
+            "inst": {
+                "extents": "-36 0.000153164 0 48 0.000160245 84",
+                "name": "am_sp13",
+                "orient": "0 0 0.785398",
+                "pos": "4575.7 3497.78 10.5658"
+            }
+        },
+        "entinst": {
+            "type": "am_sp06",
+            "inst": {
+                "extents": "5.9997 -42 0 5.99972 42 84",
+                "name": "am_sp06",
+                "orient": "0 0 -0.785398",
+                "pos": "4574.81 4303.21 10.5658"
+            }
+        },
+        "entinst": {
+            "type": "am_sp04",
+            "inst": {
+                "extents": "5.99991 -42.0003 0 5.99993 41.9998 84",
+                "name": "am_sp04",
+                "orient": "0 0 2.35619",
+                "pos": "5381.76 3494.69 10.5658"
+            }
+        },
+        "entinst": {
+            "type": "am_sp02",
+            "inst": {
+                "extents": "-36.0005 -2.80808e-005 0.0 47.9995 -2.80808e-005 84.0",
+                "name": "am_sp02",
+                "orient": "0 0 -2.35619",
+                "pos": "5382.94 4305.31 10.5658"
+            }
+        },
+        "entinst": {
+            "type": "bait_spawn1",
+            "inst": {
+                "extents": "-18.0001 -18.0001 0 29.9999 17.9999 84",
+                "name": "bait_spawn1",
+                "orient": "0 0 -3.14159",
+                "pos": "5732.18 3904 0"
+            }
+        },
+        "entinst": {
+            "type": "ss_infinite_d",
+            "inst": {
+                "extents": "-36.0003 5.62842e-006 0.0 47.9997 9.16875e-006 84.0",
+                "name": "ss_infinite_d",
+                "orient": "0 0 0.785398",
+                "pos": "5194.38 5792.78 0"
+            },
+            "inst": {
+                "extents": "-29.5704 -13.7888 0 41.57 13.7888 84",
+                "name": "ss_infinite_d",
+                "orient": "0 0 -2.79253",
+                "pos": "6589.16 3804.94 0"
+            },
+            "inst": {
+                "extents": "-18 -18.0002 0 30 17.9998 84",
+                "name": "ss_infinite_d",
+                "orient": "0 0 1.5708",
+                "pos": "6536.09 3729.68 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinite_d",
+                "orient": "0 0 -3.14159",
+                "pos": "3277.27 4740 0"
+            },
+            "inst": {
+                "extents": "5.99971 -42.0002 0 5.99971 41.9998 84",
+                "name": "ss_infinite_d",
+                "orient": "0 0 2.35619",
+                "pos": "5054.13 5795.54 0"
+            },
+            "inst": {
+                "extents": "5.99969 -41.9999 0 5.99971 42.0001 84",
+                "name": "ss_infinite_d",
+                "orient": "0 0 -0.785398",
+                "pos": "5205.78 5660 0"
+            },
+            "inst": {
+                "extents": "5.9997 -42 0 5.9997 42 84",
+                "name": "ss_infinite_d",
+                "orient": "0 0 2.35619",
+                "pos": "5054.13 4849.39 0"
+            },
+            "inst": {
+                "extents": "-33.5885 -8.99982 0 45.5884 9 84",
+                "name": "ss_infinite_d",
+                "orient": "0 0 1.0472",
+                "pos": "4852.26 4983.62 0"
+            }
+        },
+        "entinst": {
+            "type": "bait_spawn2",
+            "inst": {
+                "extents": "-18.0001 -17.9999 0 29.9999 18.0001 84",
+                "name": "bait_spawn2",
+                "orient": "0 0 -3.14159",
+                "pos": "5650.07 3904 0"
+            }
+        },
+        "entinst": {
+            "type": "ss_infinitecaptain_b",
+            "inst": {
+                "extents": "-18.0001 -17.9999 0 29.9999 18.0001 84",
+                "name": "ss_infinitecaptain_b",
+                "orient": "0 0 -3.14159",
+                "pos": "3792 3900 0"
+            },
+            "inst": {
+                "extents": "-18.0002 -17.9999 0 29.9998 18.0001 84",
+                "name": "ss_infinitecaptain_b",
+                "orient": "0 0 -3.14159",
+                "pos": "4120.14 4742.85 0"
+            },
+            "inst": {
+                "extents": "-18.0002 -17.9999 0 29.9998 18.0001 84",
+                "name": "ss_infinitecaptain_b",
+                "orient": "0 0 -1.5708",
+                "pos": "4152.63 5598.35 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinitecaptain_b",
+                "orient": "0 0 -1.5708",
+                "pos": "2759.26 1428.39 0"
+            },
+            "inst": {
+                "extents": "-18.0001 -18 0 29.9999 18 84",
+                "name": "ss_infinitecaptain_b",
+                "orient": "0 0 -3.14159",
+                "pos": "6543.43 3856.07 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinitecaptain_b",
+                "orient": "0 0 -1.5708",
+                "pos": "2827.4 2739.87 0"
+            },
+            "inst": {
+                "extents": "-18 -18.0001 0 30 17.9999 84",
+                "name": "ss_infinitecaptain_b",
+                "orient": "0 0 -3.14159",
+                "pos": "2692 4710 0"
+            }
+        },
+        "entinst": {
+            "type": "ss_infinitesoldier_b",
+            "inst": {
+                "extents": "-18.0002 -17.9999 0 29.9998 18.0003 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -1.5708",
+                "pos": "4087.19 5499.99 0"
+            },
+            "inst": {
+                "extents": "-18 -17.9999 0 30 18.0001 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -3.14159",
+                "pos": "3992.91 4802.85 0"
+            },
+            "inst": {
+                "extents": "-18 -17.9999 0 30 18.0001 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -3.14159",
+                "pos": "3922.91 4692.85 0"
+            },
+            "inst": {
+                "extents": "-18.0001 -18 0 29.9999 18 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -3.14159",
+                "pos": "3542 3850 0"
+            },
+            "inst": {
+                "extents": "-18.0001 -17.9999 0 29.9999 18.0001 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -3.14159",
+                "pos": "3612 3960 0"
+            },
+            "inst": {
+                "extents": "-18.0001 -17.9999 0 29.9999 18.0001 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 1.5708",
+                "pos": "1882 4370 -120"
+            },
+            "inst": {
+                "extents": "-18 -17.9999 0 30 18.0001 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -1.5708",
+                "pos": "2877.4 2489.87 0"
+            },
+            "inst": {
+                "extents": "-18 -17.9999 0 30 18.0001 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -1.5708",
+                "pos": "2767.4 2559.87 0"
+            },
+            "inst": {
+                "extents": "-17.9999 -18.0001 0 30.0001 17.9999 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -3.14159",
+                "pos": "2592 4480 0"
+            },
+            "inst": {
+                "extents": "-17.9999 -18 0 30.0001 18 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -1.5708",
+                "pos": "2640.04 1250.71 0"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -1.5708",
+                "pos": "2514.02 1254.35 0"
+            },
+            "inst": {
+                "extents": "-18 -18.0002 0 30 17.9998 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -3.14159",
+                "pos": "2196.04 4680 -120"
+            },
+            "inst": {
+                "extents": "-18 -18.0001 0 30 17.9999 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -1.5708",
+                "pos": "2765.61 428.291 0"
+            },
+            "inst": {
+                "extents": "-18 -18.0001 0 30 17.9999 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -1.5708",
+                "pos": "2898.05 437.611 -96.9767"
+            },
+            "inst": {
+                "extents": "-17.9999 -18.0001 0 30.0001 17.9999 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -1.5708",
+                "pos": "2268.45 3365.09 0"
+            },
+            "inst": {
+                "extents": "-17.9999 -18 0 30.0001 17.9999 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -1.5708",
+                "pos": "2378.45 3295.09 0"
+            },
+            "inst": {
+                "extents": "-18 -18.0002 0 30.0001 17.9998 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -3.14159",
+                "pos": "2196.04 4505.29 -120"
+            },
+            "inst": {
+                "extents": "-24.1562 -16.9145 0 36.1564 16.9145 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -1.74533",
+                "pos": "1620.64 4174.26 0"
+            },
+            "inst": {
+                "extents": "-24.1563 -16.9145 0 36.1563 16.9144 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -1.74533",
+                "pos": "1620.64 4332.03 0"
+            },
+            "inst": {
+                "extents": "-17.6355 -22.1676 0 29.6354 22.1676 84",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -1.48353",
+                "pos": "1620.64 4441.42 0"
+            },
+            "inst": {
+                "extents": "-36.0002 -3.71408e-005 0.0 47.9998 -1.58988e-005 84.0",
+                "name": "ss_infinitesoldier_b",
+                "orient": "0 0 -2.35619",
+                "pos": "4286.35 5578.36 0"
+            }
+        },
+        "entinst": {
+            "type": "am_sp09",
+            "inst": {
+                "extents": "-9.42683 -36.3851 0 21.4269 36.3853 84",
+                "name": "am_sp09",
+                "orient": "0 0 2.00713",
+                "pos": "5149.42 3559.11 -111.483"
+            }
+        },
+        "entinst": {
+            "type": "ss_infinitesoldier_b14",
+            "inst": {
+                "extents": "-18 -18.0001 0 30 17.9999 84",
+                "name": "ss_infinitesoldier_b14",
+                "orient": "0 0 -1.5708",
+                "pos": "2572.41 353.805 0"
+            }
+        },
+        "entinst": {
+            "type": "am_sp11",
+            "inst": {
+                "extents": "-31.7889 -11.5701 0 43.7889 11.5703 84",
+                "name": "am_sp11",
+                "orient": "0 0 -2.70526",
+                "pos": "5320.17 4071.28 -111.483"
+            }
+        },
+        "entinst": {
+            "type": "am_sp10",
+            "inst": {
+                "extents": "-9.42712 -36.3851 0 21.4268 36.3855 84",
+                "name": "am_sp10",
+                "orient": "0 0 -1.13446",
+                "pos": "4806.4 4238.64 -111.483"
+            }
+        },
+        "entinst": {
+            "type": "am_sp01",
+            "inst": {
+                "extents": "-31.7892 -11.57 0 43.7887 11.5702 84",
+                "name": "am_sp01",
+                "orient": "0 0 0.436333",
+                "pos": "4642.99 3731.74 -111.483"
+            }
+        },
+        "entinst": {
+            "type": "am_sp03",
+            "inst": {
+                "extents": "-9.42699 -36.3853 0 21.427 36.385 84",
+                "name": "am_sp03",
+                "orient": "0 0 -0.436332",
+                "pos": "4640.35 4071.84 -111.483"
+            }
+        },
+        "entinst": {
+            "type": "am_sp05",
+            "inst": {
+                "extents": "-9.42706 -36.385 0 21.4269 36.3853 84",
+                "name": "am_sp05",
+                "orient": "0 0 2.70526",
+                "pos": "5320.2 3728.05 -111.483"
+            }
+        },
+        "entinst": {
+            "type": "am_sp07",
+            "inst": {
+                "extents": "-31.789 -11.5703 0 43.789 11.5702 84",
+                "name": "am_sp07",
+                "orient": "0 0 -2.00713",
+                "pos": "5148.75 4241.18 -111.483"
+            }
+        },
+        "entinst": {
+            "type": "am_sp08",
+            "inst": {
+                "extents": "-31.7891 -11.5702 0 43.7886 11.5704 84",
+                "name": "am_sp08",
+                "orient": "0 0 1.13446",
+                "pos": "4807.62 3560.3 -111.483"
+            }
+        },
+        "entinst": {
+            "type": "disc_sunfire01",
+            "inst": {
+                "name": "disc_sunfire01",
+                "pos": "4568.79 3490.73 11.0751"
+            }
+        },
+        "entinst": {
+            "type": "homing_beacon_act3_01",
+            "inst": {
+                "name": "homing_beacon_act3_01",
+                "orient": "0 0 0.872665",
+                "pos": "2930.4 4421.83 18.5343"
+            }
+        },
+        "entinst": {
+            "type": "barrel_inf_th_ip",
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "pos": "2300.85 2060.01 0"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "pos": "2272.68 1380.85 0"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "orient": "0 0 -0.349066",
+                "pos": "2315.06 1420.88 0"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "pos": "2896.65 1347.57 0"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "pos": "2261.19 4732.78 -120"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "pos": "2301.14 4769.41 -120"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "pos": "1915.21 4260.76 -120"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "pos": "2858.6 1540.4 0"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "pos": "2378.9 4941.9 0"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "pos": "2297.32 4464.07 -120"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "orient": "0 0 1.8326",
+                "pos": "3384.5 4221 -120"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "orient": "0 0 1.0472",
+                "pos": "3301.25 4182.71 -120"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "orient": "0 0 -0.698132",
+                "pos": "3256.3 4182.71 -120"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "orient": "0 0 0.174533",
+                "pos": "3131.36 4646.94 -120"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "pos": "2778.48 4900.28 0"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "pos": "1821.16 4262.52 -120"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "pos": "2300.58 1180.16 1.10225e-005"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "pos": "2854.95 3020.29 0"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "pos": "2894.97 2077.53 0"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "orient": "0 0 1.65806",
+                "pos": "3859.2 3677.54 0"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "pos": "3231.94 3836.11 0"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "pos": "2502.54 -196.205 -120"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "orient": "0 0 1.65806",
+                "pos": "2728.67 231.873 -120"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "pos": "2964 477.074 -120"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "pos": "2664 240 -120"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "orient": "0 0 0.959931",
+                "pos": "2770.92 4863.72 0"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "orient": "0 0 1.5708",
+                "pos": "2412.69 4928.03 0"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "orient": "0 0 0.0872666",
+                "pos": "4194.45 5676.95 0"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "orient": "0 0 0.610865",
+                "pos": "4205.55 5728.4 0"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "orient": "0 0 -2.96706",
+                "pos": "3070.93 4611.81 -120"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "orient": "0 0 2.18166",
+                "pos": "3113.69 4604.41 -120"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "orient": "0 0 -0.959931",
+                "pos": "3088.6 4654.34 -120"
+            },
+            "inst": {
+                "name": "barrel_inf_th_ip",
+                "pos": "2342.96 1142.49 2.37788e-005"
+            }
+        },
+        "entinst": {
+            "type": "barrel_inf_th_ip13",
+            "inst": {
+                "name": "barrel_inf_th_ip13",
+                "pos": "2057.58 4216.01 -120"
+            }
+        },
+        "entinst": {
+            "type": "comp_console_01_inf_a_ip",
+            "inst": {
+                "name": "comp_console_01_inf_a_ip",
+                "orient": "0 0 1.5708",
+                "pos": "2160.0 3300.0 -1.80593e-005"
+            },
+            "inst": {
+                "name": "comp_console_01_inf_a_ip",
+                "orient": "0 0 -1.5708",
+                "pos": "3000 2580 0"
+            },
+            "inst": {
+                "name": "comp_console_01_inf_a_ip",
+                "orient": "0 0 -2.35619",
+                "pos": "2808.0 1152.0 2.65e-005"
+            },
+            "inst": {
+                "name": "comp_console_01_inf_a_ip",
+                "orient": "0 0 1.5708",
+                "pos": "2630.42 4887.29 0"
+            },
+            "inst": {
+                "name": "comp_console_01_inf_a_ip",
+                "orient": "0 0 -1.5708",
+                "pos": "2531.23 4887.29 0"
+            },
+            "inst": {
+                "name": "comp_console_01_inf_a_ip",
+                "orient": "0 0 2.3409",
+                "pos": "4806.99 5406.07 0"
+            },
+            "inst": {
+                "name": "comp_console_01_inf_a_ip",
+                "orient": "0 0 -2.36015",
+                "pos": "5246.7 5610.72 0"
+            },
+            "inst": {
+                "name": "comp_console_01_inf_a_ip",
+                "orient": "0 0 0.795939",
+                "pos": "5010.09 5843.82 0"
+            }
+        },
+        "entinst": {
+            "type": "freeze_control2",
+            "inst": {
+                "name": "freeze_control2",
+                "pos": "2418.53 1802.25 0"
+            }
+        },
+        "entinst": {
+            "type": "fire_control",
+            "inst": {
+                "name": "fire_control",
+                "pos": "2742.69 2373.97 0"
+            }
+        },
+        "entinst": {
+            "type": "cryo_control",
+            "inst": {
+                "name": "cryo_control",
+                "pos": "5264.84 5864.17 0"
+            }
+        },
+        "entinst": {
+            "type": "freeze_control",
+            "inst": {
+                "name": "freeze_control",
+                "pos": "2418.53 3815.96 0"
+            }
+        },
+        "entinst": {
+            "type": "zap_control",
+            "inst": {
+                "name": "zap_control",
+                "pos": "2420.68 3098.83 0"
+            }
+        },
+        "entinst": {
+            "type": "cool_conduit_spare_inf_e_ip",
+            "inst": {
+                "name": "cool_conduit_spare_inf_e_ip",
+                "orient": "1.5708 0 0",
+                "pos": "5099.99 5601.8 117.76"
+            },
+            "inst": {
+                "name": "cool_conduit_spare_inf_e_ip",
+                "orient": "-1.5708 1.19209e-007 0.959931",
+                "pos": "2547.89 -98.8003 10.1644"
+            },
+            "inst": {
+                "name": "cool_conduit_spare_inf_e_ip",
+                "orient": "1.5708 0 0",
+                "pos": "5159.95 5921.74 117.76"
+            },
+            "inst": {
+                "name": "cool_conduit_spare_inf_e_ip",
+                "orient": "1.5708 0 0",
+                "pos": "5299.88 5782.16 117.76"
+            },
+            "inst": {
+                "name": "cool_conduit_spare_inf_e_ip",
+                "orient": "-1.5708 1.19209e-007 0.959931",
+                "pos": "2547.89 -38.0326 10.1644"
+            },
+            "inst": {
+                "name": "cool_conduit_spare_inf_e_ip",
+                "orient": "1.5708 0 0",
+                "pos": "4939.91 5561.75 117.76"
+            },
+            "inst": {
+                "name": "cool_conduit_spare_inf_e_ip",
+                "orient": "1.5708 0 0",
+                "pos": "4979.98 5721.8 117.76"
+            }
+        },
+        "entinst": {
+            "type": "cool_tank_inf_th_ip",
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "pos": "1854.01 4173.77 -120"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "pos": "2817.24 4624.41 -120"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "pos": "1823.05 4178.93 -120"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "pos": "2261.35 4775.22 -120"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "pos": "2024.29 3826.33 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "pos": "2859.11 4798.28 -120"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "orient": "0 0 1.0472",
+                "pos": "2832.64 4638.32 -120"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "orient": "0 0 1.5708",
+                "pos": "2832.64 4615.3 -120"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "pos": "2892.89 2010.02 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "pos": "2898.05 2028.94 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "pos": "2309.34 1591.16 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "pos": "2291.1 1591.16 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "orient": "0 0 0.872665",
+                "pos": "4249.36 4788 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "orient": "0 0 -1.22173",
+                "pos": "2280.35 1574.33 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "pos": "4266.21 4785.52 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "orient": "0 0 0.872665",
+                "pos": "2652 348 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "orient": "0 0 -1.0472",
+                "pos": "2651.2 329.796 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "orient": "0 0 1.5708",
+                "pos": "2672.33 334.557 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "pos": "4089.93 5747.3 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "orient": "0 0 1.13446",
+                "pos": "4090.37 5728.42 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "orient": "0 0 0.959931",
+                "pos": "6624 4056 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "orient": "0 0 2.61799",
+                "pos": "6648 4092 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "orient": "0 0 -0.872665",
+                "pos": "6648 4068 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "orient": "0 0 -1.74533",
+                "pos": "6624 4092 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "orient": "0 0 1.309",
+                "pos": "6668.88 3554.8 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "orient": "0 0 -1.39626",
+                "pos": "6656.57 3588.63 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "orient": "0 0 2.96706",
+                "pos": "6679.12 3596.84 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "orient": "0 0 -0.523599",
+                "pos": "6687.33 3574.29 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "pos": "2319.13 1382.8 0"
+            },
+            "inst": {
+                "name": "cool_tank_inf_th_ip",
+                "pos": "1872.93 4189.25 -120"
+            }
+        },
+        "entinst": {
+            "type": "crate_inf_th_ip",
+            "inst": {
+                "name": "crate_inf_th_ip",
+                "pos": "2688 199.38 -120"
+            },
+            "inst": {
+                "name": "crate_inf_th_ip",
+                "pos": "2305.63 4302.68 -120"
+            },
+            "inst": {
+                "name": "crate_inf_th_ip",
+                "pos": "2341.75 4259.68 -120"
+            },
+            "inst": {
+                "name": "crate_inf_th_ip",
+                "pos": "3282.24 4565.96 -120"
+            },
+            "inst": {
+                "name": "crate_inf_th_ip",
+                "orient": "0 0 -0.436332",
+                "pos": "4791.64 5742.85 0"
+            },
+            "inst": {
+                "name": "crate_inf_th_ip",
+                "orient": "0 0 -0.436332",
+                "pos": "4809.95 5775.55 0"
+            },
+            "inst": {
+                "name": "crate_inf_th_ip",
+                "pos": "5164.09 5382.78 0"
+            },
+            "inst": {
+                "name": "crate_inf_th_ip",
+                "pos": "2760 324 -120"
+            },
+            "inst": {
+                "name": "crate_inf_th_ip",
+                "pos": "3012 468 -120"
+            },
+            "inst": {
+                "name": "crate_inf_th_ip",
+                "orient": "0 0 -0.872665",
+                "pos": "3240.48 4565.96 -120"
+            },
+            "inst": {
+                "name": "crate_inf_th_ip",
+                "pos": "2115.67 4938 -120"
+            }
+        },
+        "entinst": {
+            "type": "cryo_doors04",
+            "inst": {
+                "name": "cryo_doors04",
+                "orient": "0 0 -2.70526",
+                "pos": "4807.2 4236.93 -120"
+            },
+            "inst": {
+                "name": "cryo_doors01",
+                "orient": "0 0 -2.00713",
+                "pos": "4643.6 4070.33 -120"
+            },
+            "inst": {
+                "name": "cryo_doors01",
+                "orient": "0 0 2.35619",
+                "pos": "5382.07 4304.26 2.04866"
+            },
+            "inst": {
+                "name": "cryo_doors05",
+                "orient": "0 0 2.00713",
+                "pos": "5316.22 4069.44 -120"
+            },
+            "inst": {
+                "name": "cryo_doors02",
+                "orient": "0 0 1.13446",
+                "pos": "5315.46 3730.26 -120"
+            },
+            "inst": {
+                "name": "cryo_doors02",
+                "orient": "0 0 2.70526",
+                "pos": "5148.33 4240.29 -120"
+            },
+            "inst": {
+                "name": "cryo_doors06",
+                "orient": "0 0 -0.785398",
+                "pos": "4577.18 3499.19 2.04866"
+            },
+            "inst": {
+                "name": "cryo_doors01",
+                "orient": "0 0 -1.13446",
+                "pos": "4646.92 3733.27 -120"
+            },
+            "inst": {
+                "name": "cryo_doors_s1",
+                "orient": "0 0 -0.436332",
+                "pos": "4809.6 3564.55 -120"
+            },
+            "inst": {
+                "name": "cryo_doors01",
+                "orient": "0 0 0.785398",
+                "pos": "5380.29 3496.03 2.04866"
+            },
+            "inst": {
+                "name": "cryo_doors03",
+                "orient": "0 0 0.436332",
+                "pos": "5147.5 3563.23 -120"
+            },
+            "inst": {
+                "name": "cryo_doors02",
+                "orient": "0 0 -2.35619",
+                "pos": "4576.78 4301.16 2.04866"
+            }
+        },
+        "entinst": {
+            "type": "cryo_door2",
+            "inst": {
+                "name": "cryo_door2",
+                "pos": "5578.78 3901.2 0"
+            }
+        },
+        "entinst": {
+            "type": "locked_door3",
+            "inst": {
+                "name": "locked_door3",
+                "orient": "0 0 1.5708",
+                "pos": "4523.55 2293.92 -38.4904"
+            },
+            "inst": {
+                "name": "locked_door4",
+                "pos": "4337.15 2118.69 -38.4904"
+            },
+            "inst": {
+                "name": "locked_door2",
+                "pos": "4662.32 2119.89 -38.4904"
+            }
+        },
+        "entinst": {
+            "type": "cryo_door4",
+            "inst": {
+                "name": "cryo_door4",
+                "pos": "4378.25 3900 0"
+            }
+        },
+        "entinst": {
+            "type": "belt_door",
+            "inst": {
+                "name": "belt_door",
+                "pos": "1978.5 3901.2 0"
+            }
+        },
+        "entinst": {
+            "type": "cryo_door3",
+            "inst": {
+                "name": "cryo_door3",
+                "orient": "0 0 1.5708",
+                "pos": "4980.99 4500.31 0"
+            }
+        },
+        "entinst": {
+            "type": "cryo_door1",
+            "inst": {
+                "name": "cryo_door1",
+                "orient": "0 0 -1.5708",
+                "pos": "4981.25 3297.39 0"
+            }
+        },
+        "entinst": {
+            "type": "jet_flame_inf_a_ip04",
+            "inst": {
+                "name": "jet_flame_inf_a_ip04",
+                "orient": "0 0 1.5708",
+                "pos": "2658.88 2098.45 0"
+            },
+            "inst": {
+                "name": "jet_flame_inf_a_ip04",
+                "orient": "0 0 -1.5708",
+                "pos": "2501.19 3179.45 0"
+            },
+            "inst": {
+                "name": "jet_flame_inf_a_ip04",
+                "orient": "0 0 1.5708",
+                "pos": "2658.88 2582.5 0"
+            }
+        },
+        "entinst": {
+            "type": "jet_flame_inf_a_ip10",
+            "inst": {
+                "name": "jet_flame_inf_a_ip10",
+                "orient": "0 0 1.5708",
+                "pos": "2658.88 3780.56 0"
+            }
+        },
+        "entinst": {
+            "type": "jet_flame_inf_a_ip",
+            "inst": {
+                "name": "jet_flame_inf_a_ip",
+                "orient": "0 0 -1.5708",
+                "pos": "2501.19 2098.48 0"
+            },
+            "inst": {
+                "name": "jet_flame_inf_a_ip",
+                "orient": "0 0 1.5708",
+                "pos": "2658.88 2700.68 0"
+            },
+            "inst": {
+                "name": "jet_flame_inf_a_ip",
+                "orient": "0 0 -1.5708",
+                "pos": "2501.19 3420.95 0"
+            }
+        },
+        "entinst": {
+            "type": "lesser_machine_inf_a_b_ip01",
+            "inst": {
+                "name": "lesser_machine_inf_a_b_ip01",
+                "orient": "0 0 1.5786",
+                "pos": "2470.06 2820.7 0"
+            },
+            "inst": {
+                "name": "lesser_machine_inf_a_b_ip01",
+                "orient": "0 0 -1.56438",
+                "pos": "2690.17 3419.88 0"
+            },
+            "inst": {
+                "name": "lesser_machine_inf_a_b_ip01",
+                "orient": "0 0 1.5786",
+                "pos": "2470.06 2339.16 0"
+            }
+        },
+        "entinst": {
+            "type": "lesser_machine_inf_a_b_ip",
+            "inst": {
+                "name": "lesser_machine_inf_a_b_ip",
+                "orient": "0 0 -1.56438",
+                "pos": "2690.51 3902.52 0"
+            },
+            "inst": {
+                "name": "lesser_machine_inf_a_b_ip",
+                "orient": "0 0 1.5786",
+                "pos": "2470.06 2579.93 0"
+            },
+            "inst": {
+                "name": "lesser_machine_inf_a_b_ip",
+                "orient": "0 0 -1.56438",
+                "pos": "2689.84 3179.11 0"
+            },
+            "inst": {
+                "name": "lesser_machine_inf_a_b_ip",
+                "orient": "0 0 1.5786",
+                "pos": "2689.64 2820.7 0"
+            }
+        },
+        "entinst": {
+            "type": "pipe_cluster_inf_e_ip",
+            "inst": {
+                "name": "pipe_cluster_inf_e_ip",
+                "orient": "0 0 1.2644",
+                "pos": "2723.98 3543.2 0"
+            },
+            "inst": {
+                "name": "pipe_cluster_inf_e_ip",
+                "orient": "0 0 1.2644",
+                "pos": "2725.59 3061.49 0"
+            },
+            "inst": {
+                "name": "pipe_cluster_inf_e_ip",
+                "orient": "0 0 2.35619",
+                "pos": "2580 4238.45 0"
+            },
+            "inst": {
+                "name": "pipe_cluster_inf_e_ip",
+                "orient": "0 0 -1.88389",
+                "pos": "2433.1 2701.23 0"
+            }
+        },
+        "entinst": {
+            "type": "wall_pipe_inf_b_ip",
+            "inst": {
+                "name": "wall_pipe_inf_b_ip",
+                "orient": "0 0 0.000121419",
+                "pos": "2871.96 2806.97 -114.405"
+            },
+            "inst": {
+                "name": "wall_pipe_inf_b_ip",
+                "pos": "4309.59 4740.04 -109.21"
+            },
+            "inst": {
+                "name": "wall_pipe_inf_b_ip",
+                "orient": "0 0 0.000121419",
+                "pos": "2870.08 2341.6 -114.405"
+            },
+            "inst": {
+                "name": "wall_pipe_inf_b_ip",
+                "orient": "0 0 0.785398",
+                "pos": "3826.1 4056.66 -118.229"
+            },
+            "inst": {
+                "name": "wall_pipe_inf_b_ip",
+                "orient": "0 0 2.35619",
+                "pos": "3736.53 4056.5 -118.229"
+            },
+            "inst": {
+                "name": "wall_pipe_inf_b_ip",
+                "orient": "0 0 -3.13371",
+                "pos": "2288.02 3067.12 -114.405"
+            },
+            "inst": {
+                "name": "wall_pipe_inf_b_ip",
+                "orient": "0 0 -3.13371",
+                "pos": "2288.02 3524.83 -114.405"
+            },
+            "inst": {
+                "name": "wall_pipe_inf_b_ip",
+                "orient": "0 0 -2.35619",
+                "pos": "3736.55 3620.37 -118.229"
+            },
+            "inst": {
+                "name": "wall_pipe_inf_b_ip",
+                "orient": "0 0 1.5708",
+                "pos": "4139.78 5749.34 -109.21"
+            },
+            "inst": {
+                "name": "wall_pipe_inf_b_ip",
+                "orient": "0 0 -0.785398",
+                "pos": "3826.13 3620.54 -118.229"
+            }
+        },
+        "entinst": {
+            "type": "zap_inf_a_ip01",
+            "inst": {
+                "name": "zap_inf_a_ip01",
+                "pos": "2477.04 2939.83 1.48631"
+            },
+            "inst": {
+                "name": "zap_inf_a_ip02",
+                "orient": "0 0 -3.14159",
+                "pos": "2682.66 2939.83 1.48631"
+            }
+        },
+        "entinst": {
+            "type": "zap_inf_a_ip03",
+            "inst": {
+                "name": "zap_inf_a_ip03",
+                "orient": "0 0 -3.14159",
+                "pos": "2682.66 2220.89 1.48631"
+            },
+            "inst": {
+                "name": "zap_inf_a_ip04",
+                "pos": "2477.04 2220.89 1.48631"
+            }
+        },
+        "entinst": {
+            "type": "enable_ambush_trigger",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "enable_ambush_trigger",
+                "pos": "4972 4040 224.405"
+            }
+        },
+        "entinst": {
+            "type": "enable_c_door",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "enable_c_door",
+                "pos": "2022.24 3974.52 212.405"
+            }
+        },
+        "entinst": {
+            "type": "zapper_01",
+            "inst": {
+                "extents": "-88.0002 -12.0002 0 87.9998 11.9998 120",
+                "name": "zapper_01",
+                "pos": "2579.63 2220.5 0"
+            },
+            "inst": {
+                "extents": "-88.0002 -12.0002 0 87.9998 11.9998 120",
+                "name": "zapper_02",
+                "pos": "2579.63 2940.97 0"
+            }
+        },
+        "entinst": {
+            "type": "freezejet_02",
+            "inst": {
+                "extents": "-88.0002 -12.0002 0 87.9998 11.9998 120",
+                "name": "freezejet_02",
+                "pos": "2579.63 1623.68 0"
+            },
+            "inst": {
+                "extents": "-88.0002 -12.0002 0 87.9998 11.9998 120",
+                "name": "freezejet_01",
+                "pos": "2579.63 3658.97 0"
+            }
+        },
+        "entinst": {
+            "type": "cryo_light",
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "cryo_light",
+                "pos": "4980.55 3900.1 58.8788"
+            }
+        },
+        "entinst": {
+            "type": "cryo_light_red",
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "cryo_light_red",
+                "pos": "4980.55 3900.1 58.8788"
+            }
+        },
+        "entinst": {
+            "type": "loop_effect10",
+            "inst": {
+                "extents": "-0.000100367 -12.0001 -6.0 7.63127e-005 11.9999 6.0",
+                "name": "loop_effect10",
+                "orient": "0 0 -0.785398",
+                "pos": "2483.58 1181.46 2.44396"
+            },
+            "inst": {
+                "extents": "-12.0001 -2.76783e-005 -6.0 12.0 0.000143944 6.0",
+                "name": "loop_effect10",
+                "orient": "0 0 0.785398",
+                "pos": "2675.57 1181.51 2.44396"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect10",
+                "pos": "2935.02 -177.736 -117.282"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect10",
+                "pos": "2934.55 58.6927 -117.282"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect10",
+                "pos": "2935.03 298.043 -117.282"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect10",
+                "pos": "4891.16 3992.52 -117.282"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect10",
+                "pos": "5462.97 3807.43 107.167"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect10",
+                "pos": "4981.8 4253.06 -53.0554"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect10",
+                "pos": "5072.07 3992.52 -117.282"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect10",
+                "pos": "4981.8 3549.65 -53.0554"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect10",
+                "pos": "4497.49 3994.23 107.167"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect10",
+                "pos": "5072.07 3809.71 -117.282"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect10",
+                "pos": "2580.46 1133.87 2.44396"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect10",
+                "pos": "4891.16 3809.71 -117.282"
+            }
+        },
+        "entinst": {
+            "type": "herospot04",
+            "inst": {
+                "extents": "-12.0001 2.21388e-005 -6.0 12.0001 2.21388e-005 6.0",
+                "name": "herospot04",
+                "orient": "0 0 -2.35619",
+                "pos": "5103.54 3990.17 -120"
+            },
+            "inst": {
+                "extents": "-11.1963 -2.99981 -6 11.1961 2.99986 6",
+                "name": "herospot02",
+                "orient": "0 0 -2.61799",
+                "pos": "5171.65 3960.48 -120"
+            },
+            "inst": {
+                "extents": "-11.9999 2.49852e-005 -6.0 12.0003 2.49852e-005 6.0",
+                "name": "herospot03",
+                "orient": "0 0 -2.35619",
+                "pos": "5055.01 4025.55 -120"
+            },
+            "inst": {
+                "extents": "-11.1966 -3.00006 -6 11.1959 3.00016 6",
+                "name": "herospot01",
+                "orient": "0 0 -2.0944",
+                "pos": "5038.62 4101.37 -120"
+            }
+        },
+        "entinst": {
+            "type": "player_start_all01",
+            "inst": {
+                "extents": "-60.0786 -60 0 84 60 83.9544",
+                "name": "player_start_all01",
+                "orient": "0 0 1.5708",
+                "pos": "2760.94 -107.153 -109.003"
+            }
+        },
+        "entinst": {
+            "type": "player_start_all02",
+            "inst": {
+                "extents": "-60.0785 -59.9998 0 84.0001 60.0003 83.9544",
+                "name": "player_start_all02",
+                "orient": "0 0 1.5708",
+                "pos": "6540 3433.77 0"
+            }
+        },
+        "entinst": {
+            "type": "freezejet_relay",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "freezejet_relay",
+                "pos": "2690.53 3602.37 71.9197"
+            }
+        },
+        "entinst": {
+            "type": "door_counter",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "door_counter",
+                "pos": "2413.45 3213.51 109.339"
+            }
+        },
+        "entinst": {
+            "type": "death_counter",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "death_counter",
+                "pos": "4985.5 3795.82 -120"
+            }
+        },
+        "entinst": {
+            "type": "trigger_area01",
+            "inst": {
+                "extents": "-602.921 -602.921 0 602.921 602.921 307.784",
+                "name": "trigger_area01",
+                "pos": "4980 3900 -145.349"
+            }
+        },
+        "entinst": {
+            "type": "trigger_touch01",
+            "inst": {
+                "extents": "-600 -350 0 600 350 240",
+                "name": "trigger_touch01",
+                "pos": "4984.05 3900.89 -120"
+            }
+        },
+        "entinst": {
+            "type": "wp_bait1_spot01",
+            "inst": {
+                "extents": "-6.0001 -5.99989 -6 5.9999 6.0001 6",
+                "name": "wp_bait1_spot01",
+                "orient": "0 0 -3.14159",
+                "pos": "5542.62 3900.03 0"
+            },
+            "inst": {
+                "extents": "-2.32265 -11.5324 -6 2.32262 11.532 6",
+                "name": "wp_bait2_spot01",
+                "orient": "0 0 2.15743",
+                "pos": "5086.33 3923.43 -111.483"
+            }
+        },
+        "entinst": {
+            "type": "wp_nw01",
+            "inst": {
+                "extents": "-0.80247 -11.9463 -6 0.802422 11.9462 6",
+                "name": "wp_nw01",
+                "orient": "0 0 -0.718327",
+                "pos": "4800.81 4079.71 -111.483"
+            },
+            "inst": {
+                "extents": "-11.9456 -0.805889 -6 11.9454 0.805904 6",
+                "name": "wp_u_sw01",
+                "orient": "0 0 0.71805",
+                "pos": "4676.78 3597.27 8.51715"
+            },
+            "inst": {
+                "extents": "-2.32264 -11.5321 -6 2.32264 11.5323 6",
+                "name": "wp_u_se01",
+                "orient": "0 0 2.15743",
+                "pos": "5282.04 3595.64 8.51715"
+            },
+            "inst": {
+                "extents": "-11.9987 -0.143974 -6 11.9984 0.143984 6",
+                "name": "wp_u_ne01",
+                "orient": "0 0 -2.36819",
+                "pos": "5282.93 4203.99 8.51715"
+            },
+            "inst": {
+                "extents": "-0.242273 -11.9949 -6 0.242286 11.9949 6",
+                "name": "wp_u_nw01",
+                "orient": "0 0 -0.805594",
+                "pos": "4677.17 4202.02 8.51715"
+            },
+            "inst": {
+                "extents": "-11.9454 -0.805907 -6 11.9456 0.805886 6",
+                "name": "wp_sw01",
+                "orient": "0 0 0.71805",
+                "pos": "4796.02 3717.03 -111.483"
+            },
+            "inst": {
+                "extents": "-2.32265 -11.5324 -6 2.32264 11.532 6",
+                "name": "wp_se01",
+                "orient": "0 0 2.15743",
+                "pos": "5155.81 3724.29 -111.483"
+            },
+            "inst": {
+                "extents": "-11.9984 -0.143808 -6 11.9983 0.143802 6",
+                "name": "wp_ne01",
+                "orient": "0 0 -2.36819",
+                "pos": "5155.81 4084.29 -111.483"
+            }
+        },
+        "entinst": {
+            "type": "xtraction_point",
+            "inst": {
+                "name": "xtraction_point",
+                "pos": "2339.76 1261.57 0"
+            }
+        },
+        "entinst": {
+            "type": "link_infinite1",
+            "inst": {
+                "extents": "-300 -24 0 300 24 240",
+                "name": "link_infinite1",
+                "pos": "2759.64 -248.985 -120"
+            }
+        },
+        "entinst": {
+            "type": "lnk02_infinite5",
+            "inst": {
+                "extents": "-120 -30 0 120 30 120",
+                "name": "lnk02_infinite5",
+                "pos": "6540.98 3271.77 0"
+            }
+        },
+        "entinst": {
+            "type": "item_energy_xtreme",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "item_energy_xtreme",
+                "pos": "5050.46 3551.44 -118.559"
+            }
+        },
+        "entinst": {
+            "type": "item_health_xtreme",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "item_health_xtreme",
+                "pos": "4907.66 3552 -118.598"
+            }
+        },
+        "entinst": {
+            "type": "keycard1",
+            "inst": {
+                "name": "keycard1",
+                "pos": "4510 2070 -12.9705"
+            }
+        },
+        "entinst": {
+            "type": "treasure_chest",
+            "inst": {
+                "name": "treasure_chest",
+                "orient": "0 0 3.14159",
+                "pos": "4880 5780 0"
+            }
+        },
+        "entinst": {
+            "type": "pylon_a3_ice_cannon_puz",
+            "inst": {
+                "name": "pylon_a3_ice_cannon_puz",
+                "pos": "4980.15 3900.05 -120"
+            }
+        },
+        "entinst": {
+            "type": "pylon_a3_nullify_puz",
+            "inst": {
+                "name": "pylon_a3_nullify_puz",
+                "pos": "2760 120 -120"
+            }
+        },
+        "entinst": {
+            "type": "tile_organic",
+            "inst": {
+                "name": "T_infiniteplant_D2A_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2100 3420 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2A_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2100 3180 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2A_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2220 2820 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2A_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2220 2340 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2A_W_A0",
+                "pos": "2940 3540 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2G_W_A0",
+                "pos": "2940 3780 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2940 3660 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "pos": "3060 3780 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAA_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1980 3780 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2100 3300 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2220 2940 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DHC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2220 3060 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2220 2220 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAA_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2220 1980 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAA_W_A0",
+                "pos": "3180 3780 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3060 2580 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2A_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3060 2700 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2G_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2820 3060 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2820 3180 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2820 3300 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2820 3420 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2G_W_A0",
+                "pos": "2820 3540 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2940 2940 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2A_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2940 3060 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2G_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2340 2340 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2G_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2340 2820 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2340 2700 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2340 2580 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2340 2460 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DHC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2220 3540 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DGC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2820 4020 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DGC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2340 4020 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DHC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2580 4020 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DHC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2940 4020 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DHC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3060 4020 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DHC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2220 4020 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAA_W_A0",
+                "pos": "5220 5340 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DHC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2940 2820 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DHC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2220 2100 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2G_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2220 3780 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2G_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2220 3180 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DCC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "1980 3900 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DCC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3180 3900 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAA_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3180 4020 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "pos": "2100 3780 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2700 4020 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2460 4020 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2940 2220 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAA_W_A0",
+                "pos": "2940 1980 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2A_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2220 1140 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2G_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2220 3420 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "pos": "5100 5340 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAA_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "4740 5820 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "4740 5700 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2220 1380 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DGC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2220 1500 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "4740 5460 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2A_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "5340 5940 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "5100 5940 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "5220 5940 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "5340 5820 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "5340 5700 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAA_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "4740 5340 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "pos": "4860 5340 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2A_W_A0",
+                "pos": "5340 5580 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "5220 5460 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAA_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2220 1620 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DGC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2940 1260 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DGC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2940 1500 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DGC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2220 1260 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DHC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2820 1740 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DHC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2820 1860 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DHC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2340 1860 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DHC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2340 1740 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAG_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2340 1980 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAG_W_A0",
+                "pos": "2820 1980 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DCC_W_A0",
+                "pos": "2580 1020 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAG_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2820 1620 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAG_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2340 1620 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2940 1380 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DHC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2940 2100 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DHC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2220 3660 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAA_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2940 1620 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2G_W_A0",
+                "pos": "2820 1140 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2A_W_A0",
+                "pos": "2940 1140 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2G_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2340 1140 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "pos": "2700 1020 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2A_W_A0",
+                "pos": "2820 1020 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2A_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2340 1020 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "pos": "2460 1020 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2G_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2940 2700 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2A_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "4980 5940 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2G_W_A0",
+                "pos": "2940 2460 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAA_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "1980 4020 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2G_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "4980 5820 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "4860 5820 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DCC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "4740 5580 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2A_W_A0",
+                "pos": "3060 2460 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_D2G_W_A0",
+                "pos": "5220 5580 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DHC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "2940 2340 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DCC_W_A0",
+                "pos": "4980 5340 0"
+            },
+            "inst": {
+                "name": "T_infiniteplant_DHC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2100 4020 0"
+            }
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Infinite_d",
+            "classname": "monsterspawnerent",
+            "instantspawn": false,
+            "monster_aggression": 1,
+            "monster_name": "bait2",
+            "monster_nomutate": true,
+            "monster_smartent": false,
+            "monster_spawnexactlocation": true,
+            "monster_spawnscript": "act3/infinite/infinite4/non_invisible",
+            "name": "bait_spawn2",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Infinite_d",
+            "classname": "monsterspawnerent",
+            "instantspawn": false,
+            "monster_aggression": 6,
+            "monster_name": "bait1",
+            "monster_nomutate": true,
+            "monster_smartent": false,
+            "monster_spawnexactlocation": true,
+            "monster_spawnscript": "act3/infinite/infinite4/non_invisible",
+            "name": "bait_spawn1",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Infinite_d",
+            "classname": "monsterspawnerent",
+            "firstact": 0.1,
+            "instantspawn": false,
+            "monster_aggression": 4,
+            "monster_deathscript": "act3/infinite/infinite4/cryo_deathscript",
+            "monster_name": "aa1a",
+            "monster_noaidisable": true,
+            "monster_nomutate": true,
+            "monster_smartent": false,
+            "monster_spawnexactlocation": true,
+            "monster_spawnscript": "act3/infinite/infinite4/ai_disable",
+            "name": "am_sp02",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Infinite_d",
+            "classname": "monsterspawnerent",
+            "firstact": 0.1,
+            "instantspawn": false,
+            "monster_aggression": 4,
+            "monster_deathscript": "act3/infinite/infinite4/cryo_deathscript",
+            "monster_name": "aa1b",
+            "monster_noaidisable": true,
+            "monster_nomutate": true,
+            "monster_smartent": false,
+            "monster_spawnexactlocation": true,
+            "monster_spawnscript": "act3/infinite/infinite4/ai_disable",
+            "name": "am_sp04",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Infinite_d",
+            "classname": "monsterspawnerent",
+            "firstact": 0.1,
+            "instantspawn": false,
+            "monster_aggression": 4,
+            "monster_deathscript": "act3/infinite/infinite4/cryo_deathscript",
+            "monster_name": "aa2c",
+            "monster_noaidisable": true,
+            "monster_nomutate": true,
+            "monster_smartent": false,
+            "monster_spawnexactlocation": true,
+            "monster_spawnscript": "act3/infinite/infinite4/ai_disable",
+            "name": "am_sp06",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Infinite_d",
+            "classname": "monsterspawnerent",
+            "firstact": 0.1,
+            "instantspawn": false,
+            "monster_aggression": 4,
+            "monster_deathscript": "act3/infinite/infinite4/cryo_deathscript",
+            "monster_name": "aa6",
+            "monster_noaidisable": true,
+            "monster_nomutate": true,
+            "monster_smartent": false,
+            "monster_spawnexactlocation": true,
+            "monster_spawnscript": "act3/infinite/infinite4/ai_disable",
+            "name": "am_sp13",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "InfiniteSoldier_b",
+            "classname": "monsterspawnerent",
+            "firstact": 0.1,
+            "instantspawn": false,
+            "monster_aggression": 1,
+            "monster_deathscript": "act3/infinite/infinite4/cryo_deathscript",
+            "monster_name": "aa2",
+            "monster_noaidisable": true,
+            "monster_nomutate": true,
+            "monster_smartent": false,
+            "monster_spawnexactlocation": true,
+            "monster_spawnscript": "act3/infinite/infinite4/ai_disable2",
+            "name": "am_sp08",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "InfiniteSoldier_b",
+            "classname": "monsterspawnerent",
+            "firstact": 0.1,
+            "instantspawn": false,
+            "monster_aggression": 1,
+            "monster_deathscript": "act3/infinite/infinite4/cryo_deathscript",
+            "monster_name": "aa2b",
+            "monster_noaidisable": true,
+            "monster_nomutate": true,
+            "monster_smartent": false,
+            "monster_spawnexactlocation": true,
+            "monster_spawnscript": "act3/infinite/infinite4/ai_disable2",
+            "name": "am_sp07",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "InfiniteSoldier_b",
+            "classname": "monsterspawnerent",
+            "firstact": 0.1,
+            "instantspawn": false,
+            "monster_aggression": 1,
+            "monster_deathscript": "act3/infinite/infinite4/cryo_deathscript",
+            "monster_name": "aa2a",
+            "monster_noaidisable": true,
+            "monster_nomutate": true,
+            "monster_smartent": false,
+            "monster_spawnexactlocation": true,
+            "monster_spawnscript": "act3/infinite/infinite4/ai_disable2",
+            "name": "am_sp05",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "InfiniteSoldier_b",
+            "classname": "monsterspawnerent",
+            "firstact": 0.1,
+            "instantspawn": false,
+            "monster_aggression": 1,
+            "monster_deathscript": "act3/infinite/infinite4/cryo_deathscript",
+            "monster_name": "aa1c",
+            "monster_noaidisable": true,
+            "monster_nomutate": true,
+            "monster_smartent": false,
+            "monster_spawnexactlocation": true,
+            "monster_spawnscript": "act3/infinite/infinite4/ai_disable2",
+            "name": "am_sp03",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "InfiniteSoldier_b",
+            "classname": "monsterspawnerent",
+            "firstact": 0.1,
+            "instantspawn": false,
+            "monster_aggression": 1,
+            "monster_deathscript": "act3/infinite/infinite4/cryo_deathscript",
+            "monster_name": "aa1",
+            "monster_noaidisable": true,
+            "monster_nomutate": true,
+            "monster_smartent": false,
+            "monster_spawnexactlocation": true,
+            "monster_spawnscript": "act3/infinite/infinite4/ai_disable2",
+            "name": "am_sp01",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "InfiniteSoldier_b",
+            "classname": "monsterspawnerent",
+            "firstact": 0.1,
+            "instantspawn": false,
+            "monster_aggression": 1,
+            "monster_deathscript": "act3/infinite/infinite4/cryo_deathscript",
+            "monster_name": "aa4",
+            "monster_noaidisable": true,
+            "monster_nomutate": true,
+            "monster_smartent": false,
+            "monster_spawnexactlocation": true,
+            "monster_spawnscript": "act3/infinite/infinite4/ai_disable2",
+            "name": "am_sp10",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "InfiniteSoldier_b",
+            "classname": "monsterspawnerent",
+            "firstact": 0.1,
+            "instantspawn": false,
+            "monster_aggression": 1,
+            "monster_deathscript": "act3/infinite/infinite4/cryo_deathscript",
+            "monster_name": "aa5",
+            "monster_noaidisable": true,
+            "monster_nomutate": true,
+            "monster_smartent": false,
+            "monster_spawnexactlocation": true,
+            "monster_spawnscript": "act3/infinite/infinite4/ai_disable2",
+            "name": "am_sp11",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "InfiniteSoldier_b",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_smartent": true,
+            "name": "ss_infinitesoldier_b14",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "InfiniteSoldier_b",
+            "classname": "monsterspawnerent",
+            "firstact": 0.1,
+            "instantspawn": false,
+            "monster_aggression": 1,
+            "monster_deathscript": "act3/infinite/infinite4/cryo_deathscript",
+            "monster_name": "aa3",
+            "monster_noaidisable": true,
+            "monster_nomutate": true,
+            "monster_smartent": false,
+            "monster_spawnexactlocation": true,
+            "monster_spawnscript": "act3/infinite/infinite4/ai_disable2",
+            "name": "am_sp09",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "waittimed(0.5)\\n\\rloadDangerRoomCourse('CHSUN')",
+            "actsound": "common/game/dangerdisc_pickup",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Danger Room Disc",
+            "fxlevel": 7,
+            "idnum": 30,
+            "ignoreactorsonmove": true,
+            "loopfx": "base/item/item_sparkle",
+            "loopfxstarton": true,
+            "model": "pickups/pickup_dangeroom_disk",
+            "name": "disc_sunfire01",
+            "nocollide": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "smartent": false,
+            "spinpossible": false,
+            "structure": 2,
+            "team": "hero",
+            "variablename": "r_dr_disc"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "homingBeaconReward('beaconact3',190)",
+            "actsound": "zone_shared/special/beacon",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Pick up Homing Beacon",
+            "idnum": 16,
+            "material": "hollow_metal",
+            "model": "pickups/homing_beacon_act3",
+            "name": "homing_beacon_act3_01",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "smartent": false,
+            "spawnscript": "common/beacons/beacon3",
+            "structure": 2,
+            "team": "hero",
+            "variablename": "beaconact3"
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actleader": true,
+            "actonuse": true,
+            "actscript": "common/beacons/treasureact3",
+            "actsound": "common/game/pickup_power",
+            "animstarton": true,
+            "classname": "physent",
+            "description": "Experience Points",
+            "fxlevel": 7,
+            "model": "pickups/experience_point",
+            "name": "beacon_chest3",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "persistent": false,
+            "quickuse": true,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_m",
+            "fxlevel": 2,
+            "health": 5,
+            "heaviness": 0,
+            "material": "hollow_metal",
+            "model": "infinite_plant/barrel_inf_th",
+            "name": "barrel_inf_th_ip13",
+            "randompickups": 5,
+            "stackphysics": true,
+            "structure": 0
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathscript": "act3/infinite/infinite4/shut_down_zapper",
+            "deathsound": "death_style/ds_electrical_l",
+            "deathspawn": "comp_console_02_inf_b_ip_d",
+            "fxlevel": 3,
+            "health": 200,
+            "hinttype": "objective",
+            "material": "electronics",
+            "model": "infinite_plant/comp_console_02_inf_b",
+            "name": "zap_control",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 1
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathscript": "act3/infinite/infinite4/shut_down_freezejet",
+            "deathsound": "death_style/ds_electrical_l",
+            "deathspawn": "comp_console_02_inf_b_ip_d",
+            "fxlevel": 3,
+            "health": 200,
+            "hinttype": "objective",
+            "material": "electronics",
+            "model": "infinite_plant/comp_console_02_inf_b",
+            "name": "freeze_control",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 1
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathscript": "act3/infinite/infinite4/ambush_set_up",
+            "deathsound": "death_style/ds_electrical_l",
+            "deathspawn": "comp_console_02_inf_b_ip_d",
+            "fxlevel": 3,
+            "health": 200,
+            "hinttype": "objective",
+            "material": "electronics",
+            "model": "infinite_plant/comp_console_02_inf_b",
+            "name": "cryo_control",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 1
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathscript": "act3/infinite/infinite4/shut_down_firejet",
+            "deathsound": "death_style/ds_electrical_l",
+            "deathspawn": "comp_console_02_inf_b_ip_d",
+            "fxlevel": 3,
+            "health": 200,
+            "hinttype": "objective",
+            "material": "electronics",
+            "model": "infinite_plant/comp_console_02_inf_b",
+            "name": "fire_control",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 1
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathscript": "act3/infinite/infinite4/shut_down_freezejet2",
+            "deathsound": "death_style/ds_electrical_l",
+            "deathspawn": "comp_console_02_inf_b_ip_d",
+            "fxlevel": 3,
+            "health": 200,
+            "hinttype": "objective",
+            "material": "electronics",
+            "model": "infinite_plant/comp_console_02_inf_b",
+            "name": "freeze_control2",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 1
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathsound": "death_style/ds_electrical_l",
+            "fxlevel": 3,
+            "health": 200,
+            "mass": 0,
+            "material": "electronics",
+            "model": "infinite_plant/comp_console_02_stump_inf_b",
+            "name": "comp_console_02_inf_b_ip_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "actsound": "zone_shared/special/inf_pod",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "deathspawn": "cryo_contain_door_inf_a_ip_d",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "infinite_plant/cryo_contain_door_inf_a",
+            "name": "cryo_doors04",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "animstarton": false,
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "mass": 0,
+            "material": "solid_metal",
+            "model": "infinite_plant/comp_console_stump_inf_b",
+            "name": "cryo_contain_door_inf_a_ip_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": false,
+            "actsound": "zone_shared/mover/door_01_inf",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "infinite_plant/door_01_inf_a",
+            "name": "cryo_door1",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "startenabled": false,
+            "structure": 2,
+            "toggleonact": false,
+            "togglestarton": false
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "actsound": "zone_shared/mover/door_01_inf",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "infinite_plant/door_01_inf_a",
+            "name": "cryo_door3",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "resetstate": true,
+            "smartent": false,
+            "startenabled": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "actsound": "zone_shared/mover/door_01_inf",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "infinite_plant/door_01_inf_a",
+            "name": "belt_door",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "startenabled": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "actsound": "zone_shared/mover/door_01_inf",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "infinite_plant/door_01_inf_a",
+            "name": "cryo_door4",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "resetstate": true,
+            "smartent": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "actscript": "act3/infinite/infinite4/recall_active_t",
+            "actsound": "zone_shared/mover/door_01_inf",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "infinite_plant/door_01_inf_a",
+            "name": "locked_door3",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actonuse": false,
+            "actsound": "zone_shared/mover/door_01_inf",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "infinite_plant/door_01_inf_a",
+            "name": "cryo_door2",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "resetstate": true,
+            "smartent": false,
+            "startenabled": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "infinite_plant/jet_flame_inf_a",
+            "name": "jet_flame_inf_a_ip10",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "spawnsoundloop": "zone_shared/object/jet_flame",
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "infinite_plant/jet_flame_inf_a",
+            "name": "jet_flame_inf_a_ip04",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_m",
+            "deathspawn": "lesser_machine_inf_a_b_ip_d",
+            "fxlevel": 2,
+            "health": 200,
+            "material": "solid_metal",
+            "model": "infinite_plant/lesser_machine_inf_a_b",
+            "name": "lesser_machine_inf_a_b_ip01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_m",
+            "fxlevel": 2,
+            "health": 200,
+            "mass": 0,
+            "material": "solid_metal",
+            "model": "infinite_plant/lesser_machine_stump_inf_a_b",
+            "name": "lesser_machine_inf_a_b_ip_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_l",
+            "fxlevel": 3,
+            "health": 200,
+            "mass": 0,
+            "material": "hollow_metal",
+            "model": "infinite_plant/wall_pipe_stump_inf_b",
+            "name": "wall_pipe_inf_b_ip_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "acttargets": "zapper_01",
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathscript": "act3/infinite/infinite4/zapper01_dead",
+            "deathsound": "death_style/ds_electrical_l",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "electronics",
+            "model": "infinite_plant/zap_inf_a",
+            "name": "zap_inf_a_ip03",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 0
+        },
+        "entity": {
+            "acttargets": "zapper_02",
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_electric",
+            "deathscript": "act3/infinite/infinite4/zapper02_dead",
+            "deathsound": "death_style/ds_electrical_l",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "electronics",
+            "model": "infinite_plant/zap_inf_a",
+            "name": "zap_inf_a_ip01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 0
+        },
+        "entity": {
+            "acttargets": "belt_door",
+            "classname": "enabletargetent",
+            "enable": true,
+            "name": "enable_c_door",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "acttargets": "trigger_touch01",
+            "classname": "enabletargetent",
+            "enable": true,
+            "name": "enable_ambush_trigger",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actsoundloop": "zone_shared/fx/zap",
+            "acttogglesloopfx": true,
+            "boxcollision": true,
+            "boxdamage": true,
+            "classname": "affectableharment",
+            "damage": 10,
+            "damagetype": "dmg_cold",
+            "firstact": 0,
+            "knockback": 0,
+            "loopfx": "map/infinite/conveyor_zap",
+            "name": "freezejet_02",
+            "nocollide": true,
+            "offtime": 2,
+            "ontime": 1.9,
+            "radiusdamage": false,
+            "smartent": false,
+            "smartfire": true,
+            "toggleonact": true
+        },
+        "entity": {
+            "actsoundloop": "zone_shared/fx/zap",
+            "acttogglesloopfx": true,
+            "boxcollision": true,
+            "boxdamage": true,
+            "classname": "affectableharment",
+            "damage": 10,
+            "damagetype": "dmg_electricity",
+            "firstact": 0,
+            "knockback": 0,
+            "loopfx": "map/infinite/conveyor_zap",
+            "name": "zapper_01",
+            "nocollide": true,
+            "offtime": 2,
+            "ontime": 1.9,
+            "radiusdamage": false,
+            "smartent": false,
+            "smartfire": true,
+            "toggleonact": true
+        },
+        "entity": {
+            "actonuse": false,
+            "classname": "lightent",
+            "lightcolor": "0.67 0.07 0",
+            "lightradius": 512,
+            "name": "cryo_light_red",
+            "nocollide": true,
+            "smartent": false,
+            "startoff": true,
+            "toggleonact": true,
+            "togglestarton": false
+        },
+        "entity": {
+            "actonuse": false,
+            "classname": "lightent",
+            "lightcolor": "0 0.56 0.96",
+            "lightradius": 512,
+            "name": "cryo_light",
+            "nocollide": true,
+            "smartent": false,
+            "startoff": false,
+            "toggleonact": true,
+            "togglestarton": false
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/common/steam_large",
+            "loopfxstarton": true,
+            "name": "loop_effect10",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "classname": "ent",
+            "name": "herospot04",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "default": false,
+            "name": "player_start_all02",
+            "nocollide": true,
+            "prevzone": "infinite6"
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "default": true,
+            "name": "player_start_all01",
+            "nocollide": true,
+            "prevzone": "infinite1"
+        },
+        "entity": {
+            "actcountact": 12,
+            "actscript": "act3/infinite/infinite4/cryo_done",
+            "classname": "actionent",
+            "name": "death_counter",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actscript": "act3/infinite/infinite4/c_belt_door_open",
+            "classname": "actionent",
+            "name": "door_counter",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actrescheduledelay": 5,
+            "actrescheduledelaymin": 5,
+            "actscript": "act3/infinite/infinite4/run_freezejet",
+            "classname": "actionent",
+            "firstact": 1,
+            "name": "freezejet_relay",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actleader": true,
+            "actmatchteam": true,
+            "actscript": "act3/infinite/infinite4/turn_on_partylight_blue",
+            "boxcollision": true,
+            "classname": "scripttriggerent",
+            "deactscript": "act3/infinite/infinite4/turn_on_partylight_default",
+            "name": "trigger_area01",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actcountremove": 1,
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "act3/infinite/infinite4/ambush",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "trigger_touch01",
+            "nocollide": true,
+            "smartent": false,
+            "startenabled": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actscript": "setWaypointPath('_ACTIVATOR_','',1)",
+            "beeline": true,
+            "classname": "waypointent",
+            "name": "wp_nw01",
+            "nocollide": true
+        },
+        "entity": {
+            "beeline": true,
+            "classname": "waypointent",
+            "name": "wp_bait1_spot01",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/misc/extraction_burst",
+            "actleader": true,
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "common/extraction/exp_trig",
+            "actsound": "common/game/extraction",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "extent": "-120 -120 0 120 120 72",
+            "fxlevel": 1,
+            "name": "expt_trig",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "persistent": false,
+            "resetstate": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "zonelinkent",
+            "description": "Central Processing",
+            "name": "lnk02_infinite5",
+            "nextzone": "infinite6",
+            "nocollide": false,
+            "smartent": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "zonelinkent",
+            "description": "Factory Entrance",
+            "name": "link_infinite1",
+            "nextzone": "infinite1",
+            "nocollide": false,
+            "smartent": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actsound": "common/game/pickup_item",
+            "animstarton": true,
+            "classname": "inventoryent",
+            "count": 1,
+            "fxlevel": 7,
+            "inventoryitem": "keycard1",
+            "model": "models/pickups/key_green",
+            "name": "keycard1",
+            "nocollide": true,
+            "smartent": false,
+            "team": "hero"
+        },
+        "entity": {
+            "classname": "physent",
+            "health": 200,
+            "material": "solid_metal",
+            "model": "puzzles/pylon_act3_icecannon_stump",
+            "name": "pylon_a3_ice_cannon_puz_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": true,
+            "structure": 2,
+            "targetlockable": false,
+            "team": "none"
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "projectileent",
+            "deatheffect": "base/material/break/brk_ice",
+            "deathsound": "death_style/ds_ice_s",
+            "dieoncontact": true,
+            "explodedamage": "50 63",
+            "explodedamagemods": "dmgmod_forcepain dmgmod_immobilize",
+            "explodeknockback": 350,
+            "explodeoncontact": true,
+            "exploderadius": 30,
+            "fade": false,
+            "fxlevel": 1,
+            "health": 20,
+            "homing": false,
+            "lifetime": 4,
+            "material": "ice",
+            "model": "puzzles/pylon_ice_shard",
+            "name": "p3_ice_proj",
+            "nogravity": true,
+            "radius": 6,
+            "smartent": false,
+            "spawnsound": "zone_shared/pylon/pylon_a3_ice_cannon_shoot",
+            "spawnsoundloop": "zone_shared/pylon/pylon_a3_ice_cannon_loop",
+            "speed": 300
+        },
+        "entity": {
+            "classname": "physent",
+            "health": 200,
+            "material": "solid_metal",
+            "model": "puzzles/null_hover_stump_puz_a",
+            "name": "pylon_a3_nullify_puz_d",
+            "nocollide": false,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": true,
+            "structure": 2,
+            "targetlockable": true,
+            "team": "none",
+            "toggleonact": true
+        },
+        "entity": {
+            "acteffect": "base/misc/turret_nullifier_loop",
+            "actmatchteam": true,
+            "actrescheduledelay": 0.5,
+            "actrescheduledelaymin": 0.5,
+            "boxdamage": true,
+            "classname": "affectableharment",
+            "conversationoff": true,
+            "damage": 10000,
+            "damagemods": "dmgmod_drain",
+            "damagetype": "dmg_physical",
+            "extent": "-90 -90 0 90 90 180",
+            "firstact": 1,
+            "name": "p_nul_trig",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "persistent": false,
+            "radiusdamage": false,
+            "smartent": false,
+            "spawnsoundloop": "zone_shared/pylon/pylon_a3_nullify_loop",
+            "team": "hero",
+            "toggleonact": false
+        },
+        "entity": {
+            "actmatchteam": true,
+            "actscript": "common/pylons/a3_null_deploy",
+            "actsound": "zone_shared/pylon/pylon_a3_nullify_deploy",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "scripttriggerent",
+            "deactscript": "common/pylons/a3_null_retract",
+            "extent": "-140 -140 -60 140 140 240",
+            "name": "p_nul_on_trig",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "persistent": false,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2,
+            "team": "hero",
+            "toggleonact": true
+        }
+    }
+}
