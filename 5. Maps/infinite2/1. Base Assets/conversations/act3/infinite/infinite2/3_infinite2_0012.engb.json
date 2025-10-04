@@ -1,0 +1,30 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "act3/infinite/infinite2/isSecurityOverrideEnabled",
+            "participant": {
+                "name": "default",
+                "line": {
+                    "text": "%Menu%: The Security Console is currently locked down.",
+                    "response": {
+                        "conversationend": true,
+                        "text": "%END%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "text": "%Menu%: Safety Override deactivated. Power Distribution console has been updated.",
+                    "response": {
+                        "chosenscriptfile": "act3/infinite/infinite2/SecurityOverrideEnabled",
+                        "conversationend": true,
+                        "text": "%END%"
+                    }
+                }
+            }
+        }
+    }
+}
