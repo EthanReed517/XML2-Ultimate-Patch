@@ -20,26 +20,56 @@
                     "tagindex": "autogen_tag_1",
                     "text": "%PLAYER%",
                     "response": {
-                        "chosenscriptfile": "loadZone('briefing/briefing3_10', 'NULL')",
-                        "conversationend": true,
-                        "scriptfile": "disallowResponseOnObjective('act3_obj_2a_1', 'FALSE' )",
-                        "text": "The Core."
+                        "text": "Select Mission Briefings.",
+                        "line": {
+                            "text": "%PLAYER%",
+                            "response": {
+                                "chosenscriptfile": "loadZone('briefing/briefing3_10', 'NULL')",
+                                "conversationend": true,
+                                "scriptfile": "disallowResponseOnObjective('act3_obj_2a_1', 'FALSE' )",
+                                "text": "The Core."
+                            },
+                            "response": {
+                                "chosenscriptfile": "loadZone('briefing/briefing3_20', 'NULL')",
+                                "conversationend": true,
+                                "scriptfile": "disallowResponseOnObjective('act3_obj_3a_1', 'FALSE' )",
+                                "text": "The Infinite factory."
+                            },
+                            "response": {
+                                "chosenscriptfile": "loadZone('briefing/briefing3_30', 'NULL')",
+                                "conversationend": true,
+                                "scriptfile": "disallowResponseOnObjective('act3_obj_6a_1', 'FALSE' )",
+                                "text": "The Madri Temple."
+                            },
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "Nevermind"
+                            }
+                        }
                     },
                     "response": {
-                        "chosenscriptfile": "loadZone('briefing/briefing3_20', 'NULL')",
-                        "conversationend": true,
-                        "scriptfile": "disallowResponseOnObjective('act3_obj_3a_1', 'FALSE' )",
-                        "text": "The Infinite factory."
+                        "text": "View Character Bios.",
+                        "line": {
+                            "text": "%Menu%: What would you like to view?",
+                            "response": {
+                                "chosenscriptfile": "common/review_heroes",
+                                "conversationend": true,
+                                "text": "Hero Bios"
+                            },
+                            "response": {
+                                "chosenscriptfile": "common/review_enemies",
+                                "conversationend": true,
+                                "text": "Enemy Bios"
+                            },
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "Nevermind"
+                            }
+                        }
                     },
                     "response": {
-                        "chosenscriptfile": "loadZone('briefing/briefing3_30', 'NULL')",
                         "conversationend": true,
-                        "scriptfile": "disallowResponseOnObjective('act3_obj_6a_1', 'FALSE' )",
-                        "text": "The Madri Temple."
-                    },
-                    "response": {
-                        "conversationend": true,
-                        "text": "Never mind."
+                        "text": "Nothing right now."
                     }
                 }
             }

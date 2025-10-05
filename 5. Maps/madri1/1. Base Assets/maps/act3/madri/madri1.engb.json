@@ -71,14 +71,6 @@
             "type": "conversation"
         },
         "precache": {
-            "filename": "act3/madri/madri1/gotomilitary1",
-            "type": "conversation"
-        },
-        "precache": {
-            "filename": "act3/madri/madri1/mind_altar_default",
-            "type": "conversation"
-        },
-        "precache": {
             "filename": "HUD/hud_head_1901",
             "type": "model"
         },
@@ -2219,6 +2211,39 @@
         },
         "entity": {
             "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "waittimed(0.5)\\n\\rimageViewer('textures/comic/psylocke_cov.png')",
+            "actsound": "common/game/comic_book_pickup",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Comic Book",
+            "fxlevel": 7,
+            "idnum": 17,
+            "ignoreactorsonmove": true,
+            "loopfx": "base/item/item_sparkle",
+            "loopfxstarton": true,
+            "model": "pickups/pickup_comicbook",
+            "name": "comic_psylocke",
+            "nocollide": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "spinpossible": false,
+            "structure": 2,
+            "team": "hero",
+            "variablename": "r_comic"
+        },
+        "entinst": {
+            "type": "comic_psylocke",
+            "inst": {
+                "name": "comic_psylocke",
+                "pos": "8294 600 1"
+            }
+        },
+        "entity": {
+            "actcountremove": 1,
             "character": "HellHound_b",
             "classname": "monsterspawnerent",
             "instantspawn": false,
@@ -2880,7 +2905,7 @@
             "classname": "physent",
             "description": "Recall Beacon",
             "health": 32000,
-            "hinttype": "use",
+            "hinttype": "usetoggle",
             "material": "solid_metal",
             "model": "misc/recall_beacon_misc_a",
             "name": "recall_beacon01",

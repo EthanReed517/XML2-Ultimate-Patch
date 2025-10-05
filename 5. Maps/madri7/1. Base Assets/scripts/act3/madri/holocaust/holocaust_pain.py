@@ -64,6 +64,7 @@ if hamt < hthresh
                     setZoneVar("painthresh", 40 )
                     cameraMove(" 1296.720 1635.650 284.585 ", 1.000 )
                     cameraPan(" 0.000 24.681 174.835 ", 1.000, "FALSE" )
+                    sound (  "PLAY_SOUND", "voice/stepfordcuckoo/altar", "", "" )
                     lockControls(-1.000 )
                     setInvulnerable("holocaust", "TRUE" )
                     playCombatNodeTrigger("holocaust", "powerup_invul", 71 )
@@ -81,6 +82,7 @@ if hamt < hthresh
                     waittimed ( 1.000 )
                     cameraReset( )
                     lockControls(0.100 )
+                    sound (  "PLAY_SOUND", "voice/holocaust/sc_power", "", "" )
                     enemiesNoTarget("FALSE" )
                     heroNoTarget("FALSE" )
                endif
@@ -89,6 +91,7 @@ if hamt < hthresh
                     # ( "cuckoo #3 returns" )
                     cameraMove(" 1146.870 1498.300 284.585 ", 1.000 )
                     cameraPan(" 0.000 24.681 64.835 ", 1.000, "FALSE" )
+                    sound (  "PLAY_SOUND", "voice/stepfordcuckoo/altar", "", "" )
                     setZoneVar("painthresh", 15 )
                     lockControls(-1.000 )
                     playCombatNodeTrigger("holocaust", "powerup_invul", 71 )
@@ -108,6 +111,7 @@ if hamt < hthresh
                     waittimed ( 1.000 )
                     lockControls(0.100 )
                     cameraReset( )
+                    sound (  "PLAY_SOUND", "voice/holocaust/sc_power", "", "" )
                     enemiesNoTarget("FALSE" )
                endif
           else
