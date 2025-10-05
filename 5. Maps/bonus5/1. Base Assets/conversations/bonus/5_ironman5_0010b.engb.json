@@ -1,0 +1,61 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "bonus/b5_tony_check",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/ironman/5_ironman5_010_010",
+                    "text": "%TONYSTARK%: Glad you could make the party - I was beginning to get lonely.  It feels like it's been years since Apocalypse put me here.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: Iron Man, how did Apocalypse manage to capture someone like you?",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/ironman/5_ironman5_010_012",
+                                    "text": "%TONYSTARK%: Let's just say a trap was set up using my only real weakness.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "text": "%PLAYER%: It had something to do with a beautiful woman, didn't it?",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "soundtoplay": "voice/ironman/5_ironman5_010_014",
+                                                    "text": "%TONYSTARK%: Oh yeah. And you know what - she was almost worth getting caught for.",
+                                                    "response": {
+                                                        "tagjump": "yeaharmor",
+                                                        "text": "%BLANK%"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/ironman/5_ironman5_010_040",
+                    "tagindex": "yeaharmor",
+                    "text": "%TONYSTARK%: You have my armor! This is just what I needed.",
+                    "response": {
+                        "chosenscriptfile": "bonus/b5_unlock_ironman",
+                        "conversationend": true,
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        }
+    }
+}
