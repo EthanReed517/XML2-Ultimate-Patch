@@ -6,6 +6,18 @@
             "partylight": "0.24 0.24 0.24",
             "soundfile": "bgeno"
         },
+        "precache": {
+            "filename": "bonus/b1_getarmor",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "bonus/b1_forcefield",
+            "type": "script"
+        },
+        "precache": {
+            "filename": "bonus/b1_getarmor",
+            "type": "script"
+        },
         "entity": {
             "actcountremove": 1,
             "character": "Behemoth_a",
@@ -104,26 +116,28 @@
         },
         "entity": {
             "actcountremove": 1,
-            "acteffect": "base/item/item_pickup",
             "actleader": true,
             "actmatchteam": true,
             "actonuse": true,
+            "actscript": "bonus/b1_getarmor",
             "actsound": "common/game/ironman_piece_pickup",
             "classname": "rememberent",
-            "description": "Pick up Ironman's Gauntlets",
+            "description": "Pick up Armored Boots",
             "fxlevel": 6,
-            "idnum": 1,
+            "hinttype": "objective",
+            "idnum": 3,
             "loopfx": "base/item/item_sparkle",
             "loopfxstarton": true,
             "material": "biometal",
-            "model": "common/ironman_arms",
-            "name": "ironman_arms",
+            "model": "common/ironman_legs",
+            "name": "ironman_legs",
             "nogravity": true,
             "nopickup": true,
             "nopush": true,
             "quickuse": true,
             "structure": 2,
             "team": "hero",
+            "toggleonact": false,
             "variablename": "r_imarmor"
         },
         "entity": {
@@ -242,9 +256,10 @@
             }
         },
         "entinst": {
-            "type": "ironman_arms",
+            "type": "ironman_legs",
             "inst": {
-                "name": "ironman_arms",
+                "name": "ironman_legs",
+				"orient": "0 0 3.92699",
                 "pos": "780 780 0"
             }
         },
@@ -335,7 +350,7 @@
             "classname": "physent",
             "deatheffect": "base/material/break/brk_metal",
             "deathsound": "death_style/ds_metal_m",
-            "description": "Console",
+            "description": "Force Field Control Panel",
             "fxlevel": 2,
             "health": 100,
             "hinttype": "use",
@@ -386,8 +401,7 @@
         },
         "entity": {
             "actcountact": 3,
-            "actscript": "remove (\"force_dome\",\"force_dome\")",
-            "acttargets": "machoman",
+            "actscript": "bonus/b1_forcefield",
             "classname": "actionent",
             "name": "armor_relay",
             "nocollide": true,
@@ -400,7 +414,7 @@
             "actonuse": true,
             "boxcollision": true,
             "classname": "zonelinkent",
-            "description": "Sanctuary",
+            "description": "Return to the Sanctuary",
             "name": "link1_sanctuary1",
             "nextzone": "act1/sanctuary/sanctuary1",
             "nocollide": true,

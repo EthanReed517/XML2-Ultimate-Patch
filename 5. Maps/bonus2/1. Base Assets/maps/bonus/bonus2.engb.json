@@ -6,6 +6,14 @@
             "partylight": "0.77 0.67 0.15",
             "soundfile": "fmon"
         },
+        "precache": {
+            "filename": "bonus/b2_getarmor",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "bonus/b2_getarmor",
+            "type": "script"
+        },
         "entity": {
             "actcountremove": 1,
             "character": "Infinite_a",
@@ -65,16 +73,17 @@
             "actleader": true,
             "actmatchteam": true,
             "actonuse": true,
+            "actscript": "bonus/b2_getarmor",
             "actsound": "common/game/ironman_piece_pickup",
             "classname": "rememberent",
-            "description": "Pick up Ironman's Chest Plate",
+            "description": "Pick up Armored Gauntlets",
             "fxlevel": 6,
             "idnum": 2,
             "loopfx": "base/item/item_sparkle",
             "loopfxstarton": true,
             "material": "biometal",
-            "model": "common/ironman_chest",
-            "name": "ironman_chest",
+            "model": "common/ironman_arms",
+            "name": "ironman_arms",
             "nogravity": true,
             "nopickup": true,
             "nopush": true,
@@ -298,9 +307,10 @@
             }
         },
         "entinst": {
-            "type": "ironman_chest",
+            "type": "ironman_arms",
             "inst": {
-                "name": "ironman_chest",
+                "name": "ironman_arms",
+                "orient": "0 0 1.5708",
                 "pos": "1800 312 0"
             }
         },
@@ -686,7 +696,7 @@
             "actonuse": true,
             "boxcollision": true,
             "classname": "zonelinkent",
-            "description": "Avalon",
+            "description": "Return to Avalon",
             "name": "zone_link01",
             "nextzone": "act2/savage/savage1",
             "nocollide": true,

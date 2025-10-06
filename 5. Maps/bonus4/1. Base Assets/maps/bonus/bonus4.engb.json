@@ -8,8 +8,12 @@
             "soundfile": "dpen"
         },
         "precache": {
-            "filename": "bonus/b4_gethelmet",
+            "filename": "bonus/b4_getarmor",
             "type": "conversation"
+        },
+        "precache": {
+            "filename": "bonus/b4_getarmor",
+            "type": "script"
         },
         "entity": {
             "classname": "tileent",
@@ -155,16 +159,17 @@
             "actleader": true,
             "actmatchteam": true,
             "actonuse": true,
+            "actscript": "bonus/b4_getarmor",
             "actsound": "common/game/ironman_piece_pickup",
             "classname": "rememberent",
-            "description": "Pick up Ironman's Jet Boots",
+            "description": "Pick up Armored Helmet",
             "fxlevel": 6,
             "idnum": 4,
             "loopfx": "base/item/item_sparkle",
             "loopfxstarton": true,
             "material": "biometal",
-            "model": "common/ironman_legs",
-            "name": "ironman_legs",
+            "model": "common/ironman_head",
+            "name": "ironman_head",
             "nogravity": true,
             "nopickup": true,
             "nopush": true,
@@ -790,9 +795,9 @@
             }
         },
         "entinst": {
-            "type": "ironman_legs",
+            "type": "ironman_head",
             "inst": {
-                "name": "ironman_legs",
+                "name": "ironman_head",
                 "orient": "0 0 -1.5708",
                 "pos": "2399.9 1921.18 27.8124"
             }
@@ -1377,7 +1382,7 @@
             "actonuse": true,
             "boxcollision": true,
             "classname": "zonelinkent",
-            "description": "X-Mansion",
+            "description": "Return to the X-Mansion",
             "name": "link_mansion1",
             "nextzone": "act4/mansion/mansion1",
             "nocollide": true,

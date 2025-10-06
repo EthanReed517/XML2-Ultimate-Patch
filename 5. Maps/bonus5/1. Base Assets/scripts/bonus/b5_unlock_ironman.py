@@ -2,7 +2,17 @@
 # ( "indicate Iron Man has been unlocked" )
 setGameFlag("bonus5", 2, 1 )
 # ( "unlock Iron Man" )
-unlockCharacter("ironman", "" )
+ironman_unlocked = isCharacterUnlocked("Ironman")
+if ironman_unlocked == 0
+    # ( "Iron Man is not yet unlocked, unlock him" )
+    unlockCharacter("ironman", "" )
+    ironman_unlocked = isCharacterUnlocked("Ironman")
+    if ironman_unlocked == 1
+        # ( "Iron Man was not previously unlocked but he is on the roster" )
+        # ( "He's been unlocked now, so show the dialog that confirms this" )
+        createPopupDialogXML("dialogs/bonus/ironman_unlocked")
+    endif 
+endif 
 setSkin("tony", "1501" )
 sound (  "PLAY_SOUND", "voice/ironman/unlock", "", "" )
 spawnEffect("tony", "base/misc/misc_levelup", " 0.000 0.000 0.000 ", " 0.000 0.000 0.000 " )
