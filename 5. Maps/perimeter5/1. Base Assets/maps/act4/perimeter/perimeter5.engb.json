@@ -1,0 +1,1415 @@
+{
+    "world": {
+        "entity": {
+            "act": 4,
+            "extent_max": "9356 9801 197",
+            "extent_min": "0 0 -1122",
+            "killz": -200,
+            "level": 35,
+            "name": "world",
+            "nosave": true,
+            "partylight": "0.92 0.72 0.36",
+            "soundfile": "aperm",
+            "zonescript": "act4/perimeter/perimeter5/perimeter5"
+        },
+        "precache": {
+            "filename": "act4/perimeter/perimeter5/4_perimeter5_0010",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act4/perimeter/perimeter5/4_perimeter5_0020",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "common/finish_obj",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "base/misc/bastion_beam",
+            "type": "fx"
+        },
+        "precache": {
+            "filename": "char/sent/special_jet",
+            "type": "fx"
+        },
+        "precache": {
+            "filename": "char/sent/special_landing",
+            "type": "fx"
+        },
+        "precache": {
+            "filename": "map/common/scr_blinkportal_c",
+            "type": "fx"
+        },
+        "precache": {
+            "filename": "map/common/scr_blinkportal_s",
+            "type": "fx"
+        },
+        "precache": {
+            "filename": "hud/hud_head_1101",
+            "type": "model"
+        },
+        "precache": {
+            "filename": "hud/hud_head_12101",
+            "type": "model"
+        },
+        "precache": {
+            "filename": "hud/hud_head_2201",
+            "type": "model"
+        },
+        "precache": {
+            "filename": "act4/perimeter/perimeter5/bastion_defeated",
+            "type": "script"
+        },
+        "precache": {
+            "filename": "act4/perimeter/perimeter5/bastion_fight",
+            "type": "script"
+        },
+        "precache": {
+            "filename": "act4/perimeter/perimeter5/bastion_pain",
+            "type": "script"
+        },
+        "precache": {
+            "filename": "act4/perimeter/perimeter5/bastion_sntl_dealth",
+            "type": "script"
+        },
+        "precache": {
+            "filename": "act4/perimeter/perimeter5/reveal_bastion",
+            "type": "script"
+        },
+        "precache": {
+            "filename": "act4/perimeter/perimeter5/reveal_blink_portal",
+            "type": "script"
+        },
+        "precache": {
+            "filename": "act4/perimeter/perimeter5/sentinel_swarm",
+            "type": "script"
+        },
+        "precache": {
+            "filename": "act4/perimeter/perimeter5/sum_sntl_pain",
+            "type": "script"
+        },
+        "precache": {
+            "filename": "char/sent_m/descend",
+            "type": "sound"
+        },
+        "precache": {
+            "filename": "zone_shared/special/sent_fly_past",
+            "type": "sound"
+        },
+        "precache": {
+            "filename": "zone_shared/special/teleporter_spawn",
+            "type": "sound"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Sentinel_a",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_randompickups": 4,
+            "monster_smartent": true,
+            "name": "ss_sentinel_a",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Bastion",
+            "classname": "monsterspawnerent",
+            "monster_deathspawn": "bastion_treasure",
+            "name": "sp_bastion",
+            "nocollide": true,
+            "nofadeondeath": true,
+            "shadow": true
+        },
+        "entity": {
+            "actinactivedelay": 1,
+            "actleader": true,
+            "actonuse": true,
+            "actscript": "common/puzzleents/blinkportal",
+            "actsoundloop": "zone_shared/special/blink_portal",
+            "acttogglesloopfx": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "deatheffect": "map/common/scr_blinkportal_c",
+            "description": "Blink Portal",
+            "loopfx": "map/common/scr_blinkportal",
+            "loopfxstarton": false,
+            "name": "blink_portal_loc",
+            "nocollide": true,
+            "resetstate": true,
+            "smartent": false,
+            "spawnscript": "common/puzzleents/blinkportalspawnscript",
+            "startenabled": false,
+            "team": "hero",
+            "toggleonact": true
+        },
+        "entity": {
+            "actrescheduledelay": 1,
+            "actrescheduledelaymin": 0.5,
+            "boxcollision": true,
+            "classname": "affectableharment",
+            "damage": 10,
+            "damagetype": "dmg_physical",
+            "firstact": 1,
+            "knockback": 0,
+            "name": "harm_target",
+            "nocollide": true,
+            "radiusdamage": true,
+            "smartent": false
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfxstarton": true,
+            "name": "loop_effect",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "classname": "ent",
+            "name": "null",
+            "nocollide": true
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "name": "player_start_all",
+            "nocollide": true
+        },
+        "entity": {
+            "classname": "actionent",
+            "name": "relay",
+            "nocollide": true
+        },
+        "entity": {
+            "actmatchteam": true,
+            "actontouch": true,
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "trigger_touch",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "classname": "waypointent",
+            "name": "waypoint",
+            "nocollide": true
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "zonelinkent",
+            "description": "Enter next area",
+            "name": "zone_link",
+            "nocollide": false,
+            "team": "hero"
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 32000,
+            "material": "biometal",
+            "model": "perimeter_platforms/column_20x20_per_e",
+            "name": "column_20x20_per_e_pp",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "actsound": "zone_shared/object/beep",
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_m",
+            "deathspawn": "controlpanel01_per_b_pp_d",
+            "fxlevel": 2,
+            "health": 50,
+            "material": "solid_metal",
+            "model": "perimeter_platforms/controlpanel01_per_b",
+            "name": "controlpanel01_per_b_pp",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 5,
+            "heaviness": 0,
+            "material": "solid_metal",
+            "model": "perimeter_platforms/crate_6_per",
+            "name": "crate_6_per_pp",
+            "randompickups": 2,
+            "stackphysics": true,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 5,
+            "heaviness": 0,
+            "material": "solid_metal",
+            "model": "perimeter_platforms/crate_per",
+            "name": "crate_per_pp",
+            "randompickups": 2,
+            "stackphysics": true,
+            "structure": 0
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_m",
+            "fxlevel": 2,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "perimeter_platforms/door_pillar_per_a",
+            "name": "door_pillar_per_a_pp",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 100,
+            "material": "solid_metal",
+            "model": "perimeter_platforms/floor_post3_per_b",
+            "name": "floor_post3_per_b_pp",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 100,
+            "material": "solid_metal",
+            "model": "perimeter_platforms/floor_post_per_b",
+            "name": "floor_post_per_b_pp",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "perimeter_platforms/monolith_green_per_e",
+            "name": "monolith_green_per_e_pp",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "material": "solid_metal",
+            "model": "perimeter_platforms/sentinel_static_floating",
+            "name": "sentinel_static_floating_pp",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "perimeter_platforms/zone_teleport_per_e",
+            "name": "zone_teleport_per_e_pp",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "boxdamage": true,
+            "classname": "affectableharment",
+            "damage": "3 5",
+            "damagemods": "dmgmod_no_pain",
+            "damagetype": "dmg_fire",
+            "extent": "-60 -60 0 60 60 72",
+            "health": 1,
+            "knockback": 200,
+            "loopfx": "map/common/fire_large",
+            "loopfxstarton": true,
+            "name": "fire_large",
+            "radiusdamage": false,
+            "reactpower": "extinguish",
+            "smartfire": true,
+            "spawnsoundloop": "zone_shared/fx/fire_large"
+        },
+        "entity": {
+            "boxdamage": true,
+            "classname": "affectableharment",
+            "damage": "2 3",
+            "damagemods": "dmgmod_no_pain",
+            "damagetype": "dmg_fire",
+            "extent": "-30 -30 0 30 30 36",
+            "health": 1,
+            "knockback": 200,
+            "loopfx": "map/common/fire_medium",
+            "loopfxstarton": true,
+            "name": "fire_med",
+            "radiusdamage": false,
+            "reactpower": "extinguish",
+            "smartfire": true,
+            "spawnsoundloop": "zone_shared/fx/fire_med"
+        },
+        "entity": {
+            "aishootme": true,
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_m",
+            "deathspawn": " explosion_plasma",
+            "fxlevel": 2,
+            "health": 10,
+            "heaviness": 0,
+            "material": "solid_metal",
+            "model": "perimeter_platforms/plasma_barrel_per_th",
+            "name": "plasma_barrel_puz",
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entinst": {
+            "type": "bastion_sentinel10",
+            "inst": {
+                "extents": "-24.1564 -16.9146 0 36.1562 16.9145 84",
+                "name": "bastion_sentinel10",
+                "orient": "0 0 -1.74533",
+                "pos": "4042.54 5122.46 398.4"
+            },
+            "inst": {
+                "extents": "-35.7267 -3.12567 0 47.7262 3.12551 84",
+                "name": "bastion_sentinel13",
+                "orient": "0 0 0.698132",
+                "pos": "3539.46 4531.53 398.4"
+            },
+            "inst": {
+                "extents": "-35.7266 -3.12559 0 47.7262 3.12559 84",
+                "name": "bastion_sentinel12",
+                "orient": "0 0 0.698132",
+                "pos": "3504.91 4931.25 398.4"
+            },
+            "inst": {
+                "extents": "-24.156 -16.9146 0 36.1566 16.9143 84",
+                "name": "bastion_sentinel11",
+                "orient": "0 0 -1.74533",
+                "pos": "4302.25 5241.76 398.4"
+            },
+            "inst": {
+                "extents": "-24.1565 -16.9145 0 36.1562 16.9146 84",
+                "name": "bastion_sentinel09",
+                "orient": "0 0 -1.74533",
+                "pos": "3961.64 5376.64 398.4"
+            },
+            "inst": {
+                "extents": "-5.99999 -38.7846 0 18 38.7844 84",
+                "name": "bastion_sentinel08",
+                "orient": "0 0 -0.523599",
+                "pos": "3715.5 5020.36 398.4"
+            },
+            "inst": {
+                "extents": "5.99968 -42.0002 0 5.99972 41.9998 84",
+                "name": "bastion_sentinel07",
+                "orient": "0 0 2.35619",
+                "pos": "4229.14 4368.02 398.4"
+            },
+            "inst": {
+                "extents": "-33.2914 -9.4954 0 45.2919 9.49536 84",
+                "name": "bastion_sentinel05",
+                "orient": "0 0 -2.63404",
+                "pos": "4494.03 4522.83 398.4"
+            },
+            "inst": {
+                "extents": "-24.1563 -16.9144 0 36.1563 16.9146 84",
+                "name": "bastion_sentinel04",
+                "orient": "0 0 -1.74533",
+                "pos": "3807.5 5155.45 398.4"
+            },
+            "inst": {
+                "extents": "5.99987 -41.9999 0 5.9999 42.0001 84",
+                "name": "bastion_sentinel16",
+                "orient": "0 0 2.35619",
+                "pos": "3818.73 4435.04 398.4"
+            },
+            "inst": {
+                "extents": "-35.7264 -3.12565 0 47.7264 3.12553 84",
+                "name": "bastion_sentinel15",
+                "orient": "0 0 0.698132",
+                "pos": "3946.12 4606.67 398.4"
+            },
+            "inst": {
+                "extents": "-17.6353 -22.1675 0 29.6356 22.1676 84",
+                "name": "bastion_sentinel03",
+                "orient": "0 0 -1.48353",
+                "pos": "3594.52 5284.22 398.4"
+            },
+            "inst": {
+                "extents": "-34.9145 -6.15648 0 46.9147 6.1562 84",
+                "name": "bastion_sentinel02",
+                "orient": "0 0 0.959931",
+                "pos": "3847.58 4693.07 398.4"
+            },
+            "inst": {
+                "extents": "-35.7262 -3.12563 0 47.7266 3.12555 84",
+                "name": "bastion_sentinel01",
+                "orient": "0 0 0.698132",
+                "pos": "3721.13 4799.86 398.4"
+            },
+            "inst": {
+                "extents": "-24.1564 -16.9144 0 36.1562 16.9144 84",
+                "name": "bastion_sentinel14",
+                "orient": "0 0 -1.74533",
+                "pos": "4192.62 4730.67 398.4"
+            }
+        },
+        "entinst": {
+            "type": "sp_bastion01",
+            "inst": {
+                "extents": "-36.0001 -0.000152968 0 47.9999 -0.000152968 84",
+                "name": "sp_bastion01",
+                "orient": "0 0 -2.35619",
+                "pos": "3884.88 4845.39 131.737"
+            }
+        },
+        "entinst": {
+            "type": "blinky",
+            "inst": {
+                "extents": "-10.0002 -20 0 9.99983 20 60",
+                "name": "blinky",
+                "orient": "0 0 -1.5708",
+                "pos": "3958.45 4511.14 129.251"
+            }
+        },
+        "entinst": {
+            "type": "sentinel_explode",
+            "inst": {
+                "extents": "-100 -100 -100 100 100 100",
+                "name": "sentinel_explode",
+                "pos": "4562.23 6190.48 700"
+            }
+        },
+        "entinst": {
+            "type": "loop_wheather",
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_wheather",
+                "pos": "4910.38 3966.77 -9.54305"
+            }
+        },
+        "entinst": {
+            "type": "hero_spot02",
+            "inst": {
+                "extents": "-6.00003 -5.99981 0 5.99997 6.00019 12",
+                "name": "hero_spot02",
+                "orient": "0 0 -0.785398",
+                "pos": "3765.5 4689.5 133.311"
+            },
+            "inst": {
+                "extents": "-6.00001 -5.99996 0 5.99999 6.00004 12",
+                "name": "hero_spot01",
+                "orient": "0 0 -0.785398",
+                "pos": "3729.53 4725.48 133.311"
+            },
+            "inst": {
+                "extents": "-6 -5.99994 0 6 6.00006 12",
+                "name": "hero_spot04",
+                "orient": "0 0 -0.785398",
+                "pos": "3723.08 4647.08 133.311"
+            },
+            "inst": {
+                "extents": "-6 -5.99994 0 6 6.00006 12",
+                "name": "hero_spot03",
+                "orient": "0 0 -0.785398",
+                "pos": "3687.1 4683.05 133.311"
+            }
+        },
+        "entinst": {
+            "type": "player_start_all01",
+            "inst": {
+                "extents": "11.9604 -132.039 0 11.9607 132.039 83.9544",
+                "name": "player_start_all01",
+                "orient": "0 0 2.35619",
+                "pos": "4680.94 4199.67 125.457"
+            }
+        },
+        "entinst": {
+            "type": "sentinel_wave",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "sentinel_wave",
+                "pos": "3999.73 4928.54 0"
+            }
+        },
+        "entinst": {
+            "type": "trigger_reveal_bastion",
+            "inst": {
+                "extents": "-550 -250 0 550 250 360",
+                "name": "trigger_reveal_bastion",
+                "orient": "0 0 0.698132",
+                "pos": "3771.45 4754.25 137.314"
+            }
+        },
+        "entinst": {
+            "type": "wp_sc_bunker_a01",
+            "inst": {
+                "extents": "-11.909 -1.04201 -6 11.9087 1.04211 6",
+                "name": "wp_sc_bunker_a01",
+                "orient": "0 0 -2.44346",
+                "pos": "3824 4788 139"
+            },
+            "inst": {
+                "extents": "-7.04196 -5.90853 -6 7.0416 5.90898 6",
+                "name": "wp_sc_bunker_b01",
+                "orient": "0 0 0.0872667",
+                "pos": "4151.2 4919.46 139"
+            }
+        },
+        "entinst": {
+            "type": "wp_bastion01",
+            "inst": {
+                "extents": "-7.04195 -5.90883 -6 7.04161 5.90867 6",
+                "name": "wp_bastion01",
+                "orient": "0 0 -1.65806",
+                "pos": "3828 4788 139.311"
+            }
+        },
+        "entinst": {
+            "type": "link_perimeter4",
+            "inst": {
+                "extents": "-47.9998 -47.9998 0 48.0002 48.0002 96",
+                "name": "link_perimeter4",
+                "orient": "0 0 -2.35619",
+                "pos": "4791.25 4089.36 110.455"
+            }
+        },
+        "entinst": {
+            "type": "column_20x20_per_e_pp",
+            "inst": {
+                "name": "column_20x20_per_e_pp",
+                "pos": "3960 4920.11 249.939"
+            }
+        },
+        "entinst": {
+            "type": "zone_console",
+            "inst": {
+                "name": "zone_console",
+                "orient": "0 0 0.959931",
+                "pos": "4870.81 4015.11 98.4566"
+            }
+        },
+        "entinst": {
+            "type": "crate_6_per_pp66",
+            "inst": {
+                "name": "crate_6_per_pp66",
+                "pos": "4140.85 4419.79 132"
+            },
+            "inst": {
+                "name": "crate_6_per_pp66",
+                "pos": "3738.8 4419.23 132"
+            },
+            "inst": {
+                "name": "crate_6_per_pp66",
+                "pos": "3140 4620 132"
+            },
+            "inst": {
+                "name": "crate_6_per_pp66",
+                "pos": "4277.67 4289.1 132"
+            }
+        },
+        "entinst": {
+            "type": "crate_per_pp31",
+            "inst": {
+                "name": "crate_per_pp31",
+                "orient": "0 0 2.35619",
+                "pos": "3568.68 5138.49 132"
+            },
+            "inst": {
+                "name": "crate_per_pp31",
+                "orient": "0 0 1.13446",
+                "pos": "3586.92 5180.06 132"
+            },
+            "inst": {
+                "name": "crate_per_pp31",
+                "pos": "4399.42 5197.93 132"
+            },
+            "inst": {
+                "name": "crate_per_pp31",
+                "orient": "0 0 0.959931",
+                "pos": "4453.84 5179.22 132"
+            },
+            "inst": {
+                "name": "crate_per_pp31",
+                "pos": "4265.71 5338.17 108"
+            },
+            "inst": {
+                "name": "crate_per_pp31",
+                "pos": "4388.37 4674.7 108"
+            },
+            "inst": {
+                "name": "crate_per_pp31",
+                "pos": "3598.23 4384.78 132"
+            },
+            "inst": {
+                "name": "crate_per_pp31",
+                "pos": "3591.63 4442.68 132"
+            },
+            "inst": {
+                "name": "crate_per_pp31",
+                "pos": "3671.63 4442.68 132"
+            },
+            "inst": {
+                "name": "crate_per_pp31",
+                "pos": "3526.94 5130.81 132"
+            }
+        },
+        "entinst": {
+            "type": "door_pillar_per_a_pp02",
+            "inst": {
+                "name": "door_pillar_per_a_pp02",
+                "orient": "0 0 1.5708",
+                "pos": "3960 4920.11 120"
+            },
+            "inst": {
+                "name": "bastion_door",
+                "orient": "0 0 -0.785398",
+                "pos": "3960 4920.11 120"
+            }
+        },
+        "entinst": {
+            "type": "floor_post3_per_b_pp",
+            "inst": {
+                "name": "floor_post3_per_b_pp",
+                "pos": "3671.34 5106.65 132"
+            },
+            "inst": {
+                "name": "floor_post3_per_b_pp",
+                "pos": "4379.78 4739.76 132"
+            },
+            "inst": {
+                "name": "floor_post3_per_b_pp",
+                "pos": "4139.51 5172.55 132"
+            },
+            "inst": {
+                "name": "floor_post3_per_b_pp",
+                "pos": "3441.53 4486.89 132"
+            },
+            "inst": {
+                "name": "floor_post3_per_b_pp",
+                "pos": "3368.23 4635.72 132"
+            },
+            "inst": {
+                "name": "floor_post3_per_b_pp",
+                "pos": "4400 4204 132"
+            },
+            "inst": {
+                "name": "floor_post3_per_b_pp",
+                "pos": "4619.13 4538.93 132"
+            },
+            "inst": {
+                "name": "floor_post3_per_b_pp",
+                "pos": "4277.67 4249.1 132"
+            },
+            "inst": {
+                "name": "floor_post3_per_b_pp",
+                "pos": "3938.86 5260.54 132"
+            },
+            "inst": {
+                "name": "floor_post3_per_b_pp",
+                "pos": "4112.39 5365.33 132"
+            },
+            "inst": {
+                "name": "floor_post3_per_b_pp",
+                "orient": "0 0 -1.5708",
+                "pos": "3658.98 4860.49 132"
+            },
+            "inst": {
+                "name": "floor_post3_per_b_pp",
+                "pos": "3790.06 5436.23 132"
+            }
+        },
+        "entinst": {
+            "type": "floor_post_per_b_pp",
+            "inst": {
+                "name": "floor_post_per_b_pp",
+                "orient": "0 0 -2.00713",
+                "pos": "3482.43 5278.85 132"
+            }
+        },
+        "entinst": {
+            "type": "monolith_green_per_e_pp",
+            "inst": {
+                "name": "monolith_green_per_e_pp",
+                "orient": "0 0 -1.5708",
+                "pos": "3421.81 4920.25 120"
+            },
+            "inst": {
+                "name": "monolith_green_per_e_pp",
+                "pos": "3479.04 5179.98 120"
+            },
+            "inst": {
+                "name": "monolith_green_per_e_pp",
+                "orient": "0 0 -1.5708",
+                "pos": "4220.24 5360.73 120"
+            },
+            "inst": {
+                "name": "monolith_green_per_e_pp",
+                "orient": "0 0 -2.57857",
+                "pos": "3676.27 5358.22 120"
+            },
+            "inst": {
+                "name": "monolith_green_per_e_pp",
+                "pos": "3961.32 5460.85 120"
+            },
+            "inst": {
+                "name": "monolith_green_per_e_pp",
+                "orient": "0 0 -0.785398",
+                "pos": "4440.69 5318.53 120"
+            },
+            "inst": {
+                "name": "monolith_green_per_e_pp",
+                "orient": "0 0 -0.785398",
+                "pos": "3400.93 4678.22 120"
+            },
+            "inst": {
+                "name": "monolith_green_per_e_pp",
+                "pos": "3955.26 4418.42 120"
+            },
+            "inst": {
+                "name": "monolith_green_per_e_pp",
+                "pos": "3601.19 4620.33 120"
+            },
+            "inst": {
+                "name": "monolith_green_per_e_pp",
+                "pos": "4359.72 4621.08 120"
+            }
+        },
+        "entinst": {
+            "type": "landers",
+            "inst": {
+                "name": "landers",
+                "orient": "0 0 -0.0872665",
+                "pos": "3151.58 5003.76 573.785"
+            },
+            "inst": {
+                "name": "landers",
+                "orient": "0 0 0.0872665",
+                "pos": "2722.03 4965.19 609.291"
+            }
+        },
+        "entinst": {
+            "type": "landers3",
+            "inst": {
+                "name": "landers3",
+                "orient": "0 0 -0.261799",
+                "pos": "2917.34 5150.95 549.374"
+            },
+            "inst": {
+                "name": "landers3",
+                "orient": "0 0 0.523599",
+                "pos": "2700.61 4450.72 576.975"
+            }
+        },
+        "entinst": {
+            "type": "landers2",
+            "inst": {
+                "name": "landers2",
+                "orient": "0 0 -0.349066",
+                "pos": "3134.21 5314.34 522.208"
+            },
+            "inst": {
+                "name": "landers2",
+                "pos": "2912.44 4714.33 531.671"
+            }
+        },
+        "entinst": {
+            "type": "floaters",
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 -2.96706",
+                "pos": "5217.65 5283.75 -0.828238"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 -0.523599",
+                "pos": "3422 5612.48 23.5828"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 -1.13446",
+                "pos": "3791.46 5844.24 -10.2903"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 -1.5708",
+                "pos": "4117.84 5918.79 -18.5318"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 -1.8326",
+                "pos": "4407.59 5649.53 23.5828"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 -2.0944",
+                "pos": "4688.81 5532.27 26.7725"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 0.785398",
+                "pos": "2977.42 4377.01 -10.2903"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 0.872665",
+                "pos": "3290.62 4204.73 -18.5318"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 1.13446",
+                "pos": "3710.35 4114.69 23.5828"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 1.74533",
+                "pos": "4016.56 3908.77 -18.5318"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 1.8326",
+                "pos": "4448.92 3986.86 26.7725"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 -2.79253",
+                "pos": "4980.77 4419.79 -10.2903"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 -2.00713",
+                "pos": "4797.37 4777.66 26.7725"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 2.79253",
+                "pos": "4825.69 5066.68 -27.9938"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 -2.53073",
+                "pos": "4937.13 5359.54 23.5828"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 -2.18166",
+                "pos": "4736.81 5816.1 -10.2903"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 -1.8326",
+                "pos": "4429.01 5934.75 26.7725"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 -1.39626",
+                "pos": "4000.62 6160.58 23.5828"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 -0.959931",
+                "pos": "3525.69 5959.64 26.7725"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 -0.523599",
+                "pos": "3119.06 5630.37 -0.828238"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 0.785398",
+                "pos": "2980.32 4090.44 48.2125"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 1.0472",
+                "pos": "3453.21 3960.51 17.3104"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 1.39626",
+                "pos": "3778.29 3803.26 -0.828238"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 1.91986",
+                "pos": "4264.2 3765.33 23.5828"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 3.14159",
+                "pos": "5133.1 4653.12 -0.828238"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 -2.79253",
+                "pos": "5068.72 4984.79 23.5828"
+            },
+            "inst": {
+                "name": "floaters",
+                "orient": "0 0 -2.44346",
+                "pos": "5097.31 5620.57 -18.5318"
+            }
+        },
+        "entinst": {
+            "type": "zone_teleport_per_e_pp01",
+            "inst": {
+                "name": "zone_teleport_per_e_pp01",
+                "orient": "0 0 -0.785398",
+                "pos": "4791.25 4089.36 98.4546"
+            }
+        },
+        "entinst": {
+            "type": "fire_large",
+            "inst": {
+                "extents": "-60 -60 0 60 60 72",
+                "name": "fire_large",
+                "pos": "3277.37 4579.03 122.447"
+            },
+            "inst": {
+                "extents": "-60 -60 0 60 60 72",
+                "name": "fire_large",
+                "pos": "3808.54 5319.4 115.562"
+            }
+        },
+        "entinst": {
+            "type": "fire_med",
+            "inst": {
+                "extents": "-30 -30 0 30 30 36",
+                "name": "fire_med",
+                "pos": "3853.48 4313.13 115.558"
+            },
+            "inst": {
+                "extents": "-30 -30 0 30 30 36",
+                "name": "fire_med",
+                "pos": "3555.98 4727.38 115.562"
+            },
+            "inst": {
+                "extents": "-30 -30 0 30 30 36",
+                "name": "fire_med",
+                "pos": "4602.35 4598.65 122.447"
+            }
+        },
+        "entinst": {
+            "type": "plasma_barrel_puz",
+            "inst": {
+                "name": "plasma_barrel_puz",
+                "pos": "4240 4120 132"
+            },
+            "inst": {
+                "name": "plasma_barrel_puz",
+                "pos": "3631.63 4402.68 132"
+            },
+            "inst": {
+                "name": "plasma_barrel_puz",
+                "pos": "4436.14 5226.03 132"
+            }
+        },
+        "entity": {
+            "actinactivedelay": 5,
+            "character": "Sentinel_a",
+            "classname": "monsterspawnerent",
+            "instantspawn": false,
+            "monster_actscript": "killEntity('_OWNER_')",
+            "monster_actsound": "char/sent_m/explode",
+            "monster_actspawn": "sentinel_explode",
+            "monster_deathscript": "act4/perimeter/perimeter5/bastion_sntl_dealth",
+            "monster_name": "bastion_sentinel",
+            "monster_persistent": false,
+            "monster_randompickups": 4,
+            "monster_smartent": true,
+            "monster_spawnexactlocation": true,
+            "monster_spawnscript": "act4/perimeter/perimeter5/sentinel_landing",
+            "name": "bastion_sentinel10",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Bastion",
+            "classname": "monsterspawnerent",
+            "monster_aipattern": "bastion",
+            "monster_deathscript": "act4/perimeter/perimeter5/bastion_defeated",
+            "monster_deathspawn": "bastion_treasure",
+            "monster_name": "bastion",
+            "monster_nofadeondeath": true,
+            "monster_painscript": "act4/perimeter/perimeter5/bastion_pain",
+            "monster_spawnexactlocation": true,
+            "name": "sp_bastion01",
+            "nocollide": true,
+            "nofadeondeath": true,
+            "shadow": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "acteffect": "base/misc/misc_treasure",
+            "actsound": "common/game/treasure",
+            "classname": "treasureent",
+            "count": 1000,
+            "firstact": 0.1,
+            "monster_deathspawn": "bastion_treasure",
+            "name": "bastion_treasure",
+            "nocollide": true
+        },
+        "entity": {
+            "actinactivedelay": 1,
+            "actleader": true,
+            "actonuse": true,
+            "actscript": "common/puzzleents/blinkportal",
+            "actsoundloop": "zone_shared/special/blink_portal",
+            "acttogglesloopfx": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "deatheffect": "map/common/scr_blinkportal_c",
+            "description": "Blink Portal",
+            "loopfx": "map/common/scr_blinkportal",
+            "loopfxstarton": false,
+            "name": "blinky",
+            "nocollide": true,
+            "resetstate": true,
+            "smartent": false,
+            "spawnscript": "common/puzzleents/blinkportalspawnscript",
+            "startenabled": false,
+            "team": "hero",
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/material/explode/exp_generic_lrg",
+            "actmatchteam": true,
+            "actsoundloop": "char/sent_m/explode",
+            "boxcollision": true,
+            "boxdamage": true,
+            "classname": "affectableharment",
+            "damage": 200,
+            "damagemods": "dmgmod_popup",
+            "damagetype": "dmg_physical",
+            "extent": "-100 -100 -100 100 100 100",
+            "firstact": 0,
+            "knockback": 500,
+            "name": "sentinel_explode",
+            "nocollide": true,
+            "radiusdamage": false,
+            "smartent": false,
+            "team": "hero"
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/perimeter/platform_rain",
+            "loopfxstarton": true,
+            "name": "loop_wheather",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "classname": "ent",
+            "name": "hero_spot02",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "default": true,
+            "name": "player_start_all01",
+            "nocollide": true,
+            "prevzone": "perimeter4"
+        },
+        "entity": {
+            "actscript": "act4/perimeter/perimeter5/sentinel_swarm",
+            "classname": "actionent",
+            "name": "sentinel_wave",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "act4/perimeter/perimeter5/reveal_bastion",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "trigger_reveal_bastion",
+            "nocollide": true,
+            "smartent": false,
+            "startenabled": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acttargets": "bastion_door",
+            "beeline": true,
+            "classname": "waypointent",
+            "name": "wp_bastion01",
+            "nocollide": true
+        },
+        "entity": {
+            "actscript": "setWaypointPath('_ACTIVATOR_','',1)",
+            "beeline": true,
+            "classname": "waypointent",
+            "name": "wp_sc_bunker_a01",
+            "nocollide": true
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actontouch": false,
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "zonelinkent",
+            "description": "Command Center Platform",
+            "name": "link_perimeter4",
+            "nextzone": "perimeter4",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actonuse": true,
+            "actscript": "act4/perimeter/perimeter5/check_zone_link",
+            "actsound": "zone_shared/object/beep",
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_m",
+            "deathspawn": "controlpanel01_per_b_pp_d",
+            "description": "Teleport Console",
+            "fxlevel": 2,
+            "health": 50,
+            "material": "solid_metal",
+            "model": "perimeter_platforms/controlpanel01_per_b",
+            "name": "zone_console",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 0
+        },
+        "entity": {
+            "actsound": "zone_shared/object/beep",
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_m",
+            "fxlevel": 2,
+            "health": 50,
+            "mass": 0,
+            "material": "solid_metal",
+            "model": "perimeter_platforms/controlpanel01_stump_per_b",
+            "name": "controlpanel01_per_b_pp_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 5,
+            "heaviness": 0,
+            "material": "solid_metal",
+            "model": "perimeter_platforms/crate_6_per",
+            "name": "crate_6_per_pp66",
+            "randompickups": 1,
+            "stackphysics": true,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 5,
+            "heaviness": 0,
+            "material": "solid_metal",
+            "model": "perimeter_platforms/crate_per",
+            "name": "crate_per_pp31",
+            "randompickups": 2,
+            "stackphysics": true,
+            "structure": 0
+        },
+        "entity": {
+            "actcountdisable": 2,
+            "actonuse": false,
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_m",
+            "fxlevel": 2,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "perimeter_platforms/door_pillar_per_a",
+            "name": "door_pillar_per_a_pp02",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "animstarton": true,
+            "animstarttime": -1,
+            "classname": "physent",
+            "material": "solid_metal",
+            "model": "perimeter_platforms/sentinel_static_floating",
+            "name": "floaters",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "scale": 2,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": true,
+            "animstarttime": -1,
+            "classname": "moverent",
+            "material": "solid_metal",
+            "model": "perimeter_platforms/sentinel_static_floating",
+            "move": "0 0 -550",
+            "moveduration": 1.5,
+            "name": "landers2",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "scale": 2,
+            "smartent": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "animstarton": true,
+            "animstarttime": -1,
+            "classname": "moverent",
+            "material": "solid_metal",
+            "model": "perimeter_platforms/sentinel_static_floating",
+            "move": "0 0 -550",
+            "moveduration": 2.3,
+            "name": "landers3",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "scale": 2,
+            "smartent": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "animstarton": true,
+            "animstarttime": -1,
+            "classname": "moverent",
+            "material": "solid_metal",
+            "model": "perimeter_platforms/sentinel_static_floating",
+            "move": "0 0 -550",
+            "moveduration": 2,
+            "name": "landers",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "scale": 2,
+            "smartent": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "perimeter_platforms/zone_teleport_per_e",
+            "name": "zone_teleport_per_e_pp01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/material/explode/exp_generic_med",
+            "actsound": "death_style/ds_explosive_m",
+            "aishootme": true,
+            "animstarton": true,
+            "classname": "affectableharment",
+            "damage": 50,
+            "damagetype": "dmg_special",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_m",
+            "deathspawn": " explosion_plasma",
+            "extent": "-34 -34 0 34 34 68",
+            "firstact": 0,
+            "fxlevel": 2,
+            "health": 10,
+            "heaviness": 0,
+            "knockback": 500,
+            "material": "solid_metal",
+            "model": "perimeter_platforms/plasma_barrel_per_th",
+            "name": "explosion_plasma",
+            "nocollide": true,
+            "radiusdamage": true,
+            "randompickups": 0,
+            "structure": 0
+        }
+    }
+}
