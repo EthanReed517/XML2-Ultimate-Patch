@@ -1,0 +1,158 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever11",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/bishop/1_sanctuary1_160_010",
+                    "soundtoplayb": "voice/bishop/1_sanctuary1_160_020",
+                    "text": "%Bishop%: Hello, my friend. I don't know about you, but this 'alliance' has me very uneasy. Having the X-Men and the Brotherhood work together is a recipe for disaster from where I sit.",
+                    "textb": "%Bishop%: So you're one of the Brotherhood. Well, if you treat the X-Men right, then we'll treat you right.",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/bishop/1_sanctuary1_160_030",
+                    "soundtoplayb": "voice/bishop/1_sanctuary1_160_040",
+                    "text": "%Bishop%: Hi. What can I do for you?",
+                    "textb": "%Bishop%: Yeah?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "Who are you?",
+                        "line": {
+                            "soundtoplay": "voice/bishop/1_sanctuary1_160_051",
+                            "text": "%Bishop%: The name's Bishop. I come from the future - a bleak one where mutants are kept in prison camps.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: How did you wind up in this period of time?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/bishop/1_sanctuary1_160_053",
+                                            "text": "%Bishop%: I followed a group of mutant outlaws who time traveled. Unfortunately, they killed my partners and left me stranded here.",
+                                            "response": {
+                                                "chosenscriptfile": "setGameFlag('act1_visit', 25,1)",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'act1_visit', 25)",
+                        "text": "What's your mutant power?",
+                        "line": {
+                            "soundtoplay": "voice/bishop/1_sanctuary1_160_061",
+                            "text": "%Bishop%: I can absorb almost any type of energy attack and then redirect it back at my opponent.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: That must come in pretty handy.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/bishop/1_sanctuary1_160_063",
+                                            "text": "%Bishop%: That it does. Working as a member of the Xavier Security Enforcers, I used it all the time.",
+                                            "response": {
+                                                "chosenscriptfile": "setGameFlag('act1_visit', 26,1)",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'act1_visit', 26)",
+                        "text": "What are the Xavier Security Enforcers?",
+                        "line": {
+                            "soundtoplay": "voice/bishop/1_sanctuary1_160_071",
+                            "text": "%Bishop%: It's a group of mutants I joined in the future. They're an organization of mutant lawmen that bring mutant outlaws to justice.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Why did you join that group?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/bishop/1_sanctuary1_160_073",
+                                            "text": "%Bishop%: As a child, my grandmother told me of the adventures of the X-Men. When I grew up I couldn't wait to follow in their footsteps.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Why is an 'M' tattooed over your eye?",
+                        "line": {
+                            "soundtoplay": "voice/bishop/1_sanctuary1_160_081",
+                            "text": "%Bishop%: That's a little gift from my days in the prison camp. They'd mark everyone like this to show who were mutants.",
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Thanks, Bishop.",
+                        "line": {
+                            "soundtoplay": "voice/bishop/1_sanctuary1_160_091",
+                            "text": "%Bishop%: Anything to help an X-Man.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Goodbye.",
+                        "line": {
+                            "soundtoplay": "voice/bishop/1_sanctuary1_160_093",
+                            "soundtoplayb": "voice/bishop/1_sanctuary1_160_093",
+                            "text": "%Bishop%: Don't be a stranger.",
+                            "textb": "%Bishop%: Don't be a stranger.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

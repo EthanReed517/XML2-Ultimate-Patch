@@ -1,0 +1,205 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever28",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/moira/4_mansion_045_001",
+                    "soundtoplayb": "voice/moira/4_mansion_045_010",
+                    "text": "%Moira%: Greetings X-Man. It's been a while, hasn't it?",
+                    "textb": "%Moira%: Brotherhood, eh... these are indeed odd times, aren't they?",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: Hi, Moira. What news have you got for us?",
+                            "textb": "%PLAYER%: If you say so, MacTaggert. We were told you might have some information for us.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/moira/4_mansion_045_003",
+                                    "soundtoplayb": "voice/moira/4_mansion_045_012",
+                                    "text": "%Moira%: To get Apocalypse out of New York City, we'll have to battle him in his tower. But we first have to get into his tower - which from all indications is impossible.",
+                                    "textb": "%Moira%: Indeed I do. You see, before we can battle Apocalypse in his tower, we have to get into his tower. But from all reports, that's impossible.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "text": "%PLAYER%: Come on now, Moira. With you, nothing is impossible.",
+                                            "textb": "%PLAYER%: If it were impossible, you wouldn't be talking to us right now. Would you?",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "soundtoplay": "voice/moira/4_mansion_045_005",
+                                                    "soundtoplayb": "voice/moira/4_mansion_045_014",
+                                                    "text": "%Moira%: Well, there may be a solution. Look up Sebastian Shaw in New York City. If anyone would know how to get into that tower, it'd be him.",
+                                                    "textb": "%Moira%: You're right, of course. There's a man named Sebastian Shaw in New York City. Find him and he may have a way to enter Apocalypse's tower undetected.",
+                                                    "response": {
+                                                        "text": "%BLANK%",
+                                                        "line": {
+                                                            "text": "%PLAYER%: Any suggestions how to get into the city? There's no way we can take the X-Jet - we'd be shot down in seconds.",
+                                                            "textb": "%PLAYER%: How can we get into the city? The X-Jet would be blasted from the sky if we came within 10 miles of it.",
+                                                            "response": {
+                                                                "text": "%BLANK%",
+                                                                "line": {
+                                                                    "soundtoplay": "voice/moira/4_mansion_045_007",
+                                                                    "soundtoplayb": "voice/moira/4_mansion_045_016",
+                                                                    "text": "%Moira%: Quite right. Your best bet for entering New York City undetected would be the sewers. There's an entrance near the mansion.",
+                                                                    "textb": "%Moira%: You're probably right. The only way you can enter New York City undetected would be through the sewers. You can find an entrance on the mansion grounds.",
+                                                                    "response": {
+                                                                        "text": "%BLANK%",
+                                                                        "line": {
+                                                                            "soundtoplay": "voice/moira/4_mansion_045_008",
+                                                                            "soundtoplayb": "voice/moira/4_mansion_045_017",
+                                                                            "text": "%Moira%: If you'd like more information, use the mission briefing computer by Charles.",
+                                                                            "textb": "%Moira%: For more information, use the mission briefing computer.",
+                                                                            "response": {
+                                                                                "chosenscriptfile": "act4/mansion/complete_moira_start_shaw",
+                                                                                "tagjump": "autogen_tag_1",
+                                                                                "text": "%BLANK%"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/moira/4_mansion_045_020",
+                    "soundtoplayb": "voice/moira/4_mansion_045_021",
+                    "text": "%Moira%: Hello, my friend. It's good to see you again.",
+                    "textb": "%Moira%: Yes? What can I do for you?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "What have you been up to, Doctor?",
+                        "line": {
+                            "soundtoplay": "voice/moira/4_mansion_045_031",
+                            "text": "%Moira%: Since the attack on New York, I've been helping treat the wounded. Just recently I've begun working with the underground.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: The underground?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/moira/4_mansion_045_033",
+                                            "text": "%Moira%: Aye, we've set up an underground railroad of sorts that helps those fleeing the city.",
+                                            "response": {
+                                                "chosenscriptfile": "setGameFlag('mansion', 1,1)",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'mansion', 1 )",
+                        "text": "Who's in charge of the underground?",
+                        "line": {
+                            "soundtoplay": "voice/moira/4_mansion_045_041",
+                            "text": "%Moira%: An old acquaintance of ours - Marrow.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Marrow? She's a Morlock. Why would she help humans?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/moira/4_mansion_045_043",
+                                            "text": "%Moira%: Let's just say she learned a lesson in kindness when the X-Men saved her people from the GRSO soldiers. I believe she's attempting to payback that kindness.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "What do you know about Sebastian Shaw?",
+                        "line": {
+                            "soundtoplay": "voice/moira/4_mansion_045_051",
+                            "text": "%Moira%: I know he's the leader of the Hellfire Club and he has little love for the X-Men. I also know he gave information to Angel about the Infinite factory.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Could Shaw have been the reason Angel was caught by Apocalypse?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/moira/4_mansion_045_053",
+                                            "text": "%Moira%: No, Shaw hates Apocalypse as much as we do. And that's why he might be willing to tell us how to get into that tower.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Thanks for the information, Moira.",
+                        "line": {
+                            "soundtoplay": "voice/moira/4_mansion_045_061",
+                            "text": "%Moira%: You're quite welcome, my friend.",
+                            "response": {
+                                "chosenscriptfile": "common/briefings/mark_briefing4_20",
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Thanks, Doctor.",
+                        "line": {
+                            "soundtoplay": "voice/moira/4_mansion_045_063",
+                            "soundtoplayb": "voice/moira/4_mansion_045_063",
+                            "text": "%Moira%: Yes, well, you're welcome... I guess.",
+                            "textb": "%Moira%: Yes, well, you're welcome... I guess.",
+                            "response": {
+                                "chosenscriptfile": "common/briefings/mark_briefing4_20",
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

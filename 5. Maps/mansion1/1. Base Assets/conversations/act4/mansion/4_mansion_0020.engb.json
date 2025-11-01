@@ -1,0 +1,182 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "act4/mansion/conv_start_act5",
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/4_mansion_020_012.wav",
+                    "text": "%PROFX%: It is most regrettable that you were forced to battle an X-Man - but you had no choice. Angel wasn't in his right mind.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "soundtoplay": "voice/profx/4_mansion_020_013.wav",
+                            "text": "%PROFX%: Soon you must travel through the teleporter atop the tower of Apocalypse and discover where he escaped to with Beast. Only then can we bring a final end to this reign of terror.",
+                            "response": {
+                                "chosenscriptfile": "movies/act5",
+                                "conversationend": true,
+                                "text": "Yes."
+                            },
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "No."
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "conditionscriptfile": "act4/mansion/conv_tower_ready",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/4_mansion_020_007",
+                    "text": "%ProfX%: In Genosha we saw Apocalypse was willing to drown the city's populace at the first threat of attack. We cannot allow that to happen in New York. Therefore once you reach the command level I'll be sending Beast up to meet you.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: Why is that, Professor?",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/profx/4_mansion_020_009",
+                                    "text": "%ProfX%: He'll be operating the consoles and making sure no evil schemes are afoot.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/profx/4_mansion_020_010",
+                                            "text": "%PROFX%: If you'd like more information on this, use the mission briefing computer.",
+                                            "response": {
+                                                "chosenscriptfile": "common/briefings/mark_briefing4_30",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever26",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/4_mansion_020_001",
+                    "soundtoplayb": "voice/profx/4_mansion_020_004",
+                    "text": "%ProfX%: Hello, I trust all is well?",
+                    "textb": "%ProfX%: Greetings, how are you?",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: Everyone's on edge because of Destiny's prediction that one of us is going to be a traitor.",
+                            "textb": "%PLAYER%: Nervous. How do we know when Destiny's prediction is going to come true? Shouldn't we start looking for the traitor now?",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/profx/4_mansion_020_003",
+                                    "soundtoplayb": "voice/profx/4_mansion_020_006",
+                                    "text": "%ProfX%: Her prophecy is rather unnerving, but I wouldn't let it color our every action.",
+                                    "textb": "%ProfX%: No. While we should pay heed to her prophecy, we shouldn't allow it to make the whole team paranoid.",
+                                    "response": {
+                                        "tagjump": "autogen_tag_1",
+                                        "text": "%BLANK%"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "What happened to the X-Mansion?",
+                        "line": {
+                            "soundtoplay": "voice/profx/4_mansion_020_021",
+                            "text": "%ProfX%: Apocalypse was rather over zealous in his quest to destroy Cerebro. This entire complex is a loss.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Are you going to be able to repair all this?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/profx/4_mansion_020_023",
+                                            "text": "%ProfX%: Don't worry, I have the resources to rebuild the X-Mansion. Beast seems rather excited at the prospect and has begun talking of building an improved Cerebro.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "What are things like in New York City?",
+                        "line": {
+                            "soundtoplay": "voice/profx/4_mansion_020_031",
+                            "text": "%ProfX%: The reports have been rather disheartening. Once again it would appear Apocalypse has put people into camps.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: He's performing DNA tests just like he did in Genosha.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/profx/4_mansion_020_033",
+                                            "text": "%ProfX%: Exactly. But we still don't know why.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Thank you, Professor Xavier",
+                        "line": {
+                            "soundtoplay": "voice/profx/4_mansion_020_041",
+                            "text": "%PROFX%: My pleasure.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Thanks, Xavier.",
+                        "line": {
+                            "soundtoplay": "voice/profx/4_mansion_020_043",
+                            "soundtoplayb": "voice/profx/4_mansion_020_043",
+                            "text": "%PROFX%: You're quite welcome.",
+                            "textb": "%PROFX%: You're quite welcome.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

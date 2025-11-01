@@ -1,0 +1,126 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever27",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/forge/4_mansion_040_001",
+                    "soundtoplayb": "voice/forge/4_mansion_040_002",
+                    "text": "%Forge%: Well, we made it back to the mansion... what's left of it anyway.",
+                    "textb": "%Forge%: Still tagging along with the X-Men, eh?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/forge/4_mansion_040_003",
+                    "soundtoplayb": "voice/forge/4_mansion_040_004",
+                    "text": "%Forge%: What can I get you?",
+                    "textb": "%Forge%: Is there something you need?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "chosenscriptfile": "common/shop",
+                        "conversationend": true,
+                        "text": "I'd like to see some equipment."
+                    },
+                    "response": {
+                        "text": "Can anything be done about the X-Mansion?",
+                        "line": {
+                            "soundtoplay": "voice/forge/4_mansion_040_021",
+                            "text": "%Forge%: Certainly. Professor Xavier has been talking with Beast and me about how best to rebuild it.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: What about Cerebro?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/forge/4_mansion_040_023",
+                                            "text": "%Forge%: That's perhaps the most exciting part of all this. Beast has come up with a radical new design he calls Cerebra.",
+                                            "response": {
+                                                "chosenscriptfile": "setGameFlag('mansion', 7,1)",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'mansion', 7 )",
+                        "text": "What's Cerebra?",
+                        "line": {
+                            "soundtoplay": "voice/forge/4_mansion_040_031",
+                            "text": "%Forge%: Think of it as Cerebro's big sister. If Beast's calculations are correct, she'll be many times more powerful than her little brother.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Isn't a machine that powerful dangerous?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/forge/4_mansion_040_033",
+                                            "text": "%Forge%: If it were in the hands of anyone else I'd have to agree. But Professor Xavier has never abused his power, and I can't see why he'd start now.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Thanks, Forge.",
+                        "line": {
+                            "soundtoplay": "voice/forge/4_mansion_040_041",
+                            "text": "%FORGE%: My pleasure.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Goodbye. Forge.",
+                        "line": {
+                            "soundtoplay": "voice/forge/4_mansion_040_043",
+                            "soundtoplayb": "voice/forge/4_mansion_040_043",
+                            "text": "%Forge%: Yes, goodbye.",
+                            "textb": "%Forge%: Yes, goodbye.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

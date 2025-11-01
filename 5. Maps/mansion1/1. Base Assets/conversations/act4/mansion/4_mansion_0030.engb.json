@@ -1,0 +1,48 @@
+{
+    "conversation": {
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/4_mansion_030_001",
+                    "text": "%ProfX%: Which mission briefing would you like?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "chosenscriptfile": "loadZone('briefing/briefing4_10', 'NULL')",
+                        "conversationend": true,
+                        "scriptfile": "disallowResponseOnObjective('act4_obj_1a_1', 'FALSE' )",
+                        "text": "The Perimeter Platform."
+                    },
+                    "response": {
+                        "chosenscriptfile": "loadZone('briefing/briefing4_20', 'NULL')",
+                        "conversationend": true,
+                        "scriptfile": "disallowResponseOnObjective('act4_obj_2a_1', 'FALSE' )",
+                        "text": "Locating Sebastian Shaw."
+                    },
+                    "response": {
+                        "chosenscriptfile": "loadZone('briefing/briefing4_30', 'NULL')",
+                        "conversationend": true,
+                        "scriptfile": "act4/mansion/check_briefing4_30",
+                        "text": "Apocalypse's Tower."
+                    },
+                    "response": {
+                        "conversationend": true,
+                        "text": "Nothing right now."
+                    }
+                }
+            }
+        }
+    }
+}

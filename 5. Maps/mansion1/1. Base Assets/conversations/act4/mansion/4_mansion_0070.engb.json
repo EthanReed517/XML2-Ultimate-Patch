@@ -1,0 +1,163 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "act4/mansion/shaw_obj_check",
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/shaw/4_mansion_070_001",
+                    "text": "%Shaw%: You disappoint me. I would have thought you'd bring me everything I wanted. But you clearly haven't.",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever29",
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/shaw/4_mansion_070_010",
+                    "text": "%Shaw%: Ah, here we are. The tech bits, the holodisk, and my master key. All is in order.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: All right, Shaw. We kept our part of the deal, now you keep yours.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/shaw/4_mansion_070_012",
+                                    "text": "%Shaw%: My, my, you can be forceful when you want to.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/shaw/4_mansion_070_013",
+                                            "text": "%Shaw%: Here, take the Master key. It's all you'll need to enter the Tower. You'll find an entrance to the sewers on the north side. This key opens that entrance. From there it's just a matter of following the sewers to the tower of Apocalypse.",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "soundtoplay": "voice/shaw/4_mansion_070_014",
+                                                    "text": "%SHAW%: If you do make it into the tower, would you do me the favor of freeing the Black Queen? I think she's being kept prisoner there. Knowing her, she was trying to make a deal with Apocalypse.",
+                                                    "response": {
+                                                        "text": "%BLANK%",
+                                                        "line": {
+                                                            "soundtoplay": "voice/shaw/4_mansion_070_015",
+                                                            "text": "%SHAW%: That Selene is a woman after my own heart. Always playing both sides against the middle. Ha, ha, haaa!",
+                                                            "response": {
+                                                                "chosenscriptfile": "act4/mansion/give_queen_quest",
+                                                                "tagjump": "autogen_tag_1",
+                                                                "text": "%BLANK%"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "What's the Hellfire Club?",
+                        "line": {
+                            "soundtoplay": "voice/shaw/4_mansion_070_021",
+                            "text": "%Shaw%: It's an association of some of the most powerful men and women alive. Our goal is to help mold the future.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: What do you have against the X-Men?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/shaw/4_mansion_070_023",
+                                            "text": "%Shaw%: Your question should be, what do the X-Men have against us? Several times they've taken it upon themselves to thwart our attempts at improving the economy.",
+                                            "response": {
+                                                "text": "%BLANK%",
+                                                "line": {
+                                                    "text": "%PLAYER%: Where did you get this Master Key?",
+                                                    "response": {
+                                                        "text": "%BLANK%",
+                                                        "line": {
+                                                            "soundtoplay": "voice/shaw/4_mansion_070_031",
+                                                            "text": "%Shaw%: How I managed to obtain it is better left unsaid. But originally it belonged to Apocalypse's right hand man, Mister Sinister.",
+                                                            "response": {
+                                                                "tagjump": "autogen_tag_1",
+                                                                "text": "%BLANK%"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Why would Apocalypse have a secret door into his tower?",
+                        "line": {
+                            "soundtoplay": "voice/shaw/4_mansion_070_041",
+                            "text": "%Shaw%: Apocalypse has no knowledge of the door - it was built by Mister Sinister.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: So Sinister is working behind Apocalypse's back?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/shaw/4_mansion_070_043",
+                                            "text": "%Shaw%: Oh, my friend, Sinister is constantly hatching new schemes. And Apocalypse realizes it - he just tries to keep one step ahead.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Thank you, Sebastian.",
+                        "line": {
+                            "soundtoplay": "voice/shaw/4_mansion_070_051",
+                            "text": "%Shaw%: So long as there's a profit to be made, I'm glad to be of service, X-Man.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Thanks, Shaw.",
+                        "line": {
+                            "soundtoplay": "voice/shaw/4_mansion_070_061",
+                            "soundtoplayb": "voice/shaw/4_mansion_070_061",
+                            "text": "%Shaw%: Always a pleasure to deal with a member of the Brotherhood.",
+                            "textb": "%Shaw%: Always a pleasure to deal with a member of the Brotherhood.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
