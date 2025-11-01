@@ -1,0 +1,71 @@
+{
+    "conversation": {
+        "startCondition": {
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/infinitecaptain/4_newyork3_040_002",
+                    "tagindex": "autogen_tag_1",
+                    "text": "%InfiniteCaptain_a%: What do you think you're doing with that holodisk?",
+                    "response": {
+                        "text": "We're taking the disk to Apocalypse.",
+                        "line": {
+                            "soundtoplay": "voice/infinitecaptain/4_newyork3_040_011",
+                            "text": "%InfiniteCaptain_a%: Apocalypse has already been informed of the disk. He wasn't interested in seeing it.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: He's changed his mind.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/infinitecaptain/4_newyork3_040_013",
+                                            "text": "%InfiniteCaptain_a%: Apocalypse changed his mind? That'd be a first. What are you really doing here?",
+                                            "response": {
+                                                "chosenscriptfile": "setGameFlag('newyork', 8,1)",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "This is a surprise inspection.",
+                        "line": {
+                            "soundtoplay": "voice/infinitecaptain/4_newyork3_040_021",
+                            "text": "%InfiniteCaptain_a%: A surprise inspection? Why?",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: We've been sent by Mister Sinister to make sure all security stations are combat ready.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/infinitecaptain/4_newyork3_040_023",
+                                            "text": "%InfiniteCaptain_a%: He's never done that before. What's your identification code?",
+                                            "response": {
+                                                "chosenscriptfile": "setGameFlag('newyork', 8,1)",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "chosenscriptfile": "act4/newyork/newyork4/4_newyork3_0040_end",
+                        "conversationend": true,
+                        "scriptfile": "act4/newyork/newyork4/conv0040_response_check",
+                        "text": "It's no use. Looks like we have to fight our way out of here."
+                    }
+                }
+            }
+        }
+    }
+}
