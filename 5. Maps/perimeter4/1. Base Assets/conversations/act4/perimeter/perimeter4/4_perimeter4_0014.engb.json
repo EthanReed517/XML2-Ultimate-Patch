@@ -1,0 +1,54 @@
+{
+    "conversation": {
+        "startCondition": {
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "runwithoutuser": true,
+                    "soundtoplay": "voice/kilroy/4_perimeter4_014_001",
+                    "text": "%charlie%This is the last one, team. We can do this. Let's go!",
+                    "timedelay": 2,
+                    "response": {
+                        "chosenscriptfile": "act4/perimeter/perimeter4/charlie_farewell",
+                        "conversationend": true,
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "text": "%PLAYER%Colonel Fury! Sgt. Kilroy was just killed in an explosion!",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "soundtoplay": "voice/fury/4_PERIMETER4_014_003",
+                            "text": "%NICKFURY%Then you're going to have to assume his mission. Take out the last radar array.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%How do we do that?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/fury/4_PERIMETER4_014_005",
+                                            "text": "%NICKFURY%First, locate and destroy the security interlock console. Once that's done, I'll fill you in on the next step.",
+                                            "response": {
+                                                "chosenscriptfile": "act4/perimeter/perimeter4/give_destroy_console_quest",
+                                                "conversationend": true,
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
