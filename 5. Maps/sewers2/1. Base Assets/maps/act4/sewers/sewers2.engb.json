@@ -1,0 +1,5040 @@
+{
+    "world": {
+        "entity": {
+            "act": 4,
+            "extent_max": "9360 9600 413",
+            "extent_min": "1800 2030 -372",
+            "killz": -240,
+            "level": 37,
+            "name": "world",
+            "partylight": "0.6 0.52 0",
+            "soundfile": "sewer",
+            "zonescript": "act4/sewers/sewers2/sewers2"
+        },
+        "precache": {
+            "filename": "act4/sewers/sewers2/4_sewers2_0010",
+            "type": "conversation"
+        },
+        "precache": {
+            "filename": "act4/newyork4/include_banshee",
+            "type": "script"
+        },
+        "precache": {
+            "filename": "act4/sewers/sewers2/banshee_generic",
+            "type": "script"
+        },
+        "precache": {
+            "filename": "act4/sewers/sewers2/banshee_gone",
+            "type": "script"
+        },
+        "precache": {
+            "filename": "act4/sewers/sewers2/open_drainage_door",
+            "type": "script"
+        },
+        "precache": {
+            "filename": "act4/sewers/sewers2/set_obj_pens",
+            "type": "script"
+        },
+        "entity": {
+            "classname": "tileent",
+            "deatheffect": "base/material/tile/tile_sewer",
+            "deathsound": "death_style/t_sewer",
+            "deathspawn": "tile_waterwall",
+            "fxlevel": 3,
+            "health": 100,
+            "material": "concrete",
+            "name": "tile_waterwall",
+            "structure": 1,
+            "tilemodelfolder": "tiles/ruinedsewers/"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Banshee",
+            "classname": "monsterspawnerent",
+            "name": "sp_banshee",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "Brood_d",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_smartent": true,
+            "name": "ss_brood_d",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "MorlockBruiser_a",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_smartent": true,
+            "name": "ss_morlockbruiser_a",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "MorlockBruiser_a",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_leader": true,
+            "monster_smartent": true,
+            "name": "ss_morlockbruiser_a_leader",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "MorlockPsionic_a",
+            "classname": "monsterspawnerent",
+            "instantspawn": true,
+            "monster_aggression": 6,
+            "monster_smartent": true,
+            "name": "ss_morlockpsionic_a",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "waittimed(0.5)\\n\\rimageViewer('textures/comic/magneto_cov.png')",
+            "actsound": "common/game/comic_book_pickup",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Comic Book",
+            "fxlevel": 7,
+            "idnum": 7,
+            "ignoreactorsonmove": true,
+            "loopfx": "base/item/item_sparkle",
+            "loopfxstarton": true,
+            "model": "pickups/pickup_comicbook",
+            "name": "comic_magneto",
+            "nocollide": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "spinpossible": false,
+            "structure": 2,
+            "team": "hero",
+            "variablename": "r_comic"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actonuse": true,
+            "actscript": "dataDiscReward('r_d_disc')",
+            "actsound": "zone_shared/special/data",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Pick Up Data Disc",
+            "material": "solid_metal",
+            "model": "pickups/data_disk_act1",
+            "name": "data_disc",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "structure": 2,
+            "variablename": "r_d_disc"
+        },
+        "entity": {
+            "classname": "enabletargetent",
+            "enable": true,
+            "name": "enable_target",
+            "nocollide": true
+        },
+        "entity": {
+            "classname": "lightent",
+            "lightcolor": "1 1 1",
+            "lightradius": 200,
+            "name": "lightent",
+            "nocollide": true,
+            "startoff": false
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfxstarton": true,
+            "name": "loop_effect",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "classname": "ent",
+            "name": "null",
+            "nocollide": true
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "name": "player_start_all",
+            "nocollide": true
+        },
+        "entity": {
+            "classname": "actionent",
+            "name": "relay",
+            "nocollide": true
+        },
+        "entity": {
+            "actleader": true,
+            "actmatchteam": true,
+            "boxcollision": true,
+            "classname": "scripttriggerent",
+            "name": "trigger_area",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "classname": "powertriggerent",
+            "hinttype": "power",
+            "name": "trigger_power",
+            "nocollide": false,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "stopfly": false,
+            "stopteleport": false,
+            "stopwalk": false,
+            "targetlockable": true,
+            "toggleonact": true
+        },
+        "entity": {
+            "actmatchteam": true,
+            "actontouch": true,
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "trigger_touch",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "alpha": 0.2,
+            "ambienteffect": "base/misc/misc_waterambient",
+            "classname": "waterent",
+            "density": 10,
+            "gridsize": 120,
+            "name": "water_sewer",
+            "nocollide": true,
+            "splasheffect": "base/misc/misc_watersplash",
+            "texture": "textures/water_sewers6.png",
+            "wakeeffect": "base/misc/misc_waterwake"
+        },
+        "entity": {
+            "classname": "waypointent",
+            "name": "waypoint",
+            "nocollide": true
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "zonelinkent",
+            "description": "Enter next area",
+            "name": "zone_link",
+            "nocollide": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actontouch": true,
+            "actsound": "common/game/pickup_item",
+            "animstarton": true,
+            "classname": "inventoryent",
+            "count": 1,
+            "desctext": "large energy pack",
+            "extents": "-18 -18 0 18 18 36",
+            "fxlevel": 2,
+            "inventoryitem": "energy_item",
+            "name": "item_energy_large",
+            "nocollide": true,
+            "nogravity": false,
+            "pos": "0 0 6",
+            "randompickups": false,
+            "spinpossible": false,
+            "structure": 2,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actontouch": true,
+            "actsound": "common/game/pickup_item",
+            "animstarton": true,
+            "classname": "inventoryent",
+            "count": 1,
+            "desctext": "xlarge energy pack",
+            "extents": "-18 -18 0 18 18 36",
+            "fxlevel": 2,
+            "inventoryitem": "energy_item",
+            "name": "item_energy_xtreme",
+            "nocollide": true,
+            "nogravity": false,
+            "pos": "0 0 6",
+            "randompickups": false,
+            "spinpossible": false,
+            "structure": 2,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actontouch": true,
+            "actsound": "common/game/pickup_item",
+            "animstarton": true,
+            "classname": "inventoryent",
+            "count": 1,
+            "desctext": "medium health pack",
+            "extents": "-18 -18 0 18 18 36",
+            "fxlevel": 1,
+            "inventoryitem": "health_item",
+            "name": "item_health_medium",
+            "nocollide": true,
+            "nogravity": false,
+            "pos": "0 0 6",
+            "randompickups": false,
+            "spinpossible": false,
+            "structure": 2,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actontouch": true,
+            "actsound": "common/game/pickup_item",
+            "animstarton": true,
+            "classname": "inventoryent",
+            "count": 1,
+            "desctext": "small health pack",
+            "extents": "-18 -18 0 18 18 36",
+            "fxlevel": 1,
+            "inventoryitem": "health_item",
+            "name": "item_health_small",
+            "nocollide": true,
+            "nogravity": false,
+            "pos": "0 0 6",
+            "randompickups": false,
+            "spinpossible": false,
+            "structure": 2,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actontouch": true,
+            "actsound": "common/game/pickup_item",
+            "animstarton": true,
+            "classname": "inventoryent",
+            "count": 1,
+            "desctext": "xlarge health pack",
+            "extents": "-18 -18 0 18 18 36",
+            "fxlevel": 1,
+            "inventoryitem": "health_item",
+            "name": "item_health_xtreme",
+            "nocollide": true,
+            "nogravity": false,
+            "pos": "0 0 6",
+            "randompickups": false,
+            "spinpossible": false,
+            "structure": 2,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actsound": "common/game/pickup_item",
+            "animstarton": true,
+            "classname": "inventoryent",
+            "count": 1,
+            "fxlevel": 7,
+            "inventoryitem": "keycard1",
+            "name": "item_keycard1",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "acteffect": "base/misc/misc_treasure",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actsound": "common/game/treasure",
+            "animstarton": false,
+            "classname": "treasureent",
+            "count": 1000,
+            "description": "weapon cache",
+            "material": "solid_metal",
+            "model": "common/treasure_chest_a",
+            "name": "treasure_chest",
+            "nopickup": true,
+            "nopush": true,
+            "team": "hero",
+            "toggleonact": true
+        },
+        "entity": {
+            "boxdamage": true,
+            "classname": "affectableharment",
+            "damage": "1 2",
+            "damagemods": "dmgmod_no_pain",
+            "damagetype": "dmg_fire",
+            "extent": "-8 -8 0 8 8 18",
+            "health": 1,
+            "knockback": 200,
+            "loopfx": "map/common/fire_torch",
+            "loopfxstarton": true,
+            "name": "fire_barrel",
+            "radiusdamage": false,
+            "reactpower": "extinguish",
+            "smartfire": true,
+            "spawnsoundloop": "zone_shared/fx/fire_sm"
+        },
+        "entity": {
+            "boxdamage": true,
+            "classname": "affectableharment",
+            "damage": "1 2",
+            "damagemods": "dmgmod_no_pain",
+            "damagetype": "dmg_fire",
+            "extent": "-15 -15 0 15 15 30",
+            "health": 1,
+            "knockback": 200,
+            "loopfx": "map/common/fire_small",
+            "loopfxstarton": true,
+            "name": "fire_sm",
+            "radiusdamage": false,
+            "reactpower": "extinguish",
+            "smartfire": true,
+            "spawnsoundloop": "zone_shared/fx/fire_sm"
+        },
+        "entity": {
+            "actsound": "zone_shared\\mover\\bus_push",
+            "camerafadeout": true,
+            "classname": "moverent",
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "ruined_sewers/bus_junked_sew_e",
+            "move": "0 0 0",
+            "moveduration": 1,
+            "name": "moverbus_junked_puz",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_m",
+            "fxlevel": 2,
+            "health": 10,
+            "heaviness": 0,
+            "material": "hollow_metal",
+            "model": "ruined_sewers/55galdrum_sew_th",
+            "name": "55galdrum_sew_th_rs",
+            "randompickups": 2,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_m",
+            "fxlevel": 2,
+            "health": 10,
+            "heaviness": 0,
+            "material": "hollow_metal",
+            "model": "ruined_sewers/barrel_toxic_01_sew_th",
+            "name": "barrel_toxic_01_sew_th_rs",
+            "randompickups": 2,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_m",
+            "fxlevel": 2,
+            "health": 10,
+            "heaviness": 0,
+            "material": "hollow_metal",
+            "model": "ruined_sewers/barrel_toxic_02_sew_th",
+            "name": "barrel_toxic_02_sew_th_rs",
+            "randompickups": 2,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_m",
+            "fxlevel": 2,
+            "health": 10,
+            "heaviness": 0,
+            "material": "wood",
+            "model": "ruined_sewers/barrel_wood_sew_th",
+            "name": "barrel_wood_sew_th_rs",
+            "randompickups": 2,
+            "stackphysics": true,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_m",
+            "fxlevel": 2,
+            "health": 30,
+            "heaviness": 0,
+            "material": "hollow_metal",
+            "model": "ruined_sewers/burnbarrel_sew_b",
+            "name": "burnbarrel_sew_b_rs",
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_m",
+            "fxlevel": 2,
+            "health": 10,
+            "heaviness": 1,
+            "material": "wood",
+            "model": "ruined_sewers/crate3X3X5_wood_sew_th",
+            "name": "crate3x3x5_wood_sew_th_rs",
+            "randompickups": 2,
+            "stackphysics": true,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_m",
+            "fxlevel": 2,
+            "health": 10,
+            "heaviness": 1,
+            "material": "wood",
+            "model": "ruined_sewers/crate4x4_sew_b",
+            "name": "crate4x4_sew_b_rs",
+            "randompickups": 2,
+            "stackphysics": true,
+            "structure": 0
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "actsound": "zone_shared/mover/door_large_tunnel",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_m",
+            "fxlevel": 2,
+            "health": 32000,
+            "material": "wood",
+            "model": "ruined_sewers/door_large_tunnel_sew_e",
+            "name": "door_large_tunnel_sew_e_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_m",
+            "fxlevel": 2,
+            "health": 32000,
+            "material": "wood",
+            "model": "ruined_sewers/door_magseal_sew_e",
+            "name": "door_magseal_sew_e_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "openangle": 90,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "actsound": "zone_shared/mover/door_sew",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_m",
+            "fxlevel": 2,
+            "health": 100,
+            "material": "wood",
+            "model": "ruined_sewers/door_sew_e",
+            "name": "door_sew_e_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "openangle": 90,
+            "randompickups": 0,
+            "structure": 0,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_m",
+            "fxlevel": 2,
+            "health": 32000,
+            "material": "wood",
+            "model": "ruined_sewers/door_unbreak_sew_e",
+            "name": "door_unbreak_sew_e_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "openangle": 90,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 1000,
+            "heaviness": 1,
+            "material": "solid_metal",
+            "model": "ruined_sewers/entrance_culvert_bars_sew_th",
+            "name": "entrance_culvert_bar_sew_th_rs",
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "animstarton": true,
+            "autoclosedelay": 0,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "ruined_sewers/floor_fan_ditch_sew_e",
+            "name": "floor_fan_ditch_sew_e_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "openangle": 90,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "animstarton": true,
+            "autoclosedelay": 0,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "ruined_sewers/floor_fan_pit_sew_e",
+            "name": "floor_fan_pit_sew_e_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "openangle": 90,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_l",
+            "deathspawn": "ladder_large_sew_b_rs_d",
+            "fxlevel": 3,
+            "health": 300,
+            "material": "wood",
+            "model": "ruined_sewers/ladder_large_sew_b",
+            "name": "ladder_large_sew_b_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_m",
+            "fxlevel": 2,
+            "health": 100,
+            "material": "wood",
+            "model": "ruined_sewers/ladder_sew_b",
+            "name": "ladder_sew_b_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_s",
+            "deathspawn": "light_sew_b_rs_d",
+            "fxlevel": 1,
+            "health": 20,
+            "material": "solid_metal",
+            "model": "ruined_sewers/light_sew_b",
+            "name": "light_sew_b_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_l",
+            "deathspawn": "machinery_02_sew_b_rs_d",
+            "fxlevel": 3,
+            "health": 200,
+            "material": "hollow_metal",
+            "model": "ruined_sewers/machinery_02_sew_b",
+            "name": "machinery_02_sew_b_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_m",
+            "fxlevel": 2,
+            "health": 40,
+            "heaviness": 0,
+            "material": "wood",
+            "model": "ruined_sewers/pallet_sew_b",
+            "name": "pallet_sew_b_rs",
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "material": "solid_metal",
+            "model": "ruined_sewers/pillar_20ft_sew_e",
+            "name": "pillar_20ft_sew_e_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_m",
+            "deathspawn": "pipe_halfround_floor_sew_b_rs_d",
+            "fxlevel": 2,
+            "health": 100,
+            "material": "hollow_metal",
+            "model": "ruined_sewers/pipe_halfround_floor_sew_b",
+            "name": "pipe_halfround_floor_sew_b_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_l",
+            "deathspawn": "pipe_waterdrain_dirty_sew_b_rs_d",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "hollow_metal",
+            "model": "ruined_sewers/pipe_waterdrain_dirty_sew_b",
+            "name": "pipe_waterdrain_dirty_sew_b_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "deathspawn": "pipeset_corner_sew_b_rs_d",
+            "health": 100,
+            "material": "hollow_metal",
+            "model": "ruined_sewers/pipeset_corner_sew_b",
+            "name": "pipeset_corner_sew_b_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "camerafadeout": true,
+            "classname": "physent",
+            "deathspawn": "pipeset_straight_sew_b_rs_d",
+            "health": 100,
+            "material": "hollow_metal",
+            "model": "ruined_sewers/pipeset_straight_sew_b",
+            "name": "pipeset_straight_sew_b_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_l",
+            "deathspawn": "pressure_valve_sew_b_rs_d",
+            "fxlevel": 3,
+            "health": 100,
+            "material": "hollow_metal",
+            "model": "ruined_sewers/pressure_valve_sew_b",
+            "name": "pressure_valve_sew_b_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "autoclosedelay": 0,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_m",
+            "deathspawn": "slantwall_pillar_sew_b_rs_d",
+            "fxlevel": 2,
+            "health": 150,
+            "material": "wood",
+            "model": "ruined_sewers/slantwall_pillar_sew_b",
+            "name": "slantwall_pillar_sew_b_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "openangle": 90,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "actsound": "zone_shared/mover/switch_sew",
+            "autoclosedelay": 0,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_m",
+            "fxlevel": 2,
+            "health": 32000,
+            "material": "wood",
+            "model": "ruined_sewers/switch_sew_e",
+            "name": "switch_sew_e_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "openangle": 90,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_l",
+            "fxlevel": 3,
+            "health": 200,
+            "heaviness": 0,
+            "material": "hollow_metal",
+            "model": "ruined_sewers/tank_sew_b",
+            "name": "tank_sew_b_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_l",
+            "fxlevel": 3,
+            "health": 100,
+            "material": "wood",
+            "model": "ruined_sewers/woodpile_02_sew_b",
+            "name": "woodpile_02_sew_b_rs",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 0
+        },
+        "entinst": {
+            "type": "sp_banshee01",
+            "inst": {
+                "extents": "1.83238 -41.6353 0 10.1674 41.6351 84",
+                "name": "sp_banshee01",
+                "orient": "0 0 2.26893",
+                "pos": "7248.0 5244.0 -8.34123e-006"
+            }
+        },
+        "entinst": {
+            "type": "ss_brood_d",
+            "inst": {
+                "extents": "-6.00004 -38.7847 0 18.0001 38.7845 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 2.0944",
+                "pos": "7776 7932 41.2139"
+            },
+            "inst": {
+                "extents": "-17.9999 -18.0001 0 30.0001 17.9999 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 -1.5708",
+                "pos": "2376 3452.34 72.8994"
+            },
+            "inst": {
+                "extents": "-17.9999 -18.0001 0 30.0001 17.9999 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 -1.5708",
+                "pos": "2292 3452.34 72.8994"
+            },
+            "inst": {
+                "extents": "-17.9999 -18.0001 0 30.0001 17.9999 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 -3.14159",
+                "pos": "2610.24 4108.65 -18.7861"
+            },
+            "inst": {
+                "extents": "-17.9999 -18.0001 0 30.0001 17.9999 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 -3.14159",
+                "pos": "2647.32 4162.99 -18.7861"
+            },
+            "inst": {
+                "extents": "-17.9999 -18.0001 0 30.0001 17.9999 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 -1.5708",
+                "pos": "2340 4854.98 12.7849"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_brood_d",
+                "pos": "2160 4590.48 41.2136"
+            },
+            "inst": {
+                "extents": "-18 -18.0001 0 30 17.9999 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 -3.14159",
+                "pos": "2544 4616.03 41.2136"
+            },
+            "inst": {
+                "extents": "-17.9999 -17.9999 0 30.0001 18.0001 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 -1.5708",
+                "pos": "2262 5502 41.2136"
+            },
+            "inst": {
+                "extents": "-17.9999 -17.9999 0 30.0001 18.0001 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 -1.5708",
+                "pos": "2406 5526 41.2136"
+            },
+            "inst": {
+                "extents": "-17.9999 -17.9999 0 30.0001 18.0001 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 -1.5708",
+                "pos": "2346 5406 41.2139"
+            },
+            "inst": {
+                "extents": "-14.7846 -29.9999 0 26.7848 30 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 -1.309",
+                "pos": "3135.5 6365.17 41.2136"
+            },
+            "inst": {
+                "extents": "-14.7848 -29.9998 0 26.7846 30.0001 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 -1.309",
+                "pos": "3004.06 6392.07 41.2139"
+            },
+            "inst": {
+                "extents": "-14.7846 -30.0001 0 26.7849 29.9999 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 -1.309",
+                "pos": "3310.54 6427.71 41.2139"
+            },
+            "inst": {
+                "extents": "-18 -18.0002 0 30 17.9998 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 -1.5708",
+                "pos": "8940 7488 41.2136"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_brood_d",
+                "pos": "6961.36 7970.19 41.2136"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_brood_d",
+                "pos": "7020 8232 41.2136"
+            },
+            "inst": {
+                "extents": "-6.00029 -38.7844 0 17.9999 38.7847 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 -1.0472",
+                "pos": "7442.82 8316.74 41.2139"
+            },
+            "inst": {
+                "extents": "-2.20866 -40.5529 0 14.2083 40.5527 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 -0.959931",
+                "pos": "7416 8064 41.2139"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_brood_d",
+                "pos": "4848 6420 41.2136"
+            },
+            "inst": {
+                "extents": "-17.6353 -22.1677 0 29.6356 22.1678 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 3.05433",
+                "pos": "8750.82 6419.53 84.2665"
+            },
+            "inst": {
+                "extents": "-17.6357 -22.1676 0 29.6352 22.1669 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 -1.48353",
+                "pos": "8816.95 6659.53 84.2665"
+            },
+            "inst": {
+                "extents": "-17.9999 -18.0002 0 30.0001 17.9998 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 -3.14159",
+                "pos": "5352 5700 41.2136"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_brood_d",
+                "pos": "4872 5700 41.2136"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_brood_d",
+                "pos": "4944 5988 41.2139"
+            },
+            "inst": {
+                "extents": "-17.9999 -18.0002 0 30.0001 17.9998 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 -3.14159",
+                "pos": "5256 5976 41.2139"
+            },
+            "inst": {
+                "extents": "-17.9999 -18 0 30.0001 18 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 -1.5708",
+                "pos": "5100 6264 41.2139"
+            },
+            "inst": {
+                "extents": "-5.99996 -38.7842 0 18.0002 38.7849 84",
+                "name": "ss_brood_d",
+                "orient": "0 0 2.61799",
+                "pos": "5280 6432 41.2139"
+            }
+        },
+        "entinst": {
+            "type": "claw_ladder01",
+            "inst": {
+                "extents": "-17.9998 -17.9999 0 30.0002 18.0001 84",
+                "name": "claw_ladder01",
+                "orient": "0 0 1.5708",
+                "pos": "6179.8 4939.1 1"
+            }
+        },
+        "entinst": {
+            "type": "ss_morlockbruiser_a",
+            "inst": {
+                "extents": "-21.126 -17.7264 0 33.1254 17.7265 84",
+                "name": "ss_morlockbruiser_a",
+                "orient": "0 0 -1.65806",
+                "pos": "3416.09 4330.66 54.1036"
+            },
+            "inst": {
+                "extents": "-26.9998 -15.5886 0 39.0002 15.5885 84",
+                "name": "ss_morlockbruiser_a",
+                "orient": "0 0 -2.87979",
+                "pos": "3521.66 4227.45 54.1036"
+            },
+            "inst": {
+                "extents": "-17.6353 -22.168 0 29.6353 22.1675 84",
+                "name": "ss_morlockbruiser_a",
+                "orient": "0 0 -0.0872664",
+                "pos": "3270.31 5446.11 54.1036"
+            },
+            "inst": {
+                "extents": "-14.7848 -29.9998 0 26.7846 30.0001 84",
+                "name": "ss_morlockbruiser_a",
+                "orient": "0 0 -1.309",
+                "pos": "3373.51 5551.68 54.1036"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_morlockbruiser_a",
+                "pos": "8158.81 6142.45 40.9961"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_morlockbruiser_a",
+                "pos": "7740 7356 41.2136"
+            },
+            "inst": {
+                "extents": "-18 -18 0 30 18 84",
+                "name": "ss_morlockbruiser_a",
+                "pos": "7740 7164 41.2136"
+            },
+            "inst": {
+                "extents": "-26.9994 -15.5883 0 39.0002 15.5884 84",
+                "name": "ss_morlockbruiser_a",
+                "orient": "0 0 -2.87979",
+                "pos": "8496 8352 41.2139"
+            },
+            "inst": {
+                "extents": "-16.553 -26.2084 0 28.5527 26.2085 84",
+                "name": "ss_morlockbruiser_a",
+                "orient": "0 0 2.96706",
+                "pos": "8496 7860 41.2139"
+            }
+        },
+        "entinst": {
+            "type": "claw_ladder02",
+            "inst": {
+                "extents": "-18 -17.9999 0 30 18.0001 84",
+                "name": "claw_ladder02",
+                "orient": "0 0 -1.5708",
+                "pos": "6179.8 5381.28 1"
+            }
+        },
+        "entinst": {
+            "type": "ss_morlockbruiser_a_leader",
+            "inst": {
+                "extents": "-21.1252 -17.7265 0 33.1263 17.7269 84",
+                "name": "ss_morlockbruiser_a_leader",
+                "orient": "0 0 -3.05433",
+                "pos": "8532.13 8114.06 41.2139"
+            }
+        },
+        "entinst": {
+            "type": "ss_morlockpsionic_a",
+            "inst": {
+                "extents": "-34.9145 -6.15646 0 46.9146 6.15654 84",
+                "name": "ss_morlockpsionic_a",
+                "orient": "0 0 -2.53073",
+                "pos": "3626.24 5572.56 54.1036"
+            },
+            "inst": {
+                "extents": "-2.20834 -40.5526 0 14.2085 40.5528 84",
+                "name": "ss_morlockpsionic_a",
+                "orient": "0 0 2.18166",
+                "pos": "3407.49 3974.73 54.1036"
+            },
+            "inst": {
+                "extents": "-21.1258 -17.7269 0 33.1257 17.7266 84",
+                "name": "ss_morlockpsionic_a",
+                "orient": "0 0 -1.65806",
+                "pos": "7590.52 8033.98 41.2139"
+            },
+            "inst": {
+                "extents": "-21.1259 -17.7267 0 33.1256 17.7267 84",
+                "name": "ss_morlockpsionic_a",
+                "orient": "0 0 -1.65806",
+                "pos": "7710.52 8153.98 37.8437"
+            },
+            "inst": {
+                "extents": "-17.6355 -22.1677 0 29.6354 22.1669 84",
+                "name": "ss_morlockpsionic_a",
+                "orient": "0 0 -1.48353",
+                "pos": "8976 6401.63 41.2139"
+            },
+            "inst": {
+                "extents": "-14.7847 -30.0004 0 26.7845 30.0003 84",
+                "name": "ss_morlockpsionic_a",
+                "orient": "0 0 -1.309",
+                "pos": "8340 6576 41.2139"
+            },
+            "inst": {
+                "extents": "-34.9147 -6.15652 0 46.9144 6.15648 84",
+                "name": "ss_morlockpsionic_a",
+                "orient": "0 0 -2.53073",
+                "pos": "3769 6446.07 54.1036"
+            }
+        },
+        "entinst": {
+            "type": "ambush_leader",
+            "inst": {
+                "extents": "-18.0002 -18 0 29.9998 18 84",
+                "name": "ambush_leader",
+                "orient": "0 0 3.14159",
+                "pos": "6661.11 5340.64 -0.000311852"
+            }
+        },
+        "entinst": {
+            "type": "comic_magneto",
+            "inst": {
+                "name": "comic_magneto",
+                "pos": "9000 3720 0"
+            }
+        },
+        "entinst": {
+            "type": "data_disc_sewers",
+            "inst": {
+                "name": "data_disc_sewers",
+                "pos": "8758.45 8389.09 -172.958"
+            }
+        },
+        "entinst": {
+            "type": "enable_secret_entrance",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "enable_secret_entrance",
+                "pos": "4942.46 6570 0"
+            }
+        },
+        "entinst": {
+            "type": "lightent44",
+            "inst": {
+                "extents": "-6 -6.00002 -6.00001 6 5.99997 6.00001",
+                "name": "lightent44",
+                "parent": "burnbarrel_sew_b_rs02",
+                "pos": "2803 5307.12 50.8332"
+            },
+            "inst": {
+                "extents": "-6 -6.00002 -6.00001 6 5.99997 6.00001",
+                "name": "lightent07",
+                "parent": "burnbarrel_sew_b_rs01",
+                "pos": "3778.04 5242.81 55.179"
+            },
+            "inst": {
+                "extents": "-6 -6.00002 -6.00001 6 5.99997 6.00001",
+                "name": "lightent56",
+                "parent": "burnbarrel_sew_b_rs03",
+                "pos": "8963.08 6674.06 55.179"
+            },
+            "inst": {
+                "extents": "-6 -6.00002 -6.00001 6 5.99997 6.00001",
+                "name": "lightent59",
+                "parent": "burnbarrel_sew_b_rs05",
+                "pos": "2184.83 4304.54 55.179"
+            },
+            "inst": {
+                "extents": "-6 -6.00002 -6.00001 6 5.99997 6",
+                "name": "lightent57",
+                "parent": "burnbarrel_sew_b_rs04",
+                "pos": "3998.25 4660.17 55.179"
+            }
+        },
+        "entinst": {
+            "type": "lightent58",
+            "inst": {
+                "extents": "-6.00009 -6.0001 -6 5.99992 5.99989 6",
+                "name": "lightent58",
+                "orient": "0 0 -3.14159",
+                "parent": "fire_sm02",
+                "pos": "7209.83 5176.57 52.956"
+            }
+        },
+        "entinst": {
+            "type": "loop_effect07",
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect07",
+                "pos": "6850.68 8202.15 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect07",
+                "pos": "8406.64 5784.04 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect07",
+                "pos": "8164.87 7036.63 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect07",
+                "pos": "2940.2 5296.17 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect07",
+                "pos": "2048.31 5321.29 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect07",
+                "pos": "2638.58 3893.44 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect07",
+                "pos": "4314.19 5199.84 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect07",
+                "pos": "4448.15 5168.46 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect07",
+                "pos": "8603.91 2639.5 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect07",
+                "pos": "4793.15 6486.81 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect07",
+                "pos": "4919.62 5778.37 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect07",
+                "pos": "7632.76 8005.88 0"
+            }
+        },
+        "entinst": {
+            "type": "loop_effect35",
+            "inst": {
+                "extents": "-6.00012 -6 -6 5.99988 6.00001 6",
+                "name": "loop_effect35",
+                "orient": "0 0 -1.5708",
+                "pos": "2822.07 5646.08 93.5419"
+            },
+            "inst": {
+                "extents": "-6 -6.00004 -6 6 5.99995 6",
+                "name": "loop_effect35",
+                "pos": "2159.86 5570.4 93.5419"
+            },
+            "inst": {
+                "extents": "-6.00002 -5.99991 -6 5.99999 6.00008 6",
+                "name": "loop_effect35",
+                "orient": "0 0 -3.14159",
+                "pos": "3246.55 3912.05 93.5419"
+            },
+            "inst": {
+                "extents": "-2.2017e-005 -12.0005 -6.0 -5.83252e-006 11.9997 6.0",
+                "name": "loop_effect35",
+                "orient": "0 0 2.3562",
+                "pos": "8205.27 5452.32 93.5419"
+            },
+            "inst": {
+                "extents": "-5.99992 -5.99999 -6 6.00009 6 6",
+                "name": "loop_effect35",
+                "orient": "0 0 -3.14159",
+                "pos": "2526.41 2917.56 93.5419"
+            },
+            "inst": {
+                "extents": "-5.99997 -5.99995 -6 6.00005 6.00004 6",
+                "name": "loop_effect35",
+                "orient": "0 0 -3.14159",
+                "pos": "4003.12 7281.64 85.8964"
+            },
+            "inst": {
+                "extents": "-6 -6.00005 -6.00001 6 5.99994 6.00001",
+                "name": "loop_effect35",
+                "pos": "2876.36 7281.93 85.8964"
+            },
+            "inst": {
+                "extents": "-6.00011 -5.99983 -6 5.99989 6.00018 6",
+                "name": "loop_effect35",
+                "orient": "0 0 1.5708",
+                "pos": "5935.6 4913.2 93.5419"
+            }
+        },
+        "entinst": {
+            "type": "water_puzzle_drain",
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "water_puzzle_drain",
+                "pos": "8647.57 8102.92 -175.784"
+            }
+        },
+        "entinst": {
+            "type": "loop_effect16",
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect16",
+                "pos": "2318.59 3678.52 -42.5465"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect16",
+                "pos": "5139.81 5502.27 -42.5465"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect16",
+                "pos": "7537.15 8131.54 -1.22345"
+            }
+        },
+        "entinst": {
+            "type": "loop_effect18",
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect18",
+                "pos": "2344.58 5161.75 -42.5465"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect18",
+                "pos": "8670 7270.73 -42.5465"
+            }
+        },
+        "entinst": {
+            "type": "loop_effect29",
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect29",
+                "pos": "8224.63 7000.53 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "loop_effect29",
+                "pos": "4384.39 5065.81 0"
+            }
+        },
+        "entinst": {
+            "type": "herospot01",
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "herospot01",
+                "pos": "5942.81 5364.64 0"
+            },
+            "inst": {
+                "extents": "-5.99985 -6.00008 -6 6.00015 5.99992 6",
+                "name": "home",
+                "orient": "0 0 -1.5708",
+                "pos": "5095.92 6469.1 -32.4673"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "away",
+                "pos": "8493.9 2700 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "herospot02",
+                "pos": "5942.81 5316.64 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "herospot04",
+                "pos": "5894.81 5316.64 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "herospot03",
+                "pos": "5894.81 5364.64 0"
+            },
+            "inst": {
+                "extents": "-6 -6 -6 6 6 6",
+                "name": "null01",
+                "pos": "8715.02 8099.7 -166.958"
+            }
+        },
+        "entinst": {
+            "type": "player_start_all01",
+            "inst": {
+                "extents": "-60.0786 -60 0 84 60 83.9544",
+                "name": "player_start_all01",
+                "orient": "0 0 1.5708",
+                "pos": "2340.54 2859.99 0"
+            }
+        },
+        "entinst": {
+            "type": "from_b_pens",
+            "inst": {
+                "extents": "-60.0781 -60 0 84 60 83.9544",
+                "name": "from_b_pens",
+                "orient": "0 0 -1.5708",
+                "pos": "7623.43 8320 -0.000311852"
+            }
+        },
+        "entinst": {
+            "type": "ambush_relay",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "ambush_relay",
+                "pos": "6180 5580 120"
+            }
+        },
+        "entinst": {
+            "type": "trigger_area02",
+            "inst": {
+                "extents": "-210 -150 0 210 150 240",
+                "name": "trigger_area02",
+                "pos": "2942.93 6357.56 -86.4842"
+            },
+            "inst": {
+                "extents": "-150 -210 0 150 210 240",
+                "name": "trigger_area02",
+                "pos": "8729.03 3754.44 -86.4842"
+            },
+            "inst": {
+                "extents": "-150 -150 0 150 150 240",
+                "name": "trigger_area02",
+                "pos": "9137.68 3421.87 -86.4842"
+            },
+            "inst": {
+                "extents": "-150 -150 0 150 150 240",
+                "name": "trigger_area02",
+                "pos": "9137.68 3823.56 -86.4842"
+            },
+            "inst": {
+                "extents": "-240 -300 0 240 300 240",
+                "name": "trigger_area02",
+                "pos": "7561.56 7983.43 -86.4842"
+            },
+            "inst": {
+                "extents": "-360 -270 0 360 270 240",
+                "name": "trigger_area02",
+                "pos": "6602.6 5310.07 -86.4842"
+            },
+            "inst": {
+                "extents": "-210 -210 0 210 210 240",
+                "name": "trigger_area02",
+                "pos": "3538.35 6311.59 -86.4842"
+            }
+        },
+        "entinst": {
+            "type": "trigger_power02",
+            "inst": {
+                "extents": "-200.58 -63.4998 0 200.58 63.5002 120",
+                "name": "trigger_power02",
+                "parent": "moverbus_junked_puz01",
+                "pos": "4062.79 5094.25 5.92096"
+            }
+        },
+        "entinst": {
+            "type": "trigger_power01",
+            "inst": {
+                "extents": "-13.3058 -56.6544 0 13.3056 56.6547 120",
+                "name": "trigger_power01",
+                "parent": "moverbus_junked_puz01",
+                "pos": "3871.14 5091.35 5.92096"
+            }
+        },
+        "entinst": {
+            "type": "secret_entrance",
+            "inst": {
+                "extents": "-30.0002 -120 0 29.9998 120 120",
+                "name": "secret_entrance",
+                "orient": "0 0 -1.5708",
+                "pos": "5101.96 6673.52 -60.0603"
+            }
+        },
+        "entinst": {
+            "type": "trig_banshee",
+            "inst": {
+                "extents": "-108 -150 0 108 150 120",
+                "name": "trig_banshee",
+                "pos": "7272 5250 0"
+            }
+        },
+        "entinst": {
+            "type": "trigger_touch02",
+            "inst": {
+                "extents": "-30 -120 0 30 120 120",
+                "name": "trigger_touch02",
+                "pos": "8321.65 2706 0"
+            }
+        },
+        "entinst": {
+            "type": "trigger_touch_ambush",
+            "inst": {
+                "extents": "-300 -360 0 300 360 120",
+                "name": "trigger_touch_ambush",
+                "orient": "0 0 1.5708",
+                "pos": "6180 5160 0"
+            }
+        },
+        "entinst": {
+            "type": "water_sewer01",
+            "inst": {
+                "extents": "-540 -240 0 540 240 24",
+                "name": "water_sewer01",
+                "pos": "3608.18 5469.36 -28.6203"
+            },
+            "inst": {
+                "extents": "-120 -180 0 120 180 120",
+                "name": "water_sewer01",
+                "pos": "2340 4560 -165.217"
+            },
+            "inst": {
+                "extents": "-120 -180 0 120 180 120",
+                "name": "water_sewer01",
+                "pos": "2340 5160 -165.217"
+            },
+            "inst": {
+                "extents": "-120 -900 0 120 900 120",
+                "name": "water_sewer01",
+                "pos": "5098.66 6117.05 -165.217"
+            },
+            "inst": {
+                "extents": "-480 -180 0 480 180 24",
+                "name": "water_sewer01",
+                "pos": "8344.68 7236.37 -60"
+            },
+            "inst": {
+                "extents": "-540 -240 0 540 240 24",
+                "name": "water_sewer01",
+                "pos": "3233.13 6304.89 -28.6203"
+            },
+            "inst": {
+                "extents": "-180 -120 0 180 120 120",
+                "name": "water_sewer01",
+                "pos": "2640 4140 -165.217"
+            },
+            "inst": {
+                "extents": "-540 -240 0 540 240 24",
+                "name": "water_sewer01",
+                "pos": "6475.85 5285.35 -25.7881"
+            },
+            "inst": {
+                "extents": "-240 -540 0 240 540 24",
+                "name": "water_sewer01",
+                "pos": "7557.39 8036.71 -25.3974"
+            },
+            "inst": {
+                "extents": "-120 -180 0 120 180 120",
+                "name": "water_sewer01",
+                "pos": "2340 3720 -165.217"
+            }
+        },
+        "entinst": {
+            "type": "wp_banshee01",
+            "inst": {
+                "extents": "-6 -6 -6.00001 6 6 6.00001",
+                "name": "wp_banshee01",
+                "pos": "7453.62 5207.35 0"
+            },
+            "inst": {
+                "extents": "-5.99983 -6 -6 6.00017 5.99999 6",
+                "name": "wp_sally01",
+                "orient": "0 0 -3.14159",
+                "pos": "6431.27 5340.64 0"
+            }
+        },
+        "entinst": {
+            "type": "link_newyork4",
+            "inst": {
+                "extents": "-36 -24 0 36 24 192",
+                "name": "link_newyork4",
+                "pos": "2340.54 2772.75 0"
+            }
+        },
+        "entinst": {
+            "type": "link_pens1",
+            "inst": {
+                "extents": "-18.0003 -59.9999 0 17.9997 60.0001 204",
+                "name": "link_pens1",
+                "orient": "0 0 1.5708",
+                "pos": "7624.83 8516.52 0"
+            }
+        },
+        "entinst": {
+            "type": "item_energy_large",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "item_energy_large",
+                "pos": "9208.23 3510 0"
+            }
+        },
+        "entinst": {
+            "type": "item_energy_xtreme",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "item_energy_xtreme",
+                "pos": "3910 4860 0"
+            }
+        },
+        "entinst": {
+            "type": "item_health_medium",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "item_health_medium",
+                "pos": "8800 3520 0"
+            },
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "item_health_medium",
+                "pos": "8830 3600 0"
+            },
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "item_health_medium",
+                "pos": "8880 3570 0"
+            }
+        },
+        "entinst": {
+            "type": "item_health_small",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "item_health_small",
+                "pos": "4840 4980 13.8137"
+            }
+        },
+        "entinst": {
+            "type": "item_health_xtreme",
+            "inst": {
+                "extents": "-6 -6 0 6 6 12",
+                "name": "item_health_xtreme",
+                "pos": "4140 4860 0"
+            }
+        },
+        "entinst": {
+            "type": "keycard",
+            "inst": {
+                "name": "keycard",
+                "pos": "4308.55 7423.59 31.165"
+            }
+        },
+        "entinst": {
+            "type": "treasure_chest",
+            "inst": {
+                "name": "treasure_chest",
+                "pos": "4020 4740 0"
+            }
+        },
+        "entinst": {
+            "type": "fire_barrel",
+            "inst": {
+                "extents": "-8 -8 0 8 8 18",
+                "name": "fire_barrel03",
+                "parent": "burnbarrel_sew_b_rs04",
+                "pos": "3995.59 4659.41 32.5104"
+            },
+            "inst": {
+                "extents": "-8 -8 0 8 8 18",
+                "name": "fire_barrel02",
+                "parent": "burnbarrel_sew_b_rs03",
+                "pos": "8960.42 6673.3 32.5104"
+            },
+            "inst": {
+                "extents": "-8 -8 0 8 8 18",
+                "name": "fire_barrel04",
+                "parent": "burnbarrel_sew_b_rs02",
+                "pos": "2802.41 5304.61 29.685"
+            },
+            "inst": {
+                "extents": "-8 -8 0 8 8 18",
+                "name": "fire_barrel01",
+                "parent": "burnbarrel_sew_b_rs01",
+                "pos": "3775.38 5242.05 32.5104"
+            },
+            "inst": {
+                "extents": "-8 -8 0 8 8 18",
+                "name": "fire_barrel05",
+                "parent": "burnbarrel_sew_b_rs05",
+                "pos": "2182.17 4303.78 32.5104"
+            }
+        },
+        "entinst": {
+            "type": "fire_sm",
+            "inst": {
+                "extents": "-15 -15 0 15 15 30",
+                "name": "fire_sm02",
+                "pos": "7207.58 5183.9 0"
+            }
+        },
+        "entinst": {
+            "type": "moverbus_junked_puz01",
+            "inst": {
+                "name": "moverbus_junked_puz01",
+                "orient": "0 0 1.5708",
+                "pos": "4063.31 5093.23 5.92096"
+            }
+        },
+        "entinst": {
+            "type": "55galdrum_sew_th_rs",
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "pos": "3353.34 3916.9 0"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "orient": "0 0 -1.74533",
+                "pos": "3360 3876 0"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "pos": "6890.24 8332.82 17.8227"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "orient": "0 0 -1.309",
+                "pos": "3342.21 4305.97 7.98811e-006"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "pos": "3336 4356 0"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "orient": "0 0 -2.0944",
+                "pos": "6918.98 8358.63 17.8227"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "pos": "7578.87 5139.98 16.8834"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "orient": "0 0 1.8326",
+                "pos": "5380.26 6441.53 0"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "orient": "0 0 -0.959931",
+                "pos": "5338.37 4978.11 11.3947"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "orient": "0 0 1.8326",
+                "pos": "7542.37 5158.1 16.8834"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "orient": "0 0 0.261799",
+                "pos": "4208.55 5621.49 0"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "orient": "0 0 1.8326",
+                "pos": "4154.51 5607.01 0"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "orient": "0 0 -0.959931",
+                "pos": "5373.55 4970.98 11.3947"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "pos": "7464 5148 0"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "orient": "0 0 2.35619",
+                "pos": "3614.51 4165.23 11.3947"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "orient": "0 0 1.0472",
+                "pos": "3587.58 4135.59 11.3947"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "orient": "0 0 1.0472",
+                "pos": "3579.18 4170.49 11.3947"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "orient": "0 0 -0.785398",
+                "pos": "3608.32 4364.43 11.3947"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "pos": "3344.12 4265.97 1.03746e-006"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "orient": "0 0 0.523599",
+                "pos": "3594.1 4331.66 11.3947"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "orient": "0 0 -0.785398",
+                "pos": "3572.44 4365.35 11.3947"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "pos": "3360.0 3828.0 -1.04265e-005"
+            },
+            "inst": {
+                "name": "55galdrum_sew_th_rs",
+                "orient": "0 0 0.349066",
+                "pos": "5353.85 4941.18 11.3947"
+            }
+        },
+        "entinst": {
+            "type": "barrel_toxic_01_sew_th_rs",
+            "inst": {
+                "name": "barrel_toxic_01_sew_th_rs",
+                "pos": "8640.0 3480.0 4.82888e-006"
+            },
+            "inst": {
+                "name": "barrel_toxic_01_sew_th_rs",
+                "pos": "8780 3820 0"
+            },
+            "inst": {
+                "name": "barrel_toxic_01_sew_th_rs",
+                "pos": "9143.96 3709.18 4.09474e-005"
+            },
+            "inst": {
+                "name": "barrel_toxic_01_sew_th_rs",
+                "pos": "8660 3520 0"
+            },
+            "inst": {
+                "name": "barrel_toxic_01_sew_th_rs",
+                "pos": "9120.0 3380.0 1.08486e-005"
+            },
+            "inst": {
+                "name": "barrel_toxic_01_sew_th_rs",
+                "pos": "8810 3800 0"
+            },
+            "inst": {
+                "name": "barrel_toxic_01_sew_th_rs",
+                "pos": "8670 3490 0"
+            },
+            "inst": {
+                "name": "barrel_toxic_01_sew_th_rs",
+                "pos": "9210.0 3630.0 1.38584e-005"
+            },
+            "inst": {
+                "name": "barrel_toxic_01_sew_th_rs",
+                "pos": "9260 3610 0"
+            },
+            "inst": {
+                "name": "barrel_toxic_01_sew_th_rs",
+                "pos": "8680.0 3650.0 2.58981e-005"
+            },
+            "inst": {
+                "name": "barrel_toxic_01_sew_th_rs",
+                "pos": "9034.22 3470.73 0"
+            },
+            "inst": {
+                "name": "barrel_toxic_01_sew_th_rs",
+                "pos": "9020 3860 0"
+            },
+            "inst": {
+                "name": "barrel_toxic_01_sew_th_rs",
+                "pos": "8780 3740 0"
+            }
+        },
+        "entinst": {
+            "type": "barrel_toxic_02_sew_th_rs",
+            "inst": {
+                "name": "barrel_toxic_02_sew_th_rs",
+                "orient": "0 0 -0.174533",
+                "pos": "8640 3569.99 0"
+            },
+            "inst": {
+                "name": "barrel_toxic_02_sew_th_rs",
+                "orient": "0 0 0.785398",
+                "pos": "9124.21 3530.75 0"
+            },
+            "inst": {
+                "name": "barrel_toxic_02_sew_th_rs",
+                "orient": "0 0 -0.174533",
+                "pos": "9210.9 3590.76 0"
+            },
+            "inst": {
+                "name": "barrel_toxic_02_sew_th_rs",
+                "orient": "0 0 -0.785398",
+                "pos": "9119.98 3781.28 0"
+            },
+            "inst": {
+                "name": "barrel_toxic_02_sew_th_rs",
+                "orient": "0 0 0.349066",
+                "pos": "8790 3400.02 0"
+            },
+            "inst": {
+                "name": "barrel_toxic_02_sew_th_rs",
+                "orient": "0 0 -0.523599",
+                "pos": "8825.8 3752.85 0"
+            }
+        },
+        "entinst": {
+            "type": "barrel_wood_sew_th_rs",
+            "inst": {
+                "name": "barrel_wood_sew_th_rs",
+                "pos": "3624 4080 0"
+            },
+            "inst": {
+                "name": "barrel_wood_sew_th_rs",
+                "pos": "5536.13 5519.78 0"
+            },
+            "inst": {
+                "name": "barrel_wood_sew_th_rs",
+                "pos": "6450 5080 0"
+            },
+            "inst": {
+                "name": "barrel_wood_sew_th_rs",
+                "pos": "3588 4056 0"
+            },
+            "inst": {
+                "name": "barrel_wood_sew_th_rs",
+                "pos": "3336.0 4464.0 -6.25592e-006"
+            },
+            "inst": {
+                "name": "barrel_wood_sew_th_rs",
+                "pos": "3372 4452 0"
+            },
+            "inst": {
+                "name": "barrel_wood_sew_th_rs",
+                "pos": "3532.72 3893.48 0"
+            },
+            "inst": {
+                "name": "barrel_wood_sew_th_rs",
+                "pos": "3576 4452 0"
+            },
+            "inst": {
+                "name": "barrel_wood_sew_th_rs",
+                "pos": "5892.64 4970 0"
+            },
+            "inst": {
+                "name": "barrel_wood_sew_th_rs",
+                "pos": "3612.0 4464.0 -8.34123e-006"
+            },
+            "inst": {
+                "name": "barrel_wood_sew_th_rs",
+                "pos": "3600 4260 0"
+            },
+            "inst": {
+                "name": "barrel_wood_sew_th_rs",
+                "pos": "5920 4940 0"
+            },
+            "inst": {
+                "name": "barrel_wood_sew_th_rs",
+                "pos": "3342.07 4416.88 0"
+            }
+        },
+        "entinst": {
+            "type": "burnbarrel_sew_b_rs",
+            "inst": {
+                "name": "burnbarrel_sew_b_rs01",
+                "pos": "3774.64 5241.56 -0.000311852"
+            },
+            "inst": {
+                "name": "burnbarrel_sew_b_rs03",
+                "pos": "8959.68 6672.81 -0.000311852"
+            },
+            "inst": {
+                "name": "burnbarrel_sew_b_rs04",
+                "pos": "3994.85 4658.92 -0.000311852"
+            },
+            "inst": {
+                "name": "burnbarrel_sew_b_rs05",
+                "pos": "2181.44 4303.29 -0.000311852"
+            },
+            "inst": {
+                "name": "burnbarrel_sew_b_rs02",
+                "pos": "2803.03 5305.87 -0.000311852"
+            }
+        },
+        "entinst": {
+            "type": "crate3x3x5_wood_sew_th_rs",
+            "inst": {
+                "name": "crate3x3x5_wood_sew_th_rs",
+                "pos": "3882.22 4780.1 -8.34124e-006"
+            },
+            "inst": {
+                "name": "crate3x3x5_wood_sew_th_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "3942.92 4694.13 -8.34124e-006"
+            },
+            "inst": {
+                "name": "crate3x3x5_wood_sew_th_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "3942.43 4727.5 44.8463"
+            },
+            "inst": {
+                "name": "crate3x3x5_wood_sew_th_rs",
+                "pos": "4961.43 4950.15 0"
+            },
+            "inst": {
+                "name": "crate3x3x5_wood_sew_th_rs",
+                "orient": "0 0 -1.309",
+                "pos": "4931.69 5002.19 0"
+            },
+            "inst": {
+                "name": "crate3x3x5_wood_sew_th_rs",
+                "orient": "0 0 -1.0472",
+                "pos": "4944.98 4974.25 36"
+            },
+            "inst": {
+                "name": "crate3x3x5_wood_sew_th_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "3600 3916.03 0"
+            },
+            "inst": {
+                "name": "crate3x3x5_wood_sew_th_rs",
+                "orient": "0 0 -1.65806",
+                "pos": "3600 3996 0"
+            },
+            "inst": {
+                "name": "crate3x3x5_wood_sew_th_rs",
+                "orient": "0 0 0.698132",
+                "pos": "4116.19 4787.51 -8.34124e-006"
+            },
+            "inst": {
+                "name": "crate3x3x5_wood_sew_th_rs",
+                "orient": "0 0 -1.65806",
+                "pos": "3600 3839.05 0"
+            },
+            "inst": {
+                "name": "crate3x3x5_wood_sew_th_rs",
+                "orient": "0 0 -1.48353",
+                "pos": "3600 3881.65 52.166"
+            },
+            "inst": {
+                "name": "crate3x3x5_wood_sew_th_rs",
+                "orient": "0 0 -1.8326",
+                "pos": "4100.04 4755.31 44.8463"
+            },
+            "inst": {
+                "name": "crate3x3x5_wood_sew_th_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "3593.17 3958.63 52.166"
+            },
+            "inst": {
+                "name": "crate3x3x5_wood_sew_th_rs",
+                "pos": "4184.65 4788.0 -8.34124e-006"
+            }
+        },
+        "entinst": {
+            "type": "crate3x3x5_wood_sew_th_rs10",
+            "inst": {
+                "name": "crate3x3x5_wood_sew_th_rs10",
+                "orient": "0 0 -1.13446",
+                "pos": "3942.43 4762.59 -8.34124e-006"
+            },
+            "inst": {
+                "name": "crate3x3x5_wood_sew_th_rs10",
+                "orient": "0 0 1.8326",
+                "pos": "4092.51 4714.39 -8.34124e-006"
+            }
+        },
+        "entinst": {
+            "type": "crate4x4_sew_b_rs",
+            "inst": {
+                "name": "crate4x4_sew_b_rs",
+                "orient": "0 0 1.309",
+                "pos": "2661.77 7360.22 13.978"
+            },
+            "inst": {
+                "name": "crate4x4_sew_b_rs",
+                "orient": "0 0 0.0872665",
+                "pos": "7509.8 5544.36 0"
+            },
+            "inst": {
+                "name": "crate4x4_sew_b_rs",
+                "orient": "0 0 2.00713",
+                "pos": "2628.85 7409.24 13.978"
+            },
+            "inst": {
+                "name": "crate4x4_sew_b_rs",
+                "pos": "7565.59 5539.42 0"
+            },
+            "inst": {
+                "name": "crate4x4_sew_b_rs",
+                "orient": "0 0 1.13446",
+                "pos": "2628 7308.05 0"
+            },
+            "inst": {
+                "name": "crate4x4_sew_b_rs",
+                "pos": "4212.0 4944.0 -8.34123e-006"
+            },
+            "inst": {
+                "name": "crate4x4_sew_b_rs",
+                "pos": "5000 5000 0"
+            },
+            "inst": {
+                "name": "crate4x4_sew_b_rs",
+                "orient": "0 0 1.65806",
+                "pos": "2628 7231.08 0"
+            }
+        },
+        "entinst": {
+            "type": "ambush_door01",
+            "inst": {
+                "name": "ambush_door01",
+                "pos": "5759.27 5340.64 0"
+            },
+            "inst": {
+                "name": "ambush_door02",
+                "pos": "6599.27 5340.64 0"
+            }
+        },
+        "entinst": {
+            "type": "door_magseal_sew_e_rs02",
+            "inst": {
+                "name": "door_magseal_sew_e_rs02",
+                "pos": "7665.91 8459.95 0"
+            }
+        },
+        "entinst": {
+            "type": "door_sew_e_rs",
+            "inst": {
+                "name": "door_sew_e_rs",
+                "orient": "0 0 3.14159",
+                "pos": "3972 4980 0"
+            }
+        },
+        "entinst": {
+            "type": "door_sew_e_rs01",
+            "inst": {
+                "name": "door_sew_e_rs01",
+                "orient": "0 0 -1.5708",
+                "pos": "7261.63 8054.3 0"
+            }
+        },
+        "entinst": {
+            "type": "drainage_door",
+            "inst": {
+                "name": "drainage_door",
+                "pos": "7979.41 8054.53 0"
+            }
+        },
+        "entinst": {
+            "type": "entrance_culvert_bar_sew_th_rs01",
+            "inst": {
+                "name": "entrance_culvert_bar_sew_th_rs01",
+                "orient": "0 0 -1.5708",
+                "pos": "5096.83 6659.66 -60.0603"
+            }
+        },
+        "entinst": {
+            "type": "floor_fan_ditch_sew_e_rs",
+            "inst": {
+                "name": "floor_fan_ditch_sew_e_rs",
+                "pos": "2400 3120 0"
+            },
+            "inst": {
+                "name": "floor_fan_ditch_sew_e_rs",
+                "pos": "2280 3120 0"
+            }
+        },
+        "entinst": {
+            "type": "floor_fan_pit_sew_e_rs05",
+            "inst": {
+                "name": "floor_fan_pit_sew_e_rs05",
+                "pos": "5580 5340 0"
+            },
+            "inst": {
+                "name": "floor_fan_pit_sew_e_rs05",
+                "pos": "5100 5100 0"
+            },
+            "inst": {
+                "name": "floor_fan_pit_sew_e_rs05",
+                "pos": "4020 4860 0"
+            },
+            "inst": {
+                "name": "floor_fan_pit_sew_e_rs05",
+                "pos": "3420 4140 0"
+            }
+        },
+        "entinst": {
+            "type": "ladder_large_sew_b_rs01",
+            "inst": {
+                "name": "ladder_large_sew_b_rs01",
+                "pos": "2340.76 2772.63 -0.000311852"
+            }
+        },
+        "entinst": {
+            "type": "ladder_sew_b_rs03",
+            "inst": {
+                "name": "ladder_sew_b_rs03",
+                "pos": "6179.8 5403.44 185.991"
+            },
+            "inst": {
+                "name": "ladder_sew_b_rs03",
+                "pos": "6179.8 4912.25 60"
+            },
+            "inst": {
+                "name": "ladder_sew_b_rs03",
+                "pos": "6179.8 4912.24 185.991"
+            },
+            "inst": {
+                "name": "ladder_sew_b_rs03",
+                "pos": "6179.8 5403.44 60"
+            }
+        },
+        "entinst": {
+            "type": "light_sew_b_rs",
+            "inst": {
+                "name": "light_sew_b_rs",
+                "orient": "0 0 -3.14159",
+                "pos": "8699.93 8441.7 64.9857"
+            },
+            "inst": {
+                "name": "light_sew_b_rs",
+                "pos": "8699.36 6199.36 83.5287"
+            },
+            "inst": {
+                "name": "light_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "9041.62 8100.25 64.9857"
+            },
+            "inst": {
+                "name": "light_sew_b_rs",
+                "orient": "0.261799 -1.78814e-007 -1.5708",
+                "pos": "6820.9 8100.66 88.7723"
+            }
+        },
+        "entinst": {
+            "type": "machinery_02_sew_b_rs",
+            "inst": {
+                "name": "machinery_02_sew_b_rs",
+                "pos": "3542.98 7295.63 0"
+            },
+            "inst": {
+                "name": "machinery_02_sew_b_rs",
+                "orient": "0 0 3.14159",
+                "pos": "7312.88 5620.58 -1.03815e-005"
+            },
+            "inst": {
+                "name": "machinery_02_sew_b_rs",
+                "pos": "7316.52 5052 0"
+            },
+            "inst": {
+                "name": "machinery_02_sew_b_rs",
+                "orient": "0 0 3.14159",
+                "pos": "7214.89 5620.58 -1.03815e-005"
+            },
+            "inst": {
+                "name": "machinery_02_sew_b_rs",
+                "pos": "7212.73 5052 0"
+            }
+        },
+        "entinst": {
+            "type": "pallet_sew_b_rs",
+            "inst": {
+                "name": "pallet_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "3593.29 4153.43 0"
+            },
+            "inst": {
+                "name": "pallet_sew_b_rs",
+                "orient": "0 0 1.0472",
+                "pos": "8759.78 3616.26 0"
+            },
+            "inst": {
+                "name": "pallet_sew_b_rs",
+                "pos": "6900 8340 -0.000311852"
+            },
+            "inst": {
+                "name": "pallet_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "7554.37 5153.89 -4.17059e-006"
+            },
+            "inst": {
+                "name": "pallet_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "3593.29 4349.21 0"
+            },
+            "inst": {
+                "name": "pallet_sew_b_rs",
+                "orient": "0 0 1.39626",
+                "pos": "5356.1 4958.6 0"
+            }
+        },
+        "entinst": {
+            "type": "pillar_20ft_sew_e_rs",
+            "inst": {
+                "name": "pillar_20ft_sew_e_rs",
+                "pos": "5461 5221.02 0"
+            },
+            "inst": {
+                "name": "pillar_20ft_sew_e_rs",
+                "pos": "5580.64 5470.19 0"
+            },
+            "inst": {
+                "name": "pillar_20ft_sew_e_rs",
+                "pos": "7749.35 8217.77 -12.2984"
+            },
+            "inst": {
+                "name": "pillar_20ft_sew_e_rs",
+                "pos": "5580.64 5221.02 0"
+            },
+            "inst": {
+                "name": "pillar_20ft_sew_e_rs",
+                "pos": "7497.48 8217.77 -12.2984"
+            },
+            "inst": {
+                "name": "pillar_20ft_sew_e_rs",
+                "pos": "7497.48 7968.6 -12.2984"
+            },
+            "inst": {
+                "name": "pillar_20ft_sew_e_rs",
+                "pos": "7749.35 7968.6 -12.2984"
+            },
+            "inst": {
+                "name": "pillar_20ft_sew_e_rs",
+                "pos": "5461 5470.19 0"
+            }
+        },
+        "entinst": {
+            "type": "pipe_halfround_floor_sew_b_rs",
+            "inst": {
+                "name": "pipe_halfround_floor_sew_b_rs",
+                "pos": "3300.3 6498.21 0"
+            },
+            "inst": {
+                "name": "pipe_halfround_floor_sew_b_rs",
+                "orient": "0 0 0.785398",
+                "pos": "8208 5681.53 0"
+            },
+            "inst": {
+                "name": "pipe_halfround_floor_sew_b_rs",
+                "pos": "3661.02 6498.21 0"
+            },
+            "inst": {
+                "name": "pipe_halfround_floor_sew_b_rs",
+                "orient": "0 0 -2.35619",
+                "pos": "8970.62 2855.12 0"
+            },
+            "inst": {
+                "name": "pipe_halfround_floor_sew_b_rs",
+                "orient": "0 0 -2.35619",
+                "pos": "8778.54 2666.93 0"
+            },
+            "inst": {
+                "name": "pipe_halfround_floor_sew_b_rs",
+                "orient": "0 0 0.785398",
+                "pos": "8004 5472 0"
+            }
+        },
+        "entinst": {
+            "type": "pipe_waterdrain_dirty_sew_b_rs",
+            "inst": {
+                "name": "pipe_waterdrain_dirty_sew_b_rs",
+                "orient": "0 0 3.14159",
+                "pos": "3481.55 7136.11 -236.125"
+            },
+            "inst": {
+                "name": "pipe_waterdrain_dirty_sew_b_rs",
+                "pos": "8345.3 6232.92 -236.125"
+            },
+            "inst": {
+                "name": "pipe_waterdrain_dirty_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "8887.77 6420.96 -236.125"
+            },
+            "inst": {
+                "name": "pipe_waterdrain_dirty_sew_b_rs",
+                "pos": "3176.62 6636.61 -236.125"
+            }
+        },
+        "entinst": {
+            "type": "pipeset_corner_sew_b_rs",
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "7518.54 7898.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "pos": "7091 8088.54 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 -3.14159",
+                "pos": "7163 8040.53 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 0.785398",
+                "pos": "8116.2 5520.44 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 -2.35619",
+                "pos": "8201.05 5537.41 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 3.14159",
+                "pos": "2878.25 6343.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "7470.54 7346.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "4259.04 6280.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "7830.54 7946.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 3.14159",
+                "pos": "3358.25 6223.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 -3.14159",
+                "pos": "3358.25 5263.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "pos": "3046.25 5311.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "3046.25 5623.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "3358.25 5671.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "pos": "3587.04 5680.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 3.14159",
+                "pos": "3899.04 5632.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "3899.04 5320.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "3587.04 5272.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 -3.14159",
+                "pos": "7830.54 8258.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "pos": "7518.54 8306.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "-3.14159 1.50996e-007 0.0",
+                "pos": "3587.04 6232.15 167.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 -3.14159",
+                "pos": "7470.54 8738.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "pos": "2926.25 6271.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "8758.59 7414.23 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "4307.04 6592.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 2.35619",
+                "pos": "8743.13 2705.69 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "0 0 -0.785398",
+                "pos": "8726.16 2790.54 143.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "orient": "-3.14159 1.85789e-007 -0.785399",
+                "pos": "9201.33 3265.72 167.999"
+            },
+            "inst": {
+                "name": "pipeset_corner_sew_b_rs",
+                "pos": "8758.59 6382.23 143.999"
+            }
+        },
+        "entinst": {
+            "type": "pipeset_straight_sew_b_rs",
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "3563.04 5776.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "3683.04 5656.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "3803.04 5656.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "3923.04 5536.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "3923.04 5416.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 3.14159",
+                "pos": "3803.04 5296.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 3.14159",
+                "pos": "3683.04 5296.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "3563.04 5176.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0.698132 1.5708",
+                "pos": "8725.41 7998.83 -173.022"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0.698132 1.5708",
+                "pos": "8699.21 7998.83 -173.022"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0.698132 1.5708",
+                "pos": "8725.41 7906.95 -95.3746"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "7494.54 7802.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -3.14159",
+                "pos": "7614.54 7922.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -3.14159",
+                "pos": "7734.54 7922.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "7854.54 8042.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "7854.54 8162.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "7734.54 8282.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "7614.54 8282.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "7494.54 8402.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "7494.54 8522.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "7494.54 8642.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "7374.54 8762.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "7374.54 7322.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "8854.59 6358.23 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "8974.59 6358.23 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "9094.59 6358.23 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "9214.59 6358.23 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "8734.59 6478.23 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "8734.59 6598.23 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "8734.59 6718.23 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "8734.59 6838.23 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "8734.59 6958.23 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "8734.59 7078.23 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "8734.59 7198.23 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "8734.59 7318.23 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -3.14159",
+                "pos": "8854.59 7438.23 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -3.14159",
+                "pos": "8974.59 7438.23 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -3.14159",
+                "pos": "9094.59 7438.23 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 0.785398",
+                "pos": "8607.36 2535.98 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 0.785398",
+                "pos": "8692.21 2620.83 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -2.35619",
+                "pos": "8777.07 2875.39 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -2.35619",
+                "pos": "8861.92 2960.25 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "3563.04 5896.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "8699.21 8279.86 -210.329"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "8725.41 8279.86 -210.329"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "8725.41 8159.7 -210.329"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "8699.21 8159.7 -210.329"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "8725.41 8039.98 -210.329"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "8699.21 8039.98 -210.329"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "8699.21 7920.07 -210.329"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0.698132 -1.5708",
+                "pos": "8725.41 8196.35 -173.022"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "8725.41 7920.07 -210.329"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "3563.04 6016.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "3382.25 6127.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "3382.25 6007.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "3382.25 5887.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -2.35619",
+                "pos": "8946.77 3045.1 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -2.35619",
+                "pos": "9031.63 3129.95 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -2.35619",
+                "pos": "9116.48 3214.8 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 2.35619",
+                "pos": "9286.19 3214.8 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "6300 5580 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "6300 5460 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "6060 5460 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "6300 5340 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "6060 5340 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "6300 5220 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "6060 5220 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "6300 5100 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "6060 5100 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "6300 4980 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "6060 4980 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "6300 4860 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "6060 4860 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0.698132 1.5708",
+                "pos": "8699.21 7906.95 -95.3746"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0.698132 -1.5708",
+                "pos": "8725.41 8288.23 -95.3746"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0.698132 -1.5708",
+                "pos": "8699.21 8288.23 -95.3746"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "3382.25 5767.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "3262.25 5647.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "7494.54 7682.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "7494.54 7562.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "7494.54 7442.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "7067 8304.54 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "6300 4740 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "6060 4740 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "3563.04 5056.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "3382.25 5047.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "2422.25 6367.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "4403.04 6616.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "4523.04 6616.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -3.14159",
+                "pos": "9214.59 7438.23 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "9334.59 6358.23 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "7254.54 7322.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "7254.54 8762.85 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "7067 8424.54 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "7067 8544.54 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "7187 7704.53 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "7067 8184.54 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "7187 7824.53 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "7187 7944.53 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -0.785398",
+                "pos": "7946.49 5656.2 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -0.785398",
+                "pos": "8031.34 5571.35 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 2.35619",
+                "pos": "8370.75 5401.64 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 2.35619",
+                "pos": "8285.9 5486.5 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "6060 5580 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "2542.25 6367.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "2662.25 6367.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "2782.25 6367.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "3262.25 6247.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "3142.25 6247.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "3022.25 6247.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 1.5708",
+                "pos": "4283.04 6376.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "3.14159 0 -1.5708",
+                "pos": "4283.04 6496.15 167.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "4163.04 6256.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "4043.04 6256.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "3923.04 6256.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "3803.04 6256.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "3683.04 6256.15 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "3.14159 0 -1.5708",
+                "pos": "3563.04 6136.15 167.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "3382.25 5167.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -3.14159",
+                "pos": "3262.25 5287.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -3.14159",
+                "pos": "3142.25 5287.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "3022.25 5407.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0 -1.5708",
+                "pos": "3022.25 5527.89 143.999"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "orient": "0 0.698132 -1.5708",
+                "pos": "8699.21 8196.35 -173.022"
+            },
+            "inst": {
+                "name": "pipeset_straight_sew_b_rs",
+                "pos": "3142.25 5647.89 143.999"
+            }
+        },
+        "entinst": {
+            "type": "pressure_valve_sew_b_rs",
+            "inst": {
+                "name": "pressure_valve_sew_b_rs",
+                "orient": "-2.00308e-007 0.0 -3.14159",
+                "pos": "2627.75 7139.1 0"
+            },
+            "inst": {
+                "name": "pressure_valve_sew_b_rs",
+                "orient": "-2.00358e-007 0.0 1.5708",
+                "pos": "7099.38 8286.51 0"
+            }
+        },
+        "entinst": {
+            "type": "slantwall_pillar_sew_b_rs",
+            "inst": {
+                "name": "slantwall_pillar_sew_b_rs",
+                "pos": "8700 6540 0"
+            },
+            "inst": {
+                "name": "slantwall_pillar_sew_b_rs",
+                "pos": "8232 6528 0"
+            },
+            "inst": {
+                "name": "slantwall_pillar_sew_b_rs",
+                "pos": "8472 6300 0"
+            },
+            "inst": {
+                "name": "slantwall_pillar_sew_b_rs",
+                "pos": "2780 6260 0"
+            },
+            "inst": {
+                "name": "slantwall_pillar_sew_b_rs",
+                "pos": "2980 6260 0"
+            },
+            "inst": {
+                "name": "slantwall_pillar_sew_b_rs",
+                "pos": "3180 6260 0"
+            },
+            "inst": {
+                "name": "slantwall_pillar_sew_b_rs",
+                "pos": "3380 6260 0"
+            },
+            "inst": {
+                "name": "slantwall_pillar_sew_b_rs",
+                "pos": "3580 6260 0"
+            },
+            "inst": {
+                "name": "slantwall_pillar_sew_b_rs",
+                "pos": "3780 6260 0"
+            },
+            "inst": {
+                "name": "slantwall_pillar_sew_b_rs",
+                "pos": "3980 6260 0"
+            },
+            "inst": {
+                "name": "slantwall_pillar_sew_b_rs",
+                "pos": "4180 6260 0"
+            },
+            "inst": {
+                "name": "slantwall_pillar_sew_b_rs",
+                "pos": "8928 6312 0"
+            }
+        },
+        "entinst": {
+            "type": "switch_drain",
+            "inst": {
+                "name": "switch_drain",
+                "pos": "6867.94 8090.7 -0.000311852"
+            }
+        },
+        "entinst": {
+            "type": "tank_sew_b_rs",
+            "inst": {
+                "name": "tank_sew_b_rs",
+                "pos": "3350.43 7318.55 1.04265e-005"
+            },
+            "inst": {
+                "name": "tank_sew_b_rs",
+                "pos": "4298.28 7180.86 1.04265e-005"
+            },
+            "inst": {
+                "name": "tank_sew_b_rs",
+                "pos": "6901.91 7882.29 1.04265e-005"
+            }
+        },
+        "entinst": {
+            "type": "woodpile_02_sew_b_rs01",
+            "inst": {
+                "name": "woodpile_02_sew_b_rs01",
+                "pos": "3120 5520 0"
+            },
+            "inst": {
+                "name": "woodpile_02_sew_b_rs01",
+                "pos": "7130 7960 0"
+            }
+        },
+        "entinst": {
+            "type": "tile_waterwall",
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "7260 4980 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAG_W_A0",
+                "orient": "1.74846e-007 0.0 1.5708",
+                "pos": "7380 5580 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "7500 5580 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 1.5708",
+                "pos": "7620 5580 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "pos": "7620 5100 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "7500 5100 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAG_W_A0",
+                "pos": "7380 5100 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "7620 5220 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "8220 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -1.5708",
+                "pos": "8100 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "8100 6180 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "pos": "8580 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "8100 6300 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -3.14159",
+                "pos": "8100 6660 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "8220 6660 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -1.5708",
+                "pos": "7260 7860 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "7260 7980 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "7260 8220 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -3.14159",
+                "pos": "7260 8340 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3660 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2940 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "4260 6900 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "4260 6780 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "4260 6660 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_D2G_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "9180 3660 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_D2G_W_A0",
+                "pos": "9180 3420 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_D2G_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "8700 3420 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_D2G_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "8700 3660 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3540 4500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_D2G_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "7380 7860 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_D2G_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "7380 8340 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DCC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "7140 5340 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "7140 5100 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "7140 5220 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "7140 5460 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "7140 5580 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "3660 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "3300 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -1.5708",
+                "pos": "3300 3780 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -3.14159",
+                "pos": "3300 4500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "pos": "7860 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DCC_W_A0",
+                "pos": "8940 3300 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "9180 3780 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "9060 3900 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_D2A_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "9180 3900 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_D2A_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "8700 3900 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "8700 3780 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "8820 3900 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "8940 3900 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "9060 3300 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "8820 3300 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_D2A_W_A0",
+                "pos": "9180 3300 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_D2A_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "8700 3300 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "pos": "9300 3420 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "9300 3540 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 1.5708",
+                "pos": "9300 3660 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "8580 3540 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -1.5708",
+                "pos": "8580 3420 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -3.14159",
+                "pos": "8580 3660 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DCC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "4020 4980 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "pos": "4260 4740 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "4260 4860 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 1.5708",
+                "pos": "4260 4980 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "4140 4980 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAG_W_A0",
+                "pos": "4140 4740 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "4020 4620 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "pos": "4140 4620 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAG_W_A0",
+                "orient": "1.74846e-007 0.0 -1.5708",
+                "pos": "3900 4740 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -1.5708",
+                "pos": "3900 4620 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "3780 4860 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -1.5708",
+                "pos": "3780 4740 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -3.14159",
+                "pos": "3780 4980 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3900 4980 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "pos": "4380 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "4260 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "4140 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -1.5708",
+                "pos": "7140 4980 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DCC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "7620 8460 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "7500 8460 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "7740 8460 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "4020 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "3900 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "3780 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "3180 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "3060 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "2940 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "2820 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "2700 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -1.5708",
+                "pos": "2580 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DCC_W_A0",
+                "pos": "3420 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "3540 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "pos": "7380 4980 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3540 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3420 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3300 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3900 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3180 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3060 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "4140 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "4020 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2820 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "4380 7260 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "4380 7380 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 1.5708",
+                "pos": "4380 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "4260 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAG_W_A0",
+                "pos": "4260 7020 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "pos": "4380 7020 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "4380 7140 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2580 7380 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2580 7260 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "7260 5700 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "2700 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -3.14159",
+                "pos": "2580 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2580 7140 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -1.5708",
+                "pos": "2580 7020 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAG_W_A0",
+                "orient": "1.74846e-007 0.0 -1.5708",
+                "pos": "2700 7020 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2700 6900 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2700 6780 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAG_W_A0",
+                "orient": "1.74846e-007 0.0 1.5708",
+                "pos": "4260 6540 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2700 6660 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAG_W_A0",
+                "orient": "1.74846e-007 0.0 -3.14159",
+                "pos": "2700 6540 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2580 6420 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2580 6300 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -3.14159",
+                "pos": "2580 6540 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "4380 6300 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "4380 6420 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 1.5708",
+                "pos": "4380 6540 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "4380 6180 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "2580 6180 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_D2A_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "7380 7140 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_D2G_W_A0",
+                "pos": "7860 7860 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "7860 7740 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_D2A_W_A0",
+                "pos": "7980 7860 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_D2G_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "7860 8340 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_D2A_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "7980 8340 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_D2A_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "7380 8460 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_D2A_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "7860 8460 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DCC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "8700 7020 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 1.5708",
+                "pos": "7380 5700 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "8940 7020 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "9060 6900 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 1.5708",
+                "pos": "9060 7020 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "8820 7020 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAG_W_A0",
+                "orient": "1.74846e-007 0.0 1.5708",
+                "pos": "9060 6780 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "9180 6420 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "9180 6540 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "9180 6660 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "8940 6180 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "9060 6180 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "pos": "9180 6180 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "9180 6300 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 1.5708",
+                "pos": "9180 6780 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAG_W_A0",
+                "orient": "1.74846e-007 0.0 -3.14159",
+                "pos": "8580 6660 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "8580 6780 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "8580 6900 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -3.14159",
+                "pos": "8580 7020 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DCC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "3060 4140 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "7980 8220 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "8460 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "7620 5460 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAG_W_A0",
+                "orient": "1.74846e-007 0.0 -1.5708",
+                "pos": "3300 4020 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAG_W_A0",
+                "orient": "1.74846e-007 0.0 -3.14159",
+                "pos": "3300 4260 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "3300 4380 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3420 4500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3660 4260 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3660 4380 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 1.5708",
+                "pos": "3660 4500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3660 4020 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3660 4140 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "3420 3780 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "3540 3780 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "pos": "3660 3780 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "3660 3900 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "3300 3900 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -1.5708",
+                "pos": "3060 4020 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "3180 4020 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3180 4260 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -3.14159",
+                "pos": "3060 4260 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "pos": "7620 7140 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DCC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "7980 8100 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DCC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "7260 8100 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DCC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "7620 7260 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DCC_W_A0",
+                "pos": "8340 6060 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DCC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "7620 5340 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "7980 7980 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "7380 7260 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAA_W_A0",
+                "orient": "1.74846e-007 0.0 -3.14159",
+                "pos": "7140 5700 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "3780 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "7500 7140 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "7620 7380 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "7380 7380 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "7380 7740 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "7380 7620 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "7380 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAG_W_A0",
+                "pos": "7620 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "7740 7500 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 1.5708",
+                "pos": "7860 7620 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "8700 6180 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "pos": "8820 6180 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAG_W_A0",
+                "pos": "8580 6180 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "8460 6660 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -3.14159",
+                "pos": "8340 6660 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "8100 6540 0"
+            },
+            "inst": {
+                "name": "T_ruinedsewers_DAC_W_A0",
+                "orient": "0 0 -1.5708",
+                "pos": "8100 6420 0"
+            }
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actonuse": false,
+            "character": "Banshee",
+            "classname": "monsterspawnerent",
+            "firstact": 0.1,
+            "hinttype": "talk",
+            "monster_actonuse": false,
+            "monster_name": "banshee_ent",
+            "monster_team": "none",
+            "monster_undying": true,
+            "monster_willflee": false,
+            "name": "sp_banshee01",
+            "nocollide": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "aggression": 5,
+            "character": "brood_spawn",
+            "classname": "actor",
+            "instantspawn": true,
+            "monster_aggression": 5,
+            "monster_aitype": 3,
+            "monster_smartent": true,
+            "name": "brood_spawnd",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "actcountremove": 3,
+            "actdelay": 1.5,
+            "character": "MorlockBruiser_b",
+            "classname": "monsterspawnerent",
+            "firstspawnscript": "act4/sewers/sewers1/ladder_down",
+            "instantspawn": false,
+            "monster_aggression": 5,
+            "monster_deathtargets": "claw_ladder02 ambush_relay",
+            "monster_name": "ladder_guy02",
+            "monster_nomutate": true,
+            "monster_smartent": false,
+            "monster_spawnexactlocation": true,
+            "name": "claw_ladder02",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 3,
+            "actdelay": 1.5,
+            "character": "MorlockBruiser_b",
+            "classname": "monsterspawnerent",
+            "firstspawnscript": "act4/sewers/sewers1/ladder_down",
+            "instantspawn": false,
+            "monster_aggression": 5,
+            "monster_deathtargets": "claw_ladder01 ambush_relay",
+            "monster_name": "ladder_guy01",
+            "monster_nomutate": true,
+            "monster_smartent": false,
+            "monster_spawnexactlocation": true,
+            "name": "claw_ladder01",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "character": "MorlockBruiser_b",
+            "classname": "monsterspawnerent",
+            "instantspawn": false,
+            "monster_aggression": 5,
+            "monster_leader": true,
+            "monster_name": "sally",
+            "monster_smartent": false,
+            "monster_spawnexactlocation": true,
+            "monster_spawnscript": "act4/sewers/sewers1/leader_spawn",
+            "name": "ambush_leader",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actonuse": true,
+            "actscript": "dataDiscReward('r_d_disc')",
+            "actsound": "zone_shared/special/data",
+            "animstarton": true,
+            "classname": "rememberent",
+            "description": "Pick Up Data Disc",
+            "idnum": 13,
+            "material": "solid_metal",
+            "model": "pickups/data_disk_act1",
+            "name": "data_disc_sewers",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "quickuse": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2,
+            "variablename": "r_d_disc"
+        },
+        "entity": {
+            "acttargets": "secret_entrance",
+            "classname": "enabletargetent",
+            "enable": true,
+            "name": "enable_secret_entrance",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actonuse": false,
+            "classname": "lightent",
+            "lightcolor": "1 0.494311 0",
+            "lightradius": 150,
+            "name": "lightent58",
+            "nocollide": true,
+            "startoff": false
+        },
+        "entity": {
+            "actonuse": false,
+            "classname": "lightent",
+            "lightcolor": "1 0.494311 0",
+            "lightradius": 200,
+            "name": "lightent44",
+            "nocollide": true,
+            "startoff": false
+        },
+        "entity": {
+            "actdelay": 0.5,
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/sewers/dust_drip",
+            "loopfxstarton": true,
+            "name": "loop_effect29",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/sewers/bubbling_water",
+            "loopfxstarton": true,
+            "name": "loop_effect18",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/sewers/bubbling_water_lrg",
+            "loopfxstarton": true,
+            "name": "loop_effect16",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/sewers/scr_waterfall_pipe",
+            "loopfxstarton": true,
+            "name": "water_puzzle_drain",
+            "nocollide": true,
+            "smartent": false,
+            "toggleonact": false
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/common/fire_torch",
+            "loopfxstarton": true,
+            "name": "loop_effect35",
+            "nocollide": true,
+            "smartent": true,
+            "spawnsoundloop": "zone_shared/fx/fire_barrel"
+        },
+        "entity": {
+            "acttogglesloopfx": true,
+            "classname": "actionent",
+            "loopfx": "map/sewers/dust_drip",
+            "loopfxstarton": true,
+            "name": "loop_effect07",
+            "nocollide": true,
+            "smartent": true
+        },
+        "entity": {
+            "classname": "ent",
+            "name": "herospot01",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "name": "from_b_pens",
+            "nocollide": true,
+            "prevlink": "link_sewers2",
+            "prevzone": "act4/pens/pens1",
+            "smartent": false
+        },
+        "entity": {
+            "allinone": true,
+            "classname": "playerstartent",
+            "default": true,
+            "name": "player_start_all01",
+            "nocollide": true,
+            "prevlink": "link_sewers2",
+            "prevzone": "act4/newyork/newyork4"
+        },
+        "entity": {
+            "actcountact": 6,
+            "actcountremove": 1,
+            "actscript": "act4/sewers/sewers2/ambush_over",
+            "classname": "actionent",
+            "name": "ambush_relay",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actleader": true,
+            "actmatchteam": true,
+            "actscript": "common/turn_off_partylight",
+            "boxcollision": true,
+            "classname": "scripttriggerent",
+            "deactscript": "act4/sewers/sewers1/turn_on_partylight",
+            "name": "trigger_area02",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actonuse": true,
+            "acttargets": "moverbus_junked_puz01",
+            "classname": "powertriggerent",
+            "description": "Push bus",
+            "hinttype": "power",
+            "name": "trigger_power01",
+            "nocollide": false,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "reactpower": "push",
+            "stopfly": false,
+            "stopteleport": false,
+            "stopwalk": false,
+            "targetlockable": true,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acttargets": "moverbus_junked_puz01",
+            "classname": "powertriggerent",
+            "hinttype": "power",
+            "name": "trigger_power02",
+            "nocollide": false,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "reactpower": "move",
+            "stopfly": false,
+            "stopteleport": false,
+            "stopwalk": false,
+            "targetlockable": true,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "act4/sewers/sewers2/ambush",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "trigger_touch_ambush",
+            "nocollide": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actinactivedelay": 2.5,
+            "actmatchteam": true,
+            "actontouch": false,
+            "actonuse": true,
+            "actscript": "act4/sewers/sewers2/from_secret_area",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "description": "Enter tunnel",
+            "name": "trigger_touch02",
+            "nocollide": true,
+            "quickuse": true,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "actmatchteam": true,
+            "actontouch": true,
+            "actscript": "act4/sewers/sewers2/find_banshee",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "name": "trig_banshee",
+            "nocollide": true,
+            "smartent": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actinactivedelay": 2.5,
+            "actmatchteam": true,
+            "actontouch": false,
+            "actonuse": true,
+            "actscript": "act4/sewers/sewers2/to_secret_area",
+            "actteamplayer": true,
+            "boxcollision": true,
+            "classname": "gameent",
+            "description": "Enter tunnel",
+            "name": "secret_entrance",
+            "nocollide": true,
+            "quickuse": true,
+            "smartent": false,
+            "startenabled": false,
+            "team": "hero"
+        },
+        "entity": {
+            "alpha": 0.2,
+            "ambienteffect": "base/misc/misc_waterambient",
+            "classname": "waterent",
+            "density": 10,
+            "gridsize": 120,
+            "name": "water_sewer01",
+            "nocollide": true,
+            "splasheffect": "base/misc/misc_watersplash",
+            "texture": "textures/water_sewer.png",
+            "wakeeffect": "base/misc/misc_waterwake"
+        },
+        "entity": {
+            "classname": "waypointent",
+            "name": "wp_banshee01",
+            "nocollide": true,
+            "smartent": false
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "boxcollision": true,
+            "classname": "zonelinkent",
+            "description": "Holding Pens",
+            "name": "link_pens1",
+            "nextzone": "act4/pens/pens1",
+            "nocollide": false,
+            "smartent": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actinactivedelay": 2,
+            "actleader": true,
+            "actmatchteam": true,
+            "actonuse": true,
+            "boxcollision": false,
+            "classname": "zonelinkent",
+            "description": "New York West Side",
+            "name": "link_newyork4",
+            "nextzone": "act4/newyork/newyork4",
+            "nocollide": false,
+            "smartent": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountremove": 1,
+            "acteffect": "base/item/item_pickup",
+            "actmatchteam": true,
+            "actonuse": true,
+            "actscript": "act4/sewers/sewers2/flag_keycard",
+            "actsound": "common/game/pickup_item",
+            "animstarton": true,
+            "classname": "inventoryent",
+            "count": 1,
+            "fxlevel": 7,
+            "inventoryitem": "keycard2",
+            "model": "models/pickups/key_green",
+            "name": "keycard",
+            "nocollide": true,
+            "smartent": false,
+            "team": "hero"
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actsound": "zone_shared\\mover\\bus_push",
+            "camerafadeout": true,
+            "classname": "moverent",
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "ruined_sewers/bus_junked_sew_e",
+            "move": "-186 0 0",
+            "moveduration": 1.5,
+            "name": "moverbus_junked_puz01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_m",
+            "fxlevel": 2,
+            "health": 10,
+            "heaviness": 1,
+            "material": "wood",
+            "model": "ruined_sewers/crate3X3X5_wood_sew_th",
+            "name": "crate3x3x5_wood_sew_th_rs10",
+            "randompickups": 5,
+            "stackphysics": true,
+            "structure": 0
+        },
+        "entity": {
+            "actonuse": false,
+            "actsound": "zone_shared/mover/door_large_tunnel",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_m",
+            "firstact": 0.1,
+            "fxlevel": 2,
+            "health": 32000,
+            "material": "wood",
+            "model": "ruined_sewers/door_large_tunnel_sew_e",
+            "name": "ambush_door01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "actsound": "zone_shared/mover/door_breed",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_m",
+            "fxlevel": 2,
+            "health": 32000,
+            "material": "wood",
+            "model": "ruined_sewers/door_magseal_sew_e",
+            "name": "door_magseal_sew_e_rs02",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "openangle": 90,
+            "randompickups": 0,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "actsound": "zone_shared/mover/door_sew",
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_m",
+            "fxlevel": 2,
+            "health": 32000,
+            "material": "wood",
+            "model": "ruined_sewers/door_sew_e",
+            "name": "door_sew_e_rs01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "openangle": 90,
+            "randompickups": 0,
+            "requirekey": "keycard2",
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "autoclosedelay": 0,
+            "classname": "doorent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_m",
+            "fxlevel": 2,
+            "health": 32000,
+            "material": "wood",
+            "model": "ruined_sewers/door_unbreak_sew_e",
+            "name": "drainage_door",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "openangle": 90,
+            "randompickups": 0,
+            "smartent": false,
+            "startenabled": true,
+            "structure": 2,
+            "toggleonact": true
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "deathtargets": "enable_secret_entrance",
+            "fxlevel": 3,
+            "health": 1000,
+            "heaviness": 1,
+            "material": "solid_metal",
+            "model": "ruined_sewers/entrance_culvert_bars_sew_th",
+            "name": "entrance_culvert_bar_sew_th_rs01",
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 1,
+            "targetlockable": true
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "animstarton": true,
+            "autoclosedelay": 0,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "solid_metal",
+            "model": "ruined_sewers/floor_fan_pit_sew_e",
+            "name": "floor_fan_pit_sew_e_rs05",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "openangle": 90,
+            "pathignore": true,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_l",
+            "deathspawn": "ladder_large_sew_b_rs_d",
+            "fxlevel": 3,
+            "health": 32000,
+            "material": "wood",
+            "model": "ruined_sewers/ladder_large_sew_b",
+            "name": "ladder_large_sew_b_rs01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_l",
+            "fxlevel": 3,
+            "health": 300,
+            "mass": 0,
+            "material": "wood",
+            "model": "ruined_sewers/ladder_large_stump_sew_b",
+            "name": "ladder_large_sew_b_rs_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_m",
+            "fxlevel": 2,
+            "health": 3200,
+            "material": "wood",
+            "model": "ruined_sewers/ladder_sew_b",
+            "name": "ladder_sew_b_rs03",
+            "nocollide": true,
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_s",
+            "fxlevel": 1,
+            "health": 20,
+            "mass": 0,
+            "material": "solid_metal",
+            "model": "ruined_sewers/light_stump_sew_b",
+            "name": "light_sew_b_rs_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "camerafadeout": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_l",
+            "fxlevel": 3,
+            "health": 200,
+            "mass": 0,
+            "material": "hollow_metal",
+            "model": "ruined_sewers/machinery_02_stump_sew_b",
+            "name": "machinery_02_sew_b_rs_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_m",
+            "fxlevel": 2,
+            "health": 100,
+            "mass": 0,
+            "material": "hollow_metal",
+            "model": "ruined_sewers/pipe_halfround_floor_stump_sew_b",
+            "name": "pipe_halfround_floor_sew_b_rs_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_l",
+            "fxlevel": 3,
+            "health": 32000,
+            "mass": 0,
+            "material": "hollow_metal",
+            "model": "ruined_sewers/pipe_waterdrain_dirty_stump_sew_b",
+            "name": "pipe_waterdrain_dirty_sew_b_rs_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 100,
+            "mass": 0,
+            "material": "hollow_metal",
+            "model": "ruined_sewers/pipeset_corner_stump_sew_b",
+            "name": "pipeset_corner_sew_b_rs_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "camerafadeout": true,
+            "classname": "physent",
+            "health": 100,
+            "mass": 0,
+            "material": "hollow_metal",
+            "model": "ruined_sewers/pipeset_straight_stump_sew_b",
+            "name": "pipeset_straight_sew_b_rs_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": false,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_metal",
+            "deathsound": "death_style/ds_metal_hollow_l",
+            "fxlevel": 3,
+            "health": 100,
+            "mass": 0,
+            "material": "hollow_metal",
+            "model": "ruined_sewers/pressure_valve_stump_sew_b",
+            "name": "pressure_valve_sew_b_rs_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "animstarton": false,
+            "autoclosedelay": 0,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_m",
+            "fxlevel": 2,
+            "health": 150,
+            "mass": 0,
+            "material": "wood",
+            "model": "ruined_sewers/slantwall_pillar_stump_sew_b",
+            "name": "slantwall_pillar_sew_b_rs_d",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "openangle": 90,
+            "randompickups": 0,
+            "structure": 2
+        },
+        "entity": {
+            "actcountdisable": 1,
+            "actonuse": true,
+            "actscript": "act4/sewers/sewers2/open_drainage_door",
+            "actsound": "zone_shared/mover/switch_sew",
+            "autoclosedelay": 0,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_m",
+            "description": "Main water switch",
+            "fxlevel": 2,
+            "health": 32000,
+            "hinttype": "use",
+            "material": "wood",
+            "model": "ruined_sewers/switch_sew_e",
+            "name": "switch_drain",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "openangle": 90,
+            "randompickups": 0,
+            "smartent": false,
+            "structure": 2
+        },
+        "entity": {
+            "animstarton": true,
+            "classname": "physent",
+            "deatheffect": "base/material/break/brk_wood",
+            "deathsound": "death_style/ds_wood_l",
+            "fxlevel": 3,
+            "health": 100,
+            "material": "wood",
+            "model": "ruined_sewers/woodpile_02_sew_b",
+            "name": "woodpile_02_sew_b_rs01",
+            "nogravity": true,
+            "nopickup": true,
+            "nopush": true,
+            "pathignore": true,
+            "randompickups": 0,
+            "structure": 0
+        }
+    }
+}
