@@ -1,0 +1,30 @@
+{
+    "conversation": {
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "text": "%PLAYER%: This teleporter must be the only way to the next floor of the tower.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "soundtoplay": "voice/apoccomputer/4_tower1_050_002",
+                            "text": "%CONSOLE%: Teleporter activated without proper ID. Security has been notified. Console has been locked down.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: I can bypass the lock down but it'll be 30 seconds before we can use the teleporter. In the mean time, it looks like we're gonna have company.",
+                                    "response": {
+                                        "chosenscriptfile": "act4/tower/tower1/start_timer",
+                                        "conversationend": true,
+                                        "text": "%BLANK%"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
