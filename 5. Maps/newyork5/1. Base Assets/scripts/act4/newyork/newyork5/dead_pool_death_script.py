@@ -7,4 +7,15 @@ setGameFlag("bosses", 25, 1 )
 setEnable("link_sewers3", "TRUE" )
 objective ( "act4_obj_4b",  "EOBJCMD_COMPLETE" )
 objective ( "act4_obj_4c",  "EOBJCMD_SHOW" )
-
+unlockCharacter("Deadpool", " ")
+deadpool_unlocked = isCharacterUnlocked("Deadpool")
+if deadpool_unlocked == 0
+    # ( "Deadpool is not yet unlocked, unlock him" )
+    unlockCharacter("Deadpool", " ")
+    deadpool_unlocked = isCharacterUnlocked("Deadpool")
+    if deadpool_unlocked == 1
+        # ( "Deadpool was not previously unlocked but he is on the roster" )
+        # ( "He's been unlocked now, so show the dialog that confirms this" )
+        createPopupDialogXML("dialogs/act4/newyork/deadpool_unlocked")
+    endif 
+endif 

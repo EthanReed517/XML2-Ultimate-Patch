@@ -12,6 +12,8 @@ if perimeter3_defense_matrix == 0
      # ( "This checks to see of the timer should be removed" )
      check_obj = getObjective("act4_obj_1a", "COMPLETE" )
      if check_obj == 1
+          waittimed ( 1.000 )
+          startConversation("act4/perimeter/perimeter3/4_perimeter3_0050" )
           timerStart(0.000, 0.000, "" )
      else
           timerAdd(120.000 )

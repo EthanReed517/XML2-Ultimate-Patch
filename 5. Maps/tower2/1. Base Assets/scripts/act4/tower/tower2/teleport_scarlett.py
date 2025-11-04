@@ -9,3 +9,14 @@ remove ( "scarlet_teleffect", "scarlet_teleffect" )
 setGameFlag("rem_scar", 1, 1 )
 objective ( "act4_obj_5",  "EOBJCMD_COMPLETE" )
 
+selene_unlocked = isCharacterUnlocked("selene")
+if selene_unlocked == 0
+    # ( "Selene is not yet unlocked, unlock her" )
+    unlockCharacter("selene", " ")
+    selene_unlocked = isCharacterUnlocked("selene")
+    if selene_unlocked == 1
+        # ( "Selene was not previously unlocked but she is on the roster" )
+        # ( "She's been unlocked now, so show the dialog that confirms this" )
+        createPopupDialogXML("dialogs/act4/tower/selene_unlocked")
+    endif 
+endif 

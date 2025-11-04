@@ -20,22 +20,52 @@
                     "tagindex": "autogen_tag_1",
                     "text": "%PLAYER%",
                     "response": {
-                        "chosenscriptfile": "loadZone('briefing/briefing4_10', 'NULL')",
-                        "conversationend": true,
-                        "scriptfile": "disallowResponseOnObjective('act4_obj_1a_1', 'FALSE' )",
-                        "text": "The Perimeter Platform."
+                        "text": "Select Mission Briefings.",
+                        "line": {
+                            "text": "%PLAYER%",
+                            "response": {
+                                "chosenscriptfile": "loadZone('briefing/briefing4_10', 'NULL')",
+                                "conversationend": true,
+                                "scriptfile": "disallowResponseOnObjective('act4_obj_1a_1', 'FALSE' )",
+                                "text": "The Perimeter Platform."
+                            },
+                            "response": {
+                                "chosenscriptfile": "loadZone('briefing/briefing4_20', 'NULL')",
+                                "conversationend": true,
+                                "scriptfile": "disallowResponseOnObjective('act4_obj_2a_1', 'FALSE' )",
+                                "text": "Locating Sebastian Shaw."
+                            },
+                            "response": {
+                                "chosenscriptfile": "loadZone('briefing/briefing4_30', 'NULL')",
+                                "conversationend": true,
+                                "scriptfile": "act4/mansion/check_briefing4_30",
+                                "text": "Apocalypse's Tower."
+                            },
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "Nevermind"
+                            }
+                        }
                     },
                     "response": {
-                        "chosenscriptfile": "loadZone('briefing/briefing4_20', 'NULL')",
-                        "conversationend": true,
-                        "scriptfile": "disallowResponseOnObjective('act4_obj_2a_1', 'FALSE' )",
-                        "text": "Locating Sebastian Shaw."
-                    },
-                    "response": {
-                        "chosenscriptfile": "loadZone('briefing/briefing4_30', 'NULL')",
-                        "conversationend": true,
-                        "scriptfile": "act4/mansion/check_briefing4_30",
-                        "text": "Apocalypse's Tower."
+                        "text": "View Character Bios.",
+                        "line": {
+                            "text": "%Menu%: What would you like to view?",
+                            "response": {
+                                "chosenscriptfile": "common/review_heroes",
+                                "conversationend": true,
+                                "text": "Hero Bios"
+                            },
+                            "response": {
+                                "chosenscriptfile": "common/review_enemies",
+                                "conversationend": true,
+                                "text": "Enemy Bios"
+                            },
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "Nevermind"
+                            }
+                        }
                     },
                     "response": {
                         "conversationend": true,
