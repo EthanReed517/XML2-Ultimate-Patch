@@ -535,8 +535,8 @@
             }
         },
         "talent": {
-            "descname": "Super Soldier",
-            "description": "Captain America's peak human reflexes give him a chance to dodge all non-powered Melee attacks.",
+            "descname": "Super Soldier Physiology",
+            "description": "Captain America's Super Soldier Serum-enhanced physiology allows him to heal over time and gives him a chance to dodge all non-powered Melee attacks.",
             "descshort": "Passive",
             "icon": 9,
             "icon_texture": "textures/ui/america_icons2.png",
@@ -545,27 +545,57 @@
                 "talentvalue": {
                     "level": 1,
                     "name": "cap_pass1_req",
-                    "value": 21
+                    "value": 1
                 },
                 "talentvalue": {
                     "level": 15,
                     "name": "cap_pass1_req",
-                    "value": 35
+                    "value": 15
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "cap_pass1_chance",
+                    "name": "cap_pass1_cne",
                     "value": 0.02
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "cap_pass1_chance",
+                    "name": "cap_pass1_cne",
                     "value": 0.25
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cap_pass1_hp",
+                    "value": 0.0017
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "cap_pass1_hp",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cap_pass1_hp_p",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "cap_pass1_hp_p",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "cap_pass1_hp_t",
+                    "value": 6
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "cap_pass1_hp_t",
+                    "value": 6
                 }
             },
             "level": {
                 "count": 15,
-                "description": "%cap_pass1_chance:p chance to dodge",
+                "description": "%cap_pass1_hp_p:f% of max $HP every %cap_pass1_hp_t seconds\\n%cap_pass1_cne:p chance to dodge",
                 "require": {
                     "cat": "level",
                     "level": "%cap_pass1_req"
@@ -578,8 +608,12 @@
                 "powerup": {
                     "life": -1,
                     "affecter": {
+                        "attribute": "health_regen_pct",
+                        "level": "%cap_pass1_hp"
+                    },
+                    "affecter": {
                         "attribute": "def_dodge",
-                        "level": "%cap_pass1_chance",
+                        "level": "%cap_pass1_cne",
                         "scope": {
                             "scope_attack": "punch"
                         },
@@ -595,7 +629,7 @@
         },
         "talent": {
             "descname": "Shield Mastery",
-            "description": "Increases damage and Critical chance of all shield attacks. Also reflects a percentage of damage done by beams and projectiles back at enemies while blocking.",
+            "description": "Increases damage and Critical chance of all shield powers. Also reflects a percentage of damage done by beams and projectiles back at enemies while blocking.",
             "descshort": "Passive",
             "icon": 5,
             "icon_texture": "textures/ui/america_icons2.png",
@@ -671,71 +705,6 @@
                         "attribute": "atk_critical",
                         "level": "%cap_mastery_cri",
                         "scope_node": "captam_shield"
-                    }
-                }
-            }
-        },
-        "talent": {
-            "descname": "Regeneration",
-            "description": "Heals over time.",
-            "descshort": "Passive",
-            "icon": 11,
-            "icon_texture": "textures/ui/america_icons2.png",
-            "name": "cap_regen",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cap_regen_req",
-                    "value": 1
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "cap_regen_req",
-                    "value": 15
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cap_regen_health",
-                    "value": 0.0017
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "cap_regen_health",
-                    "value": 0.01
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cap_regen_health_p",
-                    "value": 1
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "cap_regen_health_p",
-                    "value": 6
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "cap_regen_health_t",
-                    "value": 6
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "cap_regen_health_t",
-                    "value": 6
-                }
-            },
-            "level": {
-                "count": 15,
-                "description": "%cap_regen_health_p:f% of max $HP every %cap_regen_health_t seconds",
-                "require": {
-                    "cat": "level",
-                    "level": "%cap_regen_req"
-                },
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "attribute": "health_regen_pct",
-                        "level": "%cap_regen_health"
                     }
                 }
             }

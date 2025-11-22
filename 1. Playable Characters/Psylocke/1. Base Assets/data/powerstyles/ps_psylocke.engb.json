@@ -343,7 +343,6 @@
                 "time": 0.27
             },
             "trigger": {
-                "arc": 0,
                 "attacktype": "punch",
                 "damage": "%psy_p1_dmg",
                 "damagescale": "none",
@@ -542,14 +541,14 @@
             "trigger": {
                 "arc": 180,
                 "attacktype": "punch",
-                "damage": "%psy_p2_dmg",
+                "damage": "%psy_p4_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_mental",
                 "index": 1,
                 "inherit": "punch",
                 "maxrange": 64,
                 "name": "punch",
-                "powerusage": "%psy_p2_pwr",
+                "powerusage": "%psy_p4_pwr",
                 "targetable": true,
                 "tiles": true,
                 "time": 0.3,
@@ -579,7 +578,7 @@
             "trigger": {
                 "arc": 180,
                 "attacktype": "punch",
-                "damage": "%psy_p2_dmg",
+                "damage": "%psy_p4_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
                 "height": -75,
@@ -647,22 +646,26 @@
                 "time": 0.1
             },
             "trigger": {
+                "index": 1,
                 "name": "punch",
                 "powerusage": "%psy_p5_pwr",
                 "tag": 30,
                 "time": 0.1
             },
             "trigger": {
+                "index": 2,
                 "name": "punch",
                 "tag": 31,
                 "time": 0.2
             },
             "trigger": {
+                "index": 3,
                 "name": "punch",
                 "tag": 32,
                 "time": 0.3
             },
             "trigger": {
+                "index": 4,
                 "name": "punch",
                 "tag": 33,
                 "time": 0.4
@@ -676,26 +679,31 @@
                 "time": 0.5
             },
             "trigger": {
+                "index": 5,
                 "name": "punch",
                 "tag": 34,
                 "time": 0.5
             },
             "trigger": {
+                "index": 6,
                 "name": "punch",
-                "tag": 35,
+                "tag": 36,
                 "time": 0.6
             },
             "trigger": {
+                "index": 7,
                 "name": "punch",
-                "tag": 36,
+                "tag": 37,
                 "time": 0.7
             },
             "trigger": {
+                "index": 8,
                 "name": "punch",
                 "tag": 37,
                 "time": 0.8
             },
             "trigger": {
+                "index": 9,
                 "name": "punch",
                 "tag": 38,
                 "time": 0.9
@@ -890,20 +898,6 @@
                 "result": "idle"
             }
         },
-        "event": {
-            "arc": 180,
-            "attacktype": "blast",
-            "damage": "%psy_p9_dmg",
-            "damagescale": "none",
-            "damagetype": "dmg_mental",
-            "hiteffect": "char/psyloc/p9_impact",
-            "inherit": "blast",
-            "maxrange": 225,
-            "name": "onslaught_impact",
-            "numblasts": 2,
-            "radius": 60,
-            "random": true
-        },
         "FightMove": {
             "animenum": "ea_power9",
             "blendtime": 0,
@@ -940,47 +934,25 @@
                 "time": 0
             },
             "trigger": {
-                "name": "onslaught_impact",
-                "tag": 3,
-                "time": 0.7,
-                "victimeventtag": 10
-            },
-            "trigger": {
-                "name": "onslaught_impact",
-                "tag": 4,
-                "time": 0.725,
-                "victimeventtag": 10
-            },
-            "trigger": {
-                "name": "onslaught_impact",
-                "tag": 5,
+                "arc": 180,
+                "damage": "%psy_p9_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "inherit": "radial",
+                "maxrange": 300,
+                "name": "radial",
                 "time": 0.75,
-                "victimeventtag": 10
-            },
-            "trigger": {
-                "name": "onslaught_impact",
-                "tag": 6,
-                "time": 0.775,
-                "victimeventtag": 10
-            },
-            "trigger": {
-                "name": "onslaught_impact",
-                "tag": 7,
-                "time": 0.8,
-                "victimeventtag": 10
-            },
-            "trigger": {
-                "name": "onslaught_impact",
-                "tag": 8,
-                "time": 0.825,
-                "victimeventtag": 10
+                "victimeventtag": 4,
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                }
             },
             "trigger": {
                 "bolt": "Bip01 Head",
                 "effect": "char/psyloc/p9_aura",
                 "life": "%psy_p9_lif",
                 "name": "powerup",
-                "tag": 10,
+                "tag": 4,
                 "time": -1,
                 "affecter": {
                     "affect_type": "scale",

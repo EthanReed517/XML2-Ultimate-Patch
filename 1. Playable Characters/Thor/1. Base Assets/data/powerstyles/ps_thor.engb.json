@@ -898,6 +898,14 @@
             "chain": {
                 "action": "smash",
                 "result": "attackknockback2"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
             }
         },
         "FightMove": {
@@ -954,6 +962,64 @@
             "chain": {
                 "action": "idle",
                 "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_ground",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "groundattack",
+            "noautoaim": true,
+            "powerup_tag": "thor_hammer",
+            "startchaintime": 0.44,
+            "event": {
+                "inherit": "punch_veryheavy",
+                "knockback": 0,
+                "maxrange": 50,
+                "name": "ground_attack",
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                },
+                "damageMod": {
+                    "name": "dmgmod_no_atk_roll"
+                }
+            },
+            "trigger": {
+                "name": "hammer_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 12,
+                "name": "slide",
+                "targetdistance": 50,
+                "time": 0.16
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "life": 0.24,
+                "name": "trail",
+                "time": 0.12
+            },
+            "trigger": {
+                "name": "ground_attack",
+                "time": 0.28
+            },
+            "trigger": {
+                "name": "hammer_to_back",
+                "time": 0.88
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
             }
         },
         "FightMove": {
