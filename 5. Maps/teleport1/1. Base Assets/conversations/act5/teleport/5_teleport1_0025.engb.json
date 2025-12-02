@@ -1,0 +1,159 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever30",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/beast/5_teleport1_025_001",
+                    "soundtoplayb": "voice/beast/5_teleport1_025_004",
+                    "text": "%Beast%: My friend, I want apologize for my earlier actions. I can't tell you how sorry I am for almost leading you to your destruction.",
+                    "textb": "%Beast%: Greetings. I must apologize for my actions a short time ago.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: Forget it, Beast. You were under Sinister's control. You didn't know what you were doing.",
+                            "textb": "%PLAYER%: You mean where you almost handed us over to Apocalypse? And then there was the time you and Sinister tried to kill us.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/beast/5_teleport1_025_003",
+                                    "soundtoplayb": "voice/beast/5_teleport1_025_006",
+                                    "text": "%Beast%: But that doesn't make the guilt any easier to endure.",
+                                    "textb": "%Beast%: Yes, well, I wasn't in my right mind. But all the same, you have my sincerest apologies.",
+                                    "response": {
+                                        "tagjump": "autogen_tag_1",
+                                        "text": "%BLANK%"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/beast/5_teleport1_025_007",
+                    "soundtoplayb": "voice/beast/5_teleport1_025_008",
+                    "text": "%Beast%: Greetings and salutations, my friend.",
+                    "textb": "%Beast%: Oh, it's you. Hello.",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "What can you tell us about Apocalypse's machine?",
+                        "line": {
+                            "soundtoplay": "voice/beast/5_teleport1_025_011",
+                            "text": "%Beast%: Given the exact combination of the proper DNA, the device will transfer mutant powers to one person.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: And that one would be Apocalypse.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/beast/5_teleport1_025_013",
+                                            "text": "%Beast%: Most definitely.",
+                                            "response": {
+                                                "chosenscriptfile": "setGameFlag('act5_visit', 5,1)",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'act5_visit', 5 )",
+                        "text": "So what if Apocalypse has a few extra mutant powers?",
+                        "line": {
+                            "soundtoplay": "voice/beast/5_teleport1_025_021",
+                            "text": "%Beast%: The DNA of his four victims were precisely calculated to amplify each other.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: What does that mean?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/beast/5_teleport1_025_023",
+                                            "text": "%Beast%: The mutant abilities he receives will be substantially more powerful. For all intents and purposes, Apocalypse will become invincible.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Is there no way to defeat Apocalypse once his machine is activated?",
+                        "line": {
+                            "soundtoplay": "voice/beast/5_teleport1_025_031",
+                            "text": "%Beast%: While under Sinister's control I was quite careful in my calculations for the devices power output. But, there's a slim chance, if you are able to battle Apocalypse long enough, he could be pushed to overload.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: You mean we'd push the machine past its limits?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/beast/5_teleport1_025_033",
+                                            "text": "%Beast%: Oh, most certainly not. That machine is built to withstand the power of the sun. No, you're only hope is to push Apocalypse past his ability to control the power.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "I hope you feel better, Beast.",
+                        "line": {
+                            "soundtoplay": "voice/beast/5_teleport1_025_041",
+                            "text": "%Beast%: Thank you, my friend. In time, I'm sure I will.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Thanks for almost killing us, Beast.",
+                        "line": {
+                            "soundtoplay": "voice/beast/5_teleport1_025_051",
+                            "text": "%Beast%: I find your humor lacking. So I'll just say 'Good day to you'.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

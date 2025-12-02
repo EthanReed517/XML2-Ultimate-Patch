@@ -1,0 +1,41 @@
+{
+    "conversation": {
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/5_teleport1_030_001",
+                    "text": "%ProfX%: Which mission briefing would you like?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "chosenscriptfile": "loadZone('briefing/briefing5_10', 'NULL')",
+                        "conversationend": true,
+                        "text": "Save Beast."
+                    },
+                    "response": {
+                        "chosenscriptfile": "loadZone('briefing/briefing5_20', 'NULL')",
+                        "conversationend": true,
+                        "scriptfile": "act5/teleport/check_briefing5_20",
+                        "text": "Opening the Great Seal."
+                    },
+                    "response": {
+                        "conversationend": true,
+                        "text": "Never mind."
+                    }
+                }
+            }
+        }
+    }
+}

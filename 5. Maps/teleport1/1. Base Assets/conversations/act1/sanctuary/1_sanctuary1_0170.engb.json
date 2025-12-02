@@ -1,0 +1,152 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever12",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/scarletwitch/1_sanctuary1_170_010",
+                    "soundtoplayb": "voice/scarletwitch/1_sanctuary1_170_020",
+                    "text": "%ScarletWitch%: Hmm, an X-Man. I never thought I'd see one of you this close without being in battle.",
+                    "textb": "%ScarletWitch%: Greetings. I trust all is well?",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: Everything's fine, other than having to work with the X-Men.",
+                            "textb": "%PLAYER%: Everything's fine, other than having to work with the X-Men.",
+                            "response": {
+                                "tagjump": "autogen_tag_1",
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/scarletwitch/1_sanctuary1_170_030",
+                    "soundtoplayb": "voice/scarletwitch/1_sanctuary1_170_040",
+                    "text": "%ScarletWitch%: How can I be of help?",
+                    "textb": "%ScarletWitch%: What can I do for you?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "Who are you?",
+                        "line": {
+                            "soundtoplay": "voice/scarletwitch/1_sanctuary1_170_051",
+                            "text": "%ScarletWitch%: My code name is Scarlet Witch. But my real name is Wanda Maximoff.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Did I hear you call Magneto father?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/scarletwitch/1_sanctuary1_170_053",
+                                            "text": "%ScarletWitch%: Yes, because he is. I also have a brother named Quicksilver, but he's currently a prisoner of Apocalypse.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "What's your mutant ability?",
+                        "line": {
+                            "soundtoplay": "voice/scarletwitch/1_sanctuary1_170_061",
+                            "text": "%ScarletWitch%: I have the power of chaos magic.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: What's that?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/scarletwitch/1_sanctuary1_170_063",
+                                            "text": "%ScarletWitch%: It's an energy that allows me to alter probabilities. And that means I can make the most improbable events possible.",
+                                            "response": {
+                                                "chosenscriptfile": "setGameFlag('act1_visit', 27,1)",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'act1_visit', 27)",
+                        "text": "What's your brother's mutant ability?",
+                        "line": {
+                            "soundtoplay": "voice/scarletwitch/1_sanctuary1_170_071",
+                            "text": "%ScarletWitch%: Quicksilver is gifted with superhuman speed. When fighting or running he's a blur of motion.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Is he as angry towards humans as Magneto is?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/scarletwitch/1_sanctuary1_170_073",
+                                            "text": "%ScarletWitch%: Neither Quicksilver nor I feel as strongly against humans as our father. But we work with him in hopes of softening his actions.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Goodbye, Scarlet Witch.",
+                        "line": {
+                            "soundtoplay": "voice/scarletwitch/1_sanctuary1_170_081",
+                            "text": "%ScarletWitch%: Anytime, X-Man.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Thanks, Scarlet Witch.",
+                        "line": {
+                            "soundtoplay": "voice/scarletwitch/1_sanctuary1_170_091",
+                            "soundtoplayb": "voice/scarletwitch/1_sanctuary1_170_091",
+                            "text": "%ScarletWitch%: It's been a pleasure.",
+                            "textb": "%ScarletWitch%: It's been a pleasure.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

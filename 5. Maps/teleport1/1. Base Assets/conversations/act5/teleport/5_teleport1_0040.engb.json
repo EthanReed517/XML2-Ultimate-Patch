@@ -1,0 +1,122 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "common/once_ever/once_ever31",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/forge/5_teleport1_040_010",
+                    "soundtoplayb": "voice/forge/5_teleport1_040_020",
+                    "text": "%Forge%: Hello, my friends. Of all the places I thought I might go today, an Egyptian pyramid was nowhere on the list.",
+                    "textb": "%Forge%: I have to admit I'm surprised you Brotherhood members are still here. I never would have thought you'd last this long with the X-Men. After initial meeting with X-Man Leader",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/forge/5_teleport1_040_030",
+                    "soundtoplayb": "voice/forge/5_teleport1_040_040",
+                    "text": "%Forge%: Hi. What can I do for you?",
+                    "textb": "%Forge%: What do you want?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "chosenscriptfile": "act4/mansion/forge_shop",
+                        "conversationend": true,
+                        "text": "I'd like to see some equipment."
+                    },
+                    "response": {
+                        "text": "How can Apocalypse have lived for thousands of years?",
+                        "line": {
+                            "soundtoplay": "voice/forge/5_teleport1_040_061",
+                            "text": "%Forge%: One theory is he moves his spirit to a younger body every few decades. And when he wears out that body he moves on to the next.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: Then again, he could just be immortal.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/forge/5_teleport1_040_063",
+                                            "text": "%Forge%: That's a possibility to. Or he could just possess a very, very long life.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "text": "Where did Apocalypse get the alien technology he uses?",
+                        "line": {
+                            "soundtoplay": "voice/forge/5_teleport1_040_071",
+                            "text": "%Forge%: Apparently, when he was first born, Apocalypse was sought after by a pharaoh. And that pharaoh was really a visitor from another world.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: So he gave the technology to Apocalypse?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/forge/5_teleport1_040_073",
+                                            "text": "%Forge%: I imagine Apocalypse took it from him.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Thanks for the help, Forge.",
+                        "line": {
+                            "soundtoplay": "voice/forge/5_teleport1_040_081",
+                            "text": "%Forge%: Anytime, my friend.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Thanks, Forge.",
+                        "line": {
+                            "soundtoplay": "voice/forge/5_teleport1_040_091",
+                            "text": "%Forge%: Hey, I'm here to help.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

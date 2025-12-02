@@ -1,0 +1,144 @@
+{
+    "conversation": {
+        "startCondition": {
+            "conditionscriptfile": "act5/teleport/profx_startcondition",
+            "runonce": true,
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/5_teleport1_020_001",
+                    "soundtoplayb": "voice/profx/5_teleport1_020_005",
+                    "text": "%ProfX%: Our time grows short, my friend. If we are to succeed, we must find Beast before Apocalypse is able to activate his machine.",
+                    "textb": "%ProfX%: There's no time to waste. We must locate Beast if we are to defeat Apocalypse.",
+                    "response": {
+                        "text": "%BLANK%",
+                        "line": {
+                            "text": "%PLAYER%: Why not just find Apocalypse and stop him?",
+                            "textb": "%PLAYER%: Why do we need Beast?",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "soundtoplay": "voice/profx/5_teleport1_020_003",
+                                    "soundtoplayb": "voice/profx/5_teleport1_020_007",
+                                    "text": "%ProfX%: He left that teleporter in New York because he wanted us to follow him. And I refuse to blindly walk into whatever trap he has prepared. Beast is our only hope of discovering what Apocalypse has planned.",
+                                    "textb": "%ProfX%: Apocalypse left that teleporter on in New York for a reason. He wanted us to follow him to Egypt. If we can find Beast, he might be able to tell us what Apocalypse has in store.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/profx/5_teleport1_020_004",
+                                            "soundtoplayb": "voice/profx/5_teleport1_020_008",
+                                            "text": "%ProfX%: If you'd like more information on this, use the mission briefing computer.",
+                                            "textb": "%ProfX%: For additional information, use the mission briefing computer.",
+                                            "response": {
+                                                "chosenscriptfile": "common/briefings/mark_briefing5_10",
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "soundtoplay": "voice/profx/5_teleport1_020_009",
+                    "soundtoplayb": "voice/profx/5_teleport1_020_010",
+                    "text": "%ProfX%: Hello, my friend. How can I be of assistance?",
+                    "textb": "%ProfX%: What can I do for you?",
+                    "response": {
+                        "tagjump": "autogen_tag_1",
+                        "text": "%BLANK%"
+                    }
+                }
+            }
+        },
+        "startCondition": {
+            "participant": {
+                "name": "default",
+                "line": {
+                    "tagindex": "autogen_tag_1",
+                    "text": "%PLAYER%",
+                    "response": {
+                        "text": "How's Angel doing?",
+                        "line": {
+                            "soundtoplay": "voice/profx/5_teleport1_020_021",
+                            "text": "%ProfX%: He's quite distraught right now at having fought with our team on top of Apocalypse's tower.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: But he realizes he wasn't in control of himself, doesn't he?",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/profx/5_teleport1_020_023",
+                                            "text": "%ProfX%: Right now he's feeling far too guilty to think like that. But don't worry. In no time he'll be fully recovered.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "scriptfile": "disallowResponseOnVar( 'act5_visit', 3 )",
+                        "text": "How's Beast?",
+                        "line": {
+                            "soundtoplay": "voice/profx/5_teleport1_020_031",
+                            "text": "%ProfX%: I've never seen him so overcome with guilt. He blames himself for the capture of Sabretooth.",
+                            "response": {
+                                "text": "%BLANK%",
+                                "line": {
+                                    "text": "%PLAYER%: But as a scientist, he should realize how powerful the drugs are that Sinister used on him.",
+                                    "response": {
+                                        "text": "%BLANK%",
+                                        "line": {
+                                            "soundtoplay": "voice/profx/5_teleport1_020_033",
+                                            "text": "%ProfX%: A very valid point, but one I fear that is lost on Beast at the moment.",
+                                            "response": {
+                                                "tagjump": "autogen_tag_1",
+                                                "text": "%BLANK%"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_xman": true,
+                        "text": "Thank you, Professor Xavier.",
+                        "line": {
+                            "soundtoplay": "voice/profx/5_teleport1_020_035",
+                            "text": "%ProfX%: Any time, my friend.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    },
+                    "response": {
+                        "onlyif_brotherhood": true,
+                        "text": "Goodbye, Xavier.",
+                        "line": {
+                            "soundtoplay": "voice/profx/5_teleport1_020_041",
+                            "text": "%ProfX%: Goodbye.",
+                            "response": {
+                                "conversationend": true,
+                                "text": "%BLANK%"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
