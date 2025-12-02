@@ -8,6 +8,7 @@ setPatternSequence("apocalypse", "generator" )
 # ( "set up the generator" )
 alive = alive("right_generator" )
 if alive == 1
+     sound (  "PLAY_SOUND", "voice/apocalypse/defend", "", "" )
      setEnable("right_generator", "FALSE" )
      setInvulnerable("right_generator", "TRUE" )
      showHealthBar("right_generator", "FALSE" )

@@ -26,6 +26,7 @@ if stage <= 2
      act("apoc_teleport_fx", "apoc_teleport_fx" )
      playanim (  "EA_ZONE2", "apocalypse", "NONE", "" )
      sound (  "PLAY_SOUND", "boss_battles/apoc/apoc_grows", "apocalypse", "" )
+     sound (  "PLAY_SOUND", "voice/apocalypse/grow", "apocalypse", "" )
      # ( "play grow effects" )
      act("fx_machine", "fx_machine" )
      forcefieldon = alive("apoc_forcefield" )
@@ -35,7 +36,6 @@ if stage <= 2
      endif
      setActorScaleTimed("apocalypse", 2.860, 1.000 )
      waittimed ( 2.000 )
-     playBossSound("voice/apocalypse/grow", 0, 5.000 )
      if stage == 2
           # ( "do some checks to see if the player needs a hint showing the generators" )
           apocgametip = getZoneFlag("apocgametip", 6 )
@@ -113,17 +113,71 @@ elif stage == 3
      waittimed ( 1.000 )
      setDefaultTarget("apocalypse" )
 else
-     # ( "you won" )
-     objective ( "act5_obj_2",  "EOBJCMD_COMPLETE" )
-     objective ( "act5_obj_2a",  "EOBJCMD_COMPLETE" )
-     setGameFlag("bosses", 31, 1 )
-     unlockHardDifficulty( )
-     unlockCharacter("deadpool", "" )
-     waittimed ( 1.000 )
-     startMovie("Cine06", "waa" )
-     waitsignal ( "waa" )
-     startMovie("cine07", "gameover" )
-     waitsignal ( "gameover" )
-     openmenu("credits_end" )
+    # ( "you won" )
+    objective ( "act5_obj_2",  "EOBJCMD_COMPLETE" )
+    objective ( "act5_obj_2a",  "EOBJCMD_COMPLETE" )
+    setGameFlag("bosses", 31, 1 )
+    unlockHardDifficulty( )
+    
+    # ( "UNLOCK CHARACTERS" )
+    # ( "Emma Frost" )
+    emma_unlocked = isCharacterUnlocked("Emmafrost_hero")
+    if emma_unlocked == 0
+        # ( "Emma Frost is not yet unlocked, unlock her" )
+        unlockCharacter("Emmafrost_hero", "" )
+        emma_unlocked = isCharacterUnlocked("Emmafrost_hero")
+        if emma_unlocked == 1
+            # ( "Emma Frost was not previously unlocked but she is on the roster" )
+            # ( "She's been unlocked now, so show the dialog that confirms this" )
+            createPopupDialogXML("dialogs/act5/egypt6/emma_unlocked")
+        endif 
+    endif
+    
+    # ( "Polaris" )
+    polaris_unlocked = isCharacterUnlocked("Polaris")
+    if polaris_unlocked == 0
+        # ( "Polaris is not yet unlocked, unlock her" )
+        unlockCharacter("Polaris", "" )
+        polaris_unlocked = isCharacterUnlocked("Polaris")
+        if polaris_unlocked == 1
+            # ( "Polaris was not previously unlocked but she is on the roster" )
+            # ( "She's been unlocked now, so show the dialog that confirms this" )
+            createPopupDialogXML("dialogs/act5/egypt6/polaris_unlocked")
+        endif 
+    endif
+    
+    # ( "Quicksilver" )
+    quicks_unlocked = isCharacterUnlocked("Quicksilver_hero")
+    if quicks_unlocked == 0
+        # ( "Quicksilver is not yet unlocked, unlock him" )
+        unlockCharacter("Quicksilver_hero", "" )
+        quicks_unlocked = isCharacterUnlocked("Quicksilver_hero")
+        if quicks_unlocked == 1
+            # ( "Quicksilver was not previously unlocked but he is on the roster" )
+            # ( "He's been unlocked now, so show the dialog that confirms this" )
+            createPopupDialogXML("dialogs/act5/egypt6/quicks_unlocked")
+        endif 
+    endif
+    
+    # ( "Sabretooth" )
+    sabre_unlocked = isCharacterUnlocked("Sabretooth_hero")
+    if sabre_unlocked == 0
+        # ( "Sabretooth is not yet unlocked, unlock him" )
+        unlockCharacter("Sabretooth_hero", "" )
+        sabre_unlocked = isCharacterUnlocked("Sabretooth_hero")
+        if sabre_unlocked == 1
+            # ( "Sabretooth was not previously unlocked but he is on the roster" )
+            # ( "He's been unlocked now, so show the dialog that confirms this" )
+            createPopupDialogXML("dialogs/act5/egypt6/sabre_unlocked")
+        endif 
+    endif
+    # ( "END UNLOCK CHARACTERS" )
+    
+    waittimed ( 1.000 )
+    startMovie("Cine06", "waa" )
+    waitsignal ( "waa" )
+    startMovie("cine07", "gameover" )
+    waitsignal ( "gameover" )
+    openmenu("credits_end" )
 endif
 

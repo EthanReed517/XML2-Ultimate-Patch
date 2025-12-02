@@ -7,6 +7,7 @@ copyOriginAndAngles("apocalypse", "apoc_left_spot" )
 setPatternSequence("apocalypse", "generator" )
 alive = alive("left_generator" )
 if alive == 1
+     sound (  "PLAY_SOUND", "voice/apocalypse/defend", "", "" )
      setEnable("left_generator", "FALSE" )
      setInvulnerable("left_generator", "TRUE" )
      showHealthBar("left_generator", "FALSE" )

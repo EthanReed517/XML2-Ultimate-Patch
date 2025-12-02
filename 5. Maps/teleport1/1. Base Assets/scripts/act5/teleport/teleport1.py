@@ -6,13 +6,21 @@ setCurrentAct(5 )
 first_vist = getGameFlag("act5_visit", 1 )
 second_vist = getGameFlag("act5_visit", 2 )
 beast = getGameFlag("act5_visit", 3 )
+# ( "Beast's NPC only appears if he has been defeated and Beast is not on the active team" )
 if beast == 1
-     act("sp_beast01", "sp_beast01" )
-     # ( "The following would normally be called from mark_briefing5_20" )
-     briefings = getGameFlag("briefings", 18 )
-     if briefings == 0
-          setGameFlag("briefings", 18, 1 )
-          newMissionBriefing( )
+     beast_on_team = isActorOnTeam("beast_hero" )
+     if beast_on_team == 0
+          # ( "If Beast is not on the active team, talk to NPC Beast" )
+          act("sp_beast01", "sp_beast01" )
+          # ( "The following would normally be called from mark_briefing5_20" )
+          briefings = getGameFlag("briefings", 18 )
+          if briefings == 0
+               setGameFlag("briefings", 18, 1 )
+               newMissionBriefing( )
+          endif
+     else
+          # (redundancy to make sure NPC Beast doesn't spawn)
+          remove("Beast", "Beast" )
      endif
 endif
 if first_vist == 0

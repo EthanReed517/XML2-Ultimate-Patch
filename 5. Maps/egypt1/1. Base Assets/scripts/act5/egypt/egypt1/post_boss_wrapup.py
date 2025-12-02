@@ -14,6 +14,17 @@ waittimed ( 1.000 )
 act("exit_door", "exit_door" )
 waittimed ( 2.000 )
 remove ( "beast", "beast" )
+beast_unlocked = isCharacterUnlocked("Beast_hero")
+if beast_unlocked == 0
+    # ( "Beast is not yet unlocked, unlock him" )
+    unlockCharacter("Beast_hero", " ")
+    beast_unlocked = isCharacterUnlocked("Beast_hero")
+    if beast_unlocked == 1
+        # ( "Beast was not previously unlocked but he is on the roster" )
+        # ( "He's been unlocked now, so show the dialog that confirms this" )
+        createPopupDialogXML("dialogs/act5/egypt1/beast_unlocked")
+    endif 
+endif 
 cameraReset( )
 objective ( "act5_obj_1",  "EOBJCMD_SHOW" )
 objective ( "act5_obj_1a",  "EOBJCMD_SHOW" )

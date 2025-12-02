@@ -13,6 +13,7 @@ elif stage == 2
      setAmbientLightColor(" 0.200 0.200 0.500 " )
      seenit = getZoneVar("seenhmen" )
      if seenit == 0
+          sound (  "PLAY_SOUND", "voice/apocalypse/second_destroy", "", "" )
           setDestroyObjects("apocalypse", "TRUE" )
           remove ( "newbie", "newbie" )
           lockControls(-1.000 )
@@ -48,4 +49,3 @@ elif stage == 2
           setallaiactive("TRUE" )
      endif
 endif
-

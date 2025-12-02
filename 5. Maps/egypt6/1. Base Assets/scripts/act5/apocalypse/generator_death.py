@@ -2,12 +2,11 @@
 # ( "shrink the player" )
 a1 = alive("left_generator" )
 if a1 == 1
-     playBossSound("voice/apocalypse/first_destroy", 0, 5.000 )
+     sound (  "PLAY_SOUND", "voice/apocalypse/first_destroy", "", "" )
 else
      a1 = alive("right_generator" )
      if a1 == 1
-          playBossSound("voice/apocalypse/first_destroy", 3, 5.000 )
+          sound (  "PLAY_SOUND", "voice/apocalypse/first_destroy", "", "" )
      endif
 endif
 setPatternSequence("apocalypse", "shrink" )
-
