@@ -609,8 +609,9 @@
             "combotextstarter": "Twirling",
             "icon": 2,
             "name": "power3",
+            "playspeed": 0.7,
             "powerup_tag": "spider_web",
-            "priority": "uninterruptable",
+            "priority": 5,
             "require": {
                 "cat": "skill",
                 "item": "spider_p3",
@@ -667,7 +668,7 @@
             "icon": 2,
             "name": "power3_release",
             "powerup_tag": "spider_web",
-            "priority": "uninterruptable",
+            "priority": 5,
             "event": {
                 "arc": 180,
                 "damage": "%spider_p3_dmg",
@@ -1191,11 +1192,7 @@
             "trigger": {
                 "effect": "char/spider/p8_aura",
                 "fxlevel": 2,
-                "name": "effect",
-                "time": 0
-            },
-            "trigger": {
-                "name": "sound",
+                "name": "effect_sound",
                 "sound": "char/spider_m/p8_power",
                 "time": 0
             },
@@ -1203,7 +1200,6 @@
                 "apply_self": true,
                 "life": "%spider_p8_lif",
                 "name": "powerup",
-                "no_stack": true,
                 "powerusage": "%spider_p8_pwr",
                 "remove_skin_on_exit": true,
                 "skin": 18800,
@@ -1243,6 +1239,7 @@
             "name": "power9",
             "noautoaim": true,
             "playspeed": 10,
+            "powerup_tag": "spider_power9",
             "priority": "uninterruptable",
             "startchaintime": 0.9,
             "turnrate": 0.5,
@@ -1314,6 +1311,7 @@
             "name": "power9_loop",
             "noautoaim": true,
             "playspeed": 10,
+            "powerup_tag": "spider_power9",
             "priority": "uninterruptable",
             "startchaintime": 0.9,
             "require": {
@@ -1437,7 +1435,6 @@
                 "apply_self": true,
                 "life": "%spider_p10_lif",
                 "name": "powerup",
-                "no_stack": true,
                 "remove_skin_on_exit": true,
                 "skin": 18810,
                 "skin_swap": true,
