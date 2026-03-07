@@ -1,128 +1,287 @@
 {
     "talents": {
         "talent": {
-            "hidden": true,
-            "name": "magma_resist",
-            "level": {
-                "count": 1,
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "attribute": "resist_elemental",
-                        "level": 0.1
-                    },
-                    "affecter": {
-                        "attribute": "resist_fire",
-                        "level": 0.05
-                    }
-                }
-            }
-        },
-        "talent": {
             "descname": "Fiery Blasts",
             "description": "Magma throws balls of molten lava at enemies.",
             "descshort": "Projectile",
             "icon": 0,
             "icon_texture": "textures/ui/magma_icons2.png",
-            "name": "magma_blast",
+            "name": "magma_p1",
             "power": "power1",
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
-                    "name": "mag_fireballs_req",
+                    "name": "magma_p1_req",
                     "value": 1
                 },
                 "talentvalue": {
-                    "level": 20,
-                    "name": "mag_fireballs_req",
+                    "level": 14,
+                    "name": "magma_p1_req",
                     "value": 58
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "mag_fireballs_dmg",
-                    "value": "11 15"
+                    "name": "magma_p1_dmg",
+                    "value": "6 9"
                 },
                 "talentvalue": {
-                    "level": 20,
-                    "name": "mag_fireballs_dmg",
+                    "level": 14,
+                    "name": "magma_p1_dmg",
                     "value": "117 132"
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "mag_fireballs_pwr",
-                    "value": 14
+                    "name": "magma_p1_pwr",
+                    "value": 24
                 },
                 "talentvalue": {
-                    "level": 20,
-                    "name": "mag_fireballs_pwr",
-                    "value": 140
+                    "level": 14,
+                    "name": "magma_p1_pwr",
+                    "value": 128
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "mag_fireballs_num",
+                    "name": "magma_p1_num",
                     "value": 1
                 },
                 "talentvalue": {
-                    "level": 20,
-                    "name": "mag_fireballs_num",
+                    "level": 14,
+                    "name": "magma_p1_num",
                     "value": 7
                 }
             },
             "level": {
-                "count": 20,
-                "description": "%mag_fireballs_dmg $DMG_FIRE\\n%mag_fireballs_num lava ball(s)\\n%mag_fireballs_pwr $EP",
+                "count": 14,
+                "description": "%magma_p1_dmg $DMG_FIRE\\n%magma_p1_num lava ball(s)\\n%magma_p1_pwr $EP",
                 "require": {
                     "cat": "level",
-                    "level": "%mag_fireballs_req"
+                    "level": "%magma_p1_req"
                 }
             }
         },
         "talent": {
             "descname": "Lava Fissure",
-            "description": "Magma creates a Lava Fissures that causes molten lava to erupt from the ground, burning enemies.",
+            "description": "Magma creates a Lava Fissure that causes molten lava to erupt from the ground, burning enemies.",
             "descshort": "Special",
             "icon": 1,
             "icon_texture": "textures/ui/magma_icons2.png",
-            "name": "lava_fissure",
+            "name": "magma_p2",
             "power": "power2",
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
-                    "name": "mag_fire_pill_req",
-                    "value": 21
+                    "name": "magma_p2_req",
+                    "value": 7
                 },
                 "talentvalue": {
-                    "level": 14,
-                    "name": "mag_fire_pill_req",
+                    "level": 18,
+                    "name": "magma_p2_req",
                     "value": 58
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "mag_fire_pill_pwr",
-                    "value": 72
+                    "name": "magma_p2_dmg",
+                    "value": "21 26"
                 },
                 "talentvalue": {
-                    "level": 14,
-                    "name": "mag_fire_pill_pwr",
-                    "value": 173
+                    "level": 18,
+                    "name": "magma_p2_dmg",
+                    "value": "200 220"
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "mag_fire_pill_dmg",
-                    "value": "59 68"
+                    "name": "magma_p2_pwr",
+                    "value": 24
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "magma_p2_pwr",
+                    "value": 136
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%magma_p2_dmg $DMG_FIRE\\n%magma_p2_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%magma_p2_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Lava Tracks",
+            "description": "Magma surfs through the air on a river of lava, burning enemies on contact.\\n(~41Press And Hold~~)",
+            "descshort": "Charge",
+            "icon": 3,
+            "icon_texture": "textures/ui/magma_icons2.png",
+            "name": "magma_p3",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_p3_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "magma_p3_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_p3_pwr",
+                    "value": 34
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "magma_p3_pwr",
+                    "value": 108
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_p3_dmg",
+                    "value": "53 61"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "magma_p3_dmg",
+                    "value": "198 220"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_p3_kb",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "magma_p3_kb",
+                    "value": 245
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%magma_p3_dmg $DMG_FIRE\\n%magma_p3_kb $KB\\n%magma_p3_pwr $EP per second",
+                "require": {
+                    "cat": "level",
+                    "level": "%magma_p3_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Lava Flow",
+            "description": "Magma unleashes a flowing stream of hot lava that pierces through enemies, burning them.",
+            "descshort": "Blast",
+            "icon": 5,
+            "icon_texture": "textures/ui/magma_icons2.png",
+            "name": "magma_p4",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_p4_req",
+                    "value": 21
                 },
                 "talentvalue": {
                     "level": 14,
-                    "name": "mag_fire_pill_dmg",
-                    "value": "130 146"
+                    "name": "magma_p4_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_p4_dmg",
+                    "value": "42 46"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "magma_p4_dmg",
+                    "value": "210 230"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_p4_pwr",
+                    "value": 48
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "magma_p4_pwr",
+                    "value": 156
                 }
             },
             "level": {
                 "count": 14,
-                "description": "%mag_fire_pill_dmg $DMG_FIRE\\n%mag_fire_pill_pwr $EP",
+                "description": "%magma_p4_dmg $DMG_FIRE\\n%magma_p4_pwr $EP",
                 "require": {
                     "cat": "level",
-                    "level": "%mag_fire_pill_req"
+                    "level": "%magma_p4_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "magma_p3",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Terrae Motu",
+            "description": "Magma punches the ground, causing an earthquake that reverberates in every direction and knocks back enemies.",
+            "descshort": "Radial",
+            "icon": 4,
+            "icon_texture": "textures/ui/magma_icons2.png",
+            "name": "magma_p5",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_p5_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "magma_p5_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_p5_dmg",
+                    "value": "57 66"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "magma_p5_dmg",
+                    "value": "108 119"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_p5_kb",
+                    "value": 245
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "magma_p5_kb",
+                    "value": 620
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_p5_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "magma_p5_pwr",
+                    "value": 190
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%magma_p5_dmg $DMG_PHYSICAL\\n%magma_p5_kb $KB\\n%magma_p5_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%magma_p5_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "magma_p9",
+                    "level": 1
                 }
             }
         },
@@ -132,309 +291,152 @@
             "descshort": "Boost",
             "icon": 6,
             "icon_texture": "textures/ui/magma_icons2.png",
-            "name": "magma_form",
-            "power": "power3",
+            "name": "magma_p6",
+            "power": "power6",
             "type": "boost",
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
-                    "name": "mag_form_req",
+                    "name": "magma_p6_req",
                     "value": 7
                 },
                 "talentvalue": {
-                    "level": 20,
-                    "name": "mag_form_req",
+                    "level": 16,
+                    "name": "magma_p6_req",
                     "value": 58
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "mag_form_ar",
+                    "name": "magma_p6_ar",
                     "value": 1.2
                 },
                 "talentvalue": {
-                    "level": 20,
-                    "name": "mag_form_ar",
-                    "value": 2.6
+                    "level": 16,
+                    "name": "magma_p6_ar",
+                    "value": 2.2
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "mag_form_dmg",
+                    "name": "magma_p6_dmg",
                     "value": "2 3"
                 },
                 "talentvalue": {
-                    "level": 20,
-                    "name": "mag_form_dmg",
+                    "level": 16,
+                    "name": "magma_p6_dmg",
                     "value": "17 22"
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "mag_form_pwr",
-                    "value": 88
-                },
-                "talentvalue": {
-                    "level": 20,
-                    "name": "mag_form_pwr",
-                    "value": 516
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "mag_form_life",
+                    "name": "magma_p6_lif",
                     "value": 13
                 },
                 "talentvalue": {
-                    "level": 20,
-                    "name": "mag_form_life",
+                    "level": 16,
+                    "name": "magma_p6_lif",
                     "value": 55
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "mag_form_mt",
+                    "name": "magma_p6_pwr",
+                    "value": 64
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "magma_p6_pwr",
+                    "value": 380
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_p6_mt",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 8,
+                    "name": "magma_p6_mt",
                     "value": 1
                 },
                 "talentvalue": {
                     "level": 10,
-                    "name": "mag_form_mt",
-                    "value": 1
-                },
-                "talentvalue": {
-                    "level": 11,
-                    "name": "mag_form_mt",
+                    "name": "magma_p6_mt",
                     "value": 2
                 },
                 "talentvalue": {
-                    "level": 20,
-                    "name": "mag_form_mt",
+                    "level": 16,
+                    "name": "magma_p6_mt",
                     "value": 2
-                }
-            },
-            "level": {
-                "count": 20,
-                "description": "Might Level %mag_form_mt\\n%mag_form_ar:s $AR\\n%mag_form_dmg $DMG_FIRE upon contact\\n%mag_form_life seconds\\n%mag_form_pwr $EP",
-                "require": {
-                    "cat": "level",
-                    "level": "%mag_form_req"
-                }
-            }
-        },
-        "talent": {
-            "descname": "Column of Fire",
-            "description": "A column of Fire that rises from the ground, envelops Magma, and knocks back nearby enemies, burning them.",
-            "descshort": "Radial",
-            "icon": 2,
-            "icon_texture": "textures/ui/magma_icons2.png",
-            "name": "magma_column",
-            "power": "power4",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "magma_column_req",
-                    "value": 7
-                },
-                "talentvalue": {
-                    "level": 18,
-                    "name": "magma_column_req",
-                    "value": 58
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "magma_column_dmg",
-                    "value": "11 15"
-                },
-                "talentvalue": {
-                    "level": 18,
-                    "name": "magma_column_dmg",
-                    "value": "79 89"
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "magma_column_kb",
-                    "value": 370
-                },
-                "talentvalue": {
-                    "level": 18,
-                    "name": "magma_column_kb",
-                    "value": 620
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "magma_column_pwr",
-                    "value": 28
-                },
-                "talentvalue": {
-                    "level": 18,
-                    "name": "magma_column_pwr",
-                    "value": 164
-                }
-            },
-            "level": {
-                "count": 18,
-                "description": "%magma_column_dmg $DMG_FIRE\\n%magma_column_kb $KB\\n%magma_column_pwr $EP",
-                "require": {
-                    "cat": "level",
-                    "level": "%magma_column_req"
-                }
-            }
-        },
-        "talent": {
-            "descname": "Lava Tracks",
-            "description": "Allows Magma to surf through the air on a river of lava. Burns enemies on contact.\\n(~41Press And Hold~~)",
-            "descshort": "Charge",
-            "icon": 3,
-            "icon_texture": "textures/ui/magma_icons2.png",
-            "name": "magma_skating",
-            "power": "power5",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "fire_slide_req",
-                    "value": 14
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "fire_slide_req",
-                    "value": 59
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "fire_slide_pwr",
-                    "value": 34
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "fire_slide_pwr",
-                    "value": 130
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "fire_slide_dmg",
-                    "value": "53 61"
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "fire_slide_dmg",
-                    "value": "198 220"
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "fire_slide_kb",
-                    "value": 40
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "fire_slide_kb",
-                    "value": 245
                 }
             },
             "level": {
                 "count": 16,
-                "description": "%fire_slide_dmg $DMG_FIRE\\n%fire_slide_kb $KB\\n%fire_slide_pwr $EP per second",
+                "description": "Might level %magma_p6_mt\\n%magma_p6_ar:s $AR\\n%magma_p6_dmg $DMG_FIRE upon contact\\n%magma_p6_lif seconds\\n%magma_p6_pwr $EP",
                 "require": {
                     "cat": "level",
-                    "level": "%fire_slide_req"
-                }
-            }
-        },
-        "talent": {
-            "descname": "VOLCANO",
-            "description": "Magma creates a volcanic eruption that rains blasts of lava down upon enemies, burning them.",
-            "descshort": "Special",
-            "icon": 9,
-            "icon_texture": "textures/ui/magma_icons2.png",
-            "name": "magma_xtreme",
-            "power": "power6",
-            "type": "xtreme",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "magma_xtreme_req",
-                    "value": 15
-                },
-                "talentvalue": {
-                    "level": 7,
-                    "name": "magma_xtreme_req",
-                    "value": 45
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "magma_xtreme_dmg",
-                    "value": "88 100"
-                },
-                "talentvalue": {
-                    "level": 7,
-                    "name": "magma_xtreme_dmg",
-                    "value": "282 313"
-                }
-            },
-            "level": {
-                "count": 7,
-                "description": "%magma_xtreme_dmg $DMG_FIRE",
-                "require": {
-                    "cat": "level",
-                    "level": "%magma_xtreme_req"
-                }
-            }
-        },
-        "talent": {
-            "descname": "Terrae Motu",
-            "description": "Magma punches the ground, causing an earthquake that reverberates in every direction.",
-            "descshort": "Radial",
-            "icon": 4,
-            "icon_texture": "textures/ui/magma_icons2.png",
-            "name": "magma_earth",
-            "power": "power7",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "magma_ear_req",
-                    "value": 28
-                },
-                "talentvalue": {
-                    "level": 11,
-                    "name": "magma_ear_req",
-                    "value": 60
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "magma_ear_pwr",
-                    "value": 86
-                },
-                "talentvalue": {
-                    "level": 11,
-                    "name": "magma_ear_pwr",
-                    "value": 175
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "magma_ear_dmg",
-                    "value": "43 50"
-                },
-                "talentvalue": {
-                    "level": 11,
-                    "name": "magma_ear_dmg",
-                    "value": "85 96"
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "magma_ear_kb",
-                    "value": 200
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "magma_ear_kb",
-                    "value": 620
-                }
-            },
-            "level": {
-                "count": 11,
-                "description": "%magma_ear_dmg $DMG_PHYSICAL\\n%magma_ear_kb $KB\\n%magma_ear_pwr $EP",
-                "require": {
-                    "cat": "level",
-                    "level": "%magma_ear_req"
+                    "level": "%magma_p6_req"
                 },
                 "require": {
                     "cat": "skill",
-                    "item": "lava_fissure",
+                    "item": "magma_ps1",
                     "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Smoke Screen",
+            "description": "Magma creates a barrier of smoke around the entire party, increasing everyone's $DR and making everyone immune to Grab and Critical Strikes for a time.",
+            "descshort": "Boost",
+            "icon": 8,
+            "icon_texture": "textures/ui/magma_icons2.png",
+            "name": "magma_p7",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_p7_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "magma_p7_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_p7_def",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "magma_p7_def",
+                    "value": 2.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_p7_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "magma_p7_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_p7_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "magma_p7_pwr",
+                    "value": 458
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%magma_p7_def:s $DR\\n%magma_p7_lif seconds\\n%magma_p7_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%magma_p7_req"
                 }
             }
         },
@@ -444,180 +446,106 @@
             "descshort": "Boost",
             "icon": 7,
             "icon_texture": "textures/ui/magma_icons2.png",
-            "name": "magma_fired",
+            "name": "magma_p8",
             "power": "power8",
             "type": "boost",
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
-                    "name": "magma_fired_req",
-                    "value": 28
+                    "name": "magma_p8_req",
+                    "value": 21
                 },
                 "talentvalue": {
-                    "level": 16,
-                    "name": "magma_fired_req",
+                    "level": 11,
+                    "name": "magma_p8_req",
                     "value": 58
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "magma_fired_def",
-                    "value": 1.01
+                    "name": "magma_p8_def",
+                    "value": 1.1
                 },
                 "talentvalue": {
-                    "level": 16,
-                    "name": "magma_fired_def",
+                    "level": 11,
+                    "name": "magma_p8_def",
                     "value": 1.3
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "magma_fired_lif",
+                    "name": "magma_p8_lif",
                     "value": 13
                 },
                 "talentvalue": {
-                    "level": 16,
-                    "name": "magma_fired_lif",
+                    "level": 11,
+                    "name": "magma_p8_lif",
                     "value": 55
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "magma_fired_pwr",
-                    "value": 236
+                    "name": "magma_p8_pwr",
+                    "value": 132
                 },
                 "talentvalue": {
-                    "level": 16,
-                    "name": "magma_fired_pwr",
+                    "level": 11,
+                    "name": "magma_p8_pwr",
                     "value": 516
                 }
             },
             "level": {
-                "count": 16,
-                "description": "%magma_fired_def:s max $HP\\n%magma_fired_def:s max $EP\\n%magma_fired_lif seconds\\n%magma_fired_pwr $EP",
+                "count": 11,
+                "description": "%magma_p8_def:s max $HP\\n%magma_p8_def:s max $EP\\n%magma_p8_lif seconds\\n%magma_p8_pwr $EP",
                 "require": {
                     "cat": "level",
-                    "level": "%magma_fired_req"
-                },
-                "require": {
-                    "cat": "skill",
-                    "item": "magma_focus",
-                    "level": 1
+                    "level": "%magma_p8_req"
                 }
             }
         },
         "talent": {
-            "descname": "Lava Flow",
-            "description": "Magma unleashes a flowing stream of hot lava the burns enemies.",
-            "descshort": "Beam",
-            "icon": 5,
+            "descname": "VOLCANO",
+            "description": "Magma creates a volcanic eruption that rains lava down upon enemies, burning them.",
+            "descshort": "Special",
+            "icon": 9,
             "icon_texture": "textures/ui/magma_icons2.png",
-            "name": "magbeam",
+            "name": "magma_p9",
             "power": "power9",
+            "type": "xtreme",
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
-                    "name": "magbeam_req",
-                    "value": 14
+                    "name": "magma_p9_req",
+                    "value": 15
                 },
                 "talentvalue": {
-                    "level": 18,
-                    "name": "magbeam_req",
-                    "value": 58
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "magbeam_pwr",
-                    "value": 36
-                },
-                "talentvalue": {
-                    "level": 18,
-                    "name": "magbeam_pwr",
-                    "value": 142
+                    "level": 7,
+                    "name": "magma_p9_req",
+                    "value": 45
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "magbeam_dmg",
-                    "value": "36 42"
+                    "name": "magma_p9_dmg",
+                    "value": "85 96"
                 },
                 "talentvalue": {
-                    "level": 18,
-                    "name": "magbeam_dmg",
-                    "value": "195 217"
+                    "level": 7,
+                    "name": "magma_p9_dmg",
+                    "value": "279 309"
                 }
             },
             "level": {
-                "count": 18,
-                "description": "%magbeam_dmg $DMG_FIRE\\n%magbeam_pwr $EP",
+                "count": 7,
+                "description": "%magma_p9_dmg $DMG_FIRE",
                 "require": {
                     "cat": "level",
-                    "level": "%magbeam_req"
+                    "level": "%magma_p9_req"
                 },
                 "require": {
                     "cat": "skill",
-                    "item": "magma_column",
+                    "item": "magma_p2",
                     "level": 1
-                }
-            }
-        },
-        "talent": {
-            "descname": "Smoke Screen",
-            "description": "Magma creates a barrier of smoke around the entire party, increasing everyone's $DR.",
-            "descshort": "Boost",
-            "icon": 8,
-            "icon_texture": "textures/ui/magma_icons2.png",
-            "name": "magma_focus",
-            "power": "power10",
-            "type": "boost",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "magma_focus_req",
-                    "value": 21
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "magma_focus_req",
-                    "value": 60
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "magma_focus_def",
-                    "value": 1.3
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "magma_focus_def",
-                    "value": 2.09
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "magma_focus_lif",
-                    "value": 13
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "magma_focus_lif",
-                    "value": 55
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "magma_focus_pwr",
-                    "value": 132
-                },
-                "talentvalue": {
-                    "level": 16,
-                    "name": "magma_focus_pwr",
-                    "value": 504
-                }
-            },
-            "level": {
-                "count": 16,
-                "description": "%magma_focus_def:s $DR\\n%magma_focus_lif seconds\\n%magma_focus_pwr $EP",
-                "require": {
-                    "cat": "level",
-                    "level": "%magma_focus_req"
                 },
                 "require": {
                     "cat": "skill",
-                    "item": "magma_form",
+                    "item": "magma_p7",
                     "level": 1
                 }
             }
@@ -628,118 +556,42 @@
             "descshort": "Boost",
             "icon": 10,
             "icon_texture": "textures/ui/magma_icons2.png",
-            "name": "magma_rising",
-            "power": "power11",
+            "name": "magma_p10",
+            "power": "power10",
             "type": "xtreme",
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
-                    "name": "magma_rising_req",
+                    "name": "magma_p10_req",
                     "value": 20
                 },
                 "talentvalue": {
                     "level": 5,
-                    "name": "magma_rising_req",
+                    "name": "magma_p10_req",
                     "value": 40
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "magma_rising_lif",
+                    "name": "magma_p10_lif",
                     "value": 15
                 },
                 "talentvalue": {
                     "level": 5,
-                    "name": "magma_rising_lif",
+                    "name": "magma_p10_lif",
                     "value": 45
                 }
             },
             "level": {
                 "count": 5,
-                "description": "+100% Dmg\\n%magma_rising_lif seconds",
+                "description": "+100% Dmg\\n%magma_p10_lif seconds",
                 "require": {
                     "cat": "level",
-                    "level": "%magma_rising_req"
-                }
-            }
-        },
-        "talent": {
-            "descname": "Fire Mastery",
-            "description": "Increases damage and chance for Criticals with $DMG_FIRE and increases her resistance to $DMG_FIRE.",
-            "descshort": "Passive",
-            "icon": 11,
-            "icon_texture": "textures/ui/magma_icons2.png",
-            "name": "passive1",
-            "talentvalues": {
-                "talentvalue": {
-                    "level": 1,
-                    "name": "passive1_req",
-                    "value": 14
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "passive1_req",
-                    "value": 28
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "passive1_dmg",
-                    "value": 1.05
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "passive1_dmg",
-                    "value": 1.5
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "passive1_cri",
-                    "value": 0.01
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "passive1_cri",
-                    "value": 0.08
-                },
-                "talentvalue": {
-                    "level": 1,
-                    "name": "passive1_re",
-                    "value": 0.1
-                },
-                "talentvalue": {
-                    "level": 15,
-                    "name": "passive1_res",
-                    "value": 1
-                }
-            },
-            "level": {
-                "count": 15,
-                "description": "%passive1_dmg:s $DMG_FIRE\\n+%passive1_cri:p Critical chance\\n+%passive1_res:p Fire resistance",
-                "require": {
-                    "cat": "level",
-                    "level": "%passive1_req"
+                    "level": "%magma_p10_req"
                 },
                 "require": {
                     "cat": "skill",
-                    "item": "mutantmaster",
+                    "item": "magma_p6",
                     "level": 1
-                },
-                "powerup": {
-                    "life": -1,
-                    "affecter": {
-                        "affect_type": "scale",
-                        "attribute": "damage",
-                        "level": "%passive1_dmg",
-                        "scope_damage": "dmg_fire"
-                    },
-                    "affecter": {
-                        "attribute": "atk_critical",
-                        "level": "%passive1_cri",
-                        "scope_damage": "dmg_fire"
-                    },
-                    "affecter": {
-                        "attribute": "resist_fire",
-                        "level": "%passive1_res"
-                    }
                 }
             }
         },
@@ -749,39 +601,39 @@
             "descshort": "Passive",
             "icon": 12,
             "icon_texture": "textures/ui/magma_icons2.png",
-            "name": "passive2",
+            "name": "magma_ps1",
             "talentvalues": {
                 "talentvalue": {
                     "level": 1,
-                    "name": "passive2_req",
+                    "name": "magma_ps1_req",
                     "value": 1
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "passive2_req",
+                    "name": "magma_ps1_req",
                     "value": 15
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "passive2_dmg",
-                    "value": 0.1
+                    "name": "magma_ps1_dmg",
+                    "value": 0.5
                 },
                 "talentvalue": {
                     "level": 15,
-                    "name": "passive2_dmg",
-                    "value": 1
+                    "name": "magma_ps1_dmg",
+                    "value": 3.6
                 }
             },
             "level": {
                 "count": 15,
-                "description": "+%passive2_dmg:p $DMG_FIRE",
+                "description": "+%magma_ps1_dmg:p $DMG_FIRE",
                 "require": {
                     "category": "level",
-                    "level": "%passive2_req"
+                    "level": "%magma_ps1_req"
                 },
                 "powerup": {
                     "class": "add_attack",
-                    "damagepercent": "%passive2_dmg",
+                    "damagepercent": "%magma_ps1_dmg",
                     "damagetype": "dmg_fire",
                     "life": -1,
                     "special_fx": {
@@ -799,6 +651,87 @@
                         "scope": {
                             "scope_non_powers": true
                         }
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Fire Mastery",
+            "description": "Increases damage and Critical chance of all powered and non-powered $DMG_FIRE attacks and increases her resistance to $DMG_FIRE.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/magma_icons2.png",
+            "name": "magma_ps2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_ps2_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "magma_ps2_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_ps2_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "magma_ps2_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_ps2_cri",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "magma_ps2_cri",
+                    "value": 0.08
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "magma_ps2_re",
+                    "value": 0.1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "magma_ps2_res",
+                    "value": 1
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%magma_ps2_dmg:s $DMG_FIRE\\n+%magma_ps2_cri:p Critical chance\\n+%magma_ps2_res:p Fire resistance",
+                "require": {
+                    "cat": "level",
+                    "level": "%magma_ps2_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "mutantmaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%magma_ps2_dmg",
+                        "scope_damage": "dmg_fire"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%magma_ps2_cri",
+                        "scope_damage": "dmg_fire"
+                    },
+                    "affecter": {
+                        "attribute": "resist_fire",
+                        "level": "%magma_ps2_res"
                     }
                 }
             }
