@@ -197,13 +197,17 @@
                 "level": 1
             },
             "trigger": {
+                "name": "powerusage",
+                "powerusage": "%xman_telek_pwr",
+                "time": 0
+            },
+            "trigger": {
                 "attacktype": "psionic",
                 "damage": 0,
                 "damagescale": "none",
                 "damagetype": "dmg_telekinesis",
                 "maxrange": 300,
                 "name": "telekinesis_dmg",
-                "powerusage": "%xman_telek_pwr",
                 "tag": 2,
                 "time": -1,
                 "type": "ce_atk_self",
@@ -219,21 +223,6 @@
                 "time": 0
             },
             "trigger": {
-                "effect": "char/xman/p2_power",
-                "name": "effect",
-                "tag": 100,
-                "time": 0
-            },
-            "trigger": {
-                "life": 1,
-                "name": "powerup",
-                "time": 0,
-                "special_fx": {
-                    "bolt": "Bip01 Head",
-                    "effect": "char/xman/p2_charge"
-                }
-            },
-            "trigger": {
                 "damage": "%xman_telek_dm1",
                 "damagescale": "none",
                 "damagetype": "dmg_physical",
@@ -243,6 +232,28 @@
                 "tag": 1,
                 "time": -1,
                 "tklevel": 11
+            },
+            "trigger": {
+                "effect": "char/xman/p2_power",
+                "name": "effect",
+                "tag": 100,
+                "time": -1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "no_stack": true,
+                "remove_on_node_end": true,
+                "time": 0,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/xman/p2_charge"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/xman_m/p2_charge",
+                "time": 0
             },
             "chain": {
                 "action": "special",
@@ -265,8 +276,10 @@
             "priority": 5,
             "startchaintime": 1,
             "trigger": {
-                "life": 1,
+                "life": -1,
                 "name": "powerup",
+                "no_stack": true,
+                "remove_on_node_end": true,
                 "time": 0,
                 "special_fx": {
                     "bolt": "Bip01 Head",
@@ -274,10 +287,10 @@
                 }
             },
             "trigger": {
-                "loop_timeout": 5,
+                "loop_timeout": 1,
                 "loop_type": "start",
                 "name": "sound",
-                "sound": "char/xman_m/p2_charge",
+                "sound": "char/xman_m/p2_power",
                 "time": 0
             },
             "chain": {
@@ -304,7 +317,7 @@
                 "bolt": "Bip01 L Hand",
                 "effect": "char/xman/p2_release",
                 "name": "effect_sound",
-                "sound": "char/xman_m/p2_power",
+                "sound": "char/xman_m/p2_impact",
                 "time": 0
             },
             "chain": {
@@ -436,7 +449,6 @@
             "lockangles": true,
             "name": "power4",
             "playspeed": 1.5,
-            "powerup_tag": "xman_power4",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -853,7 +865,6 @@
             "lockchaining": false,
             "name": "power10",
             "playspeed": 1.5,
-            "powerup_tag": "xman_power10",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -932,7 +943,6 @@
             "lockangles": true,
             "lockchaining": false,
             "name": "power11",
-            "powerup_tag": "xman_power11",
             "priority": 5,
             "require": {
                 "cat": "skill",
@@ -951,13 +961,13 @@
                 "worldspeed": 0.5
             },
             "trigger": {
-                "name": "stop",
-                "time": 0.5
-            },
-            "trigger": {
                 "name": "sound",
                 "sound": "char/xman_m/p11_power",
                 "time": 0.1
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0.5
             },
             "trigger": {
                 "apply_ally": "all",
