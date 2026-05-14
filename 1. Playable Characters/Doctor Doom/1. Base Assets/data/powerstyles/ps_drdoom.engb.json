@@ -806,11 +806,6 @@
                 "item": "drdoom_p5",
                 "level": 1
             },
-            "trigger": {
-                "name": "powerusage",
-                "powerusage": "%drdoom_p5_pwr",
-                "time": -1
-            },
             "chain": {
                 "action": "idle",
                 "result": "idle"
@@ -865,7 +860,7 @@
                 "name": "teleport_data_store",
                 "powerusage": "%drdoom_p5_pwr",
                 "set_visible": false,
-                "tag": 2,
+                "tag": 6,
                 "time": 0.8
             },
             "chain": {
@@ -905,6 +900,7 @@
                 "time": 0.1
             },
             "trigger": {
+                "attacktype": "punch",
                 "damage": "%drdoom_p5_dmg",
                 "damagescale": "none",
                 "damagetype": "dmg_energy",
@@ -981,7 +977,7 @@
                 "nofailifnotarget": true,
                 "powerusage": "%drdoom_p5_pwr",
                 "set_visible": false,
-                "tag": 2,
+                "tag": 6,
                 "teleportwithvictim": true,
                 "time": 0.8
             },
@@ -1023,7 +1019,6 @@
                 "maxrange": "%drdoom_p5_rng",
                 "name": "teleport",
                 "nofailifnotarget": true,
-                "powerusage": "%drdoom_p5_pwr",
                 "teleportwithvictim": true,
                 "time": 0
             },
@@ -1038,6 +1033,16 @@
                 "effect": "char/drdoom/p5_power",
                 "fxlevel": 2,
                 "name": "effect",
+                "time": 0.1
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%drdoom_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_energy",
+                "inherit": "radial",
+                "maxrange": 65,
+                "name": "tele_attk",
                 "time": 0.1
             },
             "trigger": {
@@ -1220,8 +1225,8 @@
                     "level": 1
                 },
                 "special_fx": {
-                    "effect": "base/powerup/pu_fear",
-                    "how_used": "primary"
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_fear"
                 }
             },
             "trigger": {
