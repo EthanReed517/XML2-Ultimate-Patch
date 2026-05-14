@@ -1,0 +1,643 @@
+{
+    "talents": {
+        "talent": {
+            "hidden": true,
+            "name": "daredevil_resist",
+            "level": {
+                "count": 1,
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "resist_mental",
+                        "level": 1
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Baton Smash",
+            "description": "Daredevil smashes an enemy with his batons, stunning them.",
+            "descshort": "Melee",
+            "icon": 0,
+            "icon_texture": "textures/ui/daredevil_icons2.png",
+            "name": "daredevil_p1",
+            "power": "power1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p1_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "daredevil_p1_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p1_dmg",
+                    "value": "21 26"
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "daredevil_p1_dmg",
+                    "value": "195 217"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p1_pwr",
+                    "value": 12
+                },
+                "talentvalue": {
+                    "level": 20,
+                    "name": "daredevil_p1_pwr",
+                    "value": 126
+                }
+            },
+            "level": {
+                "count": 20,
+                "description": "%daredevil_p1_dmg $DMG_PHYSICAL\\n%daredevil_p1_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%daredevil_p1_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Baton Throw",
+            "description": "Daredevil throws one of his batons at an enemy, knocking them back.",
+            "descshort": "Projectile",
+            "icon": 1,
+            "icon_texture": "textures/ui/daredevil_icons2.png",
+            "name": "daredevil_p2",
+            "power": "power2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p2_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "daredevil_p2_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p2_dmg",
+                    "value": "17 22"
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "daredevil_p2_dmg",
+                    "value": "124 144"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p2_kb",
+                    "value": 200
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "daredevil_p2_kb",
+                    "value": 400
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p2_pwr",
+                    "value": 36
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "daredevil_p2_pwr",
+                    "value": 135
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%daredevil_p2_dmg $DMG_PHYSICAL\\n%daredevil_p2_kb $KB\\n%daredevil_p2_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%daredevil_p2_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Baton Fling",
+            "description": "Daredevil uses his batons to pop any nearby enemies up into the air.",
+            "descshort": "Melee",
+            "icon": 4,
+            "icon_texture": "textures/ui/daredevil_icons2.png",
+            "name": "daredevil_p3",
+            "power": "power3",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p3_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "daredevil_p3_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p3_dmg",
+                    "value": "42 46"
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "daredevil_p3_dmg",
+                    "value": "205 225"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p3_pwr",
+                    "value": 36
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "daredevil_p3_pwr",
+                    "value": 142
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%daredevil_p3_dmg $DMG_PHYSICAL\\n%daredevil_p3_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%daredevil_p3_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "daredevil_p2",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Baton Sweep",
+            "description": "Daredevil sweeps one of his batons in a wide circle, tripping nearby enemies.",
+            "descshort": "Radial",
+            "icon": 10,
+            "icon_texture": "textures/ui/daredevil_icons2.png",
+            "name": "daredevil_p4",
+            "power": "power4",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p4_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "daredevil_p4_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p4_dmg",
+                    "value": "43 50"
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "daredevil_p4_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p4_pwr",
+                    "value": 68
+                },
+                "talentvalue": {
+                    "level": 18,
+                    "name": "daredevil_p4_pwr",
+                    "value": 180
+                }
+            },
+            "level": {
+                "count": 18,
+                "description": "%daredevil_p4_dmg $DMG_PHYSICAL\\n%daredevil_p4_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%daredevil_p4_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "daredevil_p9",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Baton Dive",
+            "description": "Daredevil dives towards enemies, hitting them then knocking them out of the way with his batons.",
+            "descshort": "Charge",
+            "icon": 9,
+            "icon_texture": "textures/ui/daredevil_icons2.png",
+            "name": "daredevil_p5",
+            "power": "power5",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p5_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "daredevil_p5_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p5_dmg",
+                    "value": "75 86"
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "daredevil_p5_dmg",
+                    "value": "211 230"
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p5_kb",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "daredevil_p5_kb",
+                    "value": 245
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p5_pwr",
+                    "value": 54
+                },
+                "talentvalue": {
+                    "level": 11,
+                    "name": "daredevil_p5_pwr",
+                    "value": 128
+                }
+            },
+            "level": {
+                "count": 11,
+                "description": "%daredevil_p5_dmg $DMG_PHYSICAL per hit\\n%daredevil_p5_kb $KB\\n%daredevil_p5_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%daredevil_p5_req"
+                }
+            }
+        },
+        "talent": {
+            "descname": "Blind Sight",
+            "description": "Daredevil's superhuman senses increase his $DR and make him immune to popup and trip for a time.",
+            "descshort": "Boost",
+            "icon": 5,
+            "icon_texture": "textures/ui/daredevil_icons2.png",
+            "name": "daredevil_p7",
+            "power": "power7",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p7_req",
+                    "value": 7
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "daredevil_p7_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p7_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "daredevil_p7_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p7_dr",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "daredevil_p7_dr",
+                    "value": 2.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p7_pwr",
+                    "value": 64
+                },
+                "talentvalue": {
+                    "level": 16,
+                    "name": "daredevil_p7_pwr",
+                    "value": 380
+                }
+            },
+            "level": {
+                "count": 16,
+                "description": "%daredevil_p7_dr $DR\\n%daredevil_p7_lif seconds\\n%daredevil_p7_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%daredevil_p7_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "dd_ps1",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Hyper Sense",
+            "description": "Daredevil focuses his senses, increasing his Attack Speed and $AR for a time.",
+            "descshort": "Boost",
+            "icon": 6,
+            "icon_texture": "textures/ui/daredevil_icons2.png",
+            "name": "daredevil_p8",
+            "power": "power8",
+            "type": "boost",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p8_req",
+                    "value": 21
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "daredevil_p8_req",
+                    "value": 58
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p8_sd",
+                    "value": 1.25
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "daredevil_p8_sd",
+                    "value": 2.1
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p8_ar",
+                    "value": 1.2
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "daredevil_p8_ar",
+                    "value": 2.2
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p8_lif",
+                    "value": 13
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "daredevil_p8_lif",
+                    "value": 55
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p8_pwr",
+                    "value": 84
+                },
+                "talentvalue": {
+                    "level": 14,
+                    "name": "daredevil_p8_pwr",
+                    "value": 458
+                }
+            },
+            "level": {
+                "count": 14,
+                "description": "%daredevil_p8_sd:s Attack Speed\\n%daredevil_p8_ar $AR\\n%daredevil_p8_lif seconds\\n%daredevil_p8_pwr $EP",
+                "require": {
+                    "cat": "level",
+                    "level": "%daredevil_p8_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "daredevil_p10",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "BATON WHIP",
+            "description": "Daredevil whips his batons in circles, knocking back nearby enemies.",
+            "descshort": "Radial",
+            "icon": 8,
+            "icon_texture": "textures/ui/daredevil_icons2.png",
+            "name": "daredevil_p9",
+            "power": "power9",
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p9_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "daredevil_p9_req",
+                    "value": 45
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p9_dmg",
+                    "value": "85 96"
+                },
+                "talentvalue": {
+                    "level": 7,
+                    "name": "daredevil_p9_dmg",
+                    "value": "279 309"
+                }
+            },
+            "level": {
+                "count": 7,
+                "description": "%daredevil_p9_dmg $DMG_PHYSICAL",
+                "require": {
+                    "cat": "level",
+                    "level": "%daredevil_p9_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "daredevil_p3",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "DEVIL VISION",
+            "description": "Daredevil becomes invincible and has increased damage for a time.",
+            "descshort": "Boost",
+            "icon": 7,
+            "icon_texture": "textures/ui/daredevil_icons2.png",
+            "name": "daredevil_p10",
+            "power": "power10",
+            "skirmish_locked": true,
+            "type": "xtreme",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p10_req",
+                    "value": 20
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "daredevil_p10_req",
+                    "value": 40
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "daredevil_p10_lif",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 5,
+                    "name": "daredevil_p10_lif",
+                    "value": 45
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "+100% Dmg\\n%daredevil_p10_lif seconds",
+                "require": {
+                    "cat": "level",
+                    "level": "%daredevil_p10_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "daredevil_p7",
+                    "level": 1
+                }
+            }
+        },
+        "talent": {
+            "descname": "Radar Sense",
+            "description": "Daredevil's enhanced senses give him a chance to dodge all forms of attack. Levels up to reveal hidden enemies.",
+            "descshort": "Passive",
+            "icon": 11,
+            "icon_texture": "textures/ui/daredevil_icons2.png",
+            "name": "dd_ps1",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dd_ps1_req",
+                    "value": 1
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dd_ps1_req",
+                    "value": 15
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dd_ps1_cne",
+                    "value": 0.02
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dd_ps1_cne",
+                    "value": 0.25
+                }
+            },
+            "level": {
+                "count": 10,
+                "description": "%dd_ps1_cne:p chance to dodge",
+                "require": {
+                    "cat": "level",
+                    "level": "%dd_ps1_req"
+                }
+            },
+            "level": {
+                "count": 5,
+                "description": "%dd_ps1_cne:p chance to dodge\\nReveals hidden enemies",
+                "require": {
+                    "cat": "level",
+                    "level": "%dd_ps1_req"
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "attribute": "reveal_hidden"
+                    }
+                }
+            }
+        },
+        "talent": {
+            "descname": "Baton Mastery",
+            "description": "Increases damage and Critical chance of all powered and non-powered baton attacks.",
+            "descshort": "Passive",
+            "icon": 3,
+            "icon_texture": "textures/ui/daredevil_icons2.png",
+            "name": "dd_ps2",
+            "talentvalues": {
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dd_ps2_req",
+                    "value": 14
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dd_ps2_req",
+                    "value": 28
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dd_ps2_dmg",
+                    "value": 1.05
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dd_ps2_dmg",
+                    "value": 1.5
+                },
+                "talentvalue": {
+                    "level": 1,
+                    "name": "dd_ps2_crit",
+                    "value": 0.01
+                },
+                "talentvalue": {
+                    "level": 15,
+                    "name": "dd_ps2_crit",
+                    "value": 0.08
+                }
+            },
+            "level": {
+                "count": 15,
+                "description": "%dd_ps2_dmg:s Dmg\\n+%dd_ps2_crit:p Critical chance",
+                "require": {
+                    "cat": "level",
+                    "level": "%dd_ps2_req"
+                },
+                "require": {
+                    "cat": "skill",
+                    "item": "supermaster",
+                    "level": 1
+                },
+                "powerup": {
+                    "life": -1,
+                    "affecter": {
+                        "affect_type": "scale",
+                        "attribute": "damage",
+                        "level": "%dd_ps2_dmg",
+                        "scope_node": "daredevil_baton"
+                    },
+                    "affecter": {
+                        "attribute": "atk_critical",
+                        "level": "%dd_ps2_crit",
+                        "scope_node": "daredevil_baton"
+                    }
+                }
+            }
+        }
+    }
+}

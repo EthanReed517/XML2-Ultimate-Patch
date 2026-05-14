@@ -1,0 +1,1686 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/daredevil_icons1.png",
+        "event": {
+            "inherit": "skinsegment",
+            "name": "baton_to_hand",
+            "show": true,
+            "show2": false,
+            "skinsegment": "baton_hand_segment",
+            "skinsegment2": "batons_segment"
+        },
+        "event": {
+            "inherit": "skinsegment",
+            "name": "baton_to_leg",
+            "show": false,
+            "show2": true,
+            "skinsegment": "baton_hand_segment",
+            "skinsegment2": "batons_segment"
+        },
+        "FightMove": {
+            "animenum": "ea_idle1",
+            "handler": "ch_idle",
+            "lockchaining": false,
+            "name": "idle",
+            "noncombat": true,
+            "trigger": {
+                "name": "baton_to_leg",
+                "time": 0
+            },
+            "trigger": {
+                "boltslot": "ebolton_weapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 0,
+                "type": "ce_bolton"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "strafeleft"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "straferight"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "advance"
+            },
+            "chain": {
+                "action": "retreat",
+                "result": "retreat"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "guarddecide"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight1"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackheavy1"
+            },
+            "chain": {
+                "action": "groundattack",
+                "result": "groundattack"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            },
+            "chain": {
+                "action": "special",
+                "result": "boredloop"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_blocking",
+            "handler": "ch_block",
+            "icon": 12,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "blocking",
+            "require": {
+                "cat": "skill",
+                "item": "block"
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": 1,
+                "time": -1
+            },
+            "trigger": {
+                "name": "baton_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "life": -1,
+                "name": "powerup",
+                "remove_on_node_end": true,
+                "time": 0,
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "damage_to_energy",
+                    "level": "%block_dmgasenrg"
+                }
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_unsheathe",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/p11_power",
+                "time": 0.1
+            },
+            "chain": {
+                "action": "special",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "advance",
+                "result": "rollforward"
+            },
+            "chain": {
+                "action": "straferight",
+                "result": "dodgeright"
+            },
+            "chain": {
+                "action": "strafeleft",
+                "result": "dodgeleft"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light1",
+            "blendtime": 0.05,
+            "endchaintime": 1,
+            "lockangles": true,
+            "name": "attacklight1",
+            "powerup_tag": "daredevil_baton",
+            "startchaintime": 0.545,
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_unsheathe",
+                "time": 0
+            },
+            "trigger": {
+                "name": "baton_to_hand",
+                "time": 0.09
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/light1",
+                "time": 0.22
+            },
+            "trigger": {
+                "effect": "char/daredevil/attack_light",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.22
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.36
+            },
+            "trigger": {
+                "name": "baton_to_leg",
+                "time": 0.81
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_sheathe",
+                "time": 0.81
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight2"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attacktrip1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light2",
+            "blendtime": 0.1,
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight2",
+            "powerup_tag": "daredevil_baton",
+            "startchaintime": 0.545,
+            "trigger": {
+                "name": "baton_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/light2",
+                "time": 0.25
+            },
+            "trigger": {
+                "effect": "char/daredevil/attack_light",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.25
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.36
+            },
+            "trigger": {
+                "name": "baton_to_leg",
+                "time": 0.72
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_sheathe",
+                "time": 0.72
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacklight3"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "popupattack"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_light3",
+            "blendtime": 0.1,
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "lockangles": true,
+            "name": "attacklight3",
+            "powerup_tag": "daredevil_baton",
+            "trigger": {
+                "name": "baton_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/daredevil/attack_light",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.28
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/light3",
+                "time": 0.28
+            },
+            "trigger": {
+                "name": "punch",
+                "time": 0.36
+            },
+            "trigger": {
+                "name": "baton_to_leg",
+                "time": 0.8
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_sheathe",
+                "time": 0.8
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_popup",
+            "endchaintime": 1,
+            "fallback": "attacklight1",
+            "handler": "ch_popup_attack",
+            "lockangles": true,
+            "name": "popupattack",
+            "powerup_tag": "daredevil_baton",
+            "startchaintime": 0.75,
+            "trigger": {
+                "name": "baton_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "charge": 1,
+                "name": "charge",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/popup",
+                "time": 0.27
+            },
+            "trigger": {
+                "effect": "char/daredevil/attack_finisher",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0.27
+            },
+            "trigger": {
+                "knockback": 0,
+                "maxrange": 50,
+                "name": "punch_heavy",
+                "time": 0.3,
+                "damagemod": {
+                    "name": "dmgmod_popup"
+                },
+                "damagemod": {
+                    "name": "dmgmod_ground"
+                }
+            },
+            "trigger": {
+                "name": "baton_to_leg",
+                "time": 0.85
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_sheathe",
+                "time": 0.85
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_stun2",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackstun2",
+            "powerup_tag": "daredevil_baton",
+            "startchaintime": 0.6,
+            "event": {
+                "inherit": "punch_heavy",
+                "knockback": 0,
+                "maxrange": 56,
+                "name": "backhand1"
+            },
+            "trigger": {
+                "name": "baton_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_unsheathe",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/stun2",
+                "time": 0.31
+            },
+            "trigger": {
+                "effect": "char/daredevil/attack_finisher",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.31
+            },
+            "trigger": {
+                "name": "backhand1",
+                "time": 0.4
+            },
+            "trigger": {
+                "name": "baton_to_leg",
+                "time": 0.8
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_sheathe",
+                "time": 0.8
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackstun3"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_stun3",
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attackstun3",
+            "powerup_tag": "daredevil_baton",
+            "trigger": {
+                "name": "baton_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/stun3",
+                "time": 0.33
+            },
+            "trigger": {
+                "effect": "char/daredevil/attack_finisher",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.33
+            },
+            "trigger": {
+                "effect": "char/daredevil/attack_finisher",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.33
+            },
+            "trigger": {
+                "knockback": 0,
+                "maxrange": 56,
+                "name": "punch_heavy",
+                "time": 0.4,
+                "damagemod": {
+                    "name": "dmgmod_stun"
+                },
+                "damagemod": {
+                    "name": "dmgmod_no_atk_roll"
+                }
+            },
+            "trigger": {
+                "name": "baton_to_leg",
+                "time": 0.8
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_sheathe",
+                "time": 0.8
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_attack_trip1",
+            "blendtime": 0.07,
+            "endchaintime": 1,
+            "fallback": "attackheavy1",
+            "lockangles": true,
+            "name": "attacktrip1",
+            "powerup_tag": "daredevil_baton",
+            "startchaintime": 0.5,
+            "trigger": {
+                "name": "baton_to_leg",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_sheathe",
+                "time": 0
+            },
+            "trigger": {
+                "name": "whoosh_heavy",
+                "time": 0
+            },
+            "trigger": {
+                "movement": 0,
+                "name": "slide_kick",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Toe0",
+                "life": 0.3,
+                "name": "trail",
+                "time": 0.2
+            },
+            "trigger": {
+                "angle": -20,
+                "height": 5,
+                "index": 1,
+                "knockback": 0,
+                "name": "kick",
+                "time": 0.3
+            },
+            "trigger": {
+                "angle": 0,
+                "height": 20,
+                "index": 1,
+                "knockback": 0,
+                "name": "kick",
+                "time": 0.35
+            },
+            "trigger": {
+                "angle": 45,
+                "height": 20,
+                "index": 1,
+                "knockback": 0,
+                "name": "kick",
+                "time": 0.41
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "guard",
+                "result": "null"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "attacktrip2"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "attackknockback1"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "move",
+                "result": "jump"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_start",
+            "handler": "ch_move_jump",
+            "lockangles": true,
+            "name": "jump",
+            "startchaintime": 0.3,
+            "chain": {
+                "action": "move",
+                "result": "airjump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_loop",
+            "handler": "ch_jump",
+            "lockangles": true,
+            "name": "jumploop",
+            "noncombat": true,
+            "chain": {
+                "action": "move",
+                "result": "airjump"
+            },
+            "chain": {
+                "action": "attack",
+                "result": "jumppunchright"
+            },
+            "chain": {
+                "action": "smash",
+                "result": "jumpsmash"
+            },
+            "chain": {
+                "action": "powers",
+                "result": "powers"
+            },
+            "chain": {
+                "action": "special",
+                "result": "jumpland"
+            },
+            "chain": {
+                "action": "idle",
+                "result": "jumploop"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_double_jump_start",
+            "blendtime": 0.1,
+            "handler": "ch_move_jump",
+            "name": "airjump",
+            "startchaintime": 0.5,
+            "turnrate": 0.2,
+            "chain": {
+                "action": "special",
+                "result": "doublejumpland"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_jump_land",
+            "blendtime": 0.1,
+            "endchaintime": 0.7,
+            "handler": "ch_move_jump_land",
+            "lockangles": true,
+            "lockchaining": true,
+            "name": "doublejumpland",
+            "noncombat": true,
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            },
+            "chain": {
+                "action": "walk",
+                "result": "walk"
+            },
+            "chain": {
+                "action": "jog",
+                "result": "jog"
+            },
+            "chain": {
+                "action": "run",
+                "result": "run"
+            },
+            "chain": {
+                "action": "sprint",
+                "result": "sprint"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "melee",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Smash",
+            "combotextstarter": "Baton",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "powerup_tag": "daredevil_baton",
+            "priority": 5,
+            "startchaintime": 0.4,
+            "require": {
+                "cat": "skill",
+                "item": "daredevil_p1",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%daredevil_p1_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/daredevil/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/daredevil/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_unsheathe",
+                "time": 0
+            },
+            "trigger": {
+                "name": "baton_to_hand",
+                "time": 0.37
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power1_end"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "melee",
+            "animenum": "ea_power1_end",
+            "combotextfinisher": "Smash",
+            "combotextstarter": "Baton",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1_end",
+            "powerup_tag": "daredevil_baton",
+            "priority": 5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/p1_impact",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/daredevil/p1_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.35
+            },
+            "trigger": {
+                "arc": 90,
+                "attacktype": "punch",
+                "damage": "%daredevil_p1_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "hiteffect": "char/daredevil/p2_impact",
+                "inherit": "punch",
+                "name": "punch",
+                "time": 0.35,
+                "damagemod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "trigger": {
+                "name": "baton_to_leg",
+                "time": 0.8
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_sheathe",
+                "time": 0.8
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "rangednolos",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Strike",
+            "combotextstarter": "Baton",
+            "icon": 1,
+            "lockangles": true,
+            "lockspeed": true,
+            "name": "power2",
+            "powerup_tag": "daredevil_baton",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "daredevil_p2",
+                "level": 1
+            },
+            "trigger": {
+                "inherit": "skinsegment",
+                "name": "baton_off_leg",
+                "show": false,
+                "skinsegment": "batons_segment",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_unsheathe",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/p2_charge",
+                "time": 0.15
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/daredevil/p2_power",
+                "fxlevel": 4,
+                "name": "effect_sound",
+                "sound": "char/ddevil_m/p2_power",
+                "time": 0.23
+            },
+            "trigger": {
+                "actorbolt": "Bip01 R Hand",
+                "attack_bone_angles": "0 0 0",
+                "attack_bone_pos": "31 2 42",
+                "attacktype": "projectile",
+                "count": 1,
+                "damage": "%daredevil_p2_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "entity": "baton_strike",
+                "filename": "ents_daredevil",
+                "knockback": "%daredevil_p2_kb",
+                "inherit": "projectile",
+                "maxrange": 260,
+                "name": "projectile",
+                "powerusage": "%daredevil_p2_pwr",
+                "speed": 2000,
+                "targetable": true,
+                "time": 0.31,
+                "damagemod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "name": "baton_to_leg",
+                "time": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_sheathe",
+                "time": 1
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "melee",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Fling",
+            "combotextstarter": "Baton",
+            "icon": 4,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power3",
+            "powerup_tag": "daredevil_baton",
+            "priority": 5,
+            "startchaintime": 0.99,
+            "require": {
+                "cat": "skill",
+                "item": "daredevil_p3",
+                "level": 1
+            },
+            "trigger": {
+                "name": "powerusage",
+                "powerusage": "%daredevil_p3_pwr",
+                "time": 0
+            },
+            "trigger": {
+                "name": "baton_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_unsheathe",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/daredevil/p1_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/ddevil_m/p3_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/daredevil/p1_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "chain": {
+                "action": "idle",
+                "result": "power3_end"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "melee",
+            "animenum": "ea_power2_end",
+            "combotextfinisher": "Fling",
+            "combotextstarter": "Baton",
+            "icon": 4,
+            "lockangles": true,
+            "locktransitionangles": true,
+            "name": "power3_end",
+            "powerup_tag": "daredevil_baton",
+            "priority": 5,
+            "startchaintime": 0.99,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/p3_power",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 90,
+                "attacktype": "punch",
+                "damage": "%daredevil_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "hiteffect": "char/daredevil/p2_impact",
+                "inherit": "punch",
+                "name": "punch",
+                "time": 0,
+                "damagemod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "trigger": {
+                "name": "baton_to_leg",
+                "time": 0.99
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_sheathe",
+                "time": 0.99
+            },
+            "chain": {
+                "action": "idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Sweep",
+            "combotextstarter": "Baton",
+            "icon": 10,
+            "lockangles": true,
+            "name": "power4",
+            "powerup_tag": "daredevil_baton",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "daredevil_p4",
+                "level": 1
+            },
+            "event": {
+                "angle": 0,
+                "arc": 45,
+                "damage": "%daredevil_p4_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "inherit": "radial",
+                "maxrange": 110,
+                "name": "baton_attack",
+                "damagemod": {
+                    "name": "dmgmod_trip"
+                }
+            },
+            "trigger": {
+                "actorskin": 18300,
+                "anim": "power_4",
+                "anim_set": "183_daredevil_batons",
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_weapon",
+                "ignoreanimmap": true,
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0
+            },
+            "trigger": {
+                "inherit": "skinsegment",
+                "name": "baton_off_leg",
+                "show": false,
+                "skinsegment": "batons_segment",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_unsheathe",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/p4_power",
+                "time": 0.1
+            },
+            "trigger": {
+                "damagescale": "none",
+                "index": 2,
+                "knockback": 190,
+                "name": "kick",
+                "powerusage": "%daredevil_p2_pwr",
+                "time": 0.12
+            },
+            "trigger": {
+                "damagescale": "none",
+                "index": 2,
+                "knockback": 190,
+                "name": "kick",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/daredevil/p4_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.33
+            },
+            "trigger": {
+                "angle": 0,
+                "name": "baton_attack",
+                "time": 0.39
+            },
+            "trigger": {
+                "angle": 315,
+                "name": "baton_attack",
+                "time": 0.4375
+            },
+            "trigger": {
+                "angle": 270,
+                "name": "baton_attack",
+                "time": 0.485
+            },
+            "trigger": {
+                "angle": 225,
+                "name": "baton_attack",
+                "time": 0.5325
+            },
+            "trigger": {
+                "angle": 180,
+                "name": "baton_attack",
+                "time": 0.58
+            },
+            "trigger": {
+                "angle": 135,
+                "name": "baton_attack",
+                "time": 0.6275
+            },
+            "trigger": {
+                "angle": 90,
+                "name": "baton_attack",
+                "time": 0.675
+            },
+            "trigger": {
+                "angle": 45,
+                "name": "baton_attack",
+                "time": 0.7225
+            },
+            "trigger": {
+                "boltslot": "ebolton_weapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 1,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "name": "baton_to_leg",
+                "time": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_sheathe",
+                "time": 1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 30,
+            "aitype": "projectile",
+            "animenum": "ea_power5",
+            "combotextfinisher": "Charge",
+            "combotextstarter": "Baton",
+            "icon": 9,
+            "name": "power5",
+            "powerup_tag": "daredevil_baton",
+            "priority": 5,
+            "turnrate": 0.7,
+            "require": {
+                "cat": "skill",
+                "item": "daredevil_p5",
+                "level": 1
+            },
+            "trigger": {
+                "name": "baton_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_unsheathe",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/p5_charge",
+                "time": 0.1
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%daredevil_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "hiteffect": "char/daredevil/p2_impact",
+                "index": 1,
+                "inherit": "punch",
+                "knockback": 0,
+                "name": "punch",
+                "time": 0.16
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%daredevil_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "hiteffect": "char/daredevil/p2_impact",
+                "index": 2,
+                "inherit": "punch",
+                "knockback": 0,
+                "name": "punch",
+                "time": 0.22
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%daredevil_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "hiteffect": "char/daredevil/p2_impact",
+                "index": 3,
+                "inherit": "punch",
+                "knockback": 0,
+                "name": "punch",
+                "time": 0.3
+            },
+            "trigger": {
+                "effect": "char/daredevil/p5_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.48
+            },
+            "trigger": {
+                "effect": "char/daredevil/p5_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/ddevil_m/p5_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "punch",
+                "damage": "%daredevil_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "hiteffect": "char/daredevil/p2_impact",
+                "index": 4,
+                "knockback": "%daredevil_p5_kb",
+                "name": "punch",
+                "powerusage": "%daredevil_p5_pwr",
+                "time": 0.58,
+                "damageMod": {
+                    "name": "dmgmod_ground"
+                },
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "name": "baton_to_leg",
+                "time": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_sheathe",
+                "time": 1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power6",
+            "combotextfinisher": "Sight",
+            "combotextstarter": "Blind",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "daredevil_p7",
+                "level": 1
+            },
+            "trigger": {
+                "effect": "char/daredevil/p7_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/ddevil_m/p7_power",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/daredevil/p7_power",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.23
+            },
+            "trigger": {
+                "effect": "char/daredevil/p7_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.23
+            },
+            "trigger": {
+                "effect": "char/daredevil/p7_power",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0.7
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%daredevil_p7_lif",
+                "name": "powerup",
+                "powerusage": "%daredevil_p7_pwr",
+                "time": 0.7,
+                "special_fx": {
+                    "effect": "char/daredevil/p7_power",
+                    "fxlevel": 5,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/daredevil/p7_power",
+                    "fxlevel": 6,
+                    "how_used": "deactivate"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "defense_rating",
+                    "level": "%daredevil_p7_dr"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_popup",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_trip",
+                    "level": 0
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power7",
+            "combotextfinisher": "Sense",
+            "combotextstarter": "Hyper",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "daredevil_p8",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/daredevil/p8_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/ddevil_m/p8_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/daredevil/p8_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/ddevil_m/p8_power",
+                "time": 0.4
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/daredevil/p8_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/daredevil/p8_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "effect": "char/daredevil/p8_power",
+                "fxlevel": 4,
+                "name": "effect",
+                "time": 0.57
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%daredevil_p8_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "powerusage": "%daredevil_p8_pwr",
+                "time": 0.59,
+                "special_fx": {
+                    "effect": "char/daredevil/p8_power",
+                    "fxlevel": 5,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/daredevil/p8_power",
+                    "fxlevel": 6,
+                    "how_used": "deactivate"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%daredevil_p8_ar"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "move_attack",
+                    "level": "%daredevil_p8_sd"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power9",
+            "combotextfinisher": "Whip",
+            "description": "BATON WHIP",
+            "icon": 8,
+            "lockangles": true,
+            "lockspeed": true,
+            "name": "power9",
+            "playspeed": 11,
+            "powerup_tag": "daredevil_baton",
+            "priority": "uninterruptable",
+            "require": {
+                "cat": "skill",
+                "item": "daredevil_p9",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "event": {
+                "angle": 0,
+                "arc": 45,
+                "damage": "%daredevil_p9_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "inherit": "radial",
+                "knockback": 620,
+                "name": "baton_attack",
+                "damagemod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "actorskin": 18300,
+                "anim": "power_9",
+                "anim_set": "183_daredevil_batons",
+                "bolt": "Bip01 R Hand",
+                "boltslot": "ebolton_weapon",
+                "ignoreanimmap": true,
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0
+            },
+            "trigger": {
+                "actorskin": 18300,
+                "anim": "power_10",
+                "anim_set": "183_daredevil_batons",
+                "bolt": "Bip01 L Hand",
+                "boltslot": "ebolton_altweapon",
+                "ignoreanimmap": true,
+                "name": "bolton",
+                "replacecurrent": true,
+                "time": 0
+            },
+            "trigger": {
+                "inherit": "skinsegment",
+                "name": "baton_off_leg",
+                "show": false,
+                "skinsegment": "batons_segment",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_unsheathe",
+                "time": 0
+            },
+            "trigger": {
+                "effect": "char/daredevil/p9_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/ddevil_m/p9_power",
+                "time": 0.44
+            },
+            "trigger": {
+                "angle": 180,
+                "name": "baton_attack",
+                "time": 0.38
+            },
+            "trigger": {
+                "angle": 90,
+                "maxrange": 110,
+                "name": "baton_attack",
+                "time": 0.415
+            },
+            "trigger": {
+                "angle": 270,
+                "maxrange": 110,
+                "name": "baton_attack",
+                "time": 0.415
+            },
+            "trigger": {
+                "angle": 0,
+                "maxrange": 110,
+                "name": "baton_attack",
+                "time": 0.45
+            },
+            "trigger": {
+                "angle": 90,
+                "maxrange": 150,
+                "name": "baton_attack",
+                "time": 0.505
+            },
+            "trigger": {
+                "angle": 270,
+                "maxrange": 150,
+                "name": "baton_attack",
+                "time": 0.505
+            },
+            "trigger": {
+                "angle": 180,
+                "maxrange": 150,
+                "name": "baton_attack",
+                "time": 0.56
+            },
+            "trigger": {
+                "angle": 0,
+                "maxrange": 150,
+                "name": "baton_attack",
+                "time": 0.68
+            },
+            "trigger": {
+                "boltslot": "ebolton_weapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 1,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "boltslot": "ebolton_altweapon",
+                "name": "removebolton",
+                "removebolton": true,
+                "time": 1,
+                "type": "ce_bolton"
+            },
+            "trigger": {
+                "name": "baton_to_leg",
+                "time": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_sheathe",
+                "time": 1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power11",
+            "combotextfinisher": "Perception",
+            "description": "DEVIL VISION",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power10",
+            "playspeed": 0.8,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "daredevil_p10",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "name": "baton_to_hand",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_unsheathe",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/daredevil/p10_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/ddevil_m/p10_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/daredevil/p10_power",
+                "fxlevel": 2,
+                "name": "effect_sound",
+                "sound": "char/ddevil_m/p10_power",
+                "time": 0.4
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/daredevil/p10_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/daredevil/p10_power",
+                "fxlevel": 3,
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%daredevil_p10_lif",
+                "name": "powerup",
+                "time": 0.7,
+                "special_fx": {
+                    "effect": "char/daredevil/p10_power",
+                    "fxlevel": 5,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "effect": "char/daredevil/p10_power",
+                    "fxlevel": 6,
+                    "how_used": "deactivate"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "def_damage",
+                    "level": 0
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": 2
+                }
+            },
+            "trigger": {
+                "name": "baton_to_leg",
+                "time": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/ddevil_m/special_sheathe",
+                "time": 1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
