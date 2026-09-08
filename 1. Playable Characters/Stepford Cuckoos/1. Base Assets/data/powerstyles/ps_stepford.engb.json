@@ -1,0 +1,668 @@
+{
+    "PowerStyle": {
+        "cansteal": true,
+        "iconfile": "textures/ui/stepford_icons1.png",
+        "FightMove": {
+            "aireusetime": 3,
+            "aitype": "beam",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Beam",
+            "combotextstarter": "Astral",
+            "icon": 0,
+            "lockangles": true,
+            "name": "power1",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "stepford_p1",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/stepford/p2_charge",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/stepf_m/p1_charge",
+                "time": 0
+            },
+            "trigger": {
+                "arc": 0,
+                "attack_bone_angles": "-103 -34 9",
+                "attack_bone_pos": "34 3 57",
+                "attacktype": "beam",
+                "beambolt": "Bip01 L Hand",
+                "beameffect": "char/stepford/p1_power",
+                "damage": "%stepford_p1_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "fxlevel": 1,
+                "hiteffect": "char/stepford/p1_impact",
+                "inherit": "beam",
+                "maxrange": 800,
+                "name": "beam",
+                "pierce": true,
+                "powerusage": "%stepford_p1_pwr",
+                "time": 0.47,
+                "damageMod": {
+                    "name": "dmgmod_stun"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 8,
+            "aitype": "aoe",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Wave",
+            "combotextstarter": "Astral",
+            "icon": 1,
+            "lockangles": true,
+            "name": "power2",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "stepford_p2",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/stepford/p2_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/stepf_m/p2_charge",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/stepford/p2_power",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.5
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "psionic",
+                "damage": "%stepford_p2_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "inherit": "punch",
+                "knockback": "%stepford_p2_kb",
+                "maxrange": 125,
+                "name": "radial_punch",
+                "powerusage": "%stepford_p2_pwr",
+                "time": 0.6,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 4,
+            "aitype": "melee",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Smash",
+            "combotextstarter": "Astral",
+            "icon": 2,
+            "lockangles": true,
+            "name": "power3",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "stepford_p3",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/stepford/p3_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/stepford/p3_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/stepf_m/p3_charge",
+                "time": 0.18
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/stepf_m/p3_power",
+                "time": 0.48
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%stepford_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "hiteffect": "char/stepford/p1_impact",
+                "index": 1,
+                "inherit": "punch",
+                "maxrange": 48,
+                "name": "punch",
+                "powerusage": "%stepford_p3_pwr",
+                "time": 0.29,
+                "damageMod": {
+                    "name": "dmgmod_immobilize"
+                }
+            },
+            "trigger": {
+                "attacktype": "punch",
+                "damage": "%stepford_p3_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "hiteffect": "char/stepford/p1_impact",
+                "index": 2,
+                "inherit": "punch",
+                "maxrange": 48,
+                "name": "punch",
+                "time": 0.57,
+                "damageMod": {
+                    "name": "dmgmod_popup"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 5,
+            "aitype": "projectile",
+            "animenum": "ea_power2",
+            "combotextfinisher": "Bolt",
+            "combotextstarter": "Astral",
+            "icon": 3,
+            "lockangles": true,
+            "name": "power4",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "stepford_p4",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/stepford/p3_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/stepford/p3_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.2
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/stepf_m/p4_charge",
+                "time": 0.3
+            },
+            "trigger": {
+                "arc": 0,
+                "attacktype": "projectile",
+                "center": true,
+                "count": 1,
+                "damage": "%stepford_p4_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "entity": "p4_sphere",
+                "filename": "ents_stepford",
+                "fulltargeting": true,
+                "maxrange": 800,
+                "name": "projectile",
+                "offset": "25 0 0",
+                "powerusage": "%stepford_p4_pwr",
+                "speed": 450,
+                "targetable": true,
+                "time": 0.44,
+                "damageMod": {
+                    "name": "dmgmod_trip"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "aoe",
+            "animenum": "ea_power4",
+            "combotextfinisher": "Alteration",
+            "combotextstarter": "Befuddling",
+            "icon": 8,
+            "lockangles": true,
+            "name": "power5",
+            "playspeed": 3,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "stepford_p5",
+                "level": 1
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/stepf_m/p5_charge",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/stepford/p5_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.13
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/stepford/p5_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0.13
+            },
+            "trigger": {
+                "arc": 180,
+                "damage": 0,
+                "damagescale": "none",
+                "damagetype": "dmg_direct",
+                "maxrange": 144,
+                "name": "taunt",
+                "powerusage": "%stepford_p5_pwr",
+                "tag": 4,
+                "time": 0.6,
+                "victimeventtag": 3
+            },
+            "trigger": {
+                "life": "%stepford_p5_lif",
+                "name": "powerup",
+                "tag": 3,
+                "time": -1,
+                "affecter": {
+                    "attribute": "fear",
+                    "level": 1
+                },
+                "affecter": {
+                    "attribute": "nullify",
+                    "level": 1
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_nullified"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power1",
+            "combotextfinisher": "Networking",
+            "combotextstarter": "Linked",
+            "icon": 6,
+            "lockangles": true,
+            "name": "power7",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "stepford_p7",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/stepford/p7_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/stepf_m/p7_charge",
+                "time": 0.1
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "life": "%stepford_p7_lif",
+                "name": "powerup",
+                "powerusage": "%stepford_p7_pwr",
+                "time": 0.6,
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "char/stepford/p7_aura",
+                    "fxlevel": 2,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "maxenergy",
+                    "level": "%stepford_p7_def"
+                },
+                "affecter": {
+                    "attribute": "atk_critical",
+                    "level": "%stepford_p7_cri"
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "aireusetime": 20,
+            "aitype": "buffself",
+            "animenum": "ea_power3",
+            "combotextfinisher": "Shine",
+            "combotextstarter": "Diamond",
+            "icon": 7,
+            "lockangles": true,
+            "name": "power8",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "stepford_p8",
+                "level": 1
+            },
+            "trigger": {
+                "bolt": "Bip01 L Hand",
+                "effect": "char/stepford/p8_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 R Hand",
+                "effect": "char/stepford/p8_charge",
+                "fxlevel": 2,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/stepf_m/p8_charge",
+                "time": 0.29
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "life": "%stepford_p8_lif",
+                "name": "powerup",
+                "powerusage": "%stepford_p8_pwr",
+                "tag": 2,
+                "time": 0.57,
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/stepford/p8_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "special_fx": {
+                    "bolt": "Bip01 R Hand",
+                    "effect": "char/stepford/p8_aura",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "attack_rating",
+                    "level": "%stepford_p8_ar"
+                },
+                "affecter": {
+                    "attribute": "might_heaviness",
+                    "level": "%stepford_p8_mt"
+                },
+                "affecter": {
+                    "attribute": "might_structure",
+                    "level": "%stepford_p8_mt"
+                }
+            },
+            "trigger": {
+                "apply_ally": "none",
+                "apply_self": true,
+                "class": "add_attack",
+                "damagepercent": "%stepford_p8_dmg",
+                "damagetype": "dmg_crushing",
+                "life": "%stepford_p8_lif",
+                "name": "powerup",
+                "time": 0.57,
+                "special_fx": {
+                    "effect": "char/stepford/special_trail2",
+                    "how_used": "custom"
+                },
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    },
+                    "scope": {
+                        "scope_non_powers": true
+                    }
+                }
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power1",
+            "blendtime": 0,
+            "combotextfinisher": "Phalanx",
+            "description": "PSYCHIC PHALANX",
+            "icon": 4,
+            "lockangles": true,
+            "name": "power9",
+            "playspeed": 5,
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "stepford_p9",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0
+            },
+            "trigger": {
+                "name": "stop",
+                "time": 0
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/stepford/p9_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/stepf_m/p9_charge",
+                "time": 0.2
+            },
+            "trigger": {
+                "effect": "char/stepford/p9_power",
+                "fxlevel": 1,
+                "name": "effect_sound",
+                "sound": "char/stepf_m/p9_power",
+                "time": 0.5
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "psionic",
+                "damage": "%stepford_p9_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_mental",
+                "inherit": "punch",
+                "maxrange": 600,
+                "name": "radial_punch",
+                "time": 0.9,
+                "victimeventtag": 88
+            },
+            "trigger": {
+                "maxdangerrating": 10,
+                "name": "no_bosses",
+                "noboss": true,
+                "passtag": 89,
+                "tag": 88,
+                "time": -1,
+                "type": "ce_filter_event"
+            },
+            "trigger": {
+                "chance": "%stepford_p9_pct",
+                "name": "do_chance",
+                "othertag": 90,
+                "tag": 89,
+                "time": -1,
+                "type": "ce_otherevent"
+            },
+            "trigger": {
+                "class": "callevents",
+                "life": "%stepford_p9_lif",
+                "name": "powerup",
+                "tag": 90,
+                "time": -1,
+                "FunctionEvent": {
+                    "function": "deactivate",
+                    "triggertag": 91
+                },
+                "affecter": {
+                    "attribute": "team_switch",
+                    "level": 1
+                },
+                "special_fx": {
+                    "bolt": "Bip01 Head",
+                    "effect": "base/powerup/pu_converted"
+                },
+                "special_fx": {
+                    "effect": "base/material/explode/exp_generic_med",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "instantkillonly": true,
+                "name": "remove_me",
+                "nosponsor": false,
+                "tag": 91,
+                "time": -1,
+                "type": "ce_remove"
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power2",
+            "blendtime": 0,
+            "combotextfinisher": "Unification",
+            "description": "TWO-IN-ONE",
+            "icon": 5,
+            "lockangles": true,
+            "name": "power10",
+            "priority": 5,
+            "require": {
+                "cat": "skill",
+                "item": "stepford_p10",
+                "level": 1
+            },
+            "require": {
+                "cat": "xtreme",
+                "level": 1
+            },
+            "trigger": {
+                "alternate": true,
+                "life": -1,
+                "name": "xtreme_start",
+                "time": 0,
+                "worldspeed": 0.5
+            },
+            "trigger": {
+                "bolt": "Bip01 Head",
+                "effect": "char/stepford/p2_charge",
+                "fxlevel": 1,
+                "name": "effect",
+                "time": 0
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/stepf_m/p10_charge",
+                "time": 0.4
+            },
+            "trigger": {
+                "name": "sound",
+                "sound": "char/stepf_m/p10_power",
+                "time": 0.6
+            },
+            "trigger": {
+                "healthpct": "%stepford_p10_hlt",
+                "minioneventtag": 30,
+                "name": "spawnminion",
+                "skin": 3700,
+                "time": 0.637,
+                "type": "ce_spawn_minion"
+            },
+            "trigger": {
+                "class": "callevents",
+                "life": "%stepford_p10_lif",
+                "name": "powerup",
+                "no_shadow": true,
+                "remove_on_death": true,
+                "tag": 30,
+                "time": -1,
+                "FunctionEvent": {
+                    "function": "deactivate",
+                    "triggertag": 31
+                },
+                "affecter": {
+                    "affect_type": "scale",
+                    "attribute": "atk_damage",
+                    "level": "%stepford_p10_dmg"
+                },
+                "special_fx": {
+                    "effect": "char/stepford/p10_aura",
+                    "how_used": "activation"
+                },
+                "special_fx": {
+                    "effect": "char/stepford/p10_aura",
+                    "how_used": "deactivation"
+                }
+            },
+            "trigger": {
+                "name": "remove",
+                "tag": 31,
+                "time": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "idle"
+            }
+        }
+    }
+}
