@@ -927,7 +927,7 @@
             }
         },
         "FightMove": {
-            "animenum": "ea_power16",
+            "animenum": "ea_power15",
             "blendtime": 0,
             "combotextfinisher": "Swing",
             "combotextstarter": "Swinging",
@@ -939,10 +939,9 @@
             "locktransitionangles": true,
             "name": "power5",
             "noautoaim": true,
-            "playspeed": 0.65,
+            "playspeed": 0.6,
             "powerup_tag": "spider_web",
             "priority": 5,
-            "startchaintime": 0.99,
             "turnrate": 0.5,
             "require": {
                 "cat": "skill",
@@ -950,14 +949,87 @@
                 "level": 1
             },
             "trigger": {
-                "loop_timeout": 1,
-                "loop_type": "start",
                 "name": "sound",
                 "sound": "char/spider_m/p5_loop",
                 "time": 0
             },
             "trigger": {
-                "life": -1,
+                "life": 1.3,
+                "name": "powerup",
+                "no_stack": true,
+                "remove_on_node_end": true,
+                "time": 0.09,
+                "special_fx": {
+                    "bolt": "Bip01 L Hand",
+                    "effect": "char/spider/p5_power",
+                    "fxlevel": 1,
+                    "how_used": "primary"
+                }
+            },
+            "trigger": {
+                "arc": 180,
+                "attacktype": "blast",
+                "damage": "%spider_p5_dmg",
+                "damagescale": "none",
+                "damagetype": "dmg_physical",
+                "inherit": "punch",
+                "knockback": "%spider_p5_kb",
+                "maxrange": 60,
+                "name": "punch",
+                "tag": 1,
+                "time": -1,
+                "damageMod": {
+                    "name": "dmgmod_auto_knockback"
+                }
+            },
+            "trigger": {
+                "count": "set",
+                "name": "count",
+                "only_non_looped": true,
+                "tag": 5,
+                "time": 0,
+                "value": 1
+            },
+            "trigger": {
+                "count": "add",
+                "name": "count",
+                "tag": 6,
+                "time": 0.5,
+                "value": -1
+            },
+            "chain": {
+                "action": "Idle",
+                "result": "power5_end"
+            },
+            "chain": {
+                "action": "samepowerhold",
+                "result": "power5_2"
+            }
+        },
+        "FightMove": {
+            "animenum": "ea_power16",
+            "blendtime": 0,
+            "combotextfinisher": "Swing",
+            "combotextstarter": "Swinging",
+            "energypersecond": "%spider_p5_pwr",
+            "fallback": "jumploop",
+            "handler": "ch_skating",
+            "icon": 1,
+            "lockangles": false,
+            "locktransitionangles": true,
+            "name": "power5_2",
+            "noautoaim": true,
+            "playspeed": 0.6,
+            "powerup_tag": "spider_web",
+            "priority": 5,
+            "turnrate": 0.5,
+            "trigger": {
+                "name": "sound",
+                "sound": "char/spider_m/p5_loop",
+                "time": 0
+            },
+            "trigger": {
+                "life": 1.3,
                 "name": "powerup",
                 "no_stack": true,
                 "remove_on_node_end": true,
@@ -1007,18 +1079,10 @@
             "chain": {
                 "action": "samepowerhold",
                 "result": "power5"
-            },
-            "chain": {
-                "action": "touch",
-                "result": "power5"
-            },
-            "chain": {
-                "action": "special",
-                "result": "power5"
             }
         },
         "FightMove": {
-            "animenum": "ea_double_jump_start",
+            "animenum": "ea_power2",
             "combotextfinisher": "Swing",
             "combotextstarter": "Swinging",
             "handler": "ch_move_jump",
@@ -1026,12 +1090,6 @@
             "name": "power5_end",
             "noautoaim": true,
             "startchaintime": 0.3,
-            "trigger": {
-                "loop_type": "stop",
-                "name": "sound",
-                "sound": "char/spider_m/p5_loop",
-                "time": 0
-            },
             "chain": {
                 "action": "move",
                 "result": "power5"
@@ -1081,27 +1139,11 @@
             "trigger": {
                 "apply_ally": "all",
                 "apply_self": true,
-                "class": "add_attack",
-                "damagepercent": "%spider_p6_dmg",
-                "damagescale": "none",
-                "damagetype": "dmg_physical",
                 "life": "%spider_p6_lif",
                 "name": "powerup",
                 "powerusage": "%spider_p6_pwr",
                 "tag": 3,
                 "time": 0.5,
-                "affecter": {
-                    "attribute": "powerup_scope",
-                    "scope": {
-                        "scope_attack": "punch"
-                    },
-                    "scope": {
-                        "scope_attack": "kick"
-                    },
-                    "scope": {
-                        "scope_non_powers": true
-                    }
-                },
                 "special_fx": {
                     "bolt": "Bip01 L Hand",
                     "effect": "char/spider/p6_aura",
@@ -1118,6 +1160,25 @@
                     "affect_type": "scale",
                     "attribute": "attack_rating",
                     "level": "%spider_p6_ar"
+                }
+            },
+            "trigger": {
+                "apply_ally": "all",
+                "apply_self": true,
+                "class": "add_attack",
+                "damagepercent": "%spider_p6_dmg",
+                "damagetype": "dmg_crushing",
+                "life": "%spider_p6_lif",
+                "name": "powerup",
+                "time": 0.5,
+                "affecter": {
+                    "attribute": "powerup_scope",
+                    "scope": {
+                        "scope_attack": "punch"
+                    },
+                    "scope": {
+                        "scope_attack": "kick"
+                    }
                 }
             },
             "chain": {
