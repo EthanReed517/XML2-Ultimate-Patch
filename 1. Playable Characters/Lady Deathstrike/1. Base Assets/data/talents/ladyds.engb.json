@@ -286,7 +286,7 @@
         },
         "talent": {
             "descname": "Razor Sharp",
-            "description": "Lady Deathstrike's razor sharp nails increase her $AR and add $DMG_BLEED to all non-powered Melee attacks for a time.",
+            "description": "Lady Deathstrike's razor sharp nails add $DMG_BLEED to all powered and non-powered Melee attacks and increased her $AR for a time.",
             "descshort": "Boost",
             "icon": 5,
             "icon_texture": "textures/ui/ladyds_icons2.png",
@@ -326,13 +326,13 @@
                 },
                 "talentvalue": {
                     "level": 1,
-                    "name": "ladyds_p6_dmg",
-                    "value": 20
+                    "name": "ladyds_p6_pct",
+                    "value": 0.15
                 },
                 "talentvalue": {
                     "level": 18,
-                    "name": "ladyds_p6_dmg",
-                    "value": 120
+                    "name": "ladyds_p6_pct",
+                    "value": 1
                 },
                 "talentvalue": {
                     "level": 1,
@@ -347,7 +347,7 @@
             },
             "level": {
                 "count": 18,
-                "description": "+%ladyds_p6_dmg $DMG_BLEED\\n%ladyds_p6_ar:s $AR\\n%ladyds_p6_life seconds\\n%ladyds_p6_pwr $EP",
+                "description": "+%ladyds_p6_pct:p $DMG_BLEED\\n%ladyds_p6_ar:s $AR\\n%ladyds_p6_life seconds\\n%ladyds_p6_pwr $EP",
                 "require": {
                     "cat": "level",
                     "level": "%ladyds_p6_req"
